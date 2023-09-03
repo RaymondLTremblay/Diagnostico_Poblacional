@@ -1,4 +1,4 @@
-# Un protocolo para informar sobre modelos discreto de estructura de población {.unnumbered}
+# Un protocolo para informar sobre modelos discreto de estructura de población
 
 
 
