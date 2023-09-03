@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # ¿Qué es el analisis de dinamica poblacional?
 
 Por: Por RLT, Nhora Ospina, Demetria y Anne .....

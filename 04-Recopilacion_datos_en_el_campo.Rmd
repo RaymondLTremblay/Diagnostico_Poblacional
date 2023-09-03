@@ -4,21 +4,24 @@ Por: Raymond L. Tremblay y Aucencia
 
 ## Identificar la especie de estudio
 
-Para cualquier estudio usando el acercamiento de dinamica poblacional es necesario conocer lo básico de la especie de interes y las etapas/edades que corresponde al ciclo de vida de esa misma.  Poder reconocer las diferentes etapas del ciclo de vida con exactud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes.  Cuando se define una etapa de vida se deberia tener caracteriticas morfologica que se puede identificar en el campo con facilidad y para reducir reducir los errores de asignaciones a otras etapas. Por ejemplo en *Lepanthes* [@tremblay2003population] definio un juvenil como individuo que tiene tallos con  "at least one lepanthiform sheath on the petiole and no current or previously-produced inflorescences". Nota que aqui la diferencia entre una plantula y un juvenil es que tenga una *lepanthiform sheath* y se diferencia de los adultos con la auscencia de evidencia de inflorescencias seca y activa.       
+Para cualquier estudio usando el acercamiento de dinamica poblacional es necesario conocer lo básico de la especie de interes y las etapas/edades que corresponde al ciclo de vida de esa misma.  Poder reconocer las diferentes etapas del ciclo de vida con exactud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes.  Cuando se define una etapa de vida se debería tener características morfológicas que se puede identificar en el campo con facilidad y para reducir los errores de asignaciones a otras etapas. Por ejemplo en *Lepanthes* [@tremblay2003population] definió un juvenil como individuo que tiene tallos con  "at least one lepanthiform sheath on the petiole and no current or previously-produced inflorescences" (Aucencia traducir por favor). Nota que aquí la diferencia entre una plántula y un juvenil es que tenga una *lepanthiform sheath* y se diferencia de los adultos con la auscencia de evidencia de inflorescencias seca y activa.   
+
+Por ejemplo en la foto que sigue tenemos un individuos que tiene dos hojas, una con inflorescencia activa y la otra hoja con inflorescencia secas, por consecuencia ese individuos es un adulto ya que tiene por los menor una inflorescencia activa (produciendo flores).  Nota no es que la inflorescencia tenga flores o no es que la inflorescencia es verde. 
 
 ![*Lepanthes rupestris* con inflorescencias seca y activa. Foto: Tremblay](Figures/lepanthes_rupestris.jpeg){width=90%}
 
+### Semillas
+Algunos retos en el estudio de las orquídeas es el seguimiento de las semillas y plántulas en el campo.  La dispersión de las semillas en espacio ha sido estudiado muy poco [@ackerman1996seedling] debido a sus tamaños tan pequeños y dificultad de seguir en el espacio.  Los métodos de seguir las semillas en su ambiente natural incluye típicamente ponerlos en una malla y ponerlos en el suelo o la corteza de un árbol y recogerlos más tarde para ver si estas germinaron [@rasmussen1993seed], [@whigham2006seed]. Un patrón que parecer ser consistente en las plantas es que el crecimiento poblacional tienden a ser limitado por las semillas [@turnbull2000plant]. 
 
-Algunos retos en el estudio de las orquideas es el siguimiento de las semillas y plántulas en el campo.  La dispersión de las semillas en espacio ha sido estudiado muy poco [@ackerman1996seedling] debido a sus tamaños tan pequeños y dificultad de seguir en el espacio.  Los métodos de seguir las semillas en su ambiente natural incluye tipicamente ponerlos en una malla y ponerlos en el suelo o la corteza y recogerlos más tarde para ver si estas germinaron [@rasmussen1993seed], [@whigham2006seed]. Un patron que parecer ser consistente en las plantas es que el crecimiento poblacional tienden a ser limitado por las semillas [@turnbull2000plant]. 
-
-Identificar plántulas en orquídeas terrestres tiende también a ser muy complidado, ya que están escondidas entre vegetación o cubierta de tierra.  La orquídeas epítifas, en ciertas especies se puede identificar las plántulas (si no están cubierta de musgo o otra vegetación), pero distinguir entre plántulas de diferentes especies puede ser imposible.  Por ejemplo distinguir las plántulas de diferentes especies de *Lepanthes* en el mismo forofito no es posible (Tremblay comunicación personal). El método de identificar a que especie pertenece fue de seguir estos individuos hasta las otras etapas de vida (junenil o adulto) para identificar a que especie pertenece.  Por ejemplo la forma de crecimiento del tallo es diferente entre *Lepanthes eltoroensis* (prostate) versus *Lepanthes woodburyana* (erect). Por consecuencia idividuos que no sobreviven a la próxima etapa no se sabe a que especie pertenece.  Esa limitaciones reduce el tamaño de muestra para construcción de la matriz y aumenta la cantidad de trabajo en el campo.       
+### Plantulas 
+La plantulas son definida por diferentes características en diferentes investigaciones, pero en general están definida con un muy pequeña planta que es verde (fotosíntesis) y que no tiene hojas grandes.  Identificar plántulas en orquídeas terrestres tiende a ser muy complicado, ya que están escondidas entre vegetación o cubierta de tierra debedo a su tamaño.  Las orquídeas epítifas, en ciertas especies se puede identificar las plántulas (si no están cubierta de musgo o otra vegetación), pero distinguir entre plántulas de diferentes especies puede ser imposible.  Por ejemplo, distinguir las plántulas de diferentes especies de *Lepanthes* en el mismo forofito no es posible (Tremblay comunicación personal). El método de identificar a que especie pertenece fue de seguir estos individuos hasta las otras etapas de vida (junenil o adulto) para identificar a que especie pertenece.  Por ejemplo la forma de crecimiento del tallo es diferente entre *Lepanthes eltoroensis* (prostate) versus *Lepanthes woodburyana* (erect). Por consecuencia individuos que no sobreviven a la próxima etapa no se sabe a que especie pertenece y tipicamente son excluida de los analisis posteriores.  Esa limitaciones reduce el tamaño de muestra para construcción de la matriz y aumenta la cantidad de trabajo en el campo.       
 
 
 ## Marcar los individuos en el campo
 
-La calidad de los métodos de marcar plantas en el campo para evaluación posterior es primordial para los análisis de dinámica poblacional.  Como se marca y cual es la calidad del marcador para detectar y re-evaluar los individuos en años subsiguiente afecta la calidad de los datos. Si los marcadores individuales se pierden y no se reconoce ese problema, los individuos perdidos por marca no permanente se podría categorizar como muerto, y ese individuo no marcado (por haber perdido su identificación) pudiese ser interpretado como un nuevo individuo (reclutamiento), dos tipos de errores que afecta los modelos. Eso resulta en aumento en mortandad y reclutamiento, sesgando los resultados. Naturalmente, esos sesgos depende de la frecuencia proporcional al tamaño de muestra, menor el tamaño de muestra mayor el sesgo. 
+Asegurar la calidad de los métodos de marcar plantas en el campo para evaluación posterior es primordial para los análisis de dinámica poblacional.  Como se marca y cual es la calidad del marcador para detectar y re-evaluar los individuos en años subsiguiente afecta la calidad de los datos. Si los marcadores individuales se pierden y no se reconoce ese un problema, los individuos perdidos por marca no permanente se podría categorizar como muerto, y ese individuo no marcado (por haber perdido su identificación) pudiese ser interpretado como un nuevo individuo (reclutamiento), dos tipos de errores que afecta los modelos. Eso resulta en aumento en mortandad y reclutamiento, sesgando los resultados. Naturalmente, esos sesgos depende de la frecuencia proporcional al tamaño de muestra, menor el tamaño de muestra mayor el sesgo. 
 
-El metodo de marcar tiene que ser permanente (plástico, metal, etc.) y fácil de encontrar en adición de ser informativo y único para cada planta y reducir las incertidumbres. La dificultad muchas veces proviene de individuos donde los datos son recopilados con numeración similares.  Esos problemas muchas veces encuentra años después cuando se quiere re-evaluar los datos y no hay manera aclarar las dudas. 
+El método de marcar tiene que ser permanente (plástico, metal, etc.) y fácil de encontrar en adición de ser informativo y único para cada planta y reducir las incertidumbres. La dificultad muchas veces proviene de individuos donde los datos son recopilados con numeración similares.  Esos problemas muchas veces encuentra años después cuando se quiere re-evaluar los datos y no hay manera aclarar las dudas. 
 
 
 ### Métodos de marca y recaptura
@@ -29,11 +32,11 @@ Cada planta tiene que tener si propia identificación y que no haya confusión c
 
 ##### Una población
 
-Por ejemplo si el estudio comenzó en 2023 y solamente hay una población. Los individuos podrían tener una codificación siguiente 23001, 23002, 23003, ... 23152 para los 152 individuos encontrado y marcado ese año.  El siguiente año se muestra esos individuos y nuevos individuos encontrado comenzarían con 24153. De esta forma ya se conoce cuando fue el primer año de muestreo del individuo y esos nuevos individuos no se confunde con los del año anterior. Cada año comenzaría con identificación del año, y la numeración de los individuos no se repiten en la misma población. Entonces hay redundandia en la codificación ayudando a reducir los errores de codificaciones.     
+Por ejemplo si el estudio comenzó en 2023 y solamente hay una población. Los individuos podrían tener una codificación siguiente 23001, 23002, 23003, ... 23152 para los 152 individuos encontrado y marcado ese año.  El siguiente año se muestra esos individuos y nuevos individuos encontrado comenzarían con 24153. De esta forma ya se conoce cuando fue el primer año de muestreo del individuo y esos nuevos individuos no se confunde con los del año anterior. Cada año comenzaría con identificación del año, y la numeración de los individuos no se repiten en la misma población. Entonces hay redundancia en la codificación ayudando a reducir los errores de codificaciones.     
 
 ###### Multiples poblaciones
 
-Siguiendo con el mismo concepto pero múltiples poblaciones, la numeración de la población pudiese utilizar una codificación alfa numérica, donde la letra del alfabeto representa la población y la número los individuos.  Siguiera así A23001, A23002,..., 23xxx para la primera población y B23001, B23002,..., B23xxx para las segunda población. 
+Siguiendo con el mismo concepto pero múltiples poblaciones, la numeración de la población pudiese utilizar una codificación alfa numérica, donde la letra del alfabeto representa la población y la número los individuos.  Siguiera así A23001, A23002,..., 23xxx para la primera población y B23001, B23002,..., B23xxx para las segunda población, etc. 
 
 
 ### Relocalización de individuos
@@ -42,7 +45,7 @@ Para relocalizar los individuos se puede utilizar marcador permanentes o geo-ref
 
 Métodos de relocalizar los individuos en el campo puede ser complicado.
 
- - uno de los métodos es amarar al individuo la identificación individual de forma que se fácil de encontrar y que no se pierde.   Por ejemplo uno puede amarar el "tag" con hilo de pezcar grueso o "twist tags" alrededor de unos pseudobulbos o cerca de la planta. El la foto que sigue vemos una planta *Cypripedium acaule* en la región de North Bay, Ontario, Canada marcado con un tag metálico cerca de la planta. 
+ - uno de los métodos es amarar al individuo la identificación individual de forma que sea fácil de encontrar y que no se pierde.  Por ejemplo uno puede amarar el "tag" con hilo de pezcar grueso o "twist tags" alrededor de unos pseudobulbos o cerca de la planta. El la foto que sigue vemos una planta *Cypripedium acaule* en la región de North Bay, Ontario, Canada marcado con un tag metálico cerca de la planta. En ese caso habia muy pocos individuos muy cerca uno del otro y raramente habia confusión en relocalizar los datos. 
  
  ![Cypripedium acaule marcado; Foto: Tremblay](Figures/Cypripedium_acaule.jpg){width=50%}
  
@@ -51,7 +54,7 @@ Métodos de relocalizar los individuos en el campo puede ser complicado.
  
 ### Plantas pequeñas y epifitas
  
- Un método es grapar el "tag" al lado de los individuos. Este es un método que es adecuado para plantas pequeñas.  NO se debería poner el tag agarrado a la planta, ya que el peso del tag, podría causar daño a la planta, en adición que este caso las hojas no son persistente, por consecuencia al caer una hoja podría perder el "tag".  En esa foto se uso un pequeño clavo para poner el "tag", pero también usando una grapadora puede ser más eficiente y menos dañino al árbol.  En la foto siguiente se ve un tag de plastico amarado con un clavo al lado de de una planta de *Lepanthes eltoroensis* en Puerto Rico. Posteriormente se cambio el calvo por una grapadora normal.  Ese metodo funcionó muy bien. Muchos años posterior el muestreo original todavia las marcas estan presentes (Tremblay comunicación personal).   
+ Un método es grapar el "tag" al lado de los individuos. Este es un método que es adecuado para plantas pequeñas.  No se debería poner el "tag" agarrado a la planta, ya que el peso del "tag", podría causar daño a la planta, en adición que este caso las hojas no son persistente, por consecuencia al caer una hoja podría perder el "tag".  En la foto se uso un pequeño clavo para poner el "tag", pero también usando una grapadora puede ser más eficiente y menos dañino al árbol.  En la foto siguiente se ve un "tag" de plastico amarado con un clavo al lado de de una planta de *Lepanthes eltoroensis* en Puerto Rico. Posteriormente se cambio el calvo por una grapadora normal.  Ese método funcionó muy bien y más facil. Muchos años posterior el muestreo original todavía las marcas están presentes (Tremblay comunicación personal).   
  
 ![Lepanthes eltoroensis marcado; Foto: Tremblay](Figures/Lep_eltoroensis.png){width=50%}
 
@@ -59,16 +62,16 @@ Métodos de relocalizar los individuos en el campo puede ser complicado.
 ### Marcas con banderas.
 
 
-Si el sitio esta bien protegido y no hay riesgos de atraer atención a las plantas se puede usar pequeñas banderas para facilitar la recaptura de las plantas.   
+Si el sitio esta bien protegido y no hay riesgos de atraer atención a las plantas se puede usar pequeñas banderas para facilitar la indentificación y recaptura las plantas.   
 
-NOTA importante: los "tags" no deberían ser facil de ver en el habitat ya que podría atraer atención al estudio y hay mucha gente que se llevan plantas del campo, incluyendo plantas que son partes de estudios. 
+NOTA importante: los "tags" no deberían ser fácil de ver en el hábitat ya que podría atraer atención al estudio ya que hay mucha gente que se llevan plantas del campo, incluyendo plantas que son partes de estudios. 
 
 
 ![Cypripedium acaule identificado con bandera numerada; Foto: Tremblay](Figures/Cyp_acaule_flag.jpg){width=50%}
  
 ### Metodos de triangulación
 
-Para especies terrestres donde 1) hay que reducir la atención a los individuos en el campo. El metodo de triangulación funciona muy bien.  Es necesario poner dos "pegs" estacas? permanentes en el suelo. Estos son las puntos de referencias que se usa en cada muestreo. Esa técnica es muy común y utilizada para monitorear orquídeas terrestres en Australia y no es invasiva. Se colocan dos estacas fijas en una población y se utilizan dos metros para identificar la distancia entre las estacas y la planta de interés. Las distancias desde las dos clavijas se utilizan para identificar individuos en las poblaciones. Este es un muy buen método cuando los individuos no están demasiado cerca uno del otro (menos de 1 cm de distancia). Es fácil y bastante preciso y deja muy poca evidencia en el campo. Si existe la posibilidad de que herbívoros, pájaros, animales o humanos se sientan atraídos por las etiquetas y perturben el área, este es un buen método. 
+Para especies terrestres donde 1) hay que reducir la atención a los individuos en el campo. El método de triangulación funciona muy bien.  Es necesario poner dos "pegs" estacas? permanentes en el suelo. Estos son las puntos de referencias que se usa en cada muestreo. Esa técnica es muy común y utilizada para monitorear orquídeas terrestres en Australia y no es invasiva. Se colocan dos estacas fijas en una población y se utilizan dos metros para identificar la distancia entre las estacas y la planta de interés. Las distancias desde las dos clavijas se utilizan para identificar individuos en las poblaciones. Este es un muy buen método cuando los individuos no están demasiado cerca uno del otro (menos de 1 cm de distancia). Es fácil y bastante preciso y deja muy poca evidencia en el campo. Si existe la posibilidad de que haya herbívoros, pájaros, animales o humanos se sientan atraídos por las etiquetas y perturben el área, este es un buen método. 
  
  
 
@@ -82,9 +85,9 @@ Para especies terrestres donde 1) hay que reducir la atención a los individuos 
 
 ## Variables a recoger en el campo
 
-La base de los estudios de dinamica poblacional es evaluar las transiciones entre las etapas de vida incluyendo mortantad y su reprodución.  La información que se recoge del campo tiene que ser facil de recoger y consistente y sin error. Si seguimos ejemplos de los trabajos de campo de Tremblay [ref] con *Lepanthes*, las etapas incluidas son plantulas, juveniles, adultos no reproductivos y adultos reproductivos.  Cada una de estas estapas estan definida especificamente para ese genero. 
+La base de los estudios de dinámica poblacional es evaluar las transiciones entre las etapas de vida incluyendo mortantad y su reprodución.  La información que se recoge del campo tiene que ser fácil de recoger y consistente y sin error (el menos de error possible). Si seguimos ejemplos de los trabajos de campo de Tremblay [ref] con *Lepanthes*, las etapas incluidas son plántulas, juveniles, adultos no reproductivos y adultos reproductivos.  Cada una de estas etapas están definida especificamente para ese genero. 
 
- - **plantula**: individuo que no tiene ninguna hoja con peciolo.
+ - **plantula**: individuo que no tiene ninguna hoja con peciolo, sin **lepanthiform sheet**.
  - **juvenil**: individuo que tiene hojas con peciolo pero no hay ninguna evidencia que fue reproductiva en el pasado (las base de las inflorescencia son persistente)
  - **adulto non-reproductivo**: individuos con inflorescencias secas (ninguna verde)
  - **adulto reproductivo**: individuo con inflorescencia verdes con o sin flores o frutos. 
@@ -94,30 +97,31 @@ Dependiendo de los estudios pudiese haber más etapas, por ejemplo Tremblay [ ] 
 Otro ejemplo es el estudio de Hernández-Apolinar con la especie xx. donde incluyo.....   
 
 
-Determinar cuantas categoria deberia ser utilizados y cuales es muy dinamica y depende de la especies, número individuos y las preguntas de interes. 
+Determinar cuantas categoría debería ser utilizados y cuales es muy dinámica y depende de la especies, número individuos y las preguntas de interés. 
 
-Las variables a recoger tiene que incluir el minimo las siguientes
+Las variables a recoger tiene que incluir el mínimo las siguientes
 
   - la etapa en el tiempo t
-  - si esta vivo o muerto en el tiempo t
-  - la cantidad de flores en el tiempo t
-  - la cantidad de frutos en el tiempo t
-  - la presencia y "tagging" de nuevos individuos en el tiempo t+1
+  - si esta vivo o muerto en el tiempo t+i
+  - la cantidad de flores en el tiempo t y t+i
+  - la cantidad de frutos en el tiempo t y t+i
+  - la presencia y "tagging" de nuevos individuos en el tiempo t+i
   
   
 Otras variables que pudiese recoger incluye
 
-  - el tamaño de las hojas o la hoja más grande 
-      - *Brasavola cucculata* []: las plantas necesitan un tamaño minimo de largo de hoja antes de florecer
+  - el tamaño de las hojas o la hoja más grande o la cantidad de hojas 
+      - *Brasavola cucculata* []: las plantas necesitan un tamaño mínimo de largo de hoja antes de florecer
   - el número de pseudobulbo
       - ....
   - la altura de la inflorescencia
-      - *Caladenia valida* []: la altura de la inflorescencia impacta la probabilidad de producir frutos
+      - *Caladenia valida* []: la altura de la inflorescencia impacta la probabilidad de producir frutos (de ser polinizada)
   - la altura en el árbol de las epífitas
-     - *Brasavola cucculata* []: la plantas muy bajo menos de 1.5m son depredadas por la cabras
+     - *Brasavola cucculata* []: la localización de la planta sobre el forofito. Las plantas muy bajo, menos de 1.5m son depredadas por la cabras
   - el número de "ramet", un indice del tamaño del genotipo en plantas con crecimiento horizontal
     - *Cypripedium calceolus var. parviflorum* [Tremblay]: Los estudios evolutivos tienen que reconocer la diferencia entre un "ramet" y un "genet".
   - indicadores de herbivoria sobre la planta
+  
   
   - indicadores de la cantidad plagas sobre la planta como "rust" 
   

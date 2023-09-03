@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Number of populations per species study | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Number of populations per species study | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-30" />
+<meta name="date" content="2023-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -204,7 +204,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.1</b> Identificar la especie de estudio</a></li>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.1</b> Identificar la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#semillas"><i class="fa fa-check"></i><b>4.1.1</b> Semillas</a></li>
+<li class="chapter" data-level="4.1.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#plantulas"><i class="fa fa-check"></i><b>4.1.2</b> Plantulas</a></li>
+</ul></li>
 <li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcar-los-individuos-en-el-campo"><i class="fa fa-check"></i><b>4.2</b> Marcar los individuos en el campo</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-de-marca-y-recaptura"><i class="fa fa-check"></i><b>4.2.1</b> Métodos de marca y recaptura</a></li>
@@ -494,8 +498,7 @@ div.csl-indent {
 <span id="cb84-6"><a href="number-of-populations-per-species-study.html#cb84-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frequency&quot;</span>)<span class="sc">+</span></span>
 <span id="cb84-7"><a href="number-of-populations-per-species-study.html#cb84-7" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 </details>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 rows containing non-finite values (`stat_bin()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -504,8 +507,7 @@ div.csl-indent {
 <span id="cb87-3"><a href="number-of-populations-per-species-study.html#cb87-3" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Duración_Epi_Ter.png&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 rows containing non-finite values (`stat_bin()`).</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="number-of-populations-per-species-study.html#cb90-1" tabindex="-1"></a><span class="fu">plot</span>(index_O<span class="sc">$</span>Lon,index_O<span class="sc">$</span>Lat,<span class="at">main =</span> <span class="st">&quot;Location&quot;</span>)</span></code></pre></div>
@@ -755,15 +757,13 @@ hist(lambdaVals, main = “Lambda values”)</p>
 <span id="cb117-3"><a href="number-of-populations-per-species-study.html#cb117-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span>Habit_Type)<span class="sc">+</span></span>
 <span id="cb117-4"><a href="number-of-populations-per-species-study.html#cb117-4" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 </details>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="number-of-populations-per-species-study.html#cb119-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Terr_Epi_lambda.png&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p>The number of populations</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="number-of-populations-per-species-study.html#cb121-1" tabindex="-1"></a>x2 <span class="sc">%&gt;%</span> </span>
@@ -858,15 +858,13 @@ hist(lambdaVals, main = “Lambda values”)</p>
 <span id="cb127-29"><a href="number-of-populations-per-species-study.html#cb127-29" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)<span class="sc">+</span></span>
 <span id="cb127-30"><a href="number-of-populations-per-species-study.html#cb127-30" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 </details>
-<pre><code>## Warning: Removed 1 rows containing non-finite values
-## (`stat_boxplot()`).</code></pre>
+<pre><code>## Warning: Removed 1 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="number-of-populations-per-species-study.html#cb129-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 1 rows containing non-finite values
-## (`stat_boxplot()`).</code></pre>
+<pre><code>## Warning: Removed 1 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 <p>Test difference in life span.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="number-of-populations-per-species-study.html#cb132-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>

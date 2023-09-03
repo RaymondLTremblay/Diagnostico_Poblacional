@@ -33,6 +33,8 @@ ejemplo-de-un-cicle-de-vida-incompleto-y-biologicamente-erroneos
 referencias-1
 como-recopilar-datos-en-el-campo
 identificar-la-especie-de-estudio
+semillas
+plantulas
 marcar-los-individuos-en-el-campo
 métodos-de-marca-y-recaptura
 identificaciones-de-individuos

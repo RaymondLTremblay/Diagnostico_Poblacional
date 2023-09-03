@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Matrices de transicion, fecundidad y clonal | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Matrices de transicion, fecundidad y clonal | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-30" />
+<meta name="date" content="2023-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -204,7 +204,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.1</b> Identificar la especie de estudio</a></li>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.1</b> Identificar la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#semillas"><i class="fa fa-check"></i><b>4.1.1</b> Semillas</a></li>
+<li class="chapter" data-level="4.1.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#plantulas"><i class="fa fa-check"></i><b>4.1.2</b> Plantulas</a></li>
+</ul></li>
 <li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcar-los-individuos-en-el-campo"><i class="fa fa-check"></i><b>4.2</b> Marcar los individuos en el campo</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-de-marca-y-recaptura"><i class="fa fa-check"></i><b>4.2.1</b> Métodos de marca y recaptura</a></li>
@@ -443,7 +447,7 @@ div.csl-indent {
 </div>
 <div id="tres-tipos-de-matrices" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Tres tipos de matrices<a href="Fertilidad.html#tres-tipos-de-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Para facilitar los analisis y interpretaciones es necesario tener claro la diferencias en los parámetros que provienen de transiciones, fecundidades y clonaje, cada submatriz se suma para tener un modelo de una matriz poblacional. La suma de cada una de esas sub-matrices resulta en la matriz de transiciones para evaluar algunos de los parametros del crecimiento poblacional.</p>
+<p>Para facilitar los análisis y interpretaciones es necesario tener claro la diferencias en los parámetros que provienen de transiciones, fecundidades y clonaje, cada sub-matriz se suma para tener un modelo de una matriz poblacional. La suma de cada una de esas sub-matrices resulta en la matriz de transiciones para evaluar algunos de los parametros del crecimiento poblacional.</p>
 <p>Definiciones de las matrices</p>
 <ul>
 <li>MatU = Matriz de transiciones</li>
@@ -493,8 +497,9 @@ div.csl-indent {
 </div>
 <div id="matc-matriz-de-clonación" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> MatC = Matriz de clonación<a href="Fertilidad.html#matc-matriz-de-clonación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Esa matriz representa la información para especies que se reproducen por clonaje. Nota que este necesario lo que se define por clonaje. Por ejemplo un individuo de Epidendrum que crece y que tenga más tallos, no debería ser considerado clonaje, pero crecimiento del individuo. Al contrario un individuo que crece de forma que la planta madre se separa en dos o más partes donde no comparten connección pudiese ser considerado clonaje. Otra alternativa es que hay muchas especies de orquideas que producen keiki, el momento que estos se separan de la madre se puden considerar como un individuo a parte.</p>
-<p>Se deberia enfatizar que añadir el concepto de clonaje dentro de la matriz de transiones resulta en estimados de parametros diferentes, tal como el tamaño efectivo de población, Ne, en adición de evaluar otros conceptos evolutivos. En estudios evolutivos no es el individuo como tal que es la unidad de interes pero el individuo como fuente de diversidad genética, por consecuencia individuos (clones) que son geneticamente igual son evolutivamente el mismo individuos aunque esten seperado fisicamente. Las poblaciones organizados en clones affecta la interpretacion de datos tanto en los estudios ecologico y evolutivos <span class="citation">Cook (<a href="#ref-cook1983clonal">1983</a>)</span>. Cuando se estudia especies con clonación hay que diferenciar entre los que es el “ramet” y un “genet”. Los genet son la suma de todas las partes “ramet” que tiene la misma genetica. Los “ramet”, son las partes de individuales. En orquídea se podría considerar cada seudobulbo como un ramet y la suma de todos los seudobulbo como el “genet”. Hay acercamiento para tomar en cuenta la adequación de los “individuos” en la matriz y por consequencia intergrar el concepto de clonación en los estimados. vea: <span class="citation">McGraw and Caswell (<a href="#ref-mcgraw1996estimation">1996</a>)</span>.</p>
+<p>Esa matriz representa la información para especies que se reproducen por clonaje. Nota que hay necesitar de definir lo que es crecimiento por clonaje. Por ejemplo un individuo de <em>Epidendrum</em> que crece y que tenga más tallos, no debería ser considerado clonaje, pero crecimiento del individuo. Al contrario un individuo que crece de forma que la planta madre se separa en dos o más partes donde no comparten conexión pudiese ser considerado clonaje. Otra alternativa es que hay muchas especies de orquídeas que producen <em>keiki</em>, el momento que estos se separan de la madre se pueden considerar como el mismo individuo (geneticamente igual) a parte (ecologicamente distincto).</p>
+<p>Necesitamos fotos de orquídeas con clonaje y keiki (quien puede ayudar)</p>
+<p>Se debería enfatizar que añadir el concepto de clonaje dentro de la matriz de transiones resulta en estimados de parámetros diferentes, tal como el tamaño efectivo de población, Ne, en adición de evaluar otros conceptos evolutivos. En estudios evolutivos no es el individuo como tal que es la unidad de interés pero el individuo como fuente de diversidad genética, por consecuencia individuos (clones) que son genéticamente igual son evolutivamente el mismo individuos aunque estén separado físicamente. Las poblaciones organizados en clones afecta la interpretación de datos tanto en los estudios ecológico y evolutivos <span class="citation">Cook (<a href="#ref-cook1983clonal">1983</a>)</span>. Cuando se estudia especies con clonación hay que diferenciar entre los que es el “ramet” y un “genet”. Los “genets” son la suma de todas las partes “los ramets” que tiene la misma genética. Los “ramet”, son las partes individuales del individuo. En orquídea se podría considerar cada seudobulbo como un ramet y la suma de todos los seudobulbo como el “genet”. Hay acercamiento para tomar en cuenta la adecuación de los “individuos” en la matriz y por consecuencia intergrar el concepto de clonación en los estimados. vea: <span class="citation">McGraw and Caswell (<a href="#ref-mcgraw1996estimation">1996</a>)</span>.</p>
 
 </div>
 </div>
