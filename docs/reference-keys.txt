@@ -129,7 +129,6 @@ lista-de-especies-de-orquídeas-en-la-base-de-datos-de-copadre
 how-many-unique-studies
 number-of-populations-per-species-study
 important-to-include-only-matrices-that-are-annual.
-traducción-del-articulo-a-standard-protocol-to-report-discrete-stage-structured-demographic-information
 dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba
 nhora
 impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional
