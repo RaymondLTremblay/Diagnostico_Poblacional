@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Dinamica_Poblacional</title>
+  <title>Chapter 25 26-Calcular_Transiciones | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Dinamica_Poblacional" />
+  <meta property="og:title" content="Chapter 25 26-Calcular_Transiciones | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dinamica_Poblacional" />
+  <meta name="twitter:title" content="Chapter 25 26-Calcular_Transiciones | Dinamica_Poblacional" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="qué-es-el-analisis-de-dinamica-poblacional.html"/>
+<link rel="prev" href="hojas-de-datos-en-el-campo.html"/>
+<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -462,27 +462,107 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Dinamica_Poblacional</h1>
-<p class="author"><em></em></p>
-<p class="date"><em>2023-09-06</em></p>
-</div>
-<div id="dinámica-poblacional" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Dinámica Poblacional<a href="index.html#dinámica-poblacional" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento los patrones y processos intra-especifica y entre-especies. Tradicionalmente muchos de los trabajos de dinamica poblacional se enfocarón en los estudios intra-especifica, fomentando una perpestiva que las especies no enteractuan con su ambiente biotico.</p>
-<div id="objetivo-del-libro" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Objetivo del libro:<a href="index.html#objetivo-del-libro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Este libro digital</p>
+<div id="calcular_transiciones" class="section level1 hasAnchor" number="25">
+<h1><span class="header-section-number">Chapter 25</span> 26-Calcular_Transiciones<a href="calcular_transiciones.html#calcular_transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="calcular_transiciones.html#cb218-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb218-2"><a href="calcular_transiciones.html#cb218-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
+</details>
+<pre><code>## Rows: 35 Columns: 3
+## ── Column specification ──────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): stage, next_stage
+## dbl (1): fertility
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="calcular_transiciones.html#cb220-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 35 × 3
+##    stage next_stage fertility
+##    &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;
+##  1 p     p                  0
+##  2 p     p                  0
+##  3 p     p                  0
+##  4 p     p                  0
+##  5 p     p                  0
+##  6 p     d                  0
+##  7 p     d                  0
+##  8 p     j                  0
+##  9 p     d                  0
+## 10 p     d                  0
+## # ℹ 25 more rows</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="calcular_transiciones.html#cb222-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb222-2"><a href="calcular_transiciones.html#cb222-2" tabindex="-1"></a></span>
+<span id="cb222-3"><a href="calcular_transiciones.html#cb222-3" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb222-4"><a href="calcular_transiciones.html#cb222-4" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(Especie_desconocida), </span>
+<span id="cb222-5"><a href="calcular_transiciones.html#cb222-5" tabindex="-1"></a>                        <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
+<span id="cb222-6"><a href="calcular_transiciones.html#cb222-6" tabindex="-1"></a>                        <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb222-7"><a href="calcular_transiciones.html#cb222-7" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
+</details>
+<pre><code>## $T
+##    
+##              p          j          a
+##   p 0.45454545 0.00000000 0.00000000
+##   j 0.09090909 0.63636364 0.00000000
+##   a 0.00000000 0.18181818 0.66666667
+## 
+## $F
+##    
+##             p         j         a
+##   p 0.0000000 0.0000000 0.3333333
+##   j 0.0000000 0.0000000 0.0000000
+##   a 0.0000000 0.0000000 0.0000000</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="calcular_transiciones.html#cb224-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span></code></pre></div>
+</details>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="calcular_transiciones.html#cb225-1" tabindex="-1"></a>TF<span class="sc">$</span>T</span></code></pre></div>
+</details>
+<pre><code>##    
+##              p          j          a
+##   p 0.45454545 0.00000000 0.00000000
+##   j 0.09090909 0.63636364 0.00000000
+##   a 0.00000000 0.18181818 0.66666667</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="calcular_transiciones.html#cb227-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb227-2"><a href="calcular_transiciones.html#cb227-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>T, <span class="at">stages=</span>stages)</span></code></pre></div>
+</details>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2d633eeec63b4e6c4c7b" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2d633eeec63b4e6c4c7b">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juevnil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juevnil\"; \"adulto\" } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juevnil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juevnil\" -> \"juevnil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juevnil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="calcular_transiciones.html#cb228-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>F, <span class="at">stages=</span>stages)</span></code></pre></div>
+</details>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f86e9464bd1c0c83776f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f86e9464bd1c0c83776f">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juevnil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juevnil\"; \"adulto\" } [style=invis] \"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Uniendo ambas matriz en una</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="calcular_transiciones.html#cb229-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
+<span id="cb229-2"><a href="calcular_transiciones.html#cb229-2" tabindex="-1"></a></span>
+<span id="cb229-3"><a href="calcular_transiciones.html#cb229-3" tabindex="-1"></a>matA</span></code></pre></div>
+</details>
+<pre><code>##    
+##              p          j          a
+##   p 0.45454545 0.00000000 0.33333333
+##   j 0.09090909 0.63636364 0.00000000
+##   a 0.00000000 0.18181818 0.66666667</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="calcular_transiciones.html#cb231-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb231-2"><a href="calcular_transiciones.html#cb231-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
+</details>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bcc12bdacce876818486" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bcc12bdacce876818486">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juevnil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juevnil\"; \"adulto\" } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juevnil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juevnil\" -> \"juevnil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juevnil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="qué-es-el-analisis-de-dinamica-poblacional.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hojas-de-datos-en-el-campo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -513,7 +593,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/26-Calcular_Transiciones.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -521,7 +601,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/index.Rmd",
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/26-Calcular_Transiciones.Rmd",
 "text": null
 },
 "download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub"],

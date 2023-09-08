@@ -62,7 +62,7 @@ tres-tipos-de-matrices
 matu-matriz-de-transiciones
 matf-matriz-de-fecundidad
 matc-matriz-de-clonación
-método-bayesiano-de-calcular-las-transciones
+método-bayesiano-de-calcular-las-transciones-y-fecundidades
 el-paquete-raretrans
 instalación-de-los-paquetes-1
 instalación-de-raretrans-2
@@ -148,6 +148,7 @@ diferentes_componentes_de_ciclo_de_vida
 por-anne-fabiola-aucencia-ecosur
 el-capitulo-sera-movido-a-otra-posicion-en-el-libro
 hojas-de-datos-en-el-campo
+calcular_transiciones
 intro
 a-section
 otra-seccion

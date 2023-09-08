@@ -1,0 +1,53 @@
+# 26-Calcular_Transiciones
+
+
+```{r}
+library(readr)
+Especie_desconocida <- read_csv("Especie_desconocida.csv")
+```
+
+
+
+```{r Simple_matrix}
+Especie_desconocida
+
+library(popbio)
+
+# Crear TF = TRUE, añadir para formatear correctamente.
+TF <- popbio::projection.matrix(as.data.frame(Especie_desconocida), 
+                        stage = stage, fate = next_stage, 
+                        fertility="fertility", sort=c("p","j","a"), TF = TRUE)
+TF # Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
+```
+
+
+
+```{r}
+library(Rage)
+```
+
+
+```{r}
+
+
+
+TF$T
+stages <- c("plantula", "juevnil", "adulto")
+plot_life_cycle(TF$T, stages=stages)
+
+plot_life_cycle(TF$F, stages=stages)
+
+```
+
+Uniendo ambas matriz en una
+
+```{r}
+matA=TF$T+TF$F
+
+matA
+
+
+stages <- c("plantula", "juevnil", "adulto")
+plot_life_cycle(matA, stages=stages)
+```
+

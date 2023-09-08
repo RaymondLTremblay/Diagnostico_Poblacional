@@ -4,25 +4,17 @@ editor_options:
     wrap: 72
 ---
 
-# Método bayesiano de calcular las transciones
+# Método bayesiano de calcular las transciones y fecundidades
 
-Por: RLT
+Por: Raymond L. Tremblay
 
-El objetivo de este capítulo es demostrar algunos de los retos cuando uno trabaja con especies raras o con poca información para estimar los parametros de la matrices y como se puede resolver y estimar parametros más realista.
+El objetivo de este capítulo es demostrar algunos de los retos cuando uno trabaja con especies raras o con especies que tiene tamaño de muestra limitada. El onjetivo de este capitulo es demostrar como tomar encuenta los analisis cuando hay poca información para estimar los parametros de la matrices y como se puede resolver y estimar parametros más realista.
 
 Considera este primer ejemplo donde se estima que la especie de interes tenga tres etapas en su ciclo de vida (semillas, plantulas y adultos) y que solamente la etapa más grande (de adultez) puede producir semillas.
 
-Cuando se comienza un analisis de dinamica poblacional el primer paso es evaluar y tratar de ver cual son las etapas del ciclo de vida que pudiesen ser representativo de la dinamica principal de la especie.  
+Cuando se comienza un analisis de dinamica poblacional el primer paso es evaluar y tratar de ver cual son las etapas del ciclo de vida que pudiesen ser representativo de la dinámica principal de la especie y que sea realista cuando se considera el ciclo de vida de la especies y práctico en la recolección de datos.  
 
 En esta primera figura vemos lo que se considerá que ocurre en esa especie hipotetica.  
- 
- 
-```{r}
-library(Rage)
-```
- 
- 
-
 
 Ahora ud recoge los datos del campo y evalua las transiciones y fecundidad y tiene información siguiente.  
 
@@ -33,16 +25,31 @@ Ahora ud recoge los datos del campo y evalua las transiciones y fecundidad y tie
   - Por que no se encontró semillas que NO germinan?
   
  2. Todos las plantulas mueren
-    - Es realista que todas las plantulas se muere?
+    - Es realista que todas las plantulas se muere dentro del ciclo de vida de una especies?
     
     
-Aqui se ve dos de los problemas que resulta en PPM que no son realista, uno que no hay ninguna mortantad o que todo se muere.  El otro componente es el efecto del tamaño de muestra, considerá que su especie de interes Ud tuvo acceso solamente a 4 plantas adultas (un especies rara), y 4 de los 4 sobrevieron, por consecuencia 100% de supervivencia.  Si los individuos llegan a esta etapa son inmortales!!!?  Claramente es un resultado del tamaño de muestra y no del ciclo de vida de la especie.  
+Aqui se ve dos de los problemas que resulta en MPM que no son realista, uno que no hay ninguna mortantad o que todo se muere.  El otro componente es el efecto del tamaño de muestra, considerá que su especie de interes usted tuvo acceso solamente a 4 plantas adultas (un especies rara), y 4 de los 4 sobrevieron, por consecuencia 100% de supervivencia.  Si los individuos llegan a esta etapa son inmortales!!!?  Claramente es un resultado del tamaño de muestra y no del ciclo de vida de la especie. 
 
-El paquete raretrans ayuda en resolver estos asuntos illogicos y crear matrices que son más entre realistas al ciclo de vida de su especie.   
+Es importante reconocer la diferencia entre los valores recolectado y la historia de vida típica de una especies. Uno podría usar los datos que 100% de los individuos sobreviven pero eso es realista a largo plazo? 
 
+El paquete raretrans ayuda en resolver estos asuntos illogicos y crear matrices que son más realistas al considerar el ciclo de vida típica de la especie estudiada.  
+
+Aqui un ciclo de vida que no es biologicamente realista
+
+ - todas las semilla sobreviven y pasan a plantulas
+ - ninguna plantula sobrevive y/o pasa a ser adultos
+ - los adultos 90% se quedan como adulto pero ninguno produce semillas
+ 
+ NOTA que es posible que los datos que recolectan del campo sean estos, pero muchas veces esas observaciones son un resultado de la falta de tamaño de muestra.   
+ 
+
+ 
+ 
+ 
 ```{r}
 # hidden code to produce figures
 library(DiagrammeR)
+library(Rage)
 
 
 matA <- rbind(
@@ -61,6 +68,11 @@ plot_life_cycle(matA, stages=stages)
 
 ```
 
+Considera este ejemplo:
+
+ - Si Ud estudia los arboles Sequioa      y muestra los arboles grandes (con un dbh de > xxx), aunque muestra 1000+ individuos de esa etapa/tamaño es posible que no encontrará ninguno que muere. Por consecuencia el estimado de supervivencia de esos arboles es 100%.  Aunque uno sabe que si hubiese muestrado 10,000 o 100,000 arboles se podria haber detectado uno más que fallece.  
+
+
 ## El paquete "raretrans"
 
 La información original del uso del paquete se encuentra aqui https://doi.org/10.1016/j.ecolmodel.2021.109526.
@@ -69,7 +81,7 @@ La información original del uso del paquete se encuentra aqui https://doi.org/1
 
 Abstracto
 
-Las matrices de proyección de población son un medio común para predecir la persistencia de la población a corto y largo plazo para especies raras, amenazadas y en peligro de extinción. Los datos de tales especies pueden sufrir de tamaños de muestra pequeños y, en consecuencia, perder eventos demográficos raros que dan como resultado trayectorias de ciclo de vida incompletas o biológicamente poco realistas. Las matrices con valores faltantes (ceros; p. ej., sin observación de semillas que se transforman en plántulas) a menudo se reparan utilizando información previa de la literatura, otras poblaciones, períodos de tiempo, otras especies, estimaciones de las mejores conjeturas o, a veces, incluso se ignoran. Para paliar este problema, proponemos usar un modelo multinomial de Dirichlet para parametrizar transiciones y un Gamma para la reproducción para parchear los valores faltantes en estas matrices perforadas. Esto integra formalmente la información previa dentro de un marco bayesiano e incluye explícitamente el peso de la información previa en las distribuciones posteriores. Mostramos utilizando dos conjuntos de datos reales que el peso asignado a la información anterior influye principalmente en la dispersión de los posteriores, la inclusión de anteriores da como resultado matrices irreducibles y ergódicas, y se pueden hacer inferencias biológicamente más realistas sobre las probabilidades de transición. Debido a que los antecedentes se establecen explícitamente, los resultados son reproducibles y se pueden volver a evaluar si hay antecedentes alternativos disponibles en el futuro.
+Las matrices de proyección de población son un medio común para predecir la persistencia de la población a corto y largo plazo para especies raras, amenazadas y en peligro de extinción. Los datos de tales especies pueden sufrir de tamaños de muestra pequeños y, en consecuencia, perder eventos demográficos raros que dan como resultado trayectorias de ciclo de vida incompletas o biológicamente poco realistas. Las matrices con valores faltantes (ceros; p. ej., sin observación de semillas que se transforman en plántulas) a menudo se subsituyen utilizando información previa de la literatura, otras poblaciones, períodos de tiempo, otras especies, estimaciones de las mejores conjeturas o, a veces, incluso se ignoran. Para paliar este problema, proponemos usar un modelo multinomial de Dirichlet para parametrizar transiciones y un Gamma para los estimados de reproducción para substituir los valores faltantes en estas matrices perforadas. Esto integra formalmente la información previa dentro de un marco bayesiano e incluye explícitamente el peso de la información previa en las distribuciones posteriores. Mostramos utilizando dos conjuntos de datos reales que el peso asignado a la información anterior influye principalmente en la dispersión de los posteriores, la inclusión de anteriores da como resultado matrices irreducibles y ergódicas, y se pueden hacer inferencias biológicamente más realistas sobre las probabilidades de transición. Debido a que las previas se establecen explícitamente, los resultados son reproducibles y se pueden volver a evaluar si hay previas alternas disponibles en el futuro.
 
 ## Instalación de los paquetes #1
 
@@ -83,6 +95,8 @@ library(janitor)
 ```
 
 ## Instalación de raretrans #2
+
+Para instalar **raretrans** remover el **#** antes de los codigos para correrlos
 
 ```{r}
 #library(devtools)
@@ -125,29 +139,22 @@ transiciones individuales en un marco de datos
 Podemos utilizar `popbio::projection.matrix` para obtener los datos
 necesarios. Hacemos una demostración con los datos de transición y
 fertilidad de la orquídea epifita *Lepanthes elto* **POPNUM 250** en el
-**periodo 5**.
+**periodo 5**. *Lepanthes eltoroensis* es endemica de Puerto Rico, epifita y limitada a una pequeña región de la isla.  
 
 ## Paso 1: Cargar y fusionar los datos de población única para *L. elto*
 
 ```{r viewData}
-data("L_elto") # carga el conjunto de datos `L_elto` en memoria (incluido en el paquete `raretrans`)
+data("L_elto") # carga el conjunto de datos `L_elto` en la memoria de la computadora (los datos están incluido en el paquete `raretrans`)
 head(L_elto) 
 ```
 
 ## Organización de los datos en el "data.frame"
 
--   el primer paso es seleccionar los datos de una población y un
-    periodo de tiempo
--   el segundo paso es hacer un cambio en la terminología para el estado
-    más pequeño de "plantula" a "seedling"... Ese cambio es para que la
-    información presentada aqui sea la misma que en el documento en
-    ingles.
+-   el primer paso es seleccionar los datos de una población y un periodo de tiempo.
+-   el segundo paso es hacer un cambio en la terminología para el estado más pequeño de "plantula" a "seedling"... Ese cambio es para que la información presentada aqui sea la misma que en el documento en ingles.
 
-Cada fila de este data.frame de datos tiene columnas para la fase actual
-(stage), la fase siguiente (next_stage) y la fertilidad por individuo.
-Tenga en cuenta que "p" significa "plantula" en español. El primer
-conjunto de líneas de abajo cambia el nombre de la etapa del ciclo vital
-de "p" a "s" después de seleccionar la población y el periodo de tiempo.
+Cada fila de este data.frame de datos tiene columnas para la fase actual (stage, periodo **t**), la fase siguiente (next_stage, periodo **t+1**) y la fertilidad por individuo.
+Tenga en cuenta que "p" significa "plantula" en español. El primer conjunto de líneas de abajo cambia el nombre de la etapa del ciclo vital de "p" a "s" después de seleccionar la población y el periodo de tiempo.
 
 ```{r mungeData}
 onepop <- L_elto %>%   
@@ -160,12 +167,12 @@ onepop <- L_elto %>%
                                 TRUE ~ next_stage))
 # popbio::projection.matrix no funciona con tibbles, por consecuencia se convierte en data.frame
 
-head(onepop)
+head(onepop) # AHora tenemos solamente datos de la población #250 del periodo 5
 # Crear TF = TRUE, añadir para formatear corectamente.
 TF <- popbio::projection.matrix(as.data.frame(onepop), 
                         stage = stage, fate = next_stage, 
                         fertility="fertility", sort=c("s","j","a"), TF = TRUE)
-TF # Este es la estructura de etapas de vida para esa población 
+TF # Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
 ```
 
 ## Nota:
@@ -181,25 +188,16 @@ transición de plántula (*s*) a adulto (*a*) y la transición de *j* a
 
 ## Paso 2: Obtener el número inicial de individuos por etapa
 
-Dado que nuestras priores se basan en recuentos (número de individuos,
-*N*) y el tamaño de *muestreo equivalente* a priori se expresa como
-múltiplo del número de individuos observados, necesitamos obtener el
-número de individuos en cada etapa ($N$) en el primer periodo de tiempo.
+Dado que nuestras recuentos (número de individuos, *N*) y el tamaño de *muestreo equivalente* a priori se expresa como múltiplo del número de individuos observados, necesitamos obtener el número de individuos en cada etapa ($N$) en el primer periodo de tiempo.
 
-Utilizamos la función `raretrans::get_state_vector()` para obtener el
-recuento inicial de individuos, *N*. inicial, *N*.
+Utilizamos la función `raretrans::get_state_vector()` para obtener el recuento inicial de individuos, *N*.
 
 ```{r}
 N <- get_state_vector(onepop, stage = stage, sort=c("s","j","a")) 
-N # Un vector de # de individuos iniciales para cada etapa, nota que el "stage" son los individuos en el primer muestreo
+N # Un vector # de individuos iniciales para cada etapa, nota que la cantidad por etapa, "stage", son los individuos en el primer muestreo
 ```
 
-La lista de matrices y el vector de cuento de individuales no tienen por
-qué proceder de un data.frame como hemos hecho aquí. Mientras tengan el
-formato esperado, pueden crearse a mano. Usamos la población 231 en el
-periodo 2 como ejemplo, dividiendo la matriz en matrices de transición
-**T** y fecundidad **F**. Abajo, *m* significa "muerte", es decir,
-plantas que están muertas.
+La lista de matrices y el vector de cuento de individuales no tienen por qué proceder de un data.frame como hemos hecho aquí. Mientras tengan el formato esperado, pueden crearse a mano. Usamos la población 231 en el periodo 2 como ejemplo, dividiendo la matriz en submatrices de transición **T** y fecundidad **F**. Abajo, *m* significa "muerte", es decir, plantas que están muertas.
 
 ```{r, echo=FALSE}
 Tmat <- L_elto %>% 
@@ -209,8 +207,8 @@ Tmat <- L_elto %>%
   as.data.frame() %>% 
   xtabs(~fate + stage, data = .) %>% 
   as.matrix()
-Tmat <- Tmat[,-4] # tirar la columna para transiciones a la muerte
-N2 <- colSums(Tmat) #obtener el número total ... Averiguar: debe ser antes de 86
+Tmat <- Tmat[,-4] # remover la columna para transiciones a la muerte
+N2 <- colSums(Tmat) # obtener el número total. Averiguar: debe ser antes de 86 en este caso. 
 Tmat <- sweep(Tmat[-4,], 1, N2, "/") # normalizar a 1, descartando las transiciones *DESDE* la muerte
 # averiguar cuánta reproducción ocurrió en el año 2 mirando el año 3
 # L_elto %>% 
@@ -220,7 +218,7 @@ Tmat <- sweep(Tmat[-4,], 1, N2, "/") # normalizar a 1, descartando las transicio
 #   count(stage) 
 # 2 offspring from N[3] == 16 adults
 Fmat <- matrix(0, nrow=3, ncol=3) # crear una matriz de ceros. 
-Fmat[1,3] <- 2/16 # contar 16 adultos en esa etapa y dos plantulas en la proxima estapa. 
+Fmat[1,3] <- 2/16 # contar 16 adultos reproductivos en el tiempo t y dos plantulas en el proximo tiempo t+1, 2/16. 
 TF2 <- list(Tmat = Tmat, Fmat = Fmat)
 ```
 
@@ -229,14 +227,16 @@ TF2
 N2
 ```
 
-En esta matriz falta la transición de plántula a juvenil, y ninguno de
-los 6 juveniles murió, lo que lleva a una sobreestimación de la
-supervivencia. La tasa de crecimiento asintótico de la población
-observada es $\lambda =$ `r format(lambda(TF2$T + TF2$F),digits = 2)`.
-La matriz no es ergódica (no se puede llegar a cualquier otro estado
-desde uno o más estados), y reducible, lo que significa que una o más
-columnas y filas se pueden descartar y tienen las mismas propiedades
-eigen.
+
+¿Como se ve el ciclo de vida de esa población en ese periodo? 
+
+```{r}
+stages2 <- c("plantulas", "juveniles", "adultos")
+title <- NULL
+plot_life_cycle(Tmat, stages=stages2)
+```
+
+En esta matriz falta la transición de plántula a juvenil, y ninguno de los 6 juveniles murió, lo que lleva a una sobreestimación de la supervivencia. La tasa de crecimiento asintótico de la población observada es $\lambda =$ `r format(lambda(TF2$T + TF2$F),digits = 2)`. La matriz no es ergódica (no se puede llegar a cualquier otro estado desde uno o más estados), y reducible, lo que significa que una o más columnas y filas se pueden descartar y tienen las mismas propiedades eigen.
 
 ## Parte 2: Uso de priors para incorporar transiciones raras
 
