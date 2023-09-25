@@ -2,14 +2,13 @@
 
 ## Raymond y Roberto
 
-
-
 ```{r}
-library(Rcompadre)
+library(Rcompadre) # Paquete para trabajar con la base de datos de COMPADRE y COMADRE
 library(tidyverse)
 library(gt)
 library(kableExtra)
 ```
+
 ```{r, echo=FALSE}
 library(tidyverse)
 
@@ -44,19 +43,33 @@ cbPalette2 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 
 ```
 
-## Load data from **COMPADRE**
+Este capítulo es una introducción a COMPADRE y algunas de la funciones en los paquetes de **Rcompadre** y **Rage**. La información aqui no sustituye la información proviste \<<https://compadre-db.org/>\> y los tutoriales que se encuentran en la siguiente pagina \<<https://compadre-db.org/Education>\>
+
+## Acceso a los datos de COMPADRE.
+
+Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica poblacional de plantas) y COMADRE (datos de dinamica poblacional de animales). Los datos se pueden acesar directamente en la pagina de web o bajar el archivo de datos al siguiente enlace \<<https://compadre-db.org/Data/Compadre>\> seleccionando la pestaña de **Download COMPADRE**.
+
+## Para tener aceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
 
 ```{r}
 
-#load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
+load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
 
-load("~/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData") # work computer
+#load("~/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData") # work computer
+```
 
+##### Renombrar la base datos algo más sencillo
+
+```{r}
 ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB.
 
-names(ALLSp) # Nombre de las variables
+names(ALLSp) # Nombre de las variables en el archivo COMPADRE
 
+```
 
+#### Extraer (filter) solamente las especies de la familia **Orchidaceae** 
+
+```{r}
 index_O=ALLSp %>% 
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
@@ -64,54 +77,66 @@ index_O=ALLSp %>%
 
 ```
 
+### Lista de especies unicas de orquídeas en la base de datos de COMPADRE.
 
-## Lista de especies de orquídeas en la base de datos de COPADRE 
+Note que al momento hay 46 especies con nombres unicos en la base de datos
 
 ```{r}
 unique(index_O$SpeciesAccepted)
-index_O
-unique(index_O$DOI_ISBN)
 
-unique(index_O$Authors)
 ```
 
+La base de datos de orquidea tiene un total de 647 filas, por consecuencia tiene 647 matrices.  Esas matrices de la misma especie son de diferentes poblaciones, tiempo o un analisis teóricos. 
 
+```{r}
+index_O
+
+```
+
+Para saber de cuantos manuscritos distinctos probvienen esos datos uno puede evaluar la cantidad de DOI_ISBN distinctos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes tecnicos. 
+
+```{r}
+unique(index_O$DOI_ISBN)
+```
+
+Igualmente podemos evaluar cuantos distinctos autores son responsable de esas publicaciones. Un total de 37 autores unicos o en grupo son la fuente de esos articulos.  
+
+ROBERTO:
+HAY una manera de contabilizar los nombres especificos, no por grupo?
+
+```{r}
+unique(index_O$Authors)
+```
 
 ## How many unique studies?
 
 To know how long the studies were and be unique I need to select combinations of variables that make it unique.
 
-Subset 
+Subset
 
 ```{r}
 names(index_O)
 SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation,mat) %>% 
-  group_by(SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, StudyStart, StudyEnd) %>% 
+  group_by(SpeciesAccepted, YearPublication, OrganismType, StudyStart, StudyEnd) %>% 
   summarize(n_populations = length(unique(MatrixPopulation))) %>% 
   arrange(desc(n_populations)) %>% 
   mutate(StudyStart=as.numeric(StudyStart)) %>% 
   mutate(StudyEnd=as.numeric(StudyEnd)) %>% 
   drop_na(StudyStart, StudyEnd)
 
-SPECIES_O %>% kable()
+SPECIES_O %>% gt()
 
 
 write_csv(SPECIES_O, "Species_O.csv")
 ```
 
-
-
-# Number of populations per species study 
-
-
+# Number of populations per species study
 
 ```{r}
 as.data.frame(table(SPECIES_O$n_populations))
 
 
 ```
-
-
 
 ```{r}
 
@@ -134,10 +159,6 @@ ggsave("Lenght_survey.png")
 
 ```
 
-
-
-
-
 ```{r}
 
 index_O=index_O %>% 
@@ -159,18 +180,11 @@ ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
 ggsave("Duración_Epi_Ter.png")
 ```
 
-
-
-
 ```{r}
 plot(index_O$Lon,index_O$Lat,main = "Location")
 ```
 
-
-
 Getting the whole database for orchids
-
-
 
 ```{r}
 
@@ -194,7 +208,6 @@ x_OT=x %>%
   group_by(OrganismType)
 ```
 
-
 ```{r}
 #Orchids_New=as_cdb(index)
 #compadre$mat[index]
@@ -213,8 +226,6 @@ lambdaVals <- sapply(matA(xy), popdemo::eigs, what="lambda")
 summary(lambdaVals)
 hist(lambdaVals, main = "Lambda values")
 ```
-
-
 
 ```{r}
 
@@ -243,14 +254,11 @@ terr=x2 %>%
 
 ```
 
-Compadre_flagged <- cdb_flag(index_O)
+Compadre_flagged \<- cdb_flag(index_O)
 
-x <- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
+x \<- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
 
-lambdaVals <- sapply(matA(x), popdemo::eigs, what="lambda")
-summary(lambdaVals)
-hist(lambdaVals, main = "Lambda values")
-
+lambdaVals \<- sapply(matA(x), popdemo::eigs, what="lambda") summary(lambdaVals) hist(lambdaVals, main = "Lambda values")
 
 ```{r}
 
@@ -300,12 +308,7 @@ ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
 ggsave("Terr_Epi_lambda.png")
 ```
 
-
-
-
-
-The number of populations 
-
+The number of populations
 
 ```{r}
 x2 %>% 
@@ -313,9 +316,6 @@ x2 %>%
   summarize(n_populations = length(unique(MatrixPopulation))) %>% 
   arrange(desc(n_populations))
 ```
-
-
-
 
 ```{r}
 
@@ -328,20 +328,15 @@ compadre_replicated_pops <- x2 %>%
 compadre_replicated_pops
 ```
 
-
 ```{r}
 ggplot2::ggplot(x2, aes(Lon, Lat)) +
   borders(database = "world", fill = "grey80", col = NA) +
   geom_point(col = "steelblue", size = 1.8, alpha = 0.8)
 ```
 
-
-## Important to include only matrices that are annual.   
+## Important to include only matrices that are annual.
 
 Unless we data wrangle the life span so it represent a year worth instead of life span.
-
-
-
 
 ```{r}
 # function to calculate life expectancy
@@ -378,9 +373,7 @@ ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy)) +
 ggsave("Life_Span.png")
 ```
 
-
 Test difference in life span.
-
 
 ```{r}
 unique(compadre_life_expect$OrganismType)
@@ -397,18 +390,15 @@ leveneTest(life_expectancy~OrganismType, data=compadre_life_expect) # equal vari
 
 ```
 
-
 Use robust Approach
-
 
 ```{r}
 library(WRS2)
+source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T)
 #source("/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T)
 #source("/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt", chdir = T) ## Work laptop Computer
-source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
+#source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
 ```
-
-
 
 ```{r}
 unique(compadre_life_expect$OrganismType)
@@ -428,11 +418,6 @@ YSEC_E=Cf %>%
 yuenbt(YSEC_T$life_expectancy, YSEC_E$life_expectancy, alpha=.05, nboot=10000, side=T)
 
 ```
-
-
-
-
-
 
 ```{r}
 library(Rcompadre)
@@ -461,4 +446,3 @@ Compadre$null_stages <- sapply(Compadre$matA, NullStages)
 NullStages(Compadre$matA[[1]]) # apply function to single element
 Compadre$null_stages <- sapply(matA(Compadre), NullStages)
 ```
-

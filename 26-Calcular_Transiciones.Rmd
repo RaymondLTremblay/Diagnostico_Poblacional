@@ -4,19 +4,22 @@
 ```{r}
 library(readr)
 Especie_desconocida <- read_csv("Especie_desconocida.csv")
+
+Especie_desconocida
 ```
 
 
 
 ```{r Simple_matrix}
 Especie_desconocida
-
+head(Especie_desconocida)
 library(popbio)
 
 # Crear TF = TRUE, añadir para formatear correctamente.
 TF <- popbio::projection.matrix(as.data.frame(Especie_desconocida), 
-                        stage = stage, fate = next_stage, 
-                        fertility="fertility", sort=c("p","j","a"), TF = TRUE)
+                                stage = stage, fate = next_stage, 
+                                fertility="fertility", sort=c("p","j","a"), TF = TRUE)
+
 TF # Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
 ```
 
@@ -32,7 +35,10 @@ library(Rage)
 
 
 TF$T
-stages <- c("plantula", "juevnil", "adulto")
+stages <- c("plantula", "juvenil", "adulto")
+
+
+
 plot_life_cycle(TF$T, stages=stages)
 
 plot_life_cycle(TF$F, stages=stages)
@@ -49,5 +55,55 @@ matA
 
 stages <- c("plantula", "juevnil", "adulto")
 plot_life_cycle(matA, stages=stages)
+
+lambda(matA)
 ```
+
+ 
+
+```{r}
+
+library(readr)
+ejercicio_de_orquideas_Hoja_1 <- read_csv("ejercicio_de_orquideas_Hoja_1.csv")
+
+ejercicio_de_orquideas_Hoja_1
+
+unique(ejercicio_de_orquideas_Hoja_1$Etapa_2023)
+```
+
+
+```{r}
+# Crear TF = TRUE, añadir para formatear correctamente.
+TF2 <- popbio::projection.matrix(as.data.frame(ejercicio_de_orquideas_Hoja_1), 
+                                stage = Etapa_2023, 
+                                fate = Etapa_2024, 
+                                fertility=Fertility_2023, 
+                                sort=c("Plantula","Juvenil","Adulta"), TF = TRUE)
+
+TF2
+```
+
+
+```{r}
+matA=TF2$T+TF2$F
+
+matA
+
+
+stages <- c("plantula", "juvenil", "adulto")
+plot_life_cycle(matA, stages=stages)
+
+lambda(matA)
+```
+
+
+
+```{r}
+
+library(popdemo)
+
+
+
+```
+
 

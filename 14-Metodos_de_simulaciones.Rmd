@@ -1,9 +1,19 @@
-# Metodos de Simulaciones
+# Metodos de Simulaciones y estimaciones de intervalo de confianza
 
 
 Por: ???
 
 ## Introducciones a métodos de simulaciones
+
+### Estocasticidad demografica
+
+### Estocasticidad espacial
+
+### Estocasticidad temporal
+
+
+
+
 
 ## Ventaja de usar simulaciones
 

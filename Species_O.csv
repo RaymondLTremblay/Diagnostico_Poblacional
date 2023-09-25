@@ -1,55 +1,55 @@
-SpeciesAccepted,YearPublication,Authors,DOI_ISBN,OrganismType,StudyStart,StudyEnd,n_populations
-Lepanthes caritensis,2018,Crain; Tremblay; Ferguson,10.1002/1438-390X.1002,Epiphyte,2010,2012,18
-Epipactis atrorubens,2017,Hens; Pakanen; Jäkäläniemi; Tuomi; Kvist,10.1016/j.biocon.2017.04.019,Herbaceous perennial,2000,2015,8
-Lepanthes rubripetala,2010,Schödelbauerová; Tremblay; Kindlmann,10.1007/s10531-009-9724-1,Epiphyte,1994,2007,8
-Lepanthes rupestris,2001,Tremblay; Ackerman,10.1006/bijl.2000.0485,Herbaceous perennial,1994,1996,7
-Lepanthes rupestris,2014,Tremblay; McCarthy,10.1371/journal.pone.0102859,Herbaceous perennial,1993,1996,7
-Orchis purpurea,2010,Jacquemyns; Brys; Jongejans,10.1890/08-2321.1,Herbaceous perennial,2002,2008,7
-Lepanthes rubripetala,2001,Tremblay; Ackerman,10.1006/bijl.2000.0485,Epiphyte,1994,1996,6
-Lepanthes rubripetala,2015,Tremblay; Raventós; Ackerman; ,10.1093/aob/mcv031,Epiphyte,1994,1996,6
-Neotinea ustulata,2007,Shefferson; Tali,10.1111/j.1365-2745.2006.01195.x,Herbaceous perennial,1993,2005,6
-Serapias cordigera,2014,Pellegrino; Bellusci,10.1111/boj.12204,Herbaceous perennial,1999,2012,6
-Cephalanthera longifolia,2012,Shefferson; Kull; Tali; Kellett,10.1890/ES11-00328.1,Herbaceous perennial,2002,2007,4
-Cleistesiopsis bifaria,1991,Wells; Willems,90-5103-068-1,Herbaceous perennial,1983,1990,4
-Cypripedium calceolus,2005,Nicolè; Brzosko; Till-Bottraud,10.1111/j.1365-2745.2005.01010.x,Herbaceous perennial,1991,2000,4
-Cypripedium fasciculatum,2011,Thorpe; Stanley; Kayne; Latham,NA,Herbaceous perennial,1999,2007,4
-Oeceoclades maculata,2019,Riverón-Giró; Raventós; Damon; García-González; Mújica,10.1007/s10530-019-01945-7,Herbaceous perennial,2014,2016,4
-Platanthera hookeri,2007,Reddoch; Reddoch,10.3159/1095-5674(2007)134[369:PEOPHO]2.0.CO;2,Herbaceous perennial,1990,2005,4
-Brassavola cucullata,2020,Ackerman; Tremblay; Pérez; Madden; Bechtold; Boeken,NA,Epiphyte,2009,2014,3
-Cypripedium calceolus,2012,Shefferson; Kull; Tali; Kellett,10.1890/ES11-00328.1,Herbaceous perennial,2002,2007,3
-Dactylorhiza lapponica,2010,Sletvold; Øien; Moen,10.1016/j.biocon.2009.12.017,Herbaceous perennial,1990,2006,3
-Lepanthes eltoroensis,2001,Tremblay; Ackerman,10.1006/bijl.2000.0485,Epiphyte,1994,1996,3
-Cleistes bifaria,2006,Gregg; Kéry,10.1016/j.biocon.2005.09.044,Herbaceous perennial,1986,1996,2
-Cypripedium calceolus,2010,García; Goñi; Guzman,10.1111/j.1523-1739.2010.01466.x,Herbaceous perennial,1994,2002,2
-Erycina crista-galli,2007,Mondragón; Maldonado; Aguilar-Santelises,10.1111/boj.12204,Epiphyte,2004,2005,2
-Jacquiniella leucomelana,2009,Winkler; Hülber; Hietz,10.1093/aob/mcp188,Epiphyte,2002,2005,2
-Jacquiniella teretifolia,2009,Winkler; Hülber; Hietz,10.1093/aob/mcp188,Epiphyte,2002,2005,2
-Lepanthes caritensis,1997,Tremblay,NA,Epiphyte,1994,1996,2
-Lycaste aromatica,2009,Winkler; Hülber; Hietz,10.1093/aob/mcp188,Epiphyte,2002,2005,2
-Aspasia principissa,2006,Zotz; Schmidt,10.1016/j.biocon.2005.07.022,Epiphyte,1997,2004,1
-Broughtonia cubensis,2015,Raventós; Gonzalez; Mújica; Bonet,10.1111/btp.12231,Epiphyte,2006,2010,1
-Caladenia amonea,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia argocalla,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia clavigera,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia elegans,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia graniticola,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia macroclavia,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia oenochila,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia rosella,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Caladenia valida,2009,Tremblay; Pérez; Larcombe; Brown; Quarmby; Bickerton; French; Bould,10.1071/BT08167,Epiphyte,1996,2007,1
-Cleistesiopsis divaricata,1991,Wells; Willems,90-5103-068-1,Herbaceous perennial,1983,1990,1
-Corallorhiza trifida,2009,Iriondo; Giménez-Benavides; Albert; Lozano; Escudero,978-84-8014-746-0,Herbaceous perennial,2001,2004,1
-Cypripedium parviflorum,2014,Shefferson; Warren II; Pulliam,10.1111/1365-2745.12281,Herbaceous perennial,1994,2012,1
-Dactylorhiza lapponica,2013,Sletvold; Dahlgren; Øien; Moen; Ehrlén,10.1111/gcb.12167,Herbaceous perennial,1981,2010,1
-Dendrophylax lindenii,2015,Raventós; Gonzalez; Mújica; Bonet,10.1111/btp.12231,Epiphyte,2006,2010,1
-Epipactis atrorubens,2011,Jäkäläniemi; Crone; Närhi; Tuomi,10.1890/10-1957.1,Herbaceous perennial,2000,2008,1
-Guarianthe aurantiaca,2009,Mondragón,10.1111/j.1442-1984.2009.00230.x,Epiphyte,2004,2006,1
-Herminium monorchis,1998,Wells; Rothery; Cox; Bamford,10.1111/j.1095-8339.1998.tb02514.x,Herbaceous perennial,1966,1995,1
-Himantoglossum hircinum,2006,Pfeifer; Wiegand; Heinrich; Jetschke,10.1111/j.1365-2664.2006.01148.x,Herbaceous perennial,1976,2001,1
-Lepanthes acuminata,2018,Raventós; García-González; Riverón-Giró; Damon,10.1080/17550874.2018.1444110,Epiphyte,2013,2015,1
-Oncidium poikilostalix,2017,García-González; Damon; Raventós; Riverón-Giró; Mújica; Solís-Montero,10.1080/17550874.2017.1315840,Epiphyte,2013,2015,1
-Oncidium poikilostalix,2018,Raventós; García-González; Riverón-Giró; Damon,10.1080/17550874.2018.1444110,Epiphyte,2013,2015,1
-Ophrys sphegodes,1991,Wells; Willems,90-5103-068-1,Herbaceous perennial,1983,1990,1
-Spathoglottis plicata,2017,Falcón; Ackerman; Tremblay,10.1007/s10530-016-1318-8,Herbaceous perennial,2009,2011,1
-Telipogon helleri,2018,Raventós; García-González; Riverón-Giró; Damon,10.1080/17550874.2018.1444110,Epiphyte,2013,2015,1
-Tolumnia variegata,1993,Calvo,10.2307/1940473,Epiphyte,1988,1990,1
+SpeciesAccepted,YearPublication,OrganismType,StudyStart,StudyEnd,n_populations
+Lepanthes caritensis,2018,Epiphyte,2010,2012,18
+Epipactis atrorubens,2017,Herbaceous perennial,2000,2015,8
+Lepanthes rubripetala,2010,Epiphyte,1994,2007,8
+Lepanthes rupestris,2001,Herbaceous perennial,1994,1996,7
+Lepanthes rupestris,2014,Herbaceous perennial,1993,1996,7
+Orchis purpurea,2010,Herbaceous perennial,2002,2008,7
+Lepanthes rubripetala,2001,Epiphyte,1994,1996,6
+Lepanthes rubripetala,2015,Epiphyte,1994,1996,6
+Neotinea ustulata,2007,Herbaceous perennial,1993,2005,6
+Serapias cordigera,2014,Herbaceous perennial,1999,2012,6
+Cephalanthera longifolia,2012,Herbaceous perennial,2002,2007,4
+Cleistesiopsis bifaria,1991,Herbaceous perennial,1983,1990,4
+Cypripedium calceolus,2005,Herbaceous perennial,1991,2000,4
+Cypripedium fasciculatum,2011,Herbaceous perennial,1999,2007,4
+Oeceoclades maculata,2019,Herbaceous perennial,2014,2016,4
+Platanthera hookeri,2007,Herbaceous perennial,1990,2005,4
+Brassavola cucullata,2020,Epiphyte,2009,2014,3
+Cypripedium calceolus,2012,Herbaceous perennial,2002,2007,3
+Dactylorhiza lapponica,2010,Herbaceous perennial,1990,2006,3
+Lepanthes eltoroensis,2001,Epiphyte,1994,1996,3
+Cleistes bifaria,2006,Herbaceous perennial,1986,1996,2
+Cypripedium calceolus,2010,Herbaceous perennial,1994,2002,2
+Erycina crista-galli,2007,Epiphyte,2004,2005,2
+Jacquiniella leucomelana,2009,Epiphyte,2002,2005,2
+Jacquiniella teretifolia,2009,Epiphyte,2002,2005,2
+Lepanthes caritensis,1997,Epiphyte,1994,1996,2
+Lycaste aromatica,2009,Epiphyte,2002,2005,2
+Aspasia principissa,2006,Epiphyte,1997,2004,1
+Broughtonia cubensis,2015,Epiphyte,2006,2010,1
+Caladenia amonea,2009,Epiphyte,1996,2007,1
+Caladenia argocalla,2009,Epiphyte,1996,2007,1
+Caladenia clavigera,2009,Epiphyte,1996,2007,1
+Caladenia elegans,2009,Epiphyte,1996,2007,1
+Caladenia graniticola,2009,Epiphyte,1996,2007,1
+Caladenia macroclavia,2009,Epiphyte,1996,2007,1
+Caladenia oenochila,2009,Epiphyte,1996,2007,1
+Caladenia rosella,2009,Epiphyte,1996,2007,1
+Caladenia valida,2009,Epiphyte,1996,2007,1
+Cleistesiopsis divaricata,1991,Herbaceous perennial,1983,1990,1
+Corallorhiza trifida,2009,Herbaceous perennial,2001,2004,1
+Cypripedium parviflorum,2014,Herbaceous perennial,1994,2012,1
+Dactylorhiza lapponica,2013,Herbaceous perennial,1981,2010,1
+Dendrophylax lindenii,2015,Epiphyte,2006,2010,1
+Epipactis atrorubens,2011,Herbaceous perennial,2000,2008,1
+Guarianthe aurantiaca,2009,Epiphyte,2004,2006,1
+Herminium monorchis,1998,Herbaceous perennial,1966,1995,1
+Himantoglossum hircinum,2006,Herbaceous perennial,1976,2001,1
+Lepanthes acuminata,2018,Epiphyte,2013,2015,1
+Oncidium poikilostalix,2017,Epiphyte,2013,2015,1
+Oncidium poikilostalix,2018,Epiphyte,2013,2015,1
+Ophrys sphegodes,1991,Herbaceous perennial,1983,1990,1
+Spathoglottis plicata,2017,Herbaceous perennial,2009,2011,1
+Telipogon helleri,2018,Epiphyte,2013,2015,1
+Tolumnia variegata,1993,Epiphyte,1988,1990,1
