@@ -27,7 +27,9 @@ matA <- rbind(
   c(0.5, 0.3, 0.8),
   c(0.0, 0.4, 0.9)
 )
-stages <- c("seedling", "rosette", "flowering")
+
+
+stages <- c("semillas", "plantulas", "adultos")
 title <- NULL
 graph <- expand.grid(to = stages, from = stages)
 graph$trans <- round(c(matA), 3)
@@ -63,7 +65,9 @@ digraph {
   label=\"", title, "\"
 }"
   )
-)
+) 
+
+
 
 ```
 
@@ -71,8 +75,18 @@ digraph {
 ## Ejemplo de un cicle de vida con estadio de latencia
 
 ```{r}
+library(ggplot2)
 plot_life_cycle(matA, stages=stages, fontsize = 0)
+
 ```
+
+
+
+
+
+
+
+
 
 
 ## Code for color coding figure

@@ -25,8 +25,8 @@ rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bol
   # Remove panel background
   panel.background = element_blank(),
   # add thicker border lines
-    axis.line.x = element_line(colour = "black", size = 1),
-    axis.line.y = element_line(colour = "black", size = 1)
+    axis.line.x = element_line(colour = "black", linewidth  = 1),
+    axis.line.y = element_line(colour = "black", linewidth  = 1)
   )
 
 # The palette with grey:
@@ -52,8 +52,8 @@ Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica pobl
 ## Para tener aceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
 
 ```{r}
-
-load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
+compadre <- cdb_fetch("compadre")
+#load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
 
 #load("~/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData") # work computer
 ```
@@ -61,11 +61,22 @@ load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Pob
 ##### Renombrar la base datos algo más sencillo
 
 ```{r}
-ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB.
+#ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
 
-names(ALLSp) # Nombre de las variables en el archivo COMPADRE
+ALLSp=compadre
+names(ALLSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 ```
+
+
+#### Evaluate if new species are present in the data base
+
+```{r}
+Ex = ALLSp %>% 
+  filter(Genus %in% c("Epidendrum"))
+Ex # This shows that the species added Epidendrum xanthinum is not yet included in the data base
+```
+
 
 #### Extraer (filter) solamente las especies de la familia **Orchidaceae** 
 
@@ -74,7 +85,9 @@ index_O=ALLSp %>%
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
 
+index_O
 
+sort(unique(index_O$Genus))
 ```
 
 ### Lista de especies unicas de orquídeas en la base de datos de COMPADRE.
@@ -82,7 +95,8 @@ index_O=ALLSp %>%
 Note que al momento hay 46 especies con nombres unicos en la base de datos
 
 ```{r}
-unique(index_O$SpeciesAccepted)
+sort(unique(index_O$SpeciesAccepted))
+
 
 ```
 
@@ -99,24 +113,24 @@ Para saber de cuantos manuscritos distinctos probvienen esos datos uno puede eva
 unique(index_O$DOI_ISBN)
 ```
 
-Igualmente podemos evaluar cuantos distinctos autores son responsable de esas publicaciones. Un total de 37 autores unicos o en grupo son la fuente de esos articulos.  
+Igualmente podemos evaluar cuantos distintos autores son responsable de esas publicaciones. Un total de 37 autores unicos o en grupo son la fuente de esos artículos.  
 
-ROBERTO:
-HAY una manera de contabilizar los nombres especificos, no por grupo?
+## ROBERTO:
+HAY una manera de contabilizar los nombres específicos, no por grupo?
 
 ```{r}
 unique(index_O$Authors)
 ```
 
-## How many unique studies?
+## Cuantos estudios unicos?
 
-To know how long the studies were and be unique I need to select combinations of variables that make it unique.
+Para evaluar el largo de tiempo por estudio se necesita selecionar una combinación de variables unica
 
 Subset
 
 ```{r}
-names(index_O)
-SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation,mat) %>% 
+#names(index_O) Los nombres de las variables
+SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation, mat) %>% 
   group_by(SpeciesAccepted, YearPublication, OrganismType, StudyStart, StudyEnd) %>% 
   summarize(n_populations = length(unique(MatrixPopulation))) %>% 
   arrange(desc(n_populations)) %>% 
@@ -332,6 +346,8 @@ compadre_replicated_pops
 ggplot2::ggplot(x2, aes(Lon, Lat)) +
   borders(database = "world", fill = "grey80", col = NA) +
   geom_point(col = "steelblue", size = 1.8, alpha = 0.8)
+
+ggsave("orchid_map.jpg")
 ```
 
 ## Important to include only matrices that are annual.
@@ -346,7 +362,7 @@ lifeExpectancy <- function(matU, startLife) {
 }
 
 compadre_life_expect <- x2 %>% 
-  filter(ProjectionInterval >0.999) |> 
+  filter(ProjectionInterval >0.7) |> 
   filter(MatrixComposite == "Mean", # filter is the dplyr version of subset
          MatrixTreatment == "Unmanipulated",
          MatrixCaptivity == "W",
@@ -363,14 +379,74 @@ compadre_life_expect <- x2 %>%
  # filter(life_expectancy >= 1) %>% 
   mutate(OrganismType = reorder(OrganismType, life_expectancy, median))
 
-ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy)) +
-  geom_boxplot() +
+
+
+compadre_life_expect |> 
+  group_by(OrganismType) |> 
+  summarize(mean_LS= mean(life_expectancy, na.rm=TRUE),
+            sd_LS = sd(life_expectancy, na.rm=TRUE))
+
+
+ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy, colour=OrganismType)) +
+  geom_boxplot() +geom_point()+
   scale_y_log10() +
   coord_flip() +
-  labs(x = NULL, y = "Life expectancy (years)")+
-  rlt_theme
+  labs(x = NULL, y = "Life expectancy (log(years))")+
+  rlt_theme+
+  theme(legend.position = "none")
 
 ggsave("Life_Span.png")
+```
+
+
+
+```{r}
+
+#SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
+
+compadre_life_expect |> select(mat, Genus, SpeciesAccepted, life_expectancy) |> 
+  group_by(SpeciesAccepted) |> 
+  summarize(mean_LS= mean(life_expectancy, na.rm=TRUE),
+            sd_LS = sd(life_expectancy, na.rm=TRUE))
+
+
+ggplot(compadre_life_expect, aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour=OrganismType)) +
+  geom_boxplot() +
+  geom_point()+
+  scale_y_log10() +
+  coord_flip() +
+  labs(x = NULL, y = "Life expectancy (log(years))")+
+  rlt_theme+
+  theme(legend.position = "none")
+
+ggsave("Genus_Life_Span.png")
+```
+
+
+
+
+```{r}
+
+#SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
+
+compadre_life_expect |> 
+  group_by(Genus) |> 
+  summarize(mean_LS= mean(life_expectancy, na.rm=TRUE),
+            sd_LS = sd(life_expectancy, na.rm=TRUE)) |> 
+  filter(Genus %in% c("Caladenia"))
+
+compadre_life_expect |> 
+  filter(Genus %in% c("Caladenia")) |> 
+ggplot( aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour=OrganismType)) +
+  geom_boxplot() +
+  geom_point()+
+  #scale_y_log10() +
+  coord_flip() +
+  labs(x = NULL, y = "Life expectancy (years)")+
+  rlt_theme+
+  theme(legend.position = "none")
+
+ggsave("Caladenia_Life_Span.png")
 ```
 
 Test difference in life span.
@@ -394,10 +470,10 @@ Use robust Approach
 
 ```{r}
 library(WRS2)
-source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T)
+#source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T) # Home computer
 #source("/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T)
 #source("/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt", chdir = T) ## Work laptop Computer
-#source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
+source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
 ```
 
 ```{r}

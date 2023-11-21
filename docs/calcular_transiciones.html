@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 25 26-Calcular_Transiciones | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 25 26-Calcular_Transiciones | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-25" />
+<meta name="date" content="2023-11-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -289,15 +289,15 @@ div.csl-indent {
 <li class="chapter" data-level="10.5" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>10.5</b> Limitaciones</a></li>
 <li class="chapter" data-level="10.6" data-path="elasticidad.html"><a href="elasticidad.html#referencias-5"><i class="fa fa-check"></i><b>10.6</b> Referencias</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html"><i class="fa fa-check"></i><b>11</b> Dinámica de transiciones</a>
+<li class="chapter" data-level="11" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>11</b> Dinámica transitoria (transient dynamics)</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#definiciones-de-dt"><i class="fa fa-check"></i><b>11.1</b> Definiciones de DT</a></li>
-<li class="chapter" data-level="11.2" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#cual-es-la-ventaja-de-la-dt"><i class="fa fa-check"></i><b>11.2</b> Cual es la ventaja de la DT</a></li>
-<li class="chapter" data-level="11.3" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#como-se-calcula"><i class="fa fa-check"></i><b>11.3</b> Como se calcula</a></li>
-<li class="chapter" data-level="11.4" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#paquete-de-r-para-calcular-la-dt"><i class="fa fa-check"></i><b>11.4</b> Paquete de R para calcular la DT</a></li>
-<li class="chapter" data-level="11.5" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#limitaciones-1"><i class="fa fa-check"></i><b>11.5</b> Limitaciones</a></li>
-<li class="chapter" data-level="11.6" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#referencias-6"><i class="fa fa-check"></i><b>11.6</b> Referencias</a></li>
-<li class="chapter" data-level="11.7" data-path="dinámica-de-transiciones.html"><a href="dinámica-de-transiciones.html#section"><i class="fa fa-check"></i><b>11.7</b> </a></li>
+<li class="chapter" data-level="11.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#definiciones-de-dt"><i class="fa fa-check"></i><b>11.1</b> Definiciones de DT</a></li>
+<li class="chapter" data-level="11.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#cual-es-la-ventaja-de-la-dt"><i class="fa fa-check"></i><b>11.2</b> Cual es la ventaja de la DT</a></li>
+<li class="chapter" data-level="11.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#como-se-calcula"><i class="fa fa-check"></i><b>11.3</b> Como se calcula</a></li>
+<li class="chapter" data-level="11.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paquete-de-r-para-calcular-la-dt"><i class="fa fa-check"></i><b>11.4</b> Paquete de R para calcular la DT</a></li>
+<li class="chapter" data-level="11.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#limitaciones-1"><i class="fa fa-check"></i><b>11.5</b> Limitaciones</a></li>
+<li class="chapter" data-level="11.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#referencias-6"><i class="fa fa-check"></i><b>11.6</b> Referencias</a></li>
+<li class="chapter" data-level="11.7" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#section"><i class="fa fa-check"></i><b>11.7</b> </a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html"><i class="fa fa-check"></i><b>12</b> Elasticidad no lineal</a>
 <ul>
@@ -310,7 +310,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="13" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>13</b> LTRE</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="ltre.html"><a href="ltre.html#introducción-a-ltre"><i class="fa fa-check"></i><b>13.1</b> Introducción a LTRE</a></li>
+<li class="chapter" data-level="13.1" data-path="ltre.html"><a href="ltre.html#introducción-a-ltre"><i class="fa fa-check"></i><b>13.1</b> Introducción a LTRE</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="ltre.html"><a href="ltre.html#cómo-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>13.1.1</b> ¿Cómo diferencia la elasticidad de ERTV?</a></li>
+</ul></li>
 <li class="chapter" data-level="13.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>13.2</b> Métodos</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>14</b> Metodos de Simulaciones y estimaciones de intervalo de confianza</a>
@@ -340,7 +343,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="17.3.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-unicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.3.1</b> Lista de especies unicas de orquídeas en la base de datos de COMPADRE.</a></li>
 </ul></li>
-<li class="chapter" data-level="17.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#how-many-unique-studies"><i class="fa fa-check"></i><b>17.4</b> How many unique studies?</a></li>
+<li class="chapter" data-level="17.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>17.4</b> ROBERTO:</a></li>
+<li class="chapter" data-level="17.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>17.5</b> Cuantos estudios unicos?</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="number-of-populations-per-species-study.html"><a href="number-of-populations-per-species-study.html"><i class="fa fa-check"></i><b>18</b> Number of populations per species study</a>
 <ul>
@@ -479,11 +483,11 @@ div.csl-indent {
 <div id="calcular_transiciones" class="section level1 hasAnchor" number="25">
 <h1><span class="header-section-number">Chapter 25</span> 26-Calcular_Transiciones<a href="calcular_transiciones.html#calcular_transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="calcular_transiciones.html#cb215-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb215-2"><a href="calcular_transiciones.html#cb215-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="calcular_transiciones.html#cb268-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb268-2"><a href="calcular_transiciones.html#cb268-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## Rows: 35 Columns: 3
-## ── Column specification ────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): stage, next_stage
 ## dbl (1): fertility
@@ -491,7 +495,7 @@ div.csl-indent {
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="calcular_transiciones.html#cb217-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="calcular_transiciones.html#cb270-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 35 × 3
 ##    stage next_stage fertility
@@ -508,7 +512,7 @@ div.csl-indent {
 ## 10 p     d                  0
 ## # ℹ 25 more rows</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="calcular_transiciones.html#cb219-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="calcular_transiciones.html#cb272-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 35 × 3
 ##    stage next_stage fertility
@@ -525,7 +529,7 @@ div.csl-indent {
 ## 10 p     d                  0
 ## # ℹ 25 more rows</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="calcular_transiciones.html#cb221-1" tabindex="-1"></a><span class="fu">head</span>(Especie_desconocida)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="calcular_transiciones.html#cb274-1" tabindex="-1"></a><span class="fu">head</span>(Especie_desconocida)</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 6 × 3
 ##   stage next_stage fertility
@@ -537,14 +541,14 @@ div.csl-indent {
 ## 5 p     p                  0
 ## 6 p     d                  0</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="calcular_transiciones.html#cb223-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
-<span id="cb223-2"><a href="calcular_transiciones.html#cb223-2" tabindex="-1"></a></span>
-<span id="cb223-3"><a href="calcular_transiciones.html#cb223-3" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
-<span id="cb223-4"><a href="calcular_transiciones.html#cb223-4" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(Especie_desconocida), </span>
-<span id="cb223-5"><a href="calcular_transiciones.html#cb223-5" tabindex="-1"></a>                                <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
-<span id="cb223-6"><a href="calcular_transiciones.html#cb223-6" tabindex="-1"></a>                                <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb223-7"><a href="calcular_transiciones.html#cb223-7" tabindex="-1"></a></span>
-<span id="cb223-8"><a href="calcular_transiciones.html#cb223-8" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="calcular_transiciones.html#cb276-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb276-2"><a href="calcular_transiciones.html#cb276-2" tabindex="-1"></a></span>
+<span id="cb276-3"><a href="calcular_transiciones.html#cb276-3" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb276-4"><a href="calcular_transiciones.html#cb276-4" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(Especie_desconocida), </span>
+<span id="cb276-5"><a href="calcular_transiciones.html#cb276-5" tabindex="-1"></a>                                <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
+<span id="cb276-6"><a href="calcular_transiciones.html#cb276-6" tabindex="-1"></a>                                <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb276-7"><a href="calcular_transiciones.html#cb276-7" tabindex="-1"></a></span>
+<span id="cb276-8"><a href="calcular_transiciones.html#cb276-8" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
 </details>
 <pre><code>## $T
 ##    
@@ -560,10 +564,10 @@ div.csl-indent {
 ##   j 0.0000000 0.0000000 0.0000000
 ##   a 0.0000000 0.0000000 0.0000000</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="calcular_transiciones.html#cb225-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="calcular_transiciones.html#cb278-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="calcular_transiciones.html#cb226-1" tabindex="-1"></a>TF<span class="sc">$</span>T</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="calcular_transiciones.html#cb279-1" tabindex="-1"></a>TF<span class="sc">$</span>T</span></code></pre></div>
 </details>
 <pre><code>##    
 ##              p          j          a
@@ -571,24 +575,24 @@ div.csl-indent {
 ##   j 0.09090909 0.63636364 0.00000000
 ##   a 0.00000000 0.18181818 0.66666667</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="calcular_transiciones.html#cb228-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb228-2"><a href="calcular_transiciones.html#cb228-2" tabindex="-1"></a></span>
-<span id="cb228-3"><a href="calcular_transiciones.html#cb228-3" tabindex="-1"></a></span>
-<span id="cb228-4"><a href="calcular_transiciones.html#cb228-4" tabindex="-1"></a></span>
-<span id="cb228-5"><a href="calcular_transiciones.html#cb228-5" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>T, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="calcular_transiciones.html#cb281-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb281-2"><a href="calcular_transiciones.html#cb281-2" tabindex="-1"></a></span>
+<span id="cb281-3"><a href="calcular_transiciones.html#cb281-3" tabindex="-1"></a></span>
+<span id="cb281-4"><a href="calcular_transiciones.html#cb281-4" tabindex="-1"></a></span>
+<span id="cb281-5"><a href="calcular_transiciones.html#cb281-5" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>T, <span class="at">stages=</span>stages)</span></code></pre></div>
 </details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4955a741c941188353e1" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4955a741c941188353e1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juvenil\"; \"adulto\" } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aaf2da7cc5b888e8bacc" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-aaf2da7cc5b888e8bacc">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="calcular_transiciones.html#cb229-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>F, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="calcular_transiciones.html#cb282-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>F, <span class="at">stages=</span>stages)</span></code></pre></div>
 </details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6bc64e7ba4301e1fb4c4" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6bc64e7ba4301e1fb4c4">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juvenil\"; \"adulto\" } [style=invis] \"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e5cdd4fb1570192d8e93" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e5cdd4fb1570192d8e93">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Uniendo ambas matriz en una</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="calcular_transiciones.html#cb230-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
-<span id="cb230-2"><a href="calcular_transiciones.html#cb230-2" tabindex="-1"></a></span>
-<span id="cb230-3"><a href="calcular_transiciones.html#cb230-3" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="calcular_transiciones.html#cb283-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
+<span id="cb283-2"><a href="calcular_transiciones.html#cb283-2" tabindex="-1"></a></span>
+<span id="cb283-3"><a href="calcular_transiciones.html#cb283-3" tabindex="-1"></a>matA</span></code></pre></div>
 </details>
 <pre><code>##    
 ##              p          j          a
@@ -596,21 +600,21 @@ div.csl-indent {
 ##   j 0.09090909 0.63636364 0.00000000
 ##   a 0.00000000 0.18181818 0.66666667</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="calcular_transiciones.html#cb232-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb232-2"><a href="calcular_transiciones.html#cb232-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="calcular_transiciones.html#cb285-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb285-2"><a href="calcular_transiciones.html#cb285-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
 </details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ce65142e3ea43f1472cf" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ce65142e3ea43f1472cf">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juevnil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juevnil\"; \"adulto\" } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juevnil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juevnil\" -> \"juevnil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juevnil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-02941f8b03056bfbdedf" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-02941f8b03056bfbdedf">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juevnil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juevnil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juevnil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juevnil\" -> \"juevnil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juevnil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="calcular_transiciones.html#cb233-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="calcular_transiciones.html#cb286-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.7820926</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="calcular_transiciones.html#cb235-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb235-2"><a href="calcular_transiciones.html#cb235-2" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;ejercicio_de_orquideas_Hoja_1.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="calcular_transiciones.html#cb288-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb288-2"><a href="calcular_transiciones.html#cb288-2" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;ejercicio_de_orquideas_Hoja_1.csv&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## Rows: 125 Columns: 5
-## ── Column specification ────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): Etapa_2023, Etapa_2024, Fertility_2024
 ## dbl (2): ID, Fertility_2023
@@ -618,7 +622,7 @@ div.csl-indent {
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="calcular_transiciones.html#cb237-1" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="calcular_transiciones.html#cb290-1" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 125 × 5
 ##       ID Etapa_2023 Fertility_2023 Etapa_2024 Fertility_2024
@@ -635,18 +639,18 @@ div.csl-indent {
 ## 10    10 Adulta                  1 Muerte     &lt;NA&gt;          
 ## # ℹ 115 more rows</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="calcular_transiciones.html#cb239-1" tabindex="-1"></a><span class="fu">unique</span>(ejercicio_de_orquideas_Hoja_1<span class="sc">$</span>Etapa_2023)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="calcular_transiciones.html#cb292-1" tabindex="-1"></a><span class="fu">unique</span>(ejercicio_de_orquideas_Hoja_1<span class="sc">$</span>Etapa_2023)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;Juvenil&quot;  &quot;Adulta&quot;   &quot;Plantula&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="calcular_transiciones.html#cb241-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
-<span id="cb241-2"><a href="calcular_transiciones.html#cb241-2" tabindex="-1"></a>TF2 <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(ejercicio_de_orquideas_Hoja_1), </span>
-<span id="cb241-3"><a href="calcular_transiciones.html#cb241-3" tabindex="-1"></a>                                <span class="at">stage =</span> Etapa_2023, </span>
-<span id="cb241-4"><a href="calcular_transiciones.html#cb241-4" tabindex="-1"></a>                                <span class="at">fate =</span> Etapa_2024, </span>
-<span id="cb241-5"><a href="calcular_transiciones.html#cb241-5" tabindex="-1"></a>                                <span class="at">fertility=</span>Fertility_2023, </span>
-<span id="cb241-6"><a href="calcular_transiciones.html#cb241-6" tabindex="-1"></a>                                <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;Plantula&quot;</span>,<span class="st">&quot;Juvenil&quot;</span>,<span class="st">&quot;Adulta&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb241-7"><a href="calcular_transiciones.html#cb241-7" tabindex="-1"></a></span>
-<span id="cb241-8"><a href="calcular_transiciones.html#cb241-8" tabindex="-1"></a>TF2</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="calcular_transiciones.html#cb294-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb294-2"><a href="calcular_transiciones.html#cb294-2" tabindex="-1"></a>TF2 <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(ejercicio_de_orquideas_Hoja_1), </span>
+<span id="cb294-3"><a href="calcular_transiciones.html#cb294-3" tabindex="-1"></a>                                <span class="at">stage =</span> Etapa_2023, </span>
+<span id="cb294-4"><a href="calcular_transiciones.html#cb294-4" tabindex="-1"></a>                                <span class="at">fate =</span> Etapa_2024, </span>
+<span id="cb294-5"><a href="calcular_transiciones.html#cb294-5" tabindex="-1"></a>                                <span class="at">fertility=</span>Fertility_2023, </span>
+<span id="cb294-6"><a href="calcular_transiciones.html#cb294-6" tabindex="-1"></a>                                <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;Plantula&quot;</span>,<span class="st">&quot;Juvenil&quot;</span>,<span class="st">&quot;Adulta&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb294-7"><a href="calcular_transiciones.html#cb294-7" tabindex="-1"></a></span>
+<span id="cb294-8"><a href="calcular_transiciones.html#cb294-8" tabindex="-1"></a>TF2</span></code></pre></div>
 </details>
 <pre><code>## $T
 ##           
@@ -662,9 +666,9 @@ div.csl-indent {
 ##   Juvenil  0.0000000 0.0000000 0.0000000
 ##   Adulta   0.0000000 0.0000000 0.0000000</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="calcular_transiciones.html#cb243-1" tabindex="-1"></a>matA<span class="ot">=</span>TF2<span class="sc">$</span>T<span class="sc">+</span>TF2<span class="sc">$</span>F</span>
-<span id="cb243-2"><a href="calcular_transiciones.html#cb243-2" tabindex="-1"></a></span>
-<span id="cb243-3"><a href="calcular_transiciones.html#cb243-3" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="calcular_transiciones.html#cb296-1" tabindex="-1"></a>matA<span class="ot">=</span>TF2<span class="sc">$</span>T<span class="sc">+</span>TF2<span class="sc">$</span>F</span>
+<span id="cb296-2"><a href="calcular_transiciones.html#cb296-2" tabindex="-1"></a></span>
+<span id="cb296-3"><a href="calcular_transiciones.html#cb296-3" tabindex="-1"></a>matA</span></code></pre></div>
 </details>
 <pre><code>##           
 ##             Plantula   Juvenil    Adulta
@@ -672,17 +676,17 @@ div.csl-indent {
 ##   Juvenil  0.4905660 0.3571429 0.1818182
 ##   Adulta   0.0000000 0.3571429 0.4772727</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="calcular_transiciones.html#cb245-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb245-2"><a href="calcular_transiciones.html#cb245-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="calcular_transiciones.html#cb298-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb298-2"><a href="calcular_transiciones.html#cb298-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
 </details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d76a1c55f234aa8d7a4b" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d76a1c55f234aa8d7a4b">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\"; \"juvenil\"; \"adulto\" } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.151\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.491\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.432\"]\n\"adulto\" -> \"juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.477\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-44e6ed50feaaad3ec94b" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-44e6ed50feaaad3ec94b">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.151\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.491\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.432\"]\n\"adulto\" -> \"juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.477\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="calcular_transiciones.html#cb246-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="calcular_transiciones.html#cb299-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.8395872</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="calcular_transiciones.html#cb248-1" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="calcular_transiciones.html#cb301-1" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span></code></pre></div>
 </details>
 
 </div>
