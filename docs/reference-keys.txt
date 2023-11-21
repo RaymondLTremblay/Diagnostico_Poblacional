@@ -219,3 +219,6 @@ calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media
 calcular-las-contribuciones-de-ertv-y-ver-los-resultados
 para-ver-la-tabla
 cómo-se-diferencia-la-elasticidad-de-ertv
+quercus-matinezzi
+quercus-rugosa
+calcular-las-diferencias-en-tasas-vitales-entre-las-especies

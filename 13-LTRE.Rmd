@@ -35,7 +35,7 @@ A continuación, se muestran dos matrices de tipo Lefkovitch (matrices contruida
 Cuadro 1. Matrices de proyección poblaciones de dos poblaciones de *Oncidiun brachyandrum* creciendo sobre *Quercus martinezii* y *Q. rugosa*. Los valores de λ (intervalos de confianza ± 95%) son mostrados en la parte superior izquierda de cada matriz. *qx*, mortalidad por estadío; *w*, categorías estables de tamaño por estadío; valor reproductivo por estadío, n = el tamaño de muestra en el tiempo cero (el primer muestreo). p: plántula, i: infantil, j: juvenil, A; adulto (@ramirez2021host).  Los valores en negritas son los valores que representan la proporción de individuos que se queda en ese estadio. 
 
 
-![Cuadro1](Figures/imagen1.jpg)
+![](Figures/imagen1.jpg)
 
 ***
 
@@ -161,18 +161,18 @@ Para facilitar el entendimiento de cómo se calcula ERTV se creó la matriz con 
 
 Cuadro 2. Matriz de términos para el entendimiento de los ERTV. Donde: f= fecundidad, g= crecimiento o retrogesión, p= permanencia y s=supervivencia. Los subíndices se refieren a las transiciones entre estadíos.   
 
-![Cuadro2](Figures/imagen2.jpg)
+![](Figures/imagen2.jpg)
 
 
 Una vez colocadas las matrices en la hoja de trabajo el primer paso será sumar las columnas para cada estadio, esto significará la supervivencia (s) por estadío (s1, s2, s3, s4); para el caso de *Q. martinezii* en plántulas sería s1= 0.68+0.22= 0.90 (Figura 3). Después se tienen que calcular las transiciones con respecto a la supervivencia; por lo que para el caso de la transición g12 para la matriz de *Q. martinezii* tenemos g12= 0.22/0.90=0.25; este cálculo se realiza para todas las transiciones. Los valores de fecundidad (f) se tomarán tal cual de la matriz de fecundidad ($F). Una vez obtenido esto se procederá a realizar los cálculos con las ecuaciones que se muestran del lado derecho para cada una de las celdas y, además, esto nos sirve para verificar que hayamos calculado bien cada una de las tasas vitales. Por ejemplo, observamos que una proporción de plántulas en *Q. martinezii* se mantuvo (0.67) este valor se obtiene de multiplicar la supervivencia de plántulas (s1) por la sustracción de 1 menos el crecimiento de plántulas a infantiles 0.89 (1-0.25) = 0.68 (ecuación s1* (1-g12)).
 
-![Cuadro1](Figures/imagen3.jpg)
+![](Figures/imagen3.jpg)
  
 Figura 3. Forma de calcular las ecuaciones para la base de ERTV.
 
 En un archivo nuevo de Excel se arma la base, con la columna de vital rate al principio, seguido por las especies de hospederos (tratamientos) poniendo primeramente el control y después la columna de matrix (Figura 4). Esta base contendrá las ecuaciones de la matriz de referencia. Como la matriz de *Q. martinezii* tuvo los valores más altos de lambda está ultima de colocará en nuestra base que utilizaremos para correr el análisis ERTV.
 
-![Cuadro1](Figures/imagen4.jpg)
+![](Figures/imagen4.jpg)
  
 Figura 4. Ejemplo de base para poder calcular los ERTV.
 
@@ -243,14 +243,21 @@ expression(s1*(1-g12), s1*g12, 0, 0, s2*g21, s2*(1-g23-g21),
 
 ### Calcular las sensibilidades y elasticidades de ambas matrices
 
+#### *Quercus matinezzi*
+
 ```{r}
 Martinezzi.se<-vitalsens(matrix.el, Martinezzi)
-Rugosa.se<-vitalsens(matrix.el, Rugosa)
 Martinezzi.se
+```
+
+#### *Quercus rugosa*
+
+```{r}
+Rugosa.se<-vitalsens(matrix.el, Rugosa)
 Rugosa.se
 ```       
 
-### Para ver las diferencias en tasas vitales
+### Calcular las diferencias en tasas vitales entre las especies
 
 ```{r}
 vr.dif.Martinezzi.Rugosa<-Rugosa-Martinezzi 
@@ -290,11 +297,7 @@ gt(LTRE.results.Martinezzi.Rugosa)
 ```        
 
 
-
-
-
-
-
+***
 
 En Excel puedes utilizar la columna de “contribución” para hacer una representación gráfica de los resultados (Figura 5).
  
@@ -303,5 +306,8 @@ Figure 5. Resultados de un Experimento de Respuesta de la Tabla de Vida (ERTV) l
 De acuerdo con el análisis de elasticidad para cada una de las poblaciones de *O. brachyandrum*, tanto en *Q. martinezii* como en *Q. rugosa* la permanencia de individuos infantiles es la tiene un mayor impacto sobre los valores de la tasa de crecimiento poblacional (Figura 6). De acuerdo al ERTV, el cual toma en cuenta las diferencias en las tasas vitales y la sensibilidad de lambda que es una función no linear de esas tasas vitales, podemos observar que la fecundidad (fsa) y el crecimiento de plantulas a juveniles (gsj ), de juveniles a adultos (gja) y el retroceso de adultos a juveniles (gaj) tiene las mayores contribuciones a las diferencias en lambda entre Q. martinezii y Q. rugosa que la permanencia de plántulas.
  
 Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de *Oncidium brachyandrum* creciendo sobre *Quercus martinezii* y *Q. rugosa*. Por proceso demográfico (a) y por estadío (b).
+
+
+***
 
 
