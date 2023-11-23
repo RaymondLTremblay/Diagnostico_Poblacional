@@ -12,14 +12,14 @@ Tengo mucho texto que ampliar
 
 ## Ejemplo de un ciclo de vida con 3 estadios
 
-```{r}
+```{r chap2_1}
 library(Rage)
 ```
 
 
 
 
-```{r}
+```{r chap2_2}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -74,7 +74,7 @@ digraph {
 
 ## Ejemplo de un cicle de vida con estadio de latencia
 
-```{r}
+```{r chap2_3}
 library(ggplot2)
 plot_life_cycle(matA, stages=stages, fontsize = 0)
 

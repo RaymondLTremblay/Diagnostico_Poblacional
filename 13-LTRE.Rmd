@@ -45,7 +45,7 @@ Cuadro 1. Matrices de proyección poblaciones de dos poblaciones de *Oncidiun br
 
 Primeramente se creó el ciclo de vida por especie de hospedero utilizando el siguiente código:
 
-```{r Q. martinezii, echo=TRUE}
+```{r chap12_1_Q_martinezii, echo=TRUE}
 library(Rage)
 library(DiagrammeR)
 
@@ -104,7 +104,7 @@ digraph {
 
 ### Diagrama para Quercus rugosa
 
-```{r Quercus rugosa, echo=TRUE}
+```{r chap12_2_Quercus_rugosa, echo=TRUE}
 
 
 library(Rage)
@@ -183,7 +183,7 @@ Es importante colocar en la segunda fila la palabra lambda en la primera columna
 ##	Procedimiento en R
 
 
-```{r echo=TRUE}
+```{r chap12_3, echo=TRUE}
 # Asegurarse de tener instalado y cargado el paquete 'popbio' package 
 
 
@@ -201,7 +201,7 @@ Debido a que la columna de matrix contiene más filas con datos nos aparecerá l
 
  Para extraer los nombres de las tasas vitales (de la fila 2 a la 13), sin incluir a lambda el cual está en la primera
 
-```{r}
+```{r chap12_4}
 vitalrates<-oncidium$names[2:13] 
 
 # mostrar los nombres del objeto vitalrates
@@ -211,7 +211,7 @@ vitalrates
 ```
 
 ### Extraer tasas vitales de Martinezzi y dejar a lambda a un lado
-```{r}
+```{r chap12_5}
  
 
 Martinezzi<-oncidium$ Martinezzi [2:13] # [2:13] se refiere a la fila 2 hasta la 13. 
@@ -221,7 +221,7 @@ Martinezzi
 
 ### Extraer tasas vitales de martinezii y dejar a lambda a un lado
 
-```{r}
+```{r chap12_6}
 Rugosa<-oncidium$ Rugosa [2:13]
 names(Rugosa)<-vitalrates
 Rugosa
@@ -232,7 +232,7 @@ Rugosa
 
 ### Extraer los elementos de matriz utilizando los nombres de las tasas vitales
 
-```{r}
+```{r chap12_7}
 matrix.el<-as.expression(parse(text=oncidium$matrix)) 
 matrix.el
 expression(s1*(1-g12), s1*g12, 0, 0, s2*g21, s2*(1-g23-g21), 
@@ -245,28 +245,28 @@ expression(s1*(1-g12), s1*g12, 0, 0, s2*g21, s2*(1-g23-g21),
 
 #### *Quercus matinezzi*
 
-```{r}
+```{r chap12_8}
 Martinezzi.se<-vitalsens(matrix.el, Martinezzi)
 Martinezzi.se
 ```
 
 #### *Quercus rugosa*
 
-```{r}
+```{r chap12_9}
 Rugosa.se<-vitalsens(matrix.el, Rugosa)
 Rugosa.se
 ```       
 
 ### Calcular las diferencias en tasas vitales entre las especies
 
-```{r}
+```{r chap12_10}
 vr.dif.Martinezzi.Rugosa<-Rugosa-Martinezzi 
 vr.dif.Martinezzi.Rugosa
 ```
         
 ### Calcular las tasas vitales para la matriz media
 
-```{r}
+```{r chap12_11}
 vr.midway.Martinezzi.Rugosa<-((Rugosa+Martinezzi)/2) #calculate vital rates for midway matrix
 
 # Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. 
@@ -276,7 +276,7 @@ vr.midway.Martinezzi.Rugosa
         
 ### Calcular las tasas sensibilidades y elasticidades para la matriz media
 
-```{r}
+```{r chap12_12}
 midway.sens.Martinezzi.Rugosa<-vitalsens(matrix.el, vr.midway.Martinezzi.Rugosa) 
 midway.sens.Martinezzi.Rugosa
 ```
@@ -284,12 +284,12 @@ midway.sens.Martinezzi.Rugosa
 
 ### Calcular las contribuciones de ERTV y ver los resultados
 
-```{r}
+```{r chap12_13}
 LTRE.contrib.Martinezzi.Rugosa<-vr.dif.Martinezzi.Rugosa*midway.sens.Martinezzi.Rugosa$sensitivity  
 LTRE.contrib.Martinezzi.Rugosa
 ```
 
-```{r}
+```{r chap12_14}
 LTRE.results.Martinezzi.Rugosa<- data.frame(rug.vr=Rugosa, mart.vr=Martinezzi, vr.difference=vr.dif.Martinezzi.Rugosa, mid.sens=midway.sens.Martinezzi.Rugosa$sensitivity, contribution=LTRE.contrib.Martinezzi.Rugosa)
 
 library(gt)

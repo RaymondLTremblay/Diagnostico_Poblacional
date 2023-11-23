@@ -3,6 +3,35 @@ output:
   word_document: default
   html_document: default
 ---
+
+
+```{css, echo=FALSE}
+body {
+  counter-reset: counter-rchunks;
+}
+
+div.main-container {
+  padding-left: 5em;
+}
+
+pre.r {
+  counter-increment: counter-rchunks;
+  position: relative;
+  overflow: visible;
+}
+
+pre.r::before {
+  content: 'In [' counter(counter-rchunks) ']: ';
+  display: inline-block;
+  position: absolute;
+  left: -5em;
+  color: rgb(48, 63, 159);
+}
+```
+
+
+
+
 # ¿Qué es el analisis de dinamica poblacional?
 
 Por: Por RLT, Nhora Ospina, Demetria y Anne .....
@@ -25,7 +54,7 @@ Una definición más especifica de los estudios de dinámica poblacional son def
 
 Por ejemplo, la dinamica poblacional de especies invasivas incluye un periodo de crecimiento muy lento al comienzo de la colonización de un nuevo sitio y frecuentamente siguido de un crecimiento logarithmico. La figura \@ref(fig:Pop-fig). demuestra el cambio de número de individuos en el tiempo de una especie hipotética.
 
-```{r ggplot2, echo=FALSE}
+```{r chap1_1 ggplot2, echo=FALSE}
 library(ggplot2)
         rlt_theme <- theme_bw()+
           theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
@@ -35,7 +64,7 @@ library(ggplot2)
                     
 ```
 
-```{r Pop-fig, fig.cap='Cambio poblacional en tiempo'}
+```{r chap2 Pop-fig, fig.cap='Cambio poblacional en tiempo'}
 ggplot(pressure, aes(temperature, pressure))+
   geom_point()+
   rlt_theme+
@@ -48,7 +77,7 @@ ggplot(pressure, aes(temperature, pressure))+
 
 Determinar el tamaño poblacional en el futuro tiene muchos usos. Se puede dividir sus usos en tres grupos grandes, entender las **1)** interacciones ecológicas, **2)** manejo y conservaciones o **3)** los procesos evolutivos. Los estudios enfocado a la conservación se engloba dentro de un acercamiento de la viablidad de poblaciones. En este libro estaremos dando una introducción a cada uno de estas vertientes, pero nuestros ejemplos son una introducción al tema y no una profundización extensa de cada uno. En la table \@ref(USO) vemos algunos de los usos especificos que se ha dado con la metodología de PPM.
 
-```{r, eval=FALSE, echo=FALSE}
+```{r chap1_3, eval=FALSE, echo=FALSE}
 options(width = 50)
 library(tidyverse)
 library(gt)

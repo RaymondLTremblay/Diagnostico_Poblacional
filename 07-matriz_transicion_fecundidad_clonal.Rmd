@@ -23,7 +23,7 @@ En la matriz de transiciones, **MatU** se encuentra solamente la información so
 
 Nota que es este modelo los juveniles no pueden regresar a ser plantulas, pero los adultos pudiese regresar a ser juvenil.  Seria probablemente más adecuado re-nombrar la etapa juvenil (que se entiende que no es reproductivo) a algo más claro como "Individuos pequeño".
 
-```{r}
+```{r chap6_1}
 library(DiagrammeR)
 library(Rage)
 matU <- rbind(
@@ -41,7 +41,7 @@ plot_life_cycle(matU, stages=stages)
  Si uno sigue la figura anterior vemos que los individuos en la segunda etapa se reproducen sexualmente (producen plantulas). Por consequencia seria probablemente más adecuado cambiar de nombre para la segunda etapa de "juvenil" a "individuos pequeños".  Lo que se observa es el ciclo de vida de la oportaciones de plantulas es que los Individuos pequeños y Grande producen plantulas.  
  
  
-```{r}
+```{r chap6_2}
 library(DiagrammeR)
 library(Rage)
 matF <- rbind(

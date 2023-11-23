@@ -2,14 +2,14 @@
 
 ## Raymond y Roberto
 
-```{r}
+```{r chap16_1}
 library(Rcompadre) # Paquete para trabajar con la base de datos de COMPADRE y COMADRE
 library(tidyverse)
 library(gt)
 library(kableExtra)
 ```
 
-```{r, echo=FALSE}
+```{r chap16_2, echo=FALSE}
 library(tidyverse)
 
 rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
@@ -51,7 +51,7 @@ Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica pobl
 
 ## Para tener aceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
 
-```{r}
+```{r chap16_3}
 compadre <- cdb_fetch("compadre")
 #load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
 
@@ -60,7 +60,7 @@ compadre <- cdb_fetch("compadre")
 
 ##### Renombrar la base datos algo más sencillo
 
-```{r}
+```{r chap16_4}
 #ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
 
 ALLSp=compadre
@@ -71,7 +71,7 @@ names(ALLSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 #### Evaluate if new species are present in the data base
 
-```{r}
+```{r chap16_5}
 Ex = ALLSp %>% 
   filter(Genus %in% c("Epidendrum"))
 Ex # This shows that the species added Epidendrum xanthinum is not yet included in the data base
@@ -80,7 +80,7 @@ Ex # This shows that the species added Epidendrum xanthinum is not yet included 
 
 #### Extraer (filter) solamente las especies de la familia **Orchidaceae** 
 
-```{r}
+```{r chap16_6}
 index_O=ALLSp %>% 
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
@@ -94,7 +94,7 @@ sort(unique(index_O$Genus))
 
 Note que al momento hay 46 especies con nombres unicos en la base de datos
 
-```{r}
+```{r chap16_7}
 sort(unique(index_O$SpeciesAccepted))
 
 
@@ -102,14 +102,14 @@ sort(unique(index_O$SpeciesAccepted))
 
 La base de datos de orquidea tiene un total de 647 filas, por consecuencia tiene 647 matrices.  Esas matrices de la misma especie son de diferentes poblaciones, tiempo o un analisis teóricos. 
 
-```{r}
+```{r chap16_8}
 index_O
 
 ```
 
 Para saber de cuantos manuscritos distinctos probvienen esos datos uno puede evaluar la cantidad de DOI_ISBN distinctos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes tecnicos. 
 
-```{r}
+```{r chap16_9}
 unique(index_O$DOI_ISBN)
 ```
 
@@ -118,7 +118,7 @@ Igualmente podemos evaluar cuantos distintos autores son responsable de esas pub
 ## ROBERTO:
 HAY una manera de contabilizar los nombres específicos, no por grupo?
 
-```{r}
+```{r chap16_10}
 unique(index_O$Authors)
 ```
 
@@ -128,7 +128,7 @@ Para evaluar el largo de tiempo por estudio se necesita selecionar una combinaci
 
 Subset
 
-```{r}
+```{r chap16_11}
 #names(index_O) Los nombres de las variables
 SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation, mat) %>% 
   group_by(SpeciesAccepted, YearPublication, OrganismType, StudyStart, StudyEnd) %>% 
@@ -146,13 +146,13 @@ write_csv(SPECIES_O, "Species_O.csv")
 
 # Number of populations per species study
 
-```{r}
+```{r chap16_12}
 as.data.frame(table(SPECIES_O$n_populations))
 
 
 ```
 
-```{r}
+```{r chap16_13}
 
 SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
 
@@ -173,7 +173,7 @@ ggsave("Lenght_survey.png")
 
 ```
 
-```{r}
+```{r chap16_14}
 
 index_O=index_O %>% 
   mutate(StudyDuration=as.numeric(StudyDuration))
@@ -194,13 +194,13 @@ ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
 ggsave("Duración_Epi_Ter.png")
 ```
 
-```{r}
+```{r chap16_15}
 plot(index_O$Lon,index_O$Lat,main = "Location")
 ```
 
 Getting the whole database for orchids
 
-```{r}
+```{r chap16_16}
 
 index <- which(compadre$metadata$Family=="Orchidaceae") 
 names(Compadre)
@@ -222,7 +222,7 @@ x_OT=x %>%
   group_by(OrganismType)
 ```
 
-```{r}
+```{r chap16_17}
 #Orchids_New=as_cdb(index)
 #compadre$mat[index]
 
@@ -241,7 +241,7 @@ summary(lambdaVals)
 hist(lambdaVals, main = "Lambda values")
 ```
 
-```{r}
+```{r chap16_18}
 
 library(purrr)
 lambdaVals1 <- map_dbl(matA(xy), ~popdemo::eigs(.x, what="lambda"))
@@ -251,7 +251,7 @@ lambdaVals1 <- map_dbl(matA(xy), ~popdemo::eigs(.x, what="lambda"))
 lambdaVals2 <- map_dbl(matA(xy), ~popbio::lambda(.x))
 ```
 
-```{r}
+```{r chap16_19}
 x2=xy %>% 
   mutate(OrganismType = case_when(
     Genus ==  "Caladenia" & OrganismType == "Epiphyte" ~ "Herbaceous perennial",
@@ -274,7 +274,7 @@ x \<- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
 
 lambdaVals \<- sapply(matA(x), popdemo::eigs, what="lambda") summary(lambdaVals) hist(lambdaVals, main = "Lambda values")
 
-```{r}
+```{r chap16_20}
 
 Compadre_flagged_epi <- cdb_flag(epi)
 
@@ -289,7 +289,7 @@ lambda_epi <- map_dbl(matA(x_epi), ~popdemo::eigs(.x, what="lambda"))
 lambda_terr <- map_dbl(matA(terr), ~popbio::lambda(.x))
 ```
 
-```{r}
+```{r chap16_21}
 summary(lambda_epi)
 hist(lambda_epi, main = "Lambda values")
 
@@ -297,7 +297,7 @@ summary(lambda_terr)
 hist(lambda_terr, main = "Lambda values")
 ```
 
-```{r}
+```{r chap16_22}
 df_Lamb_epi=as.data.frame(lambda_epi)
 df_Lamb_epi=df_Lamb_epi %>% 
   add_column(Habit_Type = "Epiphyte") %>% 
@@ -313,7 +313,7 @@ df_Lamb_terr=df_Lamb_terr %>%
 ALL_Lambdas=rbind(df_Lamb_epi, df_Lamb_terr)
 ```
 
-```{r}
+```{r chap16_23}
 ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
   geom_histogram(colour="white") + 
   facet_wrap( ~Habit_Type)+
@@ -324,14 +324,14 @@ ggsave("Terr_Epi_lambda.png")
 
 The number of populations
 
-```{r}
+```{r chap16_24}
 x2 %>% 
   group_by(SpeciesAccepted) %>% 
   summarize(n_populations = length(unique(MatrixPopulation))) %>% 
   arrange(desc(n_populations))
 ```
 
-```{r}
+```{r chap16_25}
 
 compadre_replicated_pops <- x2 %>% 
   group_by(SpeciesAccepted) %>% 
@@ -342,7 +342,7 @@ compadre_replicated_pops <- x2 %>%
 compadre_replicated_pops
 ```
 
-```{r}
+```{r chap16_26}
 ggplot2::ggplot(x2, aes(Lon, Lat)) +
   borders(database = "world", fill = "grey80", col = NA) +
   geom_point(col = "steelblue", size = 1.8, alpha = 0.8)
@@ -354,7 +354,7 @@ ggsave("orchid_map.jpg")
 
 Unless we data wrangle the life span so it represent a year worth instead of life span.
 
-```{r}
+```{r chap16_27}
 # function to calculate life expectancy
 lifeExpectancy <- function(matU, startLife) {
   N <- solve(diag(nrow(matU)) - matU)
@@ -400,7 +400,7 @@ ggsave("Life_Span.png")
 
 
 
-```{r}
+```{r chap16_28}
 
 #SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
 
@@ -425,7 +425,7 @@ ggsave("Genus_Life_Span.png")
 
 
 
-```{r}
+```{r chap16_29}
 
 #SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
 
@@ -451,7 +451,7 @@ ggsave("Caladenia_Life_Span.png")
 
 Test difference in life span.
 
-```{r}
+```{r chap16_30}
 unique(compadre_life_expect$OrganismType)
 
 t.test(life_expectancy~OrganismType, data=compadre_life_expect)
@@ -468,15 +468,15 @@ leveneTest(life_expectancy~OrganismType, data=compadre_life_expect) # equal vari
 
 Use robust Approach
 
-```{r}
+```{r chap16_31}
 library(WRS2)
-#source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T) # Home computer
+source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T) # Home computer
 #source("/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T)
 #source("/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt", chdir = T) ## Work laptop Computer
-source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
+#source("/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt", chdir = T) #When used on Monique
 ```
 
-```{r}
+```{r chap16_32}
 unique(compadre_life_expect$OrganismType)
 
 Cf=cdb_flatten(compadre_life_expect)
@@ -495,7 +495,7 @@ yuenbt(YSEC_T$life_expectancy, YSEC_E$life_expectancy, alpha=.05, nboot=10000, s
 
 ```
 
-```{r}
+```{r chap16_33}
 library(Rcompadre)
 library(popdemo)
 data(Compadre)
