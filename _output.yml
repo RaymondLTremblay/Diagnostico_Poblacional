@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  css: style.css
+  css: Diagnostico_style.css
   config:
     toc:
       before: |

@@ -1,11 +1,12 @@
 ---
 output:
   word_document: default
-  html_document: default
+  html_document: 
+    code_folding: show
 ---
 
 
-```{css, echo=FALSE}
+```{css, eval=FALSE, echo=FALSE}
 body {
   counter-reset: counter-rchunks;
 }

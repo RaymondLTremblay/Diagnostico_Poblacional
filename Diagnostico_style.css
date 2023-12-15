@@ -2,6 +2,9 @@ p.caption {
   color: #777;
   margin-top: 10px;
 }
+h1, h2, h3 {
+  text-align: center;
+}
 p code {
   white-space: inherit;
 }

@@ -3,7 +3,7 @@ title: "Dinamica_Poblacional"
 output:
   bookdown::gitbook:
     highlight: tango
-    code_folding: hide
+    #code_folding: hide
 
 
     

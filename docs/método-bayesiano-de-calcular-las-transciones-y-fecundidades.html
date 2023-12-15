@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Método bayesiano de calcular las transciones y fecundidades | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Método bayesiano de calcular las transciones y fecundidades | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-11-23" />
+<meta name="date" content="2023-12-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,11 +49,10 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.10/grViz.js"></script>
@@ -150,7 +149,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
 </head>
 
 <body>
@@ -526,7 +525,6 @@ div.csl-indent {
 <li>los adultos 90% se quedan como adulto pero ninguno produce semillas</li>
 </ul>
 <p>NOTA que es posible que los datos que recolectan del campo sean estos, pero muchas veces esas observaciones son un resultado de la falta de tamaño de muestra.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
 <span id="cb7-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
 <span id="cb7-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-3" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
@@ -539,12 +537,9 @@ div.csl-indent {
 <span id="cb7-10"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-10" tabindex="-1"></a>)</span>
 <span id="cb7-11"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-11" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
 <span id="cb7-12"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb7-12" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
-</details>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb8-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
-</details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-af48c4e2d05f4a9ff1dd" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-af48c4e2d05f4a9ff1dd">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=grey,xlabel=\" 1\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-608601c1ba6a8f124c96" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-608601c1ba6a8f124c96">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=grey,xlabel=\" 1\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Considera este ejemplo:</p>
 <ul>
 <li>Si Ud estudia los arboles Sequioa y muestra los arboles grandes (con un dbh de &gt; xxx), aunque muestra 1000+ individuos de esa etapa/tamaño es posible que no encontrará ninguno que muere. Por consecuencia el estimado de supervivencia de esos arboles es 100%. Aunque uno sabe que si hubiese muestrado 10,000 o 100,000 arboles se podria haber detectado uno más que fallece.</li>
@@ -558,30 +553,23 @@ div.csl-indent {
 </div>
 <div id="instalación-de-los-paquetes-1" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Instalación de los paquetes #1<a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-los-paquetes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb9-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span></code></pre></div>
-</details>
 <pre><code>## Loading required package: pacman</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb11-1" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(janitor, tidyverse, devtools)</span>
 <span id="cb11-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb11-2" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb11-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb11-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb11-4" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
-</details>
 </div>
 <div id="instalación-de-raretrans-2" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Instalación de raretrans #2<a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-raretrans-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para instalar <strong>raretrans</strong> remover el <strong>#</strong> antes de los codigos para correrlos</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb12-1" tabindex="-1"></a><span class="co">#library(devtools)</span></span>
 <span id="cb12-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb12-2" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb12-3" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;atyre2/raretrans&quot;, build = TRUE, build_opts = c(&quot;--no-resave-data&quot;, &quot;--no-manual&quot;))</span></span>
 <span id="cb12-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb12-4" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb12-5" tabindex="-1"></a><span class="fu">library</span>(raretrans)</span></code></pre></div>
-</details>
 <p>Vea el siguiente website para más información en ingles, la información que sigue es una traducción y ampliación de la información en el siuiente enlace.</p>
 <p><a href="https://atyre2.github.io/raretrans/articles/onepopperiod.html" class="uri">https://atyre2.github.io/raretrans/articles/onepopperiod.html</a></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb13-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb13-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-3" tabindex="-1"></a><span class="fu">library</span>(popbio) <span class="co"># para la función projection.matrix()</span></span>
@@ -591,7 +579,6 @@ div.csl-indent {
 <span id="cb13-7"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-7" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">15</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb13-8"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-8" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">15</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),  </span>
 <span id="cb13-9"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb13-9" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;grey20&quot;</span>,<span class="at">size=</span><span class="dv">15</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
-</details>
 <p>El objetivo de esta viñeta es demostrar el uso del paquete <code>raretrans</code>
 para los calculos de los parametros en una población y periodo de
 transición.</p>
@@ -609,10 +596,8 @@ fertilidad de la orquídea epifita <em>Lepanthes elto</em> <strong>POPNUM 250</s
 </div>
 <div id="paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Paso 1: Cargar y fusionar los datos de población única para <em>L. elto</em><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb14-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;L_elto&quot;</span>) <span class="co"># carga el conjunto de datos `L_elto` en la memoria de la computadora (los datos están incluido en el paquete `raretrans`)</span></span>
 <span id="cb14-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb14-2" tabindex="-1"></a><span class="fu">head</span>(L_elto) </span></code></pre></div>
-</details>
 <pre><code>## # A tibble: 6 × 13
 ##   POPNUM  year seedlings adults fertility IND_NUM stage next_stage first_year
 ##    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
@@ -633,7 +618,6 @@ fertilidad de la orquídea epifita <em>Lepanthes elto</em> <strong>POPNUM 250</s
 </ul>
 <p>Cada fila de este data.frame de datos tiene columnas para la fase actual (stage, periodo <strong>t</strong>), la fase siguiente (next_stage, periodo <strong>t+1</strong>) y la fertilidad por individuo.
 Tenga en cuenta que “p” significa “plantula” en español. El primer conjunto de líneas de abajo cambia el nombre de la etapa del ciclo vital de “p” a “s” después de seleccionar la población y el periodo de tiempo.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-1" tabindex="-1"></a>onepop <span class="ot">&lt;-</span> L_elto <span class="sc">%&gt;%</span>   </span>
 <span id="cb16-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-2" tabindex="-1"></a><span class="co"># Filtrar la población # 250, el periodo (año=year) 5</span></span>
 <span id="cb16-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-3" tabindex="-1"></a>  <span class="fu">filter</span>(POPNUM <span class="sc">==</span> <span class="dv">250</span>, year <span class="sc">==</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
@@ -645,7 +629,6 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 <span id="cb16-9"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-9" tabindex="-1"></a><span class="co"># popbio::projection.matrix no funciona con tibbles, por consecuencia se convierte en data.frame</span></span>
 <span id="cb16-10"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-10" tabindex="-1"></a></span>
 <span id="cb16-11"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb16-11" tabindex="-1"></a><span class="fu">head</span>(onepop) <span class="co"># AHora tenemos solamente datos de la población #250 del periodo 5</span></span></code></pre></div>
-</details>
 <pre><code>## # A tibble: 6 × 13
 ##   POPNUM  year seedlings adults fertility IND_NUM stage next_stage first_year
 ##    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
@@ -657,13 +640,11 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 ## 6    250     5         8     34     0         173 j     a                   1
 ## # ℹ 4 more variables: last_year &lt;dbl&gt;, recruited &lt;lgl&gt;, died &lt;dbl&gt;,
 ## #   lifespan &lt;int&gt;</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb18-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear corectamente.</span></span>
 <span id="cb18-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb18-2" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(onepop), </span>
 <span id="cb18-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb18-3" tabindex="-1"></a>                        <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
 <span id="cb18-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb18-4" tabindex="-1"></a>                        <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;s&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb18-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb18-5" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
-</details>
 <pre><code>## $T
 ##    
 ##              s          j          a
@@ -687,15 +668,11 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 <h2><span class="header-section-number">8.8</span> Paso 2: Obtener el número inicial de individuos por etapa<a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-2-obtener-el-número-inicial-de-individuos-por-etapa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dado que nuestras recuentos (número de individuos, <em>N</em>) y el tamaño de <em>muestreo equivalente</em> a priori se expresa como múltiplo del número de individuos observados, necesitamos obtener el número de individuos en cada etapa (<span class="math inline">\(N\)</span>) en el primer periodo de tiempo.</p>
 <p>Utilizamos la función <code>raretrans::get_state_vector()</code> para obtener el recuento inicial de individuos, <em>N</em>.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb20-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">get_state_vector</span>(onepop, <span class="at">stage =</span> stage, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;s&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>)) </span>
 <span id="cb20-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb20-2" tabindex="-1"></a>N <span class="co"># Un vector # de individuos iniciales para cada etapa, nota que la cantidad por etapa, &quot;stage&quot;, son los individuos en el primer muestreo</span></span></code></pre></div>
-</details>
 <pre><code>## [1] 11 47 34</code></pre>
 <p>La lista de matrices y el vector de cuento de individuales no tienen por qué proceder de un data.frame como hemos hecho aquí. Mientras tengan el formato esperado, pueden crearse a mano. Usamos la población 231 en el periodo 2 como ejemplo, dividiendo la matriz en submatrices de transición <strong>T</strong> y fecundidad <strong>F</strong>. Abajo, <em>m</em> significa “muerte”, es decir, plantas que están muertas.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb22-1" tabindex="-1"></a>TF2</span></code></pre></div>
-</details>
 <pre><code>## $Tmat
 ##     stage
 ## fate         p         j         a
@@ -708,19 +685,15 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 ## [1,]    0    0 0.125
 ## [2,]    0    0 0.000
 ## [3,]    0    0 0.000</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb24-1" tabindex="-1"></a>N2</span></code></pre></div>
-</details>
 <pre><code>##  p  j  a 
 ##  2  6 16</code></pre>
 <p>¿Como se ve el ciclo de vida de esa población en ese periodo?</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb26-1" tabindex="-1"></a>stages2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;juveniles&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
 <span id="cb26-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb26-2" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb26-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb26-3" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Tmat, <span class="at">stages=</span>stages2)</span></code></pre></div>
-</details>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7fe1ed8ac192d4d9a264" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7fe1ed8ac192d4d9a264">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.833\"]\n\"juveniles\" -> \"adultos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.062\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.875\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-3390a028a9c75e8da8df" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-3390a028a9c75e8da8df">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.833\"]\n\"juveniles\" -> \"adultos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.062\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.875\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>En esta matriz falta la transición de plántula a juvenil, y ninguno de los 6 juveniles murió, lo que lleva a una sobreestimación de la supervivencia. La tasa de crecimiento asintótico de la población observada es <span class="math inline">\(\lambda =\)</span> 0.88. La matriz no es ergódica (no se puede llegar a cualquier otro estado desde uno o más estados), y reducible, lo que significa que una o más columnas y filas se pueden descartar y tienen las mismas propiedades eigen.</p>
 </div>
 <div id="parte-2-uso-de-priors-para-incorporar-transiciones-raras" class="section level2 hasAnchor" number="8.9">
@@ -744,18 +717,14 @@ muerte), por lo que cada destino 0,25 a la matriz de destinos
 <em>observados</em> (¡no a la matriz de transiciones!). de transición). Cuando
 especificamos una matriz con un prior para las transiciones, hay una
 fila más que columnas. Esta fila extra representa la muerte.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb27-1" tabindex="-1"></a>Tprior <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fl">0.25</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">4</span>)</span>
 <span id="cb27-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb27-2" tabindex="-1"></a><span class="fu">fill_transitions</span>(TF, N, <span class="at">P =</span> Tprior) <span class="co"># resultado de la matriz de transición básica</span></span></code></pre></div>
-</details>
 <pre><code>##            [,1]        [,2]        [,3]
 ## [1,] 0.10416667 0.005208333 0.007142857
 ## [2,] 0.60416667 0.567708333 0.007142857
 ## [3,] 0.02083333 0.296875000 0.835714286</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb29-1" tabindex="-1"></a><span class="co"># Para entender las diferencias compara los resultados con *$T* del objeto *TF*</span></span>
 <span id="cb29-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb29-2" tabindex="-1"></a>TF</span></code></pre></div>
-</details>
 <pre><code>## $T
 ##    
 ##              s          j          a
@@ -775,12 +744,10 @@ fila más que columnas. Esta fila extra representa la muerte.</p>
 <p>Podemos obtener el mismo resultado ‘a mano’ - necesitamos el vector de
 observaciones porque la posterior se calcula a partir de las
 observaciones de transiciones, no la matriz de transiciones.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb31-1" tabindex="-1"></a>Tobs <span class="ot">&lt;-</span> <span class="fu">sweep</span>(TF<span class="sc">$</span>T, <span class="dv">2</span>, N, <span class="st">&quot;*&quot;</span>) <span class="co"># obtener las observaciones de transiciones </span></span>
 <span id="cb31-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb31-2" tabindex="-1"></a>Tobs <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Tobs, N <span class="sc">-</span> <span class="fu">colSums</span>(Tobs)) <span class="co"># añadir la fila de muerte </span></span>
 <span id="cb31-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb31-3" tabindex="-1"></a>Tobs <span class="ot">&lt;-</span> Tobs <span class="sc">+</span> <span class="fl">0.25</span> <span class="co"># añadir los prior</span></span>
 <span id="cb31-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb31-4" tabindex="-1"></a><span class="fu">sweep</span>(Tobs, <span class="dv">2</span>, <span class="fu">colSums</span>(Tobs), <span class="st">&quot;/&quot;</span>)[<span class="sc">-</span><span class="dv">4</span>,] <span class="co"># dividir por la suma de la column y descarta la fila de muerte </span></span></code></pre></div>
-</details>
 <pre><code>##            s           j           a
 ## s 0.10416667 0.005208333 0.007142857
 ## j 0.60416667 0.567708333 0.007142857
@@ -800,7 +767,6 @@ una matriz. Las etapas que no hay reproducción o sea que no se producen
 por reproducción deben ser <code>NA</code>, usando <em>NA_real_</em>. El concepto de
 <em>NA_real_</em> es que es un valor que no esta presente pero con puntos
 decimales. Nota que el valor de <em>prior</em> de la fertilidad es 0.0001.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="fl">1e-5</span>,</span>
 <span id="cb33-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-2" tabindex="-1"></a>                  <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>,</span>
 <span id="cb33-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-3" tabindex="-1"></a>                  <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>), <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
@@ -808,7 +774,6 @@ decimales. Nota que el valor de <em>prior</em> de la fertilidad es 0.0001.</p>
 <span id="cb33-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-5" tabindex="-1"></a>                  <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>,</span>
 <span id="cb33-6"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-6" tabindex="-1"></a>                  <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>), <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb33-7"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb33-7" tabindex="-1"></a><span class="fu">fill_fertility</span>(TF, N, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span></code></pre></div>
-</details>
 <pre><code>##    
 ##             s         j         a
 ##   s 0.0000000 0.0000000 0.1176473
@@ -822,26 +787,22 @@ observado.</p>
 <div id="calculando-a-mano-alfa-a-priori-es-el-número-de-crías-observadas" class="section level4 hasAnchor" number="8.9.5.1">
 <h4><span class="header-section-number">8.9.5.1</span> Calculando a mano, <em>alfa a priori</em> es el número de crías observadas<a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#calculando-a-mano-alfa-a-priori-es-el-número-de-crías-observadas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>y <em>beta a priori</em> es el número de adultos observados.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-1" tabindex="-1"></a>obs_offspring <span class="ot">&lt;-</span> N[<span class="dv">3</span>]<span class="sc">*</span>TF<span class="sc">$</span>F[<span class="dv">1</span>,<span class="dv">3</span>] </span>
 <span id="cb35-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-2" tabindex="-1"></a>prior_alpha <span class="ot">&lt;-</span> <span class="fl">1e-05</span></span>
 <span id="cb35-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-3" tabindex="-1"></a>prior_beta <span class="ot">&lt;-</span> <span class="fl">1e-05</span></span>
 <span id="cb35-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-4" tabindex="-1"></a>posterior_alpha <span class="ot">&lt;-</span> obs_offspring <span class="sc">+</span> prior_alpha</span>
 <span id="cb35-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-5" tabindex="-1"></a>posterior_beta <span class="ot">&lt;-</span> N[<span class="dv">3</span>] <span class="sc">+</span> prior_beta</span>
 <span id="cb35-6"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb35-6" tabindex="-1"></a>posterior_alpha <span class="sc">/</span> posterior_beta <span class="co"># expected value</span></span></code></pre></div>
-</details>
 <pre><code>## [1] 0.1176473</code></pre>
 <p>Esto demuestra por qué la estimación puntual posterior de la fecundidad
 no cambia mucho; los valores no informativos de <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>
 apenas cambian los valores observados.</p>
 <p>Ahora podemos juntarlos.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb37-1" tabindex="-1"></a>unif <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">T =</span> <span class="fu">fill_transitions</span>(TF, N), </span>
 <span id="cb37-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb37-2" tabindex="-1"></a>             <span class="at">F =</span> <span class="fu">fill_fertility</span>(TF, N, </span>
 <span id="cb37-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb37-3" tabindex="-1"></a>                                <span class="at">alpha =</span> alpha,</span>
 <span id="cb37-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb37-4" tabindex="-1"></a>                                <span class="at">beta =</span> beta))</span>
 <span id="cb37-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb37-5" tabindex="-1"></a>unif</span></code></pre></div>
-</details>
 <pre><code>## $T
 ##            [,1]        [,2]        [,3]
 ## [1,] 0.10416667 0.005208333 0.007142857
@@ -876,9 +837,7 @@ aumentada de destinos, que es útil para la simulación. La cuarta
 fila de este resultado (véase más adelante) es el estado de
 mortalidad.</li>
 </ol>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb39-1" tabindex="-1"></a><span class="fu">fill_transitions</span>(TF, N, <span class="at">returnType =</span> <span class="st">&quot;TN&quot;</span>)</span></code></pre></div>
-</details>
 <pre><code>##      [,1]  [,2]  [,3]
 ## [1,] 1.25  0.25  0.25
 ## [2,] 7.25 27.25  0.25
@@ -889,12 +848,10 @@ mortalidad.</li>
 beta de los vectores posteriores.<br />
 </li>
 </ol>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb41-1" tabindex="-1"></a><span class="fu">fill_fertility</span>(TF, N, </span>
 <span id="cb41-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb41-2" tabindex="-1"></a>               <span class="at">alpha =</span> alpha,</span>
 <span id="cb41-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb41-3" tabindex="-1"></a>               <span class="at">beta =</span> beta,</span>
 <span id="cb41-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb41-4" tabindex="-1"></a>               <span class="at">returnType =</span> <span class="st">&quot;ab&quot;</span>)</span></code></pre></div>
-</details>
 <pre><code>## $alpha
 ##    
 ##     s j       a
@@ -911,9 +868,7 @@ beta de los vectores posteriores.<br />
 <li>Ambas funciones también pueden devolver la matriz completa, la suma
 de <span class="math inline">\(T\)</span> y <span class="math inline">\(F\)</span>.</li>
 </ol>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb43-1" tabindex="-1"></a><span class="fu">fill_transitions</span>(TF, N, <span class="at">returnType =</span> <span class="st">&quot;A&quot;</span>)</span></code></pre></div>
-</details>
 <pre><code>##    
 ##               s           j           a
 ##   s 0.104166667 0.005208333 0.124789916
@@ -935,21 +890,17 @@ orquídeas epifitas (RLT). La información tiene que tener la misma forma
 que la matriz de transiciones con una fila más que columnas. Esa ultima
 fila representa los individuos que se mueren de la estapa
 correspondiente.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb45-1" tabindex="-1"></a>RLT_Tprior <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.025</span>, <span class="fl">0.0</span>,</span>
 <span id="cb45-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb45-2" tabindex="-1"></a>                       <span class="fl">0.05</span>, <span class="fl">0.9</span>,   <span class="fl">0.025</span>,</span>
 <span id="cb45-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb45-3" tabindex="-1"></a>                       <span class="fl">0.01</span>, <span class="fl">0.025</span>, <span class="fl">0.95</span>,</span>
 <span id="cb45-4"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb45-4" tabindex="-1"></a>                       <span class="fl">0.69</span>, <span class="fl">0.05</span>,  <span class="fl">0.025</span>), </span>
 <span id="cb45-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb45-5" tabindex="-1"></a>                     <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-</details>
 <p>Nota la matriz tiene la 1ª fila, 3ª columna es 0,0, porque esta
 transición es imposible. Esta prioridad se construye de manera que las
 columnas suman 1, lo que crea la mayor flexibilidad para la ponderación
 de la prioridad. Por defecto, la suma es 1, interpretado como un <em>tamaño
 de muestra a priori</em> de 1.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb46-1" tabindex="-1"></a><span class="fu">fill_transitions</span>(TF, N, <span class="at">P =</span> RLT_Tprior)</span></code></pre></div>
-</details>
 <pre><code>##              [,1]         [,2]         [,3]
 ## [1,] 0.1041666667 0.0005208333 0.0000000000
 ## [2,] 0.5875000000 0.5812500000 0.0007142857
@@ -957,9 +908,7 @@ de muestra a priori</em> de 1.</p>
 <p>We can specify the weight as a multiple of the sample size for each
 stage.</p>
 <p>Podemos especificar el peso de los valores apriori modificando el tamaño de muestra de cada etapa. Nota que si uno tiene poca confianza en los valores apriori se le da un valor pequeño para que los datos dominan los resultados.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb48-1" tabindex="-1"></a><span class="fu">fill_transitions</span>(TF, N, <span class="at">P =</span> RLT_Tprior, <span class="at">priorweight =</span> <span class="fl">0.5</span>)</span></code></pre></div>
-</details>
 <pre><code>##             [,1]        [,2]        [,3]
 ## [1,] 0.143939394 0.008333333 0.000000000
 ## [2,] 0.440909091 0.682978723 0.008333333
@@ -979,7 +928,6 @@ permitiría que los datos dominen.</p>
 <p>La distribución posterior marginal de un elemento en un multinomio es una
 distribución beta, y usamos esto para obtener intervalos creíbles en nuestro
 tasas de transición. Podemos usar el tipo de retorno TN para obtener los parámetros de el multinomio deseado.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-1" tabindex="-1"></a>TN <span class="ot">&lt;-</span> <span class="fu">fill_transitions</span>(TF, N, <span class="at">P =</span> RLT_Tprior, <span class="at">priorweight =</span> <span class="fl">0.5</span>, <span class="at">returnType =</span> <span class="st">&quot;TN&quot;</span>)</span>
 <span id="cb50-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> TN[,<span class="dv">1</span>] <span class="co"># cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. </span></span>
 <span id="cb50-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sum</span>(TN[,<span class="dv">1</span>]) <span class="sc">-</span> TN[,<span class="dv">1</span>]<span class="co"># cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. </span></span>
@@ -987,7 +935,6 @@ tasas de transición. Podemos usar el tipo de retorno TN para obtener los parám
 <span id="cb50-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-5" tabindex="-1"></a>lcl <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.025</span>, a, b)</span>
 <span id="cb50-6"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-6" tabindex="-1"></a>ucl <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.975</span>, a, b)</span>
 <span id="cb50-7"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb50-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">sprintf</span>(<span class="st">&quot;%.3f (%.3f, %.3f)&quot;</span>, p, lcl, ucl))</span></code></pre></div>
-</details>
 <table>
 <thead>
 <tr class="header">
@@ -1024,18 +971,15 @@ los intervalos creíbles simétricos se reducen bastante:</p>
 <div id="intervalos-creíbles-de-lambda" class="section level2 hasAnchor" number="8.13">
 <h2><span class="header-section-number">8.13</span> Intervalos creíbles de <span class="math inline">\(\lambda\)</span><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-creíbles-de-lambda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Obteniendo intervalos creíbles sobre la tasa de crecimiento asintótica, <span class="math inline">\(\lambda\)</span>, requiere simular matrices a partir de las distribuciones posteriores. Esto es algo complicado de hacer correctamente, y hemos escrito una función <code>raretrans::sim_transitions()</code> para generar una lista de matrices simuladas dada la matriz observada y especificaciones previas.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb51-1" tabindex="-1"></a><span class="fu">sim_transitions</span>(TF, N, <span class="at">P =</span> RLT_Tprior, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta,</span>
 <span id="cb51-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb51-2" tabindex="-1"></a>                <span class="at">priorweight =</span> <span class="fl">0.5</span>)</span></code></pre></div>
-</details>
 <pre><code>## [[1]]
-##              [,1]        [,2]         [,3]
-## [1,] 2.357534e-01 0.004254013 2.629244e-01
-## [2,] 4.154640e-01 0.634862416 5.532874e-05
-## [3,] 1.409177e-08 0.244862600 9.173007e-01</code></pre>
+##              [,1]        [,2]        [,3]
+## [1,] 8.051976e-02 0.004663655 0.341412290
+## [2,] 7.344662e-01 0.701898034 0.004990197
+## [3,] 3.978839e-06 0.213616650 0.737022435</code></pre>
 <p>Ahora simulamos 5000 veces, calculamos el valor <span class="math inline">\(\lambda\)</span> de cada
 matriz y creamos un histograma de la distribución.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-1" tabindex="-1"></a><span class="co">#set.seed(8390278) # make this part reproducible</span></span>
 <span id="cb53-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-2" tabindex="-1"></a>alpha2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="fl">0.025</span>,</span>
 <span id="cb53-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-3" tabindex="-1"></a>                  <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>, <span class="cn">NA_real_</span>,</span>
@@ -1053,11 +997,11 @@ matriz y creamos un histograma de la distribución.</p>
 <span id="cb53-15"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-15" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb53-16"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-16" tabindex="-1"></a>  rlt_theme<span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, </span>
 <span id="cb53-17"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb53-17" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size=</span><span class="fl">1.5</span>)</span></code></pre></div>
-</details>
 <pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ## ℹ Please use `linewidth` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap7_26-1.png" width="672" /></p>
 </div>
 <div id="determinar-si-el-lambda-es-significativamente-diferente-de-1" class="section level2 hasAnchor" number="8.14">
@@ -1065,7 +1009,6 @@ matriz y creamos un histograma de la distribución.</p>
 <p>Esa prueba es basada en la simulación de la distribución poesterior. Se calcula la distribución de los lambda’s y se determina si el lmabda observado es significativamente más grande que 1.</p>
 <p>También podemos calcular algunas estadísticas de resumen. <code>pincrease</code> es el
 probabilidad de que <span class="math inline">\(\lambda &gt; 1\)</span>.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-1" tabindex="-1"></a>RLT_0<span class="fl">.5</span>_summary <span class="ot">&lt;-</span> <span class="fu">summarize</span>(RLT_0<span class="fl">.5</span>,</span>
 <span id="cb55-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-2" tabindex="-1"></a>                             <span class="at">medianL =</span> <span class="fu">median</span>(lposterior),</span>
 <span id="cb55-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-3" tabindex="-1"></a>                             <span class="at">meanL =</span> <span class="fu">mean</span>(lposterior),</span>
@@ -1073,7 +1016,6 @@ probabilidad de que <span class="math inline">\(\lambda &gt; 1\)</span>.</p>
 <span id="cb55-5"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-5" tabindex="-1"></a>                             <span class="at">ucl =</span> <span class="fu">quantile</span>(lposterior, <span class="at">probs =</span> <span class="fl">0.975</span>),</span>
 <span id="cb55-6"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-6" tabindex="-1"></a>                             <span class="at">pincrease =</span> <span class="fu">sum</span>(lposterior <span class="sc">&gt;</span> <span class="fl">1.</span>)<span class="sc">/</span><span class="fu">n</span>())</span>
 <span id="cb55-7"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb55-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(RLT_0<span class="fl">.5</span>_summary, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
-</details>
 <table>
 <thead>
 <tr class="header">
@@ -1086,11 +1028,11 @@ probabilidad de que <span class="math inline">\(\lambda &gt; 1\)</span>.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.13</td>
+<td align="right">0.96</td>
+<td align="right">0.96</td>
+<td align="right">0.87</td>
+<td align="right">1.04</td>
 <td align="right">0.14</td>
-<td align="right">0.02</td>
-<td align="right">0.34</td>
-<td align="right">0</td>
 </tr>
 </tbody>
 </table>
