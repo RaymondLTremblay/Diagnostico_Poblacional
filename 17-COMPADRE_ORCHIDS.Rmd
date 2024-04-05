@@ -1,8 +1,10 @@
 # Compadre_Orchid PPM y su uso
 
-## Raymond y Roberto
+Raymond y Roberto
 
-```{r chap16_1}
+Activar los siguiente paquetes
+
+```{r chap16_1, message=FALSE}
 library(Rcompadre) # Paquete para trabajar con la base de datos de COMPADRE y COMADRE
 library(tidyverse)
 library(gt)
@@ -43,22 +45,39 @@ cbPalette2 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 
 ```
 
+
+***
+
+### COMPADRE 
+
 Este capítulo es una introducción a COMPADRE y algunas de la funciones en los paquetes de **Rcompadre** y **Rage**. La información aqui no sustituye la información proviste \<<https://compadre-db.org/>\> y los tutoriales que se encuentran en la siguiente pagina \<<https://compadre-db.org/Education>\>
 
-## Acceso a los datos de COMPADRE.
+***
+
+### Acceso a los datos de COMPADRE.
 
 Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica poblacional de plantas) y COMADRE (datos de dinamica poblacional de animales). Los datos se pueden acesar directamente en la pagina de web o bajar el archivo de datos al siguiente enlace \<<https://compadre-db.org/Data/Compadre>\> seleccionando la pestaña de **Download COMPADRE**.
 
-## Para tener aceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
+## Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
 
 ```{r chap16_3}
-compadre <- cdb_fetch("compadre")
+compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. 
+
+# USAR el código siguiente si tiene los datos bajado a su computadora. 
+# load(dirección al archivo a su proyecto de RStudio) si tiene el repositorio en su computadora
+```
+
+
+
+```{r, echo=FALSE}
 #load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
 
 #load("~/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData") # work computer
 ```
 
-##### Renombrar la base datos algo más sencillo
+***
+
+#### Renombrar la base datos algo más sencillo
 
 ```{r chap16_4}
 #ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
@@ -68,54 +87,67 @@ names(ALLSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 ```
 
+***
 
-#### Evaluate if new species are present in the data base
+#### Evaluate if a genus/species are present in the data base
 
 ```{r chap16_5}
 Ex = ALLSp %>% 
-  filter(Genus %in% c("Epidendrum"))
+  filter(Genus %in% c("Epipactis"))
 Ex # This shows that the species added Epidendrum xanthinum is not yet included in the data base
 ```
 
+***
 
-#### Extraer (filter) solamente las especies de la familia **Orchidaceae** 
+#### Extraer (filter) solamente las especies de la familia **Orchidaceae**
 
 ```{r chap16_6}
 index_O=ALLSp %>% 
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
 
-index_O
+head(index_O, n=3)
 
-sort(unique(index_O$Genus))
+Genera=(as.data.frame(sort(unique(index_O$Genus))))
+
+gt(Genera)
 ```
+
+
+***
 
 ### Lista de especies unicas de orquídeas en la base de datos de COMPADRE.
 
-Note que al momento hay 46 especies con nombres unicos en la base de datos
+Note que al momento hay 46 especies con nombres únicos en la base de datos
 
 ```{r chap16_7}
-sort(unique(index_O$SpeciesAccepted))
+
+gt(as.data.frame(sort(unique(index_O$SpeciesAccepted))))
 
 
 ```
 
-La base de datos de orquidea tiene un total de 647 filas, por consecuencia tiene 647 matrices.  Esas matrices de la misma especie son de diferentes poblaciones, tiempo o un analisis teóricos. 
+***
+
+## Contabilizar cuantas matrices y variables estan incluidas en el archivo
+
+La base de datos de orquídea tiene un total de 647 filas con 59 variables, por consecuencia tiene 647 matrices. Esas matrices de la misma especie son de diferentes poblaciones, tiempo o un análisis teóricos. 
 
 ```{r chap16_8}
-index_O
+dim(index_O)
 
 ```
 
-Para saber de cuantos manuscritos distinctos probvienen esos datos uno puede evaluar la cantidad de DOI_ISBN distinctos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes tecnicos. 
+Para saber de cuantos manuscritos distintos provienen esos datos uno puede evaluar la cantidad de DOI_ISBN distinctos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes tecnicos.
 
 ```{r chap16_9}
 unique(index_O$DOI_ISBN)
 ```
 
-Igualmente podemos evaluar cuantos distintos autores son responsable de esas publicaciones. Un total de 37 autores unicos o en grupo son la fuente de esos artículos.  
+Igualmente podemos evaluar cuantos distintos autores son responsable de esas publicaciones. Un total de 37 autores únicos o en grupo son la fuente de esos artículos.
 
 ## ROBERTO:
+
 HAY una manera de contabilizar los nombres específicos, no por grupo?
 
 ```{r chap16_10}
@@ -124,7 +156,7 @@ unique(index_O$Authors)
 
 ## Cuantos estudios unicos?
 
-Para evaluar el largo de tiempo por estudio se necesita selecionar una combinación de variables unica
+Para evaluar el largo de tiempo por estudio se necesita seleccionar una combinación de variables única
 
 Subset
 
@@ -141,10 +173,13 @@ SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublicat
 SPECIES_O %>% gt()
 
 
-write_csv(SPECIES_O, "Species_O.csv")
+#write_csv(SPECIES_O, "Species_O.csv")
 ```
 
-# Number of populations per species study
+
+****
+
+## Cantidad de poblaciones por especies
 
 ```{r chap16_12}
 as.data.frame(table(SPECIES_O$n_populations))
@@ -173,6 +208,9 @@ ggsave("Lenght_survey.png")
 
 ```
 
+***
+
+
 ```{r chap16_14}
 
 index_O=index_O %>% 
@@ -198,7 +236,9 @@ ggsave("Duración_Epi_Ter.png")
 plot(index_O$Lon,index_O$Lat,main = "Location")
 ```
 
-Getting the whole database for orchids
+
+
+### Amalgamando todas las matrices y su información
 
 ```{r chap16_16}
 
@@ -221,6 +261,9 @@ x <- subset(index_O,Family == "Orchidaceae")
 x_OT=x %>% 
   group_by(OrganismType)
 ```
+
+
+
 
 ```{r chap16_17}
 #Orchids_New=as_cdb(index)
@@ -322,7 +365,7 @@ ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
 ggsave("Terr_Epi_lambda.png")
 ```
 
-The number of populations
+### The number of populations
 
 ```{r chap16_24}
 x2 %>% 
@@ -398,8 +441,6 @@ ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy, colour=
 ggsave("Life_Span.png")
 ```
 
-
-
 ```{r chap16_28}
 
 #SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
@@ -421,9 +462,6 @@ ggplot(compadre_life_expect, aes(x=reorder(SpeciesAccepted, life_expectancy), li
 
 ggsave("Genus_Life_Span.png")
 ```
-
-
-
 
 ```{r chap16_29}
 
