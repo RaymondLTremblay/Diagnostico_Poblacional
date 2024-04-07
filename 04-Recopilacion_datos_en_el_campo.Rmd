@@ -53,7 +53,7 @@ A continuación se detalla en qué consisten ambos.
 
 a)  *Método de triangulación*. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia [@tremblay2009population]. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre estaca y estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema xy). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.
 
-![Métodos de triangulación para muestreo: los P_x representa la posición de cada planta. Dos distancia son medidas, cada una de la estaca. Nota que este método no se añade un identificador individual a las plantas. ](Figures/Triangulation_Method.pdf){width="100%" height="400"}
+![Métodos de triangulación para muestreo: los P_x representa la posición de cada planta. Dos distancia son medidas, cada una de la estaca. Nota que este método no se añade un identificador individual a las plantas.](Figures/Triangulation_Method.pdf){width="100%" height="400"}
 
 <br>
 
@@ -64,11 +64,11 @@ b)  *Método de sin área*. En campo, las orquídeas terrestres forman pequeñas
 La dinámica o cambio en una población se evalúa marcando y siguiendo a todos los individuos que se encuentran en un sitio (i.e. censo) o de solo una parte de éstos (i.e. muestreo) a lo largo de sus distintas etapas del ciclo de vida.
 Sin importar si censamos o muestreamos, tenemos que asegurar dos aspectos durante el marcaje o etiquetado de una población:
 
-1) que se incluyan individuos de todas las categorías de etapa/estado que conforman una población y
+1)  que se incluyan individuos de todas las categorías de etapa/estado que conforman una población y
 
-2) que el número de individuos de cada estapa/estado sea suficiente para poder llevar a cabo un análisis demográfico robusto que refleje, con cierta precisión, la dinámica de la población seleccionada.
+2)  que el número de individuos de cada estapa/estado sea suficiente para poder llevar a cabo un análisis demográfico robusto que refleje, con cierta precisión, la dinámica de la población seleccionada.
 
-3) además de esto, también debemos lograr que el registro de la información en campo sea fácil, consistente y sin error.
+3)  además de esto, también debemos lograr que el registro de la información en campo sea fácil, consistente y sin error.
 
 ### Etapas de las orquídeas de estudio a identificar en campo
 
@@ -100,7 +100,7 @@ De esta manera, el autor ha logrado distinguir entre plántulas de *Lepanthes el
 Al continuar el desarrollo, *Lepanthes eltoroensis* tendrá un crecimiento postrado, mientras que éste será erecto en *L. woodburyana*.
 Si bien este método es bueno, es importante considerar que puede representar un periodo de tiempo largo y que se corre el riesgo de no saber la especie cuando las plántulas no sobreviven a la siguiente etapa.
 
-## Identificar la especie de estudio
+## Identificar la caracteristicas de la especie de estudio
 
 Para cualquier estudio usando el acercamiento de dinámica poblacional es necesario conocer lo básico de la especie de interés y las etapas/edades que corresponde al ciclo de vida de esa misma.
 Poder reconocer las diferentes etapas del ciclo de vida con exactitud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes.
@@ -179,9 +179,17 @@ En este caso la etiquetas de las plantas número 10 en dos sitios se verían de 
 Si queremos añadir el año del estudio, éste también puede ser al final y sería de la siguiente forma: 1.10.23 y 2.10.23.
 Para los nuevos ingresos se sigue la misma lógica del inciso anterior, por lo que la nueva planta 155 que ingresa en 2024 a la población 1 le corresponderá la etiqueta 1.155.24.
 
-b)  *Cómo colocar la etiqueta*. Existen distintas formas de colocar las etiquetas o marcas en los individuos seleccionados para el estudio y, su colocación no debe afectar el desempeño de la planta marcada y si asegurar su permanencia en el mediano y largo plazo. Por ejemplo en las orquídeas epífitas de tamaño grande, la etiqueta de identidad se puede colocar abrazando a la planta, incluyendo la rama o tronco donde se desarrolla, o bien, colocarse abrazando a uno solo de los módulos. En el caso de *Laelia autumnalis* (@emeterio2021does), además de la etiqueta de identificación, se marcó **¿con qué?** el último módulo (el más joven o reciente) de cada uno de los frentes de crecimiento. Este tipo de marcaje permitió determinar la biomasa nueva que se agrega cada año a cada planta y, al mismo tiempo, permitió identificar la permanencia, crecimiento o retrogresión entre fases de crecimiento. En las orquídeas terrestres *Cypripedium irapeanum* **(ref)** y *Govenia lagenophora* **(ref)** funcionó bien usar etiquetas aluminio o cinta dymo amarradas palos de clavos o clavadas en segmentos de alambre delgado, semejando banderitas, los cuales a su vez fueron clavados en el suelo junto a los tallos.
+b)  *Cómo colocar la etiqueta*.
+    Existen distintas formas de colocar las etiquetas o marcas en los individuos seleccionados para el estudio y, su colocación no debe afectar el desempeño de la planta marcada y si asegurar su permanencia en el mediano y largo plazo.
+    Por ejemplo en las orquídeas epífitas de tamaño grande, la etiqueta de identidad se puede colocar abrazando a la planta, incluyendo la rama o tronco donde se desarrolla, o bien, colocarse abrazando a uno solo de los módulos.
+    En el caso de *Laelia autumnalis* (@emeterio2021does), además de la etiqueta de identificación, se marcó **¿con qué?** el último módulo (el más joven o reciente) de cada uno de los frentes de crecimiento.
+    Este tipo de marcaje permitió determinar la biomasa nueva que se agrega cada año a cada planta y, al mismo tiempo, permitió identificar la permanencia, crecimiento o retrogresión entre fases de crecimiento.
+    En las orquídeas terrestres *Cypripedium irapeanum* **(ref)** y *Govenia lagenophora* **(ref)** funcionó bien usar etiquetas aluminio o cinta dymo amarradas palos de clavos o clavadas en segmentos de alambre delgado, semejando banderitas, los cuales a su vez fueron clavados en el suelo junto a los tallos.
 
-    Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es necesario definir un material suave que evite dañar sus estructuras. Tremblay (@tremblay2000plant, @tremblay2003population, @tremblay1997lepanthes) utilizo un método adecuado para plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos. En este tipo de individuos No se debe amarrar la etiqueta a la planta, ya que el peso de la etiqueta puede causarle daño además de que las hojas no son persistentes, por lo que la marca podría perderse. En *Lepanthes eltoroensis* se usaron al principio pequeños clavos para fijar las etiqueta de los individuos, posteriormente se usaron grapas, con lo cual se provocó menos daño al árbol y más facil el proceso de marcar.
+    Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es necesario definir un material suave que evite dañar sus estructuras.
+    Tremblay (@tremblay2000plant, @tremblay2003population, @tremblay1997lepanthes) utilizo un método adecuado para plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos.
+    En este tipo de individuos No se debe amarrar la etiqueta a la planta, ya que el peso de la etiqueta puede causarle daño además de que las hojas no son persistentes, por lo que la marca podría perderse.
+    En *Lepanthes eltoroensis* se usaron al principio pequeños clavos para fijar las etiqueta de los individuos, posteriormente se usaron grapas, con lo cual se provocó menos daño al árbol y más facil el proceso de marcar.
 
 ![Los individuo de *Lepanthes eltoroensis* fueron identificados con una etiqueta de plástico clavada a la rama del árbol, posteriormente las nuevas etiquetas fueron engrapadas a la corteza del árbol. Foto: Tremblay](Figures/Lep_eltoroensis.png){width="60%"}
 
@@ -267,7 +275,7 @@ Tremblay [@tremblay2009dormancy, @tremblay2009population] desarrollo métodos ba
 
 <br/>
 
-a) *Lepanthes*.
+a)  *Lepanthes*.
 
 Tremblay [@tremblay1997lepanthes] en su estudio con el género *Lepanthes*, una orquídea miniatura epífita, considero las etapas o estadios de desarrollo para definir cuatro categorías del ciclo de vida: plántulas, juveniles, adultos no reproductivos y adultos reproductivos.
 Cabe señalar que, cada una de estas etapas está definida específicamente para cada especie de estudio; es decir, no son fijas por lo que pueden incluir más categorías de estado aún dentro del mismo género *Lepanthes*.
@@ -339,7 +347,8 @@ En el estudio utilizaron tres categorías para su análisis:
 
 f)  *Brassavola cucullata*.
 
-    Ackerman y colaboradores [@ackerman2020small] trabajaron con tres poblaciones de *Brassavola cucullata* en las Islas de San Eustaquio y Saba, Antillas de Barlovento del Mar Caribe, donde esta especie puede ser epífita o vivir sobre rocas. Usando el número de hojas se establecieron cuatro categorías de estado:
+    Ackerman y colaboradores [@ackerman2020small] trabajaron con tres poblaciones de *Brassavola cucullata* en las Islas de San Eustaquio y Saba, Antillas de Barlovento del Mar Caribe, donde esta especie puede ser epífita o vivir sobre rocas.
+    Usando el número de hojas se establecieron cuatro categorías de estado:
 
 -   **Juveniles 1**: Plantas con 1 ó 2 hojas.
 -   **Juveniles 2**: Plantas con 3 a 6 hojas.
@@ -350,13 +359,19 @@ f)  *Brassavola cucullata*.
 
 g)  *Brassavola cucullata*.
 
-    Ackerman y colaboradores [@ackerman2020small] también analizaron la dinámica poblacional a partir del tamaño de hoja más grande en los individuos. Debido a que las poblaciones fueron analizadas con modelos de proyección integral (IPM), la descripción de las poblaciones no se basó en categorías. En el estudio la tendencia en la supervivencia y reproducción indicó que las plantas necesitan un tamaño mínimo de la hoja más larga para florecer.
+    Ackerman y colaboradores [@ackerman2020small] también analizaron la dinámica poblacional a partir del tamaño de hoja más grande en los individuos.
+    Debido a que las poblaciones fueron analizadas con modelos de proyección integral (IPM), la descripción de las poblaciones no se basó en categorías.
+    En el estudio la tendencia en la supervivencia y reproducción indicó que las plantas necesitan un tamaño mínimo de la hoja más larga para florecer.
 
 <br/>
 
-h)  *Aspasia principissa*. (AVERGIAR ESTA CODIFICACION!!!)
+h)  *Aspasia principissa*.
+    (AVERGIAR ESTA CODIFICACION!!!)
 
-    Zotz y Schmidt [@zotz2006population] analizaron el comportamiento poblacional de *Aspasia principissa* en la Isla de Barro Colorado, Panamá. A partir del tamaño del pseudobulbo más reciente, los investigadores determinaron siete categorías de tamaño en la población. Además, se evaluó la presencia de flores y frutos en las plantas con un pseudobulbo reciente mayor a 7 cm de altura. **SC1**.
+    Zotz y Schmidt [@zotz2006population] analizaron el comportamiento poblacional de *Aspasia principissa* en la Isla de Barro Colorado, Panamá.
+    A partir del tamaño del pseudobulbo más reciente, los investigadores determinaron siete categorías de tamaño en la población.
+    Además, se evaluó la presencia de flores y frutos en las plantas con un pseudobulbo reciente mayor a 7 cm de altura.
+    **SC1**.
 
     -   Individuos con tamaño del pseudobulbo más reciente menor a 1.5 cm **SC2**.
     -   Individuos con tamaño del pseudobulbo más reciente de 1.6 a 2.5 cm **SC3**.
@@ -373,18 +388,17 @@ i)  *Laelia autumnalis*.
 Emeterio-Lara y colaboradores (en preparación) estudiaron poblaciones de la orquídea epífita *Laelia autumnalis*.
 Las plantas de *Laelia autumnalis* fueron clasificadas en cinco categorías con base a su biomasa.
 
-- **Plántulas**: Un primer pseudobulbo pequeño 
-- **Juveniles 1**: \< 9.5 gramos de biomasa, sin estructuras reproductivas 
-- **Juveniles 2**: de > 9.5 - 23.5 gramos de biomasa, ocasionalmente primeros eventos reproductivos 
-- **Adulto 1**:    de > 23.5 - 49.5 gramos con restos y estructuras reproductivas en desarrollo 
-- **Adulto 2**: \> 49.5 gramos de biomasa con restos de estructuras reproductivas y escasos eventos reproductivos   posteriores
+-   **Plántulas**: Un primer pseudobulbo pequeño
+-   **Juveniles 1**: \< 9.5 gramos de biomasa, sin estructuras reproductivas
+-   **Juveniles 2**: de \> 9.5 - 23.5 gramos de biomasa, ocasionalmente primeros eventos reproductivos
+-   **Adulto 1**: de \> 23.5 - 49.5 gramos con restos y estructuras reproductivas en desarrollo
+-   **Adulto 2**: \> 49.5 gramos de biomasa con restos de estructuras reproductivas y escasos eventos reproductivos posteriores
 
 <br/>
 
 ![Cypripedium acaule marcado; Foto: Tremblay](Figures/Cypripedium_acaule.jpg){width="50%"}
 
 ![Cypripedium acaule identificado con bandera numerada; Foto: Tremblay](Figures/Cyp_acaule_flag.jpg){width="50%"}
-
 
 Otras variables que pudiese recoger incluye
 
@@ -411,5 +425,3 @@ Otras variables que pudiese recoger incluye
 -   indicadores de herbivoria sobre la planta
 
 -   indicadores de la cantidad plagas sobre la planta como "rust"
-
-
