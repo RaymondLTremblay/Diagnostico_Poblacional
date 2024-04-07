@@ -506,6 +506,10 @@ leveneTest(life_expectancy~OrganismType, data=compadre_life_expect) # equal vari
 
 Use robust Approach
 
+Para el siguiente análisis se necesita instalar el paquete **WRS2**.
+
+Y se necesita cargar el archivo de funciones de **Rallfun-v38.txt** que se encuentra en el siguiente enlace \<<https://github.com/rrwilcox/Rallfun>\> y guardarlo en su directorio de trabajo. Pudiese ser que haya versiones más recientes de este archivo. Nota que el codigo abajo funciona para mi computadora, uds tienen que ajustar la dirección del archivo a su directorio de trabajo.
+
 ```{r chap16_31}
 library(WRS2)
 source("/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt", chdir = T) # Home computer
