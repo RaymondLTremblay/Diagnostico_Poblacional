@@ -103,6 +103,15 @@ proyecto-de-dinamica-transitoria-o-de-corto-plazo
 part-i-dinámica-poblacional-de-largo-plazo
 paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0
 capturar-y-obtener-el-vector-inicial-datos-de-campo-de-clases-de-estado-población-1
+definición-de-términos-ergodicidad-irrecucible-y-primitiva
+a-ergodicidad
+b-irreducible
+crecimiento-asintótico
+estructura-estable
+valores-reproductivos
+análisis-de-elasticidad
+análisis-de-amortiguamientodamping-ratio
+análisis-de-convergencia
 dinámica-transitoria
 elasticidad-no-lineal
 por
@@ -159,7 +168,7 @@ amalgamando-todas-las-matrices-y-su-información
 the-number-of-populations
 important-to-include-only-matrices-that-are-annual.
 un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población
-la-teoria-non-es-estatica-la-no-liealidad-dependencia-del-medio-ambiente-y-los-modelos-de-multiple-estados.
+la-teoría-non-es-estática-la-no-linealidad-dependencia-del-medio-ambiente-y-los-modelos-de-múltiple-estados.
 modelos-no-lineal
 dependencia-del-ambiente
 modelos-de-múltiples-estados

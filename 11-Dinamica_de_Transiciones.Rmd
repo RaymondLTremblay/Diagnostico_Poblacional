@@ -20,15 +20,17 @@ En primer lugar se debe contar con una matriz de proyección poblacional y su ve
 
 ### PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO
 
-Este es un análisis de dinámica transitoria para *Lepanthes rubripetala* (Población 1) con cuatro clases de tamaño: de estado en su ciclo de vida:
+Este es un análisis de dinámica transitoria para *Lepanthes rubripetala* (Población 1) con cuatro clases de estado en su ciclo de vida:
 
--   1.  plántula,
+-   plántula,
 
--   2.  juvenil,
+-   juvenil,
 
--   3.  adultos no reproductivos,
+-   adultos no reproductivos,
 
--   4.  adultos reproductivos.
+-   adultos reproductivos.
+
+<br>
 
 ### PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL $t_{0}$
 
@@ -54,17 +56,19 @@ Lr1
 
 ```
 
-#### Capturar y obtener el vector inicial (datos de campo) de clases de estado población 1  
+<br>
+
+#### Capturar y obtener el vector inicial (datos de campo) de clases de estado población 1
 
 Los datos provienen de la siguiente fuenta: [@tremblay2015stable; @schodelbauerova2010prediction] y se refieren a la estructura poblacional inicial de *Lepanthes rubripetala* en la población 1. La estructura poblacional inicial de la población 1 de *L. rubripetala* fue la siguiente:
 
--   1.  plántula, n= 0
+-   plántula, n= 0
 
--   2.  juvenil, n= 46
+-   juvenil, n= 46
 
--   3.  adultos no reproductivos, n= 38
+-   adultos no reproductivos, n= 38
 
--   4.  adultos reproductivos, n = 82
+-   adultos reproductivos, n = 82
 
 ```{r}
 
@@ -74,61 +78,155 @@ n0
 
 ```
 
-*Paso 2: Condiciones que debe cumplir la matriz de estudio*. 
+<br>
+
+*Paso 2: Condiciones que debe cumplir la matriz de estudio*.
 
 Previo al análisis de dinámica transitoria se debe comprobar que la matriz de transición poblacional sea: a) Irreducible, que los elementos de la matriz de análisis y, por lo tanto, los nodos de la gráfica del ciclo de vida, estén fuertemente conectados, tengan una ruta, de modo que formen un ciclo. b) Ergódica, que la dinámica asintótica sea independiente de las condiciones iniciales (i.e. estructura poblacional inicial)\
 c) Primitiva, que al elevar a altas potencias una matriz irreducible positiva (i.e. sin elementos negativos) su resultado sea único y tenga un sólo valor positivo (i.e. tasa de crecimiento poblacional). (Caswell, 2001)
 
 Así que, a continuación se comprueba si la matriz de *L. rubripetala* cumple con estas condiciones o supuestos.
 
-```{r chap10_2}
-##PASO 2: PASO 2: CONDICIONES QUE DEBE CUMPLIR LA MATRIZ DE ESTUDIO.
-#a) Ergodicidad
+#### Definición de términos Ergodicidad, Irrecucible y Primitiva
+
+-   El primer punto para cualquier análisis de dinámica poblacional es que la matriz tiene que ser cuadricular n\*n y no negativa.
+
+-   La matriz tiene que ser **ergódica**: Irrelevante de la estructura de etapas inicial que se usa para proyectar el crecimiento poblacional siempre tendrá el mismo crecimiento asintomático.
+
+-   La matriz tiene que ser **irreducible**: El ciclo de vida de la especie tiene las transiciones para que cualquier etapas puede llegar a todas las otras etapas.
+
+Para una discusión sobre estas condiciones vea a [@stott2010reducibility]
+
+Para evaluar si las matrices son ergodica y irreducible se usa las funciones **isErgodic** y **isIrreducible**. Vea que en las cajas siguiente el resultado es "TRUE" por consecuencia cumple con ambas condiciones.
+
+#### a) Ergodicidad
+
+```{r chap10_ergodic}
+
+
 ergo <- isErgodic(Lr1, digits = 5, return.eigvec = FALSE)
 ergo
+```
 
-#b) Irreducible
+#### b) Irreducible
+
+```{r chap10_irreduc}
 irreduc <- isIrreducible(Lr1)
 irreduc
 
-#c) Primitiva
-primi <- isPrimitive(Lr1)
-primi
 
 ```
 
-*Paso 3: Análisis demográfico básico*. En el análisis de dinámica transitoria necesitamos conocer cómo se comporta una población en el largo plazo, por lo que se proyecta el crecimiento poblacional de tipo asintótico para la matriz de la población seleccionada. Entonces, a partir de la matriz de proyección poblacional y el correspondiente vector de la estructura poblacional observada al inicio del estudio de *L. rubripetala*, calcularemos la tasa de crecimiento poblacional (i.e.*lambda*, de ahora en adelante *lambda-max*), la estructura poblacional estable (*w*, de ahora en adelante *w-max*) y el valor reproductivo (*v*), así como las matrices de sensibilidad y elasticidad. Con este fin, usaremos el procedimiento de la *Sección X*, desarrollado en el *Programa "popbio" de R*.
+<br>
+
+*Paso 3: Análisis demográfico básico*.
+
+En el análisis de dinámica transitoria necesitamos conocer cómo se comporta una población en el largo plazo, por lo que se proyecta el crecimiento poblacional de tipo asintótico para la matriz de la población seleccionada. Entonces, a partir de la matriz de proyección poblacional y el correspondiente vector de la estructura poblacional observada al inicio del estudio de *L. rubripetala*, calcularemos la tasa de crecimiento poblacional (i.e.*lambda*, de ahora en adelante *lambda-max*), la estructura poblacional estable (*w*, de ahora en adelante *w-max*) y el valor reproductivo (*v*), así como las matrices de sensibilidad y elasticidad. Con este fin, usaremos el procedimiento de la *Sección X*, desarrollado en el *Programa "popbio" de R*.
 
 Además de esta información, se estimarán dos nuevos términos: el tiempo de convergencia (*convergence-time*) y la relación de amortiguamiento (*damping-ratio*). El primero indica el tiempo esperado en que una población alcanza la estructura estable, mientras que el segundo es una medida de que tan rápido converge una población a la estructura estable (Caswell, 2001).
 
-```{r chap10_3}
-##*PASO 3: ANÁLISIS DEMOGRÁFICO BÁSICO: PROYECCIÓN DE LA POBLACIÓN*.
+### Crecimiento asintótico
+
+La definición del crecimiento asintótico de la población *lambda* se basa en la tasa de crecimiento poblacional cuando la población este a su nivel estable de estructura de edades/estados. Por consecuencia se asume que la población llegue o este a un nivel estructura de edades/estados estable.
+
+Para la población de *Lepanthes rubripetala* se obtiene una tasa de crecimiento poblacional de 1.007, lo que indica que la población crece a una tasa constante de 1.007 entre $t_{0}$ y $t_{1}$. Entonces si la población tuviese 1000 individuos hubiese 7 individuos más en $t_{1}$.
+
+```{r chap10_asimptotico}
+
 #Análisis asintótico (i.e. largo plazo) del crecimiento poblacional de L. rubripetala
 #La orquídea florece todo el año, por lo que el seguimiento de la población fue mensual. 
 
 #PARÁMETROS POBLACIONALES
-##lambda: Tasa de crecimiento poblacional 
+##lambda: Tasa de crecimiento poblacional
+
+
 lambda <-lambda(Lr1)
 lambda
+```
 
+## Estructura estable
+
+La estructura estable de edades/etapas es un indice de la distribución proporcional de la poblacional que se espera que esta población alcance en el largo plazo. En el caso de *Lepanthes rubripetala* se espera que la población alcance una estructura estable de 0.088, 0.206, 0.369 y 0.337 para las categorías de plántulas, juveniles, adultos no reproductivos y adultos reproductivos, respectivamente. Esta estructura asume que el crecimiento poblacional *lambda* $\lambda$ sigue igual y constante en el tiempo.
+
+```{r stable.stage}
 #Estructura estable de estados
 Wmax <- stable.stage(Lr1)
 Wmax
+```
 
+Uno puede visualizar la estructura la estructura de la población usando el codigo siguiente.
+
+```{r estructuraestable_viz}
+Wdf=data.frame(Wmax)
+Wdf$Categorias=c("Plántulas","Juveniles","Adultos no reproductivos","Adultos reproductivos")
+Wdf$Categorias=factor(Wdf$Categorias, levels=c("Plántulas","Juveniles","Adultos no reproductivos","Adultos reproductivos"))
+library(ggplot2)
+
+ggplot(Wdf, aes(y=Wmax, x=Categorias)) + 
+  geom_bar(stat="identity", fill="blue") +
+  labs(title="Estructura estable de estados", x="Categoría", y="Proporción") +
+  theme_minimal()
+
+```
+
+## Valores reproductivos
+
+El valor reproductivo *v* es un indice de la contribución de cada categoría de edad/estado a la tasa de crecimiento poblacional. En el caso de *Lepanthes rubripetala* se espera que la categoría de adultos reproductivos contribuya más a la tasa de crecimiento poblacional, seguido por la categoría de adultos no reproductivos, juveniles y plántulas. Los valores en la lista de *v* se compara con la primera edad/estado. Por consecuencia un individuo de la 4ta etapa (adulto reproductivo) tiene un potencial de dejar 2.7 individuos al comparar que una plantula tiene solamente tiene un valor de 1.0. La diferencia es que los individuos pequeños tienen que sobrevivir y llegar a las etapas mayores para contribuir a la tasa de crecimiento poblacional.
+
+```{r valorreproductivo}
+
+valor_repro=reproductive.value(Lr1)
+valor_repro
+```
+
+## Análisis de elasticidad
+
+La elasticidad es un indice de la sensibilidad de la tasa de crecimiento poblacional a los cambios en las tasas de supervivencia, crecimiento y reproducción de cada categoría de edad/estado. La suma de todas las proporciones es 1.0, por consecuencia uno puede comparar el efecto de cambios proporcional en cada parámetro y evaluar su impacto. En el caso de *Lepanthes rubripetala* se espera que la tasa de crecimiento poblacional sea más sensible a los cambios en la supervivencia de los etapas 3 y 4 ya que tienen una elasticidad de 0.313 y 0.311 respectivamente. Si sumamos el componente de supervivencia (la diagonal) de la matriz de transición poblacional, la suma es (0.018 + 0.122 + 0.313 + 0.311) = 0.764. Por consecuencia, las etapas de supervivencia de los individuos contribuyen a 76.4% y son las etapas más sensitivas a los cambios demográficos. Al comparar si uno fuese a hacer un cambio proporcional en la reproducción (los adultos que dejan plántulas) tendría un impacto mucho más pequeño, solamente de 2.3%.
+
+Los análisis de elasticidad pueden ser usado para evaluar que etapas que pudiese ayudar en enfocar las alternativas de manejo para cambiar la tasa de crecimiento poblacional. Por ejemplo si es una especie en peligro de extinción, uno puede enfocar los trabajos de manejo de la especie en mejorar la supervivencia de los individuos de las etapas más sensitivas. Al contrario si es una especie invasora, uno puede enfocar los trabajos de manejo en reducir la supervivencia de las etapas más sensitivas. En este caso seria reducir la supervivencia de los adultos reproductivos y no reproductivos. Enfocando en las etapas más sensitivas es una forma de maximizar el impacto de los trabajos de manejo con menos recursos. Naturalmente se asume que el manejo de estas etapas es posible, por ejemplo si la elasticidad es alta en una de las tranciciones, por ejemplo juvenil a adultos, pero no se conoce cual son la variables ambientales que impacta esa transiciones no se puede hacer un manejo efectivo. 
+
+
+```{r elasticidad}
 #Matriz de elasticidad
 elasticidad <- round(elas(Lr1),digit=3)
 elasticidad
+```
+
+## Análisis de Amortiguamiento/Damping Ratio
+
+El análisis de amortiguamiento es un indice de la rapidez con la que una población converge a su estructura estable después de un disturbio [@jiang2020life]. El indice de amortiguamiento $d > 0$, y más grande el indice de amortiguamiento más rápido la población converge a la estructura estable. Se ha demostrado que hay una relación entre el indice de amortiguamiento y tiempo de generación de una especie [@jiang2020life].  El tiempo de amortiguamiento se calcula $\tau=1/d$. Usando la función *dr* del paquete **popbio**, en el caso de *Lepanthes rubripetala* se espera estima que el indice de amortigamiento es 1.2 y que la población converga a su estructura estable en 12 meses, ya que los datos fueron recolectado y analizado mensualmente. Si los datos son recolectado fueron recolectado una vez al año entonces la población converga a su estructura estable en 12 años. Un supuesto importante es que la tasa de crecimiento intrínseca es igual para todos los periodos subsiguientes.  
+
+```{r damping}
 
 #Relación de amortiguamiento
 dampingratio <- dr(Lr1, return.time=TRUE, x=10)
 dampingratio
+```
 
+## Análisis de Convergencia
+
+El tiempo de convergencia puede ser calculado a base de la cantidad de individuos en las diferentes etapas o edades. El tiempo de convergencia es el tiempo esperado en que una población alcanza la estructura estable. En el caso de *Lepanthes rubripetala* se espera que la población alcance la estructura estable en 25 meses si se comienza con una población sesgada de solamente plántulas (n=1000) y ninguno en las etapas subsiguientes. 
+
+
+
+```{r converngence}
 # Tiempo de convergencia
 n = c(1000, 0, 0, 0)
 tconvergencia <- convt(Lr1, accuracy = 1e-3, vector = n)
 tconvergencia
 
 ```
+
+Si comenzamos con una población mucho más cerca a la estructura estable, podemos calcular el tiempo de convergencia. Digamos que se comienza con una población de 8, 20, 27 34 individuos en las etapas 1, 2, 3 y 4 respectivamente. En este caso se espera que la población alcance la estructura estable en 6 meses. En este caso vemos que el tiempo de convergencia es mucho más corto que si se comienza con una población sesgada de solamente plántulas.
+
+
+```{r converngence2}
+
+n2 = c(8, 20, 27, 34)
+tconvergencia <- convt(Lr1, accuracy = 1e-3, vector = n2)
+tconvergencia
+```
+
 
 ## Dinámica transitoria
 
