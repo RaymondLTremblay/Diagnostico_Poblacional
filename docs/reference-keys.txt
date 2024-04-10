@@ -48,7 +48,8 @@ crecimiento-o-reiteración-vegetativa.
 ejemplos-de-categorización-en-especies-de-estudio
 etapas-o-estadios-de-desarrollo
 como-calcular-transiciones-para-la-matriz-de-lefkovitch
-por-ernesto-mujica-y-elaine-gonzalez-y-aucencia
+por-rlt-ernesto-mujica-y-elaine-gonzalez-y-aucencia
+introducción
 métodos-tradicional-de-calcular-las-transiciones
 problema-con-el-uso-tradicional
 referencias-2
@@ -225,9 +226,9 @@ duración-del-taller
 certificación-a-nombre-de-la
 costo-del-taller-estudiantes
 cupo-25-personas
-introducción
+introducción-1
 objetivo-general
 objetivos-específicos
-introducción-1
+introducción-2
 materiales-necesarios
 bibliografía

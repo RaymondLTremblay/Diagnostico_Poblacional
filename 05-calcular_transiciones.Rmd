@@ -1,10 +1,50 @@
 # Como calcular transiciones para la matriz de Lefkovitch
 
-## Por: Ernesto Mujica y Elaine Gonzalez y Aucencia
+## Por: RLT, Ernesto Mujica y Elaine Gonzalez y Aucencia
+
+
+## Introducción
+
+En el siguiente capitulo estarémos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R. Los métodos presentado aqui son una adaptación de los métodos presentados en [caswell2000matrix] y pueden ver tambien una aplicación de estos metodos aplicado a las orquideas [tremblay2003population]. Si ha hecho analisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capitulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es muy tedioso y propenso a errores hacer a mano. En la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R.
+
 
 ## Métodos tradicional de calcular las transiciones
 
+El primer paso es la tabla de datos de la orquídea mustreada y sus estados en dos periodos de tiempo, digamos un año de intervalo.  Aqui adjunto un ejemplo de una tabla de datos de xxx.  Tenemos 3 estados en esta planta, "A", "B", "C" y "Muerto".  En la tabla de datos, tenemos 19 individuos que fueron mustreados en dos periodos de tiempo.  En el primer periodo de tiempo, 7 individuos estaban en el estado "A", 6 en el estado "B" y 6 en el estado "C".  Para calcular las transiciones, necesitamos calcular la proporción de individuos que transitaron de un estado a otro.  Por ejemplo, de los 7 individuos que estaban en el estado "A" en el primer periodo de tiempo, 1 individuos estaba en el estado "A" en el segundo periodo de tiempo, 2 individuos estaban en el estado "B",  3 individuos estaban en el estado "C", y un indviduo que murio, dando la siguiente proporciones
 
+ - 0.3 transitaron de "A" a "A"
+ - 0.2 transitaron de "A" a "B"
+ - 0.5 transitaron de "A" a "C"
+ - 0.1 mur
+.  Para calcular la proporción de individuos que transitaron de un estado a otro, necesitamos dividir el número
+
+```{r, transiciones_tabla, message=FALSE}
+library(tidyverse)
+library(gt)
+Orchis_ficticia=tribble(~Num_ind, ~año_1, ~ano2,
+                        1,  "A", "Muerto",
+                        2,  "A", "B",
+                        3,  "A", "C",
+                        4,  "B", "A",
+                        5,  "B", "B",
+                        6,  "B", "C",
+                        7,  "C", "A",
+                        8,  "C", "B",
+                        9,  "C", "C",
+                        10,  "A", "A",
+                        11,  "A", "B",
+                        12,  "A", "C",
+                        13,  "A", "C",
+                        14,  "B", "A",
+                        15,  "B", "Muerto",
+                        16,  "B", "C",
+                        17,  "C", "Muerto",
+                        18,  "C", "B",
+                        19,  "C", "Muerto",
+                        20,  "", "A"
+                        )
+gt(Orchis_ficticia)                        
+```
 
 ## Problema con el uso tradicional
 
