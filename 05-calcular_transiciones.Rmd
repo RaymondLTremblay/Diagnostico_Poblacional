@@ -1,27 +1,56 @@
 # Como calcular transiciones para la matriz de Lefkovitch
 
-## Por: RLT, Ernesto Mujica y Elaine Gonzalez y Aucencia
+Por: RLT, Ernesto Mujica y Elaine Gonzalez y Aucencia
 
+```{r, message=FALSE}
+library(tidyverse)
+```
 
 ## Introducción
 
-En el siguiente capitulo estarémos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R. Los métodos presentado aqui son una adaptación de los métodos presentados en [caswell2000matrix] y pueden ver tambien una aplicación de estos metodos aplicado a las orquideas [tremblay2003population]. Si ha hecho analisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capitulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es muy tedioso y propenso a errores hacer a mano. En la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R.
-
+En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en [@caswell2000matrix] y pueden ver también una aplicación de estos métodos aplicado a las orquídeas [@tremblay2003population]. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capitulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es muy tedioso y propenso a errores hacer a mano. En la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R.
 
 ## Métodos tradicional de calcular las transiciones
 
-El primer paso es la tabla de datos de la orquídea mustreada y sus estados en dos periodos de tiempo, digamos un año de intervalo.  Aqui adjunto un ejemplo de una tabla de datos de xxx.  Tenemos 3 estados en esta planta, "A", "B", "C" y "Muerto".  En la tabla de datos, tenemos 19 individuos que fueron mustreados en dos periodos de tiempo.  En el primer periodo de tiempo, 7 individuos estaban en el estado "A", 6 en el estado "B" y 6 en el estado "C".  Para calcular las transiciones, necesitamos calcular la proporción de individuos que transitaron de un estado a otro.  Por ejemplo, de los 7 individuos que estaban en el estado "A" en el primer periodo de tiempo, 1 individuos estaba en el estado "A" en el segundo periodo de tiempo, 2 individuos estaban en el estado "B",  3 individuos estaban en el estado "C", y un indviduo que murio, dando la siguiente proporciones
+El primer paso es la tabla de datos de la orquídea y sus estados en dos periodos de tiempo, digamos un año de intervalo. Aquí adjunto un ejemplo de una tabla de datos de 20 individuos. Tenemos 3 estados en esta planta, "A", "B", "C" y "Muerto". En la tabla de datos, tenemos 19 individuos que fueron muestreados en dos periodos de tiempo. En el primer periodo de tiempo, 7 individuos estaban en el estado "A", 6 en el estado "B" y 6 en el estado "C". Para calcular las transiciones, necesitamos calcular la proporción de individuos que transitaron de un estado a otro. Por ejemplo, de los 7 individuos que estaban en el estado "A" en el primer periodo de tiempo, 1 individuos estaba en el estado "A" en el segundo periodo de tiempo, 2 individuos estaban en el estado "B", 3 individuos estaban en el estado "C", y un individuo que murió, dando las siguientes proporciones
 
- - 0.3 transitaron de "A" a "A"
- - 0.2 transitaron de "A" a "B"
- - 0.5 transitaron de "A" a "C"
- - 0.1 mur
-.  Para calcular la proporción de individuos que transitaron de un estado a otro, necesitamos dividir el número
+De A a otras clases
 
-```{r, transiciones_tabla, message=FALSE}
+-   1/7 = 0.1428, transitaron de "A" a "A"
+-   2/7 = 0.2857, transitaron de "A" a "B"
+-   3/7 = 0.4285 transitaron de "A" a "C"
+-   1/7 = 0.1428 fallecieron de las "A" en el primer periodo de tiempo fallecieron en el segundo periodo de tiempo
+
+Nota que la suma de todas estas transciones tienen que sumar a 1.000. NO pueden ser mayor que 1 o menor que 1. Si la suma de las transiciones es mayor que 1, significa que hay un error en los datos. Si la suma de las transiciones es menor que 1, significa que hay un error en los datos. Esto ocurre cuando se redondea excesivamente o incorrectamente. En este caso, Nota que la suma da un total de 0.9998, que es suficiente cerca de 1.0.
+
+Ahora calculamos las otras transiciones De B a otras clases - 2/6 = 0.3333, transitaron de "B" a "A" - 1/6 = 0.1666, transitaron de "B" a "B" - 2/6 = 0.3333, transitaron de "B" a "C" - 1/6 = 0.1666, fallecieron de las "B" en el primer periodo de tiempo fallecieron en el segundo periodo de tiempo
+
+De C a otras clases
+
+-   1/6 = 0.1666, transitaron de "C" a "A"
+-   2/6 = 0.3333, transitaron de "C" a "B"
+-   1/6 = 0.1666, transitaron de "C" a "C"
+-   2/6 = 0.3333, fallecieron de las "C" en el primer periodo de tiempo fallecieron en el segundo periodo de tiempo
+
+```{r, echo=FALSE, eval=FALSE}
 library(tidyverse)
+a=2/6
+b=1/6
+c=1/6
+d=2/6
+
+sum=a+b+c+d
+sum
+
+sum2=0.1428+0.1428+0.2857+0.4285
+sum2
+
+```
+
+```{r, transiciones_tabla, message=FALSE, echo=FALSE}
+
 library(gt)
-Orchis_ficticia=tribble(~Num_ind, ~año_1, ~ano2,
+Orchis_ficticia=tribble(~Num_ind, ~anio_1, ~anio_2,
                         1,  "A", "Muerto",
                         2,  "A", "B",
                         3,  "A", "C",
@@ -46,9 +75,74 @@ Orchis_ficticia=tribble(~Num_ind, ~año_1, ~ano2,
 gt(Orchis_ficticia)                        
 ```
 
-## Problema con el uso tradicional
+Ahora usamos los valores calculados arriba para construir la matriz de transiciones.
+
+Nota que en las columnas representa el estado en el tiempo 1 y las filas los estados en el periodo 2. Importante la transiciones a Muerto no se poner, automáticamente los análisis reconoce que 1 menos la suma las transiciones en la matriz, sera la proporciones de fallecimiento.
+
+```{r}
+ficticia_matrix=matrix(c(0.1428, 0.3333, 0.1666,
+                         0.2857, 0.1666, 0.3333,
+                         0.4285, 0.3333, 0.1666), 
+                            nrow=3, byrow=TRUE)
+
+ficticia_matrix
+```
+
+### Añadiendo los nombres de las etapas
+
+Es buena práctica añadir el nombre de las etapas a la matriz ya que ayuda a encontrar incosistencia y posible errores. Las dos funciones necesarias son **rownames** y **colnames**.
+
+```{r}
+rownames(ficticia_matrix)<-c("A", "B", "C")
+colnames(ficticia_matrix)<-c("A", "B", "C")
+
+ficticia_matrix
+
+```
+
+------------------------------------------------------------------------
+
+### Construcción de matriz con funciones en R
+
+En la próxima sección veremos como calcular las transiciones de manera más eficiente usando funciones en disponibles en algunos paquetes de R. La función principal que usaremos es la función **projection.matrix** del paquete **popbio**. Sin duda esta función es más eficiente y menos propensa a errores que hacerlo a mano.
+
+Los argumentos de la función **projection.matrix** son los siguientes:
+
+```         
+projection.matrix(
+  transitions, # el nombre de la tabla de datos
+  stage = NULL, # el nombre de la columna con los estados en el primer tiempo
+  fate = NULL, # el nombre de la column con los estados en el segundo tiempo
+  fertility = NULL, la información sobre la fertilidad
+  sort = NULL, # si se quiere ordenar los estados de la historia de vida
+  add = NULL,
+  TF = FALSE # si quiere que la matriz de transiciones y de fertilidad sean separados usa = TRUE 
+   )
+```
+
+Nota que el output de la función **projection.matrix** es una lista con dos elementos, en dos matrices, una con las transiciones $T$ y otra con la fertilidad $F$. La primera tiene solamente los valores de transiciones y la segunda solamente los valores que corresponde a la fertilidad, o sea la cantidad de individuos que se añaden a cada clase de edad.
+
+```{r}
+library(popbio)
+
+Orchis_ficticia_df=as.data.frame(Orchis_ficticia) # Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. 
+stages=c("A", "B", "C")
+Orchis_ficticia_df$fertility<-0
+projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, TF=TRUE)
 
 
+```
 
+Si quiere la matriz con la unión de ambas matrices, puede usar el argumento **TF=FALSE**.
 
-## Referencias
+```{r}
+projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, TF=FALSE)
+```
+
+### Fertilidad
+
+Nota que no se añadió el calculo de la fertilidad en la tabla de datos, por lo que la matriz de fertilidad es una matriz de ceros. En el próximo capitulo veremos como añadir la fertilidad a la matriz.
+
+## Problema con el uso tradicional de calcular las transiciones
+
+El uso de estos métodos tradicionales aun que sean calculado a mano o usar la función **projection.matrix** del paquete **popbio** pudiese ser problemático. Los problemas ocurren por condiciones de muestreo, especialmente cuando trabajan con especies raras y los tamaños de muestra están pequeños o que las transiciones son raras de forma natural [@tremblay2021population; @gascoigne2023standard]. En el capitulo XX: **Impacto de datos sin sentidos** se discute como construir matrices más confiable y cuando se debería usar el método Bayesiano para los análisis.
