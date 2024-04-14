@@ -1,5 +1,6 @@
 # LTRE
 
+por : Adriana Ramírez-Martínez
 
 ## Introducción a LTRE
 

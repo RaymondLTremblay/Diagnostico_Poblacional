@@ -52,75 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  background-color: #f8f8f8; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #204a87; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #204a87; font-weight: bold; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
   
@@ -333,21 +266,16 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>13.2.1</b> Ejemplo práctico de ERTV</a></li>
 <li class="chapter" data-level="13.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>13.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
-<li class="chapter" data-level="13.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>13.2.3</b> Diagrama del ciclo de vida</a></li>
-<li class="chapter" data-level="13.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>13.2.4</b> Diagrama para Quercus martinezii</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>13.2.5</b> Diagrama para Quercus rugosa</a></li>
-</ul></li>
-<li class="chapter" data-level="13.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>13.3</b> Procedimiento para ERTV en Excel</a></li>
-<li class="chapter" data-level="13.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>13.4</b> Procedimiento en R</a>
-<ul>
-<li class="chapter" data-level="13.4.1" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.1</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="13.4.2" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.2</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="13.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>13.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
-<li class="chapter" data-level="13.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>13.4.4</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
-<li class="chapter" data-level="13.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>13.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
-<li class="chapter" data-level="13.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
-<li class="chapter" data-level="13.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
-<li class="chapter" data-level="13.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>13.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>13.2.3</b> Diagrama para Quercus martinezii</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>13.2.4</b> Diagrama para Quercus rugosa</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.2.5</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.2.6</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.2.7" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>13.2.7</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="13.2.8" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>13.2.8</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
+<li class="chapter" data-level="13.2.9" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>13.2.9</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="13.2.10" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>13.2.10</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="13.2.11" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>13.2.11</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="13.2.12" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>13.2.12</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>14</b> Metodos de Simulaciones y estimaciones de intervalo de confianza</a>
