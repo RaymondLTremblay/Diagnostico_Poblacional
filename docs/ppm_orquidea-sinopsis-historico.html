@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 16 PPM_Orquidea sinopsis historico | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 16 PPM_Orquidea sinopsis historico | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-04-11" />
+<meta name="date" content="2024-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -230,11 +231,12 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
 <li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.1</b> Añadiendo los nombres de las etapas</a></li>
-<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.2</b> Construcción de matriz con funciones en R</a></li>
-<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.3</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.4</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2.5</b> Problema con el uso tradicional de calcular las transiciones</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.3</b> Problema con el uso tradicional de calcular las transiciones</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
 <ul>
@@ -291,12 +293,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>10</b> Elasticidad</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="elasticidad.html"><a href="elasticidad.html#por-demetria-ernesto-mujica-y-elaine-gonzalez"><i class="fa fa-check"></i><b>10.1</b> Por: Demetria, Ernesto Mujica y Elaine Gonzalez</a></li>
+<li class="chapter" data-level="10.1" data-path="elasticidad.html"><a href="elasticidad.html#por-rlt"><i class="fa fa-check"></i><b>10.1</b> Por: RLT</a></li>
 <li class="chapter" data-level="10.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>10.2</b> Qué es la Elasticidad</a></li>
-<li class="chapter" data-level="10.3" data-path="elasticidad.html"><a href="elasticidad.html#como-se-interpreta-la-eslaticidad"><i class="fa fa-check"></i><b>10.3</b> Como se interpreta la eslaticidad</a></li>
-<li class="chapter" data-level="10.4" data-path="elasticidad.html"><a href="elasticidad.html#como-se-calcula-la-eslasticidad"><i class="fa fa-check"></i><b>10.4</b> Como se calcula la eslasticidad</a></li>
+<li class="chapter" data-level="10.3" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-interpreta-la-elasticidad"><i class="fa fa-check"></i><b>10.3</b> Cómo se interpreta la elasticidad</a></li>
+<li class="chapter" data-level="10.4" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-calcula-la-elasticidad"><i class="fa fa-check"></i><b>10.4</b> Cómo se calcula la elasticidad</a></li>
 <li class="chapter" data-level="10.5" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>10.5</b> Limitaciones</a></li>
-<li class="chapter" data-level="10.6" data-path="elasticidad.html"><a href="elasticidad.html#referencias-3"><i class="fa fa-check"></i><b>10.6</b> Referencias</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>11</b> Dinámica transitoria (Transient dynamics)</a>
 <ul>
@@ -321,7 +322,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.3" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#valor-biológico"><i class="fa fa-check"></i><b>12.3</b> Valor biológico</a></li>
 <li class="chapter" data-level="12.4" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#métodos-de-calculo"><i class="fa fa-check"></i><b>12.4</b> Métodos de calculo</a></li>
 <li class="chapter" data-level="12.5" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>12.5</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
-<li class="chapter" data-level="12.6" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#referencias-4"><i class="fa fa-check"></i><b>12.6</b> Referencias</a></li>
+<li class="chapter" data-level="12.6" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#referencias-3"><i class="fa fa-check"></i><b>12.6</b> Referencias</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>13</b> LTRE</a>
 <ul>
@@ -389,31 +390,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="18" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>18</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
 <ul>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i>“A standard protocol to report discrete stage-structured demographic information”</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#persona-de-contacto"><i class="fa fa-check"></i>Persona de contacto</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#introduccion"><i class="fa fa-check"></i>1 | INTRODUCCION</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#comunicación-mpm-estado-del-arte"><i class="fa fa-check"></i>2 | COMUNICACIÓN MPM: ESTADO DEL ARTE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#una-encuesta-sobre-comunicación-matricial"><i class="fa fa-check"></i>2.1 | Una encuesta sobre comunicación matricial</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#una-muestra-de-publicaciones-en-compadre-y-comadre"><i class="fa fa-check"></i>2.2 | Una muestra de publicaciones en COMPADRE y COMADRE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#problemas-comunes-con-la-construcción-de-matrices"><i class="fa fa-check"></i>3 | PROBLEMAS COMUNES CON LA CONSTRUCCIÓN DE MATRICES</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#supervivencia-etapa-específica-poco-realista"><i class="fa fa-check"></i>3.2 | Supervivencia etapa-específica poco realista</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#parametrización-incorrecta-de-la-fertilidad"><i class="fa fa-check"></i>3.3 | Parametrización incorrecta de la fertilidad</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#cálculo-indirecto-de-tasas-vitales"><i class="fa fa-check"></i>3.4 | Cálculo indirecto de tasas vitales</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#vector-de-población"><i class="fa fa-check"></i>3.5 | Vector de población</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#omitir-etapas-de-vida-crípticas"><i class="fa fa-check"></i>3.6 | Omitir etapas de vida crípticas</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-de-uno-versus-dos-sexos"><i class="fa fa-check"></i>3.7 | Modelos de uno versus dos sexos</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#irreductibilidad-y-ergodicidad"><i class="fa fa-check"></i>3.8 | Irreductibilidad y ergodicidad</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#representación-completa-de-un-mpm-en-publicaciones"><i class="fa fa-check"></i>4 | Representación completa de un MPM en publicaciones</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#partición-de-los-procesos-demográficos"><i class="fa fa-check"></i>4.1 | Partición de los procesos demográficos</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#atribución-de-fuentes-de-datos-secundarias"><i class="fa fa-check"></i>4.2 | Atribución de fuentes de datos secundarias</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#archivando-los-datos-en-compadre-y-comadre"><i class="fa fa-check"></i>4.3 | Archivando los datos en COMPADRE y COMADRE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#un-protocolo-estandarizado-para-reportar-mpms"><i class="fa fa-check"></i>5 | Un protocolo estandarizado para reportar MPM’s</a></li>
-<li class="chapter" data-level="18.0.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#la-teoría-non-es-estática-la-no-linealidad-dependencia-del-medio-ambiente-y-los-modelos-de-múltiple-estados."><i class="fa fa-check"></i><b>18.0.1</b> 6 | La teoría non es estática: la no linealidad, dependencia del medio ambiente y los modelos de múltiple estados.</a></li>
-<li class="chapter" data-level="18.0.2" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-no-lineal"><i class="fa fa-check"></i><b>18.0.2</b> 6.1 | Modelos no lineal</a></li>
-<li class="chapter" data-level="18.0.3" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#dependencia-del-ambiente"><i class="fa fa-check"></i><b>18.0.3</b> 6.1 | Dependencia del Ambiente</a></li>
-<li class="chapter" data-level="18.0.4" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-de-múltiples-estados"><i class="fa fa-check"></i><b>18.0.4</b> 6.3 | Modelos de múltiples estados</a></li>
-<li class="chapter" data-level="18.0.5" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#discusión"><i class="fa fa-check"></i><b>18.0.5</b> 7 | Discusión</a></li>
+<li class="chapter" data-level="18.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>18.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>19</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
 <li class="chapter" data-level="20" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>20</b> Nhora</a></li>
@@ -573,7 +550,7 @@ gitbook.start({
 "link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/16-PPM_Orquidea_sinopsis.Rmd",
 "text": null
 },
-"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub"],
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
 "search": {
 "engine": "fuse",
 "options": null

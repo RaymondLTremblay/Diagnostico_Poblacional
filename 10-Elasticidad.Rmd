@@ -1,16 +1,20 @@
 # Elasticidad
 
-## Por: Demetria, Ernesto Mujica y Elaine Gonzalez
+## Por: RLT
 
 ## Qué es la Elasticidad
 
-## Como se interpreta la eslaticidad
+El concepto de elasticidad en biología es método orientado a evaluar el cambio proporcional en una variable en respuesta a un cambio proporcional en otra variable. En términos de matrices de transición, la elasticidad es una medida de la sensibilidad de la tasa de crecimiento poblacional a cambios. En otra palabra si uno cambia uno de los parámetros de la matriz de transición, la elasticidad mide cuánto cambia la tasa de crecimiento poblacional (ref). En biología, la elasticidad es una herramienta importante para entender la importancia de cada etapa de la historia de vida sobre la tasa de crecimiento poblacional ya que permite identificar las etapas que más contribuyen a la tasa de crecimiento poblacional con menor cambios. Esa herramienta es muy útil para la conservación de especies y para la gestión de recursos naturales por que en parte nos indica cuan sensitiva esta el crecimento poblacional cuando se cambia los parámetros de la historia de vida (las transiciones, supervivencia y fecundidad) de una especie 
+
+El concepto de elasticidad se puede aplicar en muchas diferentes áreas, tanto biológicos, matemáticos, estudios sociales, financieros y económicos (ref). Por ejemplo en economía Alfred Marshall fue uno de los primeros en usar el concepto de elasticidad para entender la relación entre la oferta y la demanda de un producto donde el uso el termino de "responsiveness" para describir la elasticidad en el libro *The Economics of Industry* publicado en 1879. En biología un ejemplo clásico de elasticidad ....
+
+## Cómo se interpreta la elasticidad
 
 
-## Como se calcula la eslasticidad
+## Cómo se calcula la elasticidad
 
 
 ## Limitaciones
 
 
-## Referencias
+

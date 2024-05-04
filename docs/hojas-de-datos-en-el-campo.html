@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Hojas de datos en el campo | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Hojas de datos en el campo | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-04-11" />
+<meta name="date" content="2024-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -230,11 +231,12 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
 <li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.1</b> Añadiendo los nombres de las etapas</a></li>
-<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.2</b> Construcción de matriz con funciones en R</a></li>
-<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.3</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.4</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2.5</b> Problema con el uso tradicional de calcular las transiciones</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.3</b> Problema con el uso tradicional de calcular las transiciones</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
 <ul>
@@ -291,12 +293,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>10</b> Elasticidad</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="elasticidad.html"><a href="elasticidad.html#por-demetria-ernesto-mujica-y-elaine-gonzalez"><i class="fa fa-check"></i><b>10.1</b> Por: Demetria, Ernesto Mujica y Elaine Gonzalez</a></li>
+<li class="chapter" data-level="10.1" data-path="elasticidad.html"><a href="elasticidad.html#por-rlt"><i class="fa fa-check"></i><b>10.1</b> Por: RLT</a></li>
 <li class="chapter" data-level="10.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>10.2</b> Qué es la Elasticidad</a></li>
-<li class="chapter" data-level="10.3" data-path="elasticidad.html"><a href="elasticidad.html#como-se-interpreta-la-eslaticidad"><i class="fa fa-check"></i><b>10.3</b> Como se interpreta la eslaticidad</a></li>
-<li class="chapter" data-level="10.4" data-path="elasticidad.html"><a href="elasticidad.html#como-se-calcula-la-eslasticidad"><i class="fa fa-check"></i><b>10.4</b> Como se calcula la eslasticidad</a></li>
+<li class="chapter" data-level="10.3" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-interpreta-la-elasticidad"><i class="fa fa-check"></i><b>10.3</b> Cómo se interpreta la elasticidad</a></li>
+<li class="chapter" data-level="10.4" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-calcula-la-elasticidad"><i class="fa fa-check"></i><b>10.4</b> Cómo se calcula la elasticidad</a></li>
 <li class="chapter" data-level="10.5" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>10.5</b> Limitaciones</a></li>
-<li class="chapter" data-level="10.6" data-path="elasticidad.html"><a href="elasticidad.html#referencias-3"><i class="fa fa-check"></i><b>10.6</b> Referencias</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>11</b> Dinámica transitoria (Transient dynamics)</a>
 <ul>
@@ -321,7 +322,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.3" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#valor-biológico"><i class="fa fa-check"></i><b>12.3</b> Valor biológico</a></li>
 <li class="chapter" data-level="12.4" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#métodos-de-calculo"><i class="fa fa-check"></i><b>12.4</b> Métodos de calculo</a></li>
 <li class="chapter" data-level="12.5" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>12.5</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
-<li class="chapter" data-level="12.6" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#referencias-4"><i class="fa fa-check"></i><b>12.6</b> Referencias</a></li>
+<li class="chapter" data-level="12.6" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#referencias-3"><i class="fa fa-check"></i><b>12.6</b> Referencias</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>13</b> LTRE</a>
 <ul>
@@ -389,31 +390,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="18" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>18</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
 <ul>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i>“A standard protocol to report discrete stage-structured demographic information”</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#persona-de-contacto"><i class="fa fa-check"></i>Persona de contacto</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#introduccion"><i class="fa fa-check"></i>1 | INTRODUCCION</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#comunicación-mpm-estado-del-arte"><i class="fa fa-check"></i>2 | COMUNICACIÓN MPM: ESTADO DEL ARTE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#una-encuesta-sobre-comunicación-matricial"><i class="fa fa-check"></i>2.1 | Una encuesta sobre comunicación matricial</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#una-muestra-de-publicaciones-en-compadre-y-comadre"><i class="fa fa-check"></i>2.2 | Una muestra de publicaciones en COMPADRE y COMADRE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#problemas-comunes-con-la-construcción-de-matrices"><i class="fa fa-check"></i>3 | PROBLEMAS COMUNES CON LA CONSTRUCCIÓN DE MATRICES</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#supervivencia-etapa-específica-poco-realista"><i class="fa fa-check"></i>3.2 | Supervivencia etapa-específica poco realista</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#parametrización-incorrecta-de-la-fertilidad"><i class="fa fa-check"></i>3.3 | Parametrización incorrecta de la fertilidad</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#cálculo-indirecto-de-tasas-vitales"><i class="fa fa-check"></i>3.4 | Cálculo indirecto de tasas vitales</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#vector-de-población"><i class="fa fa-check"></i>3.5 | Vector de población</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#omitir-etapas-de-vida-crípticas"><i class="fa fa-check"></i>3.6 | Omitir etapas de vida crípticas</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-de-uno-versus-dos-sexos"><i class="fa fa-check"></i>3.7 | Modelos de uno versus dos sexos</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#irreductibilidad-y-ergodicidad"><i class="fa fa-check"></i>3.8 | Irreductibilidad y ergodicidad</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#representación-completa-de-un-mpm-en-publicaciones"><i class="fa fa-check"></i>4 | Representación completa de un MPM en publicaciones</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#partición-de-los-procesos-demográficos"><i class="fa fa-check"></i>4.1 | Partición de los procesos demográficos</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#atribución-de-fuentes-de-datos-secundarias"><i class="fa fa-check"></i>4.2 | Atribución de fuentes de datos secundarias</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#archivando-los-datos-en-compadre-y-comadre"><i class="fa fa-check"></i>4.3 | Archivando los datos en COMPADRE y COMADRE</a></li>
-<li class="chapter" data-level="" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#un-protocolo-estandarizado-para-reportar-mpms"><i class="fa fa-check"></i>5 | Un protocolo estandarizado para reportar MPM’s</a></li>
-<li class="chapter" data-level="18.0.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#la-teoría-non-es-estática-la-no-linealidad-dependencia-del-medio-ambiente-y-los-modelos-de-múltiple-estados."><i class="fa fa-check"></i><b>18.0.1</b> 6 | La teoría non es estática: la no linealidad, dependencia del medio ambiente y los modelos de múltiple estados.</a></li>
-<li class="chapter" data-level="18.0.2" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-no-lineal"><i class="fa fa-check"></i><b>18.0.2</b> 6.1 | Modelos no lineal</a></li>
-<li class="chapter" data-level="18.0.3" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#dependencia-del-ambiente"><i class="fa fa-check"></i><b>18.0.3</b> 6.1 | Dependencia del Ambiente</a></li>
-<li class="chapter" data-level="18.0.4" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#modelos-de-múltiples-estados"><i class="fa fa-check"></i><b>18.0.4</b> 6.3 | Modelos de múltiples estados</a></li>
-<li class="chapter" data-level="18.0.5" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#discusión"><i class="fa fa-check"></i><b>18.0.5</b> 7 | Discusión</a></li>
+<li class="chapter" data-level="18.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>18.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>19</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
 <li class="chapter" data-level="20" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>20</b> Nhora</a></li>
@@ -523,39 +500,39 @@ div.csl-indent {
 <p>La hoja de recoleccion de datos deberia estar preparada antes de ir al campo y estar sobre papel que es impermeable y escribir con lapiz. Ese ultimo punto es bien importante ya que la gran mayoria de los boligrafos son soluble en agua y si el papel se moja ud puede perder sus daos. RECUERDA que no se puede regresar en el tiempo y recoger los datos. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con boligrafo se puede perder los datos. No se arriega.</p>
 <p>es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningun individuo. Datos olvidado no se puede recuperar</p>
 <p>Hoja en blanco para llevarse</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="hojas-de-datos-en-el-campo.html#cb365-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb365-2"><a href="hojas-de-datos-en-el-campo.html#cb365-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb365-3"><a href="hojas-de-datos-en-el-campo.html#cb365-3" tabindex="-1"></a>Hoja_de_campo <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb365-4"><a href="hojas-de-datos-en-el-campo.html#cb365-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
-<span id="cb365-5"><a href="hojas-de-datos-en-el-campo.html#cb365-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-6"><a href="hojas-de-datos-en-el-campo.html#cb365-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-7"><a href="hojas-de-datos-en-el-campo.html#cb365-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-8"><a href="hojas-de-datos-en-el-campo.html#cb365-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-9"><a href="hojas-de-datos-en-el-campo.html#cb365-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-10"><a href="hojas-de-datos-en-el-campo.html#cb365-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-11"><a href="hojas-de-datos-en-el-campo.html#cb365-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-12"><a href="hojas-de-datos-en-el-campo.html#cb365-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
-<span id="cb365-13"><a href="hojas-de-datos-en-el-campo.html#cb365-13" tabindex="-1"></a>  </span>
-<span id="cb365-14"><a href="hojas-de-datos-en-el-campo.html#cb365-14" tabindex="-1"></a>)</span>
-<span id="cb365-15"><a href="hojas-de-datos-en-el-campo.html#cb365-15" tabindex="-1"></a></span>
-<span id="cb365-16"><a href="hojas-de-datos-en-el-campo.html#cb365-16" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
-<div id="zpxizpbarj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zpxizpbarj table {
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="hojas-de-datos-en-el-campo.html#cb369-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb369-2"><a href="hojas-de-datos-en-el-campo.html#cb369-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb369-3"><a href="hojas-de-datos-en-el-campo.html#cb369-3" tabindex="-1"></a>Hoja_de_campo <span class="ot">=</span> <span class="fu">tribble</span>(</span>
+<span id="cb369-4"><a href="hojas-de-datos-en-el-campo.html#cb369-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
+<span id="cb369-5"><a href="hojas-de-datos-en-el-campo.html#cb369-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-6"><a href="hojas-de-datos-en-el-campo.html#cb369-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-7"><a href="hojas-de-datos-en-el-campo.html#cb369-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-8"><a href="hojas-de-datos-en-el-campo.html#cb369-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-9"><a href="hojas-de-datos-en-el-campo.html#cb369-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-10"><a href="hojas-de-datos-en-el-campo.html#cb369-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-11"><a href="hojas-de-datos-en-el-campo.html#cb369-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-12"><a href="hojas-de-datos-en-el-campo.html#cb369-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,<span class="st">&quot;...&quot;</span>,</span>
+<span id="cb369-13"><a href="hojas-de-datos-en-el-campo.html#cb369-13" tabindex="-1"></a>  </span>
+<span id="cb369-14"><a href="hojas-de-datos-en-el-campo.html#cb369-14" tabindex="-1"></a>)</span>
+<span id="cb369-15"><a href="hojas-de-datos-en-el-campo.html#cb369-15" tabindex="-1"></a></span>
+<span id="cb369-16"><a href="hojas-de-datos-en-el-campo.html#cb369-16" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div id="sxpoadezzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sxpoadezzw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zpxizpbarj thead, #zpxizpbarj tbody, #zpxizpbarj tfoot, #zpxizpbarj tr, #zpxizpbarj td, #zpxizpbarj th {
+#sxpoadezzw thead, #sxpoadezzw tbody, #sxpoadezzw tfoot, #sxpoadezzw tr, #sxpoadezzw td, #sxpoadezzw th {
   border-style: none;
 }
 
-#zpxizpbarj p {
+#sxpoadezzw p {
   margin: 0;
   padding: 0;
 }
 
-#zpxizpbarj .gt_table {
+#sxpoadezzw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -581,12 +558,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_caption {
+#sxpoadezzw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zpxizpbarj .gt_title {
+#sxpoadezzw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -598,7 +575,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#zpxizpbarj .gt_subtitle {
+#sxpoadezzw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -610,7 +587,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#zpxizpbarj .gt_heading {
+#sxpoadezzw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -622,13 +599,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_bottom_border {
+#sxpoadezzw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_col_headings {
+#sxpoadezzw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -643,7 +620,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_col_heading {
+#sxpoadezzw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -663,7 +640,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zpxizpbarj .gt_column_spanner_outer {
+#sxpoadezzw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -675,15 +652,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#zpxizpbarj .gt_column_spanner_outer:first-child {
+#sxpoadezzw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zpxizpbarj .gt_column_spanner_outer:last-child {
+#sxpoadezzw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zpxizpbarj .gt_column_spanner {
+#sxpoadezzw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -695,11 +672,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#zpxizpbarj .gt_spanner_row {
+#sxpoadezzw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zpxizpbarj .gt_group_heading {
+#sxpoadezzw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -725,7 +702,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#zpxizpbarj .gt_empty_group_heading {
+#sxpoadezzw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -740,15 +717,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#zpxizpbarj .gt_from_md > :first-child {
+#sxpoadezzw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zpxizpbarj .gt_from_md > :last-child {
+#sxpoadezzw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zpxizpbarj .gt_row {
+#sxpoadezzw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -767,7 +744,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zpxizpbarj .gt_stub {
+#sxpoadezzw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -780,7 +757,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zpxizpbarj .gt_stub_row_group {
+#sxpoadezzw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -794,15 +771,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#zpxizpbarj .gt_row_group_first td {
+#sxpoadezzw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zpxizpbarj .gt_row_group_first th {
+#sxpoadezzw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zpxizpbarj .gt_summary_row {
+#sxpoadezzw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -812,16 +789,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zpxizpbarj .gt_first_summary_row {
+#sxpoadezzw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_first_summary_row.thick {
+#sxpoadezzw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zpxizpbarj .gt_last_summary_row {
+#sxpoadezzw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -831,7 +808,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_grand_summary_row {
+#sxpoadezzw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -841,7 +818,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zpxizpbarj .gt_first_grand_summary_row {
+#sxpoadezzw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -851,7 +828,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_last_grand_summary_row_top {
+#sxpoadezzw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -861,11 +838,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_striped {
+#sxpoadezzw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zpxizpbarj .gt_table_body {
+#sxpoadezzw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -874,7 +851,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_footnotes {
+#sxpoadezzw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -888,7 +865,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_footnote {
+#sxpoadezzw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -897,7 +874,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zpxizpbarj .gt_sourcenotes {
+#sxpoadezzw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -911,7 +888,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zpxizpbarj .gt_sourcenote {
+#sxpoadezzw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -919,63 +896,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zpxizpbarj .gt_left {
+#sxpoadezzw .gt_left {
   text-align: left;
 }
 
-#zpxizpbarj .gt_center {
+#sxpoadezzw .gt_center {
   text-align: center;
 }
 
-#zpxizpbarj .gt_right {
+#sxpoadezzw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zpxizpbarj .gt_font_normal {
+#sxpoadezzw .gt_font_normal {
   font-weight: normal;
 }
 
-#zpxizpbarj .gt_font_bold {
+#sxpoadezzw .gt_font_bold {
   font-weight: bold;
 }
 
-#zpxizpbarj .gt_font_italic {
+#sxpoadezzw .gt_font_italic {
   font-style: italic;
 }
 
-#zpxizpbarj .gt_super {
+#sxpoadezzw .gt_super {
   font-size: 65%;
 }
 
-#zpxizpbarj .gt_footnote_marks {
+#sxpoadezzw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zpxizpbarj .gt_asterisk {
+#sxpoadezzw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zpxizpbarj .gt_indent_1 {
+#sxpoadezzw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zpxizpbarj .gt_indent_2 {
+#sxpoadezzw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zpxizpbarj .gt_indent_3 {
+#sxpoadezzw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zpxizpbarj .gt_indent_4 {
+#sxpoadezzw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zpxizpbarj .gt_indent_5 {
+#sxpoadezzw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1071,39 +1048,39 @@ div.csl-indent {
 <li>M = <strong>muerto</strong></li>
 </ul>
 <p>Hoja llena al final del muestreo</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="hojas-de-datos-en-el-campo.html#cb366-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb366-2"><a href="hojas-de-datos-en-el-campo.html#cb366-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb366-3"><a href="hojas-de-datos-en-el-campo.html#cb366-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb366-4"><a href="hojas-de-datos-en-el-campo.html#cb366-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
-<span id="cb366-5"><a href="hojas-de-datos-en-el-campo.html#cb366-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-6"><a href="hojas-de-datos-en-el-campo.html#cb366-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-7"><a href="hojas-de-datos-en-el-campo.html#cb366-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-8"><a href="hojas-de-datos-en-el-campo.html#cb366-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-9"><a href="hojas-de-datos-en-el-campo.html#cb366-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-10"><a href="hojas-de-datos-en-el-campo.html#cb366-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-11"><a href="hojas-de-datos-en-el-campo.html#cb366-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-12"><a href="hojas-de-datos-en-el-campo.html#cb366-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb366-13"><a href="hojas-de-datos-en-el-campo.html#cb366-13" tabindex="-1"></a>  </span>
-<span id="cb366-14"><a href="hojas-de-datos-en-el-campo.html#cb366-14" tabindex="-1"></a>)</span>
-<span id="cb366-15"><a href="hojas-de-datos-en-el-campo.html#cb366-15" tabindex="-1"></a></span>
-<span id="cb366-16"><a href="hojas-de-datos-en-el-campo.html#cb366-16" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
-<div id="yhyboxthcz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yhyboxthcz table {
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="hojas-de-datos-en-el-campo.html#cb370-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb370-2"><a href="hojas-de-datos-en-el-campo.html#cb370-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb370-3"><a href="hojas-de-datos-en-el-campo.html#cb370-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
+<span id="cb370-4"><a href="hojas-de-datos-en-el-campo.html#cb370-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
+<span id="cb370-5"><a href="hojas-de-datos-en-el-campo.html#cb370-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-6"><a href="hojas-de-datos-en-el-campo.html#cb370-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-7"><a href="hojas-de-datos-en-el-campo.html#cb370-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-8"><a href="hojas-de-datos-en-el-campo.html#cb370-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-9"><a href="hojas-de-datos-en-el-campo.html#cb370-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-10"><a href="hojas-de-datos-en-el-campo.html#cb370-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-11"><a href="hojas-de-datos-en-el-campo.html#cb370-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-12"><a href="hojas-de-datos-en-el-campo.html#cb370-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb370-13"><a href="hojas-de-datos-en-el-campo.html#cb370-13" tabindex="-1"></a>  </span>
+<span id="cb370-14"><a href="hojas-de-datos-en-el-campo.html#cb370-14" tabindex="-1"></a>)</span>
+<span id="cb370-15"><a href="hojas-de-datos-en-el-campo.html#cb370-15" tabindex="-1"></a></span>
+<span id="cb370-16"><a href="hojas-de-datos-en-el-campo.html#cb370-16" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div id="tklhqamuka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tklhqamuka table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yhyboxthcz thead, #yhyboxthcz tbody, #yhyboxthcz tfoot, #yhyboxthcz tr, #yhyboxthcz td, #yhyboxthcz th {
+#tklhqamuka thead, #tklhqamuka tbody, #tklhqamuka tfoot, #tklhqamuka tr, #tklhqamuka td, #tklhqamuka th {
   border-style: none;
 }
 
-#yhyboxthcz p {
+#tklhqamuka p {
   margin: 0;
   padding: 0;
 }
 
-#yhyboxthcz .gt_table {
+#tklhqamuka .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1129,12 +1106,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_caption {
+#tklhqamuka .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yhyboxthcz .gt_title {
+#tklhqamuka .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1146,7 +1123,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#yhyboxthcz .gt_subtitle {
+#tklhqamuka .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1158,7 +1135,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#yhyboxthcz .gt_heading {
+#tklhqamuka .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1170,13 +1147,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_bottom_border {
+#tklhqamuka .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_col_headings {
+#tklhqamuka .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1191,7 +1168,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_col_heading {
+#tklhqamuka .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1211,7 +1188,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#yhyboxthcz .gt_column_spanner_outer {
+#tklhqamuka .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1223,15 +1200,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#yhyboxthcz .gt_column_spanner_outer:first-child {
+#tklhqamuka .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yhyboxthcz .gt_column_spanner_outer:last-child {
+#tklhqamuka .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yhyboxthcz .gt_column_spanner {
+#tklhqamuka .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1243,11 +1220,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#yhyboxthcz .gt_spanner_row {
+#tklhqamuka .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yhyboxthcz .gt_group_heading {
+#tklhqamuka .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1273,7 +1250,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#yhyboxthcz .gt_empty_group_heading {
+#tklhqamuka .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1288,15 +1265,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#yhyboxthcz .gt_from_md > :first-child {
+#tklhqamuka .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yhyboxthcz .gt_from_md > :last-child {
+#tklhqamuka .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yhyboxthcz .gt_row {
+#tklhqamuka .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1315,7 +1292,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#yhyboxthcz .gt_stub {
+#tklhqamuka .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1328,7 +1305,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yhyboxthcz .gt_stub_row_group {
+#tklhqamuka .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1342,15 +1319,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#yhyboxthcz .gt_row_group_first td {
+#tklhqamuka .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yhyboxthcz .gt_row_group_first th {
+#tklhqamuka .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yhyboxthcz .gt_summary_row {
+#tklhqamuka .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1360,16 +1337,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yhyboxthcz .gt_first_summary_row {
+#tklhqamuka .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_first_summary_row.thick {
+#tklhqamuka .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yhyboxthcz .gt_last_summary_row {
+#tklhqamuka .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1379,7 +1356,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_grand_summary_row {
+#tklhqamuka .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1389,7 +1366,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yhyboxthcz .gt_first_grand_summary_row {
+#tklhqamuka .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1399,7 +1376,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_last_grand_summary_row_top {
+#tklhqamuka .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1409,11 +1386,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_striped {
+#tklhqamuka .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yhyboxthcz .gt_table_body {
+#tklhqamuka .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1422,7 +1399,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_footnotes {
+#tklhqamuka .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1436,7 +1413,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_footnote {
+#tklhqamuka .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1445,7 +1422,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yhyboxthcz .gt_sourcenotes {
+#tklhqamuka .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1459,7 +1436,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yhyboxthcz .gt_sourcenote {
+#tklhqamuka .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1467,63 +1444,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yhyboxthcz .gt_left {
+#tklhqamuka .gt_left {
   text-align: left;
 }
 
-#yhyboxthcz .gt_center {
+#tklhqamuka .gt_center {
   text-align: center;
 }
 
-#yhyboxthcz .gt_right {
+#tklhqamuka .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yhyboxthcz .gt_font_normal {
+#tklhqamuka .gt_font_normal {
   font-weight: normal;
 }
 
-#yhyboxthcz .gt_font_bold {
+#tklhqamuka .gt_font_bold {
   font-weight: bold;
 }
 
-#yhyboxthcz .gt_font_italic {
+#tklhqamuka .gt_font_italic {
   font-style: italic;
 }
 
-#yhyboxthcz .gt_super {
+#tklhqamuka .gt_super {
   font-size: 65%;
 }
 
-#yhyboxthcz .gt_footnote_marks {
+#tklhqamuka .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yhyboxthcz .gt_asterisk {
+#tklhqamuka .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yhyboxthcz .gt_indent_1 {
+#tklhqamuka .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yhyboxthcz .gt_indent_2 {
+#tklhqamuka .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yhyboxthcz .gt_indent_3 {
+#tklhqamuka .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yhyboxthcz .gt_indent_4 {
+#tklhqamuka .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yhyboxthcz .gt_indent_5 {
+#tklhqamuka .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1662,7 +1639,7 @@ gitbook.start({
 "link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/25-Hoja_de_datos.Rmd",
 "text": null
 },
-"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub"],
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
 "search": {
 "engine": "fuse",
 "options": null
