@@ -12,46 +12,32 @@ Por: Aucencia Emeterio-Lara, Mariana Hernández-Apolinar y Raymond L. Tremblay
 
 ## Tipo de crecimiento en las orquídeas
 
-Conocer el tipo de crecimiento y la apariencia general de la orquídea de interés es un primer paso en la toma de datos en campo, ya que a partir de esto sabremos dónde ubicarlas y cómo identificarlas con facilidad en su medio natural.
-Es así que hay que identificar el sustrato en el que se establecen las orquídeas (i.e. tipo de crecimiento), mismo que puede ser terrestre, epífito o rupícola, éste último también llamado litófito [@tellez2007orquideas].
+Conocer el tipo de crecimiento y la apariencia general de la planta de interés es un primer paso en la toma de datos en el campo, ya que a partir de esto sabremos dónde ubicarlas y cómo identificarlas las etapas con facilidad en su medio natural. Es así que hay que identificar el sustrato en el que se establecen las orquídeas (i.e. tipo de crecimiento), mismo que puede ser terrestre, epífito o rupícola, éste último también llamado litófito [@tellez2007orquideas].
 Como es evidente, en el primer caso las plantas se desarrollan en suelo, en el segundo sobre ramas y troncos los árboles, mientras que en el tercero grupo sobre rocas.
-Es importante reconocer que algunas especies no son estrictamente limitado a un tipo de ambiente, por ejemplo entre mmuchos hay algunas especies de *Lepanthes* que son epífita y rupícula.
+Es importante reconocer que algunas especies no son estrictamente limitado a un tipo de ambiente, por ejemplo hay algunas especies de *Lepanthes* que son epífita y rupícula. 
 
-De acuerdo con sus rasgos morfológicos o apariencia se pueden identificar al menos tres grupos de orquídeas epífitas: plantas con tallos engrosados y modificados conocidos como pseudobulbos (e.g *Laelia*, *Oncidium*, *Encyclia*, *Stanhopea*, *Maxilaria*, *Rhynchostelle*, etc), plantas con tallos simples o delgados (e.g *Epidendrum*, *Dichea*) y un tercer grupo con hojas engrosadas y tallos compactos o pseudobulbos poco visibles (e. g. *Trichocentrum*).
-En el caso de las orquídeas terrestres se pueden identificar seis grupos: plantas con tallos y hojas alternas o en espiral (v. g. *Cypripedium*, *Dichromanthus*, *Habenaria*, *Triphora*), plantas con hojas solitarias o en pares (v.g. *Bletia*, *Schiedeella*, *Malaxis*, *Govenia*), plantas con hojas en roseta (*Brachystele*, *Deiregyne*, *Sarcoglottis*), plantas con hojas en abanico (*Paphiopedilum*, *Phragmipedium*), plantas sin hojas (*Rhizanthella*, *Triphora*) y plantas con pseudobulbos (*Oeceoclades*, *Cymbidium*).
-Por su parte, en las plantas rupícolas se identifica un dos grupos: plantas con pseudobulbos (*Cattleya*, *Hoffmannsegella*, *Laelia*, *Paphiopedillum*) o sin pseudobulbo (*Lepanthes*).
-Cabe señalar que, si bien esta clasificación es de utilidad y brinda una idea de la diversidad en la morfología vegetativa de las orquídeas, hay que considerar que solo se basa en su apariencia, por lo que es muy cualitativa y poco rigurosa desde el punto de vista botánico.
+De acuerdo con sus rasgos morfológicos o apariencia se pueden identificar al menos tres grupos de orquídeas epífitas: plantas con tallos engrosados y modificados conocidos como pseudobulbos (e.g *Laelia*, *Oncidium*, *Encyclia*, *Stanhopea*, *Maxilaria*, *Rhynchostelle*, etc), plantas con tallos simples o delgados (e.g *Epidendrum*, *Dichea*) y un tercer grupo con hojas engrosadas y tallos compactos o pseudobulbos poco visibles (e. g. *Trichocentrum*). En el caso de las orquídeas terrestres se pueden identificar seis grupos: plantas con tallos y hojas alternas o en espiral (v. g. *Cypripedium*, *Dichromanthus*, *Habenaria*, *Triphora*), plantas con hojas solitarias o en pares (v.g. *Bletia*, *Schiedeella*, *Malaxis*, *Govenia*), plantas con hojas en roseta (*Brachystele*, *Deiregyne*, *Sarcoglottis*), plantas con hojas en abanico (*Paphiopedilum*, *Phragmipedium*), plantas sin hojas (*Rhizanthella*, *Triphora*) y plantas con pseudobulbos (*Oeceoclades*, *Cymbidium*). Por su parte, en las plantas rupícolas se identifica un dos grupos: plantas con pseudobulbos (*Cattleya*, *Hoffmannsegella*, *Laelia*, *Paphiopedillum*) o sin pseudobulbo (*Lepanthes*). Cabe señalar que, si bien esta clasificación es de utilidad y brinda una idea de la diversidad en la morfología vegetativa de las orquídeas, hay que considerar que solo se basa en su apariencia, por lo que es muy cualitativa y poco rigurosa desde el punto de vista botánico.
 
 ## Métodos y técnicas de muestreo
 
-El método y técnica de muestreo depende en gran medida del tipo de crecimiento (i.e. epífito, rupícola o terrestre) que presente nuestra especie de interés.
-No solo eso, también de esta condición depende el grado de dificultad y el tiempo que se invertirá en la toma de datos.
-Para facilitar esta colecta de información se han implementado distintas técnicas de muestreo según su tipo de crecimiento, las cuales se describen a continuación.
+El método y técnica de muestreo depende en gran medida del tipo de crecimiento (i.e. epífito, rupícola o terrestre) que presente la especie de interés. No solo eso, también de esta condición depende el grado de dificultad y el tiempo que se invertirá en la toma de datos. Para facilitar esta colecta de información se han implementado distintas técnicas de muestreo según su tipo de crecimiento, las cuales se describen a continuación.
 
 ### *Orquídeas epífitas y rupícolas*.
 
-Las orquídeas epífitas y rupícolas viven a distintas alturas en árboles y acantilados.
-En la colecta de información de estas poblaciones se utilizan desde una simple escalera hasta equipo de alpinismo para ascenso.
-El uso de escaleras es una técnica muy práctica si la especie de estudio se desarrolla en las zonas bajas de los acantilados o en forofítos como arbustos y árboles de porte bajo a medio (Hernández-Apolinar, 2023); sin embargo, se tiene la desventaja de transportar este instrumento de trabajo hasta el sitio de muestreo.
+Las orquídeas epífitas y rupícolas viven a distintas alturas en árboles y acantilados. En la colecta de información de estas poblaciones se utilizan desde una simple escalera hasta equipo de alpinismo para ascenso. El uso de escaleras es una técnica muy práctica si la especie de estudio se desarrolla en las zonas bajas de los acantilados o en forofítos como arbustos y árboles de porte bajo a medio (@hernandez1992dinamica); sin embargo, se tiene la desventaja de transportar este instrumento de trabajo hasta el sitio de muestreo.
 
-Cuando las orquídeas se distribuyen a una altura considerable del acantilado, la técnica de rapel resulta muy útil y segura e implica el descenso mediante cuerdas hasta llegar a las orquídeas a muestrear.
-Por su parte, la técnica de ascenso de una sola cuerda es muy segura [@jepson2000tree] cuando se trata de orquídeas epífitas habitando hospederos de porte medio y alto con troncos y ramas gruesas.
-Pero tiene algunas limitaciones como es la dificultad de acceder a ramas delgadas en los estratos muy altos.
-En importante señalar que, si se carece de experiencia en el ascenso de árboles y acantilados es importante recibir apoyo de gente experta.
+Cuando las orquídeas se distribuyen a una altura considerable del acantilado, la técnica de rapel resulta muy útil y segura e implica el descenso mediante cuerdas hasta llegar a las orquídeas a muestrear. Por su parte, la técnica de ascenso de una sola cuerda es muy segura [@jepson2000tree] cuando se trata de orquídeas epífitas habitando hospederos de porte medio y alto con troncos y ramas gruesas. Pero tiene algunas limitaciones como es la dificultad de acceder a ramas delgadas en los estratos muy altos. En importante señalar que, si se carece de experiencia en el ascenso de árboles y acantilados es importante recibir apoyo de gente experta.
 
 En el muestreo de los árboles se señala la ubicación preferente de las orquídeas de estudio, debido a que éstas presentan condiciones microclimáticas variables.
-Dicha ubicación, generalmente toma en cuenta la clasificación hecha por Johansson [@johansson1974ecology; @catling1986epiphytic], quien señala que en un árbol hospedero existen cinco zonas o estratos, dividiéndolos de la siguiente manera: la parte basal del tronco (Zona I), tronco principal (Zona II), la copa interna (Zona III), la copa media (Zona IV) y la copa externa (Zona V).
-Cabe señalar que, la mayor concentración de orquídeas epífitas se registra en los estratos medios II, III, IV (**Mondragón et al. 2007**).
+Dicha ubicación, generalmente toma en cuenta la clasificación hecha por Johansson [@johansson1974ecology; @catling1986epiphytic], quien señala que en un árbol hospedero existen cinco zonas o estratos, dividiéndolos de la siguiente manera: la parte basal del tronco (Zona I), tronco principal (Zona II), la copa interna (Zona III), la copa media (Zona IV) y la copa externa (Zona V). Cabe señalar que, la mayor concentración de orquídeas epífitas se registra en los estratos medios II, III, IV (**Mondragón et al. 2007**).
 
 **AQUI un dibujo del concepto sugerido por Johansson (1974) y Cattling (Quien puede hacer un dibujo que se acerca al concepto sugerido por el y Cattling? NO deberiamos usar una foto de otro papers, habria que pedir permiso.**
 
 ### *Orquídeas terrestres*.
 
-En el muestreo de poblaciones de orquídeas terrestres se han implementado varias técnicas de muestreo, en esta sección nos referiremos a dos: El método de triangulación y el método sin área.
-El primero permite estimar el área en que se establece la población, mientras que el segundo no permite establecer esta variable y se centra en el marcaje de individuos.
-A continuación se detalla en qué consisten ambos.
+En el muestreo de poblaciones de orquídeas terrestres se han implementado varias técnicas de muestreo, en esta sección nos referiremos a dos: El método de triangulación y el método sin área. El primero permite estimar el área en que se establece la población, mientras que el segundo no permite establecer esta variable y se centra en el marcaje de individuos. A continuación se detalla en qué consisten ambos.
 
-a)  *Método de triangulación*. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia [@tremblay2009population]. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre estaca y estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema xy). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.
+a)  *Método de triangulación*. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia [@tremblay2009population]. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre la primeera estaca y segunda estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema **x** e **y**). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.
 
 ![Métodos de triangulación para muestreo: los P_x representa la posición de cada planta. Dos distancia son medidas, cada una de la estaca. Nota que este método no se añade un identificador individual a las plantas.](Figures/Triangulation_Method.pdf){width="100%" height="400"}
 
@@ -61,33 +47,25 @@ b)  *Método de sin área*. En campo, las orquídeas terrestres forman pequeñas
 
 ## Marcaje y monitoreo de los individuos en el tiempo
 
-La dinámica o cambio en una población se evalúa marcando y siguiendo a todos los individuos que se encuentran en un sitio (i.e. censo) o de solo una parte de éstos (i.e. muestreo) a lo largo de sus distintas etapas del ciclo de vida.
-Sin importar si censamos o muestreamos, tenemos que asegurar dos aspectos durante el marcaje o etiquetado de una población:
+La dinámica o cambio en una población se evalúa marcando y siguiendo a todos los individuos que se encuentran en un sitio (i.e. censo) o de solo una parte de éstos (i.e. muestreo) a lo largo de sus distintas etapas del ciclo de vida. Sin importar si censamos o muestreamos, tenemos que asegurar dos aspectos durante el marcaje o etiquetado de una población:
 
-1)  que se incluyan individuos de todas las categorías de etapa/estado que conforman una población y
+1)  que se incluyan individuos de todas las categorías de etapas/estados que conforman una población y
 
-2)  que el número de individuos de cada estapa/estado sea suficiente para poder llevar a cabo un análisis demográfico robusto que refleje, con cierta precisión, la dinámica de la población seleccionada.
+2)  que el número de individuos de cada estapas/estados sea suficiente para poder llevar a cabo un análisis demográfico robusto que refleje, con cierta precisión, la dinámica de la población seleccionada.
 
-3)  además de esto, también debemos lograr que el registro de la información en campo sea fácil, consistente y sin error.
+3)  además de esto, también debemos lograr que el registro de la información en campo sea fácil, consistente y sin error o sea minimizar los errores.
 
 ### Etapas de las orquídeas de estudio a identificar en campo
 
-Identificar las etapas/estados de desarrollo de una especie es escencial para evaluar los cambios que ocurren en los individuos de una población a lo largo de su ciclo de vida (ver Capítulo XXX).
-Para secuenciar dichos cambios se deben identificar las características biológicas y morfológicas que definen cada una de las etapas/estados de desarrollo de los individuos de la población.
-Esta serie de características permitirá reconocer y diferenciar las semillas, plántulas, juveniles, adultos y etapas latentes (cuando las haya); asimismo a partir de su monitoreo o seguimiento se reconocerá su cambio de etapa/estado en el tiempo.
+Identificar las etapas/estados de desarrollo de una especie es escencial para evaluar los cambios que ocurren en los individuos de una población a lo largo de su ciclo de vida. Para cambios en las etapas de los individuos en el tiempo se debe identificar las características biológicas y morfológicas que definen cada una de las etapas/estados de desarrollo de los individuos de la población. Esta serie de características permitirá reconocer y diferenciar las semillas, plántulas, juveniles, adultos y etapas latentes (cuando las haya); asimismo a partir de su monitoreo o seguimiento se reconocerá su cambio de etapa/estado en el tiempo.
 
-Existen características que son distintivas de una etapa/estado en particular, tal es el caso de estructuras reproductivas (flores, frutos y escapos frescos o secos), las cuales son distintivas de los individuos adultos y permiten diferenciar estados de desarrollo en las plantas.
-No obstante, cuando se trata de especies de un mismo género que comparten un mismo hábitat, es posible confundir a los individuos de diferente estapas, plantulas, juneniles y adultos de distintas especies debido a que pueden presentar características vehetativas o florales muy similares.
-A pesar de esto, y con la ayuda de un botánico experimentado, es posible resolver este dilema en la mayoría de los casos.
-Por su parte, los individuos juveniles o no reproductivos serán aquellos que no presenta flores ni frutos, y son distintos a las plántulas, que son los individuos recién establecidos.
-Para mayor información sobre los individuos reproductivos y no reproductivos consultar el *Capítulo X*.
+Existen características que son distintivas de una etapa/estado en particular, tal es el caso de estructuras reproductivas (flores, frutos y escapos frescos o secos), las cuales son distintivas de los individuos adultos y permiten diferenciar estados de desarrollo en las plantas. No obstante, cuando se trata de especies de un mismo género que comparten un mismo hábitat, es posible confundir a los individuos de diferente estapas, plantulas, juneniles y adultos de distintas especies debido a que pueden presentar características vegetativas o florales muy similares. A pesar de esto, y con la ayuda de un botánico experimentado, es posible resolver la mayoría de estos dilemas. Por su parte, los individuos juveniles o no reproductivos serán aquellos que no presenta flores ni frutos, y son distintos a las plántulas, que son los individuos recién establecidos.
 
 Dos de las etapas de desarrollo más difíciles de seguir en campo son las semillas y plántulas, por lo que para su caracterización y muestreo en campo hay que considerar lo siguiente:
 
 #### *Semillas*.
 
-La fase de semillas es uno de los mayores retos en el estudio de las orquídeas, ya que sus tamaño tan pequeño (i.e. son conocidas como semillas polvo o “dust-seeds”) dificulta el seguimiento de su dispersión, germinación y establecimiento en campo [@ackerman1996seedling; @ticktin2020synthesis]; parámetros que son de gran utilidad al momento de estimar los valores de fecundidad o de transición en el primer estadio del ciclo de vida.
-Actualmente en el medio natural, el método más usado para evaluar la germinación es la introducción de bolsas pequeñas de malla de plancton (mesh plankton, 50 μm) con semillas, las cuales se colocan en el suelo o en la corteza de árboles y se recogen en uno o distintos periodos del año [@rasmussen1993seed; @rasmussen2011methods; @anghelescu2023asymbiotic].
+La fase de semillas es uno de los mayores retos en el estudio de las orquídeas, ya que sus tamaño tan pequeño (i.e. son conocidas como semillas polvo o “dust-seeds”) dificulta el seguimiento de su dispersión, germinación y establecimiento en campo [@ackerman1996seedling; @ticktin2020synthesis]; los parámetros que corresponde a la supervivencia y crecimiento de semillas son de gran utilidad al momento de estimar los valores de fecundidad o de transición en el primer estadio del ciclo de vida. Esyo raramente se ha estudiando en las orquideas. Actualmente en el medio natural, el método más usado para evaluar la germinación es la introducción de bolsas pequeñas de malla de plancton (mesh plankton, 50 μm) con semillas, las cuales se colocan en el suelo o en la corteza de árboles donde se añadio semillas y se recogen en uno o distintos periodos del año para evaluar la germinación [@rasmussen1993seed; @rasmussen2011methods; @anghelescu2023asymbiotic].
 
 #### *Plántulas*.
 
@@ -142,7 +120,7 @@ Un aspecto que hay que cuidar al marcar individuos es que las etiquetas se enmas
 
 La durabilidad del material usado es muy importante cuando existen eventos en el ciclo de vida de una especie que pueden prolongarse por varios años.
 Este es el caso de algunas orquídeas terrestres que pueden no rebrotar y mantenerse en latencia vegetativa por más de un ciclo anual de forma consecutiva.
-Por ejemplo, en *Liparis lilifolia* puede no emerger por tres o más años continuos [@hutchings1987population; Wells, 1991], mientras que en *Epipactis helleborine* por cinco e, incluso, siete años [@light2006appearance; @coates2006effects].
+Por ejemplo, en *Liparis lilifolia* puede no emerger por tres o más años continuos [@hutchings1987population; @wells1991demographic], mientras que en *Epipactis helleborine* por cinco e, incluso, siete años [@light2006appearance; @coates2006effects].
 El poder tener un muestreo confiable de la secuenciación de estos eventos en un individuo en el mediano y largo plazo depende de la calidad del material usado al marcar las plantas, lo cual a su vez permitirá tener buenas estimaciones del tamaño poblacional y de la supervivencia en la población.
 
 <br>
