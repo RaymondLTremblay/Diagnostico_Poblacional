@@ -40,7 +40,7 @@ marcaje-y-monitoreo-de-los-individuos-en-el-tiempo
 etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo
 semillas.
 plántulas.
-identificar-la-caracteristicas-de-la-especie-de-estudio
+identificar-la-características-de-la-especie-de-estudio
 semillas
 identificación-y-etiquetado-de-individuos.
 variables-a-registrar-en-campo
