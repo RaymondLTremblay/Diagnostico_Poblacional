@@ -1,7 +1,10 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 # Un protocolo para informar sobre modelos discreto de estructura de población
@@ -18,9 +21,9 @@ Samuel J. L. Gascoigne Email: samuel.gascoigne@pmb.ox.ac.uk
 
 Roberto Salguero-Gómez Email: rob.salguero@biology.ox.ac.uk
 
-Traducido por Anne Damon, Raymond L. Tremblay,  Roberto Salguero-Gómez Diana Molina Ozuna 
+Traducido por *Anne Damon, Raymond L. Tremblay,  Roberto Salguero-Gómez y Diana Molina Ozuna*
 
-Nota: Cualquier conflicto entre el texto en inglés y español, siempre se debería dar prioridad el texto en inglés como guía.
+Nota: Cualquier conflicto entre el texto en inglés y español, siempre se debería dar prioridad al texto en inglés.
 
 Cuando cite el artículo use la siguiente información, [@gascoigne2023standard]
 
