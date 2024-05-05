@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-05-04" />
+<meta name="date" content="2024-05-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -531,105 +531,105 @@ div.csl-indent {
 <div id="diagrama-para-quercus-martinezii" class="section level3 hasAnchor" number="13.2.4">
 <h3><span class="header-section-number">13.2.4</span> Diagrama para Quercus martinezii<a href="ltre.html#diagrama-para-quercus-martinezii" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Primeramente se creó el ciclo de vida por especie de hospedero utilizando el siguiente código:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="ltre.html#cb168-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
-<span id="cb168-2"><a href="ltre.html#cb168-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb168-3"><a href="ltre.html#cb168-3" tabindex="-1"></a></span>
-<span id="cb168-4"><a href="ltre.html#cb168-4" tabindex="-1"></a></span>
-<span id="cb168-5"><a href="ltre.html#cb168-5" tabindex="-1"></a></span>
-<span id="cb168-6"><a href="ltre.html#cb168-6" tabindex="-1"></a></span>
-<span id="cb168-7"><a href="ltre.html#cb168-7" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb168-8"><a href="ltre.html#cb168-8" tabindex="-1"></a></span>
-<span id="cb168-9"><a href="ltre.html#cb168-9" tabindex="-1"></a>matmart <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb168-10"><a href="ltre.html#cb168-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.68</span>, <span class="fl">0.02</span>, <span class="fl">3.88</span>, <span class="fl">16.53</span>),</span>
-<span id="cb168-11"><a href="ltre.html#cb168-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.22</span>, <span class="fl">0.76</span>, <span class="fl">0.23</span>, <span class="fl">0.0</span>),</span>
-<span id="cb168-12"><a href="ltre.html#cb168-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.13</span>, <span class="fl">0.53</span>, <span class="fl">0.58</span>),</span>
-<span id="cb168-13"><a href="ltre.html#cb168-13" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.17</span>, <span class="fl">0.38</span>))</span>
-<span id="cb168-14"><a href="ltre.html#cb168-14" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plántula&quot;</span>, <span class="st">&quot;infantil&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb168-15"><a href="ltre.html#cb168-15" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb168-16"><a href="ltre.html#cb168-16" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> stages, <span class="at">from =</span> stages)</span>
-<span id="cb168-17"><a href="ltre.html#cb168-17" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matmart), <span class="dv">4</span>)</span>
-<span id="cb168-18"><a href="ltre.html#cb168-18" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
-<span id="cb168-19"><a href="ltre.html#cb168-19" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
-<span id="cb168-20"><a href="ltre.html#cb168-20" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span></span>
-<span id="cb168-21"><a href="ltre.html#cb168-21" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb168-22"><a href="ltre.html#cb168-22" tabindex="-1"></a>  <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;Goldenrod1&quot;</span>,</span>
-<span id="cb168-23"><a href="ltre.html#cb168-23" tabindex="-1"></a>  <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span></span>
-<span id="cb168-24"><a href="ltre.html#cb168-24" tabindex="-1"></a>)</span>
-<span id="cb168-25"><a href="ltre.html#cb168-25" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
-<span id="cb168-26"><a href="ltre.html#cb168-26" tabindex="-1"></a>                <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
-<span id="cb168-27"><a href="ltre.html#cb168-27" tabindex="-1"></a>                <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
-<span id="cb168-28"><a href="ltre.html#cb168-28" tabindex="-1"></a>                <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
-<span id="cb168-29"><a href="ltre.html#cb168-29" tabindex="-1"></a>                <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
-<span id="cb168-30"><a href="ltre.html#cb168-30" tabindex="-1"></a>                <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb168-31"><a href="ltre.html#cb168-31" tabindex="-1"></a>                <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb168-32"><a href="ltre.html#cb168-32" tabindex="-1"></a>)</span>
-<span id="cb168-33"><a href="ltre.html#cb168-33" tabindex="-1"></a><span class="fu">grViz</span>(</span>
-<span id="cb168-34"><a href="ltre.html#cb168-34" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
-<span id="cb168-35"><a href="ltre.html#cb168-35" tabindex="-1"></a>    <span class="st">&quot;</span></span>
-<span id="cb168-36"><a href="ltre.html#cb168-36" tabindex="-1"></a><span class="st">digraph {</span></span>
-<span id="cb168-37"><a href="ltre.html#cb168-37" tabindex="-1"></a><span class="st">  {</span></span>
-<span id="cb168-38"><a href="ltre.html#cb168-38" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
-<span id="cb168-39"><a href="ltre.html#cb168-39" tabindex="-1"></a><span class="st">    rank=same;</span></span>
-<span id="cb168-40"><a href="ltre.html#cb168-40" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
-<span id="cb168-41"><a href="ltre.html#cb168-41" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
-<span id="cb168-42"><a href="ltre.html#cb168-42" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
-<span id="cb168-43"><a href="ltre.html#cb168-43" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
-<span id="cb168-44"><a href="ltre.html#cb168-44" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
-<span id="cb168-45"><a href="ltre.html#cb168-45" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
-<span id="cb168-46"><a href="ltre.html#cb168-46" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
-<span id="cb168-47"><a href="ltre.html#cb168-47" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
-<span id="cb168-48"><a href="ltre.html#cb168-48" tabindex="-1"></a><span class="st">}&quot;</span></span>
-<span id="cb168-49"><a href="ltre.html#cb168-49" tabindex="-1"></a>  )</span>
-<span id="cb168-50"><a href="ltre.html#cb168-50" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ltre.html#cb169-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb169-2"><a href="ltre.html#cb169-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb169-3"><a href="ltre.html#cb169-3" tabindex="-1"></a></span>
+<span id="cb169-4"><a href="ltre.html#cb169-4" tabindex="-1"></a></span>
+<span id="cb169-5"><a href="ltre.html#cb169-5" tabindex="-1"></a></span>
+<span id="cb169-6"><a href="ltre.html#cb169-6" tabindex="-1"></a></span>
+<span id="cb169-7"><a href="ltre.html#cb169-7" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb169-8"><a href="ltre.html#cb169-8" tabindex="-1"></a></span>
+<span id="cb169-9"><a href="ltre.html#cb169-9" tabindex="-1"></a>matmart <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb169-10"><a href="ltre.html#cb169-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.68</span>, <span class="fl">0.02</span>, <span class="fl">3.88</span>, <span class="fl">16.53</span>),</span>
+<span id="cb169-11"><a href="ltre.html#cb169-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.22</span>, <span class="fl">0.76</span>, <span class="fl">0.23</span>, <span class="fl">0.0</span>),</span>
+<span id="cb169-12"><a href="ltre.html#cb169-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.13</span>, <span class="fl">0.53</span>, <span class="fl">0.58</span>),</span>
+<span id="cb169-13"><a href="ltre.html#cb169-13" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.17</span>, <span class="fl">0.38</span>))</span>
+<span id="cb169-14"><a href="ltre.html#cb169-14" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plántula&quot;</span>, <span class="st">&quot;infantil&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb169-15"><a href="ltre.html#cb169-15" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb169-16"><a href="ltre.html#cb169-16" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> stages, <span class="at">from =</span> stages)</span>
+<span id="cb169-17"><a href="ltre.html#cb169-17" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matmart), <span class="dv">4</span>)</span>
+<span id="cb169-18"><a href="ltre.html#cb169-18" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb169-19"><a href="ltre.html#cb169-19" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb169-20"><a href="ltre.html#cb169-20" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span></span>
+<span id="cb169-21"><a href="ltre.html#cb169-21" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb169-22"><a href="ltre.html#cb169-22" tabindex="-1"></a>  <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;Goldenrod1&quot;</span>,</span>
+<span id="cb169-23"><a href="ltre.html#cb169-23" tabindex="-1"></a>  <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span></span>
+<span id="cb169-24"><a href="ltre.html#cb169-24" tabindex="-1"></a>)</span>
+<span id="cb169-25"><a href="ltre.html#cb169-25" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb169-26"><a href="ltre.html#cb169-26" tabindex="-1"></a>                <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb169-27"><a href="ltre.html#cb169-27" tabindex="-1"></a>                <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb169-28"><a href="ltre.html#cb169-28" tabindex="-1"></a>                <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb169-29"><a href="ltre.html#cb169-29" tabindex="-1"></a>                <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb169-30"><a href="ltre.html#cb169-30" tabindex="-1"></a>                <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb169-31"><a href="ltre.html#cb169-31" tabindex="-1"></a>                <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb169-32"><a href="ltre.html#cb169-32" tabindex="-1"></a>)</span>
+<span id="cb169-33"><a href="ltre.html#cb169-33" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb169-34"><a href="ltre.html#cb169-34" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb169-35"><a href="ltre.html#cb169-35" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb169-36"><a href="ltre.html#cb169-36" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb169-37"><a href="ltre.html#cb169-37" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb169-38"><a href="ltre.html#cb169-38" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb169-39"><a href="ltre.html#cb169-39" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb169-40"><a href="ltre.html#cb169-40" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb169-41"><a href="ltre.html#cb169-41" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb169-42"><a href="ltre.html#cb169-42" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb169-43"><a href="ltre.html#cb169-43" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb169-44"><a href="ltre.html#cb169-44" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb169-45"><a href="ltre.html#cb169-45" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb169-46"><a href="ltre.html#cb169-46" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb169-47"><a href="ltre.html#cb169-47" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb169-48"><a href="ltre.html#cb169-48" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb169-49"><a href="ltre.html#cb169-49" tabindex="-1"></a>  )</span>
+<span id="cb169-50"><a href="ltre.html#cb169-50" tabindex="-1"></a>)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-70a39b511d642b2c31bb" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-70a39b511d642b2c31bb">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.22\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.02\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.76\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.13\"]\n\"juvenil\" -> \"plántula\"[minlen=-8,fontsize=10,color=Goldenrod1,xlabel=\" 3.88\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.23\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.53\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.17\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 16.53\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.58\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.38\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="diagrama-para-quercus-rugosa" class="section level3 hasAnchor" number="13.2.5">
 <h3><span class="header-section-number">13.2.5</span> Diagrama para Quercus rugosa<a href="ltre.html#diagrama-para-quercus-rugosa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ltre.html#cb169-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
-<span id="cb169-2"><a href="ltre.html#cb169-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb169-3"><a href="ltre.html#cb169-3" tabindex="-1"></a></span>
-<span id="cb169-4"><a href="ltre.html#cb169-4" tabindex="-1"></a>matrug <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb169-5"><a href="ltre.html#cb169-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.64</span>, <span class="fl">0.06</span>, <span class="dv">0</span>, <span class="fl">0.0045</span>),</span>
-<span id="cb169-6"><a href="ltre.html#cb169-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.27</span>, <span class="fl">0.75</span>, <span class="fl">0.27</span>, <span class="fl">0.0</span>),</span>
-<span id="cb169-7"><a href="ltre.html#cb169-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.08</span>, <span class="fl">0.47</span>, <span class="fl">0.28</span>),</span>
-<span id="cb169-8"><a href="ltre.html#cb169-8" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.27</span>, <span class="fl">0.68</span>))</span>
-<span id="cb169-9"><a href="ltre.html#cb169-9" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plántula&quot;</span>, <span class="st">&quot;infantil&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb169-10"><a href="ltre.html#cb169-10" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb169-11"><a href="ltre.html#cb169-11" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> stages, <span class="at">from =</span> stages)</span>
-<span id="cb169-12"><a href="ltre.html#cb169-12" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matrug), <span class="dv">4</span>)</span>
-<span id="cb169-13"><a href="ltre.html#cb169-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
-<span id="cb169-14"><a href="ltre.html#cb169-14" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
-<span id="cb169-15"><a href="ltre.html#cb169-15" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span></span>
-<span id="cb169-16"><a href="ltre.html#cb169-16" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb169-17"><a href="ltre.html#cb169-17" tabindex="-1"></a><span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>,<span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>,  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span></span>
-<span id="cb169-18"><a href="ltre.html#cb169-18" tabindex="-1"></a>)</span>
-<span id="cb169-19"><a href="ltre.html#cb169-19" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
-<span id="cb169-20"><a href="ltre.html#cb169-20" tabindex="-1"></a>                <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
-<span id="cb169-21"><a href="ltre.html#cb169-21" tabindex="-1"></a>                <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
-<span id="cb169-22"><a href="ltre.html#cb169-22" tabindex="-1"></a>                <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
-<span id="cb169-23"><a href="ltre.html#cb169-23" tabindex="-1"></a>                <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
-<span id="cb169-24"><a href="ltre.html#cb169-24" tabindex="-1"></a>                <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb169-25"><a href="ltre.html#cb169-25" tabindex="-1"></a>                <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb169-26"><a href="ltre.html#cb169-26" tabindex="-1"></a>)</span>
-<span id="cb169-27"><a href="ltre.html#cb169-27" tabindex="-1"></a><span class="fu">grViz</span>(</span>
-<span id="cb169-28"><a href="ltre.html#cb169-28" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
-<span id="cb169-29"><a href="ltre.html#cb169-29" tabindex="-1"></a>    <span class="st">&quot;</span></span>
-<span id="cb169-30"><a href="ltre.html#cb169-30" tabindex="-1"></a><span class="st">digraph {</span></span>
-<span id="cb169-31"><a href="ltre.html#cb169-31" tabindex="-1"></a><span class="st">  {</span></span>
-<span id="cb169-32"><a href="ltre.html#cb169-32" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
-<span id="cb169-33"><a href="ltre.html#cb169-33" tabindex="-1"></a><span class="st">    rank=same;</span></span>
-<span id="cb169-34"><a href="ltre.html#cb169-34" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
-<span id="cb169-35"><a href="ltre.html#cb169-35" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
-<span id="cb169-36"><a href="ltre.html#cb169-36" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
-<span id="cb169-37"><a href="ltre.html#cb169-37" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
-<span id="cb169-38"><a href="ltre.html#cb169-38" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
-<span id="cb169-39"><a href="ltre.html#cb169-39" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
-<span id="cb169-40"><a href="ltre.html#cb169-40" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
-<span id="cb169-41"><a href="ltre.html#cb169-41" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
-<span id="cb169-42"><a href="ltre.html#cb169-42" tabindex="-1"></a><span class="st">}&quot;</span></span>
-<span id="cb169-43"><a href="ltre.html#cb169-43" tabindex="-1"></a>  )</span>
-<span id="cb169-44"><a href="ltre.html#cb169-44" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ltre.html#cb170-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb170-2"><a href="ltre.html#cb170-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb170-3"><a href="ltre.html#cb170-3" tabindex="-1"></a></span>
+<span id="cb170-4"><a href="ltre.html#cb170-4" tabindex="-1"></a>matrug <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb170-5"><a href="ltre.html#cb170-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.64</span>, <span class="fl">0.06</span>, <span class="dv">0</span>, <span class="fl">0.0045</span>),</span>
+<span id="cb170-6"><a href="ltre.html#cb170-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.27</span>, <span class="fl">0.75</span>, <span class="fl">0.27</span>, <span class="fl">0.0</span>),</span>
+<span id="cb170-7"><a href="ltre.html#cb170-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.08</span>, <span class="fl">0.47</span>, <span class="fl">0.28</span>),</span>
+<span id="cb170-8"><a href="ltre.html#cb170-8" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.27</span>, <span class="fl">0.68</span>))</span>
+<span id="cb170-9"><a href="ltre.html#cb170-9" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plántula&quot;</span>, <span class="st">&quot;infantil&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb170-10"><a href="ltre.html#cb170-10" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb170-11"><a href="ltre.html#cb170-11" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> stages, <span class="at">from =</span> stages)</span>
+<span id="cb170-12"><a href="ltre.html#cb170-12" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matrug), <span class="dv">4</span>)</span>
+<span id="cb170-13"><a href="ltre.html#cb170-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb170-14"><a href="ltre.html#cb170-14" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb170-15"><a href="ltre.html#cb170-15" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span></span>
+<span id="cb170-16"><a href="ltre.html#cb170-16" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb170-17"><a href="ltre.html#cb170-17" tabindex="-1"></a><span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>,<span class="st">&quot;steelblue4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>,  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;steelblue4&quot;</span></span>
+<span id="cb170-18"><a href="ltre.html#cb170-18" tabindex="-1"></a>)</span>
+<span id="cb170-19"><a href="ltre.html#cb170-19" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb170-20"><a href="ltre.html#cb170-20" tabindex="-1"></a>                <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb170-21"><a href="ltre.html#cb170-21" tabindex="-1"></a>                <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb170-22"><a href="ltre.html#cb170-22" tabindex="-1"></a>                <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb170-23"><a href="ltre.html#cb170-23" tabindex="-1"></a>                <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb170-24"><a href="ltre.html#cb170-24" tabindex="-1"></a>                <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb170-25"><a href="ltre.html#cb170-25" tabindex="-1"></a>                <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb170-26"><a href="ltre.html#cb170-26" tabindex="-1"></a>)</span>
+<span id="cb170-27"><a href="ltre.html#cb170-27" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb170-28"><a href="ltre.html#cb170-28" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb170-29"><a href="ltre.html#cb170-29" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb170-30"><a href="ltre.html#cb170-30" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb170-31"><a href="ltre.html#cb170-31" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb170-32"><a href="ltre.html#cb170-32" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb170-33"><a href="ltre.html#cb170-33" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb170-34"><a href="ltre.html#cb170-34" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb170-35"><a href="ltre.html#cb170-35" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb170-36"><a href="ltre.html#cb170-36" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb170-37"><a href="ltre.html#cb170-37" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb170-38"><a href="ltre.html#cb170-38" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb170-39"><a href="ltre.html#cb170-39" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb170-40"><a href="ltre.html#cb170-40" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb170-41"><a href="ltre.html#cb170-41" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb170-42"><a href="ltre.html#cb170-42" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb170-43"><a href="ltre.html#cb170-43" tabindex="-1"></a>  )</span>
+<span id="cb170-44"><a href="ltre.html#cb170-44" tabindex="-1"></a>)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-e694b493c65709c204ad" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-e694b493c65709c204ad">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.64\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.06\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.75\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.08\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.27\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.47\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 0.0045\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.28\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
@@ -651,14 +651,14 @@ div.csl-indent {
 </div>
 <div id="procedimiento-en-r" class="section level2 hasAnchor" number="13.4">
 <h2><span class="header-section-number">13.4</span> Procedimiento en R<a href="ltre.html#procedimiento-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ltre.html#cb170-1" tabindex="-1"></a><span class="co"># Asegurarse de tener instalado y cargado el paquete &#39;popbio&#39; package </span></span>
-<span id="cb170-2"><a href="ltre.html#cb170-2" tabindex="-1"></a></span>
-<span id="cb170-3"><a href="ltre.html#cb170-3" tabindex="-1"></a></span>
-<span id="cb170-4"><a href="ltre.html#cb170-4" tabindex="-1"></a></span>
-<span id="cb170-5"><a href="ltre.html#cb170-5" tabindex="-1"></a><span class="fu">library</span> (popbio)</span>
-<span id="cb170-6"><a href="ltre.html#cb170-6" tabindex="-1"></a></span>
-<span id="cb170-7"><a href="ltre.html#cb170-7" tabindex="-1"></a>oncidium<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;data/vitalratesoncidium.txt&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>, <span class="at">fill=</span><span class="cn">TRUE</span>)</span>
-<span id="cb170-8"><a href="ltre.html#cb170-8" tabindex="-1"></a>oncidium </span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ltre.html#cb171-1" tabindex="-1"></a><span class="co"># Asegurarse de tener instalado y cargado el paquete &#39;popbio&#39; package </span></span>
+<span id="cb171-2"><a href="ltre.html#cb171-2" tabindex="-1"></a></span>
+<span id="cb171-3"><a href="ltre.html#cb171-3" tabindex="-1"></a></span>
+<span id="cb171-4"><a href="ltre.html#cb171-4" tabindex="-1"></a></span>
+<span id="cb171-5"><a href="ltre.html#cb171-5" tabindex="-1"></a><span class="fu">library</span> (popbio)</span>
+<span id="cb171-6"><a href="ltre.html#cb171-6" tabindex="-1"></a></span>
+<span id="cb171-7"><a href="ltre.html#cb171-7" tabindex="-1"></a>oncidium<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;data/vitalratesoncidium.txt&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>, <span class="at">fill=</span><span class="cn">TRUE</span>)</span>
+<span id="cb171-8"><a href="ltre.html#cb171-8" tabindex="-1"></a>oncidium </span></code></pre></div>
 <pre><code>##    names.vitalrate  Martinezzi    Rugosa         matrix
 ## 1           lambda  1.30000000 0.9300000               
 ## 2               s1  0.89610390 0.8636364     s1*(1-g12)
@@ -679,17 +679,17 @@ div.csl-indent {
 ## 17                          NA        NA     s4*(1-g43)</code></pre>
 <p>Debido a que la columna de matrix contiene más filas con datos nos aparecerá la leyenda NA en las otras columnas esto se refiere a que no hay valores disponibles para esas filas</p>
 <p>Para extraer los nombres de las tasas vitales (de la fila 2 a la 13), sin incluir a lambda el cual está en la primera</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ltre.html#cb172-1" tabindex="-1"></a>vitalrates<span class="ot">&lt;-</span>oncidium<span class="sc">$</span>names[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] </span>
-<span id="cb172-2"><a href="ltre.html#cb172-2" tabindex="-1"></a></span>
-<span id="cb172-3"><a href="ltre.html#cb172-3" tabindex="-1"></a><span class="co"># mostrar los nombres del objeto vitalrates</span></span>
-<span id="cb172-4"><a href="ltre.html#cb172-4" tabindex="-1"></a></span>
-<span id="cb172-5"><a href="ltre.html#cb172-5" tabindex="-1"></a>vitalrates</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ltre.html#cb173-1" tabindex="-1"></a>vitalrates<span class="ot">&lt;-</span>oncidium<span class="sc">$</span>names[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] </span>
+<span id="cb173-2"><a href="ltre.html#cb173-2" tabindex="-1"></a></span>
+<span id="cb173-3"><a href="ltre.html#cb173-3" tabindex="-1"></a><span class="co"># mostrar los nombres del objeto vitalrates</span></span>
+<span id="cb173-4"><a href="ltre.html#cb173-4" tabindex="-1"></a></span>
+<span id="cb173-5"><a href="ltre.html#cb173-5" tabindex="-1"></a>vitalrates</span></code></pre></div>
 <pre><code>##  [1] &quot;s1&quot;  &quot;g12&quot; &quot;s2&quot;  &quot;g21&quot; &quot;g23&quot; &quot;s3&quot;  &quot;g32&quot; &quot;g34&quot; &quot;s4&quot;  &quot;g43&quot; &quot;f31&quot; &quot;f41&quot;</code></pre>
 <div id="extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado" class="section level3 hasAnchor" number="13.4.1">
 <h3><span class="header-section-number">13.4.1</span> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado<a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ltre.html#cb174-1" tabindex="-1"></a>Martinezzi<span class="ot">&lt;-</span>oncidium<span class="sc">$</span> Martinezzi [<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="co"># [2:13] se refiere a la fila 2 hasta la 13. </span></span>
-<span id="cb174-2"><a href="ltre.html#cb174-2" tabindex="-1"></a><span class="fu">names</span>(Martinezzi)<span class="ot">&lt;-</span>vitalrates</span>
-<span id="cb174-3"><a href="ltre.html#cb174-3" tabindex="-1"></a>Martinezzi</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ltre.html#cb175-1" tabindex="-1"></a>Martinezzi<span class="ot">&lt;-</span>oncidium<span class="sc">$</span> Martinezzi [<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="co"># [2:13] se refiere a la fila 2 hasta la 13. </span></span>
+<span id="cb175-2"><a href="ltre.html#cb175-2" tabindex="-1"></a><span class="fu">names</span>(Martinezzi)<span class="ot">&lt;-</span>vitalrates</span>
+<span id="cb175-3"><a href="ltre.html#cb175-3" tabindex="-1"></a>Martinezzi</span></code></pre></div>
 <pre><code>##          s1         g12          s2         g21         g23          s3 
 ##  0.89610390  0.24637681  0.90163934  0.01818182  0.14545454  0.93750000 
 ##         g32         g34          s4         g43         f31         f41 
@@ -697,9 +697,9 @@ div.csl-indent {
 </div>
 <div id="extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado" class="section level3 hasAnchor" number="13.4.2">
 <h3><span class="header-section-number">13.4.2</span> Extraer tasas vitales de martinezii y dejar a lambda a un lado<a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ltre.html#cb176-1" tabindex="-1"></a>Rugosa<span class="ot">&lt;-</span>oncidium<span class="sc">$</span> Rugosa [<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>]</span>
-<span id="cb176-2"><a href="ltre.html#cb176-2" tabindex="-1"></a><span class="fu">names</span>(Rugosa)<span class="ot">&lt;-</span>vitalrates</span>
-<span id="cb176-3"><a href="ltre.html#cb176-3" tabindex="-1"></a>Rugosa</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ltre.html#cb177-1" tabindex="-1"></a>Rugosa<span class="ot">&lt;-</span>oncidium<span class="sc">$</span> Rugosa [<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>]</span>
+<span id="cb177-2"><a href="ltre.html#cb177-2" tabindex="-1"></a><span class="fu">names</span>(Rugosa)<span class="ot">&lt;-</span>vitalrates</span>
+<span id="cb177-3"><a href="ltre.html#cb177-3" tabindex="-1"></a>Rugosa</span></code></pre></div>
 <pre><code>##        s1       g12        s2       g21       g23        s3       g32       g34 
 ## 0.8636364 0.2631579 0.8888889 0.0625000 0.0937500 1.0000000 0.2666667 0.2666667 
 ##        s4       g43       f31       f41 
@@ -707,14 +707,14 @@ div.csl-indent {
 </div>
 <div id="extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales" class="section level3 hasAnchor" number="13.4.3">
 <h3><span class="header-section-number">13.4.3</span> Extraer los elementos de matriz utilizando los nombres de las tasas vitales<a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ltre.html#cb178-1" tabindex="-1"></a>matrix.el<span class="ot">&lt;-</span><span class="fu">as.expression</span>(<span class="fu">parse</span>(<span class="at">text=</span>oncidium<span class="sc">$</span>matrix)) </span>
-<span id="cb178-2"><a href="ltre.html#cb178-2" tabindex="-1"></a>matrix.el</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ltre.html#cb179-1" tabindex="-1"></a>matrix.el<span class="ot">&lt;-</span><span class="fu">as.expression</span>(<span class="fu">parse</span>(<span class="at">text=</span>oncidium<span class="sc">$</span>matrix)) </span>
+<span id="cb179-2"><a href="ltre.html#cb179-2" tabindex="-1"></a>matrix.el</span></code></pre></div>
 <pre><code>## expression(s1 * (1 - g12), s1 * g12, 0, 0, s2 * g21, s2 * (1 - 
 ##     g23 - g21), s2 * g23, 0, f31, s3 * g32, s3 * (1 - g34 - g32), 
 ##     s3 * g34, f41, 0, s4 * g43, s4 * (1 - g43))</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ltre.html#cb180-1" tabindex="-1"></a><span class="fu">expression</span>(s1<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g12), s1<span class="sc">*</span>g12, <span class="dv">0</span>, <span class="dv">0</span>, s2<span class="sc">*</span>g21, s2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g23<span class="sc">-</span>g21), </span>
-<span id="cb180-2"><a href="ltre.html#cb180-2" tabindex="-1"></a>    s2<span class="sc">*</span>g23, <span class="dv">0</span>, f31, s3<span class="sc">*</span>g32, s3<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g34<span class="sc">-</span>g32), s3<span class="sc">*</span>g34, f41, <span class="dv">0</span>, s4<span class="sc">*</span>g43, </span>
-<span id="cb180-3"><a href="ltre.html#cb180-3" tabindex="-1"></a>    s4<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g43))</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ltre.html#cb181-1" tabindex="-1"></a><span class="fu">expression</span>(s1<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g12), s1<span class="sc">*</span>g12, <span class="dv">0</span>, <span class="dv">0</span>, s2<span class="sc">*</span>g21, s2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g23<span class="sc">-</span>g21), </span>
+<span id="cb181-2"><a href="ltre.html#cb181-2" tabindex="-1"></a>    s2<span class="sc">*</span>g23, <span class="dv">0</span>, f31, s3<span class="sc">*</span>g32, s3<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g34<span class="sc">-</span>g32), s3<span class="sc">*</span>g34, f41, <span class="dv">0</span>, s4<span class="sc">*</span>g43, </span>
+<span id="cb181-3"><a href="ltre.html#cb181-3" tabindex="-1"></a>    s4<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>g43))</span></code></pre></div>
 <pre><code>## expression(s1 * (1 - g12), s1 * g12, 0, 0, s2 * g21, s2 * (1 - 
 ##     g23 - g21), s2 * g23, 0, f31, s3 * g32, s3 * (1 - g34 - g32), 
 ##     s3 * g34, f41, 0, s4 * g43, s4 * (1 - g43))</code></pre>
@@ -723,8 +723,8 @@ div.csl-indent {
 <h3><span class="header-section-number">13.4.4</span> Calcular las sensibilidades y elasticidades de ambas matrices<a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="quercus-matinezzi" class="section level4 hasAnchor" number="13.4.4.1">
 <h4><span class="header-section-number">13.4.4.1</span> <em>Quercus matinezzi</em><a href="ltre.html#quercus-matinezzi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="ltre.html#cb182-1" tabindex="-1"></a>Martinezzi.se<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, Martinezzi)</span>
-<span id="cb182-2"><a href="ltre.html#cb182-2" tabindex="-1"></a>Martinezzi.se</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ltre.html#cb183-1" tabindex="-1"></a>Martinezzi.se<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, Martinezzi)</span>
+<span id="cb183-2"><a href="ltre.html#cb183-2" tabindex="-1"></a>Martinezzi.se</span></code></pre></div>
 <pre><code>##        estimate  sensitivity   elasticity
 ## s1   0.89610390  0.391852205  0.270331840
 ## g12  0.24637681  0.441985076  0.083834730
@@ -741,8 +741,8 @@ div.csl-indent {
 </div>
 <div id="quercus-rugosa" class="section level4 hasAnchor" number="13.4.4.2">
 <h4><span class="header-section-number">13.4.4.2</span> <em>Quercus rugosa</em><a href="ltre.html#quercus-rugosa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="ltre.html#cb184-1" tabindex="-1"></a>Rugosa.se<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, Rugosa)</span>
-<span id="cb184-2"><a href="ltre.html#cb184-2" tabindex="-1"></a>Rugosa.se</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="ltre.html#cb185-1" tabindex="-1"></a>Rugosa.se<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, Rugosa)</span>
+<span id="cb185-2"><a href="ltre.html#cb185-2" tabindex="-1"></a>Rugosa.se</span></code></pre></div>
 <pre><code>##      estimate sensitivity    elasticity
 ## s1  0.8636364  0.05646562  0.0525274261
 ## g12 0.2631579  0.01292444  0.0036635267
@@ -760,8 +760,8 @@ div.csl-indent {
 </div>
 <div id="calcular-las-diferencias-en-tasas-vitales-entre-las-especies" class="section level3 hasAnchor" number="13.4.5">
 <h3><span class="header-section-number">13.4.5</span> Calcular las diferencias en tasas vitales entre las especies<a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="ltre.html#cb186-1" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa<span class="ot">&lt;-</span>Rugosa<span class="sc">-</span>Martinezzi </span>
-<span id="cb186-2"><a href="ltre.html#cb186-2" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="ltre.html#cb187-1" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa<span class="ot">&lt;-</span>Rugosa<span class="sc">-</span>Martinezzi </span>
+<span id="cb187-2"><a href="ltre.html#cb187-2" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##           s1          g12           s2          g21          g23           s3 
 ##  -0.03246753   0.01678109  -0.01275045   0.04431819  -0.05170455   0.06250001 
 ##          g32          g34           s4          g43          f31          f41 
@@ -769,11 +769,11 @@ div.csl-indent {
 </div>
 <div id="calcular-las-tasas-vitales-para-la-matriz-media" class="section level3 hasAnchor" number="13.4.6">
 <h3><span class="header-section-number">13.4.6</span> Calcular las tasas vitales para la matriz media<a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="ltre.html#cb188-1" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa<span class="ot">&lt;-</span>((Rugosa<span class="sc">+</span>Martinezzi)<span class="sc">/</span><span class="dv">2</span>) <span class="co">#calculate vital rates for midway matrix</span></span>
-<span id="cb188-2"><a href="ltre.html#cb188-2" tabindex="-1"></a></span>
-<span id="cb188-3"><a href="ltre.html#cb188-3" tabindex="-1"></a><span class="co"># Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. </span></span>
-<span id="cb188-4"><a href="ltre.html#cb188-4" tabindex="-1"></a></span>
-<span id="cb188-5"><a href="ltre.html#cb188-5" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="ltre.html#cb189-1" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa<span class="ot">&lt;-</span>((Rugosa<span class="sc">+</span>Martinezzi)<span class="sc">/</span><span class="dv">2</span>) <span class="co">#calculate vital rates for midway matrix</span></span>
+<span id="cb189-2"><a href="ltre.html#cb189-2" tabindex="-1"></a></span>
+<span id="cb189-3"><a href="ltre.html#cb189-3" tabindex="-1"></a><span class="co"># Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. </span></span>
+<span id="cb189-4"><a href="ltre.html#cb189-4" tabindex="-1"></a></span>
+<span id="cb189-5"><a href="ltre.html#cb189-5" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##         s1        g12         s2        g21        g23         s3        g32 
 ## 0.87987013 0.25476735 0.89526412 0.04034091 0.11960227 0.96875000 0.25833333 
 ##        g34         s4        g43        f31        f41 
@@ -781,8 +781,8 @@ div.csl-indent {
 </div>
 <div id="calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media" class="section level3 hasAnchor" number="13.4.7">
 <h3><span class="header-section-number">13.4.7</span> Calcular las tasas sensibilidades y elasticidades para la matriz media<a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="ltre.html#cb190-1" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, vr.midway.Martinezzi.Rugosa) </span>
-<span id="cb190-2"><a href="ltre.html#cb190-2" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="ltre.html#cb191-1" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, vr.midway.Martinezzi.Rugosa) </span>
+<span id="cb191-2"><a href="ltre.html#cb191-2" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##       estimate  sensitivity   elasticity
 ## s1  0.87987013  0.329922666  0.243245943
 ## g12 0.25476735  0.299348636  0.063905161
@@ -799,16 +799,16 @@ div.csl-indent {
 </div>
 <div id="calcular-las-contribuciones-de-ertv-y-ver-los-resultados" class="section level3 hasAnchor" number="13.4.8">
 <h3><span class="header-section-number">13.4.8</span> Calcular las contribuciones de ERTV y ver los resultados<a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="ltre.html#cb192-1" tabindex="-1"></a>LTRE.contrib.Martinezzi.Rugosa<span class="ot">&lt;-</span>vr.dif.Martinezzi.Rugosa<span class="sc">*</span>midway.sens.Martinezzi.Rugosa<span class="sc">$</span>sensitivity  </span>
-<span id="cb192-2"><a href="ltre.html#cb192-2" tabindex="-1"></a>LTRE.contrib.Martinezzi.Rugosa</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="ltre.html#cb193-1" tabindex="-1"></a>LTRE.contrib.Martinezzi.Rugosa<span class="ot">&lt;-</span>vr.dif.Martinezzi.Rugosa<span class="sc">*</span>midway.sens.Martinezzi.Rugosa<span class="sc">$</span>sensitivity  </span>
+<span id="cb193-2"><a href="ltre.html#cb193-2" tabindex="-1"></a>LTRE.contrib.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##           s1          g12           s2          g21          g23           s3 
 ## -0.010711774  0.005023395 -0.005659869 -0.007704137 -0.045950368  0.016438656 
 ##          g32          g34           s4          g43          f31          f41 
 ## -0.003110101  0.019926365 -0.001578908  0.024885694 -0.104388906 -0.147084835</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="ltre.html#cb194-1" tabindex="-1"></a>LTRE.results.Martinezzi.Rugosa<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rug.vr=</span>Rugosa, <span class="at">mart.vr=</span>Martinezzi, <span class="at">vr.difference=</span>vr.dif.Martinezzi.Rugosa, <span class="at">mid.sens=</span>midway.sens.Martinezzi.Rugosa<span class="sc">$</span>sensitivity, <span class="at">contribution=</span>LTRE.contrib.Martinezzi.Rugosa)</span>
-<span id="cb194-2"><a href="ltre.html#cb194-2" tabindex="-1"></a></span>
-<span id="cb194-3"><a href="ltre.html#cb194-3" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb194-4"><a href="ltre.html#cb194-4" tabindex="-1"></a><span class="fu">gt</span>(LTRE.results.Martinezzi.Rugosa)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="ltre.html#cb195-1" tabindex="-1"></a>LTRE.results.Martinezzi.Rugosa<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rug.vr=</span>Rugosa, <span class="at">mart.vr=</span>Martinezzi, <span class="at">vr.difference=</span>vr.dif.Martinezzi.Rugosa, <span class="at">mid.sens=</span>midway.sens.Martinezzi.Rugosa<span class="sc">$</span>sensitivity, <span class="at">contribution=</span>LTRE.contrib.Martinezzi.Rugosa)</span>
+<span id="cb195-2"><a href="ltre.html#cb195-2" tabindex="-1"></a></span>
+<span id="cb195-3"><a href="ltre.html#cb195-3" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb195-4"><a href="ltre.html#cb195-4" tabindex="-1"></a><span class="fu">gt</span>(LTRE.results.Martinezzi.Rugosa)</span></code></pre></div>
 <div id="klyjimtjzf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#klyjimtjzf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';

@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-05-04" />
+<meta name="date" content="2024-05-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -497,8 +497,8 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="calcular_transiciones" class="section level1 hasAnchor" number="24">
 <h1><span class="header-section-number">Capítulo 24</span> 26-Calcular_Transiciones<a href="calcular_transiciones.html#calcular_transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="calcular_transiciones.html#cb372-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb372-2"><a href="calcular_transiciones.html#cb372-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="calcular_transiciones.html#cb373-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb373-2"><a href="calcular_transiciones.html#cb373-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 35 Columns: 3
 ## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -507,7 +507,7 @@ div.csl-indent {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="calcular_transiciones.html#cb374-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="calcular_transiciones.html#cb375-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
 <pre><code>## # A tibble: 35 × 3
 ##    stage next_stage fertility
 ##    &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;
@@ -522,7 +522,7 @@ div.csl-indent {
 ##  9 p     d                  0
 ## 10 p     d                  0
 ## # ℹ 25 more rows</code></pre>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="calcular_transiciones.html#cb376-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="calcular_transiciones.html#cb377-1" tabindex="-1"></a>Especie_desconocida</span></code></pre></div>
 <pre><code>## # A tibble: 35 × 3
 ##    stage next_stage fertility
 ##    &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;
@@ -537,7 +537,7 @@ div.csl-indent {
 ##  9 p     d                  0
 ## 10 p     d                  0
 ## # ℹ 25 more rows</code></pre>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="calcular_transiciones.html#cb378-1" tabindex="-1"></a><span class="fu">head</span>(Especie_desconocida)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="calcular_transiciones.html#cb379-1" tabindex="-1"></a><span class="fu">head</span>(Especie_desconocida)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   stage next_stage fertility
 ##   &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;
@@ -547,14 +547,14 @@ div.csl-indent {
 ## 4 p     p                  0
 ## 5 p     p                  0
 ## 6 p     d                  0</code></pre>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="calcular_transiciones.html#cb380-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
-<span id="cb380-2"><a href="calcular_transiciones.html#cb380-2" tabindex="-1"></a></span>
-<span id="cb380-3"><a href="calcular_transiciones.html#cb380-3" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
-<span id="cb380-4"><a href="calcular_transiciones.html#cb380-4" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(Especie_desconocida), </span>
-<span id="cb380-5"><a href="calcular_transiciones.html#cb380-5" tabindex="-1"></a>                                <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
-<span id="cb380-6"><a href="calcular_transiciones.html#cb380-6" tabindex="-1"></a>                                <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb380-7"><a href="calcular_transiciones.html#cb380-7" tabindex="-1"></a></span>
-<span id="cb380-8"><a href="calcular_transiciones.html#cb380-8" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="calcular_transiciones.html#cb381-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb381-2"><a href="calcular_transiciones.html#cb381-2" tabindex="-1"></a></span>
+<span id="cb381-3"><a href="calcular_transiciones.html#cb381-3" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb381-4"><a href="calcular_transiciones.html#cb381-4" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(Especie_desconocida), </span>
+<span id="cb381-5"><a href="calcular_transiciones.html#cb381-5" tabindex="-1"></a>                                <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
+<span id="cb381-6"><a href="calcular_transiciones.html#cb381-6" tabindex="-1"></a>                                <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb381-7"><a href="calcular_transiciones.html#cb381-7" tabindex="-1"></a></span>
+<span id="cb381-8"><a href="calcular_transiciones.html#cb381-8" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
 <pre><code>## $T
 ##    
 ##              p          j          a
@@ -568,40 +568,40 @@ div.csl-indent {
 ##   p 0.0000000 0.0000000 0.3333333
 ##   j 0.0000000 0.0000000 0.0000000
 ##   a 0.0000000 0.0000000 0.0000000</code></pre>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="calcular_transiciones.html#cb382-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span></code></pre></div>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="calcular_transiciones.html#cb383-1" tabindex="-1"></a>TF<span class="sc">$</span>T</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="calcular_transiciones.html#cb383-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="calcular_transiciones.html#cb384-1" tabindex="-1"></a>TF<span class="sc">$</span>T</span></code></pre></div>
 <pre><code>##    
 ##              p          j          a
 ##   p 0.45454545 0.00000000 0.00000000
 ##   j 0.09090909 0.63636364 0.00000000
 ##   a 0.00000000 0.18181818 0.66666667</code></pre>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="calcular_transiciones.html#cb385-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb385-2"><a href="calcular_transiciones.html#cb385-2" tabindex="-1"></a></span>
-<span id="cb385-3"><a href="calcular_transiciones.html#cb385-3" tabindex="-1"></a></span>
-<span id="cb385-4"><a href="calcular_transiciones.html#cb385-4" tabindex="-1"></a></span>
-<span id="cb385-5"><a href="calcular_transiciones.html#cb385-5" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>T, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="calcular_transiciones.html#cb386-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb386-2"><a href="calcular_transiciones.html#cb386-2" tabindex="-1"></a></span>
+<span id="cb386-3"><a href="calcular_transiciones.html#cb386-3" tabindex="-1"></a></span>
+<span id="cb386-4"><a href="calcular_transiciones.html#cb386-4" tabindex="-1"></a></span>
+<span id="cb386-5"><a href="calcular_transiciones.html#cb386-5" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>T, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-a6a4b2fdc9ec6f3c9d22" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-a6a4b2fdc9ec6f3c9d22">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="calcular_transiciones.html#cb386-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>F, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="calcular_transiciones.html#cb387-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(TF<span class="sc">$</span>F, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-5eb9b8030df9de553046" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-5eb9b8030df9de553046">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Uniendo ambas matriz en una</p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="calcular_transiciones.html#cb387-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
-<span id="cb387-2"><a href="calcular_transiciones.html#cb387-2" tabindex="-1"></a></span>
-<span id="cb387-3"><a href="calcular_transiciones.html#cb387-3" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="calcular_transiciones.html#cb388-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
+<span id="cb388-2"><a href="calcular_transiciones.html#cb388-2" tabindex="-1"></a></span>
+<span id="cb388-3"><a href="calcular_transiciones.html#cb388-3" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##    
 ##              p          j          a
 ##   p 0.45454545 0.00000000 0.33333333
 ##   j 0.09090909 0.63636364 0.00000000
 ##   a 0.00000000 0.18181818 0.66666667</code></pre>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="calcular_transiciones.html#cb389-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb389-2"><a href="calcular_transiciones.html#cb389-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="calcular_transiciones.html#cb390-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juevnil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb390-2"><a href="calcular_transiciones.html#cb390-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-dfe2f890f7b41972c247" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-dfe2f890f7b41972c247">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juevnil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juevnil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.455\"]\n\"plantula\" -> \"juevnil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.091\"]\n\"juevnil\" -> \"juevnil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.636\"]\n\"juevnil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.667\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="calcular_transiciones.html#cb390-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="calcular_transiciones.html#cb391-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
 <pre><code>## [1] 0.7820926</code></pre>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="calcular_transiciones.html#cb392-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb392-2"><a href="calcular_transiciones.html#cb392-2" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;ejercicio_de_orquideas_Hoja_1.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="calcular_transiciones.html#cb393-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb393-2"><a href="calcular_transiciones.html#cb393-2" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;ejercicio_de_orquideas_Hoja_1.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 125 Columns: 5
 ## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -610,7 +610,7 @@ div.csl-indent {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="calcular_transiciones.html#cb394-1" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="calcular_transiciones.html#cb395-1" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1</span></code></pre></div>
 <pre><code>## # A tibble: 125 × 5
 ##       ID Etapa_2023 Fertility_2023 Etapa_2024 Fertility_2024
 ##    &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         
@@ -625,16 +625,16 @@ div.csl-indent {
 ##  9     9 Adulta                  1 Muerte     &lt;NA&gt;          
 ## 10    10 Adulta                  1 Muerte     &lt;NA&gt;          
 ## # ℹ 115 more rows</code></pre>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="calcular_transiciones.html#cb396-1" tabindex="-1"></a><span class="fu">unique</span>(ejercicio_de_orquideas_Hoja_1<span class="sc">$</span>Etapa_2023)</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="calcular_transiciones.html#cb397-1" tabindex="-1"></a><span class="fu">unique</span>(ejercicio_de_orquideas_Hoja_1<span class="sc">$</span>Etapa_2023)</span></code></pre></div>
 <pre><code>## [1] &quot;Juvenil&quot;  &quot;Adulta&quot;   &quot;Plantula&quot;</code></pre>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="calcular_transiciones.html#cb398-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
-<span id="cb398-2"><a href="calcular_transiciones.html#cb398-2" tabindex="-1"></a>TF2 <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(ejercicio_de_orquideas_Hoja_1), </span>
-<span id="cb398-3"><a href="calcular_transiciones.html#cb398-3" tabindex="-1"></a>                                <span class="at">stage =</span> Etapa_2023, </span>
-<span id="cb398-4"><a href="calcular_transiciones.html#cb398-4" tabindex="-1"></a>                                <span class="at">fate =</span> Etapa_2024, </span>
-<span id="cb398-5"><a href="calcular_transiciones.html#cb398-5" tabindex="-1"></a>                                <span class="at">fertility=</span>Fertility_2023, </span>
-<span id="cb398-6"><a href="calcular_transiciones.html#cb398-6" tabindex="-1"></a>                                <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;Plantula&quot;</span>,<span class="st">&quot;Juvenil&quot;</span>,<span class="st">&quot;Adulta&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb398-7"><a href="calcular_transiciones.html#cb398-7" tabindex="-1"></a></span>
-<span id="cb398-8"><a href="calcular_transiciones.html#cb398-8" tabindex="-1"></a>TF2</span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="calcular_transiciones.html#cb399-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb399-2"><a href="calcular_transiciones.html#cb399-2" tabindex="-1"></a>TF2 <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(ejercicio_de_orquideas_Hoja_1), </span>
+<span id="cb399-3"><a href="calcular_transiciones.html#cb399-3" tabindex="-1"></a>                                <span class="at">stage =</span> Etapa_2023, </span>
+<span id="cb399-4"><a href="calcular_transiciones.html#cb399-4" tabindex="-1"></a>                                <span class="at">fate =</span> Etapa_2024, </span>
+<span id="cb399-5"><a href="calcular_transiciones.html#cb399-5" tabindex="-1"></a>                                <span class="at">fertility=</span>Fertility_2023, </span>
+<span id="cb399-6"><a href="calcular_transiciones.html#cb399-6" tabindex="-1"></a>                                <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;Plantula&quot;</span>,<span class="st">&quot;Juvenil&quot;</span>,<span class="st">&quot;Adulta&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb399-7"><a href="calcular_transiciones.html#cb399-7" tabindex="-1"></a></span>
+<span id="cb399-8"><a href="calcular_transiciones.html#cb399-8" tabindex="-1"></a>TF2</span></code></pre></div>
 <pre><code>## $T
 ##           
 ##             Plantula   Juvenil    Adulta
@@ -648,21 +648,21 @@ div.csl-indent {
 ##   Plantula 0.0000000 0.0000000 0.4318182
 ##   Juvenil  0.0000000 0.0000000 0.0000000
 ##   Adulta   0.0000000 0.0000000 0.0000000</code></pre>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="calcular_transiciones.html#cb400-1" tabindex="-1"></a>matA<span class="ot">=</span>TF2<span class="sc">$</span>T<span class="sc">+</span>TF2<span class="sc">$</span>F</span>
-<span id="cb400-2"><a href="calcular_transiciones.html#cb400-2" tabindex="-1"></a></span>
-<span id="cb400-3"><a href="calcular_transiciones.html#cb400-3" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="calcular_transiciones.html#cb401-1" tabindex="-1"></a>matA<span class="ot">=</span>TF2<span class="sc">$</span>T<span class="sc">+</span>TF2<span class="sc">$</span>F</span>
+<span id="cb401-2"><a href="calcular_transiciones.html#cb401-2" tabindex="-1"></a></span>
+<span id="cb401-3"><a href="calcular_transiciones.html#cb401-3" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##           
 ##             Plantula   Juvenil    Adulta
 ##   Plantula 0.1509434 0.0000000 0.4318182
 ##   Juvenil  0.4905660 0.3571429 0.1818182
 ##   Adulta   0.0000000 0.3571429 0.4772727</code></pre>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="calcular_transiciones.html#cb402-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb402-2"><a href="calcular_transiciones.html#cb402-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="calcular_transiciones.html#cb403-1" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb403-2"><a href="calcular_transiciones.html#cb403-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-97743e607cc315465768" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-97743e607cc315465768">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.151\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.491\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.357\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.432\"]\n\"adulto\" -> \"juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.182\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.477\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="calcular_transiciones.html#cb403-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="calcular_transiciones.html#cb404-1" tabindex="-1"></a><span class="fu">lambda</span>(matA)</span></code></pre></div>
 <pre><code>## [1] 0.8395872</code></pre>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="calcular_transiciones.html#cb405-1" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="calcular_transiciones.html#cb406-1" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span></code></pre></div>
 
 </div>
             </section>

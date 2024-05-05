@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-05-04" />
+<meta name="date" content="2024-05-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -519,30 +519,30 @@ div.csl-indent {
 <h2><span class="header-section-number">7.3</span> MatU: Matriz de transiciones<a href="Fertilidad.html#matu-matriz-de-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En la matriz de transiciones, <strong>MatU</strong> se encuentra solamente la información sobre de transiciones, estasis o retroceso entre las etapas de vida. Por consecuencia todo información sobre reproducción y clonaje es excluida. Si el diseño del modelo asume tres etapas de vida, plantulas, juvenil y adultos, se incluye solamente las siguientes transiciones.</p>
 <p>Nota que es este modelo los juveniles no pueden regresar a ser plantulas, pero los adultos pudiese regresar a ser juvenil. Seria probablemente más adecuado re-nombrar la etapa juvenil (que se entiende que no es reproductivo) a algo más claro como “Individuos pequeño”.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="Fertilidad.html#cb20-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb20-2"><a href="Fertilidad.html#cb20-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
-<span id="cb20-3"><a href="Fertilidad.html#cb20-3" tabindex="-1"></a>matU <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb20-4"><a href="Fertilidad.html#cb20-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
-<span id="cb20-5"><a href="Fertilidad.html#cb20-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
-<span id="cb20-6"><a href="Fertilidad.html#cb20-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>)</span>
-<span id="cb20-7"><a href="Fertilidad.html#cb20-7" tabindex="-1"></a>)</span>
-<span id="cb20-8"><a href="Fertilidad.html#cb20-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juvenil&quot;</span>, <span class="st">&quot;Adulto&quot;</span>)</span>
-<span id="cb20-9"><a href="Fertilidad.html#cb20-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matU, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Fertilidad.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb21-2"><a href="Fertilidad.html#cb21-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb21-3"><a href="Fertilidad.html#cb21-3" tabindex="-1"></a>matU <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb21-4"><a href="Fertilidad.html#cb21-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb21-5"><a href="Fertilidad.html#cb21-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
+<span id="cb21-6"><a href="Fertilidad.html#cb21-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>)</span>
+<span id="cb21-7"><a href="Fertilidad.html#cb21-7" tabindex="-1"></a>)</span>
+<span id="cb21-8"><a href="Fertilidad.html#cb21-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juvenil&quot;</span>, <span class="st">&quot;Adulto&quot;</span>)</span>
+<span id="cb21-9"><a href="Fertilidad.html#cb21-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matU, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-8f97d871bdbc6ee79705" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-8f97d871bdbc6ee79705">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="matf-matriz-de-fecundidad" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> MatF: Matriz de fecundidad<a href="Fertilidad.html#matf-matriz-de-fecundidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Si uno sigue la figura anterior vemos que los individuos en la segunda etapa se reproducen sexualmente (producen plantulas). Por consequencia seria probablemente más adecuado cambiar de nombre para la segunda etapa de “juvenil” a “individuos pequeños”. Lo que se observa es el ciclo de vida de la oportaciones de plantulas es que los Individuos pequeños y Grande producen plantulas.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Fertilidad.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb21-2"><a href="Fertilidad.html#cb21-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
-<span id="cb21-3"><a href="Fertilidad.html#cb21-3" tabindex="-1"></a>matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb21-4"><a href="Fertilidad.html#cb21-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">1.8</span>),</span>
-<span id="cb21-5"><a href="Fertilidad.html#cb21-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
-<span id="cb21-6"><a href="Fertilidad.html#cb21-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
-<span id="cb21-7"><a href="Fertilidad.html#cb21-7" tabindex="-1"></a>)</span>
-<span id="cb21-8"><a href="Fertilidad.html#cb21-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Ind Pequeños&quot;</span>, <span class="st">&quot;Ind Grande&quot;</span>)</span>
-<span id="cb21-9"><a href="Fertilidad.html#cb21-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matF, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="Fertilidad.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb22-2"><a href="Fertilidad.html#cb22-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb22-3"><a href="Fertilidad.html#cb22-3" tabindex="-1"></a>matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb22-4"><a href="Fertilidad.html#cb22-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">1.8</span>),</span>
+<span id="cb22-5"><a href="Fertilidad.html#cb22-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb22-6"><a href="Fertilidad.html#cb22-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb22-7"><a href="Fertilidad.html#cb22-7" tabindex="-1"></a>)</span>
+<span id="cb22-8"><a href="Fertilidad.html#cb22-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Ind Pequeños&quot;</span>, <span class="st">&quot;Ind Grande&quot;</span>)</span>
+<span id="cb22-9"><a href="Fertilidad.html#cb22-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matF, <span class="at">stages=</span>stages)</span></code></pre></div>
 <div class="grViz html-widget html-fill-item" id="htmlwidget-5ec6fd6a82ee8222fe1a" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-5ec6fd6a82ee8222fe1a">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
