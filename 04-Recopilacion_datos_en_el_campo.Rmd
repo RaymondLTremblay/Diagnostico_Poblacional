@@ -12,30 +12,44 @@ Por: Aucencia Emeterio-Lara, Mariana Hernández-Apolinar y Raymond L. Tremblay
 
 ## Tipo de crecimiento en las orquídeas
 
-Conocer el tipo de crecimiento y la apariencia general de la planta de interés es un primer paso en la toma de datos en el campo, ya que a partir de esto sabremos dónde ubicarlas y cómo identificarlas las etapas con facilidad en su medio natural. Es así que hay que identificar el sustrato en el que se establecen las orquídeas (i.e. tipo de crecimiento), mismo que puede ser terrestre, epífito o rupícola, éste último también llamado litófito [@tellez2007orquideas].
+Conocer el tipo de crecimiento y la apariencia general de la planta de interés es un primer paso en la toma de datos en el campo, ya que a partir de esto sabremos dónde ubicarlas y cómo identificarlas las etapas con facilidad en su medio natural.
+Es así que hay que identificar el sustrato en el que se establecen las orquídeas (i.e. tipo de crecimiento), mismo que puede ser terrestre, epífito o rupícola, éste último también llamado litófito [@tellez2007orquideas].
 Como es evidente, en el primer caso las plantas se desarrollan en suelo, en el segundo sobre ramas y troncos los árboles, mientras que en el tercero grupo sobre rocas.
-Es importante reconocer que algunas especies no son estrictamente limitado a un tipo de ambiente, por ejemplo hay algunas especies de *Lepanthes* que son epífita y rupícula. 
+Es importante reconocer que algunas especies no son estrictamente limitado a un tipo de ambiente, por ejemplo hay algunas especies de *Lepanthes* que son epífita y rupícula.
 
-De acuerdo con sus rasgos morfológicos o apariencia se pueden identificar al menos tres grupos de orquídeas epífitas: plantas con tallos engrosados y modificados conocidos como pseudobulbos (e.g *Laelia*, *Oncidium*, *Encyclia*, *Stanhopea*, *Maxilaria*, *Rhynchostelle*, etc), plantas con tallos simples o delgados (e.g *Epidendrum*, *Dichea*) y un tercer grupo con hojas engrosadas y tallos compactos o pseudobulbos poco visibles (e. g. *Trichocentrum*). En el caso de las orquídeas terrestres se pueden identificar seis grupos: plantas con tallos y hojas alternas o en espiral (v. g. *Cypripedium*, *Dichromanthus*, *Habenaria*, *Triphora*), plantas con hojas solitarias o en pares (v.g. *Bletia*, *Schiedeella*, *Malaxis*, *Govenia*), plantas con hojas en roseta (*Brachystele*, *Deiregyne*, *Sarcoglottis*), plantas con hojas en abanico (*Paphiopedilum*, *Phragmipedium*), plantas sin hojas (*Rhizanthella*, *Triphora*) y plantas con pseudobulbos (*Oeceoclades*, *Cymbidium*). Por su parte, en las plantas rupícolas se identifica un dos grupos: plantas con pseudobulbos (*Cattleya*, *Hoffmannsegella*, *Laelia*, *Paphiopedillum*) o sin pseudobulbo (*Lepanthes*). Cabe señalar que, si bien esta clasificación es de utilidad y brinda una idea de la diversidad en la morfología vegetativa de las orquídeas, hay que considerar que solo se basa en su apariencia, por lo que es muy cualitativa y poco rigurosa desde el punto de vista botánico.
+De acuerdo con sus rasgos morfológicos o apariencia se pueden identificar al menos tres grupos de orquídeas epífitas: plantas con tallos engrosados y modificados conocidos como pseudobulbos (e.g *Laelia*, *Oncidium*, *Encyclia*, *Stanhopea*, *Maxilaria*, *Rhynchostelle*, etc), plantas con tallos simples o delgados (e.g *Epidendrum*, *Dichea*) y un tercer grupo con hojas engrosadas y tallos compactos o pseudobulbos poco visibles (e. g. *Trichocentrum*).
+En el caso de las orquídeas terrestres se pueden identificar seis grupos: plantas con tallos y hojas alternas o en espiral (v. g. *Cypripedium*, *Dichromanthus*, *Habenaria*, *Triphora*), plantas con hojas solitarias o en pares (v.g. *Bletia*, *Schiedeella*, *Malaxis*, *Govenia*), plantas con hojas en roseta (*Brachystele*, *Deiregyne*, *Sarcoglottis*), plantas con hojas en abanico (*Paphiopedilum*, *Phragmipedium*), plantas sin hojas (*Rhizanthella*, *Triphora*) y plantas con pseudobulbos (*Oeceoclades*, *Cymbidium*).
+Por su parte, en las plantas rupícolas se identifica un dos grupos: plantas con pseudobulbos (*Cattleya*, *Hoffmannsegella*, *Laelia*, *Paphiopedillum*) o sin pseudobulbo (*Lepanthes*).
+Cabe señalar que, si bien esta clasificación es de utilidad y brinda una idea de la diversidad en la morfología vegetativa de las orquídeas, hay que considerar que solo se basa en su apariencia, por lo que es muy cualitativa y poco rigurosa desde el punto de vista botánico.
 
 ## Métodos y técnicas de muestreo
 
-El método y técnica de muestreo depende en gran medida del tipo de crecimiento (i.e. epífito, rupícola o terrestre) que presente la especie de interés. No solo eso, también de esta condición depende el grado de dificultad y el tiempo que se invertirá en la toma de datos. Para facilitar esta colecta de información se han implementado distintas técnicas de muestreo según su tipo de crecimiento, las cuales se describen a continuación.
+El método y técnica de muestreo depende en gran medida del tipo de crecimiento (i.e. epífito, rupícola o terrestre) que presente la especie de interés.
+No solo eso, también de esta condición depende el grado de dificultad y el tiempo que se invertirá en la toma de datos.
+Para facilitar esta colecta de información se han implementado distintas técnicas de muestreo según su tipo de crecimiento, las cuales se describen a continuación.
 
 ### *Orquídeas epífitas y rupícolas*.
 
-Las orquídeas epífitas y rupícolas viven a distintas alturas en árboles y acantilados. En la colecta de información de estas poblaciones se utilizan desde una simple escalera hasta equipo de alpinismo para ascenso. El uso de escaleras es una técnica muy práctica si la especie de estudio se desarrolla en las zonas bajas de los acantilados o en forofítos como arbustos y árboles de porte bajo a medio (@hernandez1992dinamica); sin embargo, se tiene la desventaja de transportar este instrumento de trabajo hasta el sitio de muestreo.
+Las orquídeas epífitas y rupícolas viven a distintas alturas en árboles y acantilados.
+En la colecta de información de estas poblaciones se utilizan desde una simple escalera hasta equipo de alpinismo para ascenso.
+El uso de escaleras es una técnica muy práctica si la especie de estudio se desarrolla en las zonas bajas de los acantilados o en forofítos como arbustos y árboles de porte bajo a medio [@hernandez1992dinamica] ; sin embargo, se tiene la desventaja de transportar este instrumento de trabajo hasta el sitio de muestreo.
 
-Cuando las orquídeas se distribuyen a una altura considerable del acantilado, la técnica de rapel resulta muy útil y segura e implica el descenso mediante cuerdas hasta llegar a las orquídeas a muestrear. Por su parte, la técnica de ascenso de una sola cuerda es muy segura [@jepson2000tree] cuando se trata de orquídeas epífitas habitando hospederos de porte medio y alto con troncos y ramas gruesas. Pero tiene algunas limitaciones como es la dificultad de acceder a ramas delgadas en los estratos muy altos. En importante señalar que, si se carece de experiencia en el ascenso de árboles y acantilados es importante recibir apoyo de gente experta.
+Cuando las orquídeas se distribuyen a una altura considerable del acantilado, la técnica de rapel resulta muy útil y segura e implica el descenso mediante cuerdas hasta llegar a las orquídeas a muestrear.
+Por su parte, la técnica de ascenso de una sola cuerda es muy segura [@jepson2000tree] cuando se trata de orquídeas epífitas habitando hospederos de porte medio y alto con troncos y ramas gruesas.
+Pero tiene algunas limitaciones como es la dificultad de acceder a ramas delgadas en los estratos muy altos.
+En importante señalar que, si se carece de experiencia en el ascenso de árboles y acantilados es importante recibir apoyo de gente experta.
 
 En el muestreo de los árboles se señala la ubicación preferente de las orquídeas de estudio, debido a que éstas presentan condiciones microclimáticas variables.
-Dicha ubicación, generalmente toma en cuenta la clasificación hecha por Johansson [@johansson1974ecology; @catling1986epiphytic], quien señala que en un árbol hospedero existen cinco zonas o estratos, dividiéndolos de la siguiente manera: la parte basal del tronco (Zona I), tronco principal (Zona II), la copa interna (Zona III), la copa media (Zona IV) y la copa externa (Zona V). Cabe señalar que, la mayor concentración de orquídeas epífitas se registra en los estratos medios II, III, IV (**Mondragón et al. 2007**).
+Dicha ubicación, generalmente toma en cuenta la clasificación hecha por Johansson [@johansson1974ecology; @catling1986epiphytic], quien señala que en un árbol hospedero existen cinco zonas o estratos, dividiéndolos de la siguiente manera: la parte basal del tronco (Zona I), tronco principal (Zona II), la copa interna (Zona III), la copa media (Zona IV) y la copa externa (Zona V).
+Cabe señalar que, la mayor concentración de orquídeas epífitas se registra en los estratos medios II, III, IV [@mondragon2007life].
 
 **AQUI un dibujo del concepto sugerido por Johansson (1974) y Cattling (Quien puede hacer un dibujo que se acerca al concepto sugerido por el y Cattling? NO deberiamos usar una foto de otro papers, habria que pedir permiso.**
 
 ### *Orquídeas terrestres*.
 
-En el muestreo de poblaciones de orquídeas terrestres se han implementado varias técnicas de muestreo, en esta sección nos referiremos a dos: El método de triangulación y el método sin área. El primero permite estimar el área en que se establece la población, mientras que el segundo no permite establecer esta variable y se centra en el marcaje de individuos. A continuación se detalla en qué consisten ambos.
+En el muestreo de poblaciones de orquídeas terrestres se han implementado varias técnicas de muestreo, en esta sección nos referiremos a dos: El método de triangulación y el método sin área.
+El primero permite estimar el área en que se establece la población, mientras que el segundo no permite establecer esta variable y se centra en el marcaje de individuos.
+A continuación se detalla en qué consisten ambos.
 
 a)  *Método de triangulación*. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia [@tremblay2009population]. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre la primeera estaca y segunda estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema **x** e **y**). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.
 
@@ -43,11 +57,12 @@ a)  *Método de triangulación*. El método de triangulación es una técnica no
 
 <br>
 
-b)  *Método de sin área*. En campo, las orquídeas terrestres forman pequeñas colonias, algunas de menos de 20 individuos e incluso hay especies con individuos aislados (Ej. *Govenia lagenophora*, *Dichromanthus cinnabarinus* y *D. aurantiacus* [@tellez2007orquideas; **Mariana Hernández-A obs**. pers], por lo que su dinámica poblacional generalmente es descrita a partir de la información obtenida en varias colonias o subpoblaciones. El método sin área ha sido ampliamente usado en este tipo de orquídeas, no es invasivo y consiste en la selección de una colonia o subpoblación en la que se marcan todas las plantas observadas en el lugar (@martinez2024estimation). Asimismo, la ubicación del sitio y los individuos puede geo-referirse y/o hacer mapas de localización.
+b)  *Método de sin área*. En campo, las orquídeas terrestres forman pequeñas colonias, algunas de menos de 20 individuos e incluso hay especies con individuos aislados (Ej. *Govenia lagenophora*, *Dichromanthus cinnabarinus* y *D. aurantiacus* [@tellez2007orquideas], por lo que su dinámica poblacional generalmente es descrita a partir de la información obtenida en varias colonias o subpoblaciones. El método sin área ha sido ampliamente usado en este tipo de orquídeas, no es invasivo y consiste en la selección de una colonia o subpoblación en la que se marcan todas las plantas observadas en el lugar [@martinez2024estimation]. Asimismo, la ubicación del sitio y los individuos puede geo-referirse y/o hacer mapas de localización.
 
 ## Marcaje y monitoreo de los individuos en el tiempo
 
-La dinámica o cambio en una población se evalúa marcando y siguiendo a todos los individuos que se encuentran en un sitio (i.e. censo) o de solo una parte de éstos (i.e. muestreo) a lo largo de sus distintas etapas del ciclo de vida. Sin importar si censamos o muestreamos, tenemos que asegurar dos aspectos durante el marcaje o etiquetado de una población:
+La dinámica o cambio en una población se evalúa marcando y siguiendo a todos los individuos que se encuentran en un sitio (i.e. censo) o de solo una parte de éstos (i.e. muestreo) a lo largo de sus distintas etapas del ciclo de vida.
+Sin importar si censamos o muestreamos, tenemos que asegurar dos aspectos durante el marcaje o etiquetado de una población:
 
 1)  que se incluyan individuos de todas las categorías de etapas/estados que conforman una población y
 
@@ -57,54 +72,85 @@ La dinámica o cambio en una población se evalúa marcando y siguiendo a todos 
 
 ### Etapas de las orquídeas de estudio a identificar en campo
 
-Identificar las etapas/estados de desarrollo de una especie es escencial para evaluar los cambios que ocurren en los individuos de una población a lo largo de su ciclo de vida. Para cambios en las etapas de los individuos en el tiempo se debe identificar las características biológicas y morfológicas que definen cada una de las etapas/estados de desarrollo de los individuos de la población. Esta serie de características permitirá reconocer y diferenciar las semillas, plántulas, juveniles, adultos y etapas latentes (cuando las haya); asimismo a partir de su monitoreo o seguimiento se reconocerá su cambio de etapa/estado en el tiempo.
+Identificar las etapas/estados de desarrollo de una especie es escencial para evaluar los cambios que ocurren en los individuos de una población a lo largo de su ciclo de vida.
+Para cambios en las etapas de los individuos en el tiempo se debe identificar las características biológicas y morfológicas que definen cada una de las etapas/estados de desarrollo de los individuos de la población.
+Esta serie de características permitirá reconocer y diferenciar las semillas, plántulas, juveniles, adultos y etapas latentes (cuando las haya); asimismo a partir de su monitoreo o seguimiento se reconocerá su cambio de etapa/estado en el tiempo.
 
-Existen características que son distintivas de una etapa/estado en particular, tal es el caso de estructuras reproductivas (flores, frutos y escapos frescos o secos), las cuales son distintivas de los individuos adultos y permiten diferenciar estados de desarrollo en las plantas. No obstante, cuando se trata de especies de un mismo género que comparten un mismo hábitat, es posible confundir a los individuos de diferente estapas, plantulas, juneniles y adultos de distintas especies debido a que pueden presentar características vegetativas o florales muy similares. A pesar de esto, y con la ayuda de un botánico experimentado, es posible resolver la mayoría de estos dilemas. Por su parte, los individuos juveniles o no reproductivos serán aquellos que no presenta flores ni frutos, y son distintos a las plántulas, que son los individuos recién establecidos.
+Existen características que son distintivas de una etapa/estado en particular, tal es el caso de estructuras reproductivas (flores, frutos y escapos frescos o secos), las cuales son distintivas de los individuos adultos y permiten diferenciar estados de desarrollo en las plantas.
+No obstante, cuando se trata de especies de un mismo género que comparten un mismo hábitat, es posible confundir a los individuos de diferente estapas, plantulas, juneniles y adultos de distintas especies debido a que pueden presentar características vegetativas o florales muy similares.
+A pesar de esto, y con la ayuda de un botánico experimentado, es posible resolver la mayoría de estos dilemas.
+Por su parte, los individuos juveniles o no reproductivos serán aquellos que no presenta flores ni frutos, y son distintos a las plántulas, que son los individuos recién establecidos.
 
 Dos de las etapas de desarrollo más difíciles de seguir en campo son las semillas y plántulas, por lo que para su caracterización y muestreo en campo hay que considerar lo siguiente:
 
 #### *Semillas*.
 
-La fase de semillas es uno de los mayores retos en el estudio de las orquídeas, ya que sus tamaño tan pequeño (i.e. son conocidas como semillas polvo o “dust-seeds”) dificulta el seguimiento de su dispersión, germinación y establecimiento en campo [@ackerman1996seedling; @ticktin2020synthesis]; los parámetros que corresponde a la supervivencia y crecimiento de semillas son de gran utilidad al momento de estimar los valores de fecundidad o de transición en el primer estadio del ciclo de vida. Esyo raramente se ha estudiando en las orquideas. Actualmente en el medio natural, el método más usado para evaluar la germinación es la introducción de bolsas pequeñas de malla de plancton (mesh plankton, 50 μm) con semillas, las cuales se colocan en el suelo o en la corteza de árboles donde se añadio semillas y se recogen en uno o distintos periodos del año para evaluar la germinación [@rasmussen1993seed; @rasmussen2011methods; @anghelescu2023asymbiotic].
+La fase de semillas es uno de los mayores retos en el estudio de las orquídeas, ya que sus tamaño tan pequeño (i.e. son conocidas como semillas polvo o “dust-seeds”) dificulta el seguimiento de su dispersión, germinación y establecimiento en campo [@ackerman1996seedling; @ticktin2020synthesis] ; los parámetros que corresponde a la supervivencia y crecimiento de semillas son de gran utilidad al momento de estimar los valores de fecundidad o de transición en el primer estadio del ciclo de vida.
+La relación entre la producción de semillas y la transición a plantulas y juveniles raramente se ha estudiando raramente en las orquideas.
+Actualmente en el medio natural, el método más usado para evaluar la germinación es la introducción de bolsas pequeñas de malla de plancton (mesh plankton, 50 μm) con semillas, las cuales se colocan en el suelo o en la corteza de árboles donde se añadio semillas y se recogen en uno o distintos periodos del año para evaluar la germinación [ @rasmussen1993seed; @rasmussen2011methods; @anghelescu2023asymbiotic].
 
 #### *Plántulas*.
 
-Identificar las plántulas en orquídeas también tiende a ser complicado debido a que se desconoce su morfología en la gran mayoría de las especies. Por ejemplo, en el caso de *Cypripedium irapeanum*, una orquídea terrestre, las plántulas presentan tallos muy delgados y su apariencia es semejante al pasto y varias de éstas se encuentran escondidas entre la vegetación (Hernández-Apolinar, comunicación personal). En el caso de orquídeas epífitas, se trata de los individuos más pequeños en la población, algunos se pueden reconocer si no están cubiertas de musgo, liquen u otra tipo de planta. Tremblay (com. pers.) ha encontrado a estas pequeñas plantas en alreredor de las plantas adultas, por lo que recomienda esta estrategia para marcar correctamente esta fase de desarrollo en orquídeas terrestres o epífitas; sin embargo, un problema potencial es lograr diferenciar correctamente las plántulas de distinta especie. En *Lepanthes*, por ejemplo, las plántulas se establecen entremezclas de difer3entes especies en el mismo forofito y carecen de caracteres distintivos por lo que es imposible distinguirlas por especie (Tremblay com. pers.); esto se logra solamente cuando se marcan y siguen cuidadosamente a etapas posteriores (juvenil o adulto). De esta manera, el autor ha logrado distinguir entre plántulas de *Lepanthes eltoroensis* y *L. woodburyana*, las cuales se diferencian únicamente en la forma de crecimiento del tallo. Al continuar el desarrollo, *Lepanthes eltoroensis* tendrá un crecimiento postrado, mientras que éste será erecto en *L. woodburyana*. Si bien este método es bueno, es importante considerar que puede representar un periodo de tiempo largo y que se corre el riesgo de no saber la especie cuando las plántulas no sobreviven a la siguiente etapa o el largo del estudio no es suficiente para detemrinar a cual especies pertenece las plantulas o juveniles.
+Identificar las plántulas en orquídeas también tiende a ser complicado debido a que se desconoce su morfología en la gran mayoría de las especies.
+Por ejemplo, en el caso de *Cypripedium irapeanum*, una orquídea terrestre, las plántulas presentan tallos muy delgados y su apariencia es semejante al pasto y varias de éstas se encuentran escondidas entre la vegetación (Hernández-Apolinar, comunicación personal).
+En el caso de orquídeas epífitas, se trata de los individuos más pequeños en la población, algunos se pueden reconocer si no están cubiertas de musgo, liquen u otra tipo de planta.
+Tremblay (com. pers.) ha encontrado a estas pequeñas plantas en alreredor de las plantas adultas, por lo que recomienda esta estrategia para marcar correctamente esta fase de desarrollo en orquídeas terrestres o epífitas; sin embargo, un problema potencial es lograr diferenciar correctamente las plántulas de distinta especie.
+En *Lepanthes*, por ejemplo, las plántulas se establecen entremezclas de difer3entes especies en el mismo forofito y carecen de caracteres distintivos por lo que es imposible distinguirlas por especie (Tremblay com. pers.); esto se logra solamente cuando se marcan y siguen cuidadosamente a etapas posteriores (juvenil o adulto).
+De esta manera, el autor ha logrado distinguir entre plántulas de *Lepanthes eltoroensis* y *L. woodburyana*, las cuales se diferencian únicamente en la forma de crecimiento del tallo.
+Al continuar el desarrollo, *Lepanthes eltoroensis* tendrá un crecimiento postrado, mientras que éste será erecto en *L. woodburyana*.
+Si bien este método es bueno, es importante considerar que puede representar un periodo de tiempo largo y que se corre el riesgo de no saber la especie cuando las plántulas no sobreviven a la siguiente etapa o el largo del estudio no es suficiente para detemrinar a cual especies pertenece las plantulas o juveniles.
 
 ## Identificar la características de la especie de estudio
 
-Para cualquier estudio usando el acercamiento de dinámica poblacional es necesario conocer lo básico de la especie de interés y las etapas/edades que corresponde al ciclo de vida de esa misma. Poder reconocer las diferentes etapas del ciclo de vida con exactitud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes. Cuando se define una etapa de vida se debería tener características morfológicas que se puede identificar en el campo con facilidad y para reducir los errores de asignaciones a otras etapas. Por ejemplo en *Lepanthes* [@tremblay2003population] definió un juvenil como individuo que tiene tallos con vaine Lepanthiforme *lepanthiform sheath* en por lo menos una de los peciolos y que no tiene evidencia de presente o anterior de inflorescencias. Nota que aquí la diferencia entre una plántula y un juvenil es que tenga una vaina Lepanthiformey se diferencia de los adultos con la ausencia de evidencia de inflorescencias seca y activa.
+Para cualquier estudio usando el acercamiento de dinámica poblacional es necesario conocer lo básico de la especie de interés y las etapas/edades que corresponde al ciclo de vida de esa misma.
+Poder reconocer las diferentes etapas del ciclo de vida con exactitud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes.
+Cuando se define una etapa de vida se debería tener características morfológicas que se puede identificar en el campo con facilidad y para reducir los errores de asignaciones a otras etapas.
+Por ejemplo en *Lepanthes* [@tremblay2003population] definió un juvenil como individuo que tiene tallos con vaine Lepanthiforme *lepanthiform sheath* en por lo menos una de los peciolos y que no tiene evidencia de presente o anterior de inflorescencias.
+Nota que aquí la diferencia entre una plántula y un juvenil es que tenga una vaina Lepanthiformey se diferencia de los adultos con la ausencia de evidencia de inflorescencias seca y activa.
 
-Por ejemplo en la foto que sigue tenemos un individuos que tiene dos hojas, una con inflorescencia activa y la otra hoja con inflorescencia secas, por consecuencia ese individuos es un adulto ya que tiene por los menor una inflorescencia activa (produciendo flores o el potencial de producir flores). Nota no es que la inflorescencia tenga flores es que la inflorescencia es verde.
+Por ejemplo en la foto que sigue tenemos un individuos que tiene dos hojas, una con inflorescencia activa y la otra hoja con inflorescencia secas, por consecuencia ese individuos es un adulto ya que tiene por los menor una inflorescencia activa (produciendo flores o el potencial de producir flores).
+Nota no es que la inflorescencia tenga flores es que la inflorescencia es verde.
 
 ![*Lepanthes rupestris* con inflorescencias seca y activa. Foto: Tremblay](Figures/lepanthes_rupestris.jpeg){width="90%"}
 
 ### Semillas
 
-Algunos retos en el estudio de las orquídeas es el seguimiento de las semillas y plántulas en el campo. La dispersión de las semillas en el espacio ha sido estudiado muy poco [@ackerman1996seedling] debido a sus tamaños tan pequeños y dificultad de seguir en el espacio. Los métodos de seguir las semillas en su ambiente natural incluye típicamente ponerlos en una malla y ponerlos en el suelo o la corteza de un árbol y recogerlos más tarde para ver si estas germinaron [@rasmussen1993seed], [@whigham2006seed].
+Algunos retos en el estudio de las orquídeas es el seguimiento de las semillas y plántulas en el campo.
+La dispersión de las semillas en el espacio ha sido estudiado muy poco [@ackerman1996seedling] debido a sus tamaños tan pequeños y dificultad de seguir en el espacio.
+Los métodos de seguir las semillas en su ambiente natural incluye típicamente ponerlos en una malla y ponerlos en el suelo o la corteza de un árbol y recogerlos más tarde para ver si estas germinaron [@rasmussen1993seed], [@whigham2006seed].
 Un patrón que parecer ser consistente en las plantas es que el crecimiento poblacional tienden a ser limitado por las semillas [@turnbull2000plant].
 
 ### Identificación y etiquetado de individuos.
 
-Debido a la naturaleza sésil de las plantas, una vez delimitada la población resulta relativamente sencillo contar e identificar a todos los individuos seleccionados. Sin embargo, el monitoreo y secuenciación de todos y cada uno de los procesos o eventos de desarrollo por los que transita cada uno de los individuos de año a otro año (o el periodo de tiempo de su estudio: en *Lepanthes* hizo muestreo mensuales no anual [@tremblay2003population] sólo es posible si: 
+Debido a la naturaleza sésil de las plantas, una vez delimitada la población resulta relativamente sencillo contar e identificar a todos los individuos seleccionados.
+Sin embargo, el monitoreo y secuenciación de todos y cada uno de los procesos o eventos de desarrollo por los que transita cada uno de los individuos de año a otro año (o el periodo de tiempo de su estudio: en *Lepanthes* hizo muestreo mensuales no anual [@tremblay2003population] sólo es posible si:
 
-    a) contamos con material de marcaje de calidad y 
-    b) si tenemos un sistema de identificación sencillo y claro. 
+```         
+a) contamos con material de marcaje de calidad y 
+b) si tenemos un sistema de identificación sencillo y claro. 
+```
 
-Estos dos sencillos pasos evitarán mezclar la información entre individuos de una misma población o confundir la información con plantas de otras poblaciones. Es decir, la calidad de nuestros datos dependerá, en parte, de cómo marquemos y de qué calidad sea el material que usemos para el marcaje.
+Estos dos sencillos pasos evitarán mezclar la información entre individuos de una misma población o confundir la información con plantas de otras poblaciones.
+Es decir, la calidad de nuestros datos dependerá, en parte, de cómo marquemos y de qué calidad sea el material que usemos para el marcaje.
 
 a)  *Qué material usar al marcar o etiquetar un individuo o sitio de muestro*.
 
 La calidad y sobre todo la durabilidad del material de marcaje es importante cuando hacemos un estudio poblacional, más aún cuando se trata de uno de largo plazo (múltiples años).
-Si las marcas se desintegran de un año a otro, se perderá la identidad de cada planta y si no nos damos cuenta podríamos suponer dos cosas en nuestro siguiente monitoreo: 1) que el individuo murió (ya que el marcador  no se encuentra) o 2) que hay un nuevo reclutamiento en la población (aparece un nuevo individuo sin marca pero es un error por la perdida del identificador).
+Si las marcas se desintegran de un año a otro, se perderá la identidad de cada planta y si no nos damos cuenta podríamos suponer dos cosas en nuestro siguiente monitoreo: 1) que el individuo murió (ya que el marcador no se encuentra) o 2) que hay un nuevo reclutamiento en la población (aparece un nuevo individuo sin marca pero es un error por la perdida del identificador).
 Esto sesgaría nuestros resultados al suponer un aumento en la mortalidad o, en su defecto, un aumento en el reclutamiento.
-Naturalmente, estos sesgos dependeran del número de individuos que marquemos (i.e. tamaño de la muestra). Por regla general se ha considerado que a menor tamaño de muestra, mayor es el impacto de estos estas asignaciones de dinamica poblacional y por consecuencia mayor es el sesgo.
+Naturalmente, estos sesgos dependeran del número de individuos que marquemos (i.e. tamaño de la muestra).
+Por regla general se ha considerado que a menor tamaño de muestra, mayor es el impacto de estos estas asignaciones de dinamica poblacional y por consecuencia mayor es el sesgo.
 
-Las etiquetas de aluminio resultan ser un buen material al marcar los individuos de las orquídeas de cualquier ambiente (i.e. epífito, terrestre o rupícola). El aluminio laminado es un material relativamente barato, muy duradero y se puede escribir sobre éste; por lo que, se garantiza la permanencia de la marca o etiqueta y la de las inscripciones que hayamos hechos sobre ésta, hay tambien marcadores previamente numerado. Además, este tipo de etiquetas puede sujetarse a la planta o colocarse cerca de ésta con diferentes materiales; por ejemplo, hilo de pescador, cinchos de plástico, alambre galvanizado o plastificado, clavos, chinchetas (drawing pin) y grapas, entre aquellos más usados.
+Las etiquetas de aluminio resultan ser un buen material al marcar los individuos de las orquídeas de cualquier ambiente (i.e. epífito, terrestre o rupícola).
+El aluminio laminado es un material relativamente barato, muy duradero y se puede escribir sobre éste; por lo que, se garantiza la permanencia de la marca o etiqueta y la de las inscripciones que hayamos hechos sobre ésta, hay tambien marcadores previamente numerado.
+Además, este tipo de etiquetas puede sujetarse a la planta o colocarse cerca de ésta con diferentes materiales; por ejemplo, hilo de pescador, cinchos de plástico, alambre galvanizado o plastificado, clavos, chinchetas (drawing pin) y grapas, entre aquellos más usados.
 
 Un aspecto que hay que cuidar al marcar individuos es que las etiquetas se enmascaren con el ambiente; es decir, que no sean muy grandes, estén protegidas y que no sean evidentes en areas donce transitan personas no asociada a la investigación, a fin de evitar su pérdida o, incluso, el robo de plantas por gente ajena a la investigación es algo que siempre debemos tratar de minimizar.
 
-La durabilidad del material usado es muy importante cuando existen eventos en el ciclo de vida de una especie que pueden prolongarse por varios años. Este es el caso de algunas orquídeas terrestres que pueden no rebrotar y mantenerse en latencia vegetativa por más de un ciclo anual de forma consecutiva. Por ejemplo, en *Liparis lilifolia* puede no emerger por tres o más años continuos [@hutchings1987population; @wells1991demographic], mientras que en *Epipactis helleborine* por cinco e, incluso, siete años [@light2006appearance; @coates2006effects]. El poder tener un muestreo confiable de la secuenciación de estos eventos en un individuo en el mediano y largo plazo depende de la calidad del material usado al marcar las plantas o sea el metodo de marca y recaptura, lo cual a su vez permitirá tener estimaciones confiable o segadas del tamaño poblacional y de la supervivencia y crecimiento de los individuos.
+La durabilidad del material usado es muy importante cuando existen eventos en el ciclo de vida de una especie que pueden prolongarse por varios años.
+Este es el caso de algunas orquídeas terrestres que pueden no rebrotar y mantenerse en latencia vegetativa por más de un ciclo anual de forma consecutiva.
+Por ejemplo, en *Liparis lilifolia* puede no emerger por tres o más años continuos [@hutchings1987population; @wells1991demographic], mientras que en *Epipactis helleborine* por cinco e, incluso, siete años [@light2006appearance ; @coates2006effects].
+El poder tener un muestreo confiable de la secuenciación de estos eventos en un individuo en el mediano y largo plazo depende de la calidad del material usado al marcar las plantas o sea el metodo de marca y recaptura, lo cual a su vez permitirá tener estimaciones confiable o segadas del tamaño poblacional y de la supervivencia y crecimiento de los individuos.
 
 <br>
 
@@ -112,32 +158,50 @@ La durabilidad del material usado es muy importante cuando existen eventos en el
 
 <br>
 
-b) *Como marcar los individuos*
+b)  *Como marcar los individuos*
 
 *Marcar los sitios de muestreos*.
 
 Al igual que los individuos, los sitios de muestreo también se marcan a fin de facilitar su ubicación en el medio natural.
-Estos pueden ser marcados, usando banderines, etiquetas grandes de aluminio o plástico, cinta de señalización (flagging tape) o pintura permanente; asimismo, también se pueden georeferir y hacer mapas de localización. Cuando se trata de marcas de colores, se deben preferir colores poco llamativos que puedan disimularse con la vegetación circundante. Si el sitio está bien protegido se puede optar por colores fuertes y llamativos; sin embargo, hay que considerar que los animales (mamíferos, aves, herbívoros) se pueden ver atraídos por éstas e ingerirlas o destruirlas; de ahí que se sugiere utilizar etiquetas discretas que favorezcan su permanencia en el mediano y largo plazo.
+Estos pueden ser marcados, usando banderines, etiquetas grandes de aluminio o plástico, cinta de señalización (flagging tape) o pintura permanente; asimismo, también se pueden georeferir y hacer mapas de localización.
+Cuando se trata de marcas de colores, se deben preferir colores poco llamativos que puedan disimularse con la vegetación circundante.
+Si el sitio está bien protegido se puede optar por colores fuertes y llamativos; sin embargo, hay que considerar que los animales (mamíferos, aves, herbívoros) se pueden ver atraídos por éstas e ingerirlas o destruirlas; de ahí que se sugiere utilizar etiquetas discretas que favorezcan su permanencia en el mediano y largo plazo.
 
 *Qué Información debo plasmar en una etiqueta*.
 
 La marca o etiqueta de cada uno de los individuos de una población debe compactar la mayor cantidad de información posible, no solo número consecutivos.
 Es decir, generalmente escribimos números consecutivos (1, 2, 3, 4, etc.) en las etiquetas que colocamos a cada individuo en campo.
-Sin embargo si no hay notas guía (metadata), esta información es limitada cuando se quieren analizar nuevamente; ya que es difícil determinar cuándo se reclutaron los nuevos individuos a la población o cuándo se fragmentó una planta para dar origen a un individuo de una categoría distinta a una plántula. Asimismo, si se seleccionan distintas poblaciones o colonias y los números consecutivos son los mismos, podemos confundir la información y llegar a conclusiones erróneas.
+Sin embargo si no hay notas guía (metadata), esta información es limitada cuando se quieren analizar nuevamente; ya que es difícil determinar cuándo se reclutaron los nuevos individuos a la población o cuándo se fragmentó una planta para dar origen a un individuo de una categoría distinta a una plántula.
+Asimismo, si se seleccionan distintas poblaciones o colonias y los números consecutivos son los mismos, podemos confundir la información y llegar a conclusiones erróneas.
 
 Cuando se estudia una sola población, una forma sencilla de evitar errores y anexar más información es escribir en la etiqueta el año de estudio y el número consecutivo de la planta.
-Por ejemplo, si el estudio comenzó en 2023 y la población está formada por 152 individuos, éstos se podrían codificar así: 23001, 23002, 23003, ... 23152 (i.e. captura). En el siguiente año (2024) se revisarán o censarán los 152 individuos (i.e. recaptura) marcados y se etiquetarán los nuevos individuos que ingresan a la población (v.g. plántulas, juveniles), cuya marca iniciará con 24 y el número consecutivo (153 en adelante). De esta forma se identificará el año en que inició la toma de datos del individuo, el año de ingresaron de los nuevos individuos, lo cual evitará la redundancia en el código, ayudando a reducir los errores de asignaciones de información a individuos incorectos. Otro aspecto que reduce los errores de codificación es mantener una secuencia lógica en las distintas zonas de muestreo. Debido a que las orquídeas no tienen una distribución regular y varias de éstas tienen una distribución aparchonada (plantas concentrada en un área), se apremia a mantener números consecutivos (23001, 23002, 23003, etc.) por zona en un sitio de estudio y evitar la mezcla de número es áreas distintas (23001, 23012, 23043, etc.).
+Por ejemplo, si el estudio comenzó en 2023 y la población está formada por 152 individuos, éstos se podrían codificar así: 23001, 23002, 23003, ...
+23152 (i.e. captura).
+En el siguiente año (2024) se revisarán o censarán los 152 individuos (i.e. recaptura) marcados y se etiquetarán los nuevos individuos que ingresan a la población (v.g. plántulas, juveniles), cuya marca iniciará con 24 y el número consecutivo (153 en adelante).
+De esta forma se identificará el año en que inició la toma de datos del individuo, el año de ingresaron de los nuevos individuos, lo cual evitará la redundancia en el código, ayudando a reducir los errores de asignaciones de información a individuos incorectos.
+Otro aspecto que reduce los errores de codificación es mantener una secuencia lógica en las distintas zonas de muestreo.
+Debido a que las orquídeas no tienen una distribución regular y varias de éstas tienen una distribución aparchonada (plantas concentrada en un área), se apremia a mantener números consecutivos (23001, 23002, 23003, etc.) por zona en un sitio de estudio y evitar la mezcla de número es áreas distintas (23001, 23012, 23043, etc.).
 
-Siguiendo con el mismo concepto del inciso anterior, pero aplicado a múltiples poblaciones, en la numeración de la población se puede utilizar una codificación alfanumérica, donde la letra del alfabeto representa a la población y el número a los individuos marcados para su monitoreo. De esta manera, las marcas individuales se verían de la siguiente forma: A23001, A23002, ..., 23xxx para la primera población y B23001, B23002, ..., B23xxx para la segunda población y así sucesivamente, en caso de estudiar más de dos poblaciones.
+Siguiendo con el mismo concepto del inciso anterior, pero aplicado a múltiples poblaciones, en la numeración de la población se puede utilizar una codificación alfanumérica, donde la letra del alfabeto representa a la población y el número a los individuos marcados para su monitoreo.
+De esta manera, las marcas individuales se verían de la siguiente forma: A23001, A23002, ..., 23xxx para la primera población y B23001, B23002, ..., B23xxx para la segunda población y así sucesivamente, en caso de estudiar más de dos poblaciones.
 
-Otra forma de codificar las múltiples poblaciones o subpoblaciones es asignando un número a cada una y añadiendo el número consecutivo correspondiente. En este caso la etiquetas de las plantas número 10 en dos sitios se verían de la siguiente manera: 1.10 y 2.10. Si queremos añadir el año del estudio, éste también puede ser al final y sería de la siguiente forma: 1.10.23 y 2.10.23. Para los nuevos ingresos se sigue la misma lógica del inciso anterior, por lo que la nueva planta 155 que ingresa en 2024 a la población 1 le corresponderá la etiqueta 1.155.24.
+Otra forma de codificar las múltiples poblaciones o subpoblaciones es asignando un número a cada una y añadiendo el número consecutivo correspondiente.
+En este caso la etiquetas de las plantas número 10 en dos sitios se verían de la siguiente manera: 1.10 y 2.10.
+Si queremos añadir el año del estudio, éste también puede ser al final y sería de la siguiente forma: 1.10.23 y 2.10.23.
+Para los nuevos ingresos se sigue la misma lógica del inciso anterior, por lo que la nueva planta 155 que ingresa en 2024 a la población 1 le corresponderá la etiqueta 1.155.24.
 
-c) *Cómo colocar la etiqueta*.
+c)  *Cómo colocar la etiqueta*.
 
-Existen distintas formas de colocar las etiquetas o marcas en los individuos seleccionados para el estudio y, su colocación no debe afectar el desempeño de la planta marcada y si asegurar su permanencia en el mediano y largo plazo. Por ejemplo en las orquídeas epífitas de tamaño grande, la etiqueta de identidad se puede colocar abrazando a la planta, incluyendo la rama o tronco donde se desarrolla, o bien, colocarse abrazando a uno solo de los módulos. En el caso de *Laelia autumnalis* [@emeterio2021does], además de la etiqueta de identificación, se marcó **¿con qué?** el último módulo (el más joven o reciente) de cada uno de los frentes de crecimiento. Este tipo de marcaje permitió determinar la biomasa nueva que se agrega cada año a cada planta y, al mismo tiempo, permitió identificar la permanencia, crecimiento o retrogresión entre fases de crecimiento. En las orquídeas terrestres *Cypripedium irapeanum* **(ref)** y *Govenia lagenophora* **(ref)** funcionó bien usar etiquetas aluminio o cinta dymo amarradas palos de clavos o clavadas en segmentos de alambre delgado, semejando banderitas, los cuales a su vez fueron clavados en el suelo junto a los tallos.
+Existen distintas formas de colocar las etiquetas o marcas en los individuos seleccionados para el estudio y, su colocación no debe afectar el desempeño de la planta marcada y si asegurar su permanencia en el mediano y largo plazo.
+Por ejemplo en las orquídeas epífitas de tamaño grande, la etiqueta de identidad se puede colocar abrazando a la planta, incluyendo la rama o tronco donde se desarrolla, o bien, colocarse abrazando a uno solo de los módulos.
+En el caso de *Laelia autumnalis* [@emeterio2021does], además de la etiqueta de identificación, se marcó **¿con qué?** el último módulo (el más joven o reciente) de cada uno de los frentes de crecimiento.
+Este tipo de marcaje permitió determinar la biomasa nueva que se agrega cada año a cada planta y, al mismo tiempo, permitió identificar la permanencia, crecimiento o retrogresión entre fases de crecimiento.
+En las orquídeas terrestres *Cypripedium irapeanum* **(ref)** y *Govenia lagenophora* **(ref)** funcionó bien usar etiquetas aluminio o cinta dymo amarradas palos de clavos o clavadas en segmentos de alambre delgado, semejando banderitas, los cuales a su vez fueron clavados en el suelo junto a los tallos.
 
-Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es necesario definir un material suave que evite dañar sus estructuras. Tremblay [@tremblay2000plant; @tremblay2003population ; @tremblay1997lepanthes] utilizo un método que reduce el impacto sobre de marcaje sobre plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos. En este tipo de individuos **NO** se debe amarrar la etiqueta a la planta, ya que el peso de la etiqueta puede causarle daño además de que las hojas no son persistentes, por lo que la marca podría perderse. En *Lepanthes eltoroensis* se usaron al principio pequeños clavos para fijar las etiqueta de los individuos, posteriormente se usaron grapas, con lo cual se provocó menos daño al árbol y más facil el proceso de marcar.
-
+Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es necesario definir un material suave que evite dañar sus estructuras.
+Tremblay [@tremblay2000plant; @tremblay2003population ; @tremblay1997lepanthes] utilizo un método que reduce el impacto sobre de marcaje sobre plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos.
+En este tipo de individuos **NO** se debe amarrar la etiqueta a la planta, ya que el peso de la etiqueta puede causarle daño además de que las hojas no son persistentes, por lo que la marca podría perderse.
+En *Lepanthes eltoroensis* se usaron al principio pequeños clavos para fijar las etiqueta de los individuos, posteriormente se usaron grapas, con lo cual se provocó menos daño al árbol y más facil el proceso de marcar.
 
 <br>
 
@@ -149,7 +213,7 @@ Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es
 
 Captar los cambios en crecimiento, reproducción, supervivencia o muerte en los individuos es vital para describir la dinámica de una población en el tiempo.
 Dichos cambios se registran en todas y cada una de las distintas etapas por las que transita un individuo a lo largo de su ciclo de vida.
-A través de los distintos trabajos publicados es evidente que las categorías o etapas no siempre son las mismas entre las especies, ya que depende de aspectos biológicos de la plantas (características morfológicas, fenológicas y de crecimiento), de la información disponible, del número de individuos marcado y de las preguntas de interés en la investigación [@hernandez1992dinamica; Hernández-Apolinar y Gutiérrez-Paredes, en revisión; Mondragón, 19XX].
+A través de los distintos trabajos publicados es evidente que las categorías o etapas no siempre son las mismas entre las especies, ya que depende de aspectos biológicos de la plantas (características morfológicas, fenológicas y de crecimiento), de la información disponible, del número de individuos marcado y de las preguntas de interés en la investigación [@hernandez1992dinamica; @mondragon2013population] y Hernández-Apolinar y Gutiérrez-Paredes, en revisión.
 En esta sección se presentan ejemplos en los que se utilizan distintas variables vegetativas y reproductivas para la clasificación de los individuos.
 
 Cabe notar que, sin importar las variables que usemos en la clasificación de las plantas, es necesario ser riguroso al colectar los datos, a fin de determinar las diferencias de un periodo a otro (i.e. año, temporada, etc.) asociados a los parámetros definidos, ya que estas diferencias permitirán determinar qué cambios ocurren en los individuos, en primer instancia, y en cada una de las categorías en promedio.
@@ -199,8 +263,9 @@ El módulo es característico de todas las plantas [@harper1977population] y var
 En algunas orquídeas terrestres, por ejemplo, este módulo está representado por un cormo, yemas de regeneración, hojas , flores y frutos; éstos dos últimos cuando se trata de plantas adultas.
 Las mismas estructuras se desarrollan en otras orquídeas, aunque en lugar del cormo se genera un pseudobulbo, un rizoma o un tubérculo(s), según la orquídea en cuestión.
 
-Las yemas de regeneración se pueden clasificar por su actividad en dos tipos: renuevo y reserva [**Rasmussen, 1986**]. Las primeras son aquellas que se activan y dan continuidad al crecimiento de una planta en cada temporada, mientras que las segundas se activan eventualmente. En *Laelia autumnalis* y *L. speciosa* [i.e epífitas; @emeterio2016usos; @hernandez1992dinamica], así como en *Cypripedium irapeanum* y *Govenia lagenophora* [i.e.
-terrestre; **Hernández-Apolinar et al. 2012**; **Martínez-Villegas et al. 2023**], se ha observado que las yemas de renuevo se activan (i.e. generalmente una) y dan origen al nuevo módulo al inicio de una temporada de crecimiento; que se suma a la secuencia de módulos formados en periodos previos.
+Las yemas de regeneración se pueden clasificar por su actividad en dos tipos: renuevo y reserva [@rasmussen1995terrestrial].
+Las primeras son aquellas que se activan y dan continuidad al crecimiento de una planta en cada temporada, mientras que las segundas se activan eventualmente.
+En orquideas epífitas como *Laelia autumnalis* y *L. speciosa* [@emeterio2016usos; @hernandez1992dinamica], así como en orquideas terrestres *Cypripedium irapeanum* y *Govenia lagenophora* [@hernandez2012ecological; @martinez2024estimation], se ha observado que las yemas de renuevo se activan (i.e. generalmente una) y dan origen al nuevo módulo al inicio de una temporada de crecimiento; que se suma a la secuencia de módulos formados en periodos previos.
 En el caso de *Govenia lagenophora* el nuevo cormo que se produce, reemplaza al módulo del año previo al morir.
 Asimismo, estos autores también han reconocido que las yemas de reserva pueden activarse cuando las condiciones ambientales son favorables para sostener el desarrollo de más de un módulo, dando origen a nuevas líneas o frentes de crecimiento que amplían su tamaño (**Figuras 1 y 2, cual son estas figuras?**).
 
@@ -212,10 +277,10 @@ Sin embargo, el hecho de que no estén visibles no implica que hayan muerto, com
 Por el contrario, como parte de su ciclo de vida, las orquídeas terrestres viven bajo el suelo una parte del año; fase conocida como subterránea o latencia vegetativa [@shefferson2020demography].
 Esta condición es equivalente a la hibernación en los animales, ya que las plantas sobreviven reduciendo sus actividades fisiológicas y consumiendo los recursos que almacenaron en los cormos, pseudobulbos, tubérculos o rizomas, que también son órganos de almacenamiento (**referencia**).
 Aunque a diferencia de los animales, la latencia vegetativa puede prolongarse por más de un año en forma consecutiva, cuando la planta no almacenó suficientes recursos o no existen las condiciones ambientales propicias para su desarrollo (Schefferson et al. 2020).
-Por ejemplo, los tubérculos de *Liparis liliifolia* [@hutchings1987population; @wells1991demographic] y *Orchis simia* [Willems & Bick, 1991] pueden sobrevivir de forma subterránea por tres años, mientras que *Epipactis helleborine* por 5 a 7 años [@light2006appearance].
+Por ejemplo, los tubérculos de *Liparis liliifolia* [@hutchings1987population; @wells1991demographic] y *Orchis simia* [@willems1991population] pueden sobrevivir de forma subterránea por tres años, mientras que *Epipactis helleborine* por 5 a 7 años [@light2006appearance].
 Cabe señalar que, en los estudios poblacionales esta situación dificulta la estimación de la mortalidad en las orquídeas terrestres y, en consecuencia, se desconoce la supervivencia real de las distintas fases de desarrollo de la especie y el tamaño real de una población de interés.
-Multiples acercmiento han sido desarrollado para considerar el periodo de no avistamiento en la dinámica de orquides [@shefferson2003life, @kery2004demographic, @shefferson2005adult].
-Tremblay [@tremblay2009dormancy, @tremblay2009population] desarrollo métodos bayesiano para estimar los parámetros de supervivencia condicional a si la plantas eran vista el año anterior o no y la cantidad de años sin ser vista.
+Multiples acercmiento han sido desarrollado para considerar el periodo de no avistamiento en la dinámica de orquideas [@shefferson2003life; @kery2004demographic; @shefferson2005adult].
+Nuevos métodos desarrollo métodos bayesiano para estimar los parámetros de supervivencia condicional basado en si la plantas eran vista el año anterior o no y la cantidad de años sin ser vista han ayudado a estimar parametros del ciclo de vida más más concono al los patrones naturales de las especies [@tremblay2009dormancy; @tremblay2009population].
 
 <br>
 
@@ -245,7 +310,7 @@ A continuación, se describen las categorías generales usadas en el género *Le
 
 b)  *Govenia lagenophora*.
 
-    Martínez-Villegas y colaboradores [@martinez2024estimation] definieron cuatro categorías de estado (i.e. Reproductivo, No reproductivo, Cormo y Ausente) para la orquídea terrestre *Govenia lagenophora*, cuya dinámica poblacional fue analizada en la Reserva del Pedregal de San Ángel, Ciudad de México, México.
+Martínez-Villegas y colaboradores [@martinez2024estimation] definieron cuatro categorías de estado (i.e. Reproductivo, No reproductivo, Cormo y Ausente) para la orquídea terrestre *Govenia lagenophora*, cuya dinámica poblacional fue analizada en la Reserva del Pedregal de San Ángel, Ciudad de México, México.
     La estimación de las variables poblacionales fue estimada a partir de cuatro años de monitoreo.
 
 -   **Reproductivo**: Individuos con hojas y con inflorescencia.
@@ -260,7 +325,7 @@ b)  *Govenia lagenophora*.
 
 c)  *Caladenia*.
 
-    Tremblay y colaboradores [@tremblay2009dormancy; @tremblay2009population], estudiaron nueve especies del género *Caladenia* en distintas localidades de Australia, cuya demografía fue analizada a partir de tres categorías de estado: individuos vegetativos, individuos en floración e individuos latentes.
+Tremblay y colaboradores [@tremblay2009dormancy; @tremblay2009population], estudiaron nueve especies del género *Caladenia* en distintas localidades de Australia, cuya demografía fue analizada a partir de tres categorías de estado: individuos vegetativos, individuos en floración e individuos latentes.
 
 -   **Individuos vegetativos**: Individuos con hojas y sin evidencia de ser reproductivos.
 -   **Reproductivo**: Individuos con hojas y en flor.
@@ -297,8 +362,9 @@ En el estudio utilizaron tres categorías para su análisis:
 
 f)  *Brassavola cucullata*.
 
-    Ackerman y colaboradores [@ackerman2020small] trabajaron con tres poblaciones de *Brassavola cucullata* en las Islas de San Eustaquio y Saba, Antillas de Barlovento del Mar Caribe, donde esta especie puede ser epífita o vivir sobre rocas.
-    Usando el número de hojas se establecieron cuatro categorías de estado:
+Ackerman y colaboradores [@ackerman2020small] trabajaron con tres poblaciones de *Brassavola cucullata* en las Islas de San Eustaquio y Saba, Antillas de Barlovento del Mar Caribe, donde esta especie puede ser epífita o vivir sobre rocas.
+
+Usando el número de hojas se establecieron cuatro categorías de estado:
 
 -   **Juveniles 1**: Plantas con 1 ó 2 hojas.
 -   **Juveniles 2**: Plantas con 3 a 6 hojas.
@@ -309,18 +375,14 @@ f)  *Brassavola cucullata*.
 
 g)  *Brassavola cucullata*.
 
-    Ackerman y colaboradores [@ackerman2020small] también analizaron la dinámica poblacional a partir del tamaño de hoja más grande en los individuos.
-    Debido a que las poblaciones fueron analizadas con modelos de proyección integral (IPM), la descripción de las poblaciones no se basó en categorías.
-    En el estudio la tendencia en la supervivencia y reproducción indicó que las plantas necesitan un tamaño mínimo de la hoja más larga para florecer.
+Ackerman y colaboradores [@ackerman2020small] también analizaron la dinámica poblacional a partir del tamaño de hoja más grande en los individuos. Debido a que las poblaciones fueron analizadas con modelos de proyección integral (IPM), la descripción de las poblaciones no se basó en categorías. En el estudio la tendencia en la supervivencia y reproducción indicó que las plantas necesitan un tamaño mínimo de la hoja más larga para florecer.
 
 <br/>
 
 h)  *Aspasia principissa*.
     (AVERGIAR ESTA CODIFICACION!!!)
 
-    Zotz y Schmidt [@zotz2006population] analizaron el comportamiento poblacional de *Aspasia principissa* en la Isla de Barro Colorado, Panamá.
-    A partir del tamaño del pseudobulbo más reciente, los investigadores determinaron siete categorías de tamaño en la población.
-    Además, se evaluó la presencia de flores y frutos en las plantas con un pseudobulbo reciente mayor a 7 cm de altura.
+Zotz y Schmidt [@zotz2006population] analizaron el comportamiento poblacional de *Aspasia principissa* en la Isla de Barro Colorado, Panamá. A partir del tamaño del pseudobulbo más reciente, los investigadores determinaron siete categorías de tamaño en la población. Además, se evaluó la presencia de flores y frutos en las plantas con un pseudobulbo reciente mayor a 7 cm de altura.
     **SC1**.
 
     -   Individuos con tamaño del pseudobulbo más reciente menor a 1.5 cm **SC2**.

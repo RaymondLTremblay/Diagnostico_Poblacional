@@ -202,11 +202,11 @@ digraph {
 ```{r, eval=TRUE, echo=FALSE}
 library(tibble)
 library(gt)
-Descripcion_censo=tribble(~"Atributo del censo", ~Ejemplo,
+Descripcion_censo=tribble(~"Atributo del censo", ~"Ejemplo",
                           "Duración del Censo", "May 2021 to May 2022",
                           "Localidad", "Sheffield, UK (53°24′41.5 N 1°30′02.3 W)",
                           "Intervalo de proyección", "1 año",
-                          "Modo de reproducción", "Birth-Pulse (En Junio y Julio)",
+                          "Modo de reproducción", "Pico de reproducción* (En Junio y Julio)",
                           "Tipo de Censo", "Pre-reproductivo")
 
 
@@ -215,7 +215,11 @@ gt(Descripcion_censo) %>%
   cols_align(
     align = "right",
     columns = 2
-  )
+  ) %>% 
+  tab_footnote(
+    footnote = "Pico de reproducción = Birth-Pulse",
+    locations = cells_body(columns = Ejemplo, rows = 4),
+    placement = "right")
 
 
 ```
