@@ -92,12 +92,12 @@ library(janitor)
 
 ## Instalación de raretrans #2
 
-Para instalar **raretrans** remover el **#** antes de los codigos para correrlos
+Para instalar **raretrans** remover el **#** antes de correr el script para tener aceco a los codigos de **raretrans**. 
 
 ```{r chap7_4}
 #library(devtools)
 
-#devtools::install_github("atyre2/raretrans", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+devtools::install_github("atyre2/raretrans", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
 
 library(raretrans)
 

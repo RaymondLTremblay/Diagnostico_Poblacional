@@ -1,16 +1,17 @@
 # Hojas de datos en el campo
 
-Por: RLT, Nhora, Demetria, Anne....
+Por: Raymond L. Tremblay
 
-La hoja de recoleccion de datos deberia estar preparada antes de ir al campo y estar sobre papel que es impermeable y escribir con lapiz.   Ese ultimo punto es bien importante ya que la gran mayoria de los boligrafos son soluble en agua y si el papel se moja ud puede perder sus daos.  RECUERDA que no se puede regresar en el tiempo y recoger los datos. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con boligrafo se puede perder los datos.  No se arriega.
+La hoja de recolección de datos debería estar preparada antes de ir al campo y estar imprimido sobre papel que es impermeable y escribir con lápiz.   Ese ultimo punto es bien importante ya que la gran mayoría de los bolígrafos son soluble en agua y si el papel se moja se puede perder sus datos.  Considerando que estas hojas de datos pudiese ser usado como fuente de averiguar los datos por decadas en el futuro.  **RECUERDA que no se puede regresar en el tiempo para recoger los datos**. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con bolígrafo se puede perder los datos.  No se arriesga!!
 
-es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningun individuo.  Datos olvidado no se puede recuperar
+
+Antes de ir al campo es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningún individuo.  Datos olvidado no se puede recuperar.
 
 
 Hoja en blanco para llevarse
 
 
-```{r}
+```{r, message=FALSE, echo=FALSE}
 library(tidyverse)
 library(gt)
 Hoja_de_campo = tribble(
@@ -25,12 +26,17 @@ Hoja_de_campo = tribble(
   24008,"...","...","...","...","...","...","...",
   
 )
+```
 
+```{r}
 Hoja_de_campo %>% gt()
 ```
 
+***
 
-Usando ejemplo de Tremblay [] y su codificación 
+## Ejemplos de tablas de Datos
+
+### Usando ejemplo de Tremblay [] y su codificación 
 
  - p == **plantula**.
  - j == **juvenil**
@@ -55,13 +61,31 @@ Hoja_llena = tribble(
   24008,"p",NA, NA,NA,NA,NA,NA,
   
 )
+```
 
+```{r}
 Hoja_llena %>% gt()
 ```
 
 
-Nota que solamente los individuos 23003 y 23004 son adultos, uno tiene flores, capullos y frutos y el otro nada.   A todos los adultos hay que llenar la informacion, no dejarlo en blanco.  Para las otras etapas, no es necesario llenar la mayoria de las columnas ya que para las plantulas y muertos no PUEDEN tener esas, pero los juveniles, se puede llenar la cantidad de hojas y sus tamaño.  Nota que el individuo 23005 se murio. 
+Nota que solamente los individuos 23003 y 23004 son adultos, uno tiene flores, capullos y frutos y el otro nada.   A todos los adultos hay que llenar la información, no dejarlo en blanco.  Para las otras etapas, no es necesario llenar la mayoria de las columnas ya que para las plantulas y muertos no PUEDEN tener esas, pero los juveniles, se puede llenar la cantidad de hojas y sus tamaño.  Nota que el individuo 23005 se murio. 
+
+
+
+### Almacenamiento de datos de forma digital
 
 
 Esa misma estructura de recoger los dados puede ser utilizado para ponerlo en una hoja de MSExcel, Google Sheet o MacOS Numbers.  
+
+ - Es muy importante que que haya dos hojas, una para los datos y otra para la metadata.
+ - La metadata es la descripción de los datos, como se recogieron, donde, cuando, por quien, las unidades, objetivo de la investigación, etc.
+ - En la hoja de datos, cada columna tiene información de solamente UNA variable y cada fila tiene información de solamente UN individuo. No debería tener las unidades indicado en las celdas de la hoja de datos, sino en la metadata o en nombre de la columna. 
+    - La primera fila tiene los nombres de las variables y la primera columna tiene los nombres de los individuos.
+    - Los nombres de las columnas no pueden tener espacios, ni caracteres especiales, ni acentos, ni tildes, como en ñ.
+    - Los nombres de los individuos no pueden tener espacios, ni caracteres especiales, ni acentos, ni tildes, como en ñ, Preferiblemente que sea un alfanumérico.
+ - La hojas de datos preferiblemente se guarda en hoja de datos separados, como .csv, .xls, .xlsx, .ods, etc. La ventaja de usar .csv es que es un archivo de texto y se puede abrir en cualquier programa de hoja de datos. Ese formato .csv, *comma seperated variable*, es uno de los más viejo para almacenar datos, y es compatible con casi todos los programa de estadística. **NUNCA** guarda sus datos en un formato de programas especializados como SPSS, STATA, JMP, SAS, porque típicamente no se puede abrir en otros programas, y si no tiene la licencias se puede que no los podrán abrir en el futuro. 
+    
+    
+    
+
 

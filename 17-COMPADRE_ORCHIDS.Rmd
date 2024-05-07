@@ -14,7 +14,7 @@ library(kableExtra)
 ```{r chap16_2, echo=FALSE}
 library(tidyverse)
 
-rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=10,face="bold"),
         axis.text.x = element_text(colour="grey20",size=10, face="bold"),
         axis.text.y = element_text(colour="grey20",size=15,face="bold"),  
         axis.title.x = element_text(colour="grey20",size=15,face="bold"))+
@@ -58,7 +58,9 @@ Este capítulo es una introducción a COMPADRE y algunas de la funciones en los 
 
 Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica poblacional de plantas) y COMADRE (datos de dinamica poblacional de animales). Los datos se pueden acesar directamente en la pagina de web o bajar el archivo de datos al siguiente enlace \<<https://compadre-db.org/Data/Compadre>\> seleccionando la pestaña de **Download COMPADRE**.
 
-## Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.
+## Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión meas reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace \<<https://compadre-db.org/Data/Compadre/COMPADRE_v. 
+
+  - Usando la función *cdb_fetch()* se puede bajar los datos directamente de la pagina de web de COMPADRE.
 
 ```{r chap16_3}
 compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. 
@@ -77,13 +79,17 @@ compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del r
 
 ***
 
-#### Renombrar la base datos algo más sencillo
+#### Renombrar la base datos algo sencillo
+
+  - En este script se renombrar la base de datos de COMPADRE a algo más sencillo **TodasSp**, como **compadre**.
+  - Se visualiza el nombre de cada columna en la base de datos.
+    - Hay 59 variables en la base de datos de COMPADRE.
 
 ```{r chap16_4}
-#ALLSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
+#TodasSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
 
-ALLSp=compadre
-names(ALLSp) # La lista de los nombres de las variables en el archivo COMPADRE
+TodasSp=compadre
+names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 ```
 
@@ -91,22 +97,42 @@ names(ALLSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 #### Evaluate if a genus/species are present in the data base
 
+ - Para filtrar para un genero específico se puede usar el siguiente código.
+    - Aquí seleccionamos todas las matrices del genero **Epipactis**. 
+    - Nota que hay 59 filas, que corresponde tipicamente a 59 matrices de diferentes poblaciones, tiempo o un análisis teóricos.
+
 ```{r chap16_5}
-Ex = ALLSp %>% 
+Epi = TodasSp %>% 
   filter(Genus %in% c("Epipactis"))
-Ex # This shows that the species added Epidendrum xanthinum is not yet included in the data base
+Epi # This shows that the species added Epidendrum xanthinum is not yet included in the data base
 ```
 
 ***
 
-#### Extraer (filter) solamente las especies de la familia **Orchidaceae**
+### Filtrar para la familia de Orquidaceae
+
+ - Extraer (filter) solamente las especies de la familia **Orchidaceae**
 
 ```{r chap16_6}
-index_O=ALLSp %>% 
+index_O=TodasSp %>% 
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
 
 head(index_O, n=3)
+
+```
+
+***
+
+### Los géneros de la familia Orchidaceae
+
+
+ - Cual son los géneros de la familia Orquidaceae incluidos en la base de datos de COMPADRE?
+  - se usa la función **unique()** para seleccionar los géneros únicos en la base de datos.
+  - se crea un data frame con los géneros únicos.
+
+
+```{r generos}
 
 Genera=(as.data.frame(sort(unique(index_O$Genus))))
 
@@ -116,7 +142,12 @@ gt(Genera)
 
 ***
 
-### Lista de especies unicas de orquídeas en la base de datos de COMPADRE.
+### Lista de especies únicas de orquídeas en la base de datos de COMPADRE.
+
+ - Cual son las especies únicas de la familia Orquidaceae incluidos en la base de datos de COMPADRE?
+  - se usa la función **unique()** para seleccionar las especies únicas en la base de datos con la variable *SpeciesAccepted*.
+  - se crea un data frame con las especies únicas.
+  -
 
 Note que al momento hay 46 especies con nombres únicos en la base de datos
 
@@ -138,7 +169,12 @@ dim(index_O)
 
 ```
 
-Para saber de cuantos manuscritos distintos provienen esos datos uno puede evaluar la cantidad de DOI_ISBN distinctos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes tecnicos.
+
+***
+
+### La fuente de la información
+
+Para saber de cuantos manuscritos distintos provienen esos datos uno puede evaluar la cantidad de DOI_ISBN distintos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes técnicos.
 
 ```{r chap16_9}
 unique(index_O$DOI_ISBN)
@@ -146,9 +182,9 @@ unique(index_O$DOI_ISBN)
 
 Igualmente podemos evaluar cuantos distintos autores son responsable de esas publicaciones. Un total de 37 autores únicos o en grupo son la fuente de esos artículos.
 
-## ROBERTO:
+## *ROBERTO*:
 
-HAY una manera de contabilizar los nombres específicos, no por grupo?
+HAY una manera de contabilizar los nombres específicos, no por grupo? Para saber quien más publica sobre orquídeas.
 
 ```{r chap16_10}
 unique(index_O$Authors)
@@ -158,7 +194,9 @@ unique(index_O$Authors)
 
 Para evaluar el largo de tiempo por estudio se necesita seleccionar una combinación de variables única
 
-Subset
+NOTA: OrganismType es una variable que indica si la orquídea es un epifita o terrestre. *Roberto* MUCHOS estan erroneos.  
+    - Todos las *Lepanthes* son epifitas, pero hay unas que son terrestres en la base de datos.
+    - Todas las *Caladenia* son terrestres, pero hay unas que son epifitas en la base de datos.
 
 ```{r chap16_11}
 #names(index_O) Los nombres de las variables
@@ -170,7 +208,7 @@ SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublicat
   mutate(StudyEnd=as.numeric(StudyEnd)) %>% 
   drop_na(StudyStart, StudyEnd)
 
-SPECIES_O %>% gt()
+SPECIES_O %>% head()
 
 
 #write_csv(SPECIES_O, "Species_O.csv")
@@ -179,13 +217,23 @@ SPECIES_O %>% gt()
 
 ****
 
-## Cantidad de poblaciones por especies
+### Determinar cuantas poblaciones se uso para la investigaciones
+
+ - La cantidad de poblaciones por especies en la base de datos de COMPADRE. La mayoria de los estudios usaron una sola población, pero hay estudios que usaron hasta 18 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. 
 
 ```{r chap16_12}
 as.data.frame(table(SPECIES_O$n_populations))
 
 
 ```
+
+
+### Evaluación de cuando comenzaron y terminaron
+
+ - La duración de los estudios en la base de datos de COMPADRE. La mayoría de los estudios duraron pocos años.
+ - Aquí vemos cuando comenzaron los estudios comenzaron y terminaron basado si las plantas son epifitas o no. 
+
+
 
 ```{r chap16_13}
 
@@ -211,6 +259,11 @@ ggsave("Lenght_survey.png")
 ***
 
 
+### El tiempo de duración de las investigaciones en la base de datos de COMPADRE.
+
+ - Figura de las duración de las investigaciones en la base de datos de COMPADRE. La mayoría de los estudios de orquideas epifitas duraron pocos años al comparar con especies rterrestres.
+
+
 ```{r chap16_14}
 
 index_O=index_O %>% 
@@ -232,9 +285,9 @@ ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
 ggsave("Duración_Epi_Ter.png")
 ```
 
-```{r chap16_15}
-plot(index_O$Lon,index_O$Lat,main = "Location")
-```
+
+
+
 
 
 
@@ -357,6 +410,7 @@ ALL_Lambdas=rbind(df_Lamb_epi, df_Lamb_terr)
 ```
 
 ```{r chap16_23}
+
 ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
   geom_histogram(colour="white") + 
   facet_wrap( ~Habit_Type)+
@@ -364,6 +418,51 @@ ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
 
 ggsave("Terr_Epi_lambda.png")
 ```
+
+
+```{r}
+model_lambda=lm(lambda ~ Habit_Type-1, data=ALL_Lambdas)
+summary(model_lambda)
+
+library(broom)
+tidy(model_lambda)
+
+```
+
+
+```{r}
+
+library(ggdist)
+library(distributional)
+model_lambda %>%
+  tidy() %>%
+  ggplot(aes(y = term)) +
+  stat_halfeye(
+    aes(xdist = dist_student_t(df = df.residual(model_lambda), mu = estimate, sigma = std.error))
+  )
+```
+
+
+
+
+
+```{r}
+ALL_Lambdas %>%
+  expand(Habit_Type) %>%
+  augment(model_lambda, newdata = ., se_fit = TRUE) %>%
+  ggplot(aes(y = Habit_Type, colour=Habit_Type)) +
+  stat_halfeye(
+    aes(xdist = dist_student_t(df = df.residual(model_lambda), mu = .fitted, sigma = .se.fit)),
+    scale = .5
+  ) +
+  # we'll add the data back in too (scale = .5 above adjusts the halfeye height so
+  # that the data fit in as well)
+  geom_point(aes(x = lambda), data = ALL_Lambdas, pch = "|", size = 2, position = position_nudge(y = -.15))
+
+```
+
+
+
 
 ### The number of populations
 
@@ -384,6 +483,16 @@ compadre_replicated_pops <- x2 %>%
 
 compadre_replicated_pops
 ```
+
+
+### Crear un mapa de las distribuciones de las orquídeas en la base de datos de COMPADRE.
+
+
+
+```{r chap16_15}
+plot(index_O$Lon,index_O$Lat,main = "Location")
+```
+
 
 ```{r chap16_26}
 ggplot2::ggplot(x2, aes(Lon, Lat)) +
@@ -441,6 +550,13 @@ ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy, colour=
 ggsave("Life_Span.png")
 ```
 
+
+https://jonesor.github.io/Rage/reference/life_expect.html
+
+How to calculate CI of life span
+
+
+
 ```{r chap16_28}
 
 #SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
@@ -452,13 +568,13 @@ compadre_life_expect |> select(mat, Genus, SpeciesAccepted, life_expectancy) |>
 
 
 ggplot(compadre_life_expect, aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour=OrganismType)) +
-  geom_boxplot() +
+ # geom_boxplot() +
   geom_point()+
   scale_y_log10() +
   coord_flip() +
-  labs(x = NULL, y = "Life expectancy (log(years))")+
-  rlt_theme+
-  theme(legend.position = "none")
+  labs(x = NULL, y = "Life expectancy (log(years))")
+#  rlt_theme+
+  #theme(legend.position = "none")
 
 ggsave("Genus_Life_Span.png")
 ```
@@ -476,9 +592,8 @@ compadre_life_expect |>
 compadre_life_expect |> 
   filter(Genus %in% c("Caladenia")) |> 
 ggplot( aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour=OrganismType)) +
-  geom_boxplot() +
   geom_point()+
-  #scale_y_log10() +
+  scale_y_log10() +
   coord_flip() +
   labs(x = NULL, y = "Life expectancy (years)")+
   rlt_theme+
