@@ -2164,13 +2164,13 @@ div.csl-indent {
 <div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb276-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(x2, <span class="fu">aes</span>(Lon, Lat)) <span class="sc">+</span></span>
 <span id="cb276-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb276-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb276-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb276-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
-## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26-1.png" width="672" /></p>
 <div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb278-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;orchid_map.jpg&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
-## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 </div>
 </div>
 <div id="important-to-include-only-matrices-that-are-annual." class="section level2 hasAnchor" number="17.5">
@@ -2251,13 +2251,14 @@ div.csl-indent {
 <span id="cb287-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb287-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
 ## (`stat_boxplot()`).</code></pre>
-<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
-## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb290-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <pre><code>## Warning: Removed 1 row containing non-finite outside the scale range (`stat_boxplot()`).
-## Removed 1 row containing missing values or values outside the scale range (`geom_point()`).</code></pre>
+## Removed 1 row containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <p><a href="https://jonesor.github.io/Rage/reference/life_expect.html" class="uri">https://jonesor.github.io/Rage/reference/life_expect.html</a></p>
 <p>How to calculate CI of life span</p>
 <div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb293-1" tabindex="-1"></a>SPECIES_O<span class="sc">$</span>SpeciesAccepted <span class="ot">&lt;-</span> <span class="fu">fct_reorder</span>(SPECIES_O<span class="sc">$</span>SpeciesAccepted, SPECIES_O<span class="sc">$</span>StudyStart, <span class="at">.desc =</span> <span class="cn">FALSE</span>)</span>
@@ -2274,16 +2275,16 @@ div.csl-indent {
 <span id="cb293-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb293-12" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
 <span id="cb293-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb293-13" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb293-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb293-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
-## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_28-1.png" width="672" /></p>
 <div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb295-1" tabindex="-1"></a><span class="co">#  rlt_theme+</span></span>
 <span id="cb295-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb295-2" tabindex="-1"></a>  <span class="co">#theme(legend.position = &quot;none&quot;)</span></span>
 <span id="cb295-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb295-3" tabindex="-1"></a></span>
 <span id="cb295-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb295-4" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Genus_Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
-## range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb298-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)</span></span>
 <span id="cb298-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb298-2" tabindex="-1"></a></span>
 <span id="cb298-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb298-3" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>

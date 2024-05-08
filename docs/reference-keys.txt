@@ -184,6 +184,7 @@ tamaño-de-muestra-pequeño-o-eventos-raros
 sin-mortalidadsupervivencia-perfecta
 un-cambio-pequeño-en-la-mortalidad.
 irreductibilidad-no-hay-transiciones-entre-etapas
+función-para-evaluar-si-una-matriz-es-irreducible
 ninguna-supervivencia
 redondeo-excesivo-de-valores
 estimaciones-de-fertilidad-y-ciclo-de-vida

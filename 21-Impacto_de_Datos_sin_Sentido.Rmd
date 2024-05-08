@@ -17,13 +17,13 @@ En esta sección evaluamos diferentes aspectos de los análisis matriciales pobl
 
 ## Tamaño de muestra pequeño o eventos raros
 
-Sin duda, el tema principal para el uso de PPM ha sido evaluar la proyección de población de especies raras o en peligro de extinción (otras cuestiones son ecológicas o evolutivas) [@caswell2000matrix; @gascoigne2023standard]. En consecuencia, las especies raras o en peligro de extinción son naturalmente pequeñas y reduce el tamaño de la muestra del estudio o de algunas de las etapas/edades de la vida. Estos tamaños de muestra reducidos provocan estimaciones de parámetros y, a menudo, resultados sin sentido biológicos.
+Sin duda, el tema principal para el uso de PPM ha sido evaluar la proyección de población de especies raras o en peligro de extinción (otras cuestiones son ecológicas o evolutivas) [@caswell2000matrix; @gascoigne2023standard]. En consecuencia, las especies raras o en peligro de extinción son naturalmente pequeñas y reduce el tamaño de la muestra del estudio o de algunas de las etapas/edades de la vida. Estos tamaños de muestra reducidos provocan estimaciones de parámetros y, a menudo, resultados sin sentido biológicos. Algunos de los problemas incluye no haber observado eventos raros, como la muerte de un adulto o la germinación de una semilla. En estos casos, la probabilidad de supervivencia o transición pudiese ser de cero, lo que resulta en una matriz reducible o no irreducible.
 
 ***
 
 ### Sin Mortalidad/Supervivencia Perfecta
 
-Considere una especie donde se recopilan datos de una especies **Sp1** y la matriz de transición **Sp1matU** y la matriz de fertilidad es **Sp1matF**. Tenga en cuenta que ninguno de los individuos murió en la etapa adulta (supervivencia perfecta). En consecuencia, el tamaño de la población nunca disminuye o aumenta después de un período de tiempo. Bajo TODOS los modelos biologícamente realistas, esperaríamos que el tamaño de la población comenzaría a disminuir si una población no tiene reproducción y ninguna especie tiene una probabilidad de supervivencia de 100% (0% de probailidad de mortandad). Pero en este caso como todos los individuos de la etapa sobreviven la población es *eterna* (algo irreal).
+Muestreos donde uno no observa mortalidad o una supervivencia perfecta son problematicos. Considere una especie donde se recopilan datos de una especies **Sp1** y la matriz de transición **Sp1matU** y la matriz de fertilidad es **Sp1matF** es un ejemplo de este caso. Nota que ninguno de los individuos murió en la etapa adulta (supervivencia perfecta). En consecuencia, el tamaño de la población nunca disminuye o aumenta después de un período de tiempo. Bajo TODOS los modelos biologícamente realistas, esperaríamos que el tamaño de la población comenzaría a disminuir si una población no tiene reproducción y ninguna especie tiene una probabilidad de supervivencia de 100% (0% de probabilidad de mortandad). Pero en este caso como todos los individuos de la etapa sobreviven la población es *eterna* (algo irreal).
 
 ```{r, message=FALSE}
 library(DiagrammeR)
@@ -47,9 +47,9 @@ stages <- c("plantula", "juvenil", "adulto")
 plot_life_cycle(Sp1matA, stages=stages, fontsize = 0)
 ```
 
-Así si analizamos esta matriz asumimos que ninguno de los individuos en etapa adulta muere, en ningún momento!!!. Claramente esto no es realista. Para cualquier especie, la probabilidad de muerte en cualquier etapa nunca es cero (aunque podría ser muy pequeña) y, por lo tanto, nuestra matriz no tiene sentido. Considere una especie de árbol, como los arboles de *Sequoia*, es probable que para los árboles grandes de esta especie la supervivencia sea muy alta entre un año y otro, pero nunca del 100%. Hay que diferenciar entre lo que se observa en periodo y las probabilidades a largo plazo. Es posible que en el sitio de muestreo NO se observo mortalidad de los arboles grandes entre dos periodos de muestreo, que resultaría en una mortalidad de cero pero no es un valor real a largo plazo.
+Si analizamos esta matriz asumimos que ninguno de los individuos en etapa adulta muere, en ningún momento!!!. Claramente esto no es realista. Para cualquier especie, la probabilidad de muerte en cualquier etapa nunca es cero (aunque podría ser muy pequeña) y, por lo tanto, nuestra matriz no tiene sentido. Considere una especie de árbol, como los arboles de *Sequoia*, es probable que para los árboles grandes de esta especie la supervivencia sea muy alta entre un año y otro y nuestro observado es de 100%, pero ese 100% no es realista a largo plazo. Hay que diferenciar entre lo que se observa en periodo de muestreo y las probabilidades a largo plazo. Es posible que en el sitio de muestreo NO se observo mortalidad de los arboles grandes entre dos periodos de muestreo, que resultaría en una mortalidad de cero pero no es un valor real a largo plazo.
 
-En el siguiente *script* mostramos que la población no cambia después de 5-6 periodos y se mantiene cercana a uno y no cambia nada (usamos la matriz de transición sin fecundidad). Si no hay reclutas (matriz de fertilidad), el tamaño de la población debería reducirse con el tiempo. Todo modelos de transiciones que no incluye la matriz de fertilidad debería resultar en reducción de tamaño poblacional.
+En el siguiente *script* mostramos que la población no cambia después de 7-8 periodos/años y se mantiene cercana a uno y no cambia significativamente (usamos la matriz de transición sin fecundidad). Si no hay reclutas (matriz de fertilidad), el tamaño de la población debería reducirse con el tiempo. Todo modelos de transiciones que no incluye la matriz de fertilidad debería resultar en reducción de tamaño poblacional.
 
 ```{r}
 n=c(50,50,50)
@@ -57,7 +57,7 @@ n=c(50,50,50)
 library(popdemo)
 library(popbio)
 truelambda(Sp1matU) # despues de unos periodos de tiempo vemos que el crecimiento poblacional es 1
-pop.projection(Sp1matU, n=n)$pop.changes
+pop.projection(Sp1matU, n=n)$pop.changes # lista del cambio poblacional en 16 años
 ```
 
 ***
@@ -65,6 +65,9 @@ pop.projection(Sp1matU, n=n)$pop.changes
 #### Un cambio pequeño en la mortalidad.
 
 Tenga en cuenta que en este nuevo modelo de la especie *SP1*, aunque la tasa de supervivencia es muy cercana a 100% (0,995) es posible una disminución de la población en cada período de tiempo (aunque solo sea en una pequeña fracción). Siempre hay que considerar si esta taza de mortalidad es biologícamente real o es un resultado del tamaño de la muestra. Este valor sugiere que se muestreo 1000 individuos y que 995 sobrevivieron. Si el tamaño fue de 1000, uno pudiese tener confianza en el parámetro.
+
+La probabilidad de observar una tasa de mortalidad de 0,995 en una muestra de 1000 individuos es de 5%. Pero si habia tenido solamente 20 individuos en el muestreo, la probabilidad de observar una tasa de mortalidad de de 0.995 es imposible, por que si se mueren un individual la taza de superviuvencia es de 0.95, bastante lejos de 0.995. Lo importante aqui es que realmente si el tamaño de muestra es pequeño tenemos poca comfianza en los parametros al comparar con tamaño de muestra grande. 
+
 
 ```{r}
 Sp1matU_2 <- rbind(
@@ -83,10 +86,11 @@ Sp1matA_2=Sp1matU_2+Sp1matF
 
 pop.projection(Sp1matU_2, n=n)$pop.changes
 
+
 ```
 
 
-En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo tanto, es importante considerar si la tasa de mortalidad es realista y si el tamaño de la muestra es suficiente para estimar la tasa de mortalidad. Si la tasa de mortalidad es muy baja cerca de cero o 100%, es probable que el tamaño de la muestra sea demasiado pequeño para estimar la tasa de mortalidad con precisión. En consecuencia, la tasa de mortalidad estimada puede ser incorrecta y dar como resultado
+En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo tanto, es importante considerar si la tasa de mortalidad es realista y si el tamaño de la muestra es suficiente para estimar la tasa de mortalidad. Si la tasa de mortalidad es muy baja cerca de cero o 100%, es probable que el tamaño de la muestra sea demasiado pequeño para estimar la tasa de mortalidad con precisión. En consecuencia, la tasa de mortalidad estimada puede ser lejos de la realidad si pudiese haber tenido un esptimado basado en una *N* más grande. 
 
 
 Cual son los tamaños de muestra típica en los estudios de orquídeas?
@@ -100,6 +104,8 @@ Hacer una lista de algunas especies de orquídeas y sus tamaños de muestra.
 ***
 
 ### Irreductibilidad: No hay transiciones entre etapas
+
+La *irreductibilidad* es un concepto importante en los análisis de matrices poblacionales. Como lo muestra @caswell2000matrix y explorado más recientemente por @stott2010, las matrices deben de ser *irreducibles*. El concepto de *irreductibilidad* está asociado con el ciclo de vida de la especie y la matriz incluye las transiciones de todas las etapas a todas las demás etapas. En la figura del ciclo de vida anterior le faltan dos componentes importantes en la historia de vida de la especie, ningún juvenil crece para convertirse en adulto y ninguno de los adultos produce plántulas (semillas que crecen hasta convertirse en plántulas).
 
 En el escenario actual, los juveniles no crecen para convertirse en adultos, todos los juveniles siguen siendo juveniles o mueren. Tenga en cuenta la figura del ciclo de vida donde no hay flechas que conecten a los juveniles con los adultos.
 
@@ -125,7 +131,8 @@ stages <- c("plantula", "juvenil", "adulto")
 plot_life_cycle(Sp1matU_NT, stages=stages, fontsize = 0)
 ```
 
-Como lo muestra @caswell2000matrix y explorado más recientemente por @stott2010, las matrices deben de ser *irreducibles*. El concepto de *irreductibilidad* está asociado con el ciclo de vida de la especie y la matriz incluye las transiciones de todas las etapas a todas las demás etapas. En la figura del ciclo de vida anterior le faltan dos componentes importantes en la historia de vida de la especie, ningún juvenil crece para convertirse en adulto y ninguno de los adultos produce plántulas (semillas que crecen hasta convertirse en plántulas).
+
+#### Función para evaluar si una matriz es irreducible
 
 Una manera fácil de determinar si la matriz es irreducible es correr el siguiente script *isIrreducible* en el paquete (popdemo). Tenga en cuenta que, en este caso, el resultado es *Falso* para la matriz anterior.
 
@@ -145,7 +152,7 @@ isIrreducible(Sp1matA_2)
 
 La mortalidad es uno de los estadios del ciclo de vida de una especies, pero raramente se añade al ciclo de vida porque es implícito en los cálculos. A menudo se observa que la supervivencia de los individuos más pequeños o la primera etapa del ciclo de vida de una especie es muy arriesgada, donde la probabilidad de supervivencia es muy baja. Por ejemplo, la mayoría de las semillas no sobreviven para germinar. Esta es probablemente la norma en las orquídeas donde la producción de semillas es muy alta, a veces millones de semillas en una cápsula [@arditti2000numerical], pero pocas germinan (ref). Sin embargo, esto no se limita a las orquídeas, en los árboles se puede observar el mismo patrón, por ejemplo, en *Nothofagus pumilio* el reclutamiento de plántulas fue inferior al 1,5 % [@torres2015seed]. En general los patrones de germinación In situ varia por grupos taxonómicos y distribución ecológica [@iralu2019ecology] .
 
-Como es bien conocido en el campo, la germinación de semillas en las orquídeas no es sencilla ya que depende de la disponibilidad de mycorhizae [].  Hay evidencia que las micorhizae son especifica por las especies orquídeas y al contrario no son especificas [], pero sin duda la diversidad asociado a la germinación no es mayormente limitado a ciertos grupos taxonómicos de hongos [@rasmussen2015germination].    y muchas variables pueden influir en la germinación de semillas incluyendo las condiciones abióticas y bióticas [@callaway2002epiphyte; @rasmussen2015germination; @gonzalez2024host]....... más detalle sobre lo que se conoce y lo que no se conoce...
+Como es bien conocido en el campo, la germinación de semillas en las orquídeas no es sencilla ya que depende de la disponibilidad de mycorhizae [].  Hay evidencia que las micorhizae son especifica por las especies orquídeas y al contrario no son especificas [], pero sin duda la diversidad asociado a la germinación no limitado a ciertos grupos taxonómicos de hongos [@rasmussen2015germination]. Muchas variables pueden influir en la germinación de semillas incluyendo las condiciones abióticas y bióticas [@callaway2002epiphyte; @rasmussen2015germination; @gonzalez2024host] pero aun no hay mucha información sobre la germinación de semillas de orquídeas en la naturaleza.
 
 En el gráfico del ciclo de vida actual, ninguna de las plántulas sobrevive o crece a la siguiente etapa. Tenga en cuenta que en la primera columna de la matriz de transición todos los valores son cero. La población puede haber comenzado con muchas (incluso miles) de plántulas, pero ninguna creció hasta convertirse en un juvenil o permaneció como plántula antes del siguiente muestreo. Esto da como resultado una matriz que es reducible *isIrreducible* = *FALSO* y por consecuencia no cumple con los requisitos necesarios para muchos de los análisis de matrices poblacionales.
 
@@ -178,10 +185,10 @@ isIrreducible(Sp1matU_NS)
 
 ## Redondeo excesivo de valores
 
-Uno de los errores más simples en la construcción de los elementos de la matriz es el error de redondeo excesivo u otras estimaciones que dan como resultado valores de supervivencia superiores a 100%. Una estimación de supervivencia de mayor de 1 es que de la nada aumenta la cantidad de individuos sin reproducción o clonaje. el estimado de supervivencia de una etapa siempre tiene que ser menor de 100%, aunque puede ser muy cercano a 100%. En el siguiente ejemplo, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error en la recolección de datos o en el cálculo de la supervivencia de la etapa.
+Uno de los errores más comunes en la construcción de los elementos de la matriz es el error de redondeo excesivo u otras estimaciones que dan como resultado valores de supervivencia superiores a 100%. Una estimación de supervivencia de mayor de 1 es que de la nada aumenta (por milagro matematico) la cantidad de individuos sin reproducción o clonaje. El estimado de supervivencia de una etapa siempre tiene que ser menor de 100%, aunque puede ser muy cercano a 100%. En el siguiente ejemplo, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error en la recolección de datos o en el cálculo de la supervivencia de la etapa.
 
 
-Por ejemplo en un análisis de *Serapia cordigera* [@pellegrino2014effects]. Aquí los autores evaluaron las transiciones entre latencia, plántulas, roseta vegetativa y floración. Aquí mostramos una de estas matrices que esta incluida en el material suplementario del articulo. Período de tiempo 2001-2002, A1. En la primera columna de la matriz de transición, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error que es probablemente en los cálculos de la supervivencia o transiciones de esta etapa. 
+Por ejemplo en un análisis de *Serapia cordigera* [@pellegrino2014effects]. Aquí los autores evaluaron las transiciones entre latencia, plántulas, roseta vegetativa y floración, en este orden aparece en la matriz. Aquí mostramos una de estas matrices que esta incluida en el material suplementario del articulo. Período de tiempo 2001-2002, A1. En la primera columna de la matriz de transición, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error que es probablemente en los redondeos de los parametros de la supervivencia y transiciones de esta etapa. 
 
 ```{r}
 library(DiagrammeR)
