@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-05-06" />
+<meta name="date" content="2024-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
 <style type="text/css">
@@ -123,6 +128,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
 </head>
@@ -140,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Diagnostico_Poblacional</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> bookdown::gitbook:</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
 </ul></li>
@@ -308,16 +336,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>13.2.1</b> Ejemplo práctico de ERTV</a></li>
 <li class="chapter" data-level="13.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>13.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
-<li class="chapter" data-level="13.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>13.2.3</b> Diagrama para Quercus martinezii</a></li>
-<li class="chapter" data-level="13.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>13.2.4</b> Diagrama para Quercus rugosa</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.2.5</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.2.6</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="13.2.7" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>13.2.7</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
-<li class="chapter" data-level="13.2.8" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>13.2.8</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
-<li class="chapter" data-level="13.2.9" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>13.2.9</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
-<li class="chapter" data-level="13.2.10" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>13.2.10</b> Calcular las tasas vitales para la matriz media</a></li>
-<li class="chapter" data-level="13.2.11" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>13.2.11</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
-<li class="chapter" data-level="13.2.12" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>13.2.12</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>13.2.3</b> Diagrama del ciclo de vida</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>13.2.4</b> Diagrama para Quercus martinezii</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>13.2.5</b> Diagrama para Quercus rugosa</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>13.3</b> Procedimiento para ERTV en Excel</a></li>
+<li class="chapter" data-level="13.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>13.4</b> Procedimiento en R</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.1</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.4.2" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.2</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>13.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="13.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>13.4.4</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
+<li class="chapter" data-level="13.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>13.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="13.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="13.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="13.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>13.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>14</b> Metodos de Simulaciones y estimaciones de intervalo de confianza</a>
@@ -343,19 +376,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="17.0.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#compadre"><i class="fa fa-check"></i><b>17.0.1</b> COMPADRE</a></li>
 <li class="chapter" data-level="17.0.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>17.0.2</b> Acceso a los datos de COMPADRE.</a></li>
-<li class="chapter" data-level="17.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#para-tener-acceso-a-los-datos-cuando-no-esta-conectado-al-internet-es-necesario-bajar-el-archivo-y-instalar-en-su-proyecto-de-rstudio."><i class="fa fa-check"></i><b>17.1</b> Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio.</a>
+<li class="chapter" data-level="17.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#para-tener-acceso-a-los-datos-cuando-no-esta-conectado-al-internet-es-necesario-bajar-el-archivo-y-instalar-en-su-proyecto-de-rstudio.-al-momento-de-construir-el-libro-la-versión-meas-reciente-de-compadre-es-la-versión-6.23.5.5.0-may_06_2023-y-se-puede-bajar-al-siguiente-enlace-httpscompadre-db.orgdatacompadrecompadre_v."><i class="fa fa-check"></i><b>17.1</b> Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión meas reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace &lt;&lt;https://compadre-db.org/Data/Compadre/COMPADRE_v.</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-unicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.1.1</b> Lista de especies unicas de orquídeas en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="17.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>17.1.1</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="17.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>17.1.2</b> Los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="17.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.1.3</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>17.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a></li>
-<li class="chapter" data-level="17.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>17.3</b> ROBERTO:</a></li>
-<li class="chapter" data-level="17.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>17.4</b> Cuantos estudios unicos?</a></li>
-<li class="chapter" data-level="17.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cantidad-de-poblaciones-por-especies"><i class="fa fa-check"></i><b>17.5</b> Cantidad de poblaciones por especies</a>
+<li class="chapter" data-level="17.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>17.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
 <ul>
-<li class="chapter" data-level="17.5.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#amalgamando-todas-las-matrices-y-su-información"><i class="fa fa-check"></i><b>17.5.1</b> Amalgamando todas las matrices y su información</a></li>
-<li class="chapter" data-level="17.5.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#the-number-of-populations"><i class="fa fa-check"></i><b>17.5.2</b> The number of populations</a></li>
+<li class="chapter" data-level="17.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>17.2.1</b> La fuente de la información</a></li>
 </ul></li>
-<li class="chapter" data-level="17.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#important-to-include-only-matrices-that-are-annual."><i class="fa fa-check"></i><b>17.6</b> Important to include only matrices that are annual.</a></li>
+<li class="chapter" data-level="17.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>17.3</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="17.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>17.4</b> Cuantos estudios unicos?</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-se-uso-para-la-investigaciones"><i class="fa fa-check"></i><b>17.4.1</b> Determinar cuantas poblaciones se uso para la investigaciones</a></li>
+<li class="chapter" data-level="17.4.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-cuando-comenzaron-y-terminaron"><i class="fa fa-check"></i><b>17.4.2</b> Evaluación de cuando comenzaron y terminaron</a></li>
+<li class="chapter" data-level="17.4.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#el-tiempo-de-duración-de-las-investigaciones-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.4.3</b> El tiempo de duración de las investigaciones en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="17.4.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#amalgamando-todas-las-matrices-y-su-información"><i class="fa fa-check"></i><b>17.4.4</b> Amalgamando todas las matrices y su información</a></li>
+<li class="chapter" data-level="17.4.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#the-number-of-populations"><i class="fa fa-check"></i><b>17.4.5</b> The number of populations</a></li>
+<li class="chapter" data-level="17.4.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.4.6</b> Crear un mapa de las distribuciones de las orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#important-to-include-only-matrices-that-are-annual."><i class="fa fa-check"></i><b>17.5</b> Important to include only matrices that are annual.</a>
+<ul>
+<li class="chapter" data-level="17.5.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>17.5.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>18</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
 <ul>
@@ -363,24 +407,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="19" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>19</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
 <li class="chapter" data-level="20" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>20</b> Nhora</a></li>
-<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido sobre los análisis de dinámica poblacional</a>
+<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido biológicos</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeño o eventos raros</a>
+<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeño o eventos raros</a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
-<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
-<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
+<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
-<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
 <ul>
-<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
 </ul></li>
-<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
+<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
 <ul>
-<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
 </ul></li>
-<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html"><a href="impactos-de-datos-sin-sentido-sobre-los-análisis-de-dinámica-poblacional.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a></li>
+<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>21.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="21.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza"><i class="fa fa-check"></i><b>21.5.2</b> Los estimados de Intervalo de camfianza</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="diferentes_componentes_de_ciclo_de_vida.html"><a href="diferentes_componentes_de_ciclo_de_vida.html"><i class="fa fa-check"></i><b>22</b> Diferentes_componentes_de_Ciclo_de_vida</a>
 <ul>
@@ -476,24 +524,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>La hoja de recolección de datos debería estar preparada antes de ir al campo y estar imprimido sobre papel que es impermeable y escribir con lápiz. Ese ultimo punto es bien importante ya que la gran mayoría de los bolígrafos son soluble en agua y si el papel se moja se puede perder sus datos. Considerando que estas hojas de datos pudiese ser usado como fuente de averiguar los datos por decadas en el futuro. <strong>RECUERDA que no se puede regresar en el tiempo para recoger los datos</strong>. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con bolígrafo se puede perder los datos. No se arriesga!!</p>
 <p>Antes de ir al campo es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningún individuo. Datos olvidado no se puede recuperar.</p>
 <p>Hoja en blanco para llevarse</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hojas-de-datos-en-el-campo.html#cb1-1" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
-<div id="uvtelzlxdb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uvtelzlxdb table {
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="hojas-de-datos-en-el-campo.html#cb393-1" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div id="sxpoadezzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sxpoadezzw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uvtelzlxdb thead, #uvtelzlxdb tbody, #uvtelzlxdb tfoot, #uvtelzlxdb tr, #uvtelzlxdb td, #uvtelzlxdb th {
+#sxpoadezzw thead, #sxpoadezzw tbody, #sxpoadezzw tfoot, #sxpoadezzw tr, #sxpoadezzw td, #sxpoadezzw th {
   border-style: none;
 }
 
-#uvtelzlxdb p {
+#sxpoadezzw p {
   margin: 0;
   padding: 0;
 }
 
-#uvtelzlxdb .gt_table {
+#sxpoadezzw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -519,12 +567,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_caption {
+#sxpoadezzw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uvtelzlxdb .gt_title {
+#sxpoadezzw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -536,7 +584,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#uvtelzlxdb .gt_subtitle {
+#sxpoadezzw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -548,7 +596,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#uvtelzlxdb .gt_heading {
+#sxpoadezzw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -560,13 +608,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_bottom_border {
+#sxpoadezzw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_col_headings {
+#sxpoadezzw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -581,7 +629,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_col_heading {
+#sxpoadezzw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -601,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#uvtelzlxdb .gt_column_spanner_outer {
+#sxpoadezzw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,15 +661,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#uvtelzlxdb .gt_column_spanner_outer:first-child {
+#sxpoadezzw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uvtelzlxdb .gt_column_spanner_outer:last-child {
+#sxpoadezzw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uvtelzlxdb .gt_column_spanner {
+#sxpoadezzw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -633,11 +681,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#uvtelzlxdb .gt_spanner_row {
+#sxpoadezzw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uvtelzlxdb .gt_group_heading {
+#sxpoadezzw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +711,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#uvtelzlxdb .gt_empty_group_heading {
+#sxpoadezzw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -678,15 +726,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#uvtelzlxdb .gt_from_md > :first-child {
+#sxpoadezzw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uvtelzlxdb .gt_from_md > :last-child {
+#sxpoadezzw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uvtelzlxdb .gt_row {
+#sxpoadezzw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -705,7 +753,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#uvtelzlxdb .gt_stub {
+#sxpoadezzw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -718,7 +766,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#uvtelzlxdb .gt_stub_row_group {
+#sxpoadezzw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -732,15 +780,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#uvtelzlxdb .gt_row_group_first td {
+#sxpoadezzw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uvtelzlxdb .gt_row_group_first th {
+#sxpoadezzw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uvtelzlxdb .gt_summary_row {
+#sxpoadezzw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -750,16 +798,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#uvtelzlxdb .gt_first_summary_row {
+#sxpoadezzw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_first_summary_row.thick {
+#sxpoadezzw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uvtelzlxdb .gt_last_summary_row {
+#sxpoadezzw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +817,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_grand_summary_row {
+#sxpoadezzw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -779,7 +827,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#uvtelzlxdb .gt_first_grand_summary_row {
+#sxpoadezzw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -789,7 +837,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_last_grand_summary_row_top {
+#sxpoadezzw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -799,11 +847,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_striped {
+#sxpoadezzw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uvtelzlxdb .gt_table_body {
+#sxpoadezzw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -812,7 +860,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_footnotes {
+#sxpoadezzw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -826,7 +874,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_footnote {
+#sxpoadezzw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -835,7 +883,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#uvtelzlxdb .gt_sourcenotes {
+#sxpoadezzw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -849,7 +897,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#uvtelzlxdb .gt_sourcenote {
+#sxpoadezzw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -857,63 +905,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#uvtelzlxdb .gt_left {
+#sxpoadezzw .gt_left {
   text-align: left;
 }
 
-#uvtelzlxdb .gt_center {
+#sxpoadezzw .gt_center {
   text-align: center;
 }
 
-#uvtelzlxdb .gt_right {
+#sxpoadezzw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uvtelzlxdb .gt_font_normal {
+#sxpoadezzw .gt_font_normal {
   font-weight: normal;
 }
 
-#uvtelzlxdb .gt_font_bold {
+#sxpoadezzw .gt_font_bold {
   font-weight: bold;
 }
 
-#uvtelzlxdb .gt_font_italic {
+#sxpoadezzw .gt_font_italic {
   font-style: italic;
 }
 
-#uvtelzlxdb .gt_super {
+#sxpoadezzw .gt_super {
   font-size: 65%;
 }
 
-#uvtelzlxdb .gt_footnote_marks {
+#sxpoadezzw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uvtelzlxdb .gt_asterisk {
+#sxpoadezzw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uvtelzlxdb .gt_indent_1 {
+#sxpoadezzw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uvtelzlxdb .gt_indent_2 {
+#sxpoadezzw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uvtelzlxdb .gt_indent_3 {
+#sxpoadezzw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uvtelzlxdb .gt_indent_4 {
+#sxpoadezzw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uvtelzlxdb .gt_indent_5 {
+#sxpoadezzw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1013,38 +1061,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>M = <strong>muerto</strong></li>
 </ul>
 <p>Hoja llena al final del muestreo</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="hojas-de-datos-en-el-campo.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="hojas-de-datos-en-el-campo.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb2-3"><a href="hojas-de-datos-en-el-campo.html#cb2-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb2-4"><a href="hojas-de-datos-en-el-campo.html#cb2-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
-<span id="cb2-5"><a href="hojas-de-datos-en-el-campo.html#cb2-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-6"><a href="hojas-de-datos-en-el-campo.html#cb2-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-7"><a href="hojas-de-datos-en-el-campo.html#cb2-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-8"><a href="hojas-de-datos-en-el-campo.html#cb2-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-9"><a href="hojas-de-datos-en-el-campo.html#cb2-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-10"><a href="hojas-de-datos-en-el-campo.html#cb2-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-11"><a href="hojas-de-datos-en-el-campo.html#cb2-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-12"><a href="hojas-de-datos-en-el-campo.html#cb2-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb2-13"><a href="hojas-de-datos-en-el-campo.html#cb2-13" tabindex="-1"></a>  </span>
-<span id="cb2-14"><a href="hojas-de-datos-en-el-campo.html#cb2-14" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hojas-de-datos-en-el-campo.html#cb3-1" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
-<div id="oxmnciacol" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oxmnciacol table {
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="hojas-de-datos-en-el-campo.html#cb394-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb394-2"><a href="hojas-de-datos-en-el-campo.html#cb394-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb394-3"><a href="hojas-de-datos-en-el-campo.html#cb394-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
+<span id="cb394-4"><a href="hojas-de-datos-en-el-campo.html#cb394-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
+<span id="cb394-5"><a href="hojas-de-datos-en-el-campo.html#cb394-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-6"><a href="hojas-de-datos-en-el-campo.html#cb394-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-7"><a href="hojas-de-datos-en-el-campo.html#cb394-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-8"><a href="hojas-de-datos-en-el-campo.html#cb394-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-9"><a href="hojas-de-datos-en-el-campo.html#cb394-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-10"><a href="hojas-de-datos-en-el-campo.html#cb394-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-11"><a href="hojas-de-datos-en-el-campo.html#cb394-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-12"><a href="hojas-de-datos-en-el-campo.html#cb394-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb394-13"><a href="hojas-de-datos-en-el-campo.html#cb394-13" tabindex="-1"></a>  </span>
+<span id="cb394-14"><a href="hojas-de-datos-en-el-campo.html#cb394-14" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="hojas-de-datos-en-el-campo.html#cb395-1" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div id="tklhqamuka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tklhqamuka table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oxmnciacol thead, #oxmnciacol tbody, #oxmnciacol tfoot, #oxmnciacol tr, #oxmnciacol td, #oxmnciacol th {
+#tklhqamuka thead, #tklhqamuka tbody, #tklhqamuka tfoot, #tklhqamuka tr, #tklhqamuka td, #tklhqamuka th {
   border-style: none;
 }
 
-#oxmnciacol p {
+#tklhqamuka p {
   margin: 0;
   padding: 0;
 }
 
-#oxmnciacol .gt_table {
+#tklhqamuka .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1070,12 +1118,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_caption {
+#tklhqamuka .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oxmnciacol .gt_title {
+#tklhqamuka .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1087,7 +1135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#oxmnciacol .gt_subtitle {
+#tklhqamuka .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1099,7 +1147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#oxmnciacol .gt_heading {
+#tklhqamuka .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1111,13 +1159,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_bottom_border {
+#tklhqamuka .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_col_headings {
+#tklhqamuka .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1132,7 +1180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_col_heading {
+#tklhqamuka .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,7 +1200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#oxmnciacol .gt_column_spanner_outer {
+#tklhqamuka .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1164,15 +1212,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#oxmnciacol .gt_column_spanner_outer:first-child {
+#tklhqamuka .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oxmnciacol .gt_column_spanner_outer:last-child {
+#tklhqamuka .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oxmnciacol .gt_column_spanner {
+#tklhqamuka .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1184,11 +1232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#oxmnciacol .gt_spanner_row {
+#tklhqamuka .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oxmnciacol .gt_group_heading {
+#tklhqamuka .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1214,7 +1262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#oxmnciacol .gt_empty_group_heading {
+#tklhqamuka .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1229,15 +1277,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#oxmnciacol .gt_from_md > :first-child {
+#tklhqamuka .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oxmnciacol .gt_from_md > :last-child {
+#tklhqamuka .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oxmnciacol .gt_row {
+#tklhqamuka .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1256,7 +1304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#oxmnciacol .gt_stub {
+#tklhqamuka .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1269,7 +1317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#oxmnciacol .gt_stub_row_group {
+#tklhqamuka .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1283,15 +1331,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#oxmnciacol .gt_row_group_first td {
+#tklhqamuka .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oxmnciacol .gt_row_group_first th {
+#tklhqamuka .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oxmnciacol .gt_summary_row {
+#tklhqamuka .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1301,16 +1349,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#oxmnciacol .gt_first_summary_row {
+#tklhqamuka .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_first_summary_row.thick {
+#tklhqamuka .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oxmnciacol .gt_last_summary_row {
+#tklhqamuka .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1320,7 +1368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_grand_summary_row {
+#tklhqamuka .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1330,7 +1378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#oxmnciacol .gt_first_grand_summary_row {
+#tklhqamuka .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1340,7 +1388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_last_grand_summary_row_top {
+#tklhqamuka .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1350,11 +1398,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_striped {
+#tklhqamuka .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oxmnciacol .gt_table_body {
+#tklhqamuka .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1363,7 +1411,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_footnotes {
+#tklhqamuka .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1377,7 +1425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_footnote {
+#tklhqamuka .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1386,7 +1434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#oxmnciacol .gt_sourcenotes {
+#tklhqamuka .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1400,7 +1448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#oxmnciacol .gt_sourcenote {
+#tklhqamuka .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1408,63 +1456,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#oxmnciacol .gt_left {
+#tklhqamuka .gt_left {
   text-align: left;
 }
 
-#oxmnciacol .gt_center {
+#tklhqamuka .gt_center {
   text-align: center;
 }
 
-#oxmnciacol .gt_right {
+#tklhqamuka .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oxmnciacol .gt_font_normal {
+#tklhqamuka .gt_font_normal {
   font-weight: normal;
 }
 
-#oxmnciacol .gt_font_bold {
+#tklhqamuka .gt_font_bold {
   font-weight: bold;
 }
 
-#oxmnciacol .gt_font_italic {
+#tklhqamuka .gt_font_italic {
   font-style: italic;
 }
 
-#oxmnciacol .gt_super {
+#tklhqamuka .gt_super {
   font-size: 65%;
 }
 
-#oxmnciacol .gt_footnote_marks {
+#tklhqamuka .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oxmnciacol .gt_asterisk {
+#tklhqamuka .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oxmnciacol .gt_indent_1 {
+#tklhqamuka .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oxmnciacol .gt_indent_2 {
+#tklhqamuka .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oxmnciacol .gt_indent_3 {
+#tklhqamuka .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oxmnciacol .gt_indent_4 {
+#tklhqamuka .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oxmnciacol .gt_indent_5 {
+#tklhqamuka .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

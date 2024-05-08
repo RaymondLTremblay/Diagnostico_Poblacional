@@ -507,7 +507,8 @@ ggsave("orchid_map.jpg")
 Unless we data wrangle the life span so it represent a year worth instead of life span.
 
 ```{r chap16_27}
-# function to calculate life expectancy
+library(Rage
+)# function to calculate life expectancy
 lifeExpectancy <- function(matU, startLife) {
   N <- solve(diag(nrow(matU)) - matU)
   return(colSums(N)[startLife])
@@ -528,10 +529,24 @@ compadre_life_expect <- x2 %>%
          check_singular_U == FALSE) %>% 
   mutate(matU = matU(.), start_life = mpm_first_active(.)) %>% 
   mutate(life_expectancy = mapply(lifeExpectancy, matU, start_life)) %>% 
+  mutate(var_life_expectancy = mapply(life_expect_var, matU, start= 1)) %>%
+  mutate(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy)) %>% 
+  mutate(high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy)) %>% 
  # filter(life_expectancy >= 1) %>% 
-  mutate(OrganismType = reorder(OrganismType, life_expectancy, median))
+  mutate(OrganismType = reorder(OrganismType, life_expectancy, median)) 
 
 
+
+
+
+
+compadre_life_expect
+
+```
+
+
+
+```{r}
 
 compadre_life_expect |> 
   group_by(OrganismType) |> 
@@ -559,12 +574,12 @@ How to calculate CI of life span
 
 ```{r chap16_28}
 
-#SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
+SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
 
-compadre_life_expect |> select(mat, Genus, SpeciesAccepted, life_expectancy) |> 
-  group_by(SpeciesAccepted) |> 
-  summarize(mean_LS= mean(life_expectancy, na.rm=TRUE),
-            sd_LS = sd(life_expectancy, na.rm=TRUE))
+#compadre_life_expect |> select(mat, Genus, SpeciesAccepted, life_expectancy) |> 
+#  group_by(SpeciesAccepted) |> 
+ # summarize(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy),
+#            high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy))
 
 
 ggplot(compadre_life_expect, aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour=OrganismType)) +
@@ -623,7 +638,7 @@ Use robust Approach
 
 Para el siguiente análisis se necesita instalar el paquete **WRS2**.
 
-Y se necesita cargar el archivo de funciones de **Rallfun-v38.txt** que se encuentra en el siguiente enlace \<<https://github.com/rrwilcox/Rallfun>\> y guardarlo en su directorio de trabajo. Pudiese ser que haya versiones más recientes de este archivo. Nota que el codigo abajo funciona para mi computadora, uds tienen que ajustar la dirección del archivo a su directorio de trabajo.
+Y se necesita cargar el archivo de funciones de **Rallfun-v38.txt** que se encuentra en el siguiente enlace \<<https://github.com/rrwilcox/Rallfun>\> y guardarlo en su directorio de trabajo. Pudiese ser que haya versiones más recientes de este archivo. Nota que el dirección abajo funciona para mi computadora, uds tienen que ajustar la dirección del archivo a su directorio de trabajo.
 
 ```{r chap16_31}
 library(WRS2)
@@ -679,3 +694,34 @@ Compadre$null_stages <- sapply(Compadre$matA, NullStages)
 NullStages(Compadre$matA[[1]]) # apply function to single element
 Compadre$null_stages <- sapply(matA(Compadre), NullStages)
 ```
+
+
+
+### Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional
+
+
+
+```{r}
+# función para calcular la esperanza de vida
+
+library(Rage)
+data(mpm1)
+
+life_expect_mean(mpm1$matU, start = 1)
+rep_stages <- repro_stages(mpm1$matF)
+(n1 <- mature_distrib(mpm1$matU, start = 2, repro_stages = rep_stages))
+
+life_expect_mean(mpm1$matU, mixdist = n1, start = NULL)
+
+life_expect_var(mpm1$matU, start = 1)
+
+
+```
+
+
+
+
+
+
+http://127.0.0.1:29465/rmd_output/1/compadre_orchid-ppm-y-su-uso.html
+

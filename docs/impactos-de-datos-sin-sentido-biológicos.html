@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 21 Impactos de datos sin sentido biológicos | Dinamica_Poblacional</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 21 Impactos de datos sin sentido biológicos | Dinamica_Poblacional" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometría" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 21 Impactos de datos sin sentido biológicos | Dinamica_Poblacional" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometría" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2024-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="nhora.html"/>
+<link rel="next" href="diferentes_componentes_de_ciclo_de_vida.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diagnostico_Poblacional</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#qué-es-el-estudio-de-la-dinamica-poblacional"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es el estudio de la dinamica poblacional?</a></li>
+<li class="chapter" data-level="2.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#definición"><i class="fa fa-check"></i><b>2.2</b> Definición</a></li>
+<li class="chapter" data-level="2.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#el-analisis-de-dinámica-poblacional-y-su-uso"><i class="fa fa-check"></i><b>2.3</b> El analisis de Dinámica Poblacional y su uso</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#USO"><i class="fa fa-check"></i><b>2.3.1</b> Tabla: El uso potencial de la diferentes acercamiento de PPM.</a></li>
+<li class="chapter" data-level="2.3.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-1-identificar-las-etapas-or-procesos-demográficos-claves"><i class="fa fa-check"></i><b>2.3.2</b> USO 1: Identificar las etapas or procesos demográficos claves</a></li>
+<li class="chapter" data-level="2.3.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-2-determinar-cuantos-individuos-en-una-población-es-necesario-para-reducir-la-extinción"><i class="fa fa-check"></i><b>2.3.3</b> USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción</a></li>
+<li class="chapter" data-level="2.3.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-3-determinar-cuantos-individuos-se-necesita-introducir-en-una-sitio-para-establecer-una-población-viable"><i class="fa fa-check"></i><b>2.3.4</b> USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable</a></li>
+<li class="chapter" data-level="2.3.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-4-determinar-cuantos-individuos-se-puede-extraer-sin-tener-un-impacto-negativo-sobre-la-viabilidad-de-una-población"><i class="fa fa-check"></i><b>2.3.5</b> USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población</a></li>
+<li class="chapter" data-level="2.3.6" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población."><i class="fa fa-check"></i><b>2.3.6</b> USO 5: En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.</a></li>
+<li class="chapter" data-level="2.3.7" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-6-evaluar-el-riesgo-de-una-población"><i class="fa fa-check"></i><b>2.3.7</b> USO 6: Evaluar el riesgo de una población</a></li>
+<li class="chapter" data-level="2.3.8" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-7-determinar-cuantas-poblaciones-se-necesita-para-la-viabilidad-de-una-especie-al-nivel-local-o-global"><i class="fa fa-check"></i><b>2.3.8</b> USO 7: Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global</a></li>
+<li class="chapter" data-level="2.3.9" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones"><i class="fa fa-check"></i><b>2.3.9</b> USO 8: Comparando el riesgo relativo de dos o más poblaciones</a></li>
+<li class="chapter" data-level="2.3.10" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-9-evaluar-interacciones-ecológicas-para-entender-las-variables-importantes-para-la-supervivencia-de-una-población"><i class="fa fa-check"></i><b>2.3.10</b> USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población</a></li>
+<li class="chapter" data-level="2.3.11" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-10-cual-de-los-procesos-y-patrones-evolutivos-del-ciclo-de-vida-de-especies-impacta-su-crecimiento"><i class="fa fa-check"></i><b>2.3.11</b> USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#historia-de-dinamica-poblacional-en-orquideas."><i class="fa fa-check"></i><b>2.4</b> Historia de dinamica poblacional en orquideas.</a></li>
+<li class="chapter" data-level="2.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#referencias"><i class="fa fa-check"></i><b>2.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html"><i class="fa fa-check"></i><b>3</b> Qué es un diagrama de Ciclo de Vida</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplos-de-ciclos-de-vida"><i class="fa fa-check"></i><b>3.1</b> Ejemplos de ciclos de Vida</a></li>
+<li class="chapter" data-level="3.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplos-de-un-ciclo-de-vida-sencillo"><i class="fa fa-check"></i><b>3.2</b> Ejemplos de un ciclo de vida sencillo</a></li>
+<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-ciclo-de-vida-con-3-estadios"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de un ciclo de vida con 3 estadios</a></li>
+<li class="chapter" data-level="3.4" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-cicle-de-vida-con-estadio-de-latencia"><i class="fa fa-check"></i><b>3.4</b> Ejemplo de un cicle de vida con estadio de latencia</a></li>
+<li class="chapter" data-level="3.5" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure"><i class="fa fa-check"></i><b>3.5</b> Code for color coding figure</a></li>
+<li class="chapter" data-level="3.6" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-cicle-de-vida-con-estadio-de-post-reproducción"><i class="fa fa-check"></i><b>3.6</b> Ejemplo de un cicle de vida con estadio de post reproducción</a></li>
+<li class="chapter" data-level="3.7" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-cicle-de-vida-incompleto-y-biologicamente-erroneos"><i class="fa fa-check"></i><b>3.7</b> Ejemplo de un cicle de vida incompleto (y biologicamente erroneos)</a></li>
+<li class="chapter" data-level="3.8" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#referencias-1"><i class="fa fa-check"></i><b>3.8</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#consideraciones-en-la-colecta-de-datos-en-el-campo"><i class="fa fa-check"></i><b>4.1</b> Consideraciones en la colecta de datos en el campo</a></li>
+<li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#tipo-de-crecimiento-en-las-orquídeas"><i class="fa fa-check"></i><b>4.2</b> Tipo de crecimiento en las orquídeas</a></li>
+<li class="chapter" data-level="4.3" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-y-técnicas-de-muestreo"><i class="fa fa-check"></i><b>4.3</b> Métodos y técnicas de muestreo</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-epífitas-y-rupícolas."><i class="fa fa-check"></i><b>4.3.1</b> <em>Orquídeas epífitas y rupícolas</em>.</a></li>
+<li class="chapter" data-level="4.3.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-terrestres."><i class="fa fa-check"></i><b>4.3.2</b> <em>Orquídeas terrestres</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcaje-y-monitoreo-de-los-individuos-en-el-tiempo"><i class="fa fa-check"></i><b>4.4</b> Marcaje y monitoreo de los individuos en el tiempo</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo"><i class="fa fa-check"></i><b>4.4.1</b> Etapas de las orquídeas de estudio a identificar en campo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-características-de-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.5</b> Identificar la características de la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#semillas"><i class="fa fa-check"></i><b>4.5.1</b> Semillas</a></li>
+<li class="chapter" data-level="4.5.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.2</b> Identificación y etiquetado de individuos.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#variables-a-registrar-en-campo"><i class="fa fa-check"></i><b>4.6</b> Variables a registrar en campo</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#crecimiento-o-reiteración-vegetativa."><i class="fa fa-check"></i><b>4.6.1</b> <em>Crecimiento o reiteración vegetativa</em>.</a></li>
+<li class="chapter" data-level="4.6.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#ejemplos-de-categorización-en-especies-de-estudio"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos de categorización en especies de estudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><i class="fa fa-check"></i><b>5</b> Como calcular transiciones para la matriz de Lefkovitch</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.4</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2.5</b> Problema con el uso tradicional de calcular las transiciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#por-demetria-y-aucencia-equipo-ecosur"><i class="fa fa-check"></i><b>6.1</b> Por: Demetria y Aucencia: equipo ECOSUR</a></li>
+<li class="chapter" data-level="6.2" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#métodos-tradicional-de-calcular-las-transiciones-1"><i class="fa fa-check"></i><b>6.2</b> Métodos tradicional de calcular las transiciones</a></li>
+<li class="chapter" data-level="6.3" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#problema-con-el-uso-tradicional"><i class="fa fa-check"></i><b>6.3</b> Problema con el uso tradicional</a></li>
+<li class="chapter" data-level="6.4" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#referencias-2"><i class="fa fa-check"></i><b>6.4</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Fertilidad.html"><a href="Fertilidad.html"><i class="fa fa-check"></i><b>7</b> Matrices de transicion, fecundidad y clonal</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Fertilidad.html"><a href="Fertilidad.html#por-raymond"><i class="fa fa-check"></i><b>7.1</b> Por: Raymond</a></li>
+<li class="chapter" data-level="7.2" data-path="Fertilidad.html"><a href="Fertilidad.html#tres-tipos-de-matrices"><i class="fa fa-check"></i><b>7.2</b> Tres tipos de matrices</a></li>
+<li class="chapter" data-level="7.3" data-path="Fertilidad.html"><a href="Fertilidad.html#matu-matriz-de-transiciones"><i class="fa fa-check"></i><b>7.3</b> MatU: Matriz de transiciones</a></li>
+<li class="chapter" data-level="7.4" data-path="Fertilidad.html"><a href="Fertilidad.html#matf-matriz-de-fecundidad"><i class="fa fa-check"></i><b>7.4</b> MatF: Matriz de fecundidad</a></li>
+<li class="chapter" data-level="7.5" data-path="Fertilidad.html"><a href="Fertilidad.html#matc-matriz-de-clonación"><i class="fa fa-check"></i><b>7.5</b> MatC = Matriz de clonación</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><i class="fa fa-check"></i><b>8</b> Método bayesiano de calcular las transciones y fecundidades</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-paquete-raretrans"><i class="fa fa-check"></i><b>8.1</b> El paquete “raretrans”</a></li>
+<li class="chapter" data-level="8.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-los-paquetes-1"><i class="fa fa-check"></i><b>8.2</b> Instalación de los paquetes #1</a></li>
+<li class="chapter" data-level="8.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-raretrans-2"><i class="fa fa-check"></i><b>8.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="8.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#parte-i-obtención-de-la-matriz-de-proyección"><i class="fa fa-check"></i><b>8.4</b> Parte I: Obtención de la matriz de proyección</a></li>
+<li class="chapter" data-level="8.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto"><i class="fa fa-check"></i><b>8.5</b> Paso 1: Cargar y fusionar los datos de población única para <em>L. elto</em></a></li>
+<li class="chapter" data-level="8.6" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#organización-de-los-datos-en-el-data.frame"><i class="fa fa-check"></i><b>8.6</b> Organización de los datos en el “data.frame”</a></li>
+<li class="chapter" data-level="8.7" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#nota"><i class="fa fa-check"></i><b>8.7</b> Nota:</a></li>
+<li class="chapter" data-level="8.8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-2-obtener-el-número-inicial-de-individuos-por-etapa"><i class="fa fa-check"></i><b>8.8</b> Paso 2: Obtener el número inicial de individuos por etapa</a></li>
+<li class="chapter" data-level="8.9" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#parte-2-uso-de-priors-para-incorporar-transiciones-raras"><i class="fa fa-check"></i><b>8.9</b> Parte 2: Uso de priors para incorporar transiciones raras</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#use-priors-no-informativos"><i class="fa fa-check"></i><b>8.9.1</b> Use priors no informativos</a></li>
+<li class="chapter" data-level="8.9.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-transición"><i class="fa fa-check"></i><b>8.9.2</b> Matriz de transición</a></li>
+<li class="chapter" data-level="8.9.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#como-calcular-a-mano"><i class="fa fa-check"></i><b>8.9.3</b> Como calcular a mano!</a></li>
+<li class="chapter" data-level="8.9.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-fecundidad"><i class="fa fa-check"></i><b>8.9.4</b> Matriz de fecundidad</a></li>
+<li class="chapter" data-level="8.9.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#calculando-los-priors-de-fertilidad-a-mano"><i class="fa fa-check"></i><b>8.9.5</b> Calculando los Priors de fertilidad a mano</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-crecimiento-poblacional"><i class="fa fa-check"></i><b>8.10</b> El crecimiento poblacional</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#otras-opciones-para-el-argumento-returntype"><i class="fa fa-check"></i><b>8.10.1</b> Otras opciones para el argumento `returnType</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#añadiendo-realidad-a-los-análisis"><i class="fa fa-check"></i><b>8.11</b> Añadiendo realidad a los análisis</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#incorporar-priores-informativos"><i class="fa fa-check"></i><b>8.11.1</b> Incorporar priores informativos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#part-3-obtain-credible-intervals"><i class="fa fa-check"></i><b>8.12</b> Part 3: Obtain Credible Intervals</a>
+<ul>
+<li class="chapter" data-level="8.12.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>8.12.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
+</ul></li>
+<li class="chapter" data-level="8.13" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-creíbles-de-lambda"><i class="fa fa-check"></i><b>8.13</b> Intervalos creíbles de <span class="math inline">\(\lambda\)</span></a></li>
+<li class="chapter" data-level="8.14" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#determinar-si-el-lambda-es-significativamente-diferente-de-1"><i class="fa fa-check"></i><b>8.14</b> Determinar si el <span class="math inline">\(\lambda\)</span> es significativamente diferente de 1</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html"><i class="fa fa-check"></i><b>9</b> Crecimiento Poblacional</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#introducción-al-crecimiento-poblacional"><i class="fa fa-check"></i><b>9.1</b> Introducción al crecimiento poblacional</a></li>
+<li class="chapter" data-level="9.2" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#métodos"><i class="fa fa-check"></i><b>9.2</b> Métodos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>10</b> Elasticidad</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="elasticidad.html"><a href="elasticidad.html#por-rlt"><i class="fa fa-check"></i><b>10.1</b> Por: RLT</a></li>
+<li class="chapter" data-level="10.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>10.2</b> Qué es la Elasticidad</a></li>
+<li class="chapter" data-level="10.3" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-interpreta-la-elasticidad"><i class="fa fa-check"></i><b>10.3</b> Cómo se interpreta la elasticidad</a></li>
+<li class="chapter" data-level="10.4" data-path="elasticidad.html"><a href="elasticidad.html#cómo-se-calcula-la-elasticidad"><i class="fa fa-check"></i><b>10.4</b> Cómo se calcula la elasticidad</a></li>
+<li class="chapter" data-level="10.5" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>10.5</b> Limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>11</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>11.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="11.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>11.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>11.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+<li class="chapter" data-level="11.2.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>11.2.2</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="11.2.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>11.2.3</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#estructura-estable"><i class="fa fa-check"></i><b>11.3</b> Estructura estable</a></li>
+<li class="chapter" data-level="11.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#valores-reproductivos"><i class="fa fa-check"></i><b>11.4</b> Valores reproductivos</a></li>
+<li class="chapter" data-level="11.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-elasticidad"><i class="fa fa-check"></i><b>11.5</b> Análisis de elasticidad</a></li>
+<li class="chapter" data-level="11.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-amortiguamientodamping-ratio"><i class="fa fa-check"></i><b>11.6</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="11.7" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-convergencia"><i class="fa fa-check"></i><b>11.7</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="11.8" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>11.8</b> Dinámica transitoria</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html"><i class="fa fa-check"></i><b>12</b> Elasticidad no lineal</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#por"><i class="fa fa-check"></i><b>12.1</b> Por : ???</a></li>
+<li class="chapter" data-level="12.2" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#transfer-function"><i class="fa fa-check"></i><b>12.2</b> Transfer function</a></li>
+<li class="chapter" data-level="12.3" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#valor-biológico"><i class="fa fa-check"></i><b>12.3</b> Valor biológico</a></li>
+<li class="chapter" data-level="12.4" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#métodos-de-calculo"><i class="fa fa-check"></i><b>12.4</b> Métodos de calculo</a></li>
+<li class="chapter" data-level="12.5" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>12.5</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
+<li class="chapter" data-level="12.6" data-path="elasticidad-no-lineal.html"><a href="elasticidad-no-lineal.html#referencias-3"><i class="fa fa-check"></i><b>12.6</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>13</b> LTRE</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ltre.html"><a href="ltre.html#introducción-a-ltre"><i class="fa fa-check"></i><b>13.1</b> Introducción a LTRE</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>13.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>13.2</b> Métodos</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>13.2.1</b> Ejemplo práctico de ERTV</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>13.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>13.2.3</b> Diagrama del ciclo de vida</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>13.2.4</b> Diagrama para Quercus martinezii</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>13.2.5</b> Diagrama para Quercus rugosa</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>13.3</b> Procedimiento para ERTV en Excel</a></li>
+<li class="chapter" data-level="13.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>13.4</b> Procedimiento en R</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.1</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.4.2" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>13.4.2</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="13.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>13.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="13.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>13.4.4</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
+<li class="chapter" data-level="13.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>13.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="13.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="13.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>13.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="13.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>13.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>14</b> Metodos de Simulaciones y estimaciones de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#introducciones-a-métodos-de-simulaciones"><i class="fa fa-check"></i><b>14.1</b> Introducciones a métodos de simulaciones</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#estocasticidad-demografica"><i class="fa fa-check"></i><b>14.1.1</b> Estocasticidad demografica</a></li>
+<li class="chapter" data-level="14.1.2" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>14.1.2</b> Estocasticidad espacial</a></li>
+<li class="chapter" data-level="14.1.3" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>14.1.3</b> Estocasticidad temporal</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>14.2</b> Ventaja de usar simulaciones</a></li>
+<li class="chapter" data-level="14.3" data-path="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="metodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html#ejemplo-simple-de-simulaciones"><i class="fa fa-check"></i><b>14.3</b> Ejemplo Simple de simulaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>15</b> El uso de matrices para estudios evolutivos</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html"><i class="fa fa-check"></i><b>16</b> PPM_Orquidea sinopsis historico</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html#por-raymond-y-todos"><i class="fa fa-check"></i><b>16.1</b> Por: Raymond y todos</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>17</b> Compadre_Orchid PPM y su uso</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#compadre"><i class="fa fa-check"></i><b>17.0.1</b> COMPADRE</a></li>
+<li class="chapter" data-level="17.0.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>17.0.2</b> Acceso a los datos de COMPADRE.</a></li>
+<li class="chapter" data-level="17.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#para-tener-acceso-a-los-datos-cuando-no-esta-conectado-al-internet-es-necesario-bajar-el-archivo-y-instalar-en-su-proyecto-de-rstudio.-al-momento-de-construir-el-libro-la-versión-meas-reciente-de-compadre-es-la-versión-6.23.5.5.0-may_06_2023-y-se-puede-bajar-al-siguiente-enlace-httpscompadre-db.orgdatacompadrecompadre_v."><i class="fa fa-check"></i><b>17.1</b> Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión meas reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace &lt;&lt;https://compadre-db.org/Data/Compadre/COMPADRE_v.</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>17.1.1</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="17.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>17.1.2</b> Los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="17.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.1.3</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>17.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>17.2.1</b> La fuente de la información</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>17.3</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="17.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>17.4</b> Cuantos estudios unicos?</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-se-uso-para-la-investigaciones"><i class="fa fa-check"></i><b>17.4.1</b> Determinar cuantas poblaciones se uso para la investigaciones</a></li>
+<li class="chapter" data-level="17.4.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-cuando-comenzaron-y-terminaron"><i class="fa fa-check"></i><b>17.4.2</b> Evaluación de cuando comenzaron y terminaron</a></li>
+<li class="chapter" data-level="17.4.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#el-tiempo-de-duración-de-las-investigaciones-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.4.3</b> El tiempo de duración de las investigaciones en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="17.4.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#amalgamando-todas-las-matrices-y-su-información"><i class="fa fa-check"></i><b>17.4.4</b> Amalgamando todas las matrices y su información</a></li>
+<li class="chapter" data-level="17.4.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#the-number-of-populations"><i class="fa fa-check"></i><b>17.4.5</b> The number of populations</a></li>
+<li class="chapter" data-level="17.4.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>17.4.6</b> Crear un mapa de las distribuciones de las orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#important-to-include-only-matrices-that-are-annual."><i class="fa fa-check"></i><b>17.5</b> Important to include only matrices that are annual.</a>
+<ul>
+<li class="chapter" data-level="17.5.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>17.5.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>18</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>18.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>19</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
+<li class="chapter" data-level="20" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>20</b> Nhora</a></li>
+<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido biológicos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeño o eventos raros</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>21.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="21.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza"><i class="fa fa-check"></i><b>21.5.2</b> Los estimados de Intervalo de camfianza</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="diferentes_componentes_de_ciclo_de_vida.html"><a href="diferentes_componentes_de_ciclo_de_vida.html"><i class="fa fa-check"></i><b>22</b> Diferentes_componentes_de_Ciclo_de_vida</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="diferentes_componentes_de_ciclo_de_vida.html"><a href="diferentes_componentes_de_ciclo_de_vida.html#por-anne-fabiola-aucencia-ecosur"><i class="fa fa-check"></i><b>22.1</b> Por: Anne, Fabiola, Aucencia: ECOSUR</a></li>
+<li class="chapter" data-level="22.2" data-path="diferentes_componentes_de_ciclo_de_vida.html"><a href="diferentes_componentes_de_ciclo_de_vida.html#el-capitulo-sera-movido-a-otra-posicion-en-el-libro"><i class="fa fa-check"></i><b>22.2</b> El capitulo sera movido a otra posicion en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html"><i class="fa fa-check"></i><b>23</b> Hojas de datos en el campo</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#ejemplos-de-tablas-de-datos"><i class="fa fa-check"></i><b>23.1</b> Ejemplos de tablas de Datos</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#usando-ejemplo-de-tremblay-y-su-codificación"><i class="fa fa-check"></i><b>23.1.1</b> Usando ejemplo de Tremblay [] y su codificación</a></li>
+<li class="chapter" data-level="23.1.2" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#almacenamiento-de-datos-de-forma-digital"><i class="fa fa-check"></i><b>23.1.2</b> Almacenamiento de datos de forma digital</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html"><i class="fa fa-check"></i><b>24</b> 26-Calcular_Transiciones</a></li>
+<li class="chapter" data-level="25" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>25</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>25.1</b> A section</a></li>
+<li class="chapter" data-level="25.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>25.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="25.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>25.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="25.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>25.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>26</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>26.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="26.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>26.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="27" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>27</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>27.1</b> Footnotes</a></li>
+<li class="chapter" data-level="27.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>27.2</b> Citations</a></li>
+<li class="chapter" data-level="27.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>27.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>28</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>28.1</b> Equations</a></li>
+<li class="chapter" data-level="28.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>28.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="28.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>28.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>29</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>29.1</b> Publishing</a></li>
+<li class="chapter" data-level="29.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>29.2</b> 404 pages</a></li>
+<li class="chapter" data-level="29.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>29.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="30" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>30</b> Taller de Dinamica Poblacional</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#esta-sección-tiene-objetivo-de-presentar-una-sinopsis-de-un-taller-de-3-dias-sobre-el-uso-de-matrices-para-el-estudio-de-dinámica-poblacional."><i class="fa fa-check"></i><b>30.1</b> Esta sección tiene objetivo de presentar una sinopsis de un taller de 3 dias sobre el uso de matrices para el estudio de Dinámica poblacional.</a></li>
+<li class="chapter" data-level="30.2" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#impartido-por"><i class="fa fa-check"></i><b>30.2</b> <em>Impartido por</em>:</a></li>
+<li class="chapter" data-level="30.3" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#duración-del-taller"><i class="fa fa-check"></i><b>30.3</b> Duración del taller:</a></li>
+<li class="chapter" data-level="30.4" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#certificación-a-nombre-de-la"><i class="fa fa-check"></i><b>30.4</b> Certificación A nombre de la</a></li>
+<li class="chapter" data-level="30.5" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#costo-del-taller-estudiantes"><i class="fa fa-check"></i><b>30.5</b> Costo del taller Estudiantes:</a></li>
+<li class="chapter" data-level="30.6" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#cupo-25-personas"><i class="fa fa-check"></i><b>30.6</b> Cupo: 25 personas</a></li>
+<li class="chapter" data-level="30.7" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#introducción-1"><i class="fa fa-check"></i><b>30.7</b> Introducción</a></li>
+<li class="chapter" data-level="30.8" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#objetivo-general"><i class="fa fa-check"></i><b>30.8</b> Objetivo general:</a></li>
+<li class="chapter" data-level="30.9" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#objetivos-específicos"><i class="fa fa-check"></i><b>30.9</b> Objetivos específicos:</a></li>
+<li class="chapter" data-level="30.10" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#introducción-2"><i class="fa fa-check"></i><b>30.10</b> Introducción</a></li>
+<li class="chapter" data-level="30.11" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#materiales-necesarios"><i class="fa fa-check"></i><b>30.11</b> Materiales necesarios:</a></li>
+<li class="chapter" data-level="30.12" data-path="taller-de-dinamica-poblacional.html"><a href="taller-de-dinamica-poblacional.html#bibliografía"><i class="fa fa-check"></i><b>30.12</b> Bibliografía</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica_Poblacional</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="impactos-de-datos-sin-sentido-biológicos" class="section level1 hasAnchor" number="21">
+<h1><span class="header-section-number">Capítulo 21</span> Impactos de datos sin sentido biológicos<a href="impactos-de-datos-sin-sentido-biológicos.html#impactos-de-datos-sin-sentido-biológicos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Por: Raymond L. Tremblay</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb336-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb336-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb336-2" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">&quot;DiagrammeR&quot;</span>, <span class="st">&quot;Rage&quot;</span>, <span class="st">&quot;popdemo&quot;</span>, <span class="st">&quot;popbio&quot;</span>, <span class="st">&quot;interpretCI&quot;</span>, </span>
+<span id="cb336-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb336-3" tabindex="-1"></a>               <span class="st">&quot;MCMCpack&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;plyr&quot;</span>, <span class="st">&quot;reshape&quot;</span>)</span></code></pre></div>
+<p>El valor principal de los estudios científicos proviene en que los datos representa una visión suficiente cerca a la realidad y sirve para inferir información sobre la ecología de la especie de interés. En ningún estudio ecológico se podrá obtener <strong>TODOS</strong> los datos para evaluar la relación biótica y abiótica sobre un organismos y todas sus interacciones. Ese modelo es primero demasiado complejo y irreal dentro del concepto de los trabajos científicos. El objetivo es tener una apreciación de los parámetros más importante para definir patrones y interacciones. Por consecuencia la base de todo estudios esta fundado en las unidades de los muestreos y de la recolección de datos. Si los datos no representa la realidad del estudio la interpretaciones de los análisis pudiese ser errónea. La matemática y sus ecuaciones y modelos no harán que la biología sea más cerca a la realidad si desde el principio los datos y el método de recolección de datos es erróneo.</p>
+<p>En esta sección evaluamos diferentes aspectos de los análisis matriciales poblacional de proyección y diferentes aspectos de la recolección de datos que pudiese ser problemáticos cuando uno considera la biología de una especie. La lista de <em>Impactos</em> no pretende incluir todos las posibles efecto de datos sin sentido, sino unos ejemplos si uno no considera estos problemas y cómo pueden distorsionar las interpretaciones. Por lo tanto, una advertencia a todos los biólogos de población para que estén consciente de estos temas y siempre evaluar criticamente si los datos desde la recolección a los análisis y interpretaciones considerando el anterior tiene sentidos dentro del contexto del estudio.</p>
+<hr />
+<div id="tamaño-de-muestra-pequeño-o-eventos-raros" class="section level2 hasAnchor" number="21.1">
+<h2><span class="header-section-number">21.1</span> Tamaño de muestra pequeño o eventos raros<a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sin duda, el tema principal para el uso de PPM ha sido evaluar la proyección de población de especies raras o en peligro de extinción (otras cuestiones son ecológicas o evolutivas) <span class="citation">(<a href="#ref-caswell2000matrix">Caswell 2000</a>; <a href="#ref-gascoigne2023standard">Gascoigne et al. 2023</a>)</span>. En consecuencia, las especies raras o en peligro de extinción son naturalmente pequeñas y reduce el tamaño de la muestra del estudio o de algunas de las etapas/edades de la vida. Estos tamaños de muestra reducidos provocan estimaciones de parámetros y, a menudo, resultados sin sentido biológicos.</p>
+<hr />
+<div id="sin-mortalidadsupervivencia-perfecta" class="section level3 hasAnchor" number="21.1.1">
+<h3><span class="header-section-number">21.1.1</span> Sin Mortalidad/Supervivencia Perfecta<a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Considere una especie donde se recopilan datos de una especies <strong>Sp1</strong> y la matriz de transición <strong>Sp1matU</strong> y la matriz de fertilidad es <strong>Sp1matF</strong>. Tenga en cuenta que ninguno de los individuos murió en la etapa adulta (supervivencia perfecta). En consecuencia, el tamaño de la población nunca disminuye o aumenta después de un período de tiempo. Bajo TODOS los modelos biologícamente realistas, esperaríamos que el tamaño de la población comenzaría a disminuir si una población no tiene reproducción y ninguna especie tiene una probabilidad de supervivencia de 100% (0% de probailidad de mortandad). Pero en este caso como todos los individuos de la etapa sobreviven la población es <em>eterna</em> (algo irreal).</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb337-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-2" tabindex="-1"></a></span>
+<span id="cb337-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-3" tabindex="-1"></a>Sp1matU <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb337-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb337-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.0</span>),</span>
+<span id="cb337-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">1.0</span>)</span>
+<span id="cb337-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-7" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb337-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-8" tabindex="-1"></a></span>
+<span id="cb337-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-9" tabindex="-1"></a>Sp1matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb337-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>),</span>
+<span id="cb337-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb337-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb337-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-13" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb337-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-14" tabindex="-1"></a></span>
+<span id="cb337-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-15" tabindex="-1"></a>Sp1matA <span class="ot">=</span> Sp1matU<span class="sc">+</span>Sp1matF <span class="co"># TF matrix</span></span>
+<span id="cb337-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-16" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb337-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-17" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb337-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-18" tabindex="-1"></a></span>
+<span id="cb337-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb337-19" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Sp1matA, <span class="at">stages=</span>stages, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-c38c8f9194011f45cf3b" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c38c8f9194011f45cf3b">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"juvenil\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.3\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.4\"]\n\"adulto\" -> \"plantula\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 1\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=0,color=grey,xlabel=\" 1\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Así si analizamos esta matriz asumimos que ninguno de los individuos en etapa adulta muere, en ningún momento!!!. Claramente esto no es realista. Para cualquier especie, la probabilidad de muerte en cualquier etapa nunca es cero (aunque podría ser muy pequeña) y, por lo tanto, nuestra matriz no tiene sentido. Considere una especie de árbol, como los arboles de <em>Sequoia</em>, es probable que para los árboles grandes de esta especie la supervivencia sea muy alta entre un año y otro, pero nunca del 100%. Hay que diferenciar entre lo que se observa en periodo y las probabilidades a largo plazo. Es posible que en el sitio de muestreo NO se observo mortalidad de los arboles grandes entre dos periodos de muestreo, que resultaría en una mortalidad de cero pero no es un valor real a largo plazo.</p>
+<p>En el siguiente <em>script</em> mostramos que la población no cambia después de 5-6 periodos y se mantiene cercana a uno y no cambia nada (usamos la matriz de transición sin fecundidad). Si no hay reclutas (matriz de fertilidad), el tamaño de la población debería reducirse con el tiempo. Todo modelos de transiciones que no incluye la matriz de fertilidad debería resultar en reducción de tamaño poblacional.</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb338-1" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">50</span>)</span>
+<span id="cb338-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb338-2" tabindex="-1"></a></span>
+<span id="cb338-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb338-3" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span>
+<span id="cb338-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb338-4" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb338-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb338-5" tabindex="-1"></a><span class="fu">truelambda</span>(Sp1matU) <span class="co"># despues de unos periodos de tiempo vemos que el crecimiento poblacional es 1</span></span></code></pre></div>
+<pre><code>##           [,1] [,2]
+## [1,] 0.9999999    1
+## [2,] 0.9999999    1
+## [3,] 0.9999999    1</code></pre>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb340-1" tabindex="-1"></a><span class="fu">pop.projection</span>(Sp1matU, <span class="at">n=</span>n)<span class="sc">$</span>pop.changes</span></code></pre></div>
+<pre><code>##  [1] 0.7333333 0.8909091 0.9632653 0.9885593 0.9965281 0.9989548 0.9996861
+##  [8] 0.9999058 0.9999717 0.9999915 0.9999975 0.9999992 0.9999998 0.9999999
+## [15] 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000</code></pre>
+<hr />
+<div id="un-cambio-pequeño-en-la-mortalidad." class="section level4 hasAnchor" number="21.1.1.1">
+<h4><span class="header-section-number">21.1.1.1</span> Un cambio pequeño en la mortalidad.<a href="impactos-de-datos-sin-sentido-biológicos.html#un-cambio-pequeño-en-la-mortalidad." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tenga en cuenta que en este nuevo modelo de la especie <em>SP1</em>, aunque la tasa de supervivencia es muy cercana a 100% (0,995) es posible una disminución de la población en cada período de tiempo (aunque solo sea en una pequeña fracción). Siempre hay que considerar si esta taza de mortalidad es biologícamente real o es un resultado del tamaño de la muestra. Este valor sugiere que se muestreo 1000 individuos y que 995 sobrevivieron. Si el tamaño fue de 1000, uno pudiese tener confianza en el parámetro.</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-1" tabindex="-1"></a>Sp1matU_2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb342-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb342-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.0</span>),</span>
+<span id="cb342-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">0.995</span>)</span>
+<span id="cb342-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-5" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb342-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-6" tabindex="-1"></a></span>
+<span id="cb342-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-7" tabindex="-1"></a>Sp1matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb342-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-8" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>),</span>
+<span id="cb342-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-9" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb342-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb342-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-11" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb342-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-12" tabindex="-1"></a></span>
+<span id="cb342-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-13" tabindex="-1"></a>Sp1matA_2<span class="ot">=</span>Sp1matU_2<span class="sc">+</span>Sp1matF</span>
+<span id="cb342-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-14" tabindex="-1"></a></span>
+<span id="cb342-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb342-15" tabindex="-1"></a><span class="fu">pop.projection</span>(Sp1matU_2, <span class="at">n=</span>n)<span class="sc">$</span>pop.changes</span></code></pre></div>
+<pre><code>##  [1] 0.7316667 0.8874829 0.9586555 0.9836264 0.9915311 0.9939504 0.9946832
+##  [8] 0.9949045 0.9949712 0.9949913 0.9949974 0.9949992 0.9949998 0.9949999
+## [15] 0.9950000 0.9950000 0.9950000 0.9950000 0.9950000</code></pre>
+<p>En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo tanto, es importante considerar si la tasa de mortalidad es realista y si el tamaño de la muestra es suficiente para estimar la tasa de mortalidad. Si la tasa de mortalidad es muy baja cerca de cero o 100%, es probable que el tamaño de la muestra sea demasiado pequeño para estimar la tasa de mortalidad con precisión. En consecuencia, la tasa de mortalidad estimada puede ser incorrecta y dar como resultado</p>
+<p>Cual son los tamaños de muestra típica en los estudios de orquídeas?</p>
+<p>Hacer una lista de algunas especies de orquídeas y sus tamaños de muestra.</p>
+<hr />
+</div>
+</div>
+<div id="irreductibilidad-no-hay-transiciones-entre-etapas" class="section level3 hasAnchor" number="21.1.2">
+<h3><span class="header-section-number">21.1.2</span> Irreductibilidad: No hay transiciones entre etapas<a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el escenario actual, los juveniles no crecen para convertirse en adultos, todos los juveniles siguen siendo juveniles o mueren. Tenga en cuenta la figura del ciclo de vida donde no hay flechas que conecten a los juveniles con los adultos.</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb344-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-2" tabindex="-1"></a></span>
+<span id="cb344-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-3" tabindex="-1"></a>Sp1matU_NT <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb344-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb344-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.0</span>),</span>
+<span id="cb344-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.995</span>)</span>
+<span id="cb344-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-7" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb344-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-8" tabindex="-1"></a></span>
+<span id="cb344-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-9" tabindex="-1"></a>Sp1matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb344-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>),</span>
+<span id="cb344-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb344-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb344-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-13" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb344-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-14" tabindex="-1"></a></span>
+<span id="cb344-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-15" tabindex="-1"></a>Sp1matA_NT <span class="ot">=</span> Sp1matU_NT<span class="sc">+</span>Sp1matF <span class="co"># TF matrix</span></span>
+<span id="cb344-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-16" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb344-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-17" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb344-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-18" tabindex="-1"></a></span>
+<span id="cb344-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb344-19" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Sp1matU_NT, <span class="at">stages=</span>stages, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-e7fe361c0cce85ea49e9" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e7fe361c0cce85ea49e9">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"juvenil\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.7\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.995\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Como lo muestra <span class="citation">Caswell (<a href="#ref-caswell2000matrix">2000</a>)</span> y explorado más recientemente por <span class="citation">(<a href="#ref-stott2010"><strong>stott2010?</strong></a>)</span>, las matrices deben de ser <em>irreducibles</em>. El concepto de <em>irreductibilidad</em> está asociado con el ciclo de vida de la especie y la matriz incluye las transiciones de todas las etapas a todas las demás etapas. En la figura del ciclo de vida anterior le faltan dos componentes importantes en la historia de vida de la especie, ningún juvenil crece para convertirse en adulto y ninguno de los adultos produce plántulas (semillas que crecen hasta convertirse en plántulas).</p>
+<p>Una manera fácil de determinar si la matriz es irreducible es correr el siguiente script <em>isIrreducible</em> en el paquete (popdemo). Tenga en cuenta que, en este caso, el resultado es <em>Falso</em> para la matriz anterior.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb345-1" tabindex="-1"></a><span class="fu">isIrreducible</span>(Sp1matU_NT) <span class="co"># para la matriz de transición, faltando una etapa de transición y fertilidad</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb347-1" tabindex="-1"></a><span class="fu">isIrreducible</span>(Sp1matA_NT) <span class="co"># para la matriz TF, falta una etapa de transición</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb349-1" tabindex="-1"></a><span class="co"># Ahora considerando Sp1matA_2</span></span>
+<span id="cb349-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb349-2" tabindex="-1"></a><span class="co"># En esta matriz que incluye todas las transiciones y la fertilidad el resultado es &quot;TRUE&quot;</span></span>
+<span id="cb349-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb349-3" tabindex="-1"></a>Sp1matA_2</span></code></pre></div>
+<pre><code>##      [,1] [,2]  [,3]
+## [1,]  0.0  0.0 1.000
+## [2,]  0.5  0.3 0.000
+## [3,]  0.0  0.4 0.995</code></pre>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb351-1" tabindex="-1"></a><span class="fu">isIrreducible</span>(Sp1matA_2) </span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<hr />
+</div>
+<div id="ninguna-supervivencia" class="section level3 hasAnchor" number="21.1.3">
+<h3><span class="header-section-number">21.1.3</span> Ninguna supervivencia<a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La mortalidad es uno de los estadios del ciclo de vida de una especies, pero raramente se añade al ciclo de vida porque es implícito en los cálculos. A menudo se observa que la supervivencia de los individuos más pequeños o la primera etapa del ciclo de vida de una especie es muy arriesgada, donde la probabilidad de supervivencia es muy baja. Por ejemplo, la mayoría de las semillas no sobreviven para germinar. Esta es probablemente la norma en las orquídeas donde la producción de semillas es muy alta, a veces millones de semillas en una cápsula <span class="citation">(<a href="#ref-arditti2000numerical">Arditti and Ghani 2000</a>)</span>, pero pocas germinan (ref). Sin embargo, esto no se limita a las orquídeas, en los árboles se puede observar el mismo patrón, por ejemplo, en <em>Nothofagus pumilio</em> el reclutamiento de plántulas fue inferior al 1,5 % <span class="citation">(<a href="#ref-torres2015seed">Torres et al. 2015</a>)</span>. En general los patrones de germinación In situ varia por grupos taxonómicos y distribución ecológica <span class="citation">(<a href="#ref-iralu2019ecology">Iralu, Barbhuyan, and Upadhaya 2019</a>)</span> .</p>
+<p>Como es bien conocido en el campo, la germinación de semillas en las orquídeas no es sencilla ya que depende de la disponibilidad de mycorhizae []. Hay evidencia que las micorhizae son especifica por las especies orquídeas y al contrario no son especificas [], pero sin duda la diversidad asociado a la germinación no es mayormente limitado a ciertos grupos taxonómicos de hongos <span class="citation">(<a href="#ref-rasmussen2015germination">Rasmussen et al. 2015</a>)</span>. y muchas variables pueden influir en la germinación de semillas incluyendo las condiciones abióticas y bióticas <span class="citation">(<a href="#ref-callaway2002epiphyte">Callaway et al. 2002</a>; <a href="#ref-rasmussen2015germination">Rasmussen et al. 2015</a>; <a href="#ref-gonzalez2024host">González-Orellana et al. 2024</a>)</span>……. más detalle sobre lo que se conoce y lo que no se conoce…</p>
+<p>En el gráfico del ciclo de vida actual, ninguna de las plántulas sobrevive o crece a la siguiente etapa. Tenga en cuenta que en la primera columna de la matriz de transición todos los valores son cero. La población puede haber comenzado con muchas (incluso miles) de plántulas, pero ninguna creció hasta convertirse en un juvenil o permaneció como plántula antes del siguiente muestreo. Esto da como resultado una matriz que es reducible <em>isIrreducible</em> = <em>FALSO</em> y por consecuencia no cumple con los requisitos necesarios para muchos de los análisis de matrices poblacionales.</p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb353-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-2" tabindex="-1"></a></span>
+<span id="cb353-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-3" tabindex="-1"></a>Sp1matU_NS <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb353-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb353-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.7</span>, <span class="fl">0.0</span>),</span>
+<span id="cb353-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.25</span>, <span class="fl">0.995</span>)</span>
+<span id="cb353-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-7" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb353-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-8" tabindex="-1"></a></span>
+<span id="cb353-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-9" tabindex="-1"></a>Sp1matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb353-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>),</span>
+<span id="cb353-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb353-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb353-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-13" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb353-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-14" tabindex="-1"></a></span>
+<span id="cb353-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-15" tabindex="-1"></a>Sp1matA_NS <span class="ot">=</span> Sp1matU_NS<span class="sc">+</span>Sp1matF <span class="co"># TF matrix</span></span>
+<span id="cb353-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-16" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb353-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-17" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb353-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-18" tabindex="-1"></a></span>
+<span id="cb353-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb353-19" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Sp1matU_NS, <span class="at">stages=</span>stages, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-c4c28458efcc2e3d73d0" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c4c28458efcc2e3d73d0">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"juvenil\" -> \"juvenil\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.7\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.25\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.995\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb354-1" tabindex="-1"></a><span class="fu">isIrreducible</span>(Sp1matU_NS)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<hr />
+</div>
+</div>
+<div id="redondeo-excesivo-de-valores" class="section level2 hasAnchor" number="21.2">
+<h2><span class="header-section-number">21.2</span> Redondeo excesivo de valores<a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Uno de los errores más simples en la construcción de los elementos de la matriz es el error de redondeo excesivo u otras estimaciones que dan como resultado valores de supervivencia superiores a 100%. Una estimación de supervivencia de mayor de 1 es que de la nada aumenta la cantidad de individuos sin reproducción o clonaje. el estimado de supervivencia de una etapa siempre tiene que ser menor de 100%, aunque puede ser muy cercano a 100%. En el siguiente ejemplo, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error en la recolección de datos o en el cálculo de la supervivencia de la etapa.</p>
+<p>Por ejemplo en un análisis de <em>Serapia cordigera</em> <span class="citation">(<a href="#ref-pellegrino2014effects">Pellegrino and Bellusci 2014</a>)</span>. Aquí los autores evaluaron las transiciones entre latencia, plántulas, roseta vegetativa y floración. Aquí mostramos una de estas matrices que esta incluida en el material suplementario del articulo. Período de tiempo 2001-2002, A1. En la primera columna de la matriz de transición, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error que es probablemente en los cálculos de la supervivencia o transiciones de esta etapa.</p>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb356-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-2" tabindex="-1"></a></span>
+<span id="cb356-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-3" tabindex="-1"></a>SerapiaU <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb356-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.668</span>, <span class="fl">0.122</span>, <span class="fl">0.294</span>, <span class="fl">0.401</span>),</span>
+<span id="cb356-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.128</span>, <span class="fl">0.000</span>, <span class="fl">0.000</span>, <span class="fl">0.000</span>),</span>
+<span id="cb356-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.000</span>, <span class="fl">0.302</span>, <span class="fl">0.453</span>, <span class="fl">0.366</span>),</span>
+<span id="cb356-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.214</span>, <span class="fl">0.364</span>, <span class="fl">0.185</span>, <span class="fl">0.207</span>)</span>
+<span id="cb356-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-8" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb356-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-9" tabindex="-1"></a></span>
+<span id="cb356-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb356-10" tabindex="-1"></a><span class="fu">colSums</span>(SerapiaU) <span class="co"># la suma de la primera columna es mayor de 100%. </span></span></code></pre></div>
+<pre><code>## [1] 1.010 0.788 0.932 0.974</code></pre>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-1" tabindex="-1"></a>SerapiaF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb358-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb358-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb358-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb358-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb358-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-6" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb358-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-7" tabindex="-1"></a></span>
+<span id="cb358-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-8" tabindex="-1"></a>SerapiaA <span class="ot">=</span> SerapiaU<span class="sc">+</span>SerapiaF <span class="co"># TF matrix</span></span>
+<span id="cb358-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-9" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb358-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-10" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;vegetativa&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb358-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-11" tabindex="-1"></a></span>
+<span id="cb358-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb358-12" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(SerapiaA, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-fa9b62dc88262daebc95" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-fa9b62dc88262daebc95">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"latente\" -> \"plantulas\" -> \"vegetativa\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"latente\" -> \"plantulas\" -> \"vegetativa\" -> \"adulto\" [style=invis] } [style=invis] \"latente\" -> \"latente\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.668\"]\n\"latente\" -> \"plantulas\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.128\"]\n\"latente\" -> \"adulto\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.214\"]\n\"plantulas\" -> \"latente\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.122\"]\n\"plantulas\" -> \"vegetativa\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.302\"]\n\"plantulas\" -> \"adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.364\"]\n\"vegetativa\" -> \"latente\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.294\"]\n\"vegetativa\" -> \"vegetativa\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.453\"]\n\"vegetativa\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.185\"]\n\"adulto\" -> \"latente\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.401\"]\n\"adulto\" -> \"vegetativa\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.366\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.207\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb359-1" tabindex="-1"></a><span class="co"># Tenga en cuenta que la suma de supervivencia para la etapa inactiva es mayor que 1, igual a 1.01</span></span></code></pre></div>
+<hr />
+</div>
+<div id="estimaciones-de-fertilidad-y-ciclo-de-vida" class="section level2 hasAnchor" number="21.3">
+<h2><span class="header-section-number">21.3</span> Estimaciones de fertilidad y ciclo de vida<a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La importancia de considerar cómo se incluye la fertilidad en el ciclo de vida es extremadamente influyente en los resultados de los modelos, y si se considera erróneamente puede dar lugar a interpretaciones sin sentido. Mostramos algunos ejemplos de cómo estos pueden incluirse en el ciclo de vida y la matriz y dar como resultado problemas de causa. Vea el capitulo <a href="Fertilidad.html#Fertilidad">7</a> para más detalle.</p>
+<div id="ciclo-de-vida-y-etapa-de-fertilidad-incorrectos" class="section level3 hasAnchor" number="21.3.1">
+<h3><span class="header-section-number">21.3.1</span> Ciclo de vida y etapa de fertilidad incorrectos<a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suponga que tiene una especie en la que modela el ciclo de vida como plántula, juvenil y adulto. La fertilidad se mide como el número de semillas producidas por un adulto (número medio de semillas por adulto). Después de recopilar los cálculos de datos, se determina que el número medio de semillas por adulto es 1100. Si agregamos a la matriz de transición y fertilidad a continuación y evaluamos el lambda y graficamos el crecimiento de la población con la función <em>proyecto</em>, tenemos un lambda de 4.93 y después de solo 5 períodos de tiempo, el número de adultos supera los 250,000. Por consecuencia, la estimación de la tasa de crecimiento de la población sería incorrecta y engañosa, donde 30% de 11,000 semillas crecen a ser plántulas, un total de 3,300 plantulas!!!</p>
+<p>El error es que el valor en la matriz de fertilidad debería corresponder a la primera etapa de la matriz, en este caso la etapa de plántula. Por lo tanto, la esquina superior derecha de la matriz de fertilidad NO debe ser la <strong>cantidad media de semillas</strong> por planta, sino la <strong>cantidad media de semillas que transitan a plántulas</strong> producidas por una planta adulta.</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb360-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-2" tabindex="-1"></a></span>
+<span id="cb360-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-3" tabindex="-1"></a>Sp1matU_Fert <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb360-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb360-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.7</span>, <span class="fl">0.0</span>),</span>
+<span id="cb360-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.25</span>, <span class="fl">0.995</span>)</span>
+<span id="cb360-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-7" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb360-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-8" tabindex="-1"></a></span>
+<span id="cb360-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-9" tabindex="-1"></a>Sp1matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb360-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-10" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1100.0</span>),</span>
+<span id="cb360-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb360-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb360-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-13" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb360-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-14" tabindex="-1"></a></span>
+<span id="cb360-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-15" tabindex="-1"></a>Sp1matA_Fert <span class="ot">=</span> Sp1matU_Fert<span class="sc">+</span>Sp1matF <span class="co"># TF matrix</span></span>
+<span id="cb360-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-16" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb360-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-17" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb360-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-18" tabindex="-1"></a></span>
+<span id="cb360-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb360-19" tabindex="-1"></a><span class="fu">lambda</span>(Sp1matA_Fert)</span></code></pre></div>
+<pre><code>## [1] 4.937718</code></pre>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb362-1" tabindex="-1"></a><span class="co"># show change in population size</span></span>
+<span id="cb362-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb362-2" tabindex="-1"></a>n</span></code></pre></div>
+<pre><code>## [1] 50 50 50</code></pre>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb364-1" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">project</span>(Sp1matA_Fert, <span class="at">vector=</span><span class="st">&quot;n&quot;</span>, <span class="at">time=</span><span class="dv">5</span>)</span>
+<span id="cb364-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb364-2" tabindex="-1"></a><span class="fu">plot</span>(pr) <span class="co"># Note that even after just 5 time periods, the number of adults is larger than 250,000 individuals</span></span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Si deseamos agregar una etapa de semilla, debemos incluir la etapa en nuestro modelo y matriz con una nueva etapa <em>la etapa de semilla</em>, y tener una estimación del número de semillas que germinan y se convierten en plántulas. En el caso de las orquídeas, es probable que sea una estimación difícil de lograr porque las semillas de las orquídeas son difíciles de seguir en la naturaleza a menos que se haya usado el método del paquete de semillas <span class="citation">(<a href="#ref-rasmussen1993seed">Rasmussen and Whigham 1993</a>; <a href="#ref-batty2006situ">Batty et al. 2006</a>; <a href="#ref-shao2024improved">Shao, Jacquemyn, and Selosse 2024</a>)</span> o se utilizó algún método de huella genética para determinar la procedencia de las semillas. Por lo tanto, la estimación de la fertilidad en las orquídeas es un desafío y requiere un muestreo y análisis cuidadoso.</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb365-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-2" tabindex="-1"></a></span>
+<span id="cb365-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-3" tabindex="-1"></a>Sp1matU_Fert2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb365-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb365-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0001</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb365-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.3</span>, <span class="fl">0.7</span>, <span class="fl">0.0</span>),</span>
+<span id="cb365-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.25</span>, <span class="fl">0.995</span>)</span>
+<span id="cb365-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-8" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb365-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-9" tabindex="-1"></a></span>
+<span id="cb365-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-10" tabindex="-1"></a>Sp1matF2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb365-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-11" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1100.0</span>),</span>
+<span id="cb365-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-12" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb365-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-13" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb365-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-14" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb365-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-15" tabindex="-1"></a>) <span class="co"># fertility matrix</span></span>
+<span id="cb365-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-16" tabindex="-1"></a></span>
+<span id="cb365-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-17" tabindex="-1"></a>Sp1matA_Fert2 <span class="ot">=</span> Sp1matU_Fert2<span class="sc">+</span>Sp1matF2 <span class="co"># TF matrix</span></span>
+<span id="cb365-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-18" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb365-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-19" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb365-20"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-20" tabindex="-1"></a></span>
+<span id="cb365-21"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb365-21" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Sp1matA_Fert2, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a31d8e4dfdcc69a585c1" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a31d8e4dfdcc69a585c1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.7\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.25\"]\n\"adulto\" -> \"semillas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 1100\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.995\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb366-1" tabindex="-1"></a><span class="fu">lambda</span>(Sp1matA_Fert2)</span></code></pre></div>
+<pre><code>## [1] 1.019805</code></pre>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb368-1" tabindex="-1"></a><span class="co"># show change in population size</span></span>
+<span id="cb368-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb368-2" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">project</span>(Sp1matA_Fert2, <span class="at">vector=</span><span class="st">&quot;n&quot;</span>, <span class="at">time=</span><span class="dv">5</span>)</span>
+<span id="cb368-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb368-3" tabindex="-1"></a><span class="fu">plot</span>(pr) <span class="co"># Note that now the number of adults did not increase to the level of the previous model</span></span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-31-2.png" width="672" /></p>
+<p>En el ejemplo anterior no hemos incluido una etapa de latencia de semillas. En muchas especies de plantas, las semillas pueden permanecer latentes durante uno o más años. No se sabe si las semillas de las orquídeas están inactivas durante mucho tiempo <span class="citation">(<a href="#ref-gale2010restricciones"><strong>gale2010restricciones?</strong></a>)</span>, excepto para algunas especies que han demostrado que las semillas aún están vivas después de varios años en el suelo usando la prueba de tinción de tetrazolio <span class="citation">Rasmussen and Whigham (<a href="#ref-rasmussen1993seed">1993</a>)</span> y <span class="citation">Whigham et al. (<a href="#ref-whigham2006seed">2006</a>)</span>. MAS REFERENCIAS!!</p>
+<hr />
+</div>
+</div>
+<div id="problemas-de-análisis-de-datos" class="section level2 hasAnchor" number="21.4">
+<h2><span class="header-section-number">21.4</span> Problemas de análisis de datos<a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="estimaciones-de-intervalos-de-confianza-incorrectas" class="section level3 hasAnchor" number="21.4.1">
+<h3><span class="header-section-number">21.4.1</span> Estimaciones de intervalos de confianza incorrectas<a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las estimaciones de dispersión en los parámetros de la matriz de supervivencia, transición, muerte y fertilidad son útiles de múltiples maneras. El enfoque más básico es comprender la incertidumbre en el parámetro como una función del tamaño de la muestra, los parámetros con gran dispersión deben verse con precaución. Los parámetros de dispersión pueden ser útiles para simulaciones y comprender la incertidumbre en los parámetros de población como lambda y la probabilidad de persistencia y extinción.</p>
+<p>Los parámetros de supervivencia, muerte, estasis y transiciones NO se distribuyen normalmente ya que los valores van de cero a 1. Ningún valor puede ser menor que cero o mayor que uno, incluidos los intervalos de confianza del 95 % (limitados por 0 y 1). Si se usa la distribución gaussiana (normal) es probable que el Interval de confianza del 95 % esté fuera de los límites. Supongamos que deseamos calcular la probabilidad de supervivencia de una etapa y sus intervalos de confianza del 95%.</p>
+<p>Se deterimna que de 20 individuos 2 fallecen y 19 sobrevivieron entre el primer muestreo y el segundo.</p>
+<ul>
+<li>Construya un intervalo de confianza del 95% de la proporción de individuos que murieron</li>
+</ul>
+<p>Donde la proporción que murió es <span class="math inline">\(\hat{p}\)</span> y el número que murió es <span class="math inline">\(n_d\)</span> y <span class="math inline">\(n\)</span> es el tamaño de la muestra</p>
+<p><span class="math display">\[\hat{p}=\frac{n_d}{n}\]</span> con una probabilidad de muerte del 20%.</p>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb369-1" tabindex="-1"></a>p<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">20</span></span>
+<span id="cb369-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb369-2" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.05</code></pre>
+<p>El IC del 95% de una proporción se calcula usando la sigiente formula</p>
+<p><span class="math display">\[\hat{p}\pm Z_{0.05}*\sqrt{}(\frac{\hat{p}(1-\hat{p})}{n})\]</span>
+- Z_{0.05} es el valor crítico de Z para un IC del 95% = 1.955. Nota que ese calculo, uno de los intervalos de confianza es negativo lo que es ilógico.</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb371-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span></span>
+<span id="cb371-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb371-2" tabindex="-1"></a>HCI<span class="ot">=</span>p<span class="sc">+</span>(<span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>((p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))<span class="sc">/</span>n)) <span class="co"># IC alto</span></span>
+<span id="cb371-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb371-3" tabindex="-1"></a>HCI</span></code></pre></div>
+<pre><code>## [1] 0.1455186</code></pre>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb373-1" tabindex="-1"></a>LCI<span class="ot">=</span>p<span class="sc">-</span>(<span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>((p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))<span class="sc">/</span>n)) <span class="co"># IC bajo</span></span>
+<span id="cb373-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb373-2" tabindex="-1"></a>LCI <span class="co"># Nota que el valor es sin sentido, ya que es negativo</span></span></code></pre></div>
+<pre><code>## [1] -0.04551858</code></pre>
+<p>Un método más fácil es usar la función R <em>propCI</em> de la <strong>biblioteca(interceptCI)</strong>. La función <em>propCI</em> calcula el intervalo de confianza del 95% de una proporción binomial. La función requiere el tamaño de la muestra, el número de eventos (2 individuos fallecieron) y el nivel de significancia. En este caso, el tamaño de la muestra es 20, el número de eventos es 2 y el nivel de significancia es 0.05. Nota que el intervalo de confianza incluye valores negativos. Para resolver esto hay que usar funciones estadisticas alternativas como la distribución de Dirichlet donde no asume distribuciones normales.</p>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb375-1" tabindex="-1"></a><span class="fu">library</span>(interpretCI)</span>
+<span id="cb375-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb375-2" tabindex="-1"></a></span>
+<span id="cb375-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb375-3" tabindex="-1"></a>resultado<span class="ot">=</span><span class="fu">propCI</span>(<span class="at">n=</span><span class="dv">20</span>, <span class="at">p=</span><span class="fl">0.05</span>, <span class="at">alpha=</span><span class="fl">0.05</span>)</span>
+<span id="cb375-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb375-4" tabindex="-1"></a></span>
+<span id="cb375-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb375-5" tabindex="-1"></a>resultado</span></code></pre></div>
+<pre><code>## $data
+## # A tibble: 1 × 1
+##   value
+##   &lt;lgl&gt;
+## 1 NA   
+## 
+## $result
+##   alpha  n df    p P         se critical         ME       lower     upper
+## 1  0.05 20 19 0.05 0 0.04873397 1.959964 0.09551683 -0.04551683 0.1455168
+##                        CI        z    pvalue alternative
+## 1 0.05 [95CI -0.05; 0.15] 1.025978 0.3049018   two.sided
+## 
+## $call
+## propCI(n = 20, p = 0.05, alpha = 0.05)
+## 
+## attr(,&quot;measure&quot;)
+## [1] &quot;prop&quot;</code></pre>
+</div>
+</div>
+<div id="distribución-dirichlet-de-intervalo-de-confianza" class="section level2 hasAnchor" number="21.5">
+<h2><span class="header-section-number">21.5</span> Distribución Dirichlet de intervalo de confianza<a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sin embargo, ¿cómo se calcula el IC del 95% cuando hay más de 2 proporciones? Debido a que la proporción de todas las etapas depende de la proporción de las otras etapas, el análisis debe considerar la proporción y el IC del 95% debe incluir todas las etapas simultáneamente. La función requerida es la función de Dirichlet multinomial (multigrupo).</p>
+<p>La distribución de Dirichlet es una distribución de probabilidad continua multivariante que se utiliza para modelar la distribución de proporciones en un espacio de probabilidad. La distribución de Dirichlet es una generalización de la distribución beta a más de dos categorías. La distribución de Dirichlet se utiliza comúnmente en el análisis de datos de proporciones, como en el análisis de datos de composición, donde las proporciones de las categorías deben sumar uno.</p>
+<p>En el análisis estimamos los intervalos de confianza del 95% de la transición y estasis de plántulas a plántulas (50%), juveniles (20%), adultos (0%) y muerte (30%). Tenga en cuenta el gráfico del ciclo de vida que, como de costumbre, excluye la probabilidad de que mueran las plántulas.</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-1" tabindex="-1"></a>Dirichlet <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb377-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb377-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb377-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.3</span>, <span class="fl">0.7</span>)</span>
+<span id="cb377-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-5" tabindex="-1"></a>) <span class="co"># transition matrix</span></span>
+<span id="cb377-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-6" tabindex="-1"></a></span>
+<span id="cb377-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-7" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb377-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb377-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-9" tabindex="-1"></a></span>
+<span id="cb377-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb377-10" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Dirichlet, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-cf07a4af83c856b4ba2a" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-cf07a4af83c856b4ba2a">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"plantula\" -> \"plantula\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"plantula\" -> \"juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"juvenil\" -> \"adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.7\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Para evaluar el intervalo IC del 95% simultáneamente de las cuatro transiciones simultáneamente, usamos la <strong>library(MCMCpack)</strong>, que es un paquete dedicado a realizar simulaciones de <em>Markov Chain Monte Carlo</em>. Usaremos la función <em>MCmultinomdirichlet</em>. Tenga en cuenta que la primera lista son las proporciones que se muestran en la matriz para la etapa de plántula c(.50<em>n,.02</em>n,.0<em>n,.3</em>n) multiplicadas por el tamaño de la muestra n= 25. La segunda lista son los priores bayesianos c(0.5,0.2,0.0001,0.2999), en este caso asumí que la suma de los previos es igual a 1. Esto da como resultado una confianza muy baja en la percepción previa de lo que es la transiciones, Estamos dando muy poco peso a la percepción previa en los análisis. Otro tipo de previa para la transición es que sean iguales, sin embargo, podríamos haber usado c(1,1,0,.000001, 1), donde este previo sugiere una transición igual para todos menos las plántulas que hay muy poca probabilidad que crezcan hasta convertirse en adultos. IMPORTANTE: las previas deberian ser biologicamente realistas, usando lo conocido de la biología de los organismos que se estudian. Por experiencia y literatura se puede hacer un estimado de las transiciones y usarlo como previo. El concepto de lo anterior no se puede explicar completamente aquí, consulte las siguientes referencia <span class="citation">(<a href="#ref-tremblay2021population">Tremblay et al. 2021</a>; <a href="#ref-van2021bayesian">Schoot et al. 2021</a>)</span></p>
+<p>Los resultados en la figura muestran que hay mucha dispersión alrededor de la proporción media de las estadísticas y la transición como se esperaba debido al pequeño tamaño de la muestra.</p>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb378-1" tabindex="-1"></a><span class="fu">library</span>(MCMCpack)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb379-1" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb379-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb379-2" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">25</span></span>
+<span id="cb379-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb379-3" tabindex="-1"></a>L<span class="ot">=</span>posteriorPRIORL <span class="ot">&lt;-</span> <span class="fu">MCmultinomdirichlet</span>(<span class="fu">c</span>(.<span class="dv">50</span><span class="sc">*</span>n,.<span class="dv">2</span><span class="sc">*</span>n,.<span class="dv">0</span><span class="sc">*</span>n,.<span class="dv">3</span><span class="sc">*</span>n), <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">2</span>,<span class="fl">0.0001</span>,.<span class="dv">3</span>), <span class="at">mc=</span><span class="dv">10000</span>)</span>
+<span id="cb379-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb379-4" tabindex="-1"></a>dfL<span class="ot">=</span><span class="fu">as.data.frame</span>(L)</span>
+<span id="cb379-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb379-5" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">summary</span>(dfL))</span></code></pre></div>
+<pre><code>##                                                                      
+##      pi.1 Min.   :0.1523      1st Qu.:0.4342      Median :0.4999     
+##      pi.2 Min.   :0.02337     1st Qu.:0.14313     Median :0.19198    
+##      pi.3 Min.   :0.000e+00   1st Qu.:0.000e+00   Median :0.000e+00  
+##      pi.4 Min.   :0.06172     1st Qu.:0.23743     Median :0.29458    
+##                                                                      
+##      pi.1 Mean   :0.5003      3rd Qu.:0.5664      Max.   :0.8335     
+##      pi.2 Mean   :0.19964     3rd Qu.:0.24771     Max.   :0.56991    
+##      pi.3 Mean   :7.150e-07   3rd Qu.:0.000e+00   Max.   :5.291e-03  
+##      pi.4 Mean   :0.30002     3rd Qu.:0.35759     Max.   :0.64779</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-1" tabindex="-1"></a><span class="co">#head(dfL)</span></span>
+<span id="cb381-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-2" tabindex="-1"></a>stack_dfL<span class="ot">=</span><span class="fu">stack</span>(dfL)</span>
+<span id="cb381-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-3" tabindex="-1"></a>comb_dfbL<span class="ot">=</span> <span class="fu">cbind</span>(stack_dfL, <span class="at">T=</span><span class="st">&quot;25&quot;</span>)</span>
+<span id="cb381-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-4" tabindex="-1"></a></span>
+<span id="cb381-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-5" tabindex="-1"></a>All_Data3<span class="ot">=</span>comb_dfbL</span>
+<span id="cb381-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-6" tabindex="-1"></a><span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.1&quot;</span>]<span class="ot">=</span><span class="st">&quot;Plantulas&quot;</span></span>
+<span id="cb381-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-7" tabindex="-1"></a><span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.2&quot;</span>]<span class="ot">=</span><span class="st">&quot;Juvenil&quot;</span></span>
+<span id="cb381-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-8" tabindex="-1"></a><span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.3&quot;</span>]<span class="ot">=</span><span class="st">&quot;Adulto&quot;</span></span>
+<span id="cb381-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-9" tabindex="-1"></a><span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.4&quot;</span>]<span class="ot">=</span><span class="st">&quot;Muerto&quot;</span></span>
+<span id="cb381-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-10" tabindex="-1"></a></span>
+<span id="cb381-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-11" tabindex="-1"></a></span>
+<span id="cb381-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-12" tabindex="-1"></a></span>
+<span id="cb381-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-13" tabindex="-1"></a></span>
+<span id="cb381-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-14" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb381-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-15" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>All_Data3, <span class="fu">aes</span>(<span class="at">x=</span>values, <span class="at">fill=</span>ind, <span class="at">colour=</span>ind))<span class="sc">+</span></span>
+<span id="cb381-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-16" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">alpha=</span>.<span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb381-17"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-17" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limit=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">5.5</span>))<span class="sc">+</span></span>
+<span id="cb381-18"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-18" tabindex="-1"></a>  <span class="fu">scale_colour_hue</span>(<span class="at">l=</span><span class="dv">60</span>)<span class="sc">+</span></span>
+<span id="cb381-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-19" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>ind)<span class="sc">+</span></span>
+<span id="cb381-20"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-20" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;La distribución de las proporciones </span><span class="sc">\n</span><span class="st"> de plantulas que crecen a la siguiente etapas&quot;</span>)<span class="sc">+</span></span>
+<span id="cb381-21"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb381-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proporciones&quot;</span>)</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p>Ahora calculemos el IC del 95% de las transiciones</p>
+<ul>
+<li>Intervalos de confianza de transiciones, estasis y supervivencia basados en simulación y distribución de Dirichlet.</li>
+</ul>
+<p>Aspectos importantes a tener en cuenta.</p>
+<ul>
+<li>los IC del 95% están acotados entre 0 y 1. Los valores por debajo de cero o por encima de uno en los parámetros no tendrían sentido.</li>
+<li>la suma de la media es igual a 1.</li>
+<li>la suma de la mediana es igual a 1.</li>
+<li>la forma de la distribución NO se distribuye normalmente, ver figura anterior. La forma de la distribución se llama distribución beta.</li>
+</ul>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb382-1" tabindex="-1"></a><span class="fu">library</span>(plyr)</span>
+<span id="cb382-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb382-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;reshape2&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:reshape&#39;:
+## 
+##     colsplit, melt, recast</code></pre>
+<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     smiths</code></pre>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-1" tabindex="-1"></a>Transitions<span class="ot">=</span><span class="fu">ddply</span>(All_Data3, <span class="fu">c</span>(<span class="st">&quot;ind&quot;</span>), summarise,</span>
+<span id="cb386-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-2" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(values),<span class="dv">3</span>), <span class="at">sd =</span> <span class="fu">round</span>(<span class="fu">sd</span>(values),<span class="dv">4</span>),</span>
+<span id="cb386-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-3" tabindex="-1"></a>            <span class="at">median=</span> <span class="fu">median</span>(values),</span>
+<span id="cb386-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-4" tabindex="-1"></a>            <span class="co">#sem = round(sd(values)/sqrt(length(values)),6),</span></span>
+<span id="cb386-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-5" tabindex="-1"></a>            <span class="at">CI5 =</span> <span class="fu">quantile</span>(values, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>)),</span>
+<span id="cb386-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-6" tabindex="-1"></a>            <span class="at">CI95 =</span> <span class="fu">round</span>(<span class="fu">quantile</span>(values, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.95</span>)), <span class="dv">4</span>),</span>
+<span id="cb386-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-7" tabindex="-1"></a>            <span class="at">min=</span><span class="fu">min</span>(values),</span>
+<span id="cb386-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-8" tabindex="-1"></a>            <span class="at">max=</span><span class="fu">max</span>(values)</span>
+<span id="cb386-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-9" tabindex="-1"></a>            )</span>
+<span id="cb386-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-10" tabindex="-1"></a></span>
+<span id="cb386-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-11" tabindex="-1"></a>Transitions</span></code></pre></div>
+<pre><code>##         ind mean     sd    median        CI5   CI95        min         max
+## 1 Plantulas  0.5 0.0958 0.4998927 0.34287628 0.6586 0.15234749 0.833458812
+## 2   Juvenil  0.2 0.0766 0.1919797 0.08689021 0.3394 0.02336568 0.569906788
+## 3    Adulto  0.0 0.0001 0.0000000 0.00000000 0.0000 0.00000000 0.005290771
+## 4    Muerto  0.3 0.0885 0.2945777 0.16374761 0.4541 0.06172021 0.647791265</code></pre>
+<hr />
+<div id="tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250" class="section level3 hasAnchor" number="21.5.1">
+<h3><span class="header-section-number">21.5.1</span> Tamaño de muestra y estimaciones de intervalos de confianza con n=250<a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para comparar con el ejemplo anterior asumimos que en lado de tener solamente 25 plantas teníamos 250 plantas para los estimados.</p>
+<p>Nota que la mediana sigue en el mismo lugar (casi) pero los IC cambian mucho y es más reducido, ya que con más datos en el muestreo resulta en más confianza y reducción en el IC. Este análisis es primordial para entender la confianza que uno debería tener sobre los estimados de los parámetros de la matriz. Un ejemplo si se observa un IC muy grande eso pudiese ser utilizado para modificar la recolección de datos en el campo para aumentar el tamaño de muestra de esa etapa de vida.</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb388-1" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">250</span></span>
+<span id="cb388-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb388-2" tabindex="-1"></a>L<span class="ot">=</span>posteriorPRIORL <span class="ot">&lt;-</span> <span class="fu">MCmultinomdirichlet</span>(<span class="fu">c</span>(.<span class="dv">50</span><span class="sc">*</span>b,.<span class="dv">2</span><span class="sc">*</span>b,.<span class="dv">0</span><span class="sc">*</span>b,.<span class="dv">3</span><span class="sc">*</span>b), <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">2</span>,<span class="fl">0.0001</span>,.<span class="dv">3</span>), <span class="at">mc=</span><span class="dv">10000</span>)</span>
+<span id="cb388-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb388-3" tabindex="-1"></a>dfL<span class="ot">=</span><span class="fu">as.data.frame</span>(L)</span>
+<span id="cb388-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb388-4" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">summary</span>(dfL))</span></code></pre></div>
+<pre><code>##                                                                      
+##      pi.1 Min.   :0.3624      1st Qu.:0.4790      Median :0.5000     
+##      pi.2 Min.   :0.1258      1st Qu.:0.1820      Median :0.1993     
+##      pi.3 Min.   :0.000e+00   1st Qu.:0.000e+00   Median :0.000e+00  
+##      pi.4 Min.   :0.1988      1st Qu.:0.2799      Median :0.2991     
+##                                                                      
+##      pi.1 Mean   :0.5003      3rd Qu.:0.5217      Max.   :0.6074     
+##      pi.2 Mean   :0.1999      3rd Qu.:0.2166      Max.   :0.3036     
+##      pi.3 Mean   :4.520e-07   3rd Qu.:0.000e+00   Max.   :3.357e-03  
+##      pi.4 Mean   :0.2998      3rd Qu.:0.3192      Max.   :0.4082</code></pre>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-1" tabindex="-1"></a><span class="co">#head(dfL)</span></span>
+<span id="cb390-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-2" tabindex="-1"></a>stack_dfL<span class="ot">=</span><span class="fu">stack</span>(dfL)</span>
+<span id="cb390-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-3" tabindex="-1"></a>comb_dfbL<span class="ot">=</span> <span class="fu">cbind</span>(stack_dfL, <span class="at">T=</span><span class="st">&quot;25&quot;</span>)</span>
+<span id="cb390-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-4" tabindex="-1"></a></span>
+<span id="cb390-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-5" tabindex="-1"></a>All_Data4<span class="ot">=</span>comb_dfbL</span>
+<span id="cb390-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-6" tabindex="-1"></a><span class="fu">levels</span>(All_Data4<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.1&quot;</span>]<span class="ot">=</span><span class="st">&quot;Plantulas&quot;</span></span>
+<span id="cb390-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-7" tabindex="-1"></a><span class="fu">levels</span>(All_Data4<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.2&quot;</span>]<span class="ot">=</span><span class="st">&quot;Juvenil&quot;</span></span>
+<span id="cb390-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-8" tabindex="-1"></a><span class="fu">levels</span>(All_Data4<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.3&quot;</span>]<span class="ot">=</span><span class="st">&quot;Adulto&quot;</span></span>
+<span id="cb390-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-9" tabindex="-1"></a><span class="fu">levels</span>(All_Data4<span class="sc">$</span>ind)[<span class="fu">levels</span>(All_Data3<span class="sc">$</span>ind)<span class="sc">==</span><span class="st">&quot;pi.4&quot;</span>]<span class="ot">=</span><span class="st">&quot;Muerto&quot;</span></span>
+<span id="cb390-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-10" tabindex="-1"></a></span>
+<span id="cb390-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-11" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb390-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>All_Data4, <span class="fu">aes</span>(<span class="at">x=</span>values, <span class="at">fill=</span>ind, <span class="at">colour=</span>ind))<span class="sc">+</span></span>
+<span id="cb390-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-13" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">alpha=</span>.<span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb390-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-14" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limit=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">18</span>))<span class="sc">+</span></span>
+<span id="cb390-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-15" tabindex="-1"></a>  <span class="fu">scale_colour_hue</span>(<span class="at">l=</span><span class="dv">60</span>)<span class="sc">+</span></span>
+<span id="cb390-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb390-16" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>ind)</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+</div>
+<div id="los-estimados-de-intervalo-de-camfianza" class="section level3 hasAnchor" number="21.5.2">
+<h3><span class="header-section-number">21.5.2</span> Los estimados de Intervalo de camfianza<a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-1" tabindex="-1"></a><span class="fu">library</span>(plyr)</span>
+<span id="cb391-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb391-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-3" tabindex="-1"></a></span>
+<span id="cb391-4"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-4" tabindex="-1"></a>Transitions<span class="ot">=</span><span class="fu">ddply</span>(All_Data4, <span class="fu">c</span>(<span class="st">&quot;ind&quot;</span>), summarise,</span>
+<span id="cb391-5"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-5" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(values),<span class="dv">3</span>), <span class="at">sd =</span> <span class="fu">round</span>(<span class="fu">sd</span>(values),<span class="dv">4</span>),</span>
+<span id="cb391-6"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-6" tabindex="-1"></a>            <span class="at">median=</span> <span class="fu">median</span>(values),</span>
+<span id="cb391-7"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-7" tabindex="-1"></a>            <span class="co">#sem = round(sd(values)/sqrt(length(values)),6),</span></span>
+<span id="cb391-8"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-8" tabindex="-1"></a>            <span class="at">CI5 =</span> <span class="fu">quantile</span>(values, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>)),</span>
+<span id="cb391-9"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-9" tabindex="-1"></a>            <span class="at">CI95 =</span> <span class="fu">round</span>(<span class="fu">quantile</span>(values, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.95</span>)), <span class="dv">4</span>),</span>
+<span id="cb391-10"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-10" tabindex="-1"></a>            <span class="at">min=</span><span class="fu">min</span>(values),</span>
+<span id="cb391-11"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-11" tabindex="-1"></a>            <span class="at">max=</span><span class="fu">max</span>(values)</span>
+<span id="cb391-12"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-12" tabindex="-1"></a>            )</span>
+<span id="cb391-13"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-13" tabindex="-1"></a></span>
+<span id="cb391-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb391-14" tabindex="-1"></a>Transitions</span></code></pre></div>
+<pre><code>##    ind mean     sd    median       CI5   CI95       min         max
+## 1 pi.1  0.5 0.0314 0.4999632 0.4491278 0.5525 0.3624127 0.607409659
+## 2 pi.2  0.2 0.0250 0.1992681 0.1601248 0.2418 0.1257887 0.303590491
+## 3 pi.3  0.0 0.0000 0.0000000 0.0000000 0.0000 0.0000000 0.003356622
+## 4 pi.4  0.3 0.0290 0.2990870 0.2534125 0.3483 0.1987990 0.408244668</code></pre>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-arditti2000numerical" class="csl-entry">
+Arditti, J, and AKA Ghani. 2000. <span>“Numerical and Physical Properties of Orchid Seeds and Their Biological Implications (Vol 145, Pg 367, 2000).”</span> <em>New Phytologist</em> 146 (3): 569–69.
+</div>
+<div id="ref-batty2006situ" class="csl-entry">
+Batty, AL, MC Brundrett, KW Dixon, and Krishnapillai Sivasithamparam. 2006. <span>“In Situ Symbiotic Seed Germination and Propagation of Terrestrial Orchid Seedlings for Establishment at Field Sites.”</span> <em>Australian Journal of Botany</em> 54 (4): 375–81.
+</div>
+<div id="ref-callaway2002epiphyte" class="csl-entry">
+Callaway, Ragan M, Kurt O Reinhart, Georgianne W Moore, Darrin J Moore, and Steven C Pennings. 2002. <span>“Epiphyte Host Preferences and Host Traits: Mechanisms for Species-Specific Interactions.”</span> <em>Oecologia</em> 132: 221–30.
+</div>
+<div id="ref-caswell2000matrix" class="csl-entry">
+———. 2000. <em>Matrix Population Models</em>. Vol. 1. Sinauer Sunderland, MA.
+</div>
+<div id="ref-gascoigne2023standard" class="csl-entry">
+Gascoigne, Samuel J. L., Simon Rolph, Daisy Sankey, Nagalakshmi Nidadavolu, Adrian S. Stell Pičman, Christina M. Hernández, Matthew E. R. Philpott, et al. 2023. <span>“A Standard Protocol to Report Discrete Stage-Structured Demographic Information.”</span> <em>Methods in Ecology and Evolution</em>.
+</div>
+<div id="ref-gonzalez2024host" class="csl-entry">
+González-Orellana, Normandie, Aragne Salazar Mendoza, Raymond L Tremblay, and James D Ackerman. 2024. <span>“Host Suitability for Germination Differs from That of Later Stages of Development in a Rare Epiphytic Orchid.”</span> <em>Lankesteriana: International Journal on Orchidology</em>, 93–114.
+</div>
+<div id="ref-iralu2019ecology" class="csl-entry">
+Iralu, Viheno, Humayun Samir Ahmed Barbhuyan, and Krishna Upadhaya. 2019. <span>“Ecology of Seed Germination in Threatened Trees: A Review.”</span> <em>Energy, Ecology and Environment</em> 4: 189–210.
+</div>
+<div id="ref-pellegrino2014effects" class="csl-entry">
+Pellegrino, Giuseppe, and Francesca Bellusci. 2014. <span>“Effects of Human Disturbance on Reproductive Success and Population Viability of Serapias Cordigera (Orchidaceae).”</span> <em>Botanical Journal of the Linnean Society</em> 176 (3): 408–20.
+</div>
+<div id="ref-rasmussen2015germination" class="csl-entry">
+Rasmussen, Hanne N, Kingsley W Dixon, Jana Jersáková, and Tamara Těšitelová. 2015. <span>“Germination and Seedling Establishment in Orchids: A Complex of Requirements.”</span> <em>Annals of Botany</em> 116 (3): 391–402.
+</div>
+<div id="ref-rasmussen1993seed" class="csl-entry">
+Rasmussen, Hanne N, and Dennis F Whigham. 1993. <span>“Seed Ecology of Dust Seeds in Situ: A New Study Technique and Its Application in Terrestrial Orchids.”</span> <em>American Journal of Botany</em> 80 (12): 1374–78.
+</div>
+<div id="ref-van2021bayesian" class="csl-entry">
+Schoot, Rens van de, Sarah Depaoli, Ruth King, Bianca Kramer, Kaspar Märtens, Mahlet G Tadesse, Marina Vannucci, et al. 2021. <span>“Bayesian Statistics and Modelling.”</span> <em>Nature Reviews Methods Primers</em> 1 (1): 1.
+</div>
+<div id="ref-shao2024improved" class="csl-entry">
+Shao, Shi-Cheng, Hans Jacquemyn, and Marc-Andre Selosse. 2024. <span>“Improved Use of Mycorrhizal Fungi for Upscaling of Orchid Cultivation and Population Restoration of Endangered Orchids in China.”</span> <em>Symbiosis</em>, 1–10.
+</div>
+<div id="ref-torres2015seed" class="csl-entry">
+Torres, Ana Delia, Juan Manuel Cellini, Marı́a Vanessa Lencinas, Marcelo Daniel Barrera, Rosina Soler, Ricardo Dı́az Delgado, and Guillermo Martı́nez Pastur. 2015. <span>“Seed Production and Recruitment in Primary and Harvested Nothofagus Pumilio Forests: Influence of Regional Climate and Years After Cuttings.”</span> <em>Forest Systems</em> 24.
+</div>
+<div id="ref-tremblay2021population" class="csl-entry">
+Tremblay, Raymond L, Andrew J Tyre, Maria-Eglée Pérez, and James D Ackerman. 2021. <span>“Population Projections from Holey Matrices: Using Prior Information to Estimate Rare Transition Events.”</span> <em>Ecological Modelling</em> 447: 109526.
+</div>
+<div id="ref-whigham2006seed" class="csl-entry">
+Whigham, Dennis F, John P O’Neill, Hanne N Rasmussen, Bruce A Caldwell, and Melissa K McCormick. 2006. <span>“Seed Longevity in Terrestrial Orchids–Potential for Persistent in Situ Seed Banks.”</span> <em>Biological Conservation</em> 129 (1): 24–30.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="nhora.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diferentes_componentes_de_ciclo_de_vida.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/21-Impacto_de_Datos_sin_Sentido.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/21-Impacto_de_Datos_sin_Sentido.Rmd",
+"text": null
+},
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
