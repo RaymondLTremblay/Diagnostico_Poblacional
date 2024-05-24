@@ -94,6 +94,7 @@ En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo 
 
 
 Cual son los tamaños de muestra típica en los estudios de orquídeas?
+Recopilado por Fabiola Hernández-Ramirez
 
 Hacer una lista de algunas especies de orquídeas y sus tamaños de muestra.
 
@@ -215,7 +216,7 @@ stages <- c("latente", "plantulas", "vegetativa", "adulto")
 
 plot_life_cycle(SerapiaA, stages=stages)
 
-# Tenga en cuenta que la suma de supervivencia para la etapa inactiva es mayor que 1, igual a 1.01
+# Tenga en cuenta que la suma de supervivencia para la etapa inicial es mayor de 1, igual a 1.01
 
 ```
 

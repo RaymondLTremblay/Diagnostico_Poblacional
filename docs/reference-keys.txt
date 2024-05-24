@@ -103,11 +103,9 @@ dinámica-transitoria-transient-dynamics
 dinámica-poblacional-de-largo-y-corto-plazo
 proyecto-de-dinamica-transitoria-o-de-corto-plazo
 part-i-dinámica-poblacional-de-largo-plazo
+librerías-de-r-requeridas-para-el-análisis
 paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0
 capturar-y-obtener-el-vector-inicial-datos-de-campo-de-clases-de-estado-población-1
-definición-de-términos-ergodicidad-irrecucible-y-primitiva
-a-ergodicidad
-b-irreducible
 crecimiento-asintótico
 estructura-estable
 valores-reproductivos
