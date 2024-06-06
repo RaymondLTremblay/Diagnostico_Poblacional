@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 14 Elasticidad no lineal | Dinamica_Poblacional</title>
+  <title>Capítulo 13 Dinámica transitoria (Transient dynamics) | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 14 Elasticidad no lineal | Dinamica_Poblacional" />
+  <meta property="og:title" content="Capítulo 13 Dinámica transitoria (Transient dynamics) | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 14 Elasticidad no lineal | Dinamica_Poblacional" />
+  <meta name="twitter:title" content="Capítulo 13 Dinámica transitoria (Transient dynamics) | Dinamica_Poblacional" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dinámica-transitoria-transient-dynamics-1.html"/>
-<link rel="next" href="ltre.html"/>
+<link rel="prev" href="dinámica-transitoria-transient-dynamics.html"/>
+<link rel="next" href="elasticidad-no-lineal.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -548,339 +548,17 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="elasticidad-no-lineal" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">Capítulo 14</span> Elasticidad no lineal<a href="elasticidad-no-lineal.html#elasticidad-no-lineal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="por-raymond-l.-tremblay" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> Por : Raymond L. Tremblay<a href="elasticidad-no-lineal.html#por-raymond-l.-tremblay" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="la-elasticidad-no-lineal" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">14.2</span> La elasticidad no lineal<a href="elasticidad-no-lineal.html#la-elasticidad-no-lineal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La elasticidad no lineal (<span class="citation">Hodgson and Townley (<a href="#ref-hodgson2004methodological">2004</a>)</span>) se refiere a que los analisis de elasticidad (<span class="citation">Caswell (<a href="#ref-caswell2000matrix">2000</a>)</span>, <span class="citation">De Kroon, Van Groenendael, and Ehrlén (<a href="#ref-de2000elasticities">2000</a>)</span>) como explicado en el capitulo xx no son estrictamente lineal y que las perturbaciones en una población pueden tener efectos no lineales en las respuestas de los parametros de densidad o indices de crecimientos. Esos cambios no lineales se pueden observar tambien en la dinamica de transiciones. Si las perturbaciones son pequeñas el uso de analisis de elasticidad pudiesen ser aceptable, por consecuencia los efectos no lineales pueden ser ignorados, pero si las perturbaciones son grandes, los efectos no lineales pueden ser importantes y impactar los procesos de dinamica poblacionales. En los analisis de dinamica poblacional estamos interesado a no solamente el crecimiento de la poblacion pero que pudiese pasar si hubiese cambios pequeños y grandes en los parametros de la matriz sobre los indices de crecimiento y densidad poblacional tal como la supervivencia, crecimiento y fecundidad. La elasticidad no lineal es una herramienta que permite evaluar esos cambios que sean por causa naturales tal como variación ambientales (succesión, dezlisamiento de terreno, mortandad de forofito, cambio climatologico), o antropogénicos (extración de individuos o hasta manejo del sitio para promover el crecimiento de la población).</p>
-<p>Es importante reconocer que los analisis de elasticidad y sensitividad ignoran los efectos de la dinamica de transiciones y provee una aproximación linear de cambios que muchas veces no son lineales (<span class="citation">Stott, Hodgson, and Townley (<a href="#ref-stott2012beyond">2012a</a>)</span>).</p>
-<p>La elasticidad no lineal es una herramienta que permite evaluar esos cambios que sean por causa naturales tal como variación ambientales (succesión, dezlisamiento de terreno, mortandad de forofito, cambio climatologico), o antropogénicos (extración de individuos o hasta manejo del sitio para promover el crecimiento de la población).</p>
-</div>
-<div id="metodología" class="section level2 hasAnchor" number="14.3">
-<h2><span class="header-section-number">14.3</span> Metodología<a href="elasticidad-no-lineal.html#metodología" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El método que presentamos aqui es el desarollado por Hodgson y Townley (2004) (<span class="citation">Hodgson and Townley (<a href="#ref-hodgson2004methodological">2004</a>)</span>, <span class="citation">Stott, Hodgson, and Townley (<a href="#ref-stott2012beyond">2012a</a>)</span>), los cuales presentan un método para calcular la elasticidad no lineal. No se discutirá en detalle el método, pero se presentará un ejemplo de como calcular la elasticidad no lineal.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="elasticidad-no-lineal.html#cb166-1" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span></code></pre></div>
-</div>
-<div id="ejemplo-tradicional" class="section level2 hasAnchor" number="14.4">
-<h2><span class="header-section-number">14.4</span> Ejemplo tradicional<a href="elasticidad-no-lineal.html#ejemplo-tradicional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Aqui la matriz de lefkovitch para la planta <em>Lepanthes rubripetala</em> (Tremblay et al. 2015) es presentada.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="elasticidad-no-lineal.html#cb167-1" tabindex="-1"></a><span class="co">#Capturar los datos de la matriz para L. rubripetala (Tremblay et al. 2015)</span></span>
-<span id="cb167-2"><a href="elasticidad-no-lineal.html#cb167-2" tabindex="-1"></a>Lr1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.4324</span>, <span class="dv">0</span>,      <span class="dv">0</span>,     <span class="fl">0.15</span>,</span>
-<span id="cb167-3"><a href="elasticidad-no-lineal.html#cb167-3" tabindex="-1"></a>               <span class="fl">0.3784</span>, <span class="fl">0.8459</span>, <span class="dv">0</span>,     <span class="dv">0</span>,</span>
-<span id="cb167-4"><a href="elasticidad-no-lineal.html#cb167-4" tabindex="-1"></a>               <span class="dv">0</span>,      <span class="fl">0.0034</span>, <span class="fl">0.7954</span>,<span class="fl">0.2300</span>,</span>
-<span id="cb167-5"><a href="elasticidad-no-lineal.html#cb167-5" tabindex="-1"></a>               <span class="dv">0</span>,      <span class="fl">0.0890</span>, <span class="fl">0.1841</span>,<span class="fl">0.7510</span>), <span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">ncol=</span><span class="dv">4</span>)</span>
-<span id="cb167-6"><a href="elasticidad-no-lineal.html#cb167-6" tabindex="-1"></a></span>
-<span id="cb167-7"><a href="elasticidad-no-lineal.html#cb167-7" tabindex="-1"></a><span class="co">#Capturar las categorias de estado</span></span>
-<span id="cb167-8"><a href="elasticidad-no-lineal.html#cb167-8" tabindex="-1"></a>estadios <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;PL&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;NR&quot;</span>, <span class="st">&quot;AR&quot;</span>)</span>
-<span id="cb167-9"><a href="elasticidad-no-lineal.html#cb167-9" tabindex="-1"></a><span class="fu">colnames</span>(Lr1) <span class="ot">&lt;-</span> <span class="fu">rownames</span>(Lr1) <span class="ot">&lt;-</span> estadios</span>
-<span id="cb167-10"><a href="elasticidad-no-lineal.html#cb167-10" tabindex="-1"></a></span>
-<span id="cb167-11"><a href="elasticidad-no-lineal.html#cb167-11" tabindex="-1"></a><span class="co">#Obtener la matriz L. rubripetala </span></span>
-<span id="cb167-12"><a href="elasticidad-no-lineal.html#cb167-12" tabindex="-1"></a>Lr1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(Lr1[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, ], <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">dimnames =</span> <span class="fu">list</span>(estadios, estadios))</span>
-<span id="cb167-13"><a href="elasticidad-no-lineal.html#cb167-13" tabindex="-1"></a>Lr1</span></code></pre></div>
-<pre><code>##        PL      J     NR    AR
-## PL 0.4324 0.0000 0.0000 0.150
-## J  0.3784 0.8459 0.0000 0.000
-## NR 0.0000 0.0034 0.7954 0.230
-## AR 0.0000 0.0890 0.1841 0.751</code></pre>
-<p>Aqui la matriz de elasticad calculado anteriormente.</p>
-<p>Nota que la suma de todos los elementos de la matriz de elasticidad. Proporcionalmente el cambio de la supervivencia de el estado de Adulto Reproductivo (AR) tiene el mayor impacto sobre la tasa de crecimiento poblacional. Un pequeño cambio resultaria en un cambio de 0.311 en la tasa de crecimiento poblacional. Al contrario una plantula que se queda plantula (estasis) tuviese muy poco impacto en el crecimiento de la población (0.018). Esos cambios son lineales y son validos si las perturbaciones son pequeñas. Recordar que los indices de sensitividad para tansiciones y estasis son en unidades diferentes que los fecundidades.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="elasticidad-no-lineal.html#cb169-1" tabindex="-1"></a> <span class="co"># Matriz de elasticidad</span></span>
-<span id="cb169-2"><a href="elasticidad-no-lineal.html#cb169-2" tabindex="-1"></a>elasticidad<span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">elas</span>(Lr1), <span class="at">digit =</span> <span class="dv">3</span>)</span>
-<span id="cb169-3"><a href="elasticidad-no-lineal.html#cb169-3" tabindex="-1"></a></span>
-<span id="cb169-4"><a href="elasticidad-no-lineal.html#cb169-4" tabindex="-1"></a>elasticidad</span></code></pre></div>
-<pre><code>##       PL     J    NR    AR
-## PL 0.018 0.000 0.000 0.023
-## J  0.023 0.122 0.000 0.000
-## NR 0.000 0.001 0.313 0.083
-## AR 0.000 0.023 0.083 0.311</code></pre>
-</div>
-<div id="valor-biológico" class="section level2 hasAnchor" number="14.5">
-<h2><span class="header-section-number">14.5</span> Valor biológico<a href="elasticidad-no-lineal.html#valor-biológico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="métodos-de-calculo" class="section level2 hasAnchor" number="14.6">
-<h2><span class="header-section-number">14.6</span> Métodos de calculo<a href="elasticidad-no-lineal.html#métodos-de-calculo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En el paquete de R <code>popdemo</code> se puede calcular la elasticidad no lineal <em>transfer function</em> con la función <strong>tfam_lambda</strong> y <strong>tfam_inertia</strong>. La función <strong>tfam_lambda</strong> calcula la elasticidad no lineal.</p>
-<p>La función <strong>tfam_lambda</strong> calcula la elasticidad no lineal de la matriz de edad o de etapas de cada elemento de la matriz A que no sean 0 (zero). Esa función es practica para vizualizar como las perturbaciones en las transiciones del ciclo de vida impacto lambda y observar la no-linealidad de los efectos.</p>
-<p>De las 10 transiciones , estasis o fecundidad, 9 tienen un efecto no lineal sobre lambda. Nota primero que el rango de los ejes de “x” (efecto de perturbaciones) y la “y” el crecimiento porblacional intrinsico varia por cada grafico. La transición de plantula a plantula tiene efecto no lineal sobre lambda bastante pronunciado (primer cuadro a la izquierda primera fila). Se observa que aumentar la proporción de individuos que se quedan en esta etapa no tiene mucho efecto hasta que la perturbación aumenta de ± .5, y despues el efecto es bastante consistente.</p>
-<p>La transición de juvenil a no reproductivo tiene un efecto no lineal sobre lambda. La transición de juvenil a adulto reproductivo tiene un efecto no lineal sobre lambda. La transición de no reproductivo a adulto reproductivo tiene un efecto no lineal</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="elasticidad-no-lineal.html#cb171-1" tabindex="-1"></a>n0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">38</span>, <span class="dv">82</span>)</span>
-<span id="cb171-2"><a href="elasticidad-no-lineal.html#cb171-2" tabindex="-1"></a></span>
-<span id="cb171-3"><a href="elasticidad-no-lineal.html#cb171-3" tabindex="-1"></a>tfmat_lamb<span class="ot">=</span><span class="fu">tfam_lambda</span>(Lr1)</span>
-<span id="cb171-4"><a href="elasticidad-no-lineal.html#cb171-4" tabindex="-1"></a></span>
-<span id="cb171-5"><a href="elasticidad-no-lineal.html#cb171-5" tabindex="-1"></a><span class="fu">plot</span>(tfmat_lamb)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-<p>sens1=sens(Lr1)[1,1]
-sens1</p>
-<p>abline(eigs(Lr1, “lambda”), sens1, lty=2)</p>
-<p>La función <strong>tfam_inertia</strong> calcula la cuan grande o pequeña una población que no este a su equilibro estable puede ser perturbada por consecuencia de dinamica de transiciones. Stott y colegas (<span class="citation">Stott, Hodgson, and Townley (<a href="#ref-stott2012beyond">2012a</a>)</span>) presentan no solamente que el efecto de perturbaciones no es lineal sobre el cambio en lambda pero tambien sobre la inertia, entonces el efecto que tiene sobre poblaciones que no esten a su equilibrio estable.</p>
-<p>Usamos la misma temrinalogía de Stott (<span class="citation">Stott, Hodgson, and Townley (<a href="#ref-stott2012beyond">2012a</a>)</span>) para calcular el efecto de elasticidad sobre la inertia de la matriz de <em>L. rubripetala</em>. Se evalua el efecto del basado en la estructura del vector de estado inicial. En otra palabra si la cantidad de individuos se encuentra en un estado especifico. El “upper” seria los individuos en la etapa mayor (en este caso los adultos reproductivos), el “lower” en la estapa menor (en las plantulas) y una estructura de población en al inicio del estudio.</p>
-<p>Para evaluar el efecto de no lineal de</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="elasticidad-no-lineal.html#cb172-1" tabindex="-1"></a>n0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">38</span>, <span class="dv">82</span>)</span>
-<span id="cb172-2"><a href="elasticidad-no-lineal.html#cb172-2" tabindex="-1"></a></span>
-<span id="cb172-3"><a href="elasticidad-no-lineal.html#cb172-3" tabindex="-1"></a>tf2<span class="ot">&lt;-</span><span class="fu">tfa_inertia</span>(Lr1, <span class="at">vector=</span>n0, <span class="at">d=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">prange=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.18</span>,<span class="fl">0.02</span>,<span class="fl">0.01</span>))</span>
-<span id="cb172-4"><a href="elasticidad-no-lineal.html#cb172-4" tabindex="-1"></a><span class="fu">plot</span>(tf2,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>),<span class="at">main=</span><span class="st">&quot;Population inertia&quot;</span>,<span class="at">cex.axis=</span><span class="fl">1.4</span>,<span class="at">cex.lab=</span><span class="fl">1.5</span>)</span>
-<span id="cb172-5"><a href="elasticidad-no-lineal.html#cb172-5" tabindex="-1"></a>inertia<span class="ot">&lt;-</span><span class="fu">inertia</span>(Lr1, <span class="at">vector=</span>n0)</span>
-<span id="cb172-6"><a href="elasticidad-no-lineal.html#cb172-6" tabindex="-1"></a>sens2<span class="ot">&lt;-</span><span class="fu">tfs_inertia</span>(Lr1, <span class="at">vector=</span>n0, <span class="at">d=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">tolerance=</span><span class="fl">1e-5</span>)</span>
-<span id="cb172-7"><a href="elasticidad-no-lineal.html#cb172-7" tabindex="-1"></a><span class="fu">abline</span>(inertia, sens2, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="elasticidad-no-lineal.html#cb173-1" tabindex="-1"></a>n0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">38</span>, <span class="dv">82</span>)</span>
-<span id="cb173-2"><a href="elasticidad-no-lineal.html#cb173-2" tabindex="-1"></a></span>
-<span id="cb173-3"><a href="elasticidad-no-lineal.html#cb173-3" tabindex="-1"></a>tfmatU<span class="ot">=</span><span class="fu">tfam_inertia</span>(Lr1, <span class="at">bound =</span> <span class="st">&quot;upper&quot;</span>)</span>
-<span id="cb173-4"><a href="elasticidad-no-lineal.html#cb173-4" tabindex="-1"></a>tfmat_I<span class="ot">=</span><span class="fu">tfam_inertia</span>(Lr1, <span class="at">vector =</span> n0)</span>
-<span id="cb173-5"><a href="elasticidad-no-lineal.html#cb173-5" tabindex="-1"></a>tfmatL<span class="ot">=</span><span class="fu">tfam_inertia</span>(Lr1, <span class="at">bound =</span> <span class="st">&quot;lower&quot;</span>)</span>
-<span id="cb173-6"><a href="elasticidad-no-lineal.html#cb173-6" tabindex="-1"></a><span class="fu">plot</span>(tfmatU)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="elasticidad-no-lineal.html#cb174-1" tabindex="-1"></a><span class="fu">plot</span>(tfmat_I)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="elasticidad-no-lineal.html#cb175-1" tabindex="-1"></a><span class="fu">plot</span>(tfmatL)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-20-3.png" width="672" /></p>
-</div>
-<div id="paquete-de-r-para-calcular-le-eslaticidad-no-lineal" class="section level2 hasAnchor" number="14.7">
-<h2><span class="header-section-number">14.7</span> Paquete de R para calcular le eslaticidad no lineal<a href="elasticidad-no-lineal.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="referencias-3" class="section level2 hasAnchor" number="14.8">
-<h2><span class="header-section-number">14.8</span> Referencias<a href="elasticidad-no-lineal.html#referencias-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Índices de transferencia</em>. Con el fin de evaluar en el corto plazo qué cambios cuantitativos habría en la población como respuesta ante una perturbación determinada, se calculan los límites de la dinámica transitoria a través de los <em>Índices de transferencia</em>, que incluyen los siguiente tres parámetros (Stoot et al. 2012):</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><em>Reactividad alta y Reactividad baja</em> (Upper reactivity y Lower reactivity) que representan el crecimiento o el decremento inmediato (i.e. primer intervalo de tiempo) de la población antes de alcanzar la tasa constante de crecimiento poblacional.</p></li>
-<li><p><em>Máxima amplificación/Máxima atenuación</em> (Maximum amplification/Maximum attenuation) que indican,respectivamente, el incremento o decremento máximo futuro del crecimiento poblacional previo a alcanzar la tasa constante de crecimiento poblacional.</p></li>
-<li><p><em>Inercia alta e Inercia baja</em> (Upper inertia y Lower inertia) que evalúan el límite más alto o el más bajo en el crecimiento de la población antes de alcanzar la tasa constante de crecimiento poblacional, respectivamente.</p></li>
-</ol>
-</div>
-<div id="funciones-de-transferencia" class="section level2 hasAnchor" number="14.9">
-<h2><span class="header-section-number">14.9</span> Funciones de transferencia<a href="elasticidad-no-lineal.html#funciones-de-transferencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Finalmente, el cálculo de las funciones de transferencia representa el último paso en análisis de dinámica transitoria establecido por Stott y colaboradores (2012). A través de estas ecuaciones se evalúa la elasticidad o efecto de la perturbación sobre la dinámica poblacional. A diferencia de las matrices de elasticidad de los modelos de proyección poblacional, estas elasticidades no son lineales y evidencian la importancia relativa de la de la perturbación en la categoría de tamaño/estado sobre el crecimiento de la población en el corto plazo. Estas ecuaciones también están disponibles en el programa <em>Popdemo</em> de <em>R</em> y sus resultados se representan a través de gráficas.</p>
-<p>La perturbación de la estructura está determinada ppor dos vectores <em>d</em> y <em>e</em></p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="elasticidad-no-lineal.html#cb176-1" tabindex="-1"></a><span class="do">##PASO 6: ANALISIS DE LAS FUNCIONES DE TRANSFERENCIA </span></span>
-<span id="cb176-2"><a href="elasticidad-no-lineal.html#cb176-2" tabindex="-1"></a><span class="co">#Establecer márgenes:</span></span>
-<span id="cb176-3"><a href="elasticidad-no-lineal.html#cb176-3" tabindex="-1"></a><span class="co">#Vector original</span></span>
-<span id="cb176-4"><a href="elasticidad-no-lineal.html#cb176-4" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span>
-<span id="cb176-5"><a href="elasticidad-no-lineal.html#cb176-5" tabindex="-1"></a></span>
-<span id="cb176-6"><a href="elasticidad-no-lineal.html#cb176-6" tabindex="-1"></a>nLr0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">38</span>, <span class="dv">82</span>)</span>
-<span id="cb176-7"><a href="elasticidad-no-lineal.html#cb176-7" tabindex="-1"></a></span>
-<span id="cb176-8"><a href="elasticidad-no-lineal.html#cb176-8" tabindex="-1"></a><span class="co">#PERTURBACIÓN DEL VECTOR ORIGINAL</span></span>
-<span id="cb176-9"><a href="elasticidad-no-lineal.html#cb176-9" tabindex="-1"></a></span>
-<span id="cb176-10"><a href="elasticidad-no-lineal.html#cb176-10" tabindex="-1"></a><span class="co">#1) Entrada de la matriz a(1,1): plántulas a plántulas</span></span>
-<span id="cb176-11"><a href="elasticidad-no-lineal.html#cb176-11" tabindex="-1"></a>tf1 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb176-12"><a href="elasticidad-no-lineal.html#cb176-12" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb176-13"><a href="elasticidad-no-lineal.html#cb176-13" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="fl">0.01</span>))</span>
-<span id="cb176-14"><a href="elasticidad-no-lineal.html#cb176-14" tabindex="-1"></a></span>
-<span id="cb176-15"><a href="elasticidad-no-lineal.html#cb176-15" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb176-16"><a href="elasticidad-no-lineal.html#cb176-16" tabindex="-1"></a><span class="fu">plot</span>(tf1, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb176-17"><a href="elasticidad-no-lineal.html#cb176-17" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Plántulas - Plántulas)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb176-18"><a href="elasticidad-no-lineal.html#cb176-18" tabindex="-1"></a></span>
-<span id="cb176-19"><a href="elasticidad-no-lineal.html#cb176-19" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb176-20"><a href="elasticidad-no-lineal.html#cb176-20" tabindex="-1"></a>lambda1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb176-21"><a href="elasticidad-no-lineal.html#cb176-21" tabindex="-1"></a></span>
-<span id="cb176-22"><a href="elasticidad-no-lineal.html#cb176-22" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad </span></span>
-<span id="cb176-23"><a href="elasticidad-no-lineal.html#cb176-23" tabindex="-1"></a>sens1 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb176-24"><a href="elasticidad-no-lineal.html#cb176-24" tabindex="-1"></a></span>
-<span id="cb176-25"><a href="elasticidad-no-lineal.html#cb176-25" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb176-26"><a href="elasticidad-no-lineal.html#cb176-26" tabindex="-1"></a><span class="fu">abline</span>(lambda1, sens1, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-1.png" width="672" /></p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="elasticidad-no-lineal.html#cb177-1" tabindex="-1"></a><span class="co">#2) Entrada de la matriz a(2,1): plántulas y juveniles</span></span>
-<span id="cb177-2"><a href="elasticidad-no-lineal.html#cb177-2" tabindex="-1"></a>tf2 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb177-3"><a href="elasticidad-no-lineal.html#cb177-3" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb177-4"><a href="elasticidad-no-lineal.html#cb177-4" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="fl">0.01</span>))</span>
-<span id="cb177-5"><a href="elasticidad-no-lineal.html#cb177-5" tabindex="-1"></a></span>
-<span id="cb177-6"><a href="elasticidad-no-lineal.html#cb177-6" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb177-7"><a href="elasticidad-no-lineal.html#cb177-7" tabindex="-1"></a><span class="fu">plot</span>(tf2, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb177-8"><a href="elasticidad-no-lineal.html#cb177-8" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Plántulas - Juveniles)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb177-9"><a href="elasticidad-no-lineal.html#cb177-9" tabindex="-1"></a></span>
-<span id="cb177-10"><a href="elasticidad-no-lineal.html#cb177-10" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb177-11"><a href="elasticidad-no-lineal.html#cb177-11" tabindex="-1"></a>lambda2 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb177-12"><a href="elasticidad-no-lineal.html#cb177-12" tabindex="-1"></a></span>
-<span id="cb177-13"><a href="elasticidad-no-lineal.html#cb177-13" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad </span></span>
-<span id="cb177-14"><a href="elasticidad-no-lineal.html#cb177-14" tabindex="-1"></a>sens2 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb177-15"><a href="elasticidad-no-lineal.html#cb177-15" tabindex="-1"></a></span>
-<span id="cb177-16"><a href="elasticidad-no-lineal.html#cb177-16" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb177-17"><a href="elasticidad-no-lineal.html#cb177-17" tabindex="-1"></a><span class="fu">abline</span>(lambda2, sens2, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-2.png" width="672" /></p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="elasticidad-no-lineal.html#cb178-1" tabindex="-1"></a><span class="co">#3) Entrada de la matriz a(2,2): juveniles y juveniles</span></span>
-<span id="cb178-2"><a href="elasticidad-no-lineal.html#cb178-2" tabindex="-1"></a>tf3 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb178-3"><a href="elasticidad-no-lineal.html#cb178-3" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb178-4"><a href="elasticidad-no-lineal.html#cb178-4" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.8</span>, <span class="fl">0.1</span>, <span class="fl">0.001</span>))</span>
-<span id="cb178-5"><a href="elasticidad-no-lineal.html#cb178-5" tabindex="-1"></a></span>
-<span id="cb178-6"><a href="elasticidad-no-lineal.html#cb178-6" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb178-7"><a href="elasticidad-no-lineal.html#cb178-7" tabindex="-1"></a><span class="fu">plot</span>(tf3, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb178-8"><a href="elasticidad-no-lineal.html#cb178-8" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Juveniles - Juveniles)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb178-9"><a href="elasticidad-no-lineal.html#cb178-9" tabindex="-1"></a></span>
-<span id="cb178-10"><a href="elasticidad-no-lineal.html#cb178-10" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb178-11"><a href="elasticidad-no-lineal.html#cb178-11" tabindex="-1"></a>lambda3 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb178-12"><a href="elasticidad-no-lineal.html#cb178-12" tabindex="-1"></a></span>
-<span id="cb178-13"><a href="elasticidad-no-lineal.html#cb178-13" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad </span></span>
-<span id="cb178-14"><a href="elasticidad-no-lineal.html#cb178-14" tabindex="-1"></a>sens3 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb178-15"><a href="elasticidad-no-lineal.html#cb178-15" tabindex="-1"></a></span>
-<span id="cb178-16"><a href="elasticidad-no-lineal.html#cb178-16" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb178-17"><a href="elasticidad-no-lineal.html#cb178-17" tabindex="-1"></a><span class="fu">abline</span>(lambda3, sens3, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-3.png" width="672" /></p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="elasticidad-no-lineal.html#cb179-1" tabindex="-1"></a><span class="co">#4) Entrada de la matriz a(3,2): juveniles y no reproductivos</span></span>
-<span id="cb179-2"><a href="elasticidad-no-lineal.html#cb179-2" tabindex="-1"></a>tf4 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb179-3"><a href="elasticidad-no-lineal.html#cb179-3" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb179-4"><a href="elasticidad-no-lineal.html#cb179-4" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.001</span>, <span class="fl">0.03</span>, <span class="fl">0.01</span>))</span>
-<span id="cb179-5"><a href="elasticidad-no-lineal.html#cb179-5" tabindex="-1"></a></span>
-<span id="cb179-6"><a href="elasticidad-no-lineal.html#cb179-6" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb179-7"><a href="elasticidad-no-lineal.html#cb179-7" tabindex="-1"></a><span class="fu">plot</span>(tf4, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb179-8"><a href="elasticidad-no-lineal.html#cb179-8" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Juveniles - No reproductivos)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb179-9"><a href="elasticidad-no-lineal.html#cb179-9" tabindex="-1"></a></span>
-<span id="cb179-10"><a href="elasticidad-no-lineal.html#cb179-10" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb179-11"><a href="elasticidad-no-lineal.html#cb179-11" tabindex="-1"></a>lambda4 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb179-12"><a href="elasticidad-no-lineal.html#cb179-12" tabindex="-1"></a></span>
-<span id="cb179-13"><a href="elasticidad-no-lineal.html#cb179-13" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb179-14"><a href="elasticidad-no-lineal.html#cb179-14" tabindex="-1"></a>sens4 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb179-15"><a href="elasticidad-no-lineal.html#cb179-15" tabindex="-1"></a></span>
-<span id="cb179-16"><a href="elasticidad-no-lineal.html#cb179-16" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb179-17"><a href="elasticidad-no-lineal.html#cb179-17" tabindex="-1"></a><span class="fu">abline</span>(lambda4, sens4, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-4.png" width="672" /></p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="elasticidad-no-lineal.html#cb180-1" tabindex="-1"></a><span class="co">#5) Entrada de la matriz a(4,2): juveniles a adultos</span></span>
-<span id="cb180-2"><a href="elasticidad-no-lineal.html#cb180-2" tabindex="-1"></a>tf5 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb180-3"><a href="elasticidad-no-lineal.html#cb180-3" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb180-4"><a href="elasticidad-no-lineal.html#cb180-4" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">0.8</span>,<span class="fl">0.01</span>))</span>
-<span id="cb180-5"><a href="elasticidad-no-lineal.html#cb180-5" tabindex="-1"></a></span>
-<span id="cb180-6"><a href="elasticidad-no-lineal.html#cb180-6" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb180-7"><a href="elasticidad-no-lineal.html#cb180-7" tabindex="-1"></a><span class="fu">plot</span>(tf5, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb180-8"><a href="elasticidad-no-lineal.html#cb180-8" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Juveniles - Adultos)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb180-9"><a href="elasticidad-no-lineal.html#cb180-9" tabindex="-1"></a></span>
-<span id="cb180-10"><a href="elasticidad-no-lineal.html#cb180-10" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb180-11"><a href="elasticidad-no-lineal.html#cb180-11" tabindex="-1"></a>lambda5 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb180-12"><a href="elasticidad-no-lineal.html#cb180-12" tabindex="-1"></a></span>
-<span id="cb180-13"><a href="elasticidad-no-lineal.html#cb180-13" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb180-14"><a href="elasticidad-no-lineal.html#cb180-14" tabindex="-1"></a>sens5 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb180-15"><a href="elasticidad-no-lineal.html#cb180-15" tabindex="-1"></a></span>
-<span id="cb180-16"><a href="elasticidad-no-lineal.html#cb180-16" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb180-17"><a href="elasticidad-no-lineal.html#cb180-17" tabindex="-1"></a><span class="fu">abline</span>(lambda5, sens5, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-5.png" width="672" /></p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="elasticidad-no-lineal.html#cb181-1" tabindex="-1"></a><span class="co">#6) Entrada de la matriz a(3,3): adultos no reproductivos a adultos no reproductivos</span></span>
-<span id="cb181-2"><a href="elasticidad-no-lineal.html#cb181-2" tabindex="-1"></a>tf6 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb181-3"><a href="elasticidad-no-lineal.html#cb181-3" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb181-4"><a href="elasticidad-no-lineal.html#cb181-4" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.8</span>, <span class="fl">0.2</span>, <span class="fl">0.01</span>))</span>
-<span id="cb181-5"><a href="elasticidad-no-lineal.html#cb181-5" tabindex="-1"></a></span>
-<span id="cb181-6"><a href="elasticidad-no-lineal.html#cb181-6" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb181-7"><a href="elasticidad-no-lineal.html#cb181-7" tabindex="-1"></a><span class="fu">plot</span>(tf6, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb181-8"><a href="elasticidad-no-lineal.html#cb181-8" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Adultos No rep - Adultos  No reproductivos)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb181-9"><a href="elasticidad-no-lineal.html#cb181-9" tabindex="-1"></a></span>
-<span id="cb181-10"><a href="elasticidad-no-lineal.html#cb181-10" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb181-11"><a href="elasticidad-no-lineal.html#cb181-11" tabindex="-1"></a>lambda6 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb181-12"><a href="elasticidad-no-lineal.html#cb181-12" tabindex="-1"></a></span>
-<span id="cb181-13"><a href="elasticidad-no-lineal.html#cb181-13" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb181-14"><a href="elasticidad-no-lineal.html#cb181-14" tabindex="-1"></a>sens6 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb181-15"><a href="elasticidad-no-lineal.html#cb181-15" tabindex="-1"></a></span>
-<span id="cb181-16"><a href="elasticidad-no-lineal.html#cb181-16" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb181-17"><a href="elasticidad-no-lineal.html#cb181-17" tabindex="-1"></a><span class="fu">abline</span>(lambda6, sens6, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-6.png" width="672" /></p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="elasticidad-no-lineal.html#cb182-1" tabindex="-1"></a><span class="co">#7) Entrada de la matriz a(4,3): adultos no reproductivos a adultos reproductivos</span></span>
-<span id="cb182-2"><a href="elasticidad-no-lineal.html#cb182-2" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="elasticidad-no-lineal.html#cb182-3" tabindex="-1"></a>tf7 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb182-4"><a href="elasticidad-no-lineal.html#cb182-4" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
-<span id="cb182-5"><a href="elasticidad-no-lineal.html#cb182-5" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.2</span>,<span class="fl">0.8</span>,<span class="fl">0.001</span>))</span>
-<span id="cb182-6"><a href="elasticidad-no-lineal.html#cb182-6" tabindex="-1"></a></span>
-<span id="cb182-7"><a href="elasticidad-no-lineal.html#cb182-7" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb182-8"><a href="elasticidad-no-lineal.html#cb182-8" tabindex="-1"></a><span class="fu">plot</span>(tf7, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb182-9"><a href="elasticidad-no-lineal.html#cb182-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Adultos No rep - Adultos No rep)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb182-10"><a href="elasticidad-no-lineal.html#cb182-10" tabindex="-1"></a></span>
-<span id="cb182-11"><a href="elasticidad-no-lineal.html#cb182-11" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb182-12"><a href="elasticidad-no-lineal.html#cb182-12" tabindex="-1"></a>lambda7 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb182-13"><a href="elasticidad-no-lineal.html#cb182-13" tabindex="-1"></a></span>
-<span id="cb182-14"><a href="elasticidad-no-lineal.html#cb182-14" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb182-15"><a href="elasticidad-no-lineal.html#cb182-15" tabindex="-1"></a>sens7 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb182-16"><a href="elasticidad-no-lineal.html#cb182-16" tabindex="-1"></a></span>
-<span id="cb182-17"><a href="elasticidad-no-lineal.html#cb182-17" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb182-18"><a href="elasticidad-no-lineal.html#cb182-18" tabindex="-1"></a><span class="fu">abline</span>(lambda7, sens7, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-7.png" width="672" /></p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="elasticidad-no-lineal.html#cb183-1" tabindex="-1"></a><span class="co">#8) Entrada de la matriz a(1,4): adultos reproductivos a plántulas</span></span>
-<span id="cb183-2"><a href="elasticidad-no-lineal.html#cb183-2" tabindex="-1"></a></span>
-<span id="cb183-3"><a href="elasticidad-no-lineal.html#cb183-3" tabindex="-1"></a>tf8 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb183-4"><a href="elasticidad-no-lineal.html#cb183-4" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb183-5"><a href="elasticidad-no-lineal.html#cb183-5" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.2</span>,<span class="fl">0.8</span>,<span class="fl">0.001</span>))</span>
-<span id="cb183-6"><a href="elasticidad-no-lineal.html#cb183-6" tabindex="-1"></a></span>
-<span id="cb183-7"><a href="elasticidad-no-lineal.html#cb183-7" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb183-8"><a href="elasticidad-no-lineal.html#cb183-8" tabindex="-1"></a><span class="fu">plot</span>(tf8, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb183-9"><a href="elasticidad-no-lineal.html#cb183-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Adultos reproductivos - Plántulas)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb183-10"><a href="elasticidad-no-lineal.html#cb183-10" tabindex="-1"></a></span>
-<span id="cb183-11"><a href="elasticidad-no-lineal.html#cb183-11" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb183-12"><a href="elasticidad-no-lineal.html#cb183-12" tabindex="-1"></a>lambda8 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb183-13"><a href="elasticidad-no-lineal.html#cb183-13" tabindex="-1"></a></span>
-<span id="cb183-14"><a href="elasticidad-no-lineal.html#cb183-14" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb183-15"><a href="elasticidad-no-lineal.html#cb183-15" tabindex="-1"></a>sens8 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb183-16"><a href="elasticidad-no-lineal.html#cb183-16" tabindex="-1"></a></span>
-<span id="cb183-17"><a href="elasticidad-no-lineal.html#cb183-17" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb183-18"><a href="elasticidad-no-lineal.html#cb183-18" tabindex="-1"></a><span class="fu">abline</span>(lambda8, sens8, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-8.png" width="672" /></p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="elasticidad-no-lineal.html#cb184-1" tabindex="-1"></a><span class="co">#9) Entrada de la matriz a(3,4): adultos reproductivos a plántulas</span></span>
-<span id="cb184-2"><a href="elasticidad-no-lineal.html#cb184-2" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="elasticidad-no-lineal.html#cb184-3" tabindex="-1"></a>tf9 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb184-4"><a href="elasticidad-no-lineal.html#cb184-4" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb184-5"><a href="elasticidad-no-lineal.html#cb184-5" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="fl">0.8</span>, <span class="fl">0.001</span>))</span>
-<span id="cb184-6"><a href="elasticidad-no-lineal.html#cb184-6" tabindex="-1"></a></span>
-<span id="cb184-7"><a href="elasticidad-no-lineal.html#cb184-7" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb184-8"><a href="elasticidad-no-lineal.html#cb184-8" tabindex="-1"></a><span class="fu">plot</span>(tf9, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb184-9"><a href="elasticidad-no-lineal.html#cb184-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Adultos reproductivos - Plántulas)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb184-10"><a href="elasticidad-no-lineal.html#cb184-10" tabindex="-1"></a></span>
-<span id="cb184-11"><a href="elasticidad-no-lineal.html#cb184-11" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb184-12"><a href="elasticidad-no-lineal.html#cb184-12" tabindex="-1"></a>lambda9 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb184-13"><a href="elasticidad-no-lineal.html#cb184-13" tabindex="-1"></a></span>
-<span id="cb184-14"><a href="elasticidad-no-lineal.html#cb184-14" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb184-15"><a href="elasticidad-no-lineal.html#cb184-15" tabindex="-1"></a>sens9 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb184-16"><a href="elasticidad-no-lineal.html#cb184-16" tabindex="-1"></a></span>
-<span id="cb184-17"><a href="elasticidad-no-lineal.html#cb184-17" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb184-18"><a href="elasticidad-no-lineal.html#cb184-18" tabindex="-1"></a><span class="fu">abline</span>(lambda9, sens9, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-9.png" width="672" /></p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="elasticidad-no-lineal.html#cb185-1" tabindex="-1"></a><span class="co">#10) Entrada de la matriz a(4,4): adultos reproductivos a adultos reproductivos</span></span>
-<span id="cb185-2"><a href="elasticidad-no-lineal.html#cb185-2" tabindex="-1"></a></span>
-<span id="cb185-3"><a href="elasticidad-no-lineal.html#cb185-3" tabindex="-1"></a>tf10 <span class="ot">&lt;-</span> <span class="fu">tfa_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb185-4"><a href="elasticidad-no-lineal.html#cb185-4" tabindex="-1"></a>                  <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb185-5"><a href="elasticidad-no-lineal.html#cb185-5" tabindex="-1"></a>                  <span class="at">prange =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.6</span>, <span class="fl">0.2</span>, <span class="fl">0.001</span>))</span>
-<span id="cb185-6"><a href="elasticidad-no-lineal.html#cb185-6" tabindex="-1"></a></span>
-<span id="cb185-7"><a href="elasticidad-no-lineal.html#cb185-7" tabindex="-1"></a><span class="co">#Gráfica de la dinámica poblacional</span></span>
-<span id="cb185-8"><a href="elasticidad-no-lineal.html#cb185-8" tabindex="-1"></a><span class="fu">plot</span>(tf10, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb185-9"><a href="elasticidad-no-lineal.html#cb185-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Dinámica poblacional (Adultos rep - Adultos rep)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lambda&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;p&quot;</span>)</span>
-<span id="cb185-10"><a href="elasticidad-no-lineal.html#cb185-10" tabindex="-1"></a></span>
-<span id="cb185-11"><a href="elasticidad-no-lineal.html#cb185-11" tabindex="-1"></a><span class="co">#Cálculo de lambda-max:</span></span>
-<span id="cb185-12"><a href="elasticidad-no-lineal.html#cb185-12" tabindex="-1"></a>lambda10 <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(Lr1)<span class="sc">$</span>values[<span class="dv">1</span>]) </span>
-<span id="cb185-13"><a href="elasticidad-no-lineal.html#cb185-13" tabindex="-1"></a></span>
-<span id="cb185-14"><a href="elasticidad-no-lineal.html#cb185-14" tabindex="-1"></a><span class="co">#Cálculo de la sensibilidad</span></span>
-<span id="cb185-15"><a href="elasticidad-no-lineal.html#cb185-15" tabindex="-1"></a>sens10 <span class="ot">&lt;-</span> <span class="fu">tfs_lambda</span>(Lr1, <span class="at">d =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">e =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb185-16"><a href="elasticidad-no-lineal.html#cb185-16" tabindex="-1"></a></span>
-<span id="cb185-17"><a href="elasticidad-no-lineal.html#cb185-17" tabindex="-1"></a><span class="co">#Agregar la línea, especificando el intercepto y la pendiente</span></span>
-<span id="cb185-18"><a href="elasticidad-no-lineal.html#cb185-18" tabindex="-1"></a><span class="fu">abline</span>(lambda10, sens10, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb185-19"><a href="elasticidad-no-lineal.html#cb185-19" tabindex="-1"></a></span>
-<span id="cb185-20"><a href="elasticidad-no-lineal.html#cb185-20" tabindex="-1"></a><span class="co">#Definir márgenes</span></span>
-<span id="cb185-21"><a href="elasticidad-no-lineal.html#cb185-21" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
-<span id="cb185-22"><a href="elasticidad-no-lineal.html#cb185-22" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfg =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb185-23"><a href="elasticidad-no-lineal.html#cb185-23" tabindex="-1"></a></span>
-<span id="cb185-24"><a href="elasticidad-no-lineal.html#cb185-24" tabindex="-1"></a><span class="co">#Gráficas de la función de transferencia de la inercia en el ciclo de vida de L. rubripetala (población 1)</span></span>
-<span id="cb185-25"><a href="elasticidad-no-lineal.html#cb185-25" tabindex="-1"></a>tfmatriz <span class="ot">&lt;-</span> <span class="fu">tfam_inertia</span>(Lr1,<span class="at">vector =</span> nLr0)</span>
-<span id="cb185-26"><a href="elasticidad-no-lineal.html#cb185-26" tabindex="-1"></a><span class="fu">plot</span>(tfmatriz)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-10.png" width="672" /><img src="Diagnostico_Poblacional_files/figure-html/chap10_6-11.png" width="672" /></p>
-<p>Raventós y colaboradores (2015) estimaron el crecimiento poblacional de corto plazo de dos orquídeas epífitas después del paso de un huracán. Dado que a su paso se pierden individuos, se simuló si la reintroducción de plántulas y adultos mitigaban los efectos de este fenómeno en Cuba. Los resultados sugieren que la reintroducción de adultos tiene un efecto positivo sobre</p>
-
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-caswell2000matrix" class="csl-entry">
-———. 2000. <em>Matrix Population Models</em>. Vol. 1. Sinauer Sunderland, MA.
-</div>
-<div id="ref-de2000elasticities" class="csl-entry">
-De Kroon, Hans, Jan Van Groenendael, and Johan Ehrlén. 2000. <span>“Elasticities: A Review of Methods and Model Limitations.”</span> <em>Ecology</em> 81 (3): 607–18.
-</div>
-<div id="ref-hodgson2004methodological" class="csl-entry">
-Hodgson, David J, and Stuart Townley. 2004. <span>“Methodological Insight: Linking Management Changes to Population Dynamic Responses: The Transfer Function of a Projection Matrix Perturbation.”</span> <em>Journal of Applied Ecology</em> 41 (6): 1155–61.
-</div>
-<div id="ref-stott2012beyond" class="csl-entry">
-Stott, Iain, David James Hodgson, and Stuart Townley. 2012a. <span>“Beyond Sensitivity: Nonlinear Perturbation Analysis of Transient Dynamics.”</span> <em>Methods in Ecology and Evolution</em> 3 (4): 673–84.
-</div>
+<div id="dinámica-transitoria-transient-dynamics-1" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Capítulo 13</span> Dinámica transitoria (Transient dynamics)<a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-transient-dynamics-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Autores: “Mariana Hernández Apolinar y Paola Portillo Tzompa”</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dinámica-transitoria-transient-dynamics-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ltre.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dinámica-transitoria-transient-dynamics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="elasticidad-no-lineal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

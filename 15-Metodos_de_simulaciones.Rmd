@@ -1,11 +1,10 @@
-# Metodos de Simulaciones y estimaciones de intervalo de confianza
+# Métodos de Simulaciones y estimaciones de intervalo de confianza
 
 
 Por: ???
 
 ## Introducciones a métodos de simulaciones
 
-### Estocasticidad demografica
 
 ### Estocasticidad espacial
 

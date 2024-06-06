@@ -347,6 +347,10 @@ lambdaVals1 <- map_dbl(matA(xy), ~popdemo::eigs(.x, what="lambda"))
 lambdaVals2 <- map_dbl(matA(xy), ~popbio::lambda(.x))
 ```
 
+
+### Need to move this before as the Caladenia's are terrerstrial and not epiphytes
+
+
 ```{r chap16_19}
 x2=xy %>% 
   mutate(OrganismType = case_when(
@@ -502,6 +506,10 @@ ggplot2::ggplot(x2, aes(Lon, Lat)) +
 ggsave("orchid_map.jpg")
 ```
 
+
+
+## Como Calcular la esperanza de vida en R con la base de datos de COMPADRE
+
 ## Important to include only matrices that are annual.
 
 Unless we data wrangle the life span so it represent a year worth instead of life span.
@@ -539,10 +547,13 @@ compadre_life_expect <- x2 %>%
 
 
 
-
 compadre_life_expect
 
 ```
+
+
+
+
 
 
 
@@ -616,6 +627,13 @@ ggplot( aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour
 
 ggsave("Caladenia_Life_Span.png")
 ```
+
+Caladenia_amonea
+
+
+
+
+
 
 Test difference in life span.
 

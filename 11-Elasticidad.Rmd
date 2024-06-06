@@ -1,0 +1,66 @@
+# Elasticidad
+
+Autores: "Mariana Hernández Apolinar y Paola Portillo Tzompa"
+
+## Qué es la Elasticidad
+
+El concepto de elasticidad en biología es un método orientado a evaluar el cambio proporcional en una variable en respuesta a un cambio proporcional en otra variable. En términos de matrices de transición, la elasticidad es una medida de la sensibilidad de la tasa de crecimiento poblacional a cambios. En otra palabra si uno cambia uno de los parámetros de la matriz de transición, la elasticidad mide cuánto cambiaria la tasa de crecimiento poblacional (ref). En biología, la elasticidad es una herramienta es para entender la importancia de cada etapa de la historia de vida sobre la tasa de crecimiento poblacional ya que permite identificar las etapas que más contribuyen a la tasa de crecimiento poblacional con menor cambios. Esa herramienta es muy útil para la conservación de especies y para la gestión de recursos naturales por que en parte nos indica cuan sensitiva esta el crecimento poblacional cuando se cambia los parámetros de la historia de vida (las transiciones, supervivencia y fecundidad) de una especie 
+
+El concepto de elasticidad se puede aplicar en muchas diferentes áreas, tanto biológicos, matemáticos, estudios sociales, financieros y económicos (ref). Por ejemplo en economía Alfred Marshall fue uno de los primeros en usar el concepto de elasticidad para entender la relación entre la oferta y la demanda de un producto donde el uso el termino de "responsiveness" para describir la elasticidad en el libro *The Economics of Industry* publicado en 1879. En biología un ejemplo clásico de elasticidad ....
+
+## Librerías de R requeridas para el análisis
+
+```{r, message=FALSE}
+library(popdemo)
+library(popbio)
+library(ggplot2)
+library(dplyr)
+library(scales)
+```
+
+***
+
+
+```{r, message=FALSE}
+
+#Capturar los datos de la matriz para L. rubripetala (Tremblay et al. 2015)
+Lr1 <- matrix(c(0.4324, 0,      0,     0.15,
+               0.3784, 0.8459, 0,     0,
+               0,      0.0034, 0.7954,0.2300,
+               0,      0.0890, 0.1841,0.7510), byrow=TRUE,ncol=4)
+
+#Capturar las categorias de estado
+estadios <- c("PL", "J", "NR", "AR")
+colnames(Lr1) <- rownames(Lr1) <- estadios
+
+#Obtener la matriz L. rubripetala 
+Lr1 <- matrix(Lr1[1:4, ], nrow = 4, dimnames = list(estadios, estadios))
+Lr1
+
+```
+
+## Cómo se interpreta la elasticidad
+
+
+## Cómo se calcula la elasticidad
+
+
+***
+
+## Análisis de elasticidad
+
+La elasticidad es un indice de la sensibilidad de la tasa de crecimiento poblacional a los cambios en las tasas de supervivencia, crecimiento y reproducción de cada categoría de edad/estado. La suma de todas las proporciones es 1.0, por consecuencia uno puede comparar el efecto de cambios proporcional en cada parámetro y evaluar su impacto. En el caso de *Lepanthes rubripetala* se espera que la tasa de crecimiento poblacional sea más sensible a los cambios en la supervivencia de los etapas 3 y 4 ya que tienen una elasticidad de 0.313 y 0.311 respectivamente. Si sumamos el componente de supervivencia (la diagonal) de la matriz de transición poblacional, la suma es (0.018 + 0.122 + 0.313 + 0.311) = 0.764. Por consecuencia, las etapas de supervivencia de los individuos contribuyen a 76.4% y son las etapas más sensitivas a los cambios demográficos. Al comparar si uno fuese a hacer un cambio proporcional en la reproducción (los adultos que dejan plántulas) tendría un impacto mucho más pequeño, solamente de 2.3%.
+
+Los análisis de elasticidad pueden ser usado para evaluar que etapas que pudiese ayudar en enfocar las alternativas de manejo para cambiar la tasa de crecimiento poblacional. Por ejemplo si es una especie en peligro de extinción, uno puede enfocar los trabajos de manejo de la especie en mejorar la supervivencia de los individuos de las etapas más sensitivas. Al contrario si es una especie invasora, uno puede enfocar los trabajos de manejo en reducir la supervivencia de las etapas más sensitivas. En este caso seria reducir la supervivencia de los adultos reproductivos y no reproductivos. Enfocando en las etapas más sensitivas es una forma de maximizar el impacto de los trabajos de manejo con menos recursos. Naturalmente se asume que el manejo de estas etapas es posible, por ejemplo si la elasticidad es alta en una de las tranciciones, por ejemplo juvenil a adultos, pero no se conoce cual son la variables ambientales que impacta esa transiciones no se puede hacer un manejo efectivo. 
+
+
+```{r elasticidad}
+#Matriz de elasticidad
+elasticidad <- round(elas(Lr1),digit=3)
+elasticidad
+```
+
+## Limitaciones
+
+
+

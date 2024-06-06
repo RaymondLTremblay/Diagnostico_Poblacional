@@ -1,0 +1,33 @@
+# Estimación de Parametros
+
+## Por: Mariana y Paola
+
+## En este capitulo se cubrirá varios estimación de parametros. 
+
+
+
+### Condición basica de las matrices de transición 
+
+
+#### Ergodicidad
+
+
+
+#### Irreducible
+
+
+#### Matriz Primitiva
+
+
+### Distribución estable de etapas
+
+### Analisis de convergencia
+
+### Damping Ratio
+
+
+### Valores reproductivos
+
+
+
+

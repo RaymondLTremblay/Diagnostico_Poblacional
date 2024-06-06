@@ -1,8 +1,0 @@
-# Diferentes_componentes_de_Ciclo_de_vida 
-
-## Por: Anne, Fabiola, Aucencia: ECOSUR
-
-
-## El capitulo sera movido a otra posicion en el libro
-
-titulo: "diferentes_componentes_de_Ciclo_de_vida"

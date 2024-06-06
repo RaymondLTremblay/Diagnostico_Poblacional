@@ -38,6 +38,8 @@ A continuación incorporamos la información de nuestra matriz y la abundancia d
 
 <br>
 
+
+
 ***
 
 ## Librerías de R requeridas para el análisis
@@ -303,20 +305,7 @@ valor_repro
 ```
 
 
-***
 
-## Análisis de elasticidad
-
-La elasticidad es un indice de la sensibilidad de la tasa de crecimiento poblacional a los cambios en las tasas de supervivencia, crecimiento y reproducción de cada categoría de edad/estado. La suma de todas las proporciones es 1.0, por consecuencia uno puede comparar el efecto de cambios proporcional en cada parámetro y evaluar su impacto. En el caso de *Lepanthes rubripetala* se espera que la tasa de crecimiento poblacional sea más sensible a los cambios en la supervivencia de los etapas 3 y 4 ya que tienen una elasticidad de 0.313 y 0.311 respectivamente. Si sumamos el componente de supervivencia (la diagonal) de la matriz de transición poblacional, la suma es (0.018 + 0.122 + 0.313 + 0.311) = 0.764. Por consecuencia, las etapas de supervivencia de los individuos contribuyen a 76.4% y son las etapas más sensitivas a los cambios demográficos. Al comparar si uno fuese a hacer un cambio proporcional en la reproducción (los adultos que dejan plántulas) tendría un impacto mucho más pequeño, solamente de 2.3%.
-
-Los análisis de elasticidad pueden ser usado para evaluar que etapas que pudiese ayudar en enfocar las alternativas de manejo para cambiar la tasa de crecimiento poblacional. Por ejemplo si es una especie en peligro de extinción, uno puede enfocar los trabajos de manejo de la especie en mejorar la supervivencia de los individuos de las etapas más sensitivas. Al contrario si es una especie invasora, uno puede enfocar los trabajos de manejo en reducir la supervivencia de las etapas más sensitivas. En este caso seria reducir la supervivencia de los adultos reproductivos y no reproductivos. Enfocando en las etapas más sensitivas es una forma de maximizar el impacto de los trabajos de manejo con menos recursos. Naturalmente se asume que el manejo de estas etapas es posible, por ejemplo si la elasticidad es alta en una de las tranciciones, por ejemplo juvenil a adultos, pero no se conoce cual son la variables ambientales que impacta esa transiciones no se puede hacer un manejo efectivo. 
-
-
-```{r elasticidad}
-#Matriz de elasticidad
-elasticidad <- round(elas(Lr1),digit=3)
-elasticidad
-```
 
 
 ## Dinámica transitoria
@@ -442,11 +431,12 @@ abs.plot
 
 ```
 
-##Dinámica transitoria estandarizada: límites
+## Dinámica transitoria estandarizada: límites
 
 Con el fin de evaluar en el corto plazo los cambios cuantitativos en la población en respuesta a una perturbación determinada se calculan los límites de la dinámica transitoria a través Índices de transferencia y se proyecta el crecimiento de la población en el corto plazo.
 
-#Dinámica transitoria específica de la población.\
+## Dinámica transitoria específica de la población.
+
 a proyección se hace sin la influencia de la dinámica asintótica. hecho que facilita y hace equitativa la comparación entre los modelos de los distintos escenarios. Se elimina el efecto de la dinámica asintótica al estandarizar la matriz y el vector de la estructura. En el primer caso se usa el comando 'standard.A=T', lo cual supone que en el largo plazo la tasa de crecimiento poblacional tendrá un valor de 1 (unidad) -por lo que la población no crecerá ni declinará, en el segundo caso se usa el comando 'standard.vec=T', que implica que éste suma 1 (Stoot et al., 2010, 2012). DINÁMICA POBLACIONAL TRANSITORIA ESTANDARIZADA
 
 *Índices de transferencia*. Con el fin de evaluar en el corto plazo qué cambios cuantitativos habría en la población como respuesta ante una perturbación determinada, se calculan los límites de la dinámica transitoria a través de los *Índices de transferencia*, que incluyen los siguiente tres parámetros (Stoot et al. 2012):
@@ -599,212 +589,3 @@ geom_text(x = 45, y = 0.33, label =  expression(paste(bar(rho) == 1)), hjust = 1
 
 ```
 
-##Funciones de transferencia Finalmente, el cálculo de las funciones de transferencia representa el último paso en análisis de dinámica transitoria establecido por Stott y colaboradores (2012). A través de estas ecuaciones se evalúa la elasticidad o efecto de la perturbación sobre la dinámica poblacional. A diferencia de las matrices de elasticidad de los modelos de proyección poblacional, estas elasticidades no son lineales y evidencian la importancia relativa de la de la perturbación en la categoría de tamaño/estado sobre el crecimiento de la población en el corto plazo. Estas ecuaciones también están disponibles en el programa *Popdemo* de *R* y sus resultados se representan a través de gráficas.
-
-La perturbación de la estructura está determinada ppor dos vectores *d* y *e*
-
-```{r chap10_6}
-##PASO 6: ANALISIS DE LAS FUNCIONES DE TRANSFERENCIA 
-#Establecer márgenes:
-#Vector original
-library(popdemo)
-
-nLr0 <- c(0, 46, 38, 82)
-
-#PERTURBACIÓN DEL VECTOR ORIGINAL
-
-#1) Entrada de la matriz a(1,1): plántulas a plántulas
-tf1 <- tfa_lambda(Lr1, d = c(1, 0, 0, 0),
-                  e = c(1, 0, 0, 0),
-                  prange = seq(0, 4, 0.01))
-
-#Gráfica de la dinámica poblacional
-plot(tf1, ann = FALSE)
-title(main = "Dinámica poblacional (Plántulas - Plántulas)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda1 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad 
-sens1 <- tfs_lambda(Lr1, d = c(1, 0, 0, 0), e = c(1, 0, 0, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda1, sens1, lty = 2, col = "red")
-
-#2) Entrada de la matriz a(2,1): plántulas y juveniles
-tf2 <- tfa_lambda(Lr1, d = c(0, 1, 0, 0),
-                  e = c(1, 0, 0, 0),
-                  prange = seq(-0.4, 0.6, 0.01))
-
-#Gráfica de la dinámica poblacional
-plot(tf2, ann = FALSE)
-title(main = "Dinámica poblacional (Plántulas - Juveniles)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda2 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad 
-sens2 <- tfs_lambda(Lr1, d = c(0, 1, 0, 0), e = c(1, 0, 0, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda2, sens2, lty = 2, col = "red")
-
-#3) Entrada de la matriz a(2,2): juveniles y juveniles
-tf3 <- tfa_lambda(Lr1, d = c(0, 1, 0, 0),
-                  e = c(0, 1, 0, 0),
-                  prange = seq(-0.8, 0.1, 0.001))
-
-#Gráfica de la dinámica poblacional
-plot(tf3, ann = FALSE)
-title(main = "Dinámica poblacional (Juveniles - Juveniles)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda3 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad 
-sens3 <- tfs_lambda(Lr1, d = c(0, 1, 0, 0), e = c(0, 1, 0, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda3, sens3, lty = 2, col = "red")
-
-#4) Entrada de la matriz a(3,2): juveniles y no reproductivos
-tf4 <- tfa_lambda(Lr1, d = c(0, 0, 1, 0),
-                  e = c(0, 1, 0, 0),
-                  prange = seq(-0.001, 0.03, 0.01))
-
-#Gráfica de la dinámica poblacional
-plot(tf4, ann = FALSE)
-title(main = "Dinámica poblacional (Juveniles - No reproductivos)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda4 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens4 <- tfs_lambda(Lr1, d = c(0,0,1,0), e = c(0, 1, 0, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda4, sens4, lty = 2, col = "red")
-
-#5) Entrada de la matriz a(4,2): juveniles a adultos
-tf5 <- tfa_lambda(Lr1, d = c(0,0,0,1),
-                  e = c(0,1,0,0),
-                  prange = seq(0,0.8,0.01))
-
-#Gráfica de la dinámica poblacional
-plot(tf5, ann = FALSE)
-title(main = "Dinámica poblacional (Juveniles - Adultos)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda5 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens5 <- tfs_lambda(Lr1, d = c(0, 0, 0, 1), e = c(0, 1, 0, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda5, sens5, lty = 2, col = "red")
-
-#6) Entrada de la matriz a(3,3): adultos no reproductivos a adultos no reproductivos
-tf6 <- tfa_lambda(Lr1, d = c(0, 0, 1, 0),
-                  e = c(0, 0, 1, 0),
-                  prange = seq(-0.8, 0.2, 0.01))
-
-#Gráfica de la dinámica poblacional
-plot(tf6, ann = FALSE)
-title(main = "Dinámica poblacional (Adultos No rep - Adultos  No reproductivos)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda6 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens6 <- tfs_lambda(Lr1, d = c(0,0,0,1), e = c(0,1,0,0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda6, sens6, lty = 2, col = "red")
-
-#7) Entrada de la matriz a(4,3): adultos no reproductivos a adultos reproductivos
-
-tf7 <- tfa_lambda(Lr1, d = c(0,0,0,1),
-                  e = c(0,0,1,0),
-                  prange = seq(-0.2,0.8,0.001))
-
-#Gráfica de la dinámica poblacional
-plot(tf7, ann = FALSE)
-title(main = "Dinámica poblacional (Adultos No rep - Adultos No rep)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda7 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens7 <- tfs_lambda(Lr1, d = c(0,0,0,1), e = c(0,0,1,0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda7, sens7, lty = 2, col = "red")
-
-#8) Entrada de la matriz a(1,4): adultos reproductivos a plántulas
-
-tf8 <- tfa_lambda(Lr1, d = c(1,0,0,0),
-                  e = c(0,0,0,1),
-                  prange = seq(-0.2,0.8,0.001))
-
-#Gráfica de la dinámica poblacional
-plot(tf8, ann = FALSE)
-title(main = "Dinámica poblacional (Adultos reproductivos - Plántulas)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda8 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens8 <- tfs_lambda(Lr1, d = c(1,0,0,0), e = c(0,0,0,1))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda8, sens8, lty = 2, col = "red")
-
-#9) Entrada de la matriz a(3,4): adultos reproductivos a plántulas
-
-tf9 <- tfa_lambda(Lr1, d = c(0, 0,1, 0),
-                  e = c(0, 0, 0,1),
-                  prange = seq(-0.2, 0.8, 0.001))
-
-#Gráfica de la dinámica poblacional
-plot(tf9, ann = FALSE)
-title(main = "Dinámica poblacional (Adultos reproductivos - Plántulas)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda9 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens9 <- tfs_lambda(Lr1, d = c(0, 0, 0,1), e = c(0, 0, 1, 0))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda9, sens9, lty = 2, col = "red")
-
-#10) Entrada de la matriz a(4,4): adultos reproductivos a adultos reproductivos
-
-tf10 <- tfa_lambda(Lr1, d = c(0, 0, 0, 1),
-                  e = c(0, 0, 0, 1),
-                  prange = seq(-0.6, 0.2, 0.001))
-
-#Gráfica de la dinámica poblacional
-plot(tf10, ann = FALSE)
-title(main = "Dinámica poblacional (Adultos rep - Adultos rep)", ylab = "Lambda", xlab = "p")
-
-#Cálculo de lambda-max:
-lambda10 <- Re(eigen(Lr1)$values[1]) 
-
-#Cálculo de la sensibilidad
-sens10 <- tfs_lambda(Lr1, d = c(0,0,0,1), e = c(0,0,0,1))
-
-#Agregar la línea, especificando el intercepto y la pendiente
-abline(lambda10, sens10, lty = 2, col = "red")
-
-#Definir márgenes
-par(mfrow = c(4,4))
-par(mfg = c(1,1))
-
-#Gráficas de la función de transferencia de la inercia en el ciclo de vida de L. rubripetala (población 1)
-tfmatriz <- tfam_inertia(Lr1,vector = nLr0)
-plot(tfmatriz)
- 
-```
-
-Raventós y colaboradores (2015) estimaron el crecimiento poblacional de corto plazo de dos orquídeas epífitas después del paso de un huracán. Dado que a su paso se pierden individuos, se simuló si la reintroducción de plántulas y adultos mitigaban los efectos de este fenómeno en Cuba. Los resultados sugieren que la reintroducción de adultos tiene un efecto positivo sobre
