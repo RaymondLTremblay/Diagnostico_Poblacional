@@ -157,6 +157,7 @@ calcular-las-diferencias-en-tasas-vitales-entre-las-especies
 calcular-las-tasas-vitales-para-la-matriz-media
 calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media
 calcular-las-contribuciones-de-ertv-y-ver-los-resultados
+resultados-de-ertv
 métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza
 introducciones-a-métodos-de-simulaciones
 estocasticidad-espacial

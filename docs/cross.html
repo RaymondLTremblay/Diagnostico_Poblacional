@@ -375,6 +375,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
 <li class="chapter" data-level="14.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
 <li class="chapter" data-level="14.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>14.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="14.4.9" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>14.4.9</b> Resultados de ERTV</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>15</b> Métodos de Simulaciones y estimaciones de intervalo de confianza</a>
@@ -546,8 +547,8 @@ div.csl-indent {
 <h2><span class="header-section-number">26.2</span> Captioned figures and tables<a href="cross.html#captioned-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
 <p>See Figure <a href="cross.html#fig:nice-fig">26.1</a>.</p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="cross.html#cb448-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
-<span id="cb448-2"><a href="cross.html#cb448-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="cross.html#cb456-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
+<span id="cb456-2"><a href="cross.html#cb456-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nice-fig"></span>
 <img src="Diagnostico_Poblacional_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
 <p class="caption">
@@ -555,10 +556,10 @@ Figure 26.1: Here is a nice figure!
 </p>
 </div>
 <p>Don’t miss Table <a href="cross.html#tab:nice-table">26.1</a>.</p>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="cross.html#cb449-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb449-2"><a href="cross.html#cb449-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb449-3"><a href="cross.html#cb449-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb449-4"><a href="cross.html#cb449-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="cross.html#cb457-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb457-2"><a href="cross.html#cb457-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
+<span id="cb457-3"><a href="cross.html#cb457-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb457-4"><a href="cross.html#cb457-4" tabindex="-1"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:nice-table">Table 26.1: </span>Here is a nice table!</caption>
 <thead>

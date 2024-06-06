@@ -275,6 +275,8 @@ Rugosa.se
 
 ### Calcular las diferencias en tasas vitales entre las especies
 
+En esta parte se calculará la diferencia entre las tasas vitales de *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*. 
+
 ```{r chap12_10}
 vr.dif.Martinezzi.Rugosa<-Rugosa-Martinezzi 
 vr.dif.Martinezzi.Rugosa
@@ -282,8 +284,10 @@ vr.dif.Martinezzi.Rugosa
         
 ### Calcular las tasas vitales para la matriz media
 
+En este paso se calculará la tasa vital media para *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*. La tasa vital media se calcula sumando las tasas vitales de las dos matrices y dividiendo entre 2.
+
 ```{r chap12_11}
-vr.midway.Martinezzi.Rugosa<-((Rugosa+Martinezzi)/2) #calculate vital rates for midway matrix
+vr.midway.Martinezzi.Rugosa<-((Rugosa+Martinezzi)/2) #calcular la tazas vitales parta la matrix promedia
 
 # Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. 
 
@@ -291,6 +295,8 @@ vr.midway.Martinezzi.Rugosa
 ```
         
 ### Calcular las tasas sensibilidades y elasticidades para la matriz media
+
+En este paso se calculará las sensibilidades y elasticidades para la matriz promedia de *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*.
 
 ```{r chap12_12}
 midway.sens.Martinezzi.Rugosa<-vitalsens(matrix.el, vr.midway.Martinezzi.Rugosa) 
@@ -305,21 +311,28 @@ LTRE.contrib.Martinezzi.Rugosa<-vr.dif.Martinezzi.Rugosa*midway.sens.Martinezzi.
 LTRE.contrib.Martinezzi.Rugosa
 ```
 
+
+### Resultados de ERTV
+
+
+
 ```{r chap12_14}
 LTRE.results.Martinezzi.Rugosa<- data.frame(rug.vr=Rugosa, mart.vr=Martinezzi, vr.difference=vr.dif.Martinezzi.Rugosa, mid.sens=midway.sens.Martinezzi.Rugosa$sensitivity, contribution=LTRE.contrib.Martinezzi.Rugosa)
 
 library(gt)
 gt(LTRE.results.Martinezzi.Rugosa)
-```        
+``` 
+
+**Esa tabla deberia tener el nombre de las transciones de las tasas vitales de las matrices de *Oncidium brachyandrum*. **
 
 
 ***
 
 En Excel puedes utilizar la columna de “contribución” para hacer una representación gráfica de los resultados (Figura 5).
  
-Figure 5. Resultados de un Experimento de Respuesta de la Tabla de Vida (ERTV) llevado a cabo para evaluar las contribuciones de las entradas de la matriz a la variación observada en λ.
+Figure 5. Resultados de un Experimento de Respuesta de la Tabla de Vida (ERTV) llevado a cabo para evaluar las contribuciones de las entradas de la matriz a la variación observada en *λ*.
 
-De acuerdo con el análisis de elasticidad para cada una de las poblaciones de *O. brachyandrum*, tanto en *Q. martinezii* como en *Q. rugosa* la permanencia de individuos infantiles es la tiene un mayor impacto sobre los valores de la tasa de crecimiento poblacional (Figura 6). De acuerdo al ERTV, el cual toma en cuenta las diferencias en las tasas vitales y la sensibilidad de lambda que es una función no linear de esas tasas vitales, podemos observar que la fecundidad (fsa) y el crecimiento de plantulas a juveniles (gsj), de juveniles a adultos (gja) y el retroceso de adultos a juveniles (gaj) tiene las mayores contribuciones a las diferencias en lambda entre Q. martinezii y Q. rugosa que la permanencia de plántulas.
+De acuerdo con el análisis de elasticidad para cada una de las poblaciones de *O. brachyandrum*, tanto en *Q. martinezii* como en *Q. rugosa* la permanencia de individuos infantiles es la que tiene un mayor impacto sobre los valores de la tasa de crecimiento poblacional (Figura 6). De acuerdo al ERTV, el cual toma en cuenta las diferencias en las tasas vitales y la sensibilidad de lambda que es una función no linear de esas tasas vitales, podemos observar que la fecundidad (fsa) y el crecimiento de plantulas a juveniles (gsj), de juveniles a adultos (gja) y el retroceso de adultos a juveniles (gaj) tiene las mayores contribuciones a las diferencias en lambda entre Q. martinezii y Q. rugosa que la permanencia de plántulas.
  
 Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de *Oncidium brachyandrum* creciendo sobre *Quercus martinezii* y *Q. rugosa*. Por proceso demográfico (a) y por estadío (b).
 
@@ -327,3 +340,87 @@ Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de *O
 ***
 
 
+Ahora enseñar como hacer estos analisis sin tener que usar Excel, aqui un set de script para aplicar a *Oncidium brachyandrum*.
+
+Suguiero que cambie las graficas a ggplot2 para que se vean más bonitas. 
+
+El ejemplo viene de este sitio.
+
+https://www.rdocumentation.org/packages/popbio/versions/2.7/topics/LTRE
+
+
+
+```{r}
+#######  Calathea ovandensis
+calathea_pool <- calathea[['pooled']]
+## Create plots like FIGURE 7 in Horvitz et al 1997
+plots <- split(calathea[-17], rep(1:4,each=4))
+## use Mean matrix since pooled not available by plot
+plots <- lapply(plots, mean)
+Cm <- LTRE(plots, calathea_pool)
+pe <- sapply(Cm, sum)
+barplot(pe, xlab="Plot", ylab="Plot effect" , ylim=c(-.25, .25),
+col="blue", las=1)
+abline(h=0)
+box()
+title(expression(italic("Calathea ovandensis")))
+
+##YEARS -- split recycles vector
+yrs <- split(calathea[-17], 1:4)
+yrs <- lapply(yrs, mean)
+names(yrs) <- 1982:1985
+Cm <- LTRE(yrs, calathea_pool)
+ye <- sapply(Cm, sum)
+barplot(ye, xlab="Year", ylab="Year effect" , ylim=c(-.25, .25), col="blue", las=1)
+abline(h=0)
+box()
+title(expression(italic("Calathea ovandensis")))
+## INTERACTION
+Cm <- LTRE(calathea[-17], calathea_pool)
+ie <- sapply(Cm, sum)
+## minus plot, year effects
+ie<- ie - rep(pe, each=4) - rep(ye, 4)
+names(ie) <- NULL
+names(ie)[seq(1,16,4)] <- 1:4
+barplot(ie, xlab="Plot (years 82-83 to 85-86)", ylab="Interaction effect" ,
+  ylim=c(-.25, .25), col="blue", las=1)
+abline(h=0)
+box()
+title(expression(italic("Calathea ovandensis")))
+
+#######  Mimulus
+## Pooled M. cardinalis reference matrix kindly provided by Amy Angert 1/2/2008.
+m_card_pool <- matrix( c(
+1.99e-01, 8.02e+02, 5.82e+03, 3.05e+04,
+2.66e-05, 7.76e-02, 2.31e-02, 1.13e-03,
+7.94e-06, 8.07e-02, 3.22e-01, 2.16e-01,
+2.91e-07, 1.58e-02, 1.15e-01, 6.01e-01), byrow=TRUE, nrow=4)
+## Population effects using pooled population matrices
+card <- subset(monkeyflower,  species=="cardinalis" & year=="pooled")
+## split rows into list of 4 matrices
+Atrt <- lapply(split(as.matrix(card[,4:19]), 1:4),  matrix, nrow=4, byrow=TRUE)
+names(Atrt) <- card$site
+Cm <- LTRE(Atrt, m_card_pool)
+x <- sapply(Cm, sum)
+x
+names(x) <- c("BU", "RP", "WA", "CA")
+## Plot like Figure 2A in Angert (2006)
+op <- par(mar=c(5,5,4,1))
+barplot(x, xlab="Population", ylab="", xlim=c(0,6.5), ylim=c(-.4, .4),
+  las=1, space=.5, col="blue")
+abline(h=0)
+mtext(expression(paste(sum(a[ij]), " contributions")), 2, 3.5)
+title(expression(paste(italic("M. cardinalis"), " Population effects")))
+box()
+## and Plot like Figure 3A
+x <- matrix(unlist(Cm), nrow=4, byrow=TRUE)
+colnames(x) <- paste("a", rep(1:4, each=4), 1:4, sep="")
+bp <- barplot(x[1:2,], beside=TRUE, ylim=c(-.2,.2), las=1,
+xlab="Transition", ylab="", xaxt='n')
+mtext(expression(paste("Contribution of ", a[ij], "to variation in ", lambda)), 2, 3.5)
+## rotate labels
+text(bp[1,]-0.5, -.22, labels=colnames(x), srt=45, xpd=TRUE)
+title(expression(paste(italic("M. cardinalis"), " Range center")))
+box()
+par(op)
+```

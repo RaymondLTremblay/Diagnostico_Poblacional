@@ -375,6 +375,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
 <li class="chapter" data-level="14.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
 <li class="chapter" data-level="14.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>14.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="14.4.9" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>14.4.9</b> Resultados de ERTV</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>15</b> Métodos de Simulaciones y estimaciones de intervalo de confianza</a>
@@ -1028,11 +1029,12 @@ matriz y creamos un histograma de la distribución.</p>
 <span id="cb71-15"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb71-15" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb71-16"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb71-16" tabindex="-1"></a>  rlt_theme<span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, </span>
 <span id="cb71-17"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb71-17" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size=</span><span class="fl">1.5</span>)</span></code></pre></div>
-<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in
+## ggplot2 3.4.0.
 ## ℹ Please use `linewidth` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see
+## where this warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap7_26-1.png" width="672" /></p>
 </div>
 <div id="determinar-si-el-lambda-es-significativamente-diferente-de-1" class="section level2 hasAnchor" number="8.14">

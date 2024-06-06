@@ -375,6 +375,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
 <li class="chapter" data-level="14.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
 <li class="chapter" data-level="14.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>14.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="14.4.9" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>14.4.9</b> Resultados de ERTV</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalo-de-confianza.html"><i class="fa fa-check"></i><b>15</b> Métodos de Simulaciones y estimaciones de intervalo de confianza</a>
@@ -764,6 +765,7 @@ div.csl-indent {
 </div>
 <div id="calcular-las-diferencias-en-tasas-vitales-entre-las-especies" class="section level3 hasAnchor" number="14.4.5">
 <h3><span class="header-section-number">14.4.5</span> Calcular las diferencias en tasas vitales entre las especies<a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En esta parte se calculará la diferencia entre las tasas vitales de <em>Oncidium brachyandrum</em> creciendo sobre <em>Q. martinezii</em> y <em>Q. rugosa</em>.</p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="ltre.html#cb207-1" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa<span class="ot">&lt;-</span>Rugosa<span class="sc">-</span>Martinezzi </span>
 <span id="cb207-2"><a href="ltre.html#cb207-2" tabindex="-1"></a>vr.dif.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##           s1          g12           s2          g21          g23           s3 
@@ -773,7 +775,8 @@ div.csl-indent {
 </div>
 <div id="calcular-las-tasas-vitales-para-la-matriz-media" class="section level3 hasAnchor" number="14.4.6">
 <h3><span class="header-section-number">14.4.6</span> Calcular las tasas vitales para la matriz media<a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="ltre.html#cb209-1" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa<span class="ot">&lt;-</span>((Rugosa<span class="sc">+</span>Martinezzi)<span class="sc">/</span><span class="dv">2</span>) <span class="co">#calculate vital rates for midway matrix</span></span>
+<p>En este paso se calculará la tasa vital media para <em>Oncidium brachyandrum</em> creciendo sobre <em>Q. martinezii</em> y <em>Q. rugosa</em>. La tasa vital media se calcula sumando las tasas vitales de las dos matrices y dividiendo entre 2.</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="ltre.html#cb209-1" tabindex="-1"></a>vr.midway.Martinezzi.Rugosa<span class="ot">&lt;-</span>((Rugosa<span class="sc">+</span>Martinezzi)<span class="sc">/</span><span class="dv">2</span>) <span class="co">#calcular la tazas vitales parta la matrix promedia</span></span>
 <span id="cb209-2"><a href="ltre.html#cb209-2" tabindex="-1"></a></span>
 <span id="cb209-3"><a href="ltre.html#cb209-3" tabindex="-1"></a><span class="co"># Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. </span></span>
 <span id="cb209-4"><a href="ltre.html#cb209-4" tabindex="-1"></a></span>
@@ -785,6 +788,7 @@ div.csl-indent {
 </div>
 <div id="calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media" class="section level3 hasAnchor" number="14.4.7">
 <h3><span class="header-section-number">14.4.7</span> Calcular las tasas sensibilidades y elasticidades para la matriz media<a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En este paso se calculará las sensibilidades y elasticidades para la matriz promedia de <em>Oncidium brachyandrum</em> creciendo sobre <em>Q. martinezii</em> y <em>Q. rugosa</em>.</p>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="ltre.html#cb211-1" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa<span class="ot">&lt;-</span><span class="fu">vitalsens</span>(matrix.el, vr.midway.Martinezzi.Rugosa) </span>
 <span id="cb211-2"><a href="ltre.html#cb211-2" tabindex="-1"></a>midway.sens.Martinezzi.Rugosa</span></code></pre></div>
 <pre><code>##       estimate  sensitivity   elasticity
@@ -809,6 +813,9 @@ div.csl-indent {
 ## -0.010711774  0.005023395 -0.005659869 -0.007704137 -0.045950368  0.016438656 
 ##          g32          g34           s4          g43          f31          f41 
 ## -0.003110101  0.019926365 -0.001578908  0.024885694 -0.104388906 -0.147084835</code></pre>
+</div>
+<div id="resultados-de-ertv" class="section level3 hasAnchor" number="14.4.9">
+<h3><span class="header-section-number">14.4.9</span> Resultados de ERTV<a href="ltre.html#resultados-de-ertv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="ltre.html#cb215-1" tabindex="-1"></a>LTRE.results.Martinezzi.Rugosa<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rug.vr=</span>Rugosa, <span class="at">mart.vr=</span>Martinezzi, <span class="at">vr.difference=</span>vr.dif.Martinezzi.Rugosa, <span class="at">mid.sens=</span>midway.sens.Martinezzi.Rugosa<span class="sc">$</span>sensitivity, <span class="at">contribution=</span>LTRE.contrib.Martinezzi.Rugosa)</span>
 <span id="cb215-2"><a href="ltre.html#cb215-2" tabindex="-1"></a></span>
 <span id="cb215-3"><a href="ltre.html#cb215-3" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
@@ -1329,12 +1336,94 @@ div.csl-indent {
   
 </table>
 </div>
+<p><strong>Esa tabla deberia tener el nombre de las transciones de las tasas vitales de las matrices de <em>Oncidium brachyandrum</em>. </strong></p>
 <hr />
 <p>En Excel puedes utilizar la columna de “contribución” para hacer una representación gráfica de los resultados (Figura 5).</p>
-<p>Figure 5. Resultados de un Experimento de Respuesta de la Tabla de Vida (ERTV) llevado a cabo para evaluar las contribuciones de las entradas de la matriz a la variación observada en λ.</p>
-<p>De acuerdo con el análisis de elasticidad para cada una de las poblaciones de <em>O. brachyandrum</em>, tanto en <em>Q. martinezii</em> como en <em>Q. rugosa</em> la permanencia de individuos infantiles es la tiene un mayor impacto sobre los valores de la tasa de crecimiento poblacional (Figura 6). De acuerdo al ERTV, el cual toma en cuenta las diferencias en las tasas vitales y la sensibilidad de lambda que es una función no linear de esas tasas vitales, podemos observar que la fecundidad (fsa) y el crecimiento de plantulas a juveniles (gsj), de juveniles a adultos (gja) y el retroceso de adultos a juveniles (gaj) tiene las mayores contribuciones a las diferencias en lambda entre Q. martinezii y Q. rugosa que la permanencia de plántulas.</p>
+<p>Figure 5. Resultados de un Experimento de Respuesta de la Tabla de Vida (ERTV) llevado a cabo para evaluar las contribuciones de las entradas de la matriz a la variación observada en <em>λ</em>.</p>
+<p>De acuerdo con el análisis de elasticidad para cada una de las poblaciones de <em>O. brachyandrum</em>, tanto en <em>Q. martinezii</em> como en <em>Q. rugosa</em> la permanencia de individuos infantiles es la que tiene un mayor impacto sobre los valores de la tasa de crecimiento poblacional (Figura 6). De acuerdo al ERTV, el cual toma en cuenta las diferencias en las tasas vitales y la sensibilidad de lambda que es una función no linear de esas tasas vitales, podemos observar que la fecundidad (fsa) y el crecimiento de plantulas a juveniles (gsj), de juveniles a adultos (gja) y el retroceso de adultos a juveniles (gaj) tiene las mayores contribuciones a las diferencias en lambda entre Q. martinezii y Q. rugosa que la permanencia de plántulas.</p>
 <p>Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de <em>Oncidium brachyandrum</em> creciendo sobre <em>Quercus martinezii</em> y <em>Q. rugosa</em>. Por proceso demográfico (a) y por estadío (b).</p>
 <hr />
+<p>Ahora enseñar como hacer estos analisis sin tener que usar Excel, aqui un set de script para aplicar a <em>Oncidium brachyandrum</em>.</p>
+<p>Suguiero que cambie las graficas a ggplot2 para que se vean más bonitas.</p>
+<p>El ejemplo viene de este sitio.</p>
+<p><a href="https://www.rdocumentation.org/packages/popbio/versions/2.7/topics/LTRE" class="uri">https://www.rdocumentation.org/packages/popbio/versions/2.7/topics/LTRE</a></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="ltre.html#cb216-1" tabindex="-1"></a><span class="do">#######  Calathea ovandensis</span></span>
+<span id="cb216-2"><a href="ltre.html#cb216-2" tabindex="-1"></a>calathea_pool <span class="ot">&lt;-</span> calathea[[<span class="st">&#39;pooled&#39;</span>]]</span>
+<span id="cb216-3"><a href="ltre.html#cb216-3" tabindex="-1"></a><span class="do">## Create plots like FIGURE 7 in Horvitz et al 1997</span></span>
+<span id="cb216-4"><a href="ltre.html#cb216-4" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">split</span>(calathea[<span class="sc">-</span><span class="dv">17</span>], <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="at">each=</span><span class="dv">4</span>))</span>
+<span id="cb216-5"><a href="ltre.html#cb216-5" tabindex="-1"></a><span class="do">## use Mean matrix since pooled not available by plot</span></span>
+<span id="cb216-6"><a href="ltre.html#cb216-6" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">lapply</span>(plots, mean)</span>
+<span id="cb216-7"><a href="ltre.html#cb216-7" tabindex="-1"></a>Cm <span class="ot">&lt;-</span> <span class="fu">LTRE</span>(plots, calathea_pool)</span>
+<span id="cb216-8"><a href="ltre.html#cb216-8" tabindex="-1"></a>pe <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Cm, sum)</span>
+<span id="cb216-9"><a href="ltre.html#cb216-9" tabindex="-1"></a><span class="fu">barplot</span>(pe, <span class="at">xlab=</span><span class="st">&quot;Plot&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Plot effect&quot;</span> , <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">25</span>, .<span class="dv">25</span>),</span>
+<span id="cb216-10"><a href="ltre.html#cb216-10" tabindex="-1"></a><span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb216-11"><a href="ltre.html#cb216-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span>
+<span id="cb216-12"><a href="ltre.html#cb216-12" tabindex="-1"></a><span class="fu">box</span>()</span>
+<span id="cb216-13"><a href="ltre.html#cb216-13" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">expression</span>(<span class="fu">italic</span>(<span class="st">&quot;Calathea ovandensis&quot;</span>)))</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="ltre.html#cb217-1" tabindex="-1"></a><span class="do">##YEARS -- split recycles vector</span></span>
+<span id="cb217-2"><a href="ltre.html#cb217-2" tabindex="-1"></a>yrs <span class="ot">&lt;-</span> <span class="fu">split</span>(calathea[<span class="sc">-</span><span class="dv">17</span>], <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb217-3"><a href="ltre.html#cb217-3" tabindex="-1"></a>yrs <span class="ot">&lt;-</span> <span class="fu">lapply</span>(yrs, mean)</span>
+<span id="cb217-4"><a href="ltre.html#cb217-4" tabindex="-1"></a><span class="fu">names</span>(yrs) <span class="ot">&lt;-</span> <span class="dv">1982</span><span class="sc">:</span><span class="dv">1985</span></span>
+<span id="cb217-5"><a href="ltre.html#cb217-5" tabindex="-1"></a>Cm <span class="ot">&lt;-</span> <span class="fu">LTRE</span>(yrs, calathea_pool)</span>
+<span id="cb217-6"><a href="ltre.html#cb217-6" tabindex="-1"></a>ye <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Cm, sum)</span>
+<span id="cb217-7"><a href="ltre.html#cb217-7" tabindex="-1"></a><span class="fu">barplot</span>(ye, <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Year effect&quot;</span> , <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">25</span>, .<span class="dv">25</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb217-8"><a href="ltre.html#cb217-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span>
+<span id="cb217-9"><a href="ltre.html#cb217-9" tabindex="-1"></a><span class="fu">box</span>()</span>
+<span id="cb217-10"><a href="ltre.html#cb217-10" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">expression</span>(<span class="fu">italic</span>(<span class="st">&quot;Calathea ovandensis&quot;</span>)))</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="ltre.html#cb218-1" tabindex="-1"></a><span class="do">## INTERACTION</span></span>
+<span id="cb218-2"><a href="ltre.html#cb218-2" tabindex="-1"></a>Cm <span class="ot">&lt;-</span> <span class="fu">LTRE</span>(calathea[<span class="sc">-</span><span class="dv">17</span>], calathea_pool)</span>
+<span id="cb218-3"><a href="ltre.html#cb218-3" tabindex="-1"></a>ie <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Cm, sum)</span>
+<span id="cb218-4"><a href="ltre.html#cb218-4" tabindex="-1"></a><span class="do">## minus plot, year effects</span></span>
+<span id="cb218-5"><a href="ltre.html#cb218-5" tabindex="-1"></a>ie<span class="ot">&lt;-</span> ie <span class="sc">-</span> <span class="fu">rep</span>(pe, <span class="at">each=</span><span class="dv">4</span>) <span class="sc">-</span> <span class="fu">rep</span>(ye, <span class="dv">4</span>)</span>
+<span id="cb218-6"><a href="ltre.html#cb218-6" tabindex="-1"></a><span class="fu">names</span>(ie) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb218-7"><a href="ltre.html#cb218-7" tabindex="-1"></a><span class="fu">names</span>(ie)[<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="dv">4</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb218-8"><a href="ltre.html#cb218-8" tabindex="-1"></a><span class="fu">barplot</span>(ie, <span class="at">xlab=</span><span class="st">&quot;Plot (years 82-83 to 85-86)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Interaction effect&quot;</span> ,</span>
+<span id="cb218-9"><a href="ltre.html#cb218-9" tabindex="-1"></a>  <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">25</span>, .<span class="dv">25</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb218-10"><a href="ltre.html#cb218-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span>
+<span id="cb218-11"><a href="ltre.html#cb218-11" tabindex="-1"></a><span class="fu">box</span>()</span>
+<span id="cb218-12"><a href="ltre.html#cb218-12" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">expression</span>(<span class="fu">italic</span>(<span class="st">&quot;Calathea ovandensis&quot;</span>)))</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-24-3.png" width="672" /></p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="ltre.html#cb219-1" tabindex="-1"></a><span class="do">#######  Mimulus</span></span>
+<span id="cb219-2"><a href="ltre.html#cb219-2" tabindex="-1"></a><span class="do">## Pooled M. cardinalis reference matrix kindly provided by Amy Angert 1/2/2008.</span></span>
+<span id="cb219-3"><a href="ltre.html#cb219-3" tabindex="-1"></a>m_card_pool <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(</span>
+<span id="cb219-4"><a href="ltre.html#cb219-4" tabindex="-1"></a><span class="fl">1.99e-01</span>, <span class="fl">8.02e+02</span>, <span class="fl">5.82e+03</span>, <span class="fl">3.05e+04</span>,</span>
+<span id="cb219-5"><a href="ltre.html#cb219-5" tabindex="-1"></a><span class="fl">2.66e-05</span>, <span class="fl">7.76e-02</span>, <span class="fl">2.31e-02</span>, <span class="fl">1.13e-03</span>,</span>
+<span id="cb219-6"><a href="ltre.html#cb219-6" tabindex="-1"></a><span class="fl">7.94e-06</span>, <span class="fl">8.07e-02</span>, <span class="fl">3.22e-01</span>, <span class="fl">2.16e-01</span>,</span>
+<span id="cb219-7"><a href="ltre.html#cb219-7" tabindex="-1"></a><span class="fl">2.91e-07</span>, <span class="fl">1.58e-02</span>, <span class="fl">1.15e-01</span>, <span class="fl">6.01e-01</span>), <span class="at">byrow=</span><span class="cn">TRUE</span>, <span class="at">nrow=</span><span class="dv">4</span>)</span>
+<span id="cb219-8"><a href="ltre.html#cb219-8" tabindex="-1"></a><span class="do">## Population effects using pooled population matrices</span></span>
+<span id="cb219-9"><a href="ltre.html#cb219-9" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">subset</span>(monkeyflower,  species<span class="sc">==</span><span class="st">&quot;cardinalis&quot;</span> <span class="sc">&amp;</span> year<span class="sc">==</span><span class="st">&quot;pooled&quot;</span>)</span>
+<span id="cb219-10"><a href="ltre.html#cb219-10" tabindex="-1"></a><span class="do">## split rows into list of 4 matrices</span></span>
+<span id="cb219-11"><a href="ltre.html#cb219-11" tabindex="-1"></a>Atrt <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">split</span>(<span class="fu">as.matrix</span>(card[,<span class="dv">4</span><span class="sc">:</span><span class="dv">19</span>]), <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>),  matrix, <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb219-12"><a href="ltre.html#cb219-12" tabindex="-1"></a><span class="fu">names</span>(Atrt) <span class="ot">&lt;-</span> card<span class="sc">$</span>site</span>
+<span id="cb219-13"><a href="ltre.html#cb219-13" tabindex="-1"></a>Cm <span class="ot">&lt;-</span> <span class="fu">LTRE</span>(Atrt, m_card_pool)</span>
+<span id="cb219-14"><a href="ltre.html#cb219-14" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Cm, sum)</span>
+<span id="cb219-15"><a href="ltre.html#cb219-15" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## Buck Meadows Rainbow Pool       Wawona       Carlon 
+##   -0.1414325   -0.2604730    0.1107258    0.3252459</code></pre>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="ltre.html#cb221-1" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BU&quot;</span>, <span class="st">&quot;RP&quot;</span>, <span class="st">&quot;WA&quot;</span>, <span class="st">&quot;CA&quot;</span>)</span>
+<span id="cb221-2"><a href="ltre.html#cb221-2" tabindex="-1"></a><span class="do">## Plot like Figure 2A in Angert (2006)</span></span>
+<span id="cb221-3"><a href="ltre.html#cb221-3" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>))</span>
+<span id="cb221-4"><a href="ltre.html#cb221-4" tabindex="-1"></a><span class="fu">barplot</span>(x, <span class="at">xlab=</span><span class="st">&quot;Population&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">6.5</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">4</span>, .<span class="dv">4</span>),</span>
+<span id="cb221-5"><a href="ltre.html#cb221-5" tabindex="-1"></a>  <span class="at">las=</span><span class="dv">1</span>, <span class="at">space=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb221-6"><a href="ltre.html#cb221-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>)</span>
+<span id="cb221-7"><a href="ltre.html#cb221-7" tabindex="-1"></a><span class="fu">mtext</span>(<span class="fu">expression</span>(<span class="fu">paste</span>(<span class="fu">sum</span>(a[ij]), <span class="st">&quot; contributions&quot;</span>)), <span class="dv">2</span>, <span class="fl">3.5</span>)</span>
+<span id="cb221-8"><a href="ltre.html#cb221-8" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">expression</span>(<span class="fu">paste</span>(<span class="fu">italic</span>(<span class="st">&quot;M. cardinalis&quot;</span>), <span class="st">&quot; Population effects&quot;</span>)))</span>
+<span id="cb221-9"><a href="ltre.html#cb221-9" tabindex="-1"></a><span class="fu">box</span>()</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-24-4.png" width="672" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="ltre.html#cb222-1" tabindex="-1"></a><span class="do">## and Plot like Figure 3A</span></span>
+<span id="cb222-2"><a href="ltre.html#cb222-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">unlist</span>(Cm), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb222-3"><a href="ltre.html#cb222-3" tabindex="-1"></a><span class="fu">colnames</span>(x) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;a&quot;</span>, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">each=</span><span class="dv">4</span>), <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb222-4"><a href="ltre.html#cb222-4" tabindex="-1"></a>bp <span class="ot">&lt;-</span> <span class="fu">barplot</span>(x[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,], <span class="at">beside=</span><span class="cn">TRUE</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">2</span>,.<span class="dv">2</span>), <span class="at">las=</span><span class="dv">1</span>,</span>
+<span id="cb222-5"><a href="ltre.html#cb222-5" tabindex="-1"></a><span class="at">xlab=</span><span class="st">&quot;Transition&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>, <span class="at">xaxt=</span><span class="st">&#39;n&#39;</span>)</span>
+<span id="cb222-6"><a href="ltre.html#cb222-6" tabindex="-1"></a><span class="fu">mtext</span>(<span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Contribution of &quot;</span>, a[ij], <span class="st">&quot;to variation in &quot;</span>, lambda)), <span class="dv">2</span>, <span class="fl">3.5</span>)</span>
+<span id="cb222-7"><a href="ltre.html#cb222-7" tabindex="-1"></a><span class="do">## rotate labels</span></span>
+<span id="cb222-8"><a href="ltre.html#cb222-8" tabindex="-1"></a><span class="fu">text</span>(bp[<span class="dv">1</span>,]<span class="sc">-</span><span class="fl">0.5</span>, <span class="sc">-</span>.<span class="dv">22</span>, <span class="at">labels=</span><span class="fu">colnames</span>(x), <span class="at">srt=</span><span class="dv">45</span>, <span class="at">xpd=</span><span class="cn">TRUE</span>)</span>
+<span id="cb222-9"><a href="ltre.html#cb222-9" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">expression</span>(<span class="fu">paste</span>(<span class="fu">italic</span>(<span class="st">&quot;M. cardinalis&quot;</span>), <span class="st">&quot; Range center&quot;</span>)))</span>
+<span id="cb222-10"><a href="ltre.html#cb222-10" tabindex="-1"></a><span class="fu">box</span>()</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-24-5.png" width="672" /></p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="ltre.html#cb223-1" tabindex="-1"></a><span class="fu">par</span>(op)</span></code></pre></div>
 
 </div>
 </div>
