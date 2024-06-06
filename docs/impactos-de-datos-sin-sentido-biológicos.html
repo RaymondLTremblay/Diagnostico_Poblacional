@@ -361,16 +361,16 @@ div.csl-indent {
 <li class="chapter" data-level="14.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>14.2.1</b> Ejemplo práctico de ERTV</a></li>
 <li class="chapter" data-level="14.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>14.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
 <li class="chapter" data-level="14.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>14.2.3</b> Diagrama del ciclo de vida</a></li>
-<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para Quercus martinezii</a></li>
+<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para <em>Quercus martinezii</em></a></li>
 <li class="chapter" data-level="14.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>14.2.5</b> Diagrama para Quercus rugosa</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>14.3</b> Procedimiento para ERTV en Excel</a></li>
 <li class="chapter" data-level="14.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>14.4</b> Procedimiento en R</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>14.4.1</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="14.4.2" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>14.4.2</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="14.4.1" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>14.4.1</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="14.4.2" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>14.4.2</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
 <li class="chapter" data-level="14.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>14.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
-<li class="chapter" data-level="14.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>14.4.4</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
+<li class="chapter" data-level="14.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>14.4.4</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
 <li class="chapter" data-level="14.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>14.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
 <li class="chapter" data-level="14.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
 <li class="chapter" data-level="14.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
@@ -744,7 +744,7 @@ Recopilado por Fabiola Hernández-Ramirez</p>
 <pre><code>## [1] 50 50 50</code></pre>
 <div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb382-1" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">project</span>(Sp1matA_Fert, <span class="at">vector=</span><span class="st">&quot;n&quot;</span>, <span class="at">time=</span><span class="dv">5</span>)</span>
 <span id="cb382-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb382-2" tabindex="-1"></a><span class="fu">plot</span>(pr) <span class="co"># Note that even after just 5 time periods, the number of adults is larger than 250,000 individuals</span></span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <p>Si deseamos agregar una etapa de semilla, debemos incluir la etapa en nuestro modelo y matriz con una nueva etapa <em>la etapa de semilla</em>, y tener una estimación del número de semillas que germinan y se convierten en plántulas. En el caso de las orquídeas, es probable que sea una estimación difícil de lograr porque las semillas de las orquídeas son difíciles de seguir en la naturaleza a menos que se haya usado el método del paquete de semillas <span class="citation">(<a href="#ref-rasmussen1993seed">Rasmussen and Whigham 1993</a>; <a href="#ref-batty2006situ">Batty et al. 2006</a>; <a href="#ref-shao2024improved">Shao, Jacquemyn, and Selosse 2024</a>)</span> o se utilizó algún método de huella genética para determinar la procedencia de las semillas. Por lo tanto, la estimación de la fertilidad en las orquídeas es un desafío y requiere un muestreo y análisis cuidadoso.</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb383-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
 <span id="cb383-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb383-2" tabindex="-1"></a></span>
@@ -774,7 +774,7 @@ Recopilado por Fabiola Hernández-Ramirez</p>
 <div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-1" tabindex="-1"></a><span class="co"># show change in population size</span></span>
 <span id="cb386-2"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-2" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">project</span>(Sp1matA_Fert2, <span class="at">vector=</span><span class="st">&quot;n&quot;</span>, <span class="at">time=</span><span class="dv">5</span>)</span>
 <span id="cb386-3"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb386-3" tabindex="-1"></a><span class="fu">plot</span>(pr) <span class="co"># Note that now the number of adults did not increase to the level of the previous model</span></span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-44-2.png" width="672" /></p>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-45-2.png" width="672" /></p>
 <p>En el ejemplo anterior no hemos incluido una etapa de latencia de semillas. En muchas especies de plantas, las semillas pueden permanecer latentes durante uno o más años. No se sabe si las semillas de las orquídeas están inactivas durante mucho tiempo <span class="citation">(<a href="#ref-gale2010restricciones"><strong>gale2010restricciones?</strong></a>)</span>, excepto para algunas especies que han demostrado que las semillas aún están vivas después de varios años en el suelo usando la prueba de tinción de tetrazolio <span class="citation">Rasmussen and Whigham (<a href="#ref-rasmussen1993seed">1993</a>)</span> y <span class="citation">Whigham et al. (<a href="#ref-whigham2006seed">2006</a>)</span>. MAS REFERENCIAS!!</p>
 <hr />
 </div>
@@ -885,7 +885,7 @@ Recopilado por Fabiola Hernández-Ramirez</p>
 <span id="cb399-19"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb399-19" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>ind)<span class="sc">+</span></span>
 <span id="cb399-20"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb399-20" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;La distribución de las proporciones </span><span class="sc">\n</span><span class="st"> de plantulas que crecen a la siguiente etapas&quot;</span>)<span class="sc">+</span></span>
 <span id="cb399-21"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb399-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proporciones&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>Ahora calculemos el IC del 95% de las transiciones</p>
 <ul>
 <li>Intervalos de confianza de transiciones, estasis y supervivencia basados en simulación y distribución de Dirichlet.</li>
@@ -958,7 +958,7 @@ Recopilado por Fabiola Hernández-Ramirez</p>
 <span id="cb408-14"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb408-14" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limit=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">18</span>))<span class="sc">+</span></span>
 <span id="cb408-15"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb408-15" tabindex="-1"></a>  <span class="fu">scale_colour_hue</span>(<span class="at">l=</span><span class="dv">60</span>)<span class="sc">+</span></span>
 <span id="cb408-16"><a href="impactos-de-datos-sin-sentido-biológicos.html#cb408-16" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>ind)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="los-estimados-de-intervalo-de-camfianza" class="section level3 hasAnchor" number="20.5.2">
 <h3><span class="header-section-number">20.5.2</span> Los estimados de Intervalo de camfianza<a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>

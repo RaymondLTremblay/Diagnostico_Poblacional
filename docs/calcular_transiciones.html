@@ -361,16 +361,16 @@ div.csl-indent {
 <li class="chapter" data-level="14.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>14.2.1</b> Ejemplo práctico de ERTV</a></li>
 <li class="chapter" data-level="14.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>14.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
 <li class="chapter" data-level="14.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>14.2.3</b> Diagrama del ciclo de vida</a></li>
-<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para Quercus martinezii</a></li>
+<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para <em>Quercus martinezii</em></a></li>
 <li class="chapter" data-level="14.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>14.2.5</b> Diagrama para Quercus rugosa</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>14.3</b> Procedimiento para ERTV en Excel</a></li>
 <li class="chapter" data-level="14.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>14.4</b> Procedimiento en R</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>14.4.1</b> Extraer tasas vitales de Martinezzi y dejar a lambda a un lado</a></li>
-<li class="chapter" data-level="14.4.2" data-path="ltre.html"><a href="ltre.html#extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado"><i class="fa fa-check"></i><b>14.4.2</b> Extraer tasas vitales de martinezii y dejar a lambda a un lado</a></li>
+<li class="chapter" data-level="14.4.1" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>14.4.1</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="14.4.2" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>14.4.2</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
 <li class="chapter" data-level="14.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>14.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
-<li class="chapter" data-level="14.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices"><i class="fa fa-check"></i><b>14.4.4</b> Calcular las sensibilidades y elasticidades de ambas matrices</a></li>
+<li class="chapter" data-level="14.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>14.4.4</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
 <li class="chapter" data-level="14.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>14.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
 <li class="chapter" data-level="14.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
 <li class="chapter" data-level="14.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
@@ -528,7 +528,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="calcular_transiciones.html#cb414-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb414-2"><a href="calcular_transiciones.html#cb414-2" tabindex="-1"></a>Especie_desconocida <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Especie_desconocida.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 35 Columns: 3
-## ── Column specification ────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): stage, next_stage
 ## dbl (1): fertility
@@ -631,7 +631,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="calcular_transiciones.html#cb434-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb434-2"><a href="calcular_transiciones.html#cb434-2" tabindex="-1"></a>ejercicio_de_orquideas_Hoja_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;ejercicio_de_orquideas_Hoja_1.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 125 Columns: 5
-## ── Column specification ────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): Etapa_2023, Etapa_2024, Fertility_2024
 ## dbl (2): ID, Fertility_2023

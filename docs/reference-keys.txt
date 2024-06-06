@@ -147,10 +147,10 @@ diagrama-para-quercus-martinezii
 diagrama-para-quercus-rugosa
 procedimiento-para-ertv-en-excel
 procedimiento-en-r
-extraer-tasas-vitales-de-martinezzi-y-dejar-a-lambda-a-un-lado
-extraer-tasas-vitales-de-martinezii-y-dejar-a-lambda-a-un-lado
+tasa-vital-sobre-q.-martinezzi
+tasa-vital-sobre-q.-rugosa
 extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales
-calcular-las-sensibilidades-y-elasticidades-de-ambas-matrices
+calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices
 quercus-matinezzi
 quercus-rugosa
 calcular-las-diferencias-en-tasas-vitales-entre-las-especies
