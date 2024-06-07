@@ -342,7 +342,7 @@ Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de *O
 
 Ahora enseñar como hacer estos analisis sin tener que usar Excel, aqui un set de script para aplicar a *Oncidium brachyandrum*.
 
-Suguiero que cambie las graficas a ggplot2 para que se vean más bonitas. 
+Suguiero que cambie las graficas a ggplot2 para que se vean más bonitas.  
 
 El ejemplo viene de este sitio.
 
