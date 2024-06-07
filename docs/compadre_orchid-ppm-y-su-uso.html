@@ -1763,8 +1763,8 @@ div.csl-indent {
 <span id="cb242-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb242-9" tabindex="-1"></a></span>
 <span id="cb242-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb242-10" tabindex="-1"></a>SPECIES_O <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
-## # Groups:   SpeciesAccepted, YearPublication,
-## #   OrganismType, StudyStart [6]
+## # Groups:   SpeciesAccepted, YearPublication, OrganismType, StudyStart
+## #   [6]
 ##   SpeciesAccepted YearPublication OrganismType StudyStart StudyEnd n_populations
 ##   &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;         &lt;int&gt;
 ## 1 Lepanthes cari… 2018            Epiphyte           2010     2012            18
@@ -1810,13 +1810,13 @@ div.csl-indent {
 <span id="cb247-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb247-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb247-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()`
-## was deprecated in ggplot2 3.5.0.
-## ℹ Please use the `legend.position.inside`
-##   argument of `theme()` instead.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in
+## ggplot2 3.5.0.
+## ℹ Please use the `legend.position.inside` argument of `theme()`
+##   instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to
-## see where this warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning
+## was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb249-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
@@ -1845,19 +1845,17 @@ div.csl-indent {
 <span id="cb255-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb255-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Study duration&quot;</span>)<span class="sc">+</span></span>
 <span id="cb255-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb255-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frequency&quot;</span>)<span class="sc">+</span></span>
 <span id="cb255-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb255-7" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value
-## with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 1 row containing non-finite outside the
-## scale range (`stat_bin()`).</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_bin()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_14-1.png" width="672" /></p>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb258-1" tabindex="-1"></a><span class="co">#ggsave(&quot;Duración_Epi_Ter.pdf&quot;)</span></span>
 <span id="cb258-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb258-2" tabindex="-1"></a></span>
 <span id="cb258-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb258-3" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Duración_Epi_Ter.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value
-## with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 1 row containing non-finite outside the
-## scale range (`stat_bin()`).</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_bin()`).</code></pre>
 </div>
 <div id="amalgamando-todas-las-matrices-y-su-información" class="section level3 hasAnchor" number="18.4.4">
 <h3><span class="header-section-number">18.4.4</span> Amalgamando todas las matrices y su información<a href="compadre_orchid-ppm-y-su-uso.html#amalgamando-todas-las-matrices-y-su-información" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2069,13 +2067,11 @@ div.csl-indent {
 <span id="cb287-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb287-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb287-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb287-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span>Habit_Type)<span class="sc">+</span></span>
 <span id="cb287-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb287-4" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value
-## with `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_23-1.png" width="672" /></p>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb289-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Terr_Epi_lambda.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value
-## with `binwidth`.</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb291-1" tabindex="-1"></a>model_lambda<span class="ot">=</span><span class="fu">lm</span>(lambda <span class="sc">~</span> Habit_Type<span class="dv">-1</span>, <span class="at">data=</span>ALL_Lambdas)</span>
 <span id="cb291-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb291-2" tabindex="-1"></a><span class="fu">summary</span>(model_lambda)</span></code></pre></div>
 <pre><code>## 
@@ -2182,13 +2178,13 @@ div.csl-indent {
 <div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(x2, <span class="fu">aes</span>(Lon, Lat)) <span class="sc">+</span></span>
 <span id="cb302-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb302-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 27 rows containing missing values or
-## values outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26-1.png" width="672" /></p>
 <div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb304-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;orchid_map.jpg&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 27 rows containing missing values or
-## values outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 </div>
 </div>
 <div id="como-calcular-la-esperanza-de-vida-en-r-con-la-base-de-datos-de-compadre" class="section level2 hasAnchor" number="18.5">
@@ -2226,13 +2222,12 @@ div.csl-indent {
 <span id="cb307-27"><a href="compadre_orchid-ppm-y-su-uso.html#cb307-27" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) </span></code></pre></div>
 <pre><code>## Warning: There were 4 warnings in `mutate()`.
 ## The first warning was:
-## ℹ In argument: `var_life_expectancy =
-##   mapply(life_expect_var, matU, start = 1)`.
+## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU,
+##   start = 1)`.
 ## Caused by warning:
 ## ! Argument matU has at least one stage-specific survival.
 ##  probability &gt; 1
-## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3
-##   remaining warnings.</code></pre>
+## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb309-1" tabindex="-1"></a>compadre_life_expect</span></code></pre></div>
 <pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 29 SPECIES and 33 MATRICES.
 ## 
@@ -2272,17 +2267,17 @@ div.csl-indent {
 <span id="cb313-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb313-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)<span class="sc">+</span></span>
 <span id="cb313-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb313-6" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
 <span id="cb313-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb313-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 1 row containing non-finite outside the
-## scale range (`stat_boxplot()`).</code></pre>
-<pre><code>## Warning: Removed 1 row containing missing values or values
-## outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_boxplot()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb316-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 1 row containing non-finite outside the
-## scale range (`stat_boxplot()`).
-## Removed 1 row containing missing values or values
-## outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_boxplot()`).
+## Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><a href="https://jonesor.github.io/Rage/reference/life_expect.html" class="uri">https://jonesor.github.io/Rage/reference/life_expect.html</a></p>
 <p>How to calculate CI of life span</p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb319-1" tabindex="-1"></a>SPECIES_O<span class="sc">$</span>SpeciesAccepted <span class="ot">&lt;-</span> <span class="fu">fct_reorder</span>(SPECIES_O<span class="sc">$</span>SpeciesAccepted, SPECIES_O<span class="sc">$</span>StudyStart, <span class="at">.desc =</span> <span class="cn">FALSE</span>)</span>
@@ -2299,16 +2294,16 @@ div.csl-indent {
 <span id="cb319-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb319-12" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
 <span id="cb319-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb319-13" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb319-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb319-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 1 row containing missing values or values
-## outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_28-1.png" width="672" /></p>
 <div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb321-1" tabindex="-1"></a><span class="co">#  rlt_theme+</span></span>
 <span id="cb321-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb321-2" tabindex="-1"></a>  <span class="co">#theme(legend.position = &quot;none&quot;)</span></span>
 <span id="cb321-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb321-3" tabindex="-1"></a></span>
 <span id="cb321-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb321-4" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Genus_Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 1 row containing missing values or values
-## outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb324-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)</span></span>
 <span id="cb324-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb324-2" tabindex="-1"></a></span>
 <span id="cb324-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb324-3" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
