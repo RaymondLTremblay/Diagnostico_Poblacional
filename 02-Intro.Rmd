@@ -1,8 +1,9 @@
 ---
 output:
-  word_document: default
-  html_document: 
+  pdf_document: default
+  html_document:
     code_folding: show
+  word_document: default
 ---
 
 
@@ -39,42 +40,44 @@ Por: Por RLT, Nhora Ospina, Demetria y Anne .....
 
 ***
 
-El objetivo de la conservación biológica es asegurar que las especies pueden sobrevivir, reproducirse y dejar progenie viable para de una generación a otra. Por consecuencia se necesita que las variables intrinsicas y extrinsicas, bioticas y abioticas de cada especies estén considerado con todas sus interacciones. Naturalmente aunque el concepto es sencillo, tomar en cuanta **TODAS** las posibles interacciones biológicas y abióticas es imposible.
+El objetivo de la conservación biológica es asegurar que las especies pueden sobrevivir, reproducirse y dejar progenie viable de una generación a otra. Por consecuencia se necesita que las variables intrinsicas y extrinsicas, bioticas y abioticas de cada especies estén considerado con todas sus interacciones. Naturalmente aunque el concepto es sencillo, tomar en cuanta **TODAS** las posibles interacciones biológicas y abióticas es imposible. Por consecuencia, uno tiene que simplificar el problema y considerar las interacciones más importantes.
 
-El primer paso a la conservación es considerar el ambiente adecuado para cada especie. Sin duda en los ultimos 50 años en muchos paises ha habido un cambio grande en el repesto y la conservaciones de bosque, pradera, desierto y todos los biomas en general. Por ejemplo el cambio de cobertura de bosque en Puerto Rico ha aumentado de circa de 2-5% en los años 1910 a más 40% en el 2000 [@pares2008agricultural]. En general en Latino América ha habido más reforestación de deforestación [@aide2013deforestation] en los ultimos años, aunque varia mucho entre paises y periodo de tiempo. Para la conservación biológica el primer paso era reconocer que los habitat necesitan ser protegido.
+El primer paso a la conservación es considerar el ambiente adecuado para cada especie. Sin duda en los ultimos 50 años en muchos paises ha habido un cambio grande en el repesto y la conservaciones de bosque, pradera, desierto y todos los biomas en general. Por ejemplo el cambio de cobertura de bosque en Puerto Rico ha aumentado de circa de 2-5% en los años 1910 a más 40-55% en el 2000 [@pares2008agricultural; @gould2017land]. En general en Latino América ha habido más reforestación que de deforestación [@aide2013deforestation] en los últimos años, aunque varia mucho entre paises y periodo de tiempo. Para la conservación biológica el primer paso era reconocer que los habitat necesitan ser protegido.  Pero, ¿es suficiente proteger los habitat para asegurar la supervivencia de las especies?
 
-Muchos de estos nuevos hábitat son bosque segundarios, fragmentados y dominado por especies introducidas. Estos habitat por consecuencia son mayormente diferentes al ambiente natural antes de los cambios antropogénicos recientes. El resultado, en muchas ocasiones, es que la especies de interes están reducida en números de individuos o fragmentados. Considerando esos remanentes de individuos en el habitat, ¿el habitat remanente es suficiente para mantener una población viable? ¿Como que uno decide que una población es viable?
+Muchos de estos nuevos hábitat son bosque segundarios, fragmentados y dominado por especies introducidas. Estos habitat por consecuencia son mayormente diferentes al ambiente antes del impacto de la deforestación o antes de los cambios antropogénicos recientes (puede ser incluir miles de años de impacto antropogenicos). El resultado, en muchas ocasiones, es que la especies de interes están reducida en números de individuos o fragmentados. Considerando esos remanentes de individuos en el habitat, ¿el habitat remanente es suficiente para mantener una población viable? ¿Como que uno decide que una población es viable?
 
-En general, el conceptos de conservación es que si uno proteje los habitat las especies estarán conservadas. Pero lo que no es obvio es que la presencia de individuos en un sitio que este protegido o que haya muchos individuos no es suficiente para asegurar la supervivencia de una especies a largo tiempo. Un ejemplo bien conocida es la extincción del Dodo en la isla de Mauritius y la estrecha relación biotica y casi extinción de una especies de árbol en la familia Sapotaceae, *Calvaria major*. Para que la semillas sean viable necesitan pasar por el tracto digestivo de un pajaro para remover el exocarpo persitente de la semilla que causa latencia/"dormancy" en las semillas [@temple1977plant]. Por consecuencia nunca se puede asumir que la presencia de una especies sin tomar en cuenta las interacciones bióticas y abióticas es suficiente para sugerir que no hay riesgo de extinción.
+En general, el conceptos de conservación es que si uno proteje los habitat las especies estarán conservadas. Pero lo que no es obvio es que la presencia de individuos en un sitio que este protegido o que haya muchos individuos no es suficiente para asegurar la supervivencia de una especies a largo tiempo. Un ejemplo bien conocida es la extincción del Dodo en la isla de Mauritius y la estrecha relación biotica y casi extinción de una especies de árbol en la familia Sapotaceae, *Calvaria major*. Aun que el ultimo dodo vivo fue en 1681, todavia sobre vive la especie de arbol *Calvaria major*, Stanley Temple desmostró que el reclutamiento de esa especie dependia del Dodo [@temple1977plant]. Para que la semillas sean viable necesitan pasar por el tracto digestivo de un pajaro para remover el exocarpo persitente de la semilla que causa latencia/"dormancy" en las semillas [@temple1977plant]. Por consecuencia nunca se puede asumir que la presencia de una especies sin tomar en cuenta las interacciones bióticas y abióticas es suficiente para sugerir que no hay riesgo de extinción.
 
 ## Un recuento historico breve de la ecología de poblaciones
 
-Los primeros estudios poblacionales se enfocan en contar cuantos individuos de varias especies en un sitio y el impacto de varios tipo de efecto antropogenico o de especies invasivas [@crawley1990population]. Crawley [@crawley1990population] indica que los primeros estudios publicados de conteo de números individuos en plantas son de Carr (1848) y Burdon (1856) ambos fueron presidente de la "Tyneside Natural History Society" en Inglaterra.  En la publicaciones de Burdon se contabiliza la cantidad de individuos de *Cypripedium calceolus* en el Castle Eden Dene en el County de Durham hasta la perdida completa de todos los individuos de *C. calceolus* en el sitio en 1850. 
+Los primeros estudios poblacionales se enfocan en contar cuantos individuos de varias especies hay en un sitio y el impacto de varios tipo de efecto antropogénico o de especies invasivas [@crawley1990population]. Crawley [@crawley1990population] indica que los primeros estudios publicados de conteo de números individuos en plantas son de Carr (1848) y Burdon (1856) ambos fueron presidente de la "Tyneside Natural History Society" en Inglaterra.  En la publicación de Burdon se contabiliza la cantidad de individuos de *Cypripedium calceolus* en el Castle Eden Dene en el County de Durham hasta la perdida completa de todos los individuos de *C. calceolus* en el sitio en 1850 (extraido de la publicación de Michael J. Crawley [@crawley1990population]; no se pudo encontrar las publicaciones originales) . 
 
-Un otro de los primeros estudios contabilizar la cantidad de individuos en un sitio fueron montado por V. M. Spalding en 1906 en el Carnegie Institute desert laboratory para evaluare el efecto de la reducion en el catus de saguaro, *Carnegiea gigantea*, en el desierto de Sonora y el aumento en la especie invasiva *Prosopis glandulosa* con el aumento ganaderia.  
+Un otro de los primeros estudios fue contabilizar la cantidad de individuos en un sitio establacido por V. M. Spalding en 1906 en el Carnegie Institute Desert Laboratory para evaluar el efecto de la redución en el cactus de Saguaro, *Carnegiea gigantea*, en el desierto de Sonora y el aumento con la especie invasiva *Prosopis glandulosa* y la correlación con aumento ganaderia en el área.  
 
 
 En la revisión de literatura de Crawley [@crawley1990population] el menciona siete componentes de la biología de plantas que parecen ser consitente.  **SE Deberia poner 2-4 referencias para cada uno de estos puntos**.
 
- - El tamano de las plantas son plástica, por consecuencia el tamaño de las plantas no es un buen indicador de la edad de la planta y la corelaciones varia entre especies [@gatsuk1980age; @le2004use; @vanderklein2007plant; @baden2021effects] .
- - Debido que las plantas son sedentarias la interacciones con sus vecinos más imediato es importante y que la cantidad de individuos en un que rodea una planta impacta su crecimiento, reproducción y supervivencia [@mitchell1987analysis; @pantone1992path; postma2021dividing]. En la revisión de literatura de Postma [@postma2021dividing] donde se evalua 334 experimentos en un meta-analisis de como la biomasa de la plantas y las caracteristica fenotipicas cambian. Se observa que al aumentar la densidad el tamaño de la plantas se reduce por la redución en numeros de talos y ramas, pero la altura de las plantas no es afectada.  
- - Los cambios sucesionales (en tiempo) puede ser la regla y no la excepción [@young1987seed; @de2013early]. Por consecuencia el reclutamiento en una parcela especifica puede ser muy variable en el tiempo y espacio [@acacio2007multiple] incluyendo variables biotica y abioticas [@luzuriaga2008determines].
- - El reclutamiento puede ser infrecuente, impredecible y variable en el tiempo. En adición como muchas especies produce bancos de semillas, el reclutamiento pudiese ser de semillas que han estado en el banco de semillas por muchos años [@saatkamp201411; @fenner2017ecology; @tomowski2023recruitment].
+ - El tamaño de las plantas son plástica, por consecuencia el tamaño de las plantas no es un buen indicador de la edad de la planta y la corelaciones tamaño y edad varia entre especies [@gatsuk1980age; @le2004use; @vanderklein2007plant; @baden2021effects] .
+ - Debido que las plantas son sedentarias la interacciones con sus vecinos más inmediato es importante y que la cantidad de individuos que rodea una planta impacta su crecimiento, reproducción y supervivencia [@mitchell1987analysis; @pantone1992path; postma2021dividing]. En la revisión de literatura de Postma [@postma2021dividing] donde se evalua 334 experimentos en un meta-analisis de como la biomasa de la plantas y las caracteristica fenotípicas cambian. Se observa que al aumentar la densidad el tamaño de la plantas se reduce el números de talos y ramas, pero la altura de las plantas no es afectada. 
+ - Los cambios sucesionales de estructura poblacional (en tiempo) es la regla y no la excepción [@young1987seed; @de2013early]. Por consecuencia el reclutamiento en una parcela específica puede ser muy variable en el tiempo y espacio [@acacio2007multiple] incluyendo variables biotica y abioticas [@luzuriaga2008determines].
+ - El reclutamiento puede ser infrecuente, impredecible y variable en el tiempo. En adición como muchas especies produce bancos de semillas, el reclutamiento pudiese ser de semillas que han estado en el banco de semillas por muchos años [@saatkamp201411; @fenner2017ecology; @tomowski2023recruitment] y el reclutamiento pudiese ser de un conjunto de semillas de diferentes años o cohortes.
  - La competencia entre individuos de la misma especies de plantas o especies distinctas es importante y asimétrica.  Típicamente las plantas grandes pueden afectar las plantas pequeñas en su entorno, y raramente al reves.  La competencia a nivel intra especifica [@weiner1986size; @connolly1996asymmetric; @weiner2001effects] o inter-especifica [@freckleton2001asymmetric ] son comunes.
- - La mortandad es altamente relacionado al tamaño de la planta y mayormente observado en las etapas/tamaños más pequeños.
- - La mortandad de individuos grandes, viejos, por acidentes, herbivoria o enfermedades puede abrir una oportunidad de reclutamiento.  
+ - La mortandad es altamente relacionado al tamaño de la planta y mayormente observado en las etapas/tamaños más pequeños comparando diferentes especies [@moles2006seed] y tambien intra-especifica [@fricke2019linking].
+ - La mortandad de individuos grandes, viejos, por acidentes, herbivoria o enfermedades puede abrir una oportunidad de reclutamiento [wright2003gap].  
 
 
 
 ## ¿Qué es el estudio de la dinámica poblacional?
 
-La dinámica poblacional tiene como meta tomar en cuenta todas las etapas/edades de una especies y interacciones evaluar cual de esas etapas/edades tiene relativamente más impacto sobre la supervivencia de la especies para conocer cuales de estas etapas/edades se pudiese modificar para cambiar el creicimiento de la poblaciones estudiadas. Esas etapas de vida debería considerar las interacciones con sus ambiente biótico y abiótico. La dinámica de población es fundamental en todas las áreas de la ecología y evolución. Comprender la dinámica poblacional es la clave para entender la importancia relativa que tiene el acceso a los recursos y el efecto de competencia, herbivoría y depredaciones sobre la viablidad de especies sobre la persistencia de la población. Tradicionalmente los estudios estaban enfocado a evaluar la tabla de vida para el manejo y conservaciones de especies particulares (ref). En años más recientes los estudios se han diversificado para evaluar la interacciones entre especies y su ambiente (ref).
+La dinámica poblacional tiene como meta tomar en cuenta todas las etapas/edades de una especies y interacciones evaluar cual de esas etapas/edades tiene relativamente más impacto sobre la supervivencia de la especies para conocer cuales de estas etapas/edades se pudiese modificar para cambiar el creicimiento de la poblaciones estudiadas. Esas etapas de vida debería considerar las interacciones con sus ambiente biótico y abiótico. La dinámica de población es fundamental en todas las áreas de la ecología y evolución. Comprender la dinámica poblacional es la clave para entender la importancia relativa que tiene el acceso a los recursos y el efecto de competencia, herbivoría y depredaciones sobre la viablidad de especies sobre la persistencia de la población. Tradicionalmente los estudios estaban enfocado a evaluar la tabla de vida para el manejo, la fenología y conservaciones de especies particulares [@harper1977population]. Sin duda John L. Harper fue uno de los pioneros de la ecología de plantas y ha dejado una diversidad de publicaciones y temas [sagar1985profile; @sagar1985profile].  En años más recientes los estudios se han diversificado para evaluar la interacciones entre especies y su ambiente [@caswell2000matrix; @bacaer2011short] .
 
 ## Definición
 
-Una definición más especifica de los estudios de dinámica poblacional son definidos como los análisis de los factores que afecten el crecimiento, estabilidad y reducción en el tamaño de la población en una serie de tiempo.
+Una definición más especifica de los estudios de dinámica poblacional es que son definidos como los análisis de los factores que afecten el crecimiento, estabilidad y reducción en el tamaño de la población en una serie de tiempo.
 
-Por ejemplo, la dinamica poblacional de especies invasivas incluye un periodo de crecimiento muy lento al comienzo de la colonización de un nuevo sitio y frecuentamente siguido de un crecimiento logarithmico. La figura \@ref(fig:Pop-fig). demuestra el cambio de número de individuos en el tiempo de una especie hipotética.
+Por ejemplo, la dinamica poblacional de especies invasivas incluye un periodo de crecimiento muy lento al comienzo de la colonización de un nuevo sitio y frecuentamente siguido de un crecimiento logarithmico. La figura \@ref(fig:Pop-fig_1) demuestra el cambio de número de individuos en el tiempo de una especie hipotética. Lo importante es que la dinámica poblacional es una herramienta para evaluar el impacto de diferentes factores sobre el crecimiento de la poblacional y la viabilidad de la población.
+
+
 
 ```{r chap1_1 ggplot2, echo=FALSE}
 library(ggplot2)
@@ -86,78 +89,68 @@ library(ggplot2)
                     
 ```
 
-```{r chap2 Pop-fig, fig.cap='Cambio poblacional en tiempo'}
+```{r Pop-fig_1, fig.cap='Cambio poblacional en tiempo'}
 ggplot(pressure, aes(temperature, pressure))+
   geom_point()+
   rlt_theme+
   xlab("Tiempo")+
-  ylab("Tamaño poblacional")
+  ylab("Tamaño poblacional, N")
 
 ```
 
 ## El analisis de Dinámica Poblacional y su uso
 
-Determinar el tamaño poblacional en el futuro tiene muchos usos. Se puede dividir sus usos en tres grupos grandes, entender las **1)** interacciones ecológicas, **2)** manejo y conservaciones o **3)** los procesos evolutivos. Los estudios enfocado a la conservación se engloba dentro de un acercamiento de la viablidad de poblaciones. En este libro estaremos dando una introducción a cada uno de estas vertientes, pero nuestros ejemplos son una introducción al tema y no una profundización extensa de cada uno. En la table \@ref(USO) vemos algunos de los usos especificos que se ha dado con la metodología de PPM.
+Determinar el tamaño poblacional en el futuro tiene muchos usos. Se puede dividir sus usos en tres grupos grandes, entender las **1)** interacciones ecológicas, **2)** manejo y conservaciones o **3)** los procesos evolutivos. Los estudios enfocado a la conservación se engloba dentro de un acercamiento de la viablidad de poblaciones. En este libro estaremos dando una introducción a cada uno de estas vertientes, pero nuestros ejemplos son una introducción al tema y no una profundización extensa de cada uno. En la table \@ref(USO) vemos algunos de los usos especificos que se ha dado con la metodología de MPP.
 
-```{r chap1_3, eval=FALSE, echo=FALSE}
-options(width = 50)
-library(tidyverse)
-library(gt)
-USO_PPM = tribble(~"Categoria de Uso", ~ "Uso especifico", ~"Referencias", ~"Referencias con Oquideas",
-                  "Manejo", "Identificar las etapas or procesos demograficos", "Crouse et al. 1987", "?",
-                  "", "Determinar cuantos individuos en una población es necesario para reducir la extinción", "Shaffer 1981, Armbruster & Lande 1993", "?",
-                  "", "Determinar cuantos individuos se necesita introducir en una sitio para establacer una población viable", "Bustamante 1996", "?",
-                  "", "Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población", "Nantel et al. 1996", "?",
-                  "", "En especies invasivas: determinar cuantos y cual etapas se necesita remover para controlar la especie envasivas", "?", "?",
-                 "", "Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global", "Lindenmayer & Possingham 1996", "",
-                 "Evaluación de riesgos", "Evaluar el riesgo de una población a ir a las extinción", "Samson 1985", "muchos",
-                 "", "Comparando el riesgo relativo de dos o más poblaciones", "Allendrof et al. 1997","?",
-                 
-                 "Interacciones ecologicas", "Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población", "?", "Ospina et al., 2022",
-                 "Procesos y patrones evolutivos", "Cual de los procesos y patrones evolutivos del ciclo de vbida de especies impacta su crecimeinto", "?", "?")
 
-USO_PPM %>% gt()
-```
 
 ### Tabla: El uso potencial de la diferentes acercamiento de PPM. {#USO}
 
 NOTA IMPORTANTE: *Evaluar las referencias y añadir referencias tradicionales y recientes*
 
-| Categoria de Uso               | Uso especifico                                                                                                   | Referencias                          | Referencias con Oquideas |
+| Categoria de Uso               | Uso especifico                                                                                                   | Referencias generales                          | Referencias con Oquideas |
 |:----------------|:-------------------|:----------------|-------------------:|
 | Manejo                         | Identificar las etapas or procesos demograficos claves                                                                 | [@crouse1987stage]                   |                        ? |
-|                                | Determinar cuantos individuos en una población es necesario para reducir la extinción                            | Shaffer 1981 Armbruster & Lande 1993 |                        ? |
-|                                | Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable           | Bustamante 1996                      |                        ? |
-|                                | Determinar cuantos individuos se puede extraer si tener un impacto negativo sobre la viabilidad de una población | Nantel et al. 1996                   |                        ? |
-|                                | En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población           | ?                                    |                        ? |
-|                                | Determinar cuantas pobalciones se necesita para la viabilidad de una especie al nivel local o global             | Lindenmayer & Possingham 1996        |                          |
-| Evaluación de riesgos          | Evaluar el riesgo de una población                                                                               | Samson 1985                          |                   muchos |
-|                                | Comparando el riesgo relativo de dos o más poblaciones                                                           | Allendrof et al. 1997                |                        ? |
-| Interacciones ecologicas       | Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población  | ?                                    |      Ospina et al., 2022 |
-| Procesos y patrones evolutivos | Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento                 | ?                                    |                        ? |
+|                                | Determinar cuantos individuos en una población es necesario para reducir la extinción                            | [@shaffer1981minimum; @armbruster1993population] |                        ? |
+|                                | Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable           | [@bustamante1996population]                      |                        ? |
+|                                | Determinar cuantos individuos se puede extraer si tener un impacto negativo sobre la viabilidad de una población | [@nantel1996population]                  |                        ? |
+|                                | En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población           | [@arroyo2022prescriptions]                                   |                        ? |
+|                                | Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global             | [@lindenmayer1996ranking]      |                          |
+| Evaluación de riesgos          | Evaluar el riesgo de una población                                                                               | [@gotelli2006forecasting]                          |                   muchos |
+|                                | Comparando el riesgo relativo de dos o más poblaciones                                                           | [@earl2019evaluating]               |                        ? |
+| Interacciones ecologicas       | Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población  | [@halpern2006approaches]                                   |      Ospina et al., 2022 |
+| Procesos y patrones evolutivos | Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento                 | [@coste2020analysis]                                 |                        ? |
 
 
 ### USO 1: Identificar las etapas or procesos demográficos claves
 
-Identificar y conocer cuales son las etapas de vida más suceptibles a cambios abioticos y bióticos y su impacto sobre la persistencia de una población es necesario para el manejo.  El ejemplo clásico en la literatura usando PPM son los trabajos sobre la dinámica poblacional de la tortuga "boba" o "cabezona" *Caretta caretta* [@crouse1987stage], [@crowder1994predicting].  Crouse y Crowder demostraron que aun salvando TODOS los huevos de depredación, esa estrategia de manejo antropogenico iba a tener muy poco impacto en el crecimiento de la población.  Lo que encontrarón es que el impacto más grande sobre el crecimiento poblacional provendría de proteger los adultos era reducir la mortandad de los adultos espceificamente de las redes de pesca, modificando estas redes para que las tortugas se pueden escapar y no ahogarse en las redes.  Los trabajos de Crouse y Crowder fueron pioneros en demostrar que uno podía simular diferentes escenarios basado en la historia de vida y evaluar su impacto. 
+Identificar y conocer cuales son las etapas de vida más suceptibles y relacionados a cambios abioticos y bióticos. Aclarar cuales de las etapas/edades son más susceptibles y que resulta en cambios demograficos y su impacto sobre la persistencia de una población es necesario para el manejo.  El ejemplo clásico en la literatura usando PPM son los trabajos sobre la dinámica poblacional de la tortuga "boba" o "cabezona" *Caretta caretta* [@crouse1987stage], [@crowder1994predicting].  Crouse y Crowder demostraron que aun salvando TODOS los huevos de depredación, esa estrategia de manejo antropogenico iba a tener muy poco impacto en el crecimiento de la población. Lo que encontrarón es que el impacto más grande sobre el crecimiento poblacional provendría de proteger los adultos y reducir la mortandad de los adultos especificamente a causa de la mortandad de los adultos en las redes de pesca.  Modificando estas redes para que las tortugas se pueden escapar y no ahogarse en las redes tendria un impacto más grande que salvar un huevos. Los trabajos de Crouse y Crowder [@crouse1987stage], [@crowder1994predicting] fueron pioneros en demostrar que uno podía simular diferentes escenarios basado en la historia de vida y evaluar su impacto. Naturalmente, eso no quiso decir que no se debería proteger los huevos, pero que el impacto de proteger los huevos era menor que proteger los adultos. 
 
 Ejemplo de orquidea AQUI
 
 ### USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción
 
-El efecto de tamaño poblacional sobre la biología y la probabilidad de extinción es amplia [@shaffer1985population], [@nunney1993assessing], [@harris2022abundance]. ¿Cual es la probabilidad de extinción de una población considerando la cantidad de individuos en cada etapa? En general lo que se observa es que menor el tamaño poblacional, N, mayor es el riesgo de extinción. Esa probabilidad de extinción puede variar si algunas etapas del ciclo de vida es muy reducido o su probabilidad de sobrevivir es baja o crecer a la proxima etapa varia. En orquideas es probable que uno de las etapas más vulnerable es la etapa de semilla. Consideramos por ejemplo cual es la probabilidad de que las semillas se establece, germina y crezca a ser un juvenil.  Esas transiciones es muy pequeña.  Por consecuencia una nueva población de orquídea necesita considerar la cantidad de individuos que este presente pero también la probabilidad de tener semillas y que estas pueden crecer a ser adultos reproducible. Darwin (ref) estimo por ejemplo que un fruto de *Orchis maculata* produce 6,200 semillas y una planta tipica 186,300 y en un acre la suma de las plantas produce más de 32,400,000,000 semillas!!!!  Sin duda la probabilidad de que una semilla germina y produce una planta es muy pequeña sino estaríamos cubierto de orquídea en dos generaciones.   
+El efecto de tamaño poblacional sobre la biología y la probabilidad de extinción es bien conocido [@shaffer1985population; @nunney1993assessing; @harris2022abundance]. ¿Cual es la probabilidad de extinción de una población considerando la cantidad de individuos en cada etapa? En general lo que se observa es que menor el tamaño poblacional, *N*, mayor es el riesgo de extinción. Esa corelación de extinción con el tamaño de muestra puede variar si algunas etapas del ciclo de vida es muy reducido o su probabilidad de sobrevivir es baja o la probabilidad de crecer a la próxima etapa varia. En orquídeas es probable que una de las etapas más vulnerable es la etapa de semilla. Consideramos por ejemplo cual es la probabilidad de que las semillas se establece, germina y crezca hasta ser un juvenil en el medio ambiente.  Cada una de esas probabilidades de transiciones son muy pequeñas.  Por consecuencia establecer una nueva población de orquídea necesita considerar la cantidad de individuos que este presente pero también la probabilidad de tener semillas y que estás pueden crecer a ser adultos reproducible. Sin duda la orquideas tienen un potencial enorme de crecer. Darwin [@darwin1877various] estimó que un fruto de *Orchis maculata* produce 6,200 semillas y una planta pudiese tener 30 capsula produciendo 186,300 semillas y en un acre la suma de las plantas produce más de 32,400,000,000 semillas!!!!  Sin duda la probabilidad de que una semilla germina y produce una planta es muy pequeña sino estaríamos cubierto de orquídea en dos generaciones.   
 
 
 ### USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable 
 
-Naturalmente, más cantidad de individuos re-introducido en un sitio mayor sera la probabilidad que la población sea viable. Pero, como todo hay un limite de tiempo y esfuerzo disponible. Por consecuencia la pregunta debería ser orientado a determinar cual es el mínimo de individuos que se debería introductir para garantizar un **x** porciento de suceso en el establecimiento de una nueva población. 
+Naturalmente, más cantidad de individuos re-introducido en un sitio mayor sera la probabilidad que la población sea viable, asumiendo que los individuos fueron establecidos en un area donde todas las etapas pueden sobrevivir, crecer y reproducirse. Pero, como todo, hay un limite de tiempo y esfuerzo disponible. Por consecuencia la pregunta debería ser orientado a determinar cual es el mínimo de individuos que se debería introducir para garantizar un **x** porciento de suceso en el establecimiento de una nueva población. 
 
-En los ultimos años, muchas organizaciones y científicos han comenzado a hacer re-introducción de especies en su habitat nativo y no. (ref). Algunos programa introduce especies en áreas urbanas.  
+En los ultimos años, muchas organizaciones y científicos han comenzado a hacer re-introducción de especies en su habitat nativo y no. (ref) incluyendo algunos programa introduce especies en áreas urbanas.  
+
+En Korea dos trabajos demuestra que la re-introducción de orquídeas en un sitio puede ser parcialmente exitoso. Los autores translocarón la orquidea *Thrixspermum japonicum* en la isla de Jeju donde la cantidad de individuos pre-localización era cerca de 50 y solamente un individuo producjo frutos, de alli propagaron plantulas y fueron translocado en la isla. de los 216 individuos 73% sobrevivieron el primer año y 63% el segundo año.  De estos individuos el porcentaje de individuos que produjeron frutos fue de 16% a 35% en los dos años [@kim2016restoration].  En otro estudio en Korea, En un trabajo masivo de re-introducción de la orquídea *Dendrobium moniliforme* en la isla de Bogildo, Korea, más de 13,000 individuos artificialmente propagado fueron en su ambiente natural y seguido por multiples años.  Demostraron que el sitio de localización es una variable importante para el crecimientos de los individuos. Las areas abiertas con luz solar directa tuvieron un crecimiento más rápido que las areas con sombra y que la especie de árbol tiene una impacto significativo en el creicmiento [@kim2016restoration].   
+
+Lawrence Zettler
+
+AQUI poner ejemplos de trabajos usando PPM para establecer N para la re-nintroduccion
 
   - Caladenia 
-  - Korea
-  - one million orchids project
+
+  - one million orchids project: Escribi a Fairchild para ver si tienen datos.
   - ????
+  
+  Desafortunadamente ninguno de los trabajos mencionado ariba de Orquídeas toma ventaja de los métodos de PPM para evaluar el tamaño de re-introducción sobre el impacto de la supervivencia de orquídeas en un sitio y cuantos individuos se debería relocalizar en su ambiente natural para etsablacer una población viable.  En general, la re-introducción de orquídeas es un tema que necesita más investigaciones y evaluaciones.
 
 ### USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población
 

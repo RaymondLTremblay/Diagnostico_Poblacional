@@ -1,4 +1,4 @@
-fig:nice-fig
+fig:Pop-fig
 tab:nice-table
 eq:binom
 thm:promedio

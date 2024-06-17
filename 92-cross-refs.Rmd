@@ -25,14 +25,14 @@ There are two steps to cross-reference any heading:
 
 Figures and tables *with captions* can also be cross-referenced from elsewhere in your book using `\@ref(fig:chunk-label)` and `\@ref(tab:chunk-label)`, respectively.
 
-See Figure \@ref(fig:nice-fig).
+See Figure \@ref(fig:Pop-fig).
 
 ```{r nombre_1}
 
 ```
 
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r Pop-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```

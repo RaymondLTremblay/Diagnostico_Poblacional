@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica_Poblacional</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometría" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica_Poblacional" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometría" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
   
 
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-07" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -585,15 +585,15 @@ div.csl-indent {
 <span id="cb3-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-44" tabindex="-1"></a><span class="st">}&quot;</span></span>
 <span id="cb3-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-45" tabindex="-1"></a>  )</span>
 <span id="cb3-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-46" tabindex="-1"></a>) </span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2d2237a16b258cf1d6f3" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2d2237a16b258cf1d6f3">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5ce2256e0cc8b4bb034d" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5ce2256e0cc8b4bb034d">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="ejemplo-de-un-cicle-de-vida-con-estadio-de-latencia" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Ejemplo de un cicle de vida con estadio de latencia<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-cicle-de-vida-con-estadio-de-latencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-5c1497881a8498a982d5" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-5c1497881a8498a982d5">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=0,color=grey,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-bfefb603af7b6b3cb530" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bfefb603af7b6b3cb530">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=0,color=grey,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="code-for-color-coding-figure" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Code for color coding figure<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure" class="anchor-section" aria-label="Anchor link to header"></a></h2>

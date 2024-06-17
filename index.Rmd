@@ -15,7 +15,7 @@ bibliography: [book.bib, packages.bib]
 # biblio-style: apalike. # only applies to pdf format
 
 description: |
-  Este libro digital es una introdución al estudio de Biometría
+  Este libro digital es una introdución al estudio de la Dinamica Poblacional
 link-citations: yes
 
 editor_options: 
