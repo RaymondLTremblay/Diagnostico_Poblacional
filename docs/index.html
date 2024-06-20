@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,8 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
@@ -528,15 +530,61 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Dinamica_Poblacional</h1>
 <p class="author"><em></em></p>
-<p class="date"><em>2024-06-17</em></p>
+<p class="date"><em>2024-06-19</em></p>
 </div>
 <div id="dinámica-poblacional" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Capítulo 1</span> Dinámica Poblacional<a href="index.html#dinámica-poblacional" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento los patrones y processos intra-especifica y entre-especies. Tradicionalmente muchos de los trabajos de dinamica poblacional se enfocarón en los estudios intra-especifica, fomentando una perpestiva que las especies no enteractuan con su ambiente biotico.</p>
+<p>El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y inter-específicos. Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocaran en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos.</p>
 <div id="objetivo-del-libro" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Objetivo del libro:<a href="index.html#objetivo-del-libro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Este libro digital</p>
+<p>Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando (cuando se puede) la matemática más básica para profundizar los métodos matemáticos y como se interpreta de forma biológica. En cada caso se ampliará con métodos y funciones disponible en varios paquetes de R para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en R, y algunos en Excel.</p>
+</div>
+<div id="funciones-y-paquetes-de-r" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Funciones y paquetes de R<a href="index.html#funciones-y-paquetes-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los paquetes principales para el análisis de dinámica poblacional al incluye</p>
+<ul>
+<li><p><em>popbio</em>: un paquete para analizar datos de dinámica poblacional basado en funciones que se encuentran en el libro de Caswell <span class="citation">(<a href="#ref-caswell2001matrix">Caswell 2001</a>)</span> y en el libro de Morris y Doak <span class="citation">(<a href="#ref-morris2002quantitative">Morris, Doak, et al. 2002</a>)</span> por edades o etapas <span class="citation">(<a href="#ref-popbio2007">Stubben and Milligan 2007</a>)</span>.</p></li>
+<li><p><em>popdemo</em>: un paquete que incluye Herramientas para modelar poblaciones y demografía utilizando modelos de proyección matricial, con implementaciones de modelos deterministas y estocásticos. Incluye proyección de población, índices de tamaño y crecimiento de la población a corto y largo plazo, análisis de perturbaciones, convergencia hacia la estabilidad o estacionaria <span class="citation">(<a href="#ref-popdemo2021">Stott, Hodgson, and Townley 2021</a>)</span>.</p></li>
+<li><p><em>raretrans</em>: Funciones para crear modelos matriciales de población a partir de una combinación de datos sobre transiciones de etapa/edad con información previa bayesiana. Esto compensa los problemas estructurales causados por la falta de observaciones de transiciones raras y datos sin sentido biológicos <span class="citation">(<a href="#ref-raretrans2024">R. Tremblay and Perez 2024</a>)</span> (vea capitulo XX).</p></li>
+<li><p><em>Rage</em>: Funciones para calcular métricas de historia de vida utilizando modelos matriciales de población (“MPM”). Descrito en Jones <span class="citation">(<a href="#ref-Rage2022">Owen R. Jones et al. 2022a</a>)</span>.</p></li>
+<li><p><em>RCompadre</em>: Un paquete para analizar datos recopilado en la base de datos de COM(P)ADRE: ese es un base de datos de matrices de vida de plantas y animales usando matrices <span class="citation">(<a href="#ref-jones2022rcompadre">Owen R. Jones et al. 2022b</a>)</span>.</p></li>
+</ul>
+<p>Otros paquetes que se usan para analizar datos, mayormente para manipular datos, hacer modelos estadísticos y visualización incluye:</p>
+<ul>
+<li><em>ggplot2</em></li>
+<li><em>dplyr</em></li>
+<li><em>tidyr</em></li>
+<li><em>lubridate</em></li>
+</ul>
+</div>
+<div id="libro-digital-y-archivos-de-datos" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Libro digital y archivos de datos<a href="index.html#libro-digital-y-archivos-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El libro se encuentra en el siguiente enlace, donde acceso a todas las funciones y datos están disponibles para reproducir los ejemplos en el libro. <a href="https://raymondltremblay.github.io/Diagnostico_Poblacional/" class="uri">https://raymondltremblay.github.io/Diagnostico_Poblacional/</a></p>
 
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-caswell2001matrix" class="csl-entry">
+———. 2001. <em>Matrix Population Models: Construction, Analysis, and Interpretation</em>. 2nd ed. Sinauer Sunderland, MA.
+</div>
+<div id="ref-Rage2022" class="csl-entry">
+Jones, Owen R., Patrick Barks, Iain M. Stott, Tamora D. James, Sam C. Levin, William K. Petry, Pol Capdevila, et al. 2022a. <span>“Rcompadre and Rage - Two <span>R</span> Packages to Facilitate the Use of the <span>COMPADRE</span> and <span>COMADRE</span> Databases and Calculation of Life History Traits from Matrix Population Models.”</span> <em>Methods in Ecology and Evolution</em> 13: 770–81. <a href="https://doi.org/10.1111/2041-210X.13792">https://doi.org/10.1111/2041-210X.13792</a>.
+</div>
+<div id="ref-jones2022rcompadre" class="csl-entry">
+Jones, Owen R, Patrick Barks, Iain Stott, Tamora D James, Sam Levin, William K Petry, Pol Capdevila, et al. 2022b. <span>“Rcompadre and Rage—Two r Packages to Facilitate the Use of the COMPADRE and COMADRE Databases and Calculation of Life-History Traits from Matrix Population Models.”</span> <em>Methods in Ecology and Evolution</em> 13 (4): 770–81.
+</div>
+<div id="ref-morris2002quantitative" class="csl-entry">
+Morris, William F, Daniel F Doak, et al. 2002. <span>“Quantitative Conservation Biology.”</span>
+</div>
+<div id="ref-popdemo2021" class="csl-entry">
+Stott, Iain, Dave Hodgson, and Stuart Townley. 2021. <em>Popdemo: Demographic Modelling Using Projection Matrices</em>. <a href="https://CRAN.R-project.org/package=popdemo">https://CRAN.R-project.org/package=popdemo</a>.
+</div>
+<div id="ref-popbio2007" class="csl-entry">
+Stubben, Chris J., and Brook G. Milligan. 2007. <span>“Estimating and Analyzing Demographic Models Using the Popbio Package in r.”</span> <em>Journal of Statistical Software</em> 22 (11). <a href="https://doi.org/10.18637/jss.v022.i11">https://doi.org/10.18637/jss.v022.i11</a>.
+</div>
+<div id="ref-raretrans2024" class="csl-entry">
+Tremblay, Raymond, and Maria-Eglee Perez. 2024. <em>Raretrans: Bayesian Priors for Matrix Population Models</em>. <a href="https://github.com/atyre2/raretrans">https://github.com/atyre2/raretrans</a>.
 </div>
 </div>
             </section>

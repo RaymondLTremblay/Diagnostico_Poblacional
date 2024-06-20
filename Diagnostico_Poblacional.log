@@ -1,25 +1,25 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.6)  11 JUL 2023 14:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.15)  19 JUN 2024 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Diagnostico_Poblacional.tex
 (./Diagnostico_Poblacional.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
+LaTeX2e <2023-11-01>
+L3 programming layer <2024-01-04>
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count181
-\c@chapter=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count183
+\c@chapter=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
@@ -39,14 +39,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count190
+\inf@bad=\count192
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count191
-\leftroot@=\count192
+\uproot@=\count193
+\leftroot@=\count194
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count193
-\DOTSCASE@=\count194
+\classnum@=\count195
+\DOTSCASE@=\count196
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -59,20 +59,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen143
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count195
+\macc@depth=\count197
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count196
+\c@MaxMatrixCols=\count198
 \dotsspace@=\muskip16
-\c@parentequation=\count197
-\dspbrk@lvl=\count198
+\c@parentequation=\count199
+\dspbrk@lvl=\count266
 \tag@help=\toks18
-\row@=\count199
-\column@=\count266
-\maxfields@=\count267
+\row@=\count267
+\column@=\count268
+\maxfields@=\count269
 \andhelp@=\toks19
 \eqnshift@=\dimen144
 \alignsep@=\dimen145
@@ -98,37 +98,37 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-06-30 L3 programming layer (loader) 
+Package: expl3 2024-01-04 L3 programming layer (loader) 
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
-\g__graphics_track_int=\count268
+File: l3backend-xetex.def 2024-01-04 L3 backend support: XeTeX
+\g__graphics_track_int=\count270
 \l__pdf_internal_box=\box53
-\g__pdf_backend_object_int=\count269
-\g__pdf_backend_annotation_int=\count270
-\g__pdf_backend_link_int=\count271
+\g__pdf_backend_object_int=\count271
+\g__pdf_backend_annotation_int=\count272
+\g__pdf_backend_link_int=\count273
 ))
-Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
-Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2023-02-02 L3 Experimental document command parser
+Package: xparse 2023-10-10 L3 Experimental document command parser
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count272
-\l__fontspec_language_int=\count273
-\l__fontspec_strnum_int=\count274
-\l__fontspec_tmp_int=\count275
-\l__fontspec_tmpa_int=\count276
-\l__fontspec_tmpb_int=\count277
-\l__fontspec_tmpc_int=\count278
-\l__fontspec_em_int=\count279
-\l__fontspec_emdef_int=\count280
-\l__fontspec_strong_int=\count281
-\l__fontspec_strongdef_int=\count282
+\l__fontspec_script_int=\count274
+\l__fontspec_language_int=\count275
+\l__fontspec_strnum_int=\count276
+\l__fontspec_tmp_int=\count277
+\l__fontspec_tmpa_int=\count278
+\l__fontspec_tmpb_int=\count279
+\l__fontspec_tmpc_int=\count280
+\l__fontspec_em_int=\count281
+\l__fontspec_emdef_int=\count282
+\l__fontspec_strong_int=\count283
+\l__fontspec_strongdef_int=\count284
 \l__fontspec_tmpa_dim=\dimen150
 \l__fontspec_tmpb_dim=\dimen151
 \l__fontspec_tmpc_dim=\dimen152
@@ -140,9 +140,9 @@ Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count283
-\g__um_fonts_used_int=\count284
-\l__um_primecount_int=\count285
+\g__um_fam_int=\count285
+\g__um_fonts_used_int=\count286
+\l__um_primecount_int=\count287
 \g__um_primekern_muskip=\muskip17
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -179,33 +179,33 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 227.
+Package xcolor Info: Driver file: xetex.def on input line 274.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
+Package: fancyvrb 2023/11/06 4.5b verbatim text (tvz,hv)
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
-\FV@CodeLineNo=\count286
+\FV@CodeLineNo=\count288
 \FV@InFile=\read2
 \FV@TabBox=\box54
-\c@FancyVerbLine=\count287
-\FV@StepNumber=\count288
+\c@FancyVerbLine=\count289
+\FV@StepNumber=\count290
 \FV@OutFile=\write3
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -215,22 +215,22 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen155
 \FrameSep=\dimen156
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count289
+\LTchunksize=\count291
 \LTcapwidth=\dimen157
 \LT@head=\box55
 \LT@firsthead=\box56
 \LT@foot=\box57
 \LT@lastfoot=\box58
 \LT@gbox=\box59
-\LT@cols=\count290
-\LT@rows=\count291
-\c@LT@tables=\count292
-\c@LT@chunks=\count293
+\LT@cols=\count292
+\LT@rows=\count293
+\c@LT@tables=\count294
+\c@LT@chunks=\count295
 \LT@p@ftn=\toks23
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -244,15 +244,15 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen165
 \cmidrulekern=\dimen166
 \defaultaddspace=\dimen167
-\@cmidla=\count294
-\@cmidlb=\count295
+\@cmidla=\count296
+\@cmidlb=\count297
 \@aboverulesep=\dimen168
 \@belowrulesep=\dimen169
-\@thisruleclass=\count296
-\@lastruleclass=\count297
+\@thisruleclass=\count298
+\@lastruleclass=\count299
 \@thisrulewidth=\dimen170
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen171
 \ar@mcellbox=\box60
 \extrarowheight=\dimen172
@@ -261,20 +261,20 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \backup@length=\skip59
 \ar@cellbox=\box61
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count298
-\calc@Bcount=\count299
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count300
+\calc@Bcount=\count301
 \calc@Adimen=\dimen173
 \calc@Bdimen=\dimen174
 \calc@Askip=\skip60
 \calc@Bskip=\skip61
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count300
+\calc@Ccount=\count302
 \calc@Cskip=\skip62
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count301
+\etb@tempcnta=\count303
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box62
@@ -292,38 +292,149 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 )
 \Gin@req@height=\dimen176
 \Gin@req@width=\dimen177
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen178
+\captionmargin=\dimen179
+\caption@leftmargin=\dimen180
+\caption@rightmargin=\dimen181
+\caption@width=\dimen182
+\caption@indent=\dimen183
+\caption@parindent=\dimen184
+\caption@hangindent=\dimen185
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count304
+\c@continuedfloat=\count305
+Package caption Info: longtable package is loaded.
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks25
+\minrowclearance=\skip63
+\rownum=\count306
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip64
+\multirow@cntb=\count307
+\multirow@dima=\skip65
+\bigstrutjot=\dimen186
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen187
+\WF@size=\dimen188
+\c@WF@wrappedlines=\count308
+\WF@box=\box63
+\WF@everypar=\toks26
+Package: wrapfig 2003/01/31  v 3.6
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count309
+\float@exts=\toks27
+\float@box=\box64
+\@float@everytoks=\toks28
+\@floatcapt=\box65
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+)) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box66
+\sift@deathcycles=\count310
+\@vwid@loff=\dimen189
+\@vwid@roff=\dimen190
+)
+\c@taburow=\count311
+\tabu@nbcols=\count312
+\tabu@cnt=\count313
+\tabu@Xcol=\count314
+\tabu@alloc=\count315
+\tabu@nested=\count316
+\tabu@target=\dimen191
+\tabu@spreadtarget=\dimen192
+\tabu@naturalX=\dimen193
+\tabucolX=\dimen194
+\tabu@Xsum=\dimen195
+\extrarowdepth=\dimen196
+\abovetabulinesep=\dimen197
+\belowtabulinesep=\dimen198
+\tabustrutrule=\dimen199
+\tabu@thebody=\toks29
+\tabu@footnotes=\toks30
+\tabu@box=\box67
+\tabu@arstrutbox=\box68
+\tabu@hleads=\box69
+\tabu@vleads=\box70
+\tabu@cellskip=\skip66
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box71
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip67
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box72
+\UL@hyphenbox=\box73
+\UL@skip=\skip68
+\UL@hook=\toks31
+\UL@height=\dimen256
+\UL@pe=\count317
+\UL@pixel=\dimen257
+\ULC@box=\box74
+Package: ulem 2019/11/18
+\ULdepth=\dimen258
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen259
+\c@nlinenum=\count318
+\TeXr@lab=\toks32
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip63
-\bibsep=\skip64
+\bibhang=\skip69
+\bibsep=\skip70
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count302
-) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-06-25 v7.01a Hypertext links for LaTeX
-(/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+\c@NAT@ctr=\count319
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+(/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-06-18 v2.52 Cross-referencing by name of section
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -331,69 +442,69 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count303
+\c@section@level=\count320
 )
-\@linkdim=\dimen178
-\Hy@linkcounter=\count304
-\Hy@pagecounter=\count305
+\@linkdim=\dimen260
+\Hy@linkcounter=\count321
+\Hy@pagecounter=\count322
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-06-25 v7.01a Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 ) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count306
+\Hy@SavedSpaceFactor=\count323
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-06-25 v7.01a Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4050.
-Package hyperref Info: Hyper figures OFF on input line 4167.
-Package hyperref Info: Link nesting OFF on input line 4172.
-Package hyperref Info: Hyper index ON on input line 4175.
-Package hyperref Info: Plain pages OFF on input line 4182.
-Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Option `unicode' set `true' on input line 4064.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count307
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count324
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen179
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen261
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count308
-\Field@Width=\dimen180
-\Fld@charsize=\dimen181
-Package hyperref Info: Hyper figures OFF on input line 6051.
-Package hyperref Info: Link nesting OFF on input line 6056.
-Package hyperref Info: Hyper index ON on input line 6059.
-Package hyperref Info: backreferencing OFF on input line 6066.
-Package hyperref Info: Link coloring OFF on input line 6071.
-Package hyperref Info: Link coloring with OCG OFF on input line 6076.
-Package hyperref Info: PDF/A mode OFF on input line 6081.
+\Fld@menulength=\count325
+\Field@Width=\dimen262
+\Fld@charsize=\dimen263
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count309
-\c@Item=\count310
-\c@Hfootnote=\count311
+\Hy@abspage=\count326
+\c@Item=\count327
+\c@Hfootnote=\count328
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2023-06-25 v7.01a Hyperref driver for XeTeX
+File: hxetex.def 2023-11-26 v7.01g Hyperref driver for XeTeX
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\pdfm@box=\box63
-\c@Hy@AnnotLevel=\count312
-\HyField@AnnotCount=\count313
-\Fld@listcount=\count314
-\c@bookmark@seq@number=\count315
+\pdfm@box=\box75
+\c@Hy@AnnotLevel=\count329
+\HyField@AnnotCount=\count330
+\Fld@listcount=\count331
+\c@bookmark@seq@number=\count332
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
@@ -404,65 +515,68 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip65
-) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
+\Hy@SectionHShift=\skip71
+) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
+\BKM@id=\count333
+)) (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
-\thm@preskip=\skip66
-\thm@postskip=\skip67
-\thm@headsep=\skip68
-\dth@everypar=\toks30
+\thm@style=\toks33
+\thm@bodyfont=\toks34
+\thm@headfont=\toks35
+\thm@notefont=\toks36
+\thm@headpunct=\toks37
+\thm@preskip=\skip72
+\thm@postskip=\skip73
+\thm@headsep=\skip74
+\dth@everypar=\toks38
 )
-\c@theorem=\count316
-\c@lemma=\count317
-\c@corollary=\count318
-\c@proposition=\count319
-\c@conjecture=\count320
-\c@definition=\count321
-\c@example=\count322
-\c@exercise=\count323
-\c@hypothesis=\count324
-(./Diagnostico_Poblacional.aux)
+\c@theorem=\count334
+\c@lemma=\count335
+\c@corollary=\count336
+\c@proposition=\count337
+\c@conjecture=\count338
+\c@definition=\count339
+\c@example=\count340
+\c@exercise=\count341
+\c@hypothesis=\count342
+No file Diagnostico_Poblacional.aux.
 \openout1 = `Diagnostico_Poblacional.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 141.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 141.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 141.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 141.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 141.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 141.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 141.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 156.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -488,7 +602,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 141.
+(Font)              scaled to size 10.0pt on input line 156.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -520,15 +634,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 141.
+(Font)              scaled to size 10.0pt on input line 156.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 141.
+(Font)              `operators' in the math version `normal' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 141.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 156.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 141.
+(Font)              `operators' in the math version `bold' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 141.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 156.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -607,13 +721,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 141.
+(Font)              `symbols' in the math version `normal' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 141.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 156.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 141.
+(Font)              `symbols' in the math version `bold' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 141.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 156.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -674,45 +788,50 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 141.
+(Font)              `largesymbols' in the math version `normal' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 141.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 156.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 141.
+(Font)              `largesymbols' in the math version `bold' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 141.
-Package hyperref Info: Link coloring OFF on input line 141.
-(./Diagnostico_Poblacional.out) (./Diagnostico_Poblacional.out)
-\@outlinefile=\write4
-\openout4 = `Diagnostico_Poblacional.out'.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 156.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 156.
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 143.
+(Font)              scaled to size 12.0pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 143.
+(Font)              scaled to size 8.0pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 143.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 143.
+(Font)              scaled to size 6.0pt on input line 158.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 158.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 143.
+(Font)              scaled to size 12.0011pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 143.
+(Font)              scaled to size 8.00073pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 143.
+(Font)              scaled to size 6.00055pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 143.
+(Font)              scaled to size 11.99872pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 143.
+(Font)              scaled to size 7.99915pt on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 143.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 143.
+(Font)              scaled to size 5.99936pt on input line 158.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 158.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 143.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 158.
 (/Users/rlt/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -720,143 +839,1402 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2
 
-] (./Diagnostico_Poblacional.toc
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 2.
-[3])
-\tf@toc=\write5
-\openout5 = `Diagnostico_Poblacional.toc'.
+]
+No file Diagnostico_Poblacional.toc.
+\tf@toc=\write4
+\openout4 = `Diagnostico_Poblacional.toc'.
 
-[4]
-Chapter 1.
-[5
+[3] [4
 
 ]
-Overfull \hbox (94.77562pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 6 \TU/lmr/m/sl/10 CHAPTER 1.  VII ANDEAN ORCHID CONFERENCE, CUSCO, PERÚ, 24-26 NOVIEMBRE 2023
+Chapter 1.
+
+Underfull \hbox (badness 1810) in paragraph at lines 165--166
+\TU/lmr/m/n/10 El estudio de la Dinámica Poblacional tiene como objetivo desarrollar
  []
 
-[6] [7]
-Overfull \hbox (94.77562pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 8 \TU/lmr/m/sl/10 CHAPTER 1.  VII ANDEAN ORCHID CONFERENCE, CUSCO, PERÚ, 24-26 NOVIEMBRE 2023
- []
+
+Package natbib Warning: Citation `caswell2001matrix' on page 5 undefined on input line 177.
+
+
+Package natbib Warning: Citation `morris2002quantitative' on page 5 undefined on input line 177.
+
+
+Package natbib Warning: Citation `popbio2007' on page 5 undefined on input line 177.
+
+[5]
+
+Package natbib Warning: Citation `popdemo2021' on page 6 undefined on input line 179.
+
+
+Package natbib Warning: Citation `raretrans2024' on page 6 undefined on input line 181.
+
+
+Package natbib Warning: Citation `Rage2022' on page 6 undefined on input line 183.
+
+
+Package natbib Warning: Citation `jones2022rcompadre' on page 6 undefined on input line 185.
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 204.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 204.
+[6]
+Chapter 2.
+
+Package natbib Warning: Citation `pares2008agricultural' on page 7 undefined on input line 214.
+
+
+Package natbib Warning: Citation `gould2017land' on page 7 undefined on input line 214.
+
+
+Package natbib Warning: Citation `aide2013deforestation' on page 7 undefined on input line 214.
+
+[7
+
+]
+
+Package natbib Warning: Citation `temple1977plant' on page 8 undefined on input line 218.
+
+
+Package natbib Warning: Citation `temple1977plant' on page 8 undefined on input line 218.
+
+
+Package natbib Warning: Citation `crawley1990population' on page 8 undefined on input line 222.
+
+
+Package natbib Warning: Citation `crawley1990population' on page 8 undefined on input line 222.
+
+
+Package natbib Warning: Citation `crawley1990population' on page 8 undefined on input line 222.
+
+
+Package natbib Warning: Citation `crawley1990population' on page 8 undefined on input line 226.
+
+
+Package natbib Warning: Citation `gatsuk1980age' on page 8 undefined on input line 231.
+
+
+Package natbib Warning: Citation `le2004use' on page 8 undefined on input line 231.
+
+
+Package natbib Warning: Citation `vanderklein2007plant' on page 8 undefined on input line 231.
+
+
+Package natbib Warning: Citation `baden2021effects' on page 8 undefined on input line 231.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 481--484
 
+Package natbib Warning: Citation `mitchell1987analysis' on page 9 undefined on input line 233.
+
+
+Package natbib Warning: Citation `pantone1992path' on page 9 undefined on input line 233.
+
+
+Package natbib Warning: Citation `postma2021dividing' on page 9 undefined on input line 233.
+
+
+Package natbib Warning: Citation `young1987seed' on page 9 undefined on input line 235.
+
+
+Package natbib Warning: Citation `de2013early' on page 9 undefined on input line 235.
+
+
+Package natbib Warning: Citation `acacio2007multiple' on page 9 undefined on input line 235.
+
+
+Package natbib Warning: Citation `luzuriaga2008determines' on page 9 undefined on input line 235.
+
+
+Package natbib Warning: Citation `saatkamp201411' on page 9 undefined on input line 237.
+
+
+Package natbib Warning: Citation `fenner2017ecology' on page 9 undefined on input line 237.
+
+
+Package natbib Warning: Citation `tomowski2023recruitment' on page 9 undefined on input line 237.
+
+
+Package natbib Warning: Citation `weiner1986size' on page 9 undefined on input line 239.
+
+
+Package natbib Warning: Citation `connolly1996asymmetric' on page 9 undefined on input line 239.
+
+
+Package natbib Warning: Citation `weiner2001effects' on page 9 undefined on input line 239.
+
+
+Package natbib Warning: Citation `freckleton2001asymmetric' on page 9 undefined on input line 239.
+
+
+Package natbib Warning: Citation `moles2006seed' on page 9 undefined on input line 241.
+
+
+Package natbib Warning: Citation `fricke2019linking' on page 9 undefined on input line 241.
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 243--244
+[]\TU/lmr/m/n/10 La mortandad de individuos grandes, viejos, por accidentes, her-
  []
+
+
+Package natbib Warning: Citation `harper1977population' on page 9 undefined on input line 248.
+
+
+Package natbib Warning: Citation `sagar1985profile' on page 9 undefined on input line 248.
+
+
+Package natbib Warning: Citation `caswell2000matrix' on page 9 undefined on input line 248.
+
+
+Package natbib Warning: Citation `bacaer2011short' on page 9 undefined on input line 248.
 
 [9]
-Overfull \hbox (99.77562pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 10 \TU/lmr/m/sl/10 CHAPTER 1.  VII ANDEAN ORCHID CONFERENCE, CUSCO, PERÚ, 24-26 NOVIEMBRE 2023
- []
-
-[10] [11]
-Overfull \hbox (99.77562pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 12 \TU/lmr/m/sl/10 CHAPTER 1.  VII ANDEAN ORCHID CONFERENCE, CUSCO, PERÚ, 24-26 NOVIEMBRE 2023
- []
-
-[12
-
-]
-Chapter 2.
-[13]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 582.
-File: Diagnostico_Poblacional_files/figure-latex/Pop-fig-1.pdf Graphic file (type pdf)
-<use Diagnostico_Poblacional_files/figure-latex/Pop-fig-1.pdf>
-[14] [15] [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 258.
+File: Diagnostico_Poblacional_files/figure-latex/Pop-fig_1-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/Pop-fig_1-1.pdf>
 
-[17] [18]
-Underfull \hbox (badness 1199) in paragraph at lines 703--703
+LaTeX Warning: Reference `USO' on page 10 undefined on input line 274.
+
+
+Package natbib Warning: Citation `morris2002quantitative' on page 10 undefined on input line 274.
+
+
+Package natbib Warning: Citation `crouse1987stage' on page 10 undefined on input line 299.
+
+
+Package natbib Warning: Citation `shaffer1981minimum' on page 10 undefined on input line 300.
+
+
+Package natbib Warning: Citation `armbruster1993population' on page 10 undefined on input line 300.
+
+
+Package natbib Warning: Citation `bustamante1996population' on page 10 undefined on input line 301.
+
+
+Package natbib Warning: Citation `nantel1996population' on page 10 undefined on input line 302.
+
+
+Package natbib Warning: Citation `arroyo2022prescriptions' on page 10 undefined on input line 303.
+
+
+Package natbib Warning: Citation `lindenmayer1996ranking' on page 10 undefined on input line 304.
+
+
+Package natbib Warning: Citation `gotelli2006forecasting' on page 10 undefined on input line 305.
+
+
+Package natbib Warning: Citation `earl2019evaluating' on page 10 undefined on input line 306.
+
+
+Package natbib Warning: Citation `halpern2006approaches' on page 10 undefined on input line 307.
+
+
+Package natbib Warning: Citation `coste2020analysis' on page 10 undefined on input line 308.
+
+[10] [11] [12]
+
+Package natbib Warning: Citation `crouse1987stage' on page 13 undefined on input line 313.
+
+
+Package natbib Warning: Citation `crowder1994predicting' on page 13 undefined on input line 313.
+
+
+Package natbib Warning: Citation `crouse1987stage' on page 13 undefined on input line 313.
+
+
+Package natbib Warning: Citation `crowder1994predicting' on page 13 undefined on input line 313.
+
+
+Package natbib Warning: Citation `shaffer1985population' on page 13 undefined on input line 319.
+
+
+Package natbib Warning: Citation `nunney1993assessing' on page 13 undefined on input line 319.
+
+
+Package natbib Warning: Citation `harris2022abundance' on page 13 undefined on input line 319.
+
+
+Package natbib Warning: Citation `darwin1877various' on page 13 undefined on input line 319.
+
+[13]
+
+Package natbib Warning: Citation `kim2016restoration' on page 14 undefined on input line 327.
+
+
+Package natbib Warning: Citation `kim2016restoration' on page 14 undefined on input line 327.
+
+[14]
+
+Package natbib Warning: Citation `alves2022single' on page 15 undefined on input line 365.
+
+
+Package natbib Warning: Citation `novoa2015introduced' on page 15 undefined on input line 365.
+
+[15]
+
+Package natbib Warning: Citation `koop2005projection' on page 16 undefined on input line 367.
+
+
+Package natbib Warning: Citation `mcmahon2008transient' on page 16 undefined on input line 367.
+
+
+Package natbib Warning: Citation `li2015demographic' on page 16 undefined on input line 367.
+
+
+Package natbib Warning: Citation `forsman1996demography' on page 16 undefined on input line 373.
+
+
+Package natbib Warning: Citation `crone2011plant' on page 16 undefined on input line 373.
+
+
+Package natbib Warning: Citation `semmens2016quasi' on page 16 undefined on input line 373.
+
+
+Package natbib Warning: Citation `ludwig1999meaningful' on page 16 undefined on input line 373.
+
+
+Package natbib Warning: Citation `tremblay2006epiphytic' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `lind2007metapopulation' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `winkler2009population' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `kindlmann2014disobedient' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `acevedo2015spatial' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `acevedo2020local' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `vsvecova2023difficulties' on page 16 undefined on input line 381.
+
+
+Package natbib Warning: Citation `hanski1999metapopulation' on page 16 undefined on input line 381.
+
+[16]
+Underfull \hbox (badness 1199) in paragraph at lines 385--385
 []\TU/lmr/bx/n/12 USO 9: Evaluar interacciones ecológicas para
  []
 
 
-Overfull \hbox (13.45909pt too wide) in paragraph at lines 709--709
+Overfull \hbox (13.45909pt too wide) in paragraph at lines 389--389
 []\TU/lmr/bx/n/14.4 Historia de dinamica poblacional en orquideas. 
  []
 
-[19] [20
+[17] [18
 
 ]
 Chapter 3.
-[21] [22]
+[19]
+Overfull \hbox (573.75pt too wide) in paragraph at lines 466--466
+[]\TU/lmtt/m/n/10 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.[] 
+ []
+
+File: Diagnostico_Poblacional_files/figure-latex/chap2_2-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap2_2-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[20]
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+[21]
+File: Diagnostico_Poblacional_files/figure-latex/chap2_3-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap2_3-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22] [23] [24
+
+]
 Chapter 4.
 
-Overfull \hbox (17.937pt too wide) in paragraph at lines 784--785
-[]\TU/lmr/m/n/10 To label an un-numbered heading, use: \TU/lmtt/m/n/10 # Hello world {-#nice-label}
+Package natbib Warning: Citation `tellez2007orquideas' on page 25 undefined on input line 500.
+
+[25]
+
+Package natbib Warning: Citation `hernandez1992dinamica' on page 26 undefined on input line 519.
+
+
+Package natbib Warning: Citation `jepson2000tree' on page 26 undefined on input line 522.
+
+
+Package natbib Warning: Citation `johansson1974ecology' on page 26 undefined on input line 527.
+
+
+Package natbib Warning: Citation `catling1986epiphytic' on page 26 undefined on input line 527.
+
+
+Package natbib Warning: Citation `mondragon2007life' on page 26 undefined on input line 528.
+
+[26]
+
+Package natbib Warning: Citation `tremblay2009population' on page 27 undefined on input line 542.
+
+File: Figures/Triangulation_Method.pdf Graphic file (type pdf)
+<use Figures/Triangulation_Method.pdf>
+
+Package natbib Warning: Citation `tellez2007orquideas' on page 27 undefined on input line 556.
+
+
+Package natbib Warning: Citation `martinez2024estimation' on page 27 undefined on input line 556.
+
+[27] [28] [29]
+
+Package natbib Warning: Citation `ackerman1996seedling' on page 30 undefined on input line 589.
+
+
+Package natbib Warning: Citation `ticktin2020synthesis' on page 30 undefined on input line 589.
+
+Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
+
+Package natbib Warning: Citation `rasmussen1993seed' on page 30 undefined on input line 591.
+
+
+Package natbib Warning: Citation `rasmussen2011methods' on page 30 undefined on input line 591.
+
+
+Package natbib Warning: Citation `anghelescu2023asymbiotic' on page 30 undefined on input line 591.
+
+[30]
+
+Package natbib Warning: Citation `tremblay2003population' on page 31 undefined on input line 609.
+
+File: Figures/lepanthes_rupestris.jpeg Graphic file (type bmp)
+<Figures/lepanthes_rupestris.jpeg>
+
+Package natbib Warning: Citation `ackerman1996seedling' on page 31 undefined on input line 624.
+
+
+Package natbib Warning: Citation `rasmussen1993seed' on page 31 undefined on input line 625.
+
+
+Package natbib Warning: Citation `whigham2006seed' on page 31 undefined on input line 625.
+
+
+Package natbib Warning: Citation `turnbull2000plant' on page 31 undefined on input line 626.
+
+
+Package natbib Warning: Citation `tremblay2003population' on page 31 undefined on input line 631.
+
+
+Overfull \hbox (15.33232pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 4.5.  IDENTIFICAR LA CARACTERÍSTICAS DE LA ESPECIE DE ESTUDIO \TU/lmr/m/n/10 31
+ []
+
+[31] [32]
+
+Package natbib Warning: Citation `hutchings1987population' on page 33 undefined on input line 662.
+
+
+Package natbib Warning: Citation `wells1991demographic' on page 33 undefined on input line 662.
+
+
+Package natbib Warning: Citation `light2006appearance' on page 33 undefined on input line 662.
+
+
+Package natbib Warning: Citation `coates2006effects' on page 33 undefined on input line 662.
+
+File: Figures/Cypripedium_acaule.jpg Graphic file (type bmp)
+<Figures/Cypripedium_acaule.jpg>
+
+Overfull \hbox (15.33232pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 4.5.  IDENTIFICAR LA CARACTERÍSTICAS DE LA ESPECIE DE ESTUDIO \TU/lmr/m/n/10 33
+ []
+
+[33] [34]
+
+Package natbib Warning: Citation `emeterio2021does' on page 35 undefined on input line 719.
+
+
+Package natbib Warning: Citation `tremblay2000plant' on page 35 undefined on input line 724.
+
+
+Package natbib Warning: Citation `tremblay2003population' on page 35 undefined on input line 724.
+
+
+Package natbib Warning: Citation `tremblay1997lepanthes' on page 35 undefined on input line 724.
+
+File: Figures/Lep_eltoroensis.png Graphic file (type bmp)
+<Figures/Lep_eltoroensis.png>
+
+Package natbib Warning: Citation `hernandez1992dinamica' on page 35 undefined on input line 738.
+
+
+Package natbib Warning: Citation `mondragon2013population' on page 35 undefined on input line 738.
+
+
+Overfull \hbox (15.33232pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 4.5.  IDENTIFICAR LA CARACTERÍSTICAS DE LA ESPECIE DE ESTUDIO \TU/lmr/m/n/10 35
+ []
+
+[35] [36]
+Overfull \hbox (18.76001pt too wide) in alignment at lines 750--764
+ [] [] 
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 787--788
-[]\TU/lmr/m/n/10 Next, reference the labeled heading anywhere in the text using
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
  []
 
-[23
 
-]
-File: Diagnostico_Poblacional_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
-<use Diagnostico_Poblacional_files/figure-latex/nice-fig-1.pdf>
-[24] [25] [26
+Package natbib Warning: Citation `harper1977population' on page 37 undefined on input line 773.
 
-]
-Underfull \hbox (badness 1859) in paragraph at lines 863--864
-[]\TU/lmr/m/n/10 Add an unnumbered part: \TU/lmtt/m/n/10 # (PART\*) Act two {-} \TU/lmr/m/n/10 (followed by \TU/lmtt/m/n/10 # A
+
+Package natbib Warning: Citation `rasmussen1995terrestrial' on page 37 undefined on input line 777.
+
+
+Package natbib Warning: Citation `emeterio2016usos' on page 37 undefined on input line 779.
+
+
+Package natbib Warning: Citation `hernandez1992dinamica' on page 37 undefined on input line 779.
+
+
+Package natbib Warning: Citation `hernandez2012ecological' on page 37 undefined on input line 779.
+
+
+Package natbib Warning: Citation `martinez2024estimation' on page 37 undefined on input line 779.
+
+[37]
+
+Package natbib Warning: Citation `shefferson2020demography' on page 38 undefined on input line 788.
+
+
+Package natbib Warning: Citation `hutchings1987population' on page 38 undefined on input line 791.
+
+
+Package natbib Warning: Citation `wells1991demographic' on page 38 undefined on input line 791.
+
+
+Package natbib Warning: Citation `willems1991population' on page 38 undefined on input line 791.
+
+
+Package natbib Warning: Citation `light2006appearance' on page 38 undefined on input line 791.
+
+
+Package natbib Warning: Citation `shefferson2003life' on page 38 undefined on input line 793.
+
+
+Package natbib Warning: Citation `kery2004demographic' on page 38 undefined on input line 793.
+
+
+Package natbib Warning: Citation `shefferson2005adult' on page 38 undefined on input line 793.
+
+
+Package natbib Warning: Citation `tremblay2009dormancy' on page 38 undefined on input line 794.
+
+
+Package natbib Warning: Citation `tremblay2009population' on page 38 undefined on input line 794.
+
+
+Package natbib Warning: Citation `tremblay1997lepanthes' on page 38 undefined on input line 807.
+
+
+Package natbib Warning: Citation `tremblay2003population' on page 38 undefined on input line 809.
+
+
+Package natbib Warning: Citation `tremblay2001gene' on page 38 undefined on input line 809.
+
+
+Package natbib Warning: Citation `tremblay2003population' on page 38 undefined on input line 811.
+
+[38]
+
+Package natbib Warning: Citation `martinez2024estimation' on page 39 undefined on input line 832.
+
+
+Package natbib Warning: Citation `tremblay2009dormancy' on page 39 undefined on input line 854.
+
+
+Package natbib Warning: Citation `tremblay2009population' on page 39 undefined on input line 854.
+
+[39]
+
+Package natbib Warning: Citation `hernandez1992dinamica' on page 40 undefined on input line 874.
+
+
+Package natbib Warning: Citation `hutchings2010population' on page 40 undefined on input line 898.
+
+
+Package natbib Warning: Citation `ackerman2020small' on page 40 undefined on input line 922.
+
+[40]
+
+Package natbib Warning: Citation `ackerman2020small' on page 41 undefined on input line 946.
+
+
+Package natbib Warning: Citation `zotz2006population' on page 41 undefined on input line 957.
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente menor a 1.5 cm **SC2**.[] 
  []
 
-[27] [28
 
-] [29] [30
+Overfull \hbox (69.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente de 1.6 a 2.5 cm **SC3**.[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente de 2.6–
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente de 4.1–
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente de 6.1–
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente de 8.1–
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 -   Individuos con tamaño del pseudobulbo más reciente mayor a 11.0 cm[] 
+ []
+
+[41]
+File: Figures/Cypripedium_acaule.jpg Graphic file (type bmp)
+<Figures/Cypripedium_acaule.jpg>
+File: Figures/Cyp_acaule_flag.jpg Graphic file (type bmp)
+<Figures/Cyp_acaule_flag.jpg>
+[42] [43] [44
 
 ]
 Chapter 5.
-[31] [32]
+
+Package natbib Warning: Citation `caswell2000matrix' on page 45 undefined on input line 1067.
+
+
+Package natbib Warning: Citation `tremblay2003population' on page 45 undefined on input line 1067.
+
+[45]
+Overfull \hbox (77.82233pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 46 \TU/lmr/m/sl/10 CHAPTER 5.  COMO CALCULAR TRANSICIONES PARA LA MATRIZ DE LEFKOVITCH
+ []
+
+[46] [47]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 1222--1222
+[]  \TU/lmtt/m/n/10 stage = NULL, # el nombre de la columna con los estados en el primer tiempo[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1222--1222
+[]  \TU/lmtt/m/n/10 fate = NULL, # el nombre de la column con los estados en el segundo tiempo[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1222--1222
+[]  \TU/lmtt/m/n/10 sort = NULL, # si se quiere ordenar los estados de la historia de vida[] 
+ []
+
+
+Overfull \hbox (77.82233pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 48 \TU/lmr/m/sl/10 CHAPTER 5.  COMO CALCULAR TRANSICIONES PARA LA MATRIZ DE LEFKOVITCH
+ []
+
+[48]
+Overfull \hbox (159.0pt too wide) in paragraph at lines 1222--1222
+[]  \TU/lmtt/m/n/10 TF = FALSE # si quiere que la matriz de transiciones y de fertilidad sean separados usa = TRUE[] 
+ []
+
+[49]
+
+Package natbib Warning: Citation `tremblay2021population' on page 50 undefined on input line 1275.
+
+
+Package natbib Warning: Citation `gascoigne2023standard' on page 50 undefined on input line 1275.
+
+
+Overfull \hbox (77.82233pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 50 \TU/lmr/m/sl/10 CHAPTER 5.  COMO CALCULAR TRANSICIONES PARA LA MATRIZ DE LEFKOVITCH
+ []
+
+[50]
 Chapter 6.
+[51
 
-LaTeX Warning: Reference `thm:tri' on page 33 undefined on input line 930.
+] [52
 
-[33
-
-] [34]
+]
 Chapter 7.
-[35
+File: Figures/Matrices_A_U_F_C.jpg Graphic file (type bmp)
+<Figures/Matrices_A_U_F_C.jpg>
+[53]
+File: Diagnostico_Poblacional_files/figure-latex/chap6_1-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap6_1-1.pdf>
 
-] (./Diagnostico_Poblacional.bbl [36] [37
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) [38] (./Diagnostico_Poblacional.aux)
- ***********
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
- ***********
+[54] [55]
+File: Diagnostico_Poblacional_files/figure-latex/chap6_2-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap6_2-1.pdf>
 
-LaTeX Warning: There were undefined references.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package rerunfilecheck Info: File `Diagnostico_Poblacional.out' has not changed.
-(rerunfilecheck)             Checksum: 0D71209FB941A3CEA853B63B4E901D33;6663.
- ) 
+[56] [57]
+
+Package natbib Warning: Citation `cook1983clonal' on page 58 undefined on input line 1363.
+
+
+Package natbib Warning: Citation `mcgraw1996estimation' on page 58 undefined on input line 1363.
+
+[58]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1383--1384
+
+ []
+
+[59
+
+]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 60 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[60]
+File: Diagnostico_Poblacional_files/figure-latex/chap7_2-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap7_2-1.pdf>
+[61]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 62 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[62]
+Overfull \hbox (243.0pt too wide) in paragraph at lines 1507--1507
+[]\TU/lmtt/m/n/10 ## Skipping install of 'raretrans' from a github remote, the SHA1 (3cbc441c) has not changed since last install.[] 
+ []
+
+[63]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ##   POPNUM  year seedlings adults fertility IND_NUM stage next_stage first_year[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ##    <dbl> <dbl>     <dbl>  <dbl>     <dbl>   <dbl> <chr> <chr>           <dbl>[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 1    209     1         1      6         0      67 j     j                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 2    209     1         1      6         0      68 a     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 3    209     1         1      6         0      69 a     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 4    209     1         1      6         0      70 a     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 5    209     1         1      6         0      71 j     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## 6    209     1         1      6         0      72 a     a                   1[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10 ## # i 4 more variables: last_year <dbl>, recruited <lgl>, died <dbl>,[] 
+ []
+
+
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 64 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[64]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ##   POPNUM  year seedlings adults fertility IND_NUM stage next_stage first_year[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ##    <dbl> <dbl>     <dbl>  <dbl>     <dbl>   <dbl> <chr> <chr>           <dbl>[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 1    250     5         8     34     0         167 j     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 2    250     5         8     34     0         168 j     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 3    250     5         8     34     0         169 j     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 4    250     5         8     34     0.118     170 a     a                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 5    250     5         8     34     0         172 j     j                   1[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## 6    250     5         8     34     0         173 j     a                   1[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10 ## # i 4 more variables: last_year <dbl>, recruited <lgl>, died <dbl>,[] 
+ []
+
+[65]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 66 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[66]
+File: Diagnostico_Poblacional_files/figure-latex/chap7_11-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap7_11-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (24.37624pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.8.  PASO 2: OBTENER EL NÚMERO INICIAL DE INDIVIDUOS POR ETAPA \TU/lmr/m/n/10 67
+ []
+
+[67]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 68 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[68]
+
+Package natbib Warning: Citation `tremblay2021population' on page 69 undefined on input line 1722.
+
+
+Overfull \hbox (32.98734pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.9.  PARTE 2: USO DE PRIORS PARA INCORPORAR TRANSICIONES RARAS \TU/lmr/m/n/10 69
+ []
+
+[69]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 70 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[70]
+Overfull \hbox (32.98734pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.9.  PARTE 2: USO DE PRIORS PARA INCORPORAR TRANSICIONES RARAS \TU/lmr/m/n/10 71
+ []
+
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 1930--1932
+
+ []
+
+
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 72 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[72] [73]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[74]
+File: Diagnostico_Poblacional_files/figure-latex/chap7_24-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap7_24-1.pdf>
+[75]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 2099.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 14.4013pt on input line 2099.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 2099.
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2149--2149
+[]\TU/lmtt/m/n/10 ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2149--2149
+[]\TU/lmtt/m/n/10 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was[] 
+ []
+
+
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[76]
+File: Diagnostico_Poblacional_files/figure-latex/chap7_26-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap7_26-1.pdf>
+
+Overfull \hbox (15.14233pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.14.  DETERMINAR SI EL $[]$ ES SIGNIFICATIVAMENTE DIFERENTE DE 1 \TU/lmr/m/n/10 77
+ []
+
+[77]
+Overfull \hbox (107.01234pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPTER 8.  MÉTODO BAYESIANO DE CALCULAR LAS TRANSCIONES Y FECUNDIDADES
+ []
+
+[78]
+Chapter 9.
+[79
+
+] [80
+
+]
+Chapter 10.
+[81]
+
+Package natbib Warning: Citation `stott2010reducibility' on page 82 undefined on input line 2254.
+
+[82]
+
+Package natbib Warning: Citation `stott2011framework' on page 83 undefined on input line 2313.
+
+
+Overfull \hbox (33.12624pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 10.4.  PASO 2: CONDICIONES QUE DEBE CUMPLIR LA MATRIZ DE ESTUDIO \TU/lmr/m/n/10 83
+ []
+
+[83]
+
+Package natbib Warning: Citation `tremblay2015stable' on page 84 undefined on input line 2315.
+
+[84]
+
+Package natbib Warning: Citation `williams2011distance' on page 85 undefined on input line 2357.
+
+[85]
+File: Diagnostico_Poblacional_files/figure-latex/estructuraestable_viz-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/estructuraestable_viz-1.pdf>
+
+Underfull \hbox (badness 6741) in paragraph at lines 2392--2392
+[]\TU/lmr/bx/n/14.4 Análisis de Amortiguamiento/Damping
+ []
+
+
+Package natbib Warning: Citation `jiang2020life' on page 86 undefined on input line 2394.
+
+
+Package natbib Warning: Citation `jiang2020life' on page 86 undefined on input line 2394.
+
+[86] [87] [88]
+Chapter 11.
+
+Underfull \vbox (badness 1681) has occurred while \output is active []
+
+[89
+
+] [90] [91] [92
+
+]
+Chapter 12.
+
+Underfull \hbox (badness 1237) in paragraph at lines 2547--2547
+[]\TU/lmr/bx/n/14.4 Dinámica poblacional de largo y corto
+ []
+
+
+Package natbib Warning: Citation `bierzychudek1999looking' on page 93 undefined on input line 2549.
+
+
+Package natbib Warning: Citation `bierzychudek1999looking' on page 93 undefined on input line 2549.
+
+
+Package natbib Warning: Citation `raventos2015transient' on page 93 undefined on input line 2551.
+
+[93]
+
+Package natbib Warning: Citation `stott2011framework' on page 94 undefined on input line 2553.
+
+
+Package natbib Warning: Citation `stott2012beyond' on page 94 undefined on input line 2553.
+
+
+Package natbib Warning: Citation `stott2012popdemo' on page 94 undefined on input line 2553.
+
+
+Package natbib Warning: Citation `tremblay2015stable' on page 94 undefined on input line 2559.
+
+
+Package natbib Warning: Citation `schodelbauerova2010prediction' on page 94 undefined on input line 2559.
+
+
+Package natbib Warning: Citation `tremblay2015stable' on page 94 undefined on input line 2559.
+
+
+Package natbib Warning: Citation `schodelbauerova2010prediction' on page 94 undefined on input line 2559.
+
+
+Package natbib Warning: Citation `tremblay2015stable' on page 94 undefined on input line 2561.
+
+
+Package natbib Warning: Citation `schodelbauerova2010prediction' on page 94 undefined on input line 2561.
+
+[94]
+Underfull \hbox (badness 10000) in paragraph at lines 2569--2569
+[]\TU/lmr/bx/n/12 PART I: DINÁMICA POBLACIONAL DE
+ []
+
+[95]
+
+Package natbib Warning: Citation `tremblay2015stable' on page 96 undefined on input line 2646.
+
+
+Package natbib Warning: Citation `schodelbauerova2010prediction' on page 96 undefined on input line 2646.
+
+[96]
+
+Package natbib Warning: Citation `tremblay1997distribution' on page 97 undefined on input line 2664.
+
+
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 2672.
+
+[97] [98]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-1.pdf>
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-2.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-2.pdf>
+
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+[99]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-3.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-3.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[100]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-4.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-4.pdf>
+[101]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-5.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-5.pdf>
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ## [1] 1.0000000+0.00000000i 0.8259670+0.00000000i 0.4892619+0.06421907i[] 
+ []
+
+[102]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ##               [,1]           [,2]                  [,3]                  [,4][] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ## [1,] -0.1605030+0i -0.03255031+0i -0.6050037+0.1108223i -0.6050037-0.1108223i[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ## [2,] -0.3765163+0i  0.88098064+0i  0.6483299+0.0000000i  0.6483299+0.0000000i[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ## [3,] -0.6739307+0i -0.46400142+0i  0.1712014+0.2009688i  0.1712014-0.2009688i[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 ## [4,] -0.6150542+0i -0.08669643+0i -0.2913524-0.2162698i -0.2913524+0.2162698i[] 
+ []
+
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-6.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-6.pdf>
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-7.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-7.pdf>
+[103]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-8.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-8.pdf>
+[104]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-9.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-9.pdf>
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-10.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-10.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[105]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_4-11.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_4-11.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[106]
+Overfull \hbox (1.29828pt too wide) in paragraph at lines 2953--2953
+[]\TU/lmr/bx/n/14.4 Dinámica transitoria estandarizada: límites 
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 2957--2957
+[]\TU/lmr/bx/n/14.4 Dinámica transitoria específica de la
+ []
+
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 2968--2970
+[]\TU/lmr/m/it/10 Máxima amplificación/Máxima atenuación \TU/lmr/m/n/10 (Maximum amplifica-
+ []
+
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-1.pdf>
+[108]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-2.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-2.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[109]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-3.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-3.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[110]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-4.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-4.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[111]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-5.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-5.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[112] [113] [114] [115]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3310--3310
+[]\TU/lmtt/m/n/10 ## Warning in is.na(x): is.na() applied to non-(list or vector) of type[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3310--3310
+[]\TU/lmtt/m/n/10 ## Warning in is.na(x): is.na() applied to non-(list or vector) of type[] 
+ []
+
+[116]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3310--3310
+[]\TU/lmtt/m/n/10 ## Warning in is.na(x): is.na() applied to non-(list or vector) of type[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3310--3310
+[]\TU/lmtt/m/n/10 ## Warning in is.na(x): is.na() applied to non-(list or vector) of type[] 
+ []
+
+File: Diagnostico_Poblacional_files/figure-latex/chap10_5-6.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_5-6.pdf>
+[117] [118
+
+]
+Chapter 13.
+
+Package natbib Warning: Citation `hodgson2004methodological' on page 119 undefined on input line 3320.
+
+
+Package natbib Warning: Citation `caswell2000matrix' on page 119 undefined on input line 3320.
+
+
+Package natbib Warning: Citation `de2000elasticities' on page 119 undefined on input line 3320.
+
+
+Package natbib Warning: Citation `stott2012beyond' on page 119 undefined on input line 3322.
+
+[119]
+
+Package natbib Warning: Citation `hodgson2004methodological' on page 120 undefined on input line 3328.
+
+
+Package natbib Warning: Citation `stott2012beyond' on page 120 undefined on input line 3328.
+
+[120] [121]
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-20-1.pdf>
+
+Package natbib Warning: Citation `stott2012beyond' on page 122 undefined on input line 3416.
+
+
+Package natbib Warning: Citation `stott2012beyond' on page 122 undefined on input line 3418.
+
+[122]
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-21-1.pdf>
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[123]
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-2.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-2.pdf>
+[124]
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-3.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-22-3.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3476--3478
+[]\TU/lmr/m/it/10 Máxima amplificación/Máxima atenuación \TU/lmr/m/n/10 (Maximum amplifica-
+ []
+
+
+Overfull \hbox (6.58122pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 13.6.  PAQUETE DE R PARA CALCULAR LE ESLATICIDAD NO LINEAL \TU/lmr/m/n/10 125
+ []
+
+[125]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-1.pdf>
+[126]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-2.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-2.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[127]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-3.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-3.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[128]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-4.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-4.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[129]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-5.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-5.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[130]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-6.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-6.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[131]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-7.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-7.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[132]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-8.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-8.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[133]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-9.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-9.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[134]
+Underfull \vbox (badness 6927) detected at line 3744
+ []
+
+
+Underfull \vbox (badness 2608) has occurred while \output is active []
+
+[135]
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-10.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-10.pdf>
+File: Diagnostico_Poblacional_files/figure-latex/chap10_6-11.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/chap10_6-11.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3746--3747
+[][]
+ []
+
+[136] [137] [138
+
+]
+Chapter 14.
+
+Package natbib Warning: Citation `hastings2021effects' on page 139 undefined on input line 3756.
+
+
+Package natbib Warning: Citation `sun2019multivariate' on page 139 undefined on input line 3756.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+
+Package natbib Warning: Citation `caswell2000matrix' on page 139 undefined on input line 3756.
+
+
+Package natbib Warning: Citation `caswell2010life' on page 139 undefined on input line 3756.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-italic]:mapping=tex-text;!
+
+Package natbib Warning: Citation `caswell1989analysis' on page 139 undefined on input line 3758.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-italic]:mapping=tex-text;!
+
+Package natbib Warning: Citation `caswell1989analysis' on page 139 undefined on input line 3758.
+
+
+Package natbib Warning: Citation `caswell2010life' on page 139 undefined on input line 3758.
+
+[139]
+
+Package natbib Warning: Citation `caswell1989analysis' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `caswell2010life' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `horvitz1997relative' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `teitel2016assessing' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `hansen1999multiannual' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `levin1996demographic' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `oli2001effect' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `davison2010demographic' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `gaoue2010effects' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `garcia2002reproductive' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `hart2021simulated' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `jacquemyn2012stochastic' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `miriti2001effects' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `mondragon2009population' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `nordbakken2004demography' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `schmidt2011matrix' on page 140 undefined on input line 3760.
+
+
+Package natbib Warning: Citation `hernandez2023exact' on page 140 undefined on input line 3762.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-italic]:mapping=tex-text;!
+
+Package natbib Warning: Citation `caswell2000matrix' on page 140 undefined on input line 3766.
+
+
+Package natbib Warning: Citation `caswell2010life' on page 140 undefined on input line 3766.
+
+
+Package natbib Warning: Citation `horvitz1997relative' on page 140 undefined on input line 3766.
+
+
+Package natbib Warning: Citation `caswell2010life' on page 140 undefined on input line 3766.
+
+
+Package natbib Warning: Citation `ramirez2021host' on page 140 undefined on input line 3774.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+
+Underfull \vbox (badness 3168) has occurred while \output is active []
+
+[140]
+Missing character: There is no λ (U+03BB) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-italic]:mapping=tex-text;!
+
+Package natbib Warning: Citation `caswell2010life' on page 141 undefined on input line 3776.
+
+
+Package natbib Warning: Citation `timsina2021six' on page 141 undefined on input line 3776.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+
+Package natbib Warning: Citation `ramirez2021host' on page 141 undefined on input line 3784.
+
+File: Figures/imagen1.jpg Graphic file (type bmp)
+<Figures/imagen1.jpg>
+
+Underfull \vbox (badness 1661) has occurred while \output is active []
+
+[141] [142]
+File: Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
+<use Diagnostico_Poblacional_files/figure-latex/unnamed-chunk-23-1.pdf>
+! Illegal parameter number in definition of \XC@@tmp.
+<to be read again> 
+                   f
+l.3822 ... crecimiento. El color \(\color{#ffc125}
+                                                  {\text{amarillo}}\) para f... 
 Here is how much of TeX's memory you used:
- 17548 strings out of 477889
- 319502 string characters out of 5822811
- 1924875 words of memory out of 5000000
- 38211 multiletter control sequences out of 15000+600000
- 564584 words of font info for 97 fonts, out of 8000000 for 9000
+ 21024 strings out of 476828
+ 396937 string characters out of 5804121
+ 1938174 words of memory out of 5000000
+ 42630 multiletter control sequences out of 15000+600000
+ 565659 words of font info for 105 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,120p,1008b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,10n,120p,1698b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Diagnostico_Poblacional.pdf (38 pages).
+Output written on Diagnostico_Poblacional.pdf (142 pages).

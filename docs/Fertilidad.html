@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,8 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
@@ -558,8 +560,8 @@ div.csl-indent {
 <span id="cb21-7"><a href="Fertilidad.html#cb21-7" tabindex="-1"></a>)</span>
 <span id="cb21-8"><a href="Fertilidad.html#cb21-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juvenil&quot;</span>, <span class="st">&quot;Adulto&quot;</span>)</span>
 <span id="cb21-9"><a href="Fertilidad.html#cb21-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matU, <span class="at">stages=</span>stages)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-55c241495011d8c00d91" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-55c241495011d8c00d91">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-73e3b4b8aea7b71a23d9" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-73e3b4b8aea7b71a23d9">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="matf-matriz-de-fecundidad" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> MatF: Matriz de fecundidad<a href="Fertilidad.html#matf-matriz-de-fecundidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -573,8 +575,8 @@ div.csl-indent {
 <span id="cb22-7"><a href="Fertilidad.html#cb22-7" tabindex="-1"></a>)</span>
 <span id="cb22-8"><a href="Fertilidad.html#cb22-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Ind Pequeños&quot;</span>, <span class="st">&quot;Ind Grande&quot;</span>)</span>
 <span id="cb22-9"><a href="Fertilidad.html#cb22-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matF, <span class="at">stages=</span>stages)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-724f7693a7b6fe013e73" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-724f7693a7b6fe013e73">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5429150f8bf0f2b3ef25" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5429150f8bf0f2b3ef25">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="matc-matriz-de-clonación" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> MatC = Matriz de clonación<a href="Fertilidad.html#matc-matriz-de-clonación" class="anchor-section" aria-label="Anchor link to header"></a></h2>

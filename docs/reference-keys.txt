@@ -4,6 +4,8 @@ eq:binom
 thm:promedio
 dinámica-poblacional
 objetivo-del-libro
+funciones-y-paquetes-de-r
+libro-digital-y-archivos-de-datos
 qué-es-el-analisis-de-dinamica-poblacional
 un-recuento-historico-breve-de-la-ecología-de-poblaciones
 qué-es-el-estudio-de-la-dinámica-poblacional

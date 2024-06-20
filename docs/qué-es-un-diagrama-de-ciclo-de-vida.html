@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,8 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
@@ -585,15 +587,15 @@ div.csl-indent {
 <span id="cb3-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-44" tabindex="-1"></a><span class="st">}&quot;</span></span>
 <span id="cb3-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-45" tabindex="-1"></a>  )</span>
 <span id="cb3-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-46" tabindex="-1"></a>) </span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-5ce2256e0cc8b4bb034d" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-5ce2256e0cc8b4bb034d">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-86995768cd304d83916f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-86995768cd304d83916f">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=PaleGreen4,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="ejemplo-de-un-cicle-de-vida-con-estadio-de-latencia" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Ejemplo de un cicle de vida con estadio de latencia<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-cicle-de-vida-con-estadio-de-latencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-bfefb603af7b6b3cb530" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-bfefb603af7b6b3cb530">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=0,color=grey,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f5000930e2224be42a7e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f5000930e2224be42a7e">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.3\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=0,color=grey,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 3.2\"]\n\"adultos\" -> \"plantulas\"[minlen=-3,fontsize=0,color=grey,xlabel=\" 0.8\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="code-for-color-coding-figure" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Code for color coding figure<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure" class="anchor-section" aria-label="Anchor link to header"></a></h2>

@@ -25,11 +25,40 @@ editor_options:
 
 # Dinámica Poblacional
 
-El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento los patrones y processos intra-especifica y entre-especies.  Tradicionalmente muchos de los trabajos de dinamica poblacional se enfocarón en los estudios intra-especifica, fomentando una perpestiva que las especies no enteractuan con su ambiente biotico.     
+El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y inter-específicos.  Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocaran en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos.    
 
 ## Objetivo del libro: 
 
-Este libro digital 
+Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando (cuando se puede) la matemática más básica para profundizar los métodos matemáticos y como se interpreta de forma biológica.  En cada caso se ampliará con métodos y funciones disponible en varios paquetes de R para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en R, y algunos en Excel. 
 
 
 
+## Funciones y paquetes de R
+
+Los paquetes principales para el análisis de dinámica poblacional al incluye
+
+ - *popbio*: un paquete para analizar datos de dinámica poblacional basado en funciones que se encuentran en el libro de Caswell [@caswell2001matrix] y en el libro de Morris y Doak [@morris2002quantitative] por edades o etapas [@popbio2007].
+ 
+ - *popdemo*: un paquete que incluye Herramientas para modelar poblaciones y demografía utilizando modelos de proyección matricial, con implementaciones de modelos deterministas y estocásticos. Incluye proyección de población, índices de tamaño y crecimiento de la población a corto y largo plazo, análisis de perturbaciones, convergencia hacia la estabilidad o estacionaria [@popdemo2021].
+ 
+ - *raretrans*: Funciones para crear modelos matriciales de población a partir de una combinación de datos sobre transiciones de etapa/edad con información previa bayesiana. Esto compensa los problemas estructurales causados por la falta de observaciones de transiciones raras y datos sin sentido biológicos [@raretrans2024] (vea capitulo XX).
+ 
+ - *Rage*: Funciones para calcular métricas de historia de vida utilizando modelos matriciales de población ("MPM"). Descrito en Jones [@Rage2022]. 
+ 
+ - *RCompadre*: Un paquete para analizar datos recopilado en la base de datos de COM(P)ADRE: ese es un base de datos de matrices de vida de plantas y animales usando matrices [@jones2022rcompadre].
+ 
+
+Otros paquetes que se usan para analizar datos, mayormente para manipular datos, hacer modelos estadísticos y visualización incluye:
+
+ - *ggplot2*
+ - *dplyr*
+ - *tidyr*
+ - *lubridate*
+ 
+
+
+## Libro digital y archivos de datos
+ 
+ El libro se encuentra en el siguiente enlace, donde acceso a todas las funciones y datos están disponibles para reproducir los ejemplos en el libro. https://raymondltremblay.github.io/Diagnostico_Poblacional/
+ 
+ 

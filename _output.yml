@@ -9,9 +9,12 @@ bookdown::gitbook:
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf", "epub", "word"]
 #bookdown::pdf_book:
- # includes:
- #   in_header: preamble.tex
- # latex_engine: xelatex
+#  includes:
+#    in_header: preamble.tex
+#  latex_engine: xelatex
 #  citation_package: natbib
 #  keep_tex: yes
-# bookdown::epub_book: default
+ # toc: TRUE
+#  toc_appendix: TRUE
+#  css: Diagnostico_style.css
+#bookdown::epub_book: default

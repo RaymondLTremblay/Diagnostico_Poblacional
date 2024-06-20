@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,8 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
@@ -567,7 +569,7 @@ Cabe señalar que, la mayor concentración de orquídeas epífitas se registra e
 El primero permite estimar el área en que se establece la población, mientras que el segundo no permite establecer esta variable y se centra en el marcaje de individuos.
 A continuación se detalla en qué consisten ambos.</p>
 <ol style="list-style-type: lower-alpha">
-<li><em>Método de triangulación</em>. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia <span class="citation">(<a href="#ref-tremblay2009population">Tremblay et al. 2009b</a>)</span>. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre la primeera estaca y segunda estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema <strong>x</strong> e <strong>y</strong>). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.</li>
+<li><em>Método de triangulación</em>. El método de triangulación es una técnica no invasiva y comúnmente es utilizada para monitorear las poblaciones terrestres en Australia <span class="citation">(<a href="#ref-tremblay2009population">R. L. Tremblay et al. 2009b</a>)</span>. El método consiste en clavar dos estacas o clavijas permanentes en el suelo. La distancia entre la primeera estaca y segunda estaca generalmente es de un metro. Sobre las estacas se puede: 1) sobreponer un cuadro de madera o tubos de PVC, cuyos lados están divididos en centímetros o 2) colocar cintas métricas sobre cada uno de los lados del cuadrado hecho. Estas dos variantes del método se utilizan para ubicar a los individuos dentro del cuadro al indicarse la distancia de la planta respecto a dos de los lados (un sistema <strong>x</strong> e <strong>y</strong>). Esta técnica es muy buena cuando los individuos están separados uno del otro, pero hay que tener cuidado cuando están muy cercanos (menos de 1 cm de distancia). Además, es fácil de implementarse, es muy precisa y deja muy poca evidencia en el campo.</li>
 </ol>
 <div class="float">
 <embed src="Figures/Triangulation_Method.pdf" style="width:100.0%" height="400" />
@@ -622,7 +624,7 @@ Si bien este método es bueno, es importante considerar que puede representar un
 <p>Para cualquier estudio usando el acercamiento de dinámica poblacional es necesario conocer lo básico de la especie de interés y las etapas/edades que corresponde al ciclo de vida de esa misma.
 Poder reconocer las diferentes etapas del ciclo de vida con exactitud es esencial, por ejemplo separar entre las semillas, plántulas, juveniles y adultos y si hay etapas latentes.
 Cuando se define una etapa de vida se debería tener características morfológicas que se puede identificar en el campo con facilidad y para reducir los errores de asignaciones a otras etapas.
-Por ejemplo en <em>Lepanthes</em> <span class="citation">(<a href="#ref-tremblay2003population">Tremblay and Hutchings 2003</a>)</span> definió un juvenil como individuo que tiene tallos con vaine Lepanthiforme <em>lepanthiform sheath</em> en por lo menos una de los peciolos y que no tiene evidencia de presente o anterior de inflorescencias.
+Por ejemplo en <em>Lepanthes</em> <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span> definió un juvenil como individuo que tiene tallos con vaine Lepanthiforme <em>lepanthiform sheath</em> en por lo menos una de los peciolos y que no tiene evidencia de presente o anterior de inflorescencias.
 Nota que aquí la diferencia entre una plántula y un juvenil es que tenga una vaina Lepanthiformey se diferencia de los adultos con la ausencia de evidencia de inflorescencias seca y activa.</p>
 <p>Por ejemplo en la foto que sigue tenemos un individuos que tiene dos hojas, una con inflorescencia activa y la otra hoja con inflorescencia secas, por consecuencia ese individuos es un adulto ya que tiene por los menor una inflorescencia activa (produciendo flores o el potencial de producir flores).
 Nota no es que la inflorescencia tenga flores es que la inflorescencia es verde.</p>
@@ -640,7 +642,7 @@ Un patrón que parecer ser consistente en las plantas es que el crecimiento pobl
 <div id="identificación-y-etiquetado-de-individuos." class="section level3 hasAnchor" number="4.5.2">
 <h3><span class="header-section-number">4.5.2</span> Identificación y etiquetado de individuos.<a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Debido a la naturaleza sésil de las plantas, una vez delimitada la población resulta relativamente sencillo contar e identificar a todos los individuos seleccionados.
-Sin embargo, el monitoreo y secuenciación de todos y cada uno de los procesos o eventos de desarrollo por los que transita cada uno de los individuos de año a otro año (o el periodo de tiempo de su estudio: en <em>Lepanthes</em> hizo muestreo mensuales no anual <span class="citation">(<a href="#ref-tremblay2003population">Tremblay and Hutchings 2003</a>)</span> sólo es posible si:</p>
+Sin embargo, el monitoreo y secuenciación de todos y cada uno de los procesos o eventos de desarrollo por los que transita cada uno de los individuos de año a otro año (o el periodo de tiempo de su estudio: en <em>Lepanthes</em> hizo muestreo mensuales no anual <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span> sólo es posible si:</p>
 <pre><code>a) contamos con material de marcaje de calidad y 
 b) si tenemos un sistema de identificación sencillo y claro. </code></pre>
 <p>Estos dos sencillos pasos evitarán mezclar la información entre individuos de una misma población o confundir la información con plantas de otras poblaciones.
@@ -702,7 +704,7 @@ En el caso de <em>Laelia autumnalis</em> <span class="citation">(<a href="#ref-e
 Este tipo de marcaje permitió determinar la biomasa nueva que se agrega cada año a cada planta y, al mismo tiempo, permitió identificar la permanencia, crecimiento o retrogresión entre fases de crecimiento.
 En las orquídeas terrestres <em>Cypripedium irapeanum</em> <strong>(ref)</strong> y <em>Govenia lagenophora</em> <strong>(ref)</strong> funcionó bien usar etiquetas aluminio o cinta dymo amarradas palos de clavos o clavadas en segmentos de alambre delgado, semejando banderitas, los cuales a su vez fueron clavados en el suelo junto a los tallos.</p>
 <p>Las plántulas (pequeños individuos) son muy frágiles por lo que el marcaje es necesario definir un material suave que evite dañar sus estructuras.
-Tremblay <span class="citation">(<a href="#ref-tremblay2000plant">Tremblay et al. 2000</a>; <a href="#ref-tremblay2003population">Tremblay and Hutchings 2003</a> ; <a href="#ref-tremblay1997lepanthes">Tremblay 1997b</a>)</span> utilizo un método que reduce el impacto sobre de marcaje sobre plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos.
+Tremblay <span class="citation">(<a href="#ref-tremblay2000plant">R. L. Tremblay et al. 2000</a>; <a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a> ; <a href="#ref-tremblay1997lepanthes">R. L. Tremblay 1997b</a>)</span> utilizo un método que reduce el impacto sobre de marcaje sobre plantas pequeñas, el cual consiste en colocar la etiqueta al lado de los individuos.
 En este tipo de individuos <strong>NO</strong> se debe amarrar la etiqueta a la planta, ya que el peso de la etiqueta puede causarle daño además de que las hojas no son persistentes, por lo que la marca podría perderse.
 En <em>Lepanthes eltoroensis</em> se usaron al principio pequeños clavos para fijar las etiqueta de los individuos, posteriormente se usaron grapas, con lo cual se provocó menos daño al árbol y más facil el proceso de marcar.</p>
 <p><br></p>
@@ -725,23 +727,23 @@ Cuando el estudio se prolonga por más de dos periodos, los subsecuentes muestre
 Con base en las diferencias estimadas se podrá establecer cuál o cuáles de éstas categorías son muy dinámicas o, por el contrario, constantes en el ciclo de vida de la especie de interés.</p>
 <p>Dos aspectos que facilitarán establecer las categorías y los cambios en los individuos en el tiempo son, por un lado, capturar información relevante que es común para todas las especies (Tabla X), y, por otro, entender cómo crecen o reiteran las plantas.
 Las primeras se refieren a las características básicas más simples que permiten diferenciar un estadio de otro.</p>
-<div id="cfomiudnpw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cfomiudnpw table {
+<div id="gzxinqndrp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gzxinqndrp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cfomiudnpw thead, #cfomiudnpw tbody, #cfomiudnpw tfoot, #cfomiudnpw tr, #cfomiudnpw td, #cfomiudnpw th {
+#gzxinqndrp thead, #gzxinqndrp tbody, #gzxinqndrp tfoot, #gzxinqndrp tr, #gzxinqndrp td, #gzxinqndrp th {
   border-style: none;
 }
 
-#cfomiudnpw p {
+#gzxinqndrp p {
   margin: 0;
   padding: 0;
 }
 
-#cfomiudnpw .gt_table {
+#gzxinqndrp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -767,12 +769,12 @@ Las primeras se refieren a las características básicas más simples que permit
   border-left-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_caption {
+#gzxinqndrp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cfomiudnpw .gt_title {
+#gzxinqndrp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -784,7 +786,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-bottom-width: 0;
 }
 
-#cfomiudnpw .gt_subtitle {
+#gzxinqndrp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -796,7 +798,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-top-width: 0;
 }
 
-#cfomiudnpw .gt_heading {
+#gzxinqndrp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -808,13 +810,13 @@ Las primeras se refieren a las características básicas más simples que permit
   border-right-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_bottom_border {
+#gzxinqndrp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_col_headings {
+#gzxinqndrp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -829,7 +831,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-right-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_col_heading {
+#gzxinqndrp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -849,7 +851,7 @@ Las primeras se refieren a las características básicas más simples que permit
   overflow-x: hidden;
 }
 
-#cfomiudnpw .gt_column_spanner_outer {
+#gzxinqndrp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -861,15 +863,15 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 4px;
 }
 
-#cfomiudnpw .gt_column_spanner_outer:first-child {
+#gzxinqndrp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cfomiudnpw .gt_column_spanner_outer:last-child {
+#gzxinqndrp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cfomiudnpw .gt_column_spanner {
+#gzxinqndrp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -881,11 +883,11 @@ Las primeras se refieren a las características básicas más simples que permit
   width: 100%;
 }
 
-#cfomiudnpw .gt_spanner_row {
+#gzxinqndrp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cfomiudnpw .gt_group_heading {
+#gzxinqndrp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -911,7 +913,7 @@ Las primeras se refieren a las características básicas más simples que permit
   text-align: left;
 }
 
-#cfomiudnpw .gt_empty_group_heading {
+#gzxinqndrp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -926,15 +928,15 @@ Las primeras se refieren a las características básicas más simples que permit
   vertical-align: middle;
 }
 
-#cfomiudnpw .gt_from_md > :first-child {
+#gzxinqndrp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cfomiudnpw .gt_from_md > :last-child {
+#gzxinqndrp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cfomiudnpw .gt_row {
+#gzxinqndrp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -953,7 +955,7 @@ Las primeras se refieren a las características básicas más simples que permit
   overflow-x: hidden;
 }
 
-#cfomiudnpw .gt_stub {
+#gzxinqndrp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -966,7 +968,7 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 5px;
 }
 
-#cfomiudnpw .gt_stub_row_group {
+#gzxinqndrp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -980,15 +982,15 @@ Las primeras se refieren a las características básicas más simples que permit
   vertical-align: top;
 }
 
-#cfomiudnpw .gt_row_group_first td {
+#gzxinqndrp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cfomiudnpw .gt_row_group_first th {
+#gzxinqndrp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cfomiudnpw .gt_summary_row {
+#gzxinqndrp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -998,16 +1000,16 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 5px;
 }
 
-#cfomiudnpw .gt_first_summary_row {
+#gzxinqndrp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_first_summary_row.thick {
+#gzxinqndrp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cfomiudnpw .gt_last_summary_row {
+#gzxinqndrp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1017,7 +1019,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-bottom-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_grand_summary_row {
+#gzxinqndrp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1027,7 +1029,7 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 5px;
 }
 
-#cfomiudnpw .gt_first_grand_summary_row {
+#gzxinqndrp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1037,7 +1039,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-top-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_last_grand_summary_row_top {
+#gzxinqndrp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1047,11 +1049,11 @@ Las primeras se refieren a las características básicas más simples que permit
   border-bottom-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_striped {
+#gzxinqndrp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cfomiudnpw .gt_table_body {
+#gzxinqndrp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1060,7 +1062,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-bottom-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_footnotes {
+#gzxinqndrp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1074,7 +1076,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-right-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_footnote {
+#gzxinqndrp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1083,7 +1085,7 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 5px;
 }
 
-#cfomiudnpw .gt_sourcenotes {
+#gzxinqndrp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1097,7 +1099,7 @@ Las primeras se refieren a las características básicas más simples que permit
   border-right-color: #D3D3D3;
 }
 
-#cfomiudnpw .gt_sourcenote {
+#gzxinqndrp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1105,63 +1107,63 @@ Las primeras se refieren a las características básicas más simples que permit
   padding-right: 5px;
 }
 
-#cfomiudnpw .gt_left {
+#gzxinqndrp .gt_left {
   text-align: left;
 }
 
-#cfomiudnpw .gt_center {
+#gzxinqndrp .gt_center {
   text-align: center;
 }
 
-#cfomiudnpw .gt_right {
+#gzxinqndrp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cfomiudnpw .gt_font_normal {
+#gzxinqndrp .gt_font_normal {
   font-weight: normal;
 }
 
-#cfomiudnpw .gt_font_bold {
+#gzxinqndrp .gt_font_bold {
   font-weight: bold;
 }
 
-#cfomiudnpw .gt_font_italic {
+#gzxinqndrp .gt_font_italic {
   font-style: italic;
 }
 
-#cfomiudnpw .gt_super {
+#gzxinqndrp .gt_super {
   font-size: 65%;
 }
 
-#cfomiudnpw .gt_footnote_marks {
+#gzxinqndrp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cfomiudnpw .gt_asterisk {
+#gzxinqndrp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cfomiudnpw .gt_indent_1 {
+#gzxinqndrp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cfomiudnpw .gt_indent_2 {
+#gzxinqndrp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cfomiudnpw .gt_indent_3 {
+#gzxinqndrp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cfomiudnpw .gt_indent_4 {
+#gzxinqndrp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cfomiudnpw .gt_indent_5 {
+#gzxinqndrp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1222,7 +1224,7 @@ Aunque a diferencia de los animales, la latencia vegetativa puede prolongarse po
 Por ejemplo, los tubérculos de <em>Liparis liliifolia</em> <span class="citation">(<a href="#ref-hutchings1987population">Hutchings 1987</a>; <a href="#ref-wells1991demographic">Wells 1991</a>)</span> y <em>Orchis simia</em> <span class="citation">(<a href="#ref-willems1991population">Willems and Bik 1991</a>)</span> pueden sobrevivir de forma subterránea por tres años, mientras que <em>Epipactis helleborine</em> por 5 a 7 años <span class="citation">(<a href="#ref-light2006appearance">Light and MacConaill 2006</a>)</span>.
 Cabe señalar que, en los estudios poblacionales esta situación dificulta la estimación de la mortalidad en las orquídeas terrestres y, en consecuencia, se desconoce la supervivencia real de las distintas fases de desarrollo de la especie y el tamaño real de una población de interés.
 Multiples acercmiento han sido desarrollado para considerar el periodo de no avistamiento en la dinámica de orquideas <span class="citation">(<a href="#ref-shefferson2003life">Shefferson et al. 2003</a>; <a href="#ref-kery2004demographic">Kéry and Gregg 2004</a>; <a href="#ref-shefferson2005adult">Shefferson, Kull, and Tali 2005</a>)</span>.
-Nuevos métodos desarrollo métodos bayesiano para estimar los parámetros de supervivencia condicional basado en si la plantas eran vista el año anterior o no y la cantidad de años sin ser vista han ayudado a estimar parametros del ciclo de vida más más concono al los patrones naturales de las especies <span class="citation">(<a href="#ref-tremblay2009dormancy">Tremblay et al. 2009a</a>, <a href="#ref-tremblay2009population">2009b</a>)</span>.</p>
+Nuevos métodos desarrollo métodos bayesiano para estimar los parámetros de supervivencia condicional basado en si la plantas eran vista el año anterior o no y la cantidad de años sin ser vista han ayudado a estimar parametros del ciclo de vida más más concono al los patrones naturales de las especies <span class="citation">(<a href="#ref-tremblay2009dormancy">R. L. Tremblay et al. 2009a</a>, <a href="#ref-tremblay2009population">2009b</a>)</span>.</p>
 <p><br></p>
 </div>
 <div id="ejemplos-de-categorización-en-especies-de-estudio" class="section level3 hasAnchor" number="4.6.2">
@@ -1233,11 +1235,11 @@ Nuevos métodos desarrollo métodos bayesiano para estimar los parámetros de su
 <ol style="list-style-type: lower-alpha">
 <li><em>Lepanthes</em>.</li>
 </ol>
-<p>Tremblay <span class="citation">(<a href="#ref-tremblay1997lepanthes">Tremblay 1997b</a>)</span> en su estudio con el género <em>Lepanthes</em>, una orquídea miniatura epífita, considero las etapas o estadios de desarrollo para definir cuatro categorías del ciclo de vida: plántulas, juveniles, adultos no reproductivos y adultos reproductivos.
+<p>Tremblay <span class="citation">(<a href="#ref-tremblay1997lepanthes">R. L. Tremblay 1997b</a>)</span> en su estudio con el género <em>Lepanthes</em>, una orquídea miniatura epífita, considero las etapas o estadios de desarrollo para definir cuatro categorías del ciclo de vida: plántulas, juveniles, adultos no reproductivos y adultos reproductivos.
 Cabe señalar que, cada una de estas etapas está definida específicamente para cada especie de estudio; es decir, no son fijas por lo que pueden incluir más categorías de estado aún dentro del mismo género <em>Lepanthes</em>.
-Por ejemplo, Tremblay usó en <em>L. caritensis</em> <span class="citation">(<a href="#ref-tremblay2003population">Tremblay and Hutchings 2003</a>)</span> cuatro categorías y otras especies cinco etapas (<em>L. rubripetala</em> y <em>L. eltoroensis</em>) o seis etapas (<em>L. rupestris</em>) al incluir una segunda etapa de adulto reproductivo y un estado no reproductivo <span class="citation">(<a href="#ref-tremblay2001gene">Tremblay and Ackerman 2001</a>)</span>.
+Por ejemplo, Tremblay usó en <em>L. caritensis</em> <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span> cuatro categorías y otras especies cinco etapas (<em>L. rubripetala</em> y <em>L. eltoroensis</em>) o seis etapas (<em>L. rupestris</em>) al incluir una segunda etapa de adulto reproductivo y un estado no reproductivo <span class="citation">(<a href="#ref-tremblay2001gene">R. L. Tremblay and Ackerman 2001</a>)</span>.
 Además de definir las categorías de estado, en cada estudio es importante tener claro cuáles son las características tomadas en cuenta para su clasificación.
-A continuación, se describen las categorías generales usadas en el género <em>Lepanthes</em> <span class="citation">(<a href="#ref-tremblay2003population">Tremblay and Hutchings 2003</a>)</span></p>
+A continuación, se describen las categorías generales usadas en el género <em>Lepanthes</em> <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span></p>
 <ul>
 <li><p><strong>Plántula</strong>: individuo con hojas y sin peciolo visible.</p></li>
 <li><p><strong>Juvenil</strong>: individuo con hojas y peciolo, pero sin evidencia de haber sido reproductivo en el pasado (la base de las inflorescencias es persistentes)</p></li>
@@ -1260,7 +1262,7 @@ La estimación de las variables poblacionales fue estimada a partir de cuatro a�
 <ol start="3" style="list-style-type: lower-alpha">
 <li><em>Caladenia</em>.</li>
 </ol>
-<p>Tremblay y colaboradores <span class="citation">(<a href="#ref-tremblay2009dormancy">Tremblay et al. 2009a</a>, <a href="#ref-tremblay2009population">2009b</a>)</span>, estudiaron nueve especies del género <em>Caladenia</em> en distintas localidades de Australia, cuya demografía fue analizada a partir de tres categorías de estado: individuos vegetativos, individuos en floración e individuos latentes.</p>
+<p>Tremblay y colaboradores <span class="citation">(<a href="#ref-tremblay2009dormancy">R. L. Tremblay et al. 2009a</a>, <a href="#ref-tremblay2009population">2009b</a>)</span>, estudiaron nueve especies del género <em>Caladenia</em> en distintas localidades de Australia, cuya demografía fue analizada a partir de tres categorías de estado: individuos vegetativos, individuos en floración e individuos latentes.</p>
 <ul>
 <li><strong>Individuos vegetativos</strong>: Individuos con hojas y sin evidencia de ser reproductivos.</li>
 <li><strong>Reproductivo</strong>: Individuos con hojas y en flor.</li>

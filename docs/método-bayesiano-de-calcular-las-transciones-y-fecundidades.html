@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,8 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
@@ -570,8 +572,8 @@ div.csl-indent {
 <span id="cb23-11"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb23-11" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
 <span id="cb23-12"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb23-12" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb24-1" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>stages)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a818eb7d2cb7d63ef5f3" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a818eb7d2cb7d63ef5f3">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=grey,xlabel=\" 1\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-64db2747d4c5d78a5391" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-64db2747d4c5d78a5391">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\" -> \"plantulas\" -> \"adultos\" [style=invis] } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=grey,xlabel=\" 1\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Considera este ejemplo:</p>
 <ul>
 <li>Si Ud estudia los arboles Sequioa y muestra los arboles grandes (con un dbh de &gt; xxx), aunque muestra 1000+ individuos de esa etapa/tamaño es posible que no encontrará ninguno que muere. Por consecuencia el estimado de supervivencia de esos arboles es 100%. Aunque uno sabe que si hubiese muestrado 10,000 o 100,000 arboles se podria haber detectado uno más que fallece.</li>
@@ -725,8 +727,8 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb44-1" tabindex="-1"></a>stages2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;juveniles&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
 <span id="cb44-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb44-2" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb44-3"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb44-3" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(Tmat, <span class="at">stages=</span>stages2)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-3689247e237b3c97baf2" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3689247e237b3c97baf2">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.833\"]\n\"juveniles\" -> \"adultos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.062\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.875\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-4244096c2a2a9d797b5c" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4244096c2a2a9d797b5c">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adultos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.833\"]\n\"juveniles\" -> \"adultos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.062\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.875\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>En esta matriz falta la transición de plántula a juvenil, y ninguno de los 6 juveniles murió, lo que lleva a una sobreestimación de la supervivencia. La tasa de crecimiento asintótico de la población observada es <span class="math inline">\(\lambda =\)</span> 0.88. La matriz no es ergódica (no se puede llegar a cualquier otro estado desde uno o más estados), y reducible, lo que significa que una o más columnas y filas se pueden descartar y tienen las mismas propiedades eigen.</p>
 </div>
 <div id="parte-2-uso-de-priors-para-incorporar-transiciones-raras" class="section level2 hasAnchor" number="8.9">
@@ -737,7 +739,7 @@ Tenga en cuenta que “p” significa “plantula” en español. El primer conj
 <li>Ese paso es solamente para entender porque no se calcula y porque no
 se usa <em>prior</em> uniforme.</li>
 </ul>
-<p>Tremblay (<span class="citation">Tremblay et al. (<a href="#ref-tremblay2021population">2021</a>)</span>) muestran que los valores de <em>prior</em>
+<p>Tremblay (<span class="citation">R. L. Tremblay et al. (<a href="#ref-tremblay2021population">2021</a>)</span>) muestran que los valores de <em>prior</em>
 de una dirichlet funciona para las columnas de la matriz de transición
 (<strong>T</strong>) y que valores <em>prior</em> gamma funciona para las columnas de la
 matriz de transición (<strong>F</strong>).</p>
@@ -1008,9 +1010,9 @@ los intervalos creíbles simétricos se reducen bastante:</p>
 <span id="cb69-2"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb69-2" tabindex="-1"></a>                <span class="at">priorweight =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ##              [,1]        [,2]        [,3]
-## [1,] 1.426689e-01 0.003030626 0.280592526
-## [2,] 2.912867e-01 0.731343239 0.003876451
-## [3,] 2.122143e-22 0.190371327 0.880443013</code></pre>
+## [1,] 3.999645e-01 0.004828144 0.358768894
+## [2,] 3.522803e-01 0.757191538 0.002194482
+## [3,] 2.881669e-08 0.168149369 0.861286899</code></pre>
 <p>Ahora simulamos 5000 veces, calculamos el valor <span class="math inline">\(\lambda\)</span> de cada
 matriz y creamos un histograma de la distribución.</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#cb71-1" tabindex="-1"></a><span class="co">#set.seed(8390278) # make this part reproducible</span></span>
@@ -1033,8 +1035,7 @@ matriz y creamos un histograma de la distribución.</p>
 <pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ## ℹ Please use `linewidth` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this
-## warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap7_26-1.png" width="672" /></p>
 </div>
 <div id="determinar-si-el-lambda-es-significativamente-diferente-de-1" class="section level2 hasAnchor" number="8.14">
