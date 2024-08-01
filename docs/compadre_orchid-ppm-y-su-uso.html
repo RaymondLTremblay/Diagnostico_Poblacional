@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 18 Compadre_Orchid PPM y su uso | Dinamica_Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 18 Compadre_Orchid PPM y su uso | Dinamica_Poblacional" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-06-19" />
+<meta name="date" content="2024-07-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#un-recuento-historico-breve-de-la-ecología-de-poblaciones"><i class="fa fa-check"></i><b>2.1</b> Un recuento historico breve de la ecología de poblaciones</a></li>
+<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#un-recuento-histórico-breve-de-la-ecología-de-poblaciones"><i class="fa fa-check"></i><b>2.1</b> Un recuento histórico breve de la ecología de poblaciones</a></li>
 <li class="chapter" data-level="2.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#qué-es-el-estudio-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es el estudio de la dinámica poblacional?</a></li>
 <li class="chapter" data-level="2.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#definición"><i class="fa fa-check"></i><b>2.3</b> Definición</a></li>
 <li class="chapter" data-level="2.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#el-analisis-de-dinámica-poblacional-y-su-uso"><i class="fa fa-check"></i><b>2.4</b> El analisis de Dinámica Poblacional y su uso</a>
@@ -1104,6 +1104,15 @@ div.csl-indent {
 #pxpiwyojrl .gt_indent_5 {
   text-indent: 25px;
 }
+
+#pxpiwyojrl .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pxpiwyojrl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
@@ -1597,6 +1606,15 @@ div.csl-indent {
 #lltlcsmdou .gt_indent_5 {
   text-indent: 25px;
 }
+
+#lltlcsmdou .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lltlcsmdou div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
@@ -1765,7 +1783,8 @@ div.csl-indent {
 <span id="cb242-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb242-9" tabindex="-1"></a></span>
 <span id="cb242-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb242-10" tabindex="-1"></a>SPECIES_O <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
-## # Groups:   SpeciesAccepted, YearPublication, OrganismType, StudyStart [6]
+## # Groups:   SpeciesAccepted, YearPublication, OrganismType,
+## #   StudyStart [6]
 ##   SpeciesAccepted YearPublication OrganismType StudyStart StudyEnd n_populations
 ##   &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;         &lt;int&gt;
 ## 1 Lepanthes cari… 2018            Epiphyte           2010     2012            18
@@ -1811,10 +1830,13 @@ div.csl-indent {
 <span id="cb247-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb247-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb247-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb247-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2 3.5.0.
-## ℹ Please use the `legend.position.inside` argument of `theme()` instead.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in
+## ggplot2 3.5.0.
+## ℹ Please use the `legend.position.inside` argument of `theme()`
+##   instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this
+## warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb249-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
@@ -2176,13 +2198,13 @@ div.csl-indent {
 <div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(x2, <span class="fu">aes</span>(Lon, Lat)) <span class="sc">+</span></span>
 <span id="cb302-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb302-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb302-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
-## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the
+## scale range (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26-1.png" width="672" /></p>
 <div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb304-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;orchid_map.jpg&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
-## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the
+## scale range (`geom_point()`).</code></pre>
 </div>
 </div>
 <div id="como-calcular-la-esperanza-de-vida-en-r-con-la-base-de-datos-de-compadre" class="section level2 hasAnchor" number="18.5">
@@ -2220,11 +2242,13 @@ div.csl-indent {
 <span id="cb307-27"><a href="compadre_orchid-ppm-y-su-uso.html#cb307-27" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) </span></code></pre></div>
 <pre><code>## Warning: There were 4 warnings in `mutate()`.
 ## The first warning was:
-## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU, start = 1)`.
+## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU,
+##   start = 1)`.
 ## Caused by warning:
 ## ! Argument matU has at least one stage-specific survival.
 ##  probability &gt; 1
-## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
+## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining
+##   warnings.</code></pre>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb309-1" tabindex="-1"></a>compadre_life_expect</span></code></pre></div>
 <pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 29 SPECIES and 33 MATRICES.
 ## 
@@ -2271,8 +2295,10 @@ div.csl-indent {
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb316-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
-<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range (`stat_boxplot()`).
-## Removed 1 row containing missing values or values outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
+## (`stat_boxplot()`).
+## Removed 1 row containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><a href="https://jonesor.github.io/Rage/reference/life_expect.html" class="uri">https://jonesor.github.io/Rage/reference/life_expect.html</a></p>
 <p>How to calculate CI of life span</p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb319-1" tabindex="-1"></a>SPECIES_O<span class="sc">$</span>SpeciesAccepted <span class="ot">&lt;-</span> <span class="fu">fct_reorder</span>(SPECIES_O<span class="sc">$</span>SpeciesAccepted, SPECIES_O<span class="sc">$</span>StudyStart, <span class="at">.desc =</span> <span class="cn">FALSE</span>)</span>
