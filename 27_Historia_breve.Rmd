@@ -1,0 +1,40 @@
+---
+output:
+  pdf_document: default
+  html_document:
+    code_folding: show
+  word_document: default
+---
+
+
+```{css, eval=FALSE, echo=FALSE}
+body {
+  counter-reset: counter-rchunks;
+}
+
+div.main-container {
+  padding-left: 5em;
+}
+
+pre.r {
+  counter-increment: counter-rchunks;
+  position: relative;
+  overflow: visible;
+}
+
+pre.r::before {
+  content: 'In [' counter(counter-rchunks) ']: ';
+  display: inline-block;
+  position: absolute;
+  left: -5em;
+  color: rgb(48, 63, 159);
+}
+```
+
+
+## Historia breve de la dinámica poblacional en orquídeas.
+
+
+### Los primeros estudios
+
+En esta sección se hará una revisión breve de los estudios de dinámica poblacional en orquídeas que usarón PPM.  
