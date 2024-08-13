@@ -25,13 +25,15 @@ uso-10-cual-de-los-procesos-y-patrones-evolutivos-del-ciclo-de-vida-de-especies-
 qué-es-un-diagrama-de-ciclo-de-vida
 introducción
 ejemplo-de-ciclos-de-vida-sencillo
-ejemplo-de-una-orquídea
+ejemplo-de-una-orquídea-hipotética
 ciclo-de-vida-de-orquídea-en-publicaciones
 especie-epífitas
 laelia-speciosa
+telipogon-helleri
 especie-terrestres
 prasophyllum-correctum
 ophrys-sphegodes
+cypripedium-parviflorum-epipactus-atrorubens-y-orchis-purpurea
 ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot
 code-for-color-coding-figure
 ejemplo-de-un-cicle-de-vida-con-estadio-de-post-reproducción

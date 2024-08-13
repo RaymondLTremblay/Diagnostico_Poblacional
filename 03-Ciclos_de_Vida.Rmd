@@ -77,7 +77,7 @@ digraph {
 
 ```
 
-## Ejemplo de una orquídea
+## Ejemplo de una orquídea hipotética
 
 En el siguiente gráfico se muestra un ciclo de vida hipotética de una orquídea epifita. La orquídea comienza como una semilla que germina en un árbol. La plántula crece y se convierte en un juvenil y subsiguientemente en un adulto que florece y produce semillas. En cada uno de las etapas menos de la semilla se puiede quedar en la misma etapa de un año a otro.  En este caso, la orquídea tiene un ciclo de vida de múltiples años. El primer año es el año de la semilla, el segundo año es el año de la plántula pero esta etapa los individuos pueden quedarse en esta etapa de un año al otro, igual como las etapas de juveniles y adulto. Cuando los individuos se pueden quedar en la misma etapa hay valores mayor de cero en la diagonal. Solamente los adultos pueden reproducir semillas. 
 
@@ -222,7 +222,64 @@ digraph {
 
 
 
+#### *Telipogon helleri*
 
+En el trabajo de [@raventos2018comparison] se recolectaron datos de la etapa de inmaduros, reproductivo pequeños y reproductivo grandes.  La historia de vida es representada por 3 etapas. Los datos provienen de la figura 1 de la publicación de [@rraventos2018comparison]. En este caso, los autores le interesa el efecto de perturbaciones sobre el crecimiento poblacional evaluando el efecto de perturbaciones con análisis de dinámica transitoria.  
+
+Los observaron tres tipos de transiciones en la historia de vida de la orquídea *Telipogon helleri*.  Las etapas que pasen una tamaño/etapa pequeña a más grande el próximo año son de color verde, los que se quedan en la misma etapa son de color roja, los individuos que se ponen más pequeños son de color violeta y amarillo es la reproducción de las etapas adultas.
+
+
+
+```{r Telipogon_helleri}
+
+
+matA_Th=matrix(c(                  
+ 0.1548, 0.1573, 0.5309,
+ 0.2738, 0.4425, 0.1606,
+ 0.0238, 0.4060, 0.7368), byrow=TRUE,ncol=3)
+
+matA_Th
+
+stages <- c("inmaduros", "reproductivo_pequeños", "reproductivo_grandes")
+title <- NULL
+graph <- expand.grid(to = stages, from = stages)
+graph$trans <- round(c(matA_Th), 3)
+graph <- graph[graph$trans > 0, ]
+nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
+graph$col <- c(
+  "red", "PaleGreen4", "PaleGreen4", 
+  "Goldenrod1", "red", "PaleGreen4", 
+  "Goldenrod1", "MediumOrchid4", "red" 
+)
+edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
+  "[minlen=", graph$min_len,
+  ",fontsize=", 10,
+  ",color=", graph$col,
+  ",xlabel=", paste("\"", graph$trans),
+  "\"]\n",
+  collapse = ""
+)
+grViz(
+  paste(
+    "
+digraph {
+  {
+    graph[overlap=false];
+    rank=same;
+    node [shape=", "egg", ", fontsize=", 12, "];",
+    nodes, "
+  }",
+    "ordering=out
+  x [style=invis]
+  x -> {", nodes, "} [style=invis]", edges,
+    "labelloc=\"t\";
+  label=\"", title, "\"
+}"
+  )
+) 
+
+```
 
 
 
@@ -295,11 +352,11 @@ digraph {
 
 
 
-#### Ophrys sphegodes  
+#### *Ophrys sphegodes*  
 
-En trabajo de Waite y Hutchings 1991, se recolectaron datos de la etapa de plantas vegetativa, plantas con flores y latencia de un año y dos años, por consecuencia la historia de vida es representada por 4 etapas. Los datos provienen de la figura 1 y la tabla 3b (periodo de herbovoria por oveja) de la publicación de [@waite1991population]. En este caso, se hace unos análisis para determinar cual es la probabilidad que un individuo con latencia de múltiples años este vivo.
+En el trabajo de Waite y Hutchings 1991, se recolectaron datos de la etapa de plantas vegetativa, plantas con flores y latencia de un año y dos años, por consecuencia la historia de vida es representada por 4 etapas. Los datos provienen de la figura 1 y la tabla 3b (periodo de herbivoría por oveja) de la publicación de [@waite1991effects]. En este caso, se hace unos análisis para determinar cual es la probabilidad que un individuo con latencia de múltiples años este vivo comparando periodos de herbivoría por ganados versus ovejas.
 
-Nota que este caso el objetivo de la publicación era determinar la probabilidad de que un individuo con latencia de múltiples años este vivo.  Por consecuencia no incluye reproducción (nota que no hay linea amarilla). Las etapas que pasen a latente el próximo año son de color azul, los que se quedan en la misma etapa son de color roja, verde es de una etapa no latente.
+Nota que este caso el objetivo de la publicación era determinar la probabilidad de que un individuo con latencia de múltiples años (uno o dos) este vivo.  Por consecuencia no incluye reproducción (nota que no hay linea amarilla). Las etapas que pasen a latente el próximo año son de color azul, los que se quedan en la misma etapa son de color roja, verde es de una etapa no latente.
 
             
             
@@ -357,10 +414,75 @@ digraph {
 ```
 
 
+#### *Cypripedium parviflorum*, *Epipactus atrorubens* y *Orchis purpurea*
+
+La dimensiones de la matriz y la cantidad de etapas/años incluido en un análisis depende de múltiples factores.  Sin duda si son datos del campo el acceso de las etapas de vida es un factor importante.  Revisión de las publicaciones de orquídea se observa análisis con dimensiones de matrices que van de 29 a 3, con un promedio de 5.6 etapas (desv. estandard de 3.2).  El trabajo que incluyo el máximo de etapas fue el trabajo de [@shefferson2014life] con 29 etapas en *Cypripedium parviflorum* var. *parviflorum*.  En la especies *Epipactus atrorubens* se evaluó el costo de estar latente después de diferentes etapas. En este análisis usaron 11 etapas, donde hubiese una probabilidad de latencia después de todas las etapas emergente [@jakalaniemi2011orchids].  En *Orchis purpurea* los autores modelaron la especie usando 6 etapas de vida, protocormos, turberculos, plantulas, juveniles (más de un año y menos de 3 hojas), plantas sin flores (más de 3 hojas) y plantas con flores [@jacquemyn2010seed].  
+
+La transiciones a una etapa más mayor son en verde, las transiciones a una etapa más pequeña son violeta y la reproducción en amarillo.   
 
 
 
-```{r Basic}
+
+```{r}
+matA_Os=matrix(c(
+0.000, 0.000, 0, 0.00, 0.000, 84.88725,
+0.012, 0.000, 0, 0.00, 0.000,  0.00000,
+0.000, 0.041, 0, 0.00, 0.000,  0.00000,
+0.000, 0.000, 1, 0.75, 0.000,  0.00000,
+0.000, 0.000, 0, 0.25, 0.615,  0.62500,
+0.000, 0.000, 0, 0.00, 0.385,  0.37500), byrow=TRUE,ncol=6)
+
+matA_Os  
+
+
+
+stages <- c("Protocormos", "tuberculos", "Plantulas", "Juveniles", "Sin Flores", "Con Flores")
+title <- NULL
+graph <- expand.grid(to = stages, from = stages)
+graph$trans <- round(c(matA_Os), 6)
+graph <- graph[graph$trans > 0, ]
+nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 2
+graph$col <- c(
+   "PaleGreen4",
+  "PaleGreen4",
+  "PaleGreen4",
+  "red", "PaleGreen4",  
+  "red", "PaleGreen4", 
+  "Goldenrod1","MediumOrchid4", "red"
+)
+edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
+  "[minlen=", graph$min_len,
+  ",fontsize=", 10,
+  ",color=", graph$col,
+  ",xlabel=", paste("\"", graph$trans),
+  "\"]\n",
+  collapse = ""
+)
+grViz(
+  paste(
+    "
+digraph {
+  {
+    graph[overlap=false];
+    rank=same;
+    node [shape=", "egg", ", fontsize=", 12, "];",
+    nodes, "
+  }",
+    "ordering=out
+  x [style=invis]
+  x -> {", nodes, "} [style=invis]", edges,
+    "labelloc=\"t\";
+  label=\"", title, "\"
+}"
+  )
+) 
+```
+
+
+
+
+```{r Basic, echo=FALSE}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -415,10 +537,11 @@ digraph {
 
 ## Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot
 
-NOta aqui podemos usar otro paquete 
+Nota aquí podemos usar otro paquete de R. La diferencia es que no se puede cambiar los colores de las lineas y los nodos.  Es una opción más sencilla para crear diagramas de ciclo de vida. 
+ 
 
 ```{r chap2_4}
-library(ggplot2)
+library(Rage)
 plot_life_cycle(matA, stages=stages, fontsize = 0)
 
 ```

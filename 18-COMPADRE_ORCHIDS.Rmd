@@ -190,6 +190,27 @@ HAY una manera de contabilizar los nombres específicos, no por grupo? Para sabe
 unique(index_O$Authors)
 ```
 
+
+En el siguiente script se enseña como estraer la información de una especie específica. En este caso se selecciona la especie **Telipogon helleri**.
+
+```{r}
+Th=index_O %>% select(SpeciesAccepted, mat, Authors, DOI_ISBN, MatrixDimension) %>% 
+  filter(SpeciesAccepted %in% c("Telipogon helleri"))
+
+Th
+
+```
+
+En el siguiente script se enseña la matrices de **Telipogon helleri**.  Nota que la matriz es una lista de matrices de transición (matU) de estados de una población, la matrices de fecundidad (matF), la matrices de clonaje (matC) y la suma de las tres matrices (matU+MatF+matC).
+La información incluye la clases/etapas que los autores usaron. El ciclo de vida incluyo 3 etapas, 1 inmaduras (S1-2) y 2 maduras (S3 y S4). 
+
+
+```{r}
+Th$mat
+```
+
+
+
 ## Cuantos estudios unicos?
 
 Para evaluar el largo de tiempo por estudio se necesita seleccionar una combinación de variables única

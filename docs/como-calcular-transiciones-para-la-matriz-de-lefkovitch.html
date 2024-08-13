@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-08-11" />
+<meta name="date" content="2024-08-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,7 +198,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#introducción"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
 <li class="chapter" data-level="3.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-ciclos-de-vida-sencillo"><i class="fa fa-check"></i><b>3.2</b> Ejemplo de ciclos de vida sencillo</a></li>
-<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de una orquídea</a></li>
+<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea-hipotética"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de una orquídea hipotética</a></li>
 <li class="chapter" data-level="3.4" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ciclo-de-vida-de-orquídea-en-publicaciones"><i class="fa fa-check"></i><b>3.4</b> Ciclo de vida de orquídea en publicaciones</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especie-epífitas"><i class="fa fa-check"></i><b>3.4.1</b> Especie Epífitas</a></li>
@@ -551,7 +551,7 @@ div.csl-indent {
 <div id="como-calcular-transiciones-para-la-matriz-de-lefkovitch" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Capítulo 5</span> Como calcular transiciones para la matriz de Lefkovitch<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#como-calcular-transiciones-para-la-matriz-de-lefkovitch" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Por: RLT, Ernesto Mujica y Elaine Gonzalez y Aucencia</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="introducción-1" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introducción<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones que estén disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en <span class="citation">(<a href="#ref-caswell2000matrix">Caswell 2000</a>)</span> y pueden ver también una aplicación de estos métodos aplicado a las orquídeas <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span>. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capítulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es tedioso y propenso a errores cuando se hacen a mano.</p>
@@ -566,17 +566,17 @@ div.csl-indent {
 <li>3/7 = 0.4285 transitaron de “plantas pequeñas” a “adultos”</li>
 <li>1/7 = 0.1428 fallecieron o sea que las “plantas pequeñas” en el primer periodo de tiempo fallecieron antes de llegar al segundo muestreo</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb13-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-2" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">2</span><span class="sc">/</span><span class="dv">6</span></span>
-<span id="cb13-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-3" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span></span>
-<span id="cb13-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-4" tabindex="-1"></a>c<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span></span>
-<span id="cb13-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-5" tabindex="-1"></a>d<span class="ot">=</span><span class="dv">2</span><span class="sc">/</span><span class="dv">6</span></span>
-<span id="cb13-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-6" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-7" tabindex="-1"></a>sum<span class="ot">=</span>a<span class="sc">+</span>b<span class="sc">+</span>c<span class="sc">+</span>d</span>
-<span id="cb13-8"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb13-8" tabindex="-1"></a>sum</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-2" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">2</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb18-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-3" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb18-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-4" tabindex="-1"></a>c<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb18-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-5" tabindex="-1"></a>d<span class="ot">=</span><span class="dv">2</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb18-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-7" tabindex="-1"></a>sum<span class="ot">=</span>a<span class="sc">+</span>b<span class="sc">+</span>c<span class="sc">+</span>d</span>
+<span id="cb18-8"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb18-8" tabindex="-1"></a>sum</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb15-1" tabindex="-1"></a>sum2<span class="ot">=</span><span class="fl">0.1428+0.1428+0.2857+0.4285</span></span>
-<span id="cb15-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb15-2" tabindex="-1"></a>sum2</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb20-1" tabindex="-1"></a>sum2<span class="ot">=</span><span class="fl">0.1428+0.1428+0.2857+0.4285</span></span>
+<span id="cb20-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb20-2" tabindex="-1"></a>sum2</span></code></pre></div>
 <pre><code>## [1] 0.9998</code></pre>
 <p>Nota que la suma de todas estas transiciones tienen que sumar a 1.000. NO pueden ser mayor que 1 o menor que 1. Si la suma de las transiciones es mayor que 1, significa que hay un error en los datos. Si la suma de las transiciones es menor que 1, significa que hay un error en los datos. Esto ocurre cuando se redondea excesivamente o incorrectamente. En este caso, nota que la suma da un total de 0.9998, que es suficiente cerca de 1.0.</p>
 <p>Ahora calculamos las otras transiciones de juveniles a otras clases - 2/6 = 0.3333, transitaron de “juveniles” a “plantas pequeñas” - 1/6 = 0.1666, transitaron de “juveniles” a “juveniles” - 2/6 = 0.3333, transitaron de “juveniles” a “adultos” - 1/6 = 0.1666, fallecieron de las “juveniles” en el primer periodo de tiempo fallecieron en el segundo periodo de tiempo</p>
@@ -1114,12 +1114,12 @@ div.csl-indent {
 <h3><span class="header-section-number">5.2.1</span> Construyendo la matriz de transiciones<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ahora usamos los valores calculados arriba para construir la matriz de transiciones.</p>
 <p>Nota que en las columnas representa el estado en el tiempo 1 y las filas los estados en el periodo 2. Importante la transiciones a Muerto no se pone en la matriz, automáticamente los análisis reconoce que 1 menos la suma las transiciones en la matriz, sera la proporciones de fallecimiento.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-1" tabindex="-1"></a>ficticia_matrix<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.1428</span>, <span class="fl">0.3333</span>, <span class="fl">0.1666</span>,</span>
-<span id="cb17-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-2" tabindex="-1"></a>                         <span class="fl">0.2857</span>, <span class="fl">0.1666</span>, <span class="fl">0.3333</span>,</span>
-<span id="cb17-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-3" tabindex="-1"></a>                         <span class="fl">0.4285</span>, <span class="fl">0.3333</span>, <span class="fl">0.1666</span>), </span>
-<span id="cb17-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-4" tabindex="-1"></a>                            <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb17-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-5" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-6" tabindex="-1"></a>ficticia_matrix</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-1" tabindex="-1"></a>ficticia_matrix<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.1428</span>, <span class="fl">0.3333</span>, <span class="fl">0.1666</span>,</span>
+<span id="cb22-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-2" tabindex="-1"></a>                         <span class="fl">0.2857</span>, <span class="fl">0.1666</span>, <span class="fl">0.3333</span>,</span>
+<span id="cb22-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-3" tabindex="-1"></a>                         <span class="fl">0.4285</span>, <span class="fl">0.3333</span>, <span class="fl">0.1666</span>), </span>
+<span id="cb22-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-4" tabindex="-1"></a>                            <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-5" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-6" tabindex="-1"></a>ficticia_matrix</span></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]
 ## [1,] 0.1428 0.3333 0.1666
 ## [2,] 0.2857 0.1666 0.3333
@@ -1128,10 +1128,10 @@ div.csl-indent {
 <div id="añadiendo-los-nombres-de-las-etapas" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Añadiendo los nombres de las etapas<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Es buena práctica añadir el nombre de las etapas a la matriz ya que ayuda a encontrar incosistencia y posible errores. Las dos funciones necesarias son <strong>rownames</strong> y <strong>colnames</strong>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb19-1" tabindex="-1"></a><span class="fu">rownames</span>(ficticia_matrix)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb19-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb19-2" tabindex="-1"></a><span class="fu">colnames</span>(ficticia_matrix)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb19-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb19-3" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb19-4" tabindex="-1"></a>ficticia_matrix</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb24-1" tabindex="-1"></a><span class="fu">rownames</span>(ficticia_matrix)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb24-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb24-2" tabindex="-1"></a><span class="fu">colnames</span>(ficticia_matrix)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb24-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb24-4" tabindex="-1"></a>ficticia_matrix</span></code></pre></div>
 <pre><code>##                  plantas_pequeñas juvenil adulto
 ## plantas_pequeñas           0.1428  0.3333 0.1666
 ## juvenil                    0.2857  0.1666 0.3333
@@ -1152,12 +1152,12 @@ div.csl-indent {
   TF = FALSE # si quiere que la matriz de transiciones y de fertilidad sean separados usa = TRUE 
    )</code></pre>
 <p>Nota que el “output” de la función <strong>projection.matrix</strong> es una lista con dos elementos, en dos matrices, una con las transiciones <span class="math inline">\(T\)</span> y otra con la fertilidad <span class="math inline">\(F\)</span>. La primera tiene solamente los valores de transiciones y la segunda solamente los valores que corresponde a la fertilidad, o sea la cantidad de individuos que se añaden a cada clase de edad.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
-<span id="cb22-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-2" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-3" tabindex="-1"></a>Orchis_ficticia_df<span class="ot">=</span><span class="fu">as.data.frame</span>(Orchis_ficticia) <span class="co"># Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. </span></span>
-<span id="cb22-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-4" tabindex="-1"></a>stages<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb22-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-5" tabindex="-1"></a>Orchis_ficticia_df<span class="sc">$</span>fertility<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb22-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb22-6" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb27-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-2" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-3" tabindex="-1"></a>Orchis_ficticia_df<span class="ot">=</span><span class="fu">as.data.frame</span>(Orchis_ficticia) <span class="co"># Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. </span></span>
+<span id="cb27-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-4" tabindex="-1"></a>stages<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
+<span id="cb27-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-5" tabindex="-1"></a>Orchis_ficticia_df<span class="sc">$</span>fertility<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb27-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-6" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## $T
 ##                   
 ##                    plantas_pequeñas   juvenil    adulto
@@ -1172,7 +1172,7 @@ div.csl-indent {
 ##   juvenil                         0       0      0
 ##   adulto                          0       0      0</code></pre>
 <p>Si quiere la matriz con la unión de ambas matrices, puede usar el argumento <strong>TF=FALSE</strong>.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb24-1" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb29-1" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>##                   
 ##                    plantas_pequeñas   juvenil    adulto
 ##   plantas_pequeñas        0.1428571 0.3333333 0.1666667
@@ -1199,7 +1199,7 @@ div.csl-indent {
 Gascoigne, Samuel J. L., Simon Rolph, Daisy Sankey, Nagalakshmi Nidadavolu, Adrian S. Stell Pičman, Christina M. Hernández, Matthew E. R. Philpott, et al. 2023. <span>“A Standard Protocol to Report Discrete Stage-Structured Demographic Information.”</span> <em>Methods in Ecology and Evolution</em>.
 </div>
 <div id="ref-tremblay2003population" class="csl-entry">
-Tremblay, Raymond L, and Michael J Hutchings. 2003. <span>“Population Dynamics in Orchid Conservation: A Review of Analytical Methods Based on the Rare Species Lepanthes Eltoroensis.”</span> <em>Orchid Conservation. Kota Kinabalu: Natural History Publications (Borneo)</em>, 183–204.
+Tremblay, Raymond L, and Michael J Hutchings. 2003. <span>“Population Dynamics in Orchid Conservation: A Review of Analytical Methods Based on the Rare Species <em>Lepanthes Eltoroensis</em>.”</span> <em>Orchid Conservation. Kota Kinabalu: Natural History Publications (Borneo)</em>, 183–204.
 </div>
 <div id="ref-tremblay2021population" class="csl-entry">
 Tremblay, Raymond L, Andrew J Tyre, Maria-Eglée Pérez, and James D Ackerman. 2021. <span>“Population Projections from Holey Matrices: Using Prior Information to Estimate Rare Transition Events.”</span> <em>Ecological Modelling</em> 447: 109526.
