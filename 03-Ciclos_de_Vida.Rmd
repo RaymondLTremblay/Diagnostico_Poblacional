@@ -10,7 +10,7 @@ library(DiagrammeR)
 
 ## Introducción
 
-Todas las especies biológicas tienen una historia de vida, del comienzo de la vida hasta su fallecimiento. La supervivencia de la mayoría de las especie de plantas en su hábitat natural requiere que todas las etapas de vida, desde la semilla, las plántulas, los juveniles, los adultos y el esfuerzo reproductivo, sean continuas dentro de la vida natural del organismo de interés. Aunque esos son las etapas más común incluidos en análisis algunas especies pudiese que ya no tenga por ejemplo semillas y se reproduce por clonaje (e.i. guineo **Otros ejemplos**). Nuestra perspectiva para análisis de conservación y ecológica es evaluar toda la información del ciclo de vida de una especies comprender las características del ciclo de vida que limitan la supervivencia y la reproducción de una especie en su hábitat natural y identificar cual son las etapas más relevante para impactar el crecimiento poblacional. 
+Todas las especies biológicas tienen una historia de vida, del comienzo de la vida hasta su fallecimiento. La supervivencia de la mayoría de las especies de plantas en su hábitat natural requiere que todas las etapas de vida, desde la semilla, las plántulas, los juveniles, los adultos y el esfuerzo reproductivo, sean continuas dentro de la vida natural del organismo de interés. Aunque esos son las etapas más común incluidos en análisis algunas especies pudiese que ya no tenga por ejemplo semillas y se reproduce por clonaje (e.i. guineo **Otros ejemplos**). Nuestra perspectiva para análisis de conservación y ecológica es evaluar toda la información del ciclo de vida de una especies comprender las características del ciclo de vida que limitan la supervivencia y la reproducción de una especie en su hábitat natural y identificar cual son las etapas más relevante para impactar el crecimiento poblacional. 
 
 La supervivencia de las especies depende de los procesos viables del ciclo de vida que resultan en una población estable o en un aumento en el tamaño de la población.  El proceso más apropiado para determinar la persistencia de una población es evaluar todas las etapas críticas de la historia de vida de una especie y utilizar matrices de proyección de población para determinar el potencial del cambio poblacional, si aumenta, disminuya o es estable.  
 
@@ -148,7 +148,7 @@ digraph {
 En la siguiente veremos diferentes ciclos de vida utilizados en varias publicaciones. Demostramos que no hay un ciclo de vida estándar y que cada ciclo de vida es único. Los ejemplos representan tanto especies terrestre como epifitas, y la complejidad entre los ciclos de vida hipotéticas y lo que se puede recolectar el el campo.   
 
 
-### Especie Epífitas
+### Especies Epífitas
 
 #### *Laelia speciosa*
 
@@ -284,7 +284,7 @@ digraph {
 
 
 
-### Especie Terrestres
+### Especies Terrestres
 
 #### *Prasophyllum correctum*
 
@@ -421,7 +421,7 @@ La dimensiones de la matriz y la cantidad de etapas/años incluido en un anális
 La transiciones a una etapa más mayor son en verde, las transiciones a una etapa más pequeña son violeta y la reproducción en amarillo.   
 
 
-
+##### 
 
 ```{r}
 matA_Os=matrix(c(
@@ -439,7 +439,7 @@ matA_Os
 stages <- c("Protocormos", "tuberculos", "Plantulas", "Juveniles", "Sin Flores", "Con Flores")
 title <- NULL
 graph <- expand.grid(to = stages, from = stages)
-graph$trans <- round(c(matA_Os), 6)
+graph$trans <- round(c(matA_Os), 3)
 graph <- graph[graph$trans > 0, ]
 nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 2
@@ -480,19 +480,29 @@ digraph {
 ```
 
 
+### Ejemplo de un ciclo de vida incompleto (y biologicamente erroneos)
 
+La importancia de este capitulo es reconocer la diferencia entre la historia de vida real de un organismo biológico versus lo que uno puede recolectar en el campo.  En las en general orquídeas, dos áreas de investigación y muestreo son un reto (entre otros), la capacidad de seguir las semillas en el campo, y la capacidad de determinar si un sitio es adecuado para germinación. En el segundo incluye la presencia de las micorrhizas para germinación.  Estas etapas de la historia de vida de la orquídea resulta ser un componente de mucha incertidumbre y por consecuencia limite los análisis y interpretaciones evolutivas y de conservaciones. 
+
+Pero eso no son los únicos problemas.  La recolección de datos en el campo puede ser irreal dentro de un contexto de historia de vida general y la matemática que le corresponde. Aqui vemos un ejemplo de lo siguiente. Para mucho más detalles ver el capitulo "Impacto de datos sin sentidos". 
+
+En la siguiente figura aparece tres errores comunes cuando se recolectan datos de la historia de vida de una especie.  El primero es que no hay mortandad en una de las etapas (los juveniles), y el otro es que todos los individuos se mueren (las plántulas) o se quedan en la misma etapa (los adultos), resultando en un ciclo de vida donde no es posible pasar de una etapa a otra. Estos errores ocurren tipicamente cuando el tamaño de muestra es muy pequeña o la probabilidad de transiciones es rara (por ejemplos los arboles grandes no fallecen). Nota que no hay flecha que va de plántulas a otros estados. Todos los
+
+ 
+ 
+ 
 
 ```{r Basic, echo=FALSE}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
   c(0.0, 0.0, 3.2),
-  c(0.5, 0.3, 0.8),
-  c(0.0, 0.4, 0.9)
+  c(0.0, 1.0, 0.1),
+  c(0.0, 0.0, 0.9)
 )
 
 
-stages <- c("semillas", "plantulas", "adultos")
+stages <- c("plántula", "juvenil", "adulto")
 title <- NULL
 graph <- expand.grid(to = stages, from = stages)
 graph$trans <- round(c(matA), 3)
@@ -500,8 +510,8 @@ graph <- graph[graph$trans > 0, ]
 nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
-  "PaleGreen4", "PaleGreen4", "PaleGreen4", "Goldenrod1",
-  "MediumOrchid4", "PaleGreen4"
+  "red", 
+  "Goldenrod1", "MediumOrchid4", "PaleGreen4"
 )
 edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
   "[minlen=", graph$min_len,
@@ -537,7 +547,7 @@ digraph {
 
 ## Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot
 
-Nota aquí podemos usar otro paquete de R. La diferencia es que no se puede cambiar los colores de las lineas y los nodos.  Es una opción más sencilla para crear diagramas de ciclo de vida. 
+Nota aquí podemos usar otro paquete de R (Rage). La diferencia es que no se puede cambiar los colores de las lineas y los nodos.  Es una opción más sencilla para crear diagramas de ciclo de vida. 
  
 
 ```{r chap2_4}
@@ -559,12 +569,5 @@ plot_life_cycle(matA, stages=stages, fontsize = 0)
 
 http://rich-iannone.github.io/DiagrammeR/
 
-## Ejemplo de un cicle de vida con estadio de post reproducción
 
 
-
-## Ejemplo de un cicle de vida incompleto (y biologicamente erroneos)
-
-
-
-## Referencias

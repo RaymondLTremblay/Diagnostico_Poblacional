@@ -1,7 +1,42 @@
 # Métodos de Simulaciones y estimaciones de intervalo de confianza
 
 
-Por: ???
+Por: Raymond L. Tremblay
+
+
+El termino **biología** pudiese ser un sinónimo de variación biológica. No hay dos organismos iguales, ni siquiera los gemelos idénticos. La variación biológica es una característica fundamental de la vida y es la base de la evolución. Cuando se considera los individuos, por ejemplos humanos fácilmente reconocemos variación. Pero desafortunadamente cuando se considera los animales y plantas de una misma especie frecuentemente se obvia la variación en los análisis.  Podemos observar variación a múltiples niveles en una misma especie
+
+- Variación sub-individual
+- Variación entre individuos
+- Variación entre poblaciones
+- Variación entre tiempo
+
+Tambien en este capitulo la variación por tamaño de muestra pequeña.
+
+
+### Componentes de Variación 
+
+#### La variación sub-individual
+
+La variación sub-individual es la variación que se observa en un individuo. Por ejemplo, la variación en el tamaño de las hojas, flores, frutos dentro mismo individuo. Este tipo de variación es común en plantas y animales y es un componente importante de la variación total pero raramente se considera en los análisis. Carlos Herrera ha demostrado claramente que este componente no solamente es parte de la variación total de las especies pero es importante para entender los procesos ecológicos y evolutivos [@herrera2009multiplicity]. Esta variación al conocimiento de los autores nunca ha sido incluido en analisis de dinamica poblacional. 
+
+#### La variación entre individuos
+
+La variación entre individuos es la variación que se observa entre individuos de una misma población. Por ejemplo, la variación en el tamaño de los individuos, tamaño de las hojas, cantidad de flores, cantidad de frutos entre individuos de una misma población influye en la probabilidad de sobrevivir, crecer y reproducirse. La variación entre individuos impacta grandemente la supervivencia y reproducción de los individuos. Los trabajos de Harper y otros han demostrado que esa variación es común en las plantas [@harper1977population].
+
+#### La variación entre poblaciones
+
+La variación entre poblaciones es la variación que se observa entre poblaciones de una misma especie. Poblaciones distintas pudiese ser influenciada por la diferencias abióticas y interacciones biótica en cada población.  Esa variación pudiese influenciar la dinámica de cada población y la dinámica de la especie en general. 
+
+#### La variación entre tiempo
+
+Este comppente de variación incluye la variación típicamente relacionado a la variación abiótica que cambia de un periodo de tiempo a otro. Pero no se debería limitar a considerar solamente la variación abiótica en tiempo ya que la variación biótica también cambiar de un periodo de tiempo a otro. Por ejemplo la densidad y/o composición de especies en una comunidad cambia de un periodo de tiempo alrededor de la especie de interés y pudiese influenciar la dinámica estimado por la parámetros de la matriz.
+
+### Variación en tamaño de muestra pequeña
+
+En la gran mayoría de los estudios usando MPP son para evaluar la probabilidad de supervivencia en una especies en peligro de extinción. La razón principal es típicamente porque queda muy pocos individuos en la población o pocas poblaciones resultando en un tamaño de muestra pequeña. Como ejemplo consideré que tenemos una especies donde se evalúa pocos individuos en una población donde pocos individuos son disponible para monitorear en cada etapas de la vida. 
+
+Por ejemplo si tuviésemos en esta población solamente un adulto y este adulto sobrevive a la etapa de adulto a adulto entonces la probabilidad de supervivencia es 1.0. Pero si tuviésemos solamente un adulto y este adulto muere entonces la probabilidad de supervivencia es 0.0. En ambos casos la probabilidad de supervivencia es 1.0 o 0.0 respectivamente. Pero tuviésemos 1,000 o 10,000 individuos es muy poco probable que todos se mueren o todos sobreviven. Este es un ejemplo extremo pero ilustra claramente el problema de estimar la probabilidad de supervivencia en una población con un tamaño de muestra puede resultar en estimados sesgados.  
 
 ## Introducciones a métodos de simulaciones
 

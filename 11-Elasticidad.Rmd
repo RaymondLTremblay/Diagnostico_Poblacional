@@ -114,6 +114,7 @@ ec_df %>%
 En la tabla se ve los diferentes valores de elasticidad por procesos en *Erycina crista-galli* [@mondragon2007life] y el impacto por diferentes procesos de la historia de vida de la población. Ahora, si lo que quisiéramos saber es que proceso o tasa vital es lo que rige el comportamiento de la población, lo que se hace es sumar las entradas de la matriz que lo representan, en este caso hemos puesto en diferentes colores las estradas que manifiestan cada tasa, en rojo es la permanencia, en azul el crecimiento, en amarillo el decrecimiento o retrogresión y en verde la fecundidad.  Eso nos permite determinar que es el impacto de elasticidad por procesos y tasas vitales, sumando cada uno de los valores en cada categoría. Es claro que el impacto principal de la población de *E. crista-galli* depende de la permanencia de los individuos, seguido por el crecimiento, en tanto que la fecundidad y la retrogresión tienen un impacto menor.
  
  La suma de cada grupo: 
+ 
  - Permanencia: 0.713
  - Crecimiento: 0.170
  - Retrogresión: 0.060
@@ -233,7 +234,7 @@ Se observa que en los valores de elasticidad estan más altos en los procesos de
 
 ```{r}
 
-Elasticidad_estadios =tribble(~Especie, ~Fecundidad, ~Stasis, ~Crecimiento, ~Plántulas, ~No_reproductivos, ~Reproductivos,
+Elasticidad_estadios =tribble(~Especie, ~Fecundidad, ~Estasis, ~Crecimiento, ~Plántulas, ~No_reproductivos, ~Reproductivos,
                               "Erycina crista-galli",  0.035, 0.718, 0.247, 0.0345, 0.0456, 0.9197,
                               "Artorima erubescens",   0.000, 0.646, 0.354, 0.0023, 0.7207, 0.277,
                               "Laelia speciosa",       0.116, 0.651, 0.328, 0.120, 0.669, 0.216,
@@ -248,10 +249,10 @@ Elasticidad_estadios
 
 ```{r}
 EE=Elasticidad_estadios %>% 
-  select(Especie, Fecundidad, Stasis, Crecimiento) %>%
+  select(Especie, Fecundidad, Estasis, Crecimiento) %>%
   pivot_longer(cols = -Especie, names_to = "Estadios", values_to = "Elasticidad")
 
-EE$Estadios=factor(EE$Estadios, levels = c("Fecundidad", "Stasis", "Crecimiento"))
+EE$Estadios=factor(EE$Estadios, levels = c("Fecundidad", "Estasis", "Crecimiento"))
 
 
 
@@ -259,7 +260,7 @@ EE$Estadios=factor(EE$Estadios, levels = c("Fecundidad", "Stasis", "Crecimiento"
   geom_bar(stat = "identity", position = "dodge", color="white") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Elasticidad por estadios de historia de vida",
+  labs(title = "Elasticidad por proceso demográfico",
        x = "Estadios",
        y = "Elasticidad")+
   scale_fill_discrete(guide =
@@ -284,7 +285,7 @@ EE1$Estadios=factor(EE1$Estadios, levels = c("Plántulas", "No_reproductivos", "
   geom_bar(stat = "identity", position = "dodge", color="white") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Elasticidad por etapas",
+  labs(title = "Elasticidad por proceso demográfico",
        x = "Etapas",
        y = "Elasticidad")+
   scale_fill_discrete(guide =
@@ -302,7 +303,6 @@ Una de las limitaciones principales de los análisis de elasticidad tradicional 
 
 
 
-### Procedimiento en R
 
 
 
