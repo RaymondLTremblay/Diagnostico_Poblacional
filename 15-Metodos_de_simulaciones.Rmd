@@ -565,22 +565,197 @@ Se nota que el crecimiento poblacional intrínsico de la especies de *Serapia co
 
 
 
-En esta seccion veoms el efecto del tamaño de muestra sobre los parametros de la matriz de transición.
+En esta sección vemos el efecto del tamaño de muestra sobre los parámetros de la matriz de transición.
 
-Este método usa un acercamiento Bayesiano y una distribución de probabilidad para estimar los parámetros de la matriz de transición Dirichlet. Vemos a que se refiere un análisis bayesiano y la función Dirichlet. El lo que corresponde al presenta analisis es que en los analisis Bayesiano, incluimos una previa al analisis, en otra palabra, se usa información previa al analisis para calular los parametros (posteriores).  En nuestro caso haremos una previa con poco peso, en otra palabra, no influirá mucho (o casi nada) en los resultados.
+Este método usa un acercamiento Bayesiano y una distribución de probabilidad para estimar los parámetros de la matriz de transición Dirichlet de múltiples grupos discretos. Vemos a que se refiere un análisis Bayesiano y la función Dirichlet. El lo que corresponde al presenta análisis Bayesiano, incluimos una previa al análisis, en otra palabra, se usa información previa para incluirlos en los calular para estimar los parámetros (posteriores).  En nuestro caso haremos una previa con poco peso, en otra palabra, no influirá mucho (o casi nada) en los resultados.
+
+La función Dirichlet es una expansión de una función bien básica de probabilidad, usando una distribución beta. La función beta es una distribución de probabilidad continua en el intervalo (0,1) y se usa para modelar la probabilidad de un evento binario. La función Dirichlet es una generalización de la función beta y se usa para modelar la probabilidad de un evento multinomial. 
+
+Comenzamos con lo más básico, probabilidades de dos grupos. Consideramos un grupo de 10 individuos, si 6 de estos individuos sobreviven, cual es la proporción que no sobreviven. La probabilidad de sobrevivir es $p=6/10$, entonces la probabilidad de no sobre vivir $\hat{p}=1-p$, porque siempre la suma de $p + \hat{p}= 1$.  probabilidad de que un individuo sea de un grupo es 0.5. 
+
+Ahora si tenemos tres grupos, digamos, plántulas que se quedan como plántula, que crecen a juveniles o que mueren. En este caso tenemos tres grupos (multinomial) y la probabilidad de que un individuo de las proporciones tiene que sumar a 1. 
+
+La otra ventaja de usar la función Dirichlet es que se basa en la distribución beta. Este una distribución donde tanto los parámetros como el promedio, y los intervalo de confianza son limitado a 0 y 1. Otra manera de decir lo mismo que que no se puede tener intervalos de confianza menos 0 o mayor de 1.  Hagan el ejercicio mental de tratar de entender un intervalo de confianza de -0.10. Si una usa una distribución normal, los intervalos de confianza pueden ser negativos o mayores de 1, lo que no tiene sentido en el contexto de probabilidad.
+
+En el siguiente script se muestra como hacer un análisis Bayesiano de la matriz de transición de *Serapia cordigera* en 1999. Seleccionamos la población **A1** en 1999. 
+
+```{r}
+library(popbio)
+n <- c(2, 0, 4, 99) # población inicial por etapa
+names(n) <- c("latente", "plantula", "rosetta", "con flor")
+Serapia_A3   <- splitA(Serapia$A3) # simulación solamente la matriz A1 de la lista de matriz
+
+
+```
+
+En el siguiente paso vamos a asignar una previa a los datos. Estas previas proviene de Tremblay, no representa la visión de los autores del articulo. Se añade una previa también para la proporción de plantas que fallece en cada etapa (la quita fila) Nota que es importante que la suma de cada columna sea igual a 1. 
+
+```{r}
+RLT_Serapia_previa <- matrix(c(0.5, 0.1,   0.4,   0.4,
+                        0.2,  0.,    0.0,   0.0,
+                        0.0,  0.025, 0.25,  0.3,
+                        0.15,  0.05,  0.25,  0.2,
+                        0.05,  0.025, 0.1,   0.1), 
+                     byrow = TRUE, nrow = 5, ncol = 4)
+```
+
+
+```{r}
+library(raretrans)
+
+```
+
+
+### Obtener los inertvalos de confianza (IC) para entradas de matriz individuales
+
+La distribución posterior marginal de un elemento en un multinomio es una
+distribución beta, y usamos esto para obtener intervalos creíbles en nuestro
+tasas de transición. Podemos usar el tipo de retorno TN para obtener los parámetros de el multinomio deseado.
+
+Nota que: 
+
+ -TF tiene que ser una matriz divido entre la transición y de fecundidad (matT + matF),
+ - N es el tamaño de muestra de cada etapa de la vida,
+ - P es la previa de la matriz de transición,
+ - priorweight es el peso de la previo (en este caso estamod dando muy poca importancia a la previa, como si fuese una décima de un individuo), lo que resulta en que los datos del campo domina el análisis.
+ - Regresa el análisis posterior de la matriz de transición.
+ 
+En el script vemos los intervalos de confianza de la matriz de transición de *Serapia cordigera* en 1999 para la población A3. 
+
+Lo más dramático de ese primer análisis que que los intervalos de credibilidad son bien grandes, casi todos los intervalos de credibilidad **lcl** y **ucl** an de muy cerca de cero a valores muy grande. Esto sugiere que hay mucha incertidumbre en los datos. Este resultado es esperado, porque la muestra es muy pequeña, solamente 2 individuos fueron muestreado en el campo de esta etapa. 
 
 
 
 
+```{r }
+TN <- fill_transitions(Serapia_A3, N=n, P = RLT_Serapia_previa, priorweight = .01, returnType = "TN")
+a <- TN[,1] # cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
+b <- sum(TN[,1]) - TN[,1]# cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
+p <- a / (a + b)
+lcl <- qbeta(0.025, a, b)
+ucl <- qbeta(0.975, a, b)
+A3=knitr::kable(sprintf("%.3f, %.3f, %.3f", p, lcl, ucl))
 
+A3df_lat=round(data.frame(p, lcl, ucl), digits=3)
+A3df_lat
+
+```
+
+
+Ahora vemos que pasa con la etapa que tenemos más datos, los adultos con flores. En este caso vemos que los intervalos de credibilidad son más pequeños, pero todavía son grandes, ya que el tamaño de muestra es de 99 para esta etapa. 
+
+
+
+```{r }
+TN <- fill_transitions(Serapia_A3, N=n, P = RLT_Serapia_previa, priorweight = 0.01, returnType = "TN")
+a <- TN[,4] # cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
+b <- sum(TN[,4]) - TN[,4]# cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
+p <- a / (a + b)
+lcl <- qbeta(0.025, a, b)
+ucl <- qbeta(0.975, a, b)
+ A3=knitr::kable(sprintf("%.3f, %.3f, %.3f", p, lcl, ucl))
+
+A3df=round(data.frame(p, lcl, ucl), digits=3)
+
+A3df
+```
+
+
+Como ejercicio, vemos que tipo de intervalos si tuviesemos tamaño de muestra de 500 individuos en la etapa de adulto. Nota que aun que los intervalos de credibilidad son más pequeños, no se debería asumir que no hay variación demográfica en la etapa de adulto, por procesos estocasticos.
+
+
+```{r }
+
+n500 <- c(2, 0, 4, 500) # población inicial por etapa
+TN <- fill_transitions(Serapia_A3, N=n500, P = RLT_Serapia_previa, priorweight = 0.01, returnType = "TN")
+a500 <- TN[,4] # cambie 1 a 2, 3 o 4 ect. para obtener la distribución beta marginal de cada columna (etapas). 
+b500 <- sum(TN[,4]) - TN[,4]# cambie 1 a 2, 3 ect. para obtener la distribución beta marginal de cada columna. 
+p500 <- a500 / (a500 + b500)
+lcl <- qbeta(0.025, a500, b500)
+ucl <- qbeta(0.975, a500, b500)
+ A3=knitr::kable(sprintf("%.3f, %.3f, %.3f", p, lcl, ucl))
+
+A3df=round(data.frame(p, lcl, ucl), digits=3)
+
+A3df
+```
+
+
+Ahora vemos como se distribuye una distribución beta. 
+
+Usamos los datos de la etapa de adulto con flores con 99 individuos. Ninguna de la transiciones o estasis tiene una distribución normal.  La distribución que demuestra bien este patrón son los adultos con flores que pasan a latente. La linea reja vertical representa el promedio, o sea el valor en la matriz de transición. 
+
+
+
+```{r, warning=FALSE}
+
+a # los valores del shape alpha 
+b # los valores del shape beta
+
+# Función para visualizar la distribution beta
+plot_beta <- function(alpha, beta) {
+  x <- seq(0, 1, length.out = 100)
+  y <- dbeta(x, alpha, beta)
+  data <- data.frame(x = x, y = y)
+  ggplot(data, aes(x, y)) +
+    geom_line()
+}
+
+# Distirbuciones beta
+Latentes=plot_beta(0.396, 99.594)+
+  xlim(0, .1)+
+    labs(title = paste("Distribución de latentes \n (alpha =", 0.396, ", beta =", 99.594, ")"),
+         x = "Probabilidad", y = "Densidad")+
+    theme(text = element_text(size = 6))+
+  geom_vline(xintercept = 0.004, linetype = "dashed", color = "red")
+
+Plantulas=plot_beta(0.000, 99.990)+
+  xlim(0, .025)+ylim(0, .05)+
+    labs(title = paste("Distribución de plántulas \n (alpha =", 0.000, ", beta =", 99.90, ")"),
+         x = "probabilidad", y = "Densidad")+
+    theme(text = element_text(size = 6))+
+  geom_vline(xintercept = 0.000, linetype = "dashed", color = "red")
+
+Rosetta=plot_beta(28.710, 71.280)+
+  xlim(0, .5)+
+    labs(title = paste("Distribución de rosettas \n (alpha =", 28.710, ", beta =", 71.280, ")"),
+         x = "probabilidad", y = "Densidad")+
+    theme(text = element_text(size = 6))+
+  geom_vline(xintercept = 0.287, linetype = "dashed", color = "red")
+
+Adultos=plot_beta(10.197, 89.793)+
+  xlim(0, .27)+
+    labs(title = paste("Distribución de Ind. con flores \n (alpha =", 10.197, ", beta =", 89.793, ")"),
+         x = "probabilidad", y = "Densidad")+
+    theme(text = element_text(size = 6))+
+  geom_vline(xintercept = 0.102, linetype = "dashed", color = "red")
+
+Fallecidos=plot_beta(60.687, 39.303)+
+  xlim(.40, .8)+
+    labs(title = paste("Distribución de fallecidos \n (alpha =", 60.687, ", beta =", 39.303, ")"),
+         x = "probabilidad", y = "Densidad")+
+    theme(text = element_text(size = 6))+
+  geom_vline(xintercept = 0.607, linetype = "dashed", color = "red")
+
+
+
+library(ggpubr)
+ggarrange(Latentes, Plantulas, Rosetta, Adultos, Fallecidos, ncol=3, nrow=2)
+```
+
+
+
+***
 
 ## Ventaja de usar simulaciones
 
-La primera ventaja de usar métodos de análisis por simulaciones es calcula un intervalo de confianza. Si los intervalos de confianza de lambda solapa el uno (1) (si solapa el 0 para log(lambda)) entonces no hay evidencia de que el crecimiento poblacional es diferente de uno.
+La primera ventaja de usar métodos de análisis por simulaciones es que se puede calcula intervalos de confianza. Si los intervalos de confianza de lambda solapa el uno (1) (si solapa el 0 para log(lambda)) entonces no hay evidencia de que el crecimiento poblacional es diferente de estable.
 
-La segunda ventaja de usar simulaciones es que hay que recordar que los análisis están basado en datos limitados y que la si hubiese más o menos datos para estimar los elementos de la matriz la parámetros de la matriz sería diferente. Entonces hay un componente de incertidumbre en los estimados de los parámetros de la matriz que no es considerado en los análisis tradicionales. 
+La segunda ventaja de usar simulaciones es que hay que recordar que los análisis están basado en datos limitados y que si hubiese más o menos datos para estimar los elementos de la matriz la parámetros de la matriz pudiese ser diferentes. Entonces hay un componente de incertidumbre en los estimados de los parámetros de la matriz, los valores de promedio no recolectan esa variación entre individuos, tiempo y espacio. 
 
-Esta incertidumbre se separa entre los efectos de tamaños de muestra, variación espacial y temporal.
+La incertidumbre por causas intrínsicas (el individuos, genética, tamaño de muestra) y extrínsicas (hábitat, tiempo, variación en polinizadores, herbívoros, ect.) se evalúa usando análisis de variación espacial, temporal y demográficos. La incertidumbre en los parámetros de la matriz de transición se puede cuantificar con intervalos de confianza o el intervalo de credibilidad (concepto Bayesiano). Es de suma importancia que se evalué la incertidumbre en los parámetros de la matriz de transición para tener un mejor entendimiento de la variación en el crecimiento poblacional de una especies y saber si hay suficiente evidencia que la especies esta en declive, crece o no.
+
+
 
 
 

@@ -191,6 +191,7 @@ conversión-de-r-a-lambda
 estocasticidad-temporal
 simulaciones-con-igual-probabilidad-de-selección-1
 estocasticidad-demografica
+obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales-1
 ventaja-de-usar-simulaciones
 el-uso-de-matrices-para-estudios-evolutivos
 section-1
