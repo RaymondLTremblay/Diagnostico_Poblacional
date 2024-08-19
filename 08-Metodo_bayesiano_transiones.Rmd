@@ -431,7 +431,7 @@ tasas de transición. Podemos usar el tipo de retorno TN para obtener los parám
 
 
 ```{r chap7_23}
-TN <- fill_transitions(TF, N, P = RLT_Tprior, priorweight = 0.5, returnType = "TN")
+TN <- fill_transitions(TF, N, P = RLT_Tprior, priorweight = 0.1, returnType = "TN")
 a <- TN[,1] # cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
 b <- sum(TN[,1]) - TN[,1]# cambie 1 a 2, 3 etc para obter la distribución beta marginal de cada columna. 
 p <- a / (a + b)

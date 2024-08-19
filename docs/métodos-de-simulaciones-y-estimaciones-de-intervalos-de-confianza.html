@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 17 Métodos de Simulaciones y estimaciones de intervalos de confianza | Dinamica_Poblacional</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 17 Métodos de Simulaciones y estimaciones de intervalos de confianza | Dinamica_Poblacional" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 17 Métodos de Simulaciones y estimaciones de intervalos de confianza | Dinamica_Poblacional" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinamica Poblacional" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2024-08-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ltre.html"/>
+<link rel="next" href="el-uso-de-matrices-para-estudios-evolutivos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diagnostico_Poblacional</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.2</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.3</b> Libro digital y archivos de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#un-recuento-histórico-breve-de-la-ecología-de-poblaciones"><i class="fa fa-check"></i><b>2.1</b> Un recuento histórico breve de la ecología de poblaciones</a></li>
+<li class="chapter" data-level="2.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#qué-es-el-estudio-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es el estudio de la dinámica poblacional?</a></li>
+<li class="chapter" data-level="2.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#definición"><i class="fa fa-check"></i><b>2.3</b> Definición</a></li>
+<li class="chapter" data-level="2.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#el-analisis-de-dinámica-poblacional-y-su-uso"><i class="fa fa-check"></i><b>2.4</b> El analisis de Dinámica Poblacional y su uso</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#USO"><i class="fa fa-check"></i><b>2.4.1</b> Tabla: El uso potencial de la diferentes acercamiento de PPM.</a></li>
+<li class="chapter" data-level="2.4.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-1-identificar-las-etapas-or-procesos-demográficos-claves"><i class="fa fa-check"></i><b>2.4.2</b> USO 1: Identificar las etapas or procesos demográficos claves</a></li>
+<li class="chapter" data-level="2.4.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-2-determinar-cuantos-individuos-en-una-población-es-necesario-para-reducir-la-extinción"><i class="fa fa-check"></i><b>2.4.3</b> USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción</a></li>
+<li class="chapter" data-level="2.4.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-3-determinar-cuantos-individuos-se-necesita-introducir-en-una-sitio-para-establecer-una-población-viable"><i class="fa fa-check"></i><b>2.4.4</b> USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable</a></li>
+<li class="chapter" data-level="2.4.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-4-determinar-cuantos-individuos-se-puede-extraer-sin-tener-un-impacto-negativo-sobre-la-viabilidad-de-una-población"><i class="fa fa-check"></i><b>2.4.5</b> USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población</a></li>
+<li class="chapter" data-level="2.4.6" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población."><i class="fa fa-check"></i><b>2.4.6</b> USO 5: En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.</a></li>
+<li class="chapter" data-level="2.4.7" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-6-evaluar-el-riesgo-de-una-población"><i class="fa fa-check"></i><b>2.4.7</b> USO 6: Evaluar el riesgo de una población</a></li>
+<li class="chapter" data-level="2.4.8" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-7-determinar-cuantas-poblaciones-se-necesita-para-la-viabilidad-de-una-especie-al-nivel-local-o-global"><i class="fa fa-check"></i><b>2.4.8</b> USO 7: Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global</a></li>
+<li class="chapter" data-level="2.4.9" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones"><i class="fa fa-check"></i><b>2.4.9</b> USO 8: Comparando el riesgo relativo de dos o más poblaciones</a></li>
+<li class="chapter" data-level="2.4.10" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-9-evaluar-interacciones-ecológicas-para-entender-las-variables-importantes-para-la-supervivencia-de-una-población"><i class="fa fa-check"></i><b>2.4.10</b> USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población</a></li>
+<li class="chapter" data-level="2.4.11" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-10-cual-de-los-procesos-y-patrones-evolutivos-del-ciclo-de-vida-de-especies-impacta-su-crecimiento"><i class="fa fa-check"></i><b>2.4.11</b> USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html"><i class="fa fa-check"></i><b>3</b> Qué es un diagrama de Ciclo de Vida</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#introducción"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-ciclos-de-vida-sencillo"><i class="fa fa-check"></i><b>3.2</b> Ejemplo de ciclos de vida sencillo</a></li>
+<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea-hipotética"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de una orquídea hipotética</a></li>
+<li class="chapter" data-level="3.4" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ciclo-de-vida-de-orquídea-en-publicaciones"><i class="fa fa-check"></i><b>3.4</b> Ciclo de vida de orquídea en publicaciones</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-epífitas"><i class="fa fa-check"></i><b>3.4.1</b> Especies Epífitas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-terrestres"><i class="fa fa-check"></i><b>3.4.2</b> Especies Terrestres</a></li>
+<li class="chapter" data-level="3.4.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-ciclo-de-vida-incompleto-y-biologicamente-erroneos"><i class="fa fa-check"></i><b>3.4.3</b> Ejemplo de un ciclo de vida incompleto (y biologicamente erroneos)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot"><i class="fa fa-check"></i><b>3.5</b> Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot</a></li>
+<li class="chapter" data-level="3.6" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure"><i class="fa fa-check"></i><b>3.6</b> Code for color coding figure</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#consideraciones-en-la-colecta-de-datos-en-el-campo"><i class="fa fa-check"></i><b>4.1</b> Consideraciones en la colecta de datos en el campo</a></li>
+<li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#tipo-de-crecimiento-en-las-orquídeas"><i class="fa fa-check"></i><b>4.2</b> Tipo de crecimiento en las orquídeas</a></li>
+<li class="chapter" data-level="4.3" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-y-técnicas-de-muestreo"><i class="fa fa-check"></i><b>4.3</b> Métodos y técnicas de muestreo</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-epífitas-y-rupícolas."><i class="fa fa-check"></i><b>4.3.1</b> <em>Orquídeas epífitas y rupícolas</em>.</a></li>
+<li class="chapter" data-level="4.3.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-terrestres."><i class="fa fa-check"></i><b>4.3.2</b> <em>Orquídeas terrestres</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcaje-y-monitoreo-de-los-individuos-en-el-tiempo"><i class="fa fa-check"></i><b>4.4</b> Marcaje y monitoreo de los individuos en el tiempo</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo"><i class="fa fa-check"></i><b>4.4.1</b> Etapas de las orquídeas de estudio a identificar en campo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-características-de-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.5</b> Identificar la características de la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#semillas"><i class="fa fa-check"></i><b>4.5.1</b> Semillas</a></li>
+<li class="chapter" data-level="4.5.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.2</b> Identificación y etiquetado de individuos.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#variables-a-registrar-en-campo"><i class="fa fa-check"></i><b>4.6</b> Variables a registrar en campo</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#crecimiento-o-reiteración-vegetativa."><i class="fa fa-check"></i><b>4.6.1</b> <em>Crecimiento o reiteración vegetativa</em>.</a></li>
+<li class="chapter" data-level="4.6.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#ejemplos-de-categorización-en-especies-de-estudio"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos de categorización en especies de estudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><i class="fa fa-check"></i><b>5</b> Como calcular transiciones para la matriz de Lefkovitch</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.4</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2.5</b> Problema con el uso tradicional de calcular las transiciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#por-demetria-y-aucencia-equipo-ecosur"><i class="fa fa-check"></i><b>6.1</b> Por: Demetria y Aucencia: equipo ECOSUR</a></li>
+<li class="chapter" data-level="6.2" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#métodos-tradicional-de-calcular-las-transiciones-1"><i class="fa fa-check"></i><b>6.2</b> Métodos tradicional de calcular las transiciones</a></li>
+<li class="chapter" data-level="6.3" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#problema-con-el-uso-tradicional"><i class="fa fa-check"></i><b>6.3</b> Problema con el uso tradicional</a></li>
+<li class="chapter" data-level="6.4" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#referencias"><i class="fa fa-check"></i><b>6.4</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Fertilidad.html"><a href="Fertilidad.html"><i class="fa fa-check"></i><b>7</b> Matrices de transicion, fecundidad y clonal</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Fertilidad.html"><a href="Fertilidad.html#por-raymond"><i class="fa fa-check"></i><b>7.1</b> Por: Raymond</a></li>
+<li class="chapter" data-level="7.2" data-path="Fertilidad.html"><a href="Fertilidad.html#tres-tipos-de-matrices"><i class="fa fa-check"></i><b>7.2</b> Tres tipos de matrices</a></li>
+<li class="chapter" data-level="7.3" data-path="Fertilidad.html"><a href="Fertilidad.html#matu-matriz-de-transiciones"><i class="fa fa-check"></i><b>7.3</b> MatU: Matriz de transiciones</a></li>
+<li class="chapter" data-level="7.4" data-path="Fertilidad.html"><a href="Fertilidad.html#matf-matriz-de-fecundidad"><i class="fa fa-check"></i><b>7.4</b> MatF: Matriz de fecundidad</a></li>
+<li class="chapter" data-level="7.5" data-path="Fertilidad.html"><a href="Fertilidad.html#matc-matriz-de-clonación"><i class="fa fa-check"></i><b>7.5</b> MatC = Matriz de clonación</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><i class="fa fa-check"></i><b>8</b> Método bayesiano de calcular las transciones y fecundidades</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-paquete-raretrans"><i class="fa fa-check"></i><b>8.1</b> El paquete “raretrans”</a></li>
+<li class="chapter" data-level="8.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-los-paquetes-1"><i class="fa fa-check"></i><b>8.2</b> Instalación de los paquetes #1</a></li>
+<li class="chapter" data-level="8.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-raretrans-2"><i class="fa fa-check"></i><b>8.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="8.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#parte-i-obtención-de-la-matriz-de-proyección"><i class="fa fa-check"></i><b>8.4</b> Parte I: Obtención de la matriz de proyección</a></li>
+<li class="chapter" data-level="8.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto"><i class="fa fa-check"></i><b>8.5</b> Paso 1: Cargar y fusionar los datos de población única para <em>L. elto</em></a></li>
+<li class="chapter" data-level="8.6" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#organización-de-los-datos-en-el-data.frame"><i class="fa fa-check"></i><b>8.6</b> Organización de los datos en el “data.frame”</a></li>
+<li class="chapter" data-level="8.7" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#nota"><i class="fa fa-check"></i><b>8.7</b> Nota:</a></li>
+<li class="chapter" data-level="8.8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-2-obtener-el-número-inicial-de-individuos-por-etapa"><i class="fa fa-check"></i><b>8.8</b> Paso 2: Obtener el número inicial de individuos por etapa</a></li>
+<li class="chapter" data-level="8.9" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#parte-2-uso-de-priors-para-incorporar-transiciones-raras"><i class="fa fa-check"></i><b>8.9</b> Parte 2: Uso de priors para incorporar transiciones raras</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#use-priors-no-informativos"><i class="fa fa-check"></i><b>8.9.1</b> Use priors no informativos</a></li>
+<li class="chapter" data-level="8.9.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-transición"><i class="fa fa-check"></i><b>8.9.2</b> Matriz de transición</a></li>
+<li class="chapter" data-level="8.9.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#como-calcular-a-mano"><i class="fa fa-check"></i><b>8.9.3</b> Como calcular a mano!</a></li>
+<li class="chapter" data-level="8.9.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-fecundidad"><i class="fa fa-check"></i><b>8.9.4</b> Matriz de fecundidad</a></li>
+<li class="chapter" data-level="8.9.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#calculando-los-priors-de-fertilidad-a-mano"><i class="fa fa-check"></i><b>8.9.5</b> Calculando los Priors de fertilidad a mano</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-crecimiento-poblacional"><i class="fa fa-check"></i><b>8.10</b> El crecimiento poblacional</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#otras-opciones-para-el-argumento-returntype"><i class="fa fa-check"></i><b>8.10.1</b> Otras opciones para el argumento `returnType</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#añadiendo-realidad-a-los-análisis"><i class="fa fa-check"></i><b>8.11</b> Añadiendo realidad a los análisis</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#incorporar-priores-informativos"><i class="fa fa-check"></i><b>8.11.1</b> Incorporar priores informativos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#part-3-obtain-credible-intervals"><i class="fa fa-check"></i><b>8.12</b> Part 3: Obtain Credible Intervals</a>
+<ul>
+<li class="chapter" data-level="8.12.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>8.12.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
+</ul></li>
+<li class="chapter" data-level="8.13" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-creíbles-de-lambda"><i class="fa fa-check"></i><b>8.13</b> Intervalos creíbles de <span class="math inline">\(\lambda\)</span></a></li>
+<li class="chapter" data-level="8.14" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#determinar-si-el-lambda-es-significativamente-diferente-de-1"><i class="fa fa-check"></i><b>8.14</b> Determinar si el <span class="math inline">\(\lambda\)</span> es significativamente diferente de 1</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html"><i class="fa fa-check"></i><b>9</b> Crecimiento Poblacional</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#introducción-al-crecimiento-poblacional"><i class="fa fa-check"></i><b>9.1</b> Introducción al crecimiento poblacional</a></li>
+<li class="chapter" data-level="9.2" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#métodos"><i class="fa fa-check"></i><b>9.2</b> Métodos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html"><i class="fa fa-check"></i><b>10</b> Estimación de Parametros</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#por-mariana-y-paola"><i class="fa fa-check"></i><b>10.1</b> Por: Mariana y Paola</a></li>
+<li class="chapter" data-level="10.2" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#en-este-capitulo-se-cubrirá-varios-estimación-de-parametros."><i class="fa fa-check"></i><b>10.2</b> En este capitulo se cubrirá varios estimación de parametros.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#condición-basica-de-las-matrices-de-transición"><i class="fa fa-check"></i><b>10.2.1</b> Condición basica de las matrices de transición</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#librerías-de-r-requeridas-para-el-análisis"><i class="fa fa-check"></i><b>10.3</b> Librerías de R requeridas para el análisis</a></li>
+<li class="chapter" data-level="10.4" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#paso-2-condiciones-que-debe-cumplir-la-matriz-de-estudio"><i class="fa fa-check"></i><b>10.4</b> PASO 2: CONDICIONES QUE DEBE CUMPLIR LA MATRIZ DE ESTUDIO</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#analisis-de-convergencia-y-damping-ratio"><i class="fa fa-check"></i><b>10.4.1</b> Analisis de convergencia y “Damping Ratio”</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-asintótico-i.e.-largo-plazo-del-crecimiento-poblacional-de-l.-rubripetala."><i class="fa fa-check"></i><b>10.5</b> Análisis asintótico (i.e. largo plazo) del crecimiento poblacional de L. rubripetala.</a></li>
+<li class="chapter" data-level="10.6" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#estructura-estable"><i class="fa fa-check"></i><b>10.6</b> Estructura estable</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#damping-ratio"><i class="fa fa-check"></i><b>10.6.1</b> Damping Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-amortiguamientodamping-ratio"><i class="fa fa-check"></i><b>10.7</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="10.8" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-convergencia"><i class="fa fa-check"></i><b>10.8</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="10.9" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#valores-reproductivos"><i class="fa fa-check"></i><b>10.9</b> Valores reproductivos</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>11</b> Elasticidad</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="elasticidad.html"><a href="elasticidad.html#librerías-de-r-requeridas-para-el-siguiente-modulo"><i class="fa fa-check"></i><b>11.1</b> Librerías de R requeridas para el siguiente modulo</a></li>
+<li class="chapter" data-level="11.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>11.2</b> Qué es la Elasticidad</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="elasticidad.html"><a href="elasticidad.html#sensibilidad-y-elasticidad"><i class="fa fa-check"></i><b>11.2.1</b> Sensibilidad y Elasticidad</a></li>
+<li class="chapter" data-level="11.2.2" data-path="elasticidad.html"><a href="elasticidad.html#el-impacto-de-cambio-en-las-etapas"><i class="fa fa-check"></i><b>11.2.2</b> El impacto de cambio en las etapas</a></li>
+<li class="chapter" data-level="11.2.3" data-path="elasticidad.html"><a href="elasticidad.html#efecto-de-cambio-en-las-tansiciones-de-crecimiento-permanencia-y-fecundidad"><i class="fa fa-check"></i><b>11.2.3</b> Efecto de cambio en las tansiciones, de crecimiento, permanencia y fecundidad</a></li>
+<li class="chapter" data-level="11.2.4" data-path="elasticidad.html"><a href="elasticidad.html#como-se-usa-los-análisis-de-elasticidad-en-un-plan-de-conservación"><i class="fa fa-check"></i><b>11.2.4</b> Como se usa los análisis de elasticidad en un plan de conservación</a></li>
+<li class="chapter" data-level="11.2.5" data-path="elasticidad.html"><a href="elasticidad.html#comparación-entre-especies"><i class="fa fa-check"></i><b>11.2.5</b> Comparación entre especies</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>11.3</b> Limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="introducir-los-nombres-de-los-estadíos-o-categorías-de-tamaño-según-sea-su-caso.html"><a href="introducir-los-nombres-de-los-estadíos-o-categorías-de-tamaño-según-sea-su-caso.html"><i class="fa fa-check"></i><b>12</b> Introducir los nombres de los estadíos o categorías de tamaño, según sea su caso</a></li>
+<li class="chapter" data-level="13" data-path="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><a href="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><i class="fa fa-check"></i><b>13</b> Capturar los datos de la matriz para Erycina crita-galli <span class="citation">(Mondragón, Maldonado, and Aguilar-Santelises 2007)</span> (tabla 4 del artículo)</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><a href="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html#para-calcular-los-autovalores-y-autovectores-de-la-matriz"><i class="fa fa-check"></i><b>13.1</b> Para calcular los autovalores y autovectores de la matriz</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>14</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>14.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="14.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>14.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>14.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#librerías-de-r-requeridas-para-el-análisis-1"><i class="fa fa-check"></i><b>14.3</b> Librerías de R requeridas para el análisis</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>14.3.1</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="14.3.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>14.3.2</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>14.4</b> Dinámica transitoria</a></li>
+<li class="chapter" data-level="14.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-estandarizada-límites"><i class="fa fa-check"></i><b>14.5</b> Dinámica transitoria estandarizada: límites</a></li>
+<li class="chapter" data-level="14.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-específica-de-la-población."><i class="fa fa-check"></i><b>14.6</b> Dinámica transitoria específica de la población.</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html"><i class="fa fa-check"></i><b>15</b> Funciones de Transferencias</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#la-elasticidad-no-lineal"><i class="fa fa-check"></i><b>15.1</b> La elasticidad no lineal</a></li>
+<li class="chapter" data-level="15.2" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#metodología"><i class="fa fa-check"></i><b>15.2</b> Metodología</a></li>
+<li class="chapter" data-level="15.3" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#ejemplo-tradicional"><i class="fa fa-check"></i><b>15.3</b> Ejemplo tradicional</a></li>
+<li class="chapter" data-level="15.4" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#valor-biológico"><i class="fa fa-check"></i><b>15.4</b> Valor biológico</a></li>
+<li class="chapter" data-level="15.5" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#métodos-de-calculo"><i class="fa fa-check"></i><b>15.5</b> Métodos de calculo</a></li>
+<li class="chapter" data-level="15.6" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>15.6</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
+<li class="chapter" data-level="15.7" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#referencias-1"><i class="fa fa-check"></i><b>15.7</b> Referencias</a></li>
+<li class="chapter" data-level="15.8" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#funciones-de-transferencia"><i class="fa fa-check"></i><b>15.8</b> Funciones de transferencia</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>16</b> LTRE</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ltre.html"><a href="ltre.html#introducción-a-ltre"><i class="fa fa-check"></i><b>16.1</b> Introducción a LTRE</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>16.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>16.2</b> Métodos</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>16.2.1</b> Ejemplo práctico de ERTV</a></li>
+<li class="chapter" data-level="16.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>16.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
+<li class="chapter" data-level="16.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>16.2.3</b> Diagrama del ciclo de vida</a></li>
+<li class="chapter" data-level="16.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>16.2.4</b> Diagrama para <em>Quercus martinezii</em></a></li>
+<li class="chapter" data-level="16.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>16.2.5</b> Diagrama para Quercus rugosa</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>16.3</b> Procedimiento para ERTV en Excel</a></li>
+<li class="chapter" data-level="16.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>16.4</b> Procedimiento en R</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>16.4.1</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="16.4.2" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>16.4.2</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
+<li class="chapter" data-level="16.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>16.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="16.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>16.4.4</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
+<li class="chapter" data-level="16.4.5" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>16.4.5</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="16.4.6" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>16.4.6</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="16.4.7" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>16.4.7</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="16.4.8" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>16.4.8</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="16.4.9" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>16.4.9</b> Resultados de ERTV</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><i class="fa fa-check"></i><b>17</b> Métodos de Simulaciones y estimaciones de intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#componentes-de-variación"><i class="fa fa-check"></i><b>17.0.1</b> Componentes de Variación</a></li>
+<li class="chapter" data-level="17.0.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#variación-en-tamaño-de-muestra-pequeña"><i class="fa fa-check"></i><b>17.0.2</b> Variación en tamaño de muestra pequeña</a></li>
+<li class="chapter" data-level="17.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#introducciones-a-métodos-de-simulaciones-para-estimados-de-variación"><i class="fa fa-check"></i><b>17.1</b> Introducciones a métodos de simulaciones para estimados de variación</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-variación-entre-individuos"><i class="fa fa-check"></i><b>17.1.1</b> Estocasticidad variación entre individuos</a></li>
+<li class="chapter" data-level="17.1.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>17.1.2</b> Estocasticidad espacial</a></li>
+<li class="chapter" data-level="17.1.3" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cual-es-la-distribución-de-numero-de-individuos-esperado."><i class="fa fa-check"></i><b>17.1.3</b> Cual es la distribución de numero de individuos esperado.</a></li>
+<li class="chapter" data-level="17.1.4" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simulaciones-con-diferente-probabilidad-de-selección"><i class="fa fa-check"></i><b>17.1.4</b> Simulaciones con diferente probabilidad de selección</a></li>
+<li class="chapter" data-level="17.1.5" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones"><i class="fa fa-check"></i><b>17.1.5</b> Comparar la distribución de cantidad de individuos esperado por simulaciones</a></li>
+<li class="chapter" data-level="17.1.6" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>17.1.6</b> Estocasticidad temporal</a></li>
+<li class="chapter" data-level="17.1.7" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-demografica"><i class="fa fa-check"></i><b>17.1.7</b> Estocasticidad demografica</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>17.2</b> Ventaja de usar simulaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>18</b> El uso de matrices para estudios evolutivos</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html#section-1"><i class="fa fa-check"></i><b>18.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html"><i class="fa fa-check"></i><b>19</b> PPM_Orquidea sinopsis historico</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html#por-raymond-y-todos"><i class="fa fa-check"></i><b>19.1</b> Por: Raymond y todos</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>20</b> Compadre_Orchid PPM y su uso</a>
+<ul>
+<li class="chapter" data-level="20.0.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#compadre"><i class="fa fa-check"></i><b>20.0.1</b> COMPADRE</a></li>
+<li class="chapter" data-level="20.0.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>20.0.2</b> Acceso a los datos de COMPADRE.</a></li>
+<li class="chapter" data-level="20.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#para-tener-acceso-a-los-datos-cuando-no-esta-conectado-al-internet-es-necesario-bajar-el-archivo-y-instalar-en-su-proyecto-de-rstudio.-al-momento-de-construir-el-libro-la-versión-meas-reciente-de-compadre-es-la-versión-6.23.5.5.0-may_06_2023-y-se-puede-bajar-al-siguiente-enlace-httpscompadre-db.orgdatacompadrecompadre_v."><i class="fa fa-check"></i><b>20.1</b> Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión meas reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace &lt;&lt;https://compadre-db.org/Data/Compadre/COMPADRE_v.</a>
+<ul>
+<li class="chapter" data-level="20.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>20.1.1</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="20.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>20.1.2</b> Los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="20.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>20.1.3</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>20.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>20.2.1</b> La fuente de la información</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>20.3</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="20.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>20.4</b> Cuantos estudios unicos?</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-se-uso-para-la-investigaciones"><i class="fa fa-check"></i><b>20.4.1</b> Determinar cuantas poblaciones se uso para la investigaciones</a></li>
+<li class="chapter" data-level="20.4.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-cuando-comenzaron-y-terminaron"><i class="fa fa-check"></i><b>20.4.2</b> Evaluación de cuando comenzaron y terminaron</a></li>
+<li class="chapter" data-level="20.4.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#el-tiempo-de-duración-de-las-investigaciones-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>20.4.3</b> El tiempo de duración de las investigaciones en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="20.4.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#amalgamando-todas-las-matrices-y-su-información"><i class="fa fa-check"></i><b>20.4.4</b> Amalgamando todas las matrices y su información</a></li>
+<li class="chapter" data-level="20.4.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#need-to-move-this-before-as-the-caladenias-are-terrerstrial-and-not-epiphytes"><i class="fa fa-check"></i><b>20.4.5</b> Need to move this before as the Caladenia’s are terrerstrial and not epiphytes</a></li>
+<li class="chapter" data-level="20.4.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#the-number-of-populations"><i class="fa fa-check"></i><b>20.4.6</b> The number of populations</a></li>
+<li class="chapter" data-level="20.4.7" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>20.4.7</b> Crear un mapa de las distribuciones de las orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#como-calcular-la-esperanza-de-vida-en-r-con-la-base-de-datos-de-compadre"><i class="fa fa-check"></i><b>20.5</b> Como Calcular la esperanza de vida en R con la base de datos de COMPADRE</a></li>
+<li class="chapter" data-level="20.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#important-to-include-only-matrices-that-are-annual."><i class="fa fa-check"></i><b>20.6</b> Important to include only matrices that are annual.</a>
+<ul>
+<li class="chapter" data-level="20.6.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>20.6.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>21</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>21.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>22</b> Impactos de datos sin sentido biológicos</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>22.1</b> Tamaño de muestra pequeño o eventos raros</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>22.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="22.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>22.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="22.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>22.1.3</b> Ninguna supervivencia</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>22.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="22.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>22.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<ul>
+<li class="chapter" data-level="22.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>22.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+</ul></li>
+<li class="chapter" data-level="22.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>22.4</b> Problemas de análisis de datos</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>22.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>22.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="22.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>22.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="22.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza"><i class="fa fa-check"></i><b>22.5.2</b> Los estimados de Intervalo de camfianza</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>23</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
+<li class="chapter" data-level="24" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>24</b> Nhora</a></li>
+<li class="chapter" data-level="25" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html"><i class="fa fa-check"></i><b>25</b> Hojas de datos en el campo</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#ejemplos-de-tablas-de-datos"><i class="fa fa-check"></i><b>25.1</b> Ejemplos de tablas de Datos</a>
+<ul>
+<li class="chapter" data-level="25.1.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#usando-ejemplo-de-tremblay-y-su-codificación"><i class="fa fa-check"></i><b>25.1.1</b> Usando ejemplo de Tremblay [] y su codificación</a></li>
+<li class="chapter" data-level="25.1.2" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#almacenamiento-de-datos-de-forma-digital"><i class="fa fa-check"></i><b>25.1.2</b> Almacenamiento de datos de forma digital</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html"><i class="fa fa-check"></i><b>26</b> 26-Calcular_Transiciones</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html#historia-breve-de-la-dinámica-poblacional-en-orquídeas."><i class="fa fa-check"></i><b>26.1</b> Historia breve de la dinámica poblacional en orquídeas.</a>
+<ul>
+<li class="chapter" data-level="26.1.1" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html#los-primeros-estudios"><i class="fa fa-check"></i><b>26.1.1</b> Los primeros estudios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>27</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>27.1</b> A section</a></li>
+<li class="chapter" data-level="27.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>27.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="27.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>27.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="27.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>27.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>28</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>28.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="28.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>28.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="29" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>29</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>29.1</b> Footnotes</a></li>
+<li class="chapter" data-level="29.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>29.2</b> Citations</a></li>
+<li class="chapter" data-level="29.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>29.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>30</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>30.1</b> Equations</a></li>
+<li class="chapter" data-level="30.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>30.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="30.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>30.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>31</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>31.1</b> Publishing</a></li>
+<li class="chapter" data-level="31.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>31.2</b> 404 pages</a></li>
+<li class="chapter" data-level="31.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>31.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica_Poblacional</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Capítulo 17</span> Métodos de Simulaciones y estimaciones de intervalos de confianza<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Por: Raymond L. Tremblay</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb252-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-2" tabindex="-1"></a></span>
+<span id="cb252-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-3" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb252-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-4" tabindex="-1"></a></span>
+<span id="cb252-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-5" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb252-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-6" tabindex="-1"></a></span>
+<span id="cb252-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb252-7" tabindex="-1"></a><span class="fu">library</span>(popbio)</span></code></pre></div>
+<p>El termino <strong>biología</strong> pudiese ser un sinónimo de variación biológica. No hay dos organismos iguales, ni siquiera gemelos idénticos. La variación biológica es una característica fundamental de la vida y es la base de la evolución. Cuando se considera los individuos, por ejemplos humanos, fácilmente reconocemos variación, en tamaño, color de ojos, suceptibilidad a cáncer o infección y efecto que tiene el ambiente (por ejemplo la dieta o acceso a la educación) entre muchos que impacto la supervivencia o crecimiento y reproducción. Pero desafortunadamente cuando se considera los animales y plantas de una misma especie frecuentemente se obvia la variación en los análisis. Podemos observar variación a múltiples niveles en una misma especie</p>
+<ul>
+<li>Variación sub-individual</li>
+<li>Variación entre individuos</li>
+<li>Variación entre poblaciones</li>
+<li>Variación entre tiempo</li>
+</ul>
+<p>Tambien en este capitulo la variación por tamaño de muestra pequeña sobre los parámetros.</p>
+<div id="componentes-de-variación" class="section level3 hasAnchor" number="17.0.1">
+<h3><span class="header-section-number">17.0.1</span> Componentes de Variación<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#componentes-de-variación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="la-variación-sub-individual" class="section level4 hasAnchor" number="17.0.1.1">
+<h4><span class="header-section-number">17.0.1.1</span> La variación sub-individual<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#la-variación-sub-individual" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La variación sub-individual es la variación que se observa en un individuo. Por ejemplo, la variación en el tamaño o la cantidad de hojas, flores, frutos, semillas dentro del mismo individuo. Este tipo de variación es común en plantas y animales y es un componente importante de la variación total pero raramente se considera en los análisis. Carlos Herrera ha demostrado claramente que este componente no solamente es parte de la variación total de las especies pero es importante para entender los procesos ecológicos y evolutivos <span class="citation">(<a href="#ref-herrera2009multiplicity">Herrera 2009</a>)</span>. Esta variación al conocimiento de los autores nunca ha sido incluido en análisis de dinámica poblacional y integrado dentro un PPM.</p>
+</div>
+<div id="la-variación-entre-individuos" class="section level4 hasAnchor" number="17.0.1.2">
+<h4><span class="header-section-number">17.0.1.2</span> La variación entre individuos<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#la-variación-entre-individuos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La variación entre individuos es la diferencias que se observa entre individuos de una misma población. Por ejemplo, la variación en el tamaño de los individuos, tamaño de las hojas, cantidad de flores, cantidad de frutos entre individuos de una misma población influye en la probabilidad de sobrevivir, crecer y reproducirse. La variación entre individuos impacta grandemente la supervivencia y reproducción de los individuos. Los trabajos de Harper y otros han demostrado que esa variación es común en las plantas <span class="citation">(<a href="#ref-harper1977population">Harper et al. 1977</a>)</span>.</p>
+</div>
+<div id="la-variación-entre-poblaciones" class="section level4 hasAnchor" number="17.0.1.3">
+<h4><span class="header-section-number">17.0.1.3</span> La variación entre poblaciones<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#la-variación-entre-poblaciones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La variación entre poblaciones es la variación que se observa entre poblaciones de una misma especie. Poblaciones distintas pudiese ser influenciada por la diferencias abióticas y interacciones biótica única a cada población. Esa variación pudiese influenciar la dinámica de cada población y la dinámica de la especie en general.</p>
+</div>
+<div id="la-variación-entre-tiempo" class="section level4 hasAnchor" number="17.0.1.4">
+<h4><span class="header-section-number">17.0.1.4</span> La variación entre tiempo<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#la-variación-entre-tiempo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Este componente de variación incluye la variación típicamente relacionado a la variación abiótica que cambia de un periodo de tiempo a otro. Pero no se debería limitar a considerar solamente la variación abiótica en tiempo ya que la variación biótica también puede cambiar de un periodo de tiempo a otro. Por ejemplo la densidad y/o composición de especies en una comunidad cambia de un periodo de tiempo alrededor de la especie de interés y pudiese influenciar la dinámica estimado por la parámetros de la matriz. Otro ejemplo considera la variación en presencia de herbívoros o patógenos que cambia de un periodo de tiempo a otro y pudiese influenciar la dinámica de la especie de interés.</p>
+</div>
+</div>
+<div id="variación-en-tamaño-de-muestra-pequeña" class="section level3 hasAnchor" number="17.0.2">
+<h3><span class="header-section-number">17.0.2</span> Variación en tamaño de muestra pequeña<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#variación-en-tamaño-de-muestra-pequeña" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En la gran mayoría de los estudios usando MPP son para evaluar la probabilidad de supervivencia en una especies en peligro de extinción (Do we have the data in COMPADRE to answer this?). La razón principal es que típicamente porque queda muy pocos individuos en la población o pocas poblaciones resulta en tamaño de muestra pequeñas. Como ejemplo consideré que tenemos una especies donde se evalúa los pocos individuos en una población para monitorear en cada etapas de la vida (puediese incluir hasta todos los individuos todavia vivos de esta especie).</p>
+<p>Por ejemplo si tuviésemos en esta población solamente un adulto y este adulto sobrevive a la etapa de adulto a adulto entonces la probabilidad de supervivencia es 1.0. Pero si tuviésemos solamente un adulto y este adulto muere entonces la probabilidad de supervivencia es 0.0. En ambos casos la probabilidad de supervivencia es 1.0 o 0.0 respectivamente. Pero tuviésemos 1,000 o 10,000 individuos es muy poco probable que todos se mueren o todos sobreviven. Este es un ejemplo extremo pero ilustra claramente el problema de estimar la probabilidad de supervivencia en una población con un tamaño de muestra puede resultar en estimados sesgados por resultado de tamaño de muestra.</p>
+<p>En las próximas secciones vamos a explorar los métodos de simulaciones y estimaciones de intervalos de confianza para abordar la variación biológica y la variación en tamaño de muestra pequeña.</p>
+</div>
+<div id="introducciones-a-métodos-de-simulaciones-para-estimados-de-variación" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Introducciones a métodos de simulaciones para estimados de variación<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#introducciones-a-métodos-de-simulaciones-para-estimados-de-variación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="estocasticidad-variación-entre-individuos" class="section level3 hasAnchor" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Estocasticidad variación entre individuos<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-variación-entre-individuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="estocasticidad-espacial" class="section level3 hasAnchor" number="17.1.2">
+<h3><span class="header-section-number">17.1.2</span> Estocasticidad espacial<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-espacial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En este caso vemos el efecto de la variación espacial en la probabilidad en los estimados.</p>
+<div id="entrada-de-datos" class="section level4 hasAnchor" number="17.1.2.1">
+<h4><span class="header-section-number">17.1.2.1</span> Entrada de datos<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#entrada-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El primer paso es definir la diferentes matriz, una por cada periodo de tiempo. En el siguiente script se enseña como entrar los datos para múltiples matrices en un solo objeto. Nota que es una lista de matriz.
+Los datos provienen de un estudio de la dinámica de una población de <em>Serapia cordigera</em> de 1999 al 2012 evaluando el impacto antropogénico sobre la dinámica de la población. En este caso se emplea solamente 6 matrices de transición de la población de <em>Serapia cordigera</em> en 1999, tres de estas son poblaciones que tienen impacto antropogénico (A1, A2 y A3) y tres poblaciones naturales, sin impacto antropogénico (N1, N2, N3).</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-1" tabindex="-1"></a>Serapia<span class="ot">&lt;-</span><span class="fu">list</span>(</span>
+<span id="cb253-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-2" tabindex="-1"></a>  <span class="at">A1_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-3" tabindex="-1"></a><span class="fl">0.745</span>,  <span class="fl">0.152</span>,  <span class="fl">0.452</span>,  <span class="fl">0.564</span>,</span>
+<span id="cb253-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-4" tabindex="-1"></a><span class="fl">0.125</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-5" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.321</span>,  <span class="fl">0.205</span>,  <span class="fl">0.342</span>,</span>
+<span id="cb253-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-6" tabindex="-1"></a><span class="fl">0.200</span>,  <span class="fl">0.365</span>,  <span class="fl">0.205</span>,  <span class="fl">0.185</span></span>
+<span id="cb253-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-7" tabindex="-1"></a>  ),</span>
+<span id="cb253-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-8" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-9" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-10" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-11"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-11" tabindex="-1"></a>  )</span>
+<span id="cb253-12"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-12" tabindex="-1"></a>  ),</span>
+<span id="cb253-13"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-13" tabindex="-1"></a><span class="at">A2_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-14"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-14" tabindex="-1"></a><span class="fl">0.648</span>,  <span class="fl">0.203</span>,  <span class="fl">0.414</span>,  <span class="fl">0.604</span>,</span>
+<span id="cb253-15"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-15" tabindex="-1"></a><span class="fl">0.188</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-16"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-16" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.342</span>,  <span class="fl">0.198</span>,  <span class="fl">0.377</span>,</span>
+<span id="cb253-17"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-17" tabindex="-1"></a><span class="fl">0.242</span>,  <span class="fl">0.264</span>,  <span class="fl">0.225</span>,  <span class="fl">0.191</span></span>
+<span id="cb253-18"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-18" tabindex="-1"></a>),</span>
+<span id="cb253-19"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-19" tabindex="-1"></a> <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-20"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-20" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-21"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-21" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-22"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-22" tabindex="-1"></a>  )</span>
+<span id="cb253-23"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-23" tabindex="-1"></a>  ),</span>
+<span id="cb253-24"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-24" tabindex="-1"></a><span class="at">A3_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-25"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-25" tabindex="-1"></a><span class="fl">0.544</span>,  <span class="fl">0.223</span>,  <span class="fl">0.364</span>,  <span class="fl">0.498</span>,</span>
+<span id="cb253-26"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-26" tabindex="-1"></a><span class="fl">0.148</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-27"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-27" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.249</span>,  <span class="fl">0.243</span>,  <span class="fl">0.287</span>,</span>
+<span id="cb253-28"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-28" tabindex="-1"></a><span class="fl">0.242</span>,  <span class="fl">0.303</span>,  <span class="fl">0.210</span>,  <span class="fl">0.101</span></span>
+<span id="cb253-29"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-29" tabindex="-1"></a>),</span>
+<span id="cb253-30"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-30" tabindex="-1"></a><span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-31"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-31" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-32"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-32" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-33"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-33" tabindex="-1"></a>  )</span>
+<span id="cb253-34"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-34" tabindex="-1"></a>  ),</span>
+<span id="cb253-35"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-35" tabindex="-1"></a><span class="at">N1_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-36"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-36" tabindex="-1"></a><span class="fl">0.287</span>,  <span class="fl">0.271</span>,  <span class="fl">0.054</span>,  <span class="fl">0.107</span>,</span>
+<span id="cb253-37"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-37" tabindex="-1"></a><span class="fl">0.318</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-38"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-38" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.438</span>,  <span class="fl">0.228</span>,  <span class="fl">0.273</span>,</span>
+<span id="cb253-39"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-39" tabindex="-1"></a><span class="fl">0.111</span>,  <span class="fl">0.512</span>,  <span class="fl">0.585</span>,  <span class="fl">0.542</span></span>
+<span id="cb253-40"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-40" tabindex="-1"></a>),</span>
+<span id="cb253-41"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-41" tabindex="-1"></a><span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-42"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-42" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-43"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-43" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-44"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-44" tabindex="-1"></a>  )</span>
+<span id="cb253-45"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-45" tabindex="-1"></a>  ),</span>
+<span id="cb253-46"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-46" tabindex="-1"></a><span class="at">N2_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-47"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-47" tabindex="-1"></a><span class="fl">0.299</span>,  <span class="fl">0.253</span>,  <span class="fl">0.066</span>,  <span class="fl">0.182</span>,</span>
+<span id="cb253-48"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-48" tabindex="-1"></a><span class="fl">0.324</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-49"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-49" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.461</span>,  <span class="fl">0.222</span>,  <span class="fl">0.264</span>,</span>
+<span id="cb253-50"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-50" tabindex="-1"></a><span class="fl">0.339</span>,  <span class="fl">0.568</span>,  <span class="fl">0.554</span>,  <span class="fl">0.547</span></span>
+<span id="cb253-51"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-51" tabindex="-1"></a>),</span>
+<span id="cb253-52"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-52" tabindex="-1"></a><span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-53"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-53" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-54"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-54" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-55"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-55" tabindex="-1"></a>  )</span>
+<span id="cb253-56"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-56" tabindex="-1"></a>  ),</span>
+<span id="cb253-57"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-57" tabindex="-1"></a><span class="at">N3_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb253-58"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-58" tabindex="-1"></a>  <span class="fl">0.245</span>,    <span class="fl">0.156</span>,  <span class="fl">0.052</span>,  <span class="fl">0.147</span>,</span>
+<span id="cb253-59"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-59" tabindex="-1"></a><span class="fl">0.325</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb253-60"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-60" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.422</span>,  <span class="fl">0.305</span>,  <span class="fl">0.252</span>,</span>
+<span id="cb253-61"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-61" tabindex="-1"></a><span class="fl">0.210</span>,  <span class="fl">0.465</span>,  <span class="fl">0.498</span>,  <span class="fl">0.485</span></span>
+<span id="cb253-62"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-62" tabindex="-1"></a>),</span>
+<span id="cb253-63"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-63" tabindex="-1"></a><span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb253-64"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-64" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb253-65"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-65" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb253-66"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-66" tabindex="-1"></a>  )</span>
+<span id="cb253-67"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-67" tabindex="-1"></a>  )</span>
+<span id="cb253-68"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-68" tabindex="-1"></a>)</span>
+<span id="cb253-69"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-69" tabindex="-1"></a></span>
+<span id="cb253-70"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-70" tabindex="-1"></a></span>
+<span id="cb253-71"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-71" tabindex="-1"></a></span>
+<span id="cb253-72"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb253-72" tabindex="-1"></a>Serapia</span></code></pre></div>
+<pre><code>## $A1_1999
+##          latente plantula rosetta con flor
+## latente    0.745    0.152   0.452    0.564
+## plantula   0.125    0.000   0.000    0.000
+## rosetta    0.000    0.321   0.205    0.342
+## con flor   0.200    0.365   0.205    0.185
+## 
+## $A2_1999
+##          latente plantula rosetta con flor
+## latente    0.648    0.203   0.414    0.604
+## plantula   0.188    0.000   0.000    0.000
+## rosetta    0.000    0.342   0.198    0.377
+## con flor   0.242    0.264   0.225    0.191
+## 
+## $A3_1999
+##          latente plantula rosetta con flor
+## latente    0.544    0.223   0.364    0.498
+## plantula   0.148    0.000   0.000    0.000
+## rosetta    0.000    0.249   0.243    0.287
+## con flor   0.242    0.303   0.210    0.101
+## 
+## $N1_1999
+##          latente plantula rosetta con flor
+## latente    0.287    0.271   0.054    0.107
+## plantula   0.318    0.000   0.000    0.000
+## rosetta    0.000    0.438   0.228    0.273
+## con flor   0.111    0.512   0.585    0.542
+## 
+## $N2_1999
+##          latente plantula rosetta con flor
+## latente    0.299    0.253   0.066    0.182
+## plantula   0.324    0.000   0.000    0.000
+## rosetta    0.000    0.461   0.222    0.264
+## con flor   0.339    0.568   0.554    0.547
+## 
+## $N3_1999
+##          latente plantula rosetta con flor
+## latente    0.245    0.156   0.052    0.147
+## plantula   0.325    0.000   0.000    0.000
+## rosetta    0.000    0.422   0.305    0.252
+## con flor   0.210    0.465   0.498    0.485</code></pre>
+</div>
+<div id="simulaciones-con-igual-probabilidad-de-selección" class="section level4 hasAnchor" number="17.1.2.2">
+<h4><span class="header-section-number">17.1.2.2</span> Simulaciones con igual probabilidad de selección<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simulaciones-con-igual-probabilidad-de-selección" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si uno asume que hay igual cantidad de poblaciones afectada de forma antropogénicas y naturales entonces se puede hacer un análisis de la variación espacial en la probabilidad de supervivencia. Se puede simular el crecimiento con igual probabilidad de selección de las matrices de transición. en otra palabra cada matriz sera seleccionado al azar 1/6 de las veces. Este supuesto es razonable si uno asume que hay igual cantidad de poblaciones afectada de forma antropogénicas y naturales. El objetivo es ver la variación en la probabilidad de supervivencia en la población de <em>Serapia cordigera</em> en 1999 o mejor cual seria el tamaño de la poblacional típica de la especies si la especie se comporta como la siguientes matrices <span class="citation">(<a href="#ref-pellegrino2014effects">Pellegrino and Bellusci 2014</a>)</span>.</p>
+<p>La función <code>stoch.projection</code> del paquete <code>popbio</code> permite hacer simulaciones de la dinámica de una población y da una lista de la cantidad de individuos esperado por cada etapa de la vida. Comenzamos por definir el tamaño de la población inicial por etapa de la vida, <strong>n</strong>, el nombre de las etapas de la vida y luego usamos la función <code>stoch.projection</code> para hacer las simulaciones.</p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb255-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">99</span>) <span class="co"># corresponde a los datos de la especies en la publicación del año 2000</span></span>
+<span id="cb255-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb255-2" tabindex="-1"></a><span class="fu">names</span>(n) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb255-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb255-3" tabindex="-1"></a>Serapia.eq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia, n, <span class="at">nreps=</span><span class="dv">1000</span>) <span class="co"># simulación con igual probabilidad de selección</span></span>
+<span id="cb255-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb255-4" tabindex="-1"></a></span>
+<span id="cb255-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb255-5" tabindex="-1"></a><span class="fu">head</span>(Serapia.eq) <span class="co"># vemos las primeras 6 simulaciones de tamaño de muestra</span></span></code></pre></div>
+<pre><code>##        latente  plantula   rosetta  con flor
+## [1,] 6.3726930 0.7251351 1.4122955 2.2587073
+## [2,] 0.4423266 0.1989553 0.6849809 1.3092372
+## [3,] 0.7944671 0.3268431 1.2629352 2.4180959
+## [4,] 1.5076701 1.1098084 0.9456168 3.1433555
+## [5,] 1.2659898 0.4734350 1.4096363 3.0731615
+## [6,] 1.5171817 0.2394384 0.4028042 0.6460038</code></pre>
+</div>
+</div>
+<div id="cual-es-la-distribución-de-numero-de-individuos-esperado." class="section level3 hasAnchor" number="17.1.3">
+<h3><span class="header-section-number">17.1.3</span> Cual es la distribución de numero de individuos esperado.<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cual-es-la-distribución-de-numero-de-individuos-esperado." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>para observar cuantos individuos hubiese en el futuro de la población de <em>Serapia cordigera</em> en 1999 si la especie se comporta como las matrices de transición.</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-1" tabindex="-1"></a>Serapia.eq<span class="ot">=</span><span class="fu">clean_names</span>(<span class="fu">as.data.frame</span>(Serapia.eq))</span>
+<span id="cb257-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-2" tabindex="-1"></a></span>
+<span id="cb257-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-3" tabindex="-1"></a>Serapia.eq <span class="sc">%&gt;%</span> </span>
+<span id="cb257-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-4" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key=</span><span class="st">&quot;etapa&quot;</span>, <span class="at">value=</span><span class="st">&quot;individuos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb257-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>individuos))<span class="sc">+</span></span>
+<span id="cb257-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">30</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb257-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>etapa, <span class="at">scales=</span><span class="st">&quot;free&quot;</span>)<span class="sc">+</span></span>
+<span id="cb257-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb257-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Distribución de número de individuos esperado de *Serapia cordigera*&quot;</span>,</span>
+<span id="cb257-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-10" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Número de individuos&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb257-11"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb257-11" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">title =</span> <span class="fu">element_markdown</span>())</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-1" tabindex="-1"></a>Serapia_eq_T<span class="ot">=</span>Serapia.eq <span class="sc">%&gt;%</span> </span>
+<span id="cb258-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total=</span><span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric)))) </span>
+<span id="cb258-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-3" tabindex="-1"></a></span>
+<span id="cb258-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-4" tabindex="-1"></a>  </span>
+<span id="cb258-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(Serapia_eq_T,<span class="fu">aes</span>(<span class="at">x=</span>total))<span class="sc">+</span></span>
+<span id="cb258-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">30</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb258-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb258-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Distribución de total de individuos esperado de *Serapia cordigera*&quot;</span>,</span>
+<span id="cb258-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-9" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Número Total de individuos por simulación&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb258-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb258-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">title =</span> <span class="fu">element_markdown</span>())</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+</div>
+<div id="simulaciones-con-diferente-probabilidad-de-selección" class="section level3 hasAnchor" number="17.1.4">
+<h3><span class="header-section-number">17.1.4</span> Simulaciones con diferente probabilidad de selección<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simulaciones-con-diferente-probabilidad-de-selección" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La probabilidad de selección de las matrices de transición no tiene que ser igual. En el siguiente script se muestra como hacer simulaciones con diferente probabilidad de selección de las matrices de transición. En este caso se asume que hay las 3 poblaciones afectada de forma antropogénicas son más comun en la especies y las 3 poblaciones naturales son poblaciones raras. En la sección del script vemos que ahora las poblaciones afectada de forma antropogénicas son seleccionadas con una probabilidad de 0.85 y las poblaciones naturales con una probabilidad de 0.15. En otra palabra las poblaciones naturales son muy raras, y la especies es ta dominada por sitio donde la especies es afectada de forma antropogénicas. <strong>Importante este es una simulación y no refleja la realidad de la especies ni la publicación</strong>.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb259-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">99</span>) <span class="co"># población inicial por etapa</span></span>
+<span id="cb259-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb259-2" tabindex="-1"></a><span class="fu">names</span>(n) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb259-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb259-3" tabindex="-1"></a>Serapia.uneq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia, n, <span class="at">nreps=</span><span class="dv">1000</span>, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">3</span>, .<span class="dv">25</span>, .<span class="dv">05</span>, .<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="co"># simulación con igual probabilidad de selección</span></span>
+<span id="cb259-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb259-4" tabindex="-1"></a></span>
+<span id="cb259-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb259-5" tabindex="-1"></a><span class="fu">head</span>(Serapia.uneq) <span class="co"># vemos las primeras 6 simulaciones de tamaño de muestra</span></span></code></pre></div>
+<pre><code>##        latente  plantula  rosetta  con flor
+## [1,] 11.209484 0.6610101 5.390208  5.295794
+## [2,] 12.770066 2.3388487 3.200172  5.210334
+## [3,]  6.954414 6.9520939 4.321883 11.559468
+## [4,] 22.026908 2.5130197 4.870993  7.808373
+## [5,] 18.510491 2.1804024 3.521951  6.132888
+## [6,] 24.879718 4.2529536 6.206841 11.119231</code></pre>
+</div>
+<div id="comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones" class="section level3 hasAnchor" number="17.1.5">
+<h3><span class="header-section-number">17.1.5</span> Comparar la distribución de cantidad de individuos esperado por simulaciones<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ahora vamos a solapar las dos distribuciones para ver si hay una diferencia en la distribución de tamaño de muestra entre las dos simulaciones. Los resultados de la simulaciones siguiere que las poblaciones afectada de forma antropogénicas (rojo) tienen una mayor cantidad de individuos en el futuro que las poblaciones naturales (azul).</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-1" tabindex="-1"></a>Serapia.uneq<span class="ot">=</span><span class="fu">clean_names</span>(<span class="fu">as.data.frame</span>(Serapia.uneq))</span>
+<span id="cb261-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-2" tabindex="-1"></a></span>
+<span id="cb261-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-3" tabindex="-1"></a>Serapia.uneq_T<span class="ot">=</span>Serapia.uneq <span class="sc">%&gt;%</span> </span>
+<span id="cb261-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total=</span><span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric)))) </span>
+<span id="cb261-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-5" tabindex="-1"></a></span>
+<span id="cb261-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-6" tabindex="-1"></a></span>
+<span id="cb261-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-7" tabindex="-1"></a><span class="fu">ggplot</span>(Serapia.uneq_T, <span class="fu">aes</span>(total))<span class="sc">+</span></span>
+<span id="cb261-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>( <span class="at">bins=</span><span class="dv">30</span>, <span class="at">fill=</span><span class="st">&quot;red&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb261-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data=</span>Serapia_eq_T, <span class="fu">aes</span>(<span class="at">x=</span>total), <span class="at">bins=</span><span class="dv">30</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb261-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb261-11"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Distribución de total de individuos esperado de *Serapia cordigera*&quot;</span>,</span>
+<span id="cb261-12"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-12" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Número Total de individuos por simulación&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frecuencia&quot;</span>)<span class="sc">+</span></span>
+<span id="cb261-13"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb261-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">title =</span> <span class="fu">element_markdown</span>())</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<hr />
+<div id="simlación-de-crecimiento-poblaciónal-de-serapia-cordigera" class="section level4 hasAnchor" number="17.1.5.1">
+<h4><span class="header-section-number">17.1.5.1</span> Simlación de crecimiento poblaciónal de <em>Serapia cordigera</em><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simlación-de-crecimiento-poblaciónal-de-serapia-cordigera" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En el siguiente script podemos evaluar el crecimiento poblacional y su variación en el espacio.</p>
+<p>Nota aquí se calcula el log(crecimiento poblacional estocástica) de la especies de <em>Serapia cordigera</em> por aproximación y simulaciones siguiente la formula de Tuljapukar <span class="citation">(<a href="#ref-tuljapurkar2013population">Tuljapurkar 2013</a>)</span>. Se puede ver que la especies tiene un crecimiento poblacional negativo en la mayoría de las simulaciones. Esto sugiere que la especies esta en declive. Pero también se puede ver que hay una variación en el crecimiento poblacional de la especies. El script incluye un parámetro para indicar por cuanto tiempo queremos que la simulación ocurre, <strong>maxt=</strong>, en esta caso se simula por 50 periodos de tiempo, si no se añade nada la simulación dura por 50000 periodos de tiempo.</p>
+<p>Cuando se usa el log de crecimiento poblacional estocástica se calcula <span class="math display">\[r\]</span>, ese valor es <span class="math inline">\(r=ln(\lambda)\)</span>. <span class="math inline">\(r\)</span> se interpretación de forma diferentes que los valores de lambda,</p>
+<ul>
+<li><span class="math inline">\(r\)</span> = log(crecimiento poblacional estocástica) &gt; 0 la población crece</li>
+<li><span class="math inline">\(r\)</span> = log(crecimiento poblacional estocástica) &lt; 0 la población decrece</li>
+<li><span class="math inline">\(r\)</span> = log(crecimiento poblacional estocástica) = 0 la población no cambia</li>
+</ul>
+<p>El crecimiento estocástico de las poblaciones de <em>Serapia cordigera</em> en 1999 es negativo, sugiere que la especies esta en declive. Pero también se puede ver que hay una variación en el crecimiento poblacional de la especies. Se usa la función <em>stoch.grwoth.rate</em></p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb262-1" tabindex="-1"></a>SGR_eq<span class="ot">=</span><span class="fu">stoch.growth.rate</span>(Serapia, <span class="at">maxt=</span><span class="dv">50</span>, <span class="at">verbose=</span>) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
+<pre><code>## Calculating stochastic growth at time 1</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb264-1" tabindex="-1"></a>SGR_eq</span></code></pre></div>
+<pre><code>## $approx
+## [1] -0.06760619
+## 
+## $sim
+## [1] -0.05711104
+## 
+## $sim.CI
+## [1] -0.08862698 -0.02559511</code></pre>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb266-1" tabindex="-1"></a>SGR_uneq<span class="ot">=</span><span class="fu">stoch.growth.rate</span>(Serapia, <span class="at">maxt=</span><span class="dv">50</span>, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">3</span>, .<span class="dv">25</span>, .<span class="dv">05</span>, .<span class="dv">05</span>, .<span class="dv">05</span>), <span class="at">verbose=</span><span class="cn">FALSE</span>) <span class="co"># matrices seleccionado con diferente probabilidades</span></span>
+<span id="cb266-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb266-2" tabindex="-1"></a></span>
+<span id="cb266-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb266-3" tabindex="-1"></a>SGR_uneq</span></code></pre></div>
+<pre><code>## $approx
+## [1] -0.02988694
+## 
+## $sim
+## [1] -0.02644305
+## 
+## $sim.CI
+## [1] -0.0536932466  0.0008071467</code></pre>
+<p>Nota que los intervalos de confianza del crecimiento estocástico no solapa el zero para simulaciones con igual probabilidades, pero con probabilidades diferentes solapa el zero. Por consecuencia hay evidencia que en este caso, que las poblaciones si se comportará con igual frecuencia son afectada de forma antropogénicas o naturales, y la especies esta en declive. Al contrario, si la mayoría de las poblaciones son afectada de forma antropogénicas, la especies no esta en declive.</p>
+<p>Para convertir el log(crecimiento poblacional estocástica) a lambda se usa la siguiente formula <span class="math inline">\(e^r\)</span></p>
+</div>
+<div id="conversión-de-r-a-lambda" class="section level4 hasAnchor" number="17.1.5.2">
+<h4><span class="header-section-number">17.1.5.2</span> Conversión de <span class="math inline">\(r\)</span> a <span class="math inline">\(\lambda\)</span><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#conversión-de-r-a-lambda" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Lambda Igual de probabilidades</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb268-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
+<pre><code>## [1] 0.9444892</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb270-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#El intervalo de confianza inferior</span></span></code></pre></div>
+<pre><code>## [1] 0.9151869</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb272-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co">#El intervalo de confianza superior</span></span></code></pre></div>
+<pre><code>## [1] 0.9747297</code></pre>
+<p>Lambda Diferente de probabilidades</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb274-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim) <span class="co"># matrices seleccionado con diferente probabilidades</span></span></code></pre></div>
+<pre><code>## [1] 0.9739035</code></pre>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb276-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#El intervalo de confianza inferior </span></span></code></pre></div>
+<pre><code>## [1] 0.9477228</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb278-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co">#El intervalo de confianza superior</span></span></code></pre></div>
+<pre><code>## [1] 1.000807</code></pre>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-1" tabindex="-1"></a><span class="fu">library</span>(popbio)</span>
+<span id="cb280-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-2" tabindex="-1"></a></span>
+<span id="cb280-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-3" tabindex="-1"></a><span class="co"># El primer paso es definir la diferentes matriz, una por cada periodo de tiempo</span></span>
+<span id="cb280-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-4" tabindex="-1"></a></span>
+<span id="cb280-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-5" tabindex="-1"></a></span>
+<span id="cb280-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-6" tabindex="-1"></a></span>
+<span id="cb280-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-7" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4264</span>, <span class="dv">3</span>,<span class="dv">30</span>,<span class="dv">16</span>,<span class="dv">25</span>,<span class="dv">5</span>)</span>
+<span id="cb280-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-8" tabindex="-1"></a><span class="fu">names</span>(n) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;seed&quot;</span>,  <span class="st">&quot;seedlings&quot;</span>, <span class="st">&quot;tiny&quot;</span>, <span class="st">&quot;small&quot;</span>, <span class="st">&quot;medium&quot;</span> , <span class="st">&quot;large&quot;</span>)</span>
+<span id="cb280-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-9" tabindex="-1"></a><span class="do">## use equal and unequal probabilities for matrix selection</span></span>
+<span id="cb280-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-10" tabindex="-1"></a>x.eq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(hudsonia, n, <span class="at">nreps=</span><span class="dv">1000</span>)</span>
+<span id="cb280-11"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-11" tabindex="-1"></a>x.uneq <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(hudsonia, n, <span class="at">nreps=</span><span class="dv">1000</span>, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">2</span>,.<span class="dv">2</span>,.<span class="dv">2</span>,.<span class="dv">4</span>))</span>
+<span id="cb280-12"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-12" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">apply</span>(x.eq, <span class="dv">1</span>, sum), <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5000</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>), <span class="at">col=</span><span class="st">&quot;green&quot;</span>,</span>
+<span id="cb280-13"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-13" tabindex="-1"></a><span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>, <span class="dv">100</span>), <span class="at">xlab=</span><span class="st">&quot;Final population size at t=50&quot;</span>, <span class="at">main=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb280-14"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-14" tabindex="-1"></a><span class="fu">par</span>(<span class="at">new=</span><span class="cn">TRUE</span>)</span>
+<span id="cb280-15"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-15" tabindex="-1"></a><span class="do">## use transparency for overlapping distributions - may not work on all systems</span></span>
+<span id="cb280-16"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-16" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">apply</span>(x.uneq, <span class="dv">1</span>, sum), <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5000</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>), <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>),</span>
+<span id="cb280-17"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-17" tabindex="-1"></a> <span class="at">xaxt=</span><span class="st">&#39;n&#39;</span>, <span class="at">yaxt=</span><span class="st">&#39;n&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;&#39;</span>, <span class="at">xlab=</span><span class="st">&#39;&#39;</span>, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10000</span>, <span class="dv">100</span>), <span class="at">main=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb280-18"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-18" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2500</span>,<span class="dv">200</span>,  <span class="fu">c</span>(<span class="st">&quot;equal&quot;</span>, <span class="st">&quot;unequal&quot;</span>),<span class="at">fill=</span><span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>)))</span>
+<span id="cb280-19"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-19" tabindex="-1"></a><span class="fu">title</span>(<span class="fu">paste</span>(<span class="st">&quot;Projection of stochastic growth for Hudsonia</span></span>
+<span id="cb280-20"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-20" tabindex="-1"></a><span class="st">using equal and unequal probabilities&quot;</span>), <span class="at">cex.main=</span><span class="dv">1</span>)</span>
+<span id="cb280-21"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-21" tabindex="-1"></a><span class="do">## initial pop size</span></span>
+<span id="cb280-22"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb280-22" tabindex="-1"></a><span class="fu">sum</span>(n)</span></code></pre></div>
+<pre><code>## [1] 4343</code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb282-1" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">sum</span>(n), <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="estocasticidad-temporal" class="section level3 hasAnchor" number="17.1.6">
+<h3><span class="header-section-number">17.1.6</span> Estocasticidad temporal<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-temporal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El objetivo de evaluar la variación en tiempo es para determinar si los cambios temporales son importante en predecir el cambio poblacional.</p>
+<p>Seguimos con los datos <em>Serapias cordigera</em>, pero ahora evaluar cual es el efecto de la variación en los parámetros de la matriz usando múltiple censos. Vemos el efecto de una esas población, por impacto antropogenico, <strong>A1</strong> en los años de 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 y 2012.</p>
+<p>El primer paso en entrar los datos en una lista de matrices de transición.</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-1" tabindex="-1"></a>Serapia_tiempo<span class="ot">&lt;-</span><span class="fu">list</span>(</span>
+<span id="cb283-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-2" tabindex="-1"></a>  <span class="at">A1_1999=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-3" tabindex="-1"></a><span class="fl">0.745</span>,  <span class="fl">0.152</span>,  <span class="fl">0.452</span>,  <span class="fl">0.564</span>,</span>
+<span id="cb283-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-4" tabindex="-1"></a><span class="fl">0.125</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-5" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.321</span>,  <span class="fl">0.205</span>,  <span class="fl">0.342</span>,</span>
+<span id="cb283-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-6" tabindex="-1"></a><span class="fl">0.200</span>,  <span class="fl">0.365</span>,  <span class="fl">0.205</span>,  <span class="fl">0.185</span></span>
+<span id="cb283-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-7" tabindex="-1"></a>  ),</span>
+<span id="cb283-8"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-8" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-9"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-9" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-10"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-10" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-11"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-11" tabindex="-1"></a>  )</span>
+<span id="cb283-12"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-12" tabindex="-1"></a>  ),</span>
+<span id="cb283-13"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-13" tabindex="-1"></a><span class="at">A1_2000=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-14"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-14" tabindex="-1"></a><span class="fl">0.578</span>,  <span class="fl">0.222</span>,  <span class="fl">0.394</span>,  <span class="fl">0.394</span>,</span>
+<span id="cb283-15"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-15" tabindex="-1"></a><span class="fl">0.188</span>   ,<span class="fl">0.000</span>, <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-16"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-16" tabindex="-1"></a><span class="fl">0.000</span>   ,<span class="fl">0.322</span>, <span class="fl">0.254</span>,  <span class="fl">0.357</span>,</span>
+<span id="cb283-17"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-17" tabindex="-1"></a><span class="fl">0.244</span>   ,<span class="fl">0.314</span>, <span class="fl">0.125</span>,  <span class="fl">0.302</span></span>
+<span id="cb283-18"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-18" tabindex="-1"></a>  ),</span>
+<span id="cb283-19"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-19" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-20"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-20" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-21"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-21" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-22"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-22" tabindex="-1"></a>  )</span>
+<span id="cb283-23"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-23" tabindex="-1"></a>  ),</span>
+<span id="cb283-24"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-24" tabindex="-1"></a><span class="at">A1_2001=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-25"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-25" tabindex="-1"></a>  <span class="fl">0.668</span>,    <span class="fl">0.122</span>,  <span class="fl">0.294</span>,  <span class="fl">0.401</span>,</span>
+<span id="cb283-26"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-26" tabindex="-1"></a><span class="fl">0.128</span>,  <span class="fl">0.000</span>   ,<span class="fl">0.000</span>, <span class="fl">0.000</span>,</span>
+<span id="cb283-27"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-27" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.302</span>   ,<span class="fl">0.453</span>, <span class="fl">0.366</span>,</span>
+<span id="cb283-28"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-28" tabindex="-1"></a><span class="fl">0.214</span>,  <span class="fl">0.364</span>,  <span class="fl">0.185</span>,  <span class="fl">0.207</span></span>
+<span id="cb283-29"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-29" tabindex="-1"></a>  ),</span>
+<span id="cb283-30"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-30" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-31"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-31" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-32"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-32" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-33"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-33" tabindex="-1"></a>  )</span>
+<span id="cb283-34"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-34" tabindex="-1"></a>  ),</span>
+<span id="cb283-35"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-35" tabindex="-1"></a><span class="at">A1_2002=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-36"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-36" tabindex="-1"></a><span class="fl">0.645</span>,  <span class="fl">0.222</span>,  <span class="fl">0.682</span>,  <span class="fl">0.504</span>,</span>
+<span id="cb283-37"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-37" tabindex="-1"></a><span class="fl">0.177</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-38"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-38" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.421</span>,  <span class="fl">0.305</span>,  <span class="fl">0.382</span>,</span>
+<span id="cb283-39"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-39" tabindex="-1"></a><span class="fl">0.102</span>,  <span class="fl">0.355</span>,  <span class="fl">0.208</span>,  <span class="fl">0.208</span></span>
+<span id="cb283-40"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-40" tabindex="-1"></a>  ),</span>
+<span id="cb283-41"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-41" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-42"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-42" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-43"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-43" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-44"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-44" tabindex="-1"></a>  )</span>
+<span id="cb283-45"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-45" tabindex="-1"></a>  ),</span>
+<span id="cb283-46"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-46" tabindex="-1"></a><span class="at">A1_2003=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-47"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-47" tabindex="-1"></a>  <span class="fl">0.545</span>,    <span class="fl">0.113</span>,  <span class="fl">0.424</span>,  <span class="fl">0.424</span>,</span>
+<span id="cb283-48"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-48" tabindex="-1"></a><span class="fl">0.247</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-49"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-49" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.166</span>,  <span class="fl">0.233</span>,  <span class="fl">0.277</span>,</span>
+<span id="cb283-50"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-50" tabindex="-1"></a><span class="fl">0.192</span>,  <span class="fl">0.253</span>,  <span class="fl">0.209</span>,  <span class="fl">0.212</span></span>
+<span id="cb283-51"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-51" tabindex="-1"></a></span>
+<span id="cb283-52"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-52" tabindex="-1"></a>  ),</span>
+<span id="cb283-53"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-53" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-54"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-54" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-55"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-55" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-56"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-56" tabindex="-1"></a>  )</span>
+<span id="cb283-57"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-57" tabindex="-1"></a>  ),</span>
+<span id="cb283-58"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-58" tabindex="-1"></a><span class="at">A1_2004=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-59"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-59" tabindex="-1"></a>  <span class="fl">0.548</span>,    <span class="fl">0.191</span>,  <span class="fl">0.402</span>,  <span class="fl">0.527</span>,</span>
+<span id="cb283-60"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-60" tabindex="-1"></a><span class="fl">0.327</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-61"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-61" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.338</span>,  <span class="fl">0.127</span>,  <span class="fl">0.394</span>,</span>
+<span id="cb283-62"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-62" tabindex="-1"></a><span class="fl">0.211</span>,  <span class="fl">0.262</span>,  <span class="fl">0.296</span>,  <span class="fl">0.142</span></span>
+<span id="cb283-63"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-63" tabindex="-1"></a>  ),</span>
+<span id="cb283-64"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-64" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-65"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-65" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-66"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-66" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-67"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-67" tabindex="-1"></a>  )</span>
+<span id="cb283-68"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-68" tabindex="-1"></a>  ),</span>
+<span id="cb283-69"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-69" tabindex="-1"></a><span class="at">A1_2005=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-70"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-70" tabindex="-1"></a>  <span class="fl">0.602</span>,    <span class="fl">0.153</span>,  <span class="fl">0.486</span>,  <span class="fl">0.562</span>,</span>
+<span id="cb283-71"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-71" tabindex="-1"></a><span class="fl">0.224</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-72"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-72" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.491</span>,  <span class="fl">0.324</span>,  <span class="fl">0.304</span>,</span>
+<span id="cb283-73"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-73" tabindex="-1"></a><span class="fl">0.139</span>,  <span class="fl">0.268</span>,  <span class="fl">0.294</span>,  <span class="fl">0.277</span></span>
+<span id="cb283-74"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-74" tabindex="-1"></a></span>
+<span id="cb283-75"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-75" tabindex="-1"></a>  ),</span>
+<span id="cb283-76"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-76" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-77"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-77" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-78"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-78" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-79"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-79" tabindex="-1"></a>  )</span>
+<span id="cb283-80"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-80" tabindex="-1"></a>  ),</span>
+<span id="cb283-81"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-81" tabindex="-1"></a><span class="at">A1_2006=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-82"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-82" tabindex="-1"></a>  <span class="fl">0.487</span>,    <span class="fl">0.471</span>,  <span class="fl">0.425</span>,  <span class="fl">0.607</span>,</span>
+<span id="cb283-83"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-83" tabindex="-1"></a><span class="fl">0.318</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-84"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-84" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.438</span>,  <span class="fl">0.328</span>,  <span class="fl">0.373</span>,</span>
+<span id="cb283-85"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-85" tabindex="-1"></a><span class="fl">0.211</span>,  <span class="fl">0.212</span>,  <span class="fl">0.285</span>,  <span class="fl">0.142</span></span>
+<span id="cb283-86"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-86" tabindex="-1"></a>  ),</span>
+<span id="cb283-87"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-87" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-88"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-88" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-89"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-89" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-90"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-90" tabindex="-1"></a>  )</span>
+<span id="cb283-91"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-91" tabindex="-1"></a>  ),</span>
+<span id="cb283-92"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-92" tabindex="-1"></a><span class="at">A1_2007=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-93"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-93" tabindex="-1"></a>  <span class="fl">0.544</span>,    <span class="fl">0.423</span>,  <span class="fl">0.374</span>,  <span class="fl">0.578</span>,</span>
+<span id="cb283-94"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-94" tabindex="-1"></a><span class="fl">0.348</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-95"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-95" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.441</span>,  <span class="fl">0.248</span>,  <span class="fl">0.288</span>,</span>
+<span id="cb283-96"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-96" tabindex="-1"></a><span class="fl">0.145</span>,  <span class="fl">0.203</span>,  <span class="fl">0.311</span>,  <span class="fl">0.201</span></span>
+<span id="cb283-97"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-97" tabindex="-1"></a></span>
+<span id="cb283-98"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-98" tabindex="-1"></a>  ),</span>
+<span id="cb283-99"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-99" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-100"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-100" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-101"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-101" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-102"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-102" tabindex="-1"></a>  )</span>
+<span id="cb283-103"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-103" tabindex="-1"></a>  ),</span>
+<span id="cb283-104"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-104" tabindex="-1"></a><span class="at">A1_2008=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-105"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-105" tabindex="-1"></a> <span class="fl">0.568</span>, <span class="fl">0.325</span>,  <span class="fl">0.294</span>,  <span class="fl">0.607</span>,</span>
+<span id="cb283-106"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-106" tabindex="-1"></a><span class="fl">0.227</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-107"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-107" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.402</span>,  <span class="fl">0.553</span>,  <span class="fl">0.256</span>,</span>
+<span id="cb283-108"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-108" tabindex="-1"></a><span class="fl">0.194</span>,  <span class="fl">0.364</span>,  <span class="fl">0.275</span>,  <span class="fl">0.217</span></span>
+<span id="cb283-109"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-109" tabindex="-1"></a></span>
+<span id="cb283-110"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-110" tabindex="-1"></a>  ),</span>
+<span id="cb283-111"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-111" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-112"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-112" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-113"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-113" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-114"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-114" tabindex="-1"></a>  )</span>
+<span id="cb283-115"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-115" tabindex="-1"></a>  ),</span>
+<span id="cb283-116"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-116" tabindex="-1"></a><span class="at">A1_2009=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-117"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-117" tabindex="-1"></a>  <span class="fl">0.545</span>,    <span class="fl">0.356</span>,  <span class="fl">0.472</span>,  <span class="fl">0.398</span>,</span>
+<span id="cb283-118"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-118" tabindex="-1"></a><span class="fl">0.225</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-119"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-119" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.322</span>,  <span class="fl">0.304</span>,  <span class="fl">0.452</span>,</span>
+<span id="cb283-120"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-120" tabindex="-1"></a><span class="fl">0.110</span>,  <span class="fl">0.225</span>,  <span class="fl">0.298</span>,  <span class="fl">0.185</span></span>
+<span id="cb283-121"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-121" tabindex="-1"></a></span>
+<span id="cb283-122"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-122" tabindex="-1"></a>  ),</span>
+<span id="cb283-123"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-123" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-124"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-124" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-125"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-125" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-126"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-126" tabindex="-1"></a>  )</span>
+<span id="cb283-127"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-127" tabindex="-1"></a>  ),</span>
+<span id="cb283-128"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-128" tabindex="-1"></a><span class="at">A1_2010=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-129"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-129" tabindex="-1"></a>  <span class="fl">0.399</span>,    <span class="fl">0.352</span>,  <span class="fl">0.486</span>,  <span class="fl">0.580</span>,</span>
+<span id="cb283-130"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-130" tabindex="-1"></a><span class="fl">0.424</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-131"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-131" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.561</span>,  <span class="fl">0.312</span>,  <span class="fl">0.264</span>,</span>
+<span id="cb283-132"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-132" tabindex="-1"></a><span class="fl">0.239</span>,  <span class="fl">0.168</span>,  <span class="fl">0.354</span>,  <span class="fl">0.247</span></span>
+<span id="cb283-133"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-133" tabindex="-1"></a></span>
+<span id="cb283-134"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-134" tabindex="-1"></a>  ),</span>
+<span id="cb283-135"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-135" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-136"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-136" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-137"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-137" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-138"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-138" tabindex="-1"></a>  )</span>
+<span id="cb283-139"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-139" tabindex="-1"></a>  ),</span>
+<span id="cb283-140"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-140" tabindex="-1"></a><span class="at">A1_2011=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb283-141"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-141" tabindex="-1"></a>  <span class="fl">0.497</span>,    <span class="fl">0.352</span>,  <span class="fl">0.465</span>,  <span class="fl">0.622</span>,</span>
+<span id="cb283-142"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-142" tabindex="-1"></a><span class="fl">0.324</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,  <span class="fl">0.000</span>,</span>
+<span id="cb283-143"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-143" tabindex="-1"></a><span class="fl">0.000</span>,  <span class="fl">0.361</span>,  <span class="fl">0.321</span>,  <span class="fl">0.264</span>,</span>
+<span id="cb283-144"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-144" tabindex="-1"></a><span class="fl">0.139</span>,  <span class="fl">0.368</span>,  <span class="fl">0.367</span>,  <span class="fl">0.177</span></span>
+<span id="cb283-145"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-145" tabindex="-1"></a></span>
+<span id="cb283-146"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-146" tabindex="-1"></a>  ),</span>
+<span id="cb283-147"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-147" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb283-148"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-148" tabindex="-1"></a>  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>),</span>
+<span id="cb283-149"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-149" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb283-150"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-150" tabindex="-1"></a>  )</span>
+<span id="cb283-151"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-151" tabindex="-1"></a>  )</span>
+<span id="cb283-152"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-152" tabindex="-1"></a>)</span>
+<span id="cb283-153"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-153" tabindex="-1"></a></span>
+<span id="cb283-154"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-154" tabindex="-1"></a></span>
+<span id="cb283-155"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb283-155" tabindex="-1"></a> Serapia_tiempo</span></code></pre></div>
+<pre><code>## $A1_1999
+##          latente plantula rosetta con flor
+## latente    0.745    0.152   0.452    0.564
+## plantula   0.125    0.000   0.000    0.000
+## rosetta    0.000    0.321   0.205    0.342
+## con flor   0.200    0.365   0.205    0.185
+## 
+## $A1_2000
+##          latente plantula rosetta con flor
+## latente    0.578    0.222   0.394    0.394
+## plantula   0.188    0.000   0.000    0.000
+## rosetta    0.000    0.322   0.254    0.357
+## con flor   0.244    0.314   0.125    0.302
+## 
+## $A1_2001
+##          latente plantula rosetta con flor
+## latente    0.668    0.122   0.294    0.401
+## plantula   0.128    0.000   0.000    0.000
+## rosetta    0.000    0.302   0.453    0.366
+## con flor   0.214    0.364   0.185    0.207
+## 
+## $A1_2002
+##          latente plantula rosetta con flor
+## latente    0.645    0.222   0.682    0.504
+## plantula   0.177    0.000   0.000    0.000
+## rosetta    0.000    0.421   0.305    0.382
+## con flor   0.102    0.355   0.208    0.208
+## 
+## $A1_2003
+##          latente plantula rosetta con flor
+## latente    0.545    0.113   0.424    0.424
+## plantula   0.247    0.000   0.000    0.000
+## rosetta    0.000    0.166   0.233    0.277
+## con flor   0.192    0.253   0.209    0.212
+## 
+## $A1_2004
+##          latente plantula rosetta con flor
+## latente    0.548    0.191   0.402    0.527
+## plantula   0.327    0.000   0.000    0.000
+## rosetta    0.000    0.338   0.127    0.394
+## con flor   0.211    0.262   0.296    0.142
+## 
+## $A1_2005
+##          latente plantula rosetta con flor
+## latente    0.602    0.153   0.486    0.562
+## plantula   0.224    0.000   0.000    0.000
+## rosetta    0.000    0.491   0.324    0.304
+## con flor   0.139    0.268   0.294    0.277
+## 
+## $A1_2006
+##          latente plantula rosetta con flor
+## latente    0.487    0.471   0.425    0.607
+## plantula   0.318    0.000   0.000    0.000
+## rosetta    0.000    0.438   0.328    0.373
+## con flor   0.211    0.212   0.285    0.142
+## 
+## $A1_2007
+##          latente plantula rosetta con flor
+## latente    0.544    0.423   0.374    0.578
+## plantula   0.348    0.000   0.000    0.000
+## rosetta    0.000    0.441   0.248    0.288
+## con flor   0.145    0.203   0.311    0.201
+## 
+## $A1_2008
+##          latente plantula rosetta con flor
+## latente    0.568    0.325   0.294    0.607
+## plantula   0.227    0.000   0.000    0.000
+## rosetta    0.000    0.402   0.553    0.256
+## con flor   0.194    0.364   0.275    0.217
+## 
+## $A1_2009
+##          latente plantula rosetta con flor
+## latente    0.545    0.356   0.472    0.398
+## plantula   0.225    0.000   0.000    0.000
+## rosetta    0.000    0.322   0.304    0.452
+## con flor   0.110    0.225   0.298    0.185
+## 
+## $A1_2010
+##          latente plantula rosetta con flor
+## latente    0.399    0.352   0.486    0.580
+## plantula   0.424    0.000   0.000    0.000
+## rosetta    0.000    0.561   0.312    0.264
+## con flor   0.239    0.168   0.354    0.247
+## 
+## $A1_2011
+##          latente plantula rosetta con flor
+## latente    0.497    0.352   0.465    0.622
+## plantula   0.324    0.000   0.000    0.000
+## rosetta    0.000    0.361   0.321    0.264
+## con flor   0.139    0.368   0.367    0.177</code></pre>
+<div id="simulaciones-con-igual-probabilidad-de-selección-1" class="section level4 hasAnchor" number="17.1.6.1">
+<h4><span class="header-section-number">17.1.6.1</span> Simulaciones con igual probabilidad de selección<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simulaciones-con-igual-probabilidad-de-selección-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb285-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">99</span>) <span class="co"># población inicial por etapa</span></span>
+<span id="cb285-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb285-2" tabindex="-1"></a><span class="fu">names</span>(n) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;latente&quot;</span>, <span class="st">&quot;plantula&quot;</span>, <span class="st">&quot;rosetta&quot;</span>, <span class="st">&quot;con flor&quot;</span>)</span>
+<span id="cb285-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb285-3" tabindex="-1"></a>Serapia_tiempo_eq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia_tiempo, n, <span class="at">nreps=</span><span class="dv">1000</span>) <span class="co"># simulación con igual probabilidad de selección</span></span>
+<span id="cb285-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb285-4" tabindex="-1"></a></span>
+<span id="cb285-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb285-5" tabindex="-1"></a><span class="fu">head</span>(Serapia_tiempo_eq) <span class="co"># vemos las primeras 6 simulaciones de tamaño de muestra</span></span></code></pre></div>
+<pre><code>##       latente  plantula  rosetta con flor
+## [1,] 76.77330 11.825242 23.74136 22.76998
+## [2,] 78.37029 24.171004 30.07388 32.70448
+## [3,] 42.86089 14.233284 14.18861 20.30741
+## [4,] 72.99422  9.267407 31.00421 34.17744
+## [5,] 57.92467 19.005376 19.28551 21.90906
+## [6,] 57.97046  9.102361 19.41849 18.18221</code></pre>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb287-1" tabindex="-1"></a>SGR_Temp_eq<span class="ot">=</span><span class="fu">stoch.growth.rate</span>(Serapia_tiempo, <span class="at">maxt=</span><span class="dv">50</span>) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
+<pre><code>## Calculating stochastic growth at time 1</code></pre>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb289-1" tabindex="-1"></a>SGR_Temp_eq</span></code></pre></div>
+<pre><code>## $approx
+## [1] 0.002712947
+## 
+## $sim
+## [1] 0.009300112
+## 
+## $sim.CI
+## [1] -0.01920762  0.03780784</code></pre>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb291-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
+<pre><code>## [1] 1.009343</code></pre>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb293-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#El intervalo de confianza inferior</span></span></code></pre></div>
+<pre><code>## [1] 0.9809757</code></pre>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb295-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co">#El intervalo de confianza superior</span></span></code></pre></div>
+<pre><code>## [1] 1.038532</code></pre>
+<p>Comparar la variación temporal en el crecimiento poblacional de la especies de <em>Serapia cordigera</em> en 1999 a 2012 con la variación espacial.</p>
+<p>Lo que se observa es que la variación temporal y la variación espacial es más o menos igual (el rango de variación), pero que hay menos variación temporal que espacial.</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-1" tabindex="-1"></a>Tabla_resultado<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb297-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-2" tabindex="-1"></a>  <span class="sc">~</span>tipo, <span class="sc">~</span>valor, <span class="sc">~</span>CI_inf, <span class="sc">~</span>CI_sup,<span class="sc">~</span>diff_ci,</span>
+<span id="cb297-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-3" tabindex="-1"></a>  <span class="st">&quot;Espacial&quot;</span>, <span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim), <span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]), <span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]), <span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>])<span class="sc">-</span><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]),</span>
+<span id="cb297-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-4" tabindex="-1"></a>  <span class="st">&quot;Temporal&quot;</span>, <span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim), <span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]), <span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]), <span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>])<span class="sc">-</span><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>])</span>
+<span id="cb297-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-5" tabindex="-1"></a>) </span>
+<span id="cb297-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb297-6" tabindex="-1"></a>Tabla_resultado</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 5
+##   tipo     valor CI_inf CI_sup diff_ci
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Espacial 0.944  0.915  0.975  0.0595
+## 2 Temporal 1.01   0.981  1.04   0.0576</code></pre>
+<p>Observación de la variación temporal y espacial en el crecimiento poblacional de la especies de <em>Serapia cordigera</em> en un gráfico.</p>
+<p>Se nota que el crecimiento poblacional intrínsico de la especies de <em>Serapia cordigera</em> es negativo en la mayoría de las simulaciones cuando se evalúa múltiple poblaciones, pero la población <strong>A1</strong> en general tiene un crecimiento positivo o es estable cuando se evalúa tomando en cuanta la variación temporal .</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(Tabla_resultado, <span class="fu">aes</span>(<span class="at">x=</span>tipo, <span class="at">y=</span>valor))<span class="sc">+</span></span>
+<span id="cb299-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb299-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-3" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>CI_inf, <span class="at">ymax=</span>CI_sup), <span class="at">width=</span>.<span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb299-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb299-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Comparación de crecimiento poblacional de *Serapia cordigera*&quot;</span>,</span>
+<span id="cb299-6"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-6" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Tipo de variación&quot;</span>, <span class="at">y=</span><span class="st">&quot;Crecimiento poblacional&quot;</span>)<span class="sc">+</span></span>
+<span id="cb299-7"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb299-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">title =</span> <span class="fu">element_markdown</span>())</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+</div>
+<div id="estocasticidad-demografica" class="section level3 hasAnchor" number="17.1.7">
+<h3><span class="header-section-number">17.1.7</span> Estocasticidad demografica<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-demografica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En esta seccion veoms el efecto del tamaño de muestra sobre los parametros de la matriz de transición.</p>
+<p>Este método usa un acercamiento Bayesiano y una distribución de probabilidad para estimar los parámetros de la matriz de transición Dirichlet. Vemos a que se refiere un análisis bayesiano y la función Dirichlet. El lo que corresponde al presenta analisis es que en los analisis Bayesiano, incluimos una previa al analisis, en otra palabra, se usa información previa al analisis para calular los parametros (posteriores). En nuestro caso haremos una previa con poco peso, en otra palabra, no influirá mucho (o casi nada) en los resultados.</p>
+</div>
+</div>
+<div id="ventaja-de-usar-simulaciones" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Ventaja de usar simulaciones<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#ventaja-de-usar-simulaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La primera ventaja de usar métodos de análisis por simulaciones es calcula un intervalo de confianza. Si los intervalos de confianza de lambda solapa el uno (1) (si solapa el 0 para log(lambda)) entonces no hay evidencia de que el crecimiento poblacional es diferente de uno.</p>
+<p>La segunda ventaja de usar simulaciones es que hay que recordar que los análisis están basado en datos limitados y que la si hubiese más o menos datos para estimar los elementos de la matriz la parámetros de la matriz sería diferente. Entonces hay un componente de incertidumbre en los estimados de los parámetros de la matriz que no es considerado en los análisis tradicionales.</p>
+<p>Esta incertidumbre se separa entre los efectos de tamaños de muestra, variación espacial y temporal.</p>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-harper1977population" class="csl-entry">
+Harper, John L et al. 1977. <span>“Population Biology of Plants.”</span> <em>Population Biology of Plants.</em>
+</div>
+<div id="ref-herrera2009multiplicity" class="csl-entry">
+Herrera, Carlos M. 2009. <em>Multiplicity in Unity: Plant Subindividual Variation and Interactions with Animals</em>. University of Chicago Press.
+</div>
+<div id="ref-pellegrino2014effects" class="csl-entry">
+Pellegrino, Giuseppe, and Francesca Bellusci. 2014. <span>“Effects of Human Disturbance on Reproductive Success and Population Viability of Serapias Cordigera (Orchidaceae).”</span> <em>Botanical Journal of the Linnean Society</em> 176 (3): 408–20.
+</div>
+<div id="ref-tuljapurkar2013population" class="csl-entry">
+———. 2013. <em>Population Dynamics in Variable Environments</em>. Vol. 85. Springer Science &amp; Business Media.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ltre.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="el-uso-de-matrices-para-estudios-evolutivos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/15-Metodos_de_simulaciones.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/15-Metodos_de_simulaciones.Rmd",
+"text": null
+},
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

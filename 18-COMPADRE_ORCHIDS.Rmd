@@ -103,7 +103,7 @@ names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
 ```{r chap16_5}
 Epi = TodasSp %>% 
-  filter(Genus %in% c("Epipactis"))
+  filter(Genus %in% c("Serapias"))
 Epi # This shows that the species added Epidendrum xanthinum is not yet included in the data base
 ```
 
@@ -229,7 +229,7 @@ SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublicat
   mutate(StudyEnd=as.numeric(StudyEnd)) %>% 
   drop_na(StudyStart, StudyEnd)
 
-SPECIES_O %>% head()
+SPECIES_O
 
 
 #write_csv(SPECIES_O, "Species_O.csv")

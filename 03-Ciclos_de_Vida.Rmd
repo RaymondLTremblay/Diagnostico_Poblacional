@@ -224,7 +224,7 @@ digraph {
 
 #### *Telipogon helleri*
 
-En el trabajo de [@raventos2018comparison] se recolectaron datos de la etapa de inmaduros, reproductivo pequeños y reproductivo grandes.  La historia de vida es representada por 3 etapas. Los datos provienen de la figura 1 de la publicación de [@rraventos2018comparison]. En este caso, los autores le interesa el efecto de perturbaciones sobre el crecimiento poblacional evaluando el efecto de perturbaciones con análisis de dinámica transitoria.  
+En el trabajo de [@raventos2018comparison] se recolectaron datos de la etapa de inmaduros, reproductivo pequeños y reproductivo grandes.  La historia de vida es representada por 3 etapas. Los datos provienen de la figura 1 de la publicación de [@raventos2018comparison]. En este caso, los autores le interesa el efecto de perturbaciones sobre el crecimiento poblacional evaluando el efecto de perturbaciones con análisis de dinámica transitoria.  
 
 Los observaron tres tipos de transiciones en la historia de vida de la orquídea *Telipogon helleri*.  Las etapas que pasen una tamaño/etapa pequeña a más grande el próximo año son de color verde, los que se quedan en la misma etapa son de color roja, los individuos que se ponen más pequeños son de color violeta y amarillo es la reproducción de las etapas adultas.
 
