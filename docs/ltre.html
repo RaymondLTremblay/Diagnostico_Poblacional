@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-08-19" />
+<meta name="date" content="2024-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -603,8 +603,8 @@ div.csl-indent {
 <span id="cb217-15"><a href="ltre.html#cb217-15" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
 <span id="cb217-16"><a href="ltre.html#cb217-16" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
 <span id="cb217-17"><a href="ltre.html#cb217-17" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span></span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-73e6a27d4909de84221b" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-73e6a27d4909de84221b">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.22\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.02\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.76\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.13\"]\n\"juvenil\" -> \"plántula\"[minlen=-8,fontsize=10,color=Goldenrod1,xlabel=\" 3.88\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.23\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.53\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.17\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 16.53\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.58\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.38\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7cde022dea1f979230be" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7cde022dea1f979230be">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.22\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.02\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.76\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.13\"]\n\"juvenil\" -> \"plántula\"[minlen=-8,fontsize=10,color=Goldenrod1,xlabel=\" 3.88\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.23\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.53\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.17\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 16.53\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.58\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.38\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Figura x: Ciclo de vida de <em>Oncidium brachyandrum</em> creciendo sobre <em>Quercus martinezii</em>. Las flechas representan las transiciones entre estadíos, estasis y fecundidades y los números son las tasas vitales de fecundidad, supervivencia y crecimiento. El color <span class="math inline">\(\color{#ffc125}{\text{amarillo}}\)</span> para fecundidad, <span class="math inline">\(\color{  #36648b}{\text{azul}}\)</span> para supervivencia y <span class="math inline">\(\color{#548b54}{\text{verde}}\)</span> para crecimiento, <span class="math inline">\(\color{#7a378b}{\text{violeta}}\)</span> para retroceso y azul oscuro para permanencia.</p>
 </div>
 <div id="diagrama-para-quercus-rugosa" class="section level3 hasAnchor" number="16.2.5">
@@ -653,8 +653,8 @@ div.csl-indent {
 <span id="cb218-42"><a href="ltre.html#cb218-42" tabindex="-1"></a><span class="st">}&quot;</span></span>
 <span id="cb218-43"><a href="ltre.html#cb218-43" tabindex="-1"></a>  )</span>
 <span id="cb218-44"><a href="ltre.html#cb218-44" tabindex="-1"></a>)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2262fab1e55e15dd9b78" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2262fab1e55e15dd9b78">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.64\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.06\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.75\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.08\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.27\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.47\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 0.0045\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.28\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5ad13d5d730a24fd4379" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5ad13d5d730a24fd4379">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.64\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.06\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.75\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.08\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.27\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.47\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 0.0045\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.28\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Figura x: Ciclo de vida de <em>Oncidium brachyandrum</em> creciendo sobre <em>Quercus rugosa</em>. Las flechas representan las transiciones entre estadíos, estasis y fecundidades y los números son las tasas vitales de fecundidad, supervivencia y crecimiento. El color <span class="math inline">\(\color{#ffc125}{\text{amarillo}}\)</span> para fecundidad, <span class="math inline">\(\color{  #36648b}{\text{azul}}\)</span> para supervivencia y <span class="math inline">\(\color{#548b54}{\text{verde}}\)</span> para crecimiento, <span class="math inline">\(\color{#7a378b}{\text{violeta}}\)</span> para retroceso y azul oscuro para permanencia.</p>
 <hr />
 </div>
@@ -846,23 +846,23 @@ div.csl-indent {
 <span id="cb243-2"><a href="ltre.html#cb243-2" tabindex="-1"></a></span>
 <span id="cb243-3"><a href="ltre.html#cb243-3" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb243-4"><a href="ltre.html#cb243-4" tabindex="-1"></a><span class="fu">gt</span>(LTRE.results.Martinezzi.Rugosa)</span></code></pre></div>
-<div id="zgsiloujpi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zgsiloujpi table {
+<div id="lhpvgcgtjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lhpvgcgtjs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zgsiloujpi thead, #zgsiloujpi tbody, #zgsiloujpi tfoot, #zgsiloujpi tr, #zgsiloujpi td, #zgsiloujpi th {
+#lhpvgcgtjs thead, #lhpvgcgtjs tbody, #lhpvgcgtjs tfoot, #lhpvgcgtjs tr, #lhpvgcgtjs td, #lhpvgcgtjs th {
   border-style: none;
 }
 
-#zgsiloujpi p {
+#lhpvgcgtjs p {
   margin: 0;
   padding: 0;
 }
 
-#zgsiloujpi .gt_table {
+#lhpvgcgtjs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -888,12 +888,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_caption {
+#lhpvgcgtjs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zgsiloujpi .gt_title {
+#lhpvgcgtjs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -905,7 +905,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#zgsiloujpi .gt_subtitle {
+#lhpvgcgtjs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -917,7 +917,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#zgsiloujpi .gt_heading {
+#lhpvgcgtjs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -929,13 +929,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_bottom_border {
+#lhpvgcgtjs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_col_headings {
+#lhpvgcgtjs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -950,7 +950,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_col_heading {
+#lhpvgcgtjs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -970,7 +970,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zgsiloujpi .gt_column_spanner_outer {
+#lhpvgcgtjs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -982,15 +982,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#zgsiloujpi .gt_column_spanner_outer:first-child {
+#lhpvgcgtjs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zgsiloujpi .gt_column_spanner_outer:last-child {
+#lhpvgcgtjs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zgsiloujpi .gt_column_spanner {
+#lhpvgcgtjs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1002,11 +1002,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#zgsiloujpi .gt_spanner_row {
+#lhpvgcgtjs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zgsiloujpi .gt_group_heading {
+#lhpvgcgtjs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1032,7 +1032,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#zgsiloujpi .gt_empty_group_heading {
+#lhpvgcgtjs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1047,15 +1047,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#zgsiloujpi .gt_from_md > :first-child {
+#lhpvgcgtjs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zgsiloujpi .gt_from_md > :last-child {
+#lhpvgcgtjs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zgsiloujpi .gt_row {
+#lhpvgcgtjs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1074,7 +1074,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zgsiloujpi .gt_stub {
+#lhpvgcgtjs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1087,7 +1087,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zgsiloujpi .gt_stub_row_group {
+#lhpvgcgtjs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1101,15 +1101,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#zgsiloujpi .gt_row_group_first td {
+#lhpvgcgtjs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zgsiloujpi .gt_row_group_first th {
+#lhpvgcgtjs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zgsiloujpi .gt_summary_row {
+#lhpvgcgtjs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1119,16 +1119,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zgsiloujpi .gt_first_summary_row {
+#lhpvgcgtjs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_first_summary_row.thick {
+#lhpvgcgtjs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zgsiloujpi .gt_last_summary_row {
+#lhpvgcgtjs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1138,7 +1138,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_grand_summary_row {
+#lhpvgcgtjs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1148,7 +1148,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zgsiloujpi .gt_first_grand_summary_row {
+#lhpvgcgtjs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1158,7 +1158,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_last_grand_summary_row_top {
+#lhpvgcgtjs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1168,11 +1168,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_striped {
+#lhpvgcgtjs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zgsiloujpi .gt_table_body {
+#lhpvgcgtjs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1181,7 +1181,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_footnotes {
+#lhpvgcgtjs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1195,7 +1195,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_footnote {
+#lhpvgcgtjs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1204,7 +1204,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zgsiloujpi .gt_sourcenotes {
+#lhpvgcgtjs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1218,7 +1218,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zgsiloujpi .gt_sourcenote {
+#lhpvgcgtjs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1226,72 +1226,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zgsiloujpi .gt_left {
+#lhpvgcgtjs .gt_left {
   text-align: left;
 }
 
-#zgsiloujpi .gt_center {
+#lhpvgcgtjs .gt_center {
   text-align: center;
 }
 
-#zgsiloujpi .gt_right {
+#lhpvgcgtjs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zgsiloujpi .gt_font_normal {
+#lhpvgcgtjs .gt_font_normal {
   font-weight: normal;
 }
 
-#zgsiloujpi .gt_font_bold {
+#lhpvgcgtjs .gt_font_bold {
   font-weight: bold;
 }
 
-#zgsiloujpi .gt_font_italic {
+#lhpvgcgtjs .gt_font_italic {
   font-style: italic;
 }
 
-#zgsiloujpi .gt_super {
+#lhpvgcgtjs .gt_super {
   font-size: 65%;
 }
 
-#zgsiloujpi .gt_footnote_marks {
+#lhpvgcgtjs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zgsiloujpi .gt_asterisk {
+#lhpvgcgtjs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zgsiloujpi .gt_indent_1 {
+#lhpvgcgtjs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zgsiloujpi .gt_indent_2 {
+#lhpvgcgtjs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zgsiloujpi .gt_indent_3 {
+#lhpvgcgtjs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zgsiloujpi .gt_indent_4 {
+#lhpvgcgtjs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zgsiloujpi .gt_indent_5 {
+#lhpvgcgtjs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zgsiloujpi .katex-display {
+#lhpvgcgtjs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zgsiloujpi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lhpvgcgtjs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
