@@ -153,7 +153,7 @@ tconvergencia <- convt(Lr1, accuracy = 1e-3, vector = n0)
 
 La estructura estable de edades/etapas es un indice de la distribución proporcional de la poblacional que se espera que esta población alcance en el largo plazo. En el caso de *Lepanthes rubripetala* se espera que la población alcance una estructura estable de 0.088, 0.206, 0.369 y 0.337 para las categorías de plántulas, juveniles, adultos no reproductivos y adultos reproductivos, respectivamente. Esta estructura asume que el crecimiento poblacional *lambda* $\lambda$ sigue igual y constante en el tiempo. Para una especie alcancar una estructura estable, el ambiente debería ser constante y sin cambios, lo cual es raramente el caso en la naturaleza. Esto asume que el periodo de muestreo y las condiciones abiotica y bioticas son tipica y constante. En un analisis de revisión de literatura Williams et al (@williams2011distance) encontraron que más del 80% de las poblaciones no cumplia con la condición de estructura estable. En adición observarón que mayor desviación se obervaba en poblaciones con tiempo de generación largas y matriz grandes (n x n). 
 
-```{r stable.stage}
+```{r}
 #Estructura estable de estados
 Wmax <- stable.stage(Lr1)
 Wmax
@@ -161,7 +161,7 @@ Wmax
 
 Uno puede visualizar la estructura la estructura de la población usando el codigo siguiente.
 
-```{r estructuraestable_viz}
+```{r}
 Wdf=data.frame(Wmax)
 Wdf$Categorias=c("Plántulas","Juveniles","Adultos no reproductivos","Adultos reproductivos")
 Wdf$Categorias=factor(Wdf$Categorias, levels=c("Plántulas","Juveniles","Adultos no reproductivos","Adultos reproductivos"))
@@ -183,7 +183,7 @@ ggplot(Wdf, aes(y=Wmax, x=Categorias)) +
 
 El análisis de amortiguamiento es un indice de la rapidez con la que una población converge a su estructura estable después de un disturbio [@jiang2020life]. El indice de amortiguamiento $d > 0$, y más grande el indice de amortiguamiento más rápido la población converge a la estructura estable. Se ha demostrado que hay una relación entre el indice de amortiguamiento y tiempo de generación de una especie [@jiang2020life].  El tiempo de amortiguamiento se calcula $\tau=1/d$. Usando la función *dr* del paquete **popbio**, en el caso de *Lepanthes rubripetala* se espera estima que el indice de amortigamiento es 1.2 y que la población converga a su estructura estable en 12 meses, ya que los datos fueron recolectado y analizado mensualmente. Si los datos hubiese sido recolectado una vez al año entonces la población converga a su estructura estable en 12 años. Un supuesto importante es que la tasa de crecimiento intrínseca es igual para todos los periodos subsiguientes.  
 
-```{r damping}
+```{r}
 
 #Relación de amortiguamiento
 dampingratio <- dr(Lr1, return.time=TRUE)
@@ -198,7 +198,7 @@ El tiempo de convergencia puede ser calculado a base de la cantidad de individuo
 
 
 
-```{r converngence}
+```{r}
 # Tiempo de convergencia
 n = c(1000, 0, 0, 0)
 tconvergencia <- convt(Lr1, accuracy = 1e-3, vector = n)
@@ -209,7 +209,7 @@ tconvergencia
 Si comenzamos con una población mucho más cerca a la estructura estable, podemos calcular el tiempo de convergencia. Digamos que se comienza con una población de 8, 20, 27 34 individuos en las etapas plantulas, juveniles, adultos no reproductivos y adultos reproductivos, respectivamente. En este caso se espera que la población alcance la estructura estable en 6 meses. En este caso vemos que el tiempo de convergencia es mucho más corto que si se comienza con una población sesgada de solamente plántulas.  Es acercamiento puede ser util cuando se hace trabajo de conservación, por ejemplo se establece una nueva población con x cantidades de individuos en cada etapa.
 
 
-```{r converngence2}
+```{r}
 
 n2 = c(8, 20, 27, 34)
 tconvergencia <- convt(Lr1, accuracy = 1e-3, vector = n2)
@@ -225,7 +225,7 @@ tconvergencia
 
 El valor reproductivo *v* es un indice de la contribución de cada categoría de edad/estado a la tasa de crecimiento poblacional. En el caso de *Lepanthes rubripetala* se espera que la categoría de adultos reproductivos contribuya más a la tasa de crecimiento poblacional, seguido por la categoría de adultos no reproductivos, juveniles y plántulas. Los valores en la lista de *v* se compara con la primera edad/estado y siempre la primera etapa/estado tiene un valor de 1.000. Por consecuencia un individuo de la 4ta etapa (adulto reproductivo) tiene un potencial de dejar 2.7 individuos al comparar que una plantula tiene solamente tiene un valor de 1.0. La diferencia es que los individuos pequeños tienen que sobrevivir y llegar a las etapas mayores para contribuir a la tasa de crecimiento poblacional.
 
-```{r valorreproductivo}
+```{r}
 
 valor_repro=reproductive.value(Lr1)
 valor_repro

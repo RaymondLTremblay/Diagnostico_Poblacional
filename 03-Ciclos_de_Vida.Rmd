@@ -38,12 +38,12 @@ matA <- rbind(
 )
 
 
-stages <- c("semillas", "plantulas", "adultos")
+etapas <- c("semillas", "plantulas", "adultos")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA), 3)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
   "PaleGreen4", "PaleGreen4", "Goldenrod1"
@@ -97,12 +97,12 @@ matA <- rbind(
 )
 
 
-stages <- c("semillas", "plantulas", "juvenil", "adultos")
+etapas <- c("semillas", "plantulas", "juvenil", "adultos")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA), 3)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
   "PaleGreen4", 
@@ -175,12 +175,12 @@ matA <- rbind(
 )
 
 
-stages <- c("semillas", "plántulas", "tamaño 1", "tamaño 2", "tamaño 3")
+etapas <- c("semillas", "plántulas", "adulto 1", "adulto 2", "adulto 3")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA), 5)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
   "PaleGreen4", 
@@ -240,12 +240,12 @@ matA_Th=matrix(c(
 
 matA_Th
 
-stages <- c("inmaduros", "reproductivo_pequeños", "reproductivo_grandes")
+etapas <- c("inmaduros", "reproductivo_pequeños", "reproductivo_grandes")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA_Th), 3)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
   "red", "PaleGreen4", "PaleGreen4", 
@@ -306,12 +306,12 @@ matA <- rbind(
 )
 
 
-stages <- c("plántulas", "adultos vegetativos", "adultos reproductivos", "latencia")
+etapas <- c("plántulas", "adultos vegetativos", "adultos reproductivos", "latencia")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA), 4)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 2
 graph$col <- c(
   "blue", 
@@ -369,12 +369,12 @@ G1=matrix(c(0.0080, 0.0184,   0.0149, 0.0148,
             0,       0,       0.3050, 0), byrow=TRUE,ncol=4)
 
 
-stages <- c("Vegetativa", "Ind. con Flores", "Latencia año 1", "Latencia año 2")
+etapas <- c("Vegetativa", "Ind. con Flores", "Latencia año 1", "Latencia año 2")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(G1), 4)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 2
 graph$col <- c(
   "red", "PaleGreen4", "blue",
@@ -436,12 +436,12 @@ matA_Os
 
 
 
-stages <- c("Protocormos", "tuberculos", "Plantulas", "Juveniles", "Sin Flores", "Con Flores")
+etapas <- c("Protocormos", "tuberculos", "Plantulas", "Juveniles", "Sin Flores", "Con Flores")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA_Os), 3)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 2
 graph$col <- c(
    "PaleGreen4",
@@ -502,16 +502,17 @@ matA <- rbind(
 )
 
 
-stages <- c("plántula", "juvenil", "adulto")
+etapas <- c("plántula", "juvenil", "adulto")
 title <- NULL
-graph <- expand.grid(to = stages, from = stages)
+graph <- expand.grid(to = etapas, from = etapas)
 graph$trans <- round(c(matA), 3)
 graph <- graph[graph$trans > 0, ]
-nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
 graph$col <- c(
   "red", 
-  "Goldenrod1", "MediumOrchid4", "PaleGreen4"
+  "Goldenrod1", 
+  "MediumOrchid4",  "red"
 )
 edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
   "[minlen=", graph$min_len,
@@ -552,7 +553,7 @@ Nota aquí podemos usar otro paquete de R (Rage). La diferencia es que no se pue
 
 ```{r chap2_4}
 library(Rage)
-plot_life_cycle(matA, stages=stages, fontsize = 0)
+plot_life_cycle(matA, stages=etapas, fontsize = 0)
 
 ```
 

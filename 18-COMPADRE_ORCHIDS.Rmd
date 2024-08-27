@@ -99,11 +99,11 @@ names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE
 
  - Para filtrar para un genero específico se puede usar el siguiente código.
     - Aquí seleccionamos todas las matrices del genero **Epipactis**. 
-    - Nota que hay 59 filas, que corresponde tipicamente a 59 matrices de diferentes poblaciones, tiempo o un análisis teóricos.
+    - Nota que hay 59 filas, que corresponde típicamente a 59 matrices de diferentes poblaciones, tiempo o un análisis teóricos.
 
 ```{r chap16_5}
 Epi = TodasSp %>% 
-  filter(Genus %in% c("Serapias"))
+  filter(Genus %in% c("Epipactis")) # Extraer las matrices de Epipactis en la base de datos.
 Epi # This shows that the species added Epidendrum xanthinum is not yet included in the data base
 ```
 
@@ -224,7 +224,7 @@ NOTA: OrganismType es una variable que indica si la orquídea es un epifita o te
 SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation, mat) %>% 
   group_by(SpeciesAccepted, YearPublication, OrganismType, StudyStart, StudyEnd) %>% 
   summarize(n_populations = length(unique(MatrixPopulation))) %>% 
-  arrange(desc(n_populations)) %>% 
+  arrange(SpeciesAccepted) %>% 
   mutate(StudyStart=as.numeric(StudyStart)) %>% 
   mutate(StudyEnd=as.numeric(StudyEnd)) %>% 
   drop_na(StudyStart, StudyEnd)
@@ -240,7 +240,7 @@ SPECIES_O
 
 ### Determinar cuantas poblaciones se uso para la investigaciones
 
- - La cantidad de poblaciones por especies en la base de datos de COMPADRE. La mayoria de los estudios usaron una sola población, pero hay estudios que usaron hasta 18 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. 
+ - La cantidad de poblaciones por especies en la base de datos de COMPADRE. La mayoría de los estudios usaron una sola población, pero hay estudios que usaron hasta 18 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. 
 
 ```{r chap16_12}
 as.data.frame(table(SPECIES_O$n_populations))
