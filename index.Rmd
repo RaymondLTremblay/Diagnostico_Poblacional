@@ -15,7 +15,7 @@ bibliography: [book.bib, packages.bib]
 # biblio-style: apalike. # only applies to pdf format
 
 description: |
-  Este libro digital es una introdución al estudio de la Dinamica Poblacional
+  Este libro digital es una introdución al estudio de la Dinámica Poblacional
 link-citations: yes
 
 editor_options: 
@@ -25,11 +25,73 @@ editor_options:
 
 # Dinámica Poblacional
 
-El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y inter-específicos.  Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocaran en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos.    
+El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y variables inter-específicos que impacta el crecimiento de una especies en particular.  Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocan en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda las áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos. Para entender los procesos dinámicos de cualquier especie al principio un debería comenzar por modelos simples y con el tiempo ir complicando los modelos para entender los procesos más complejos y evaluar si realmente complicando los modelos se puede explicar mejor los procesos.  Este libro comienza por explicar las herramientas, conceptos y métodos más básicos en la dinámica poblacional enfatizando los supuestos y la limitaciones en el uso de cada indices y sus acercamientos. Al final del libro de enfatiza múltiples puntos que el investigador debería considerar al momento de hacer un análisis de dinámica poblacional, para reducir los sesgos y errores en el análisis. 
 
 ## Objetivo del libro: 
 
-Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando (cuando se puede) la matemática más básica para profundizar los métodos matemáticos y como se interpreta de forma biológica.  En cada caso se ampliará con métodos y funciones disponible en varios paquetes de R para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en R, y algunos en Excel. 
+Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto tradicional, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando (cuando se puede) la matemática más básica para profundizar los métodos matemáticos y como se interpreta de forma biológica.  En cada caso se ampliará con métodos y funciones disponible en varios paquetes de R para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en R, y algunos en Excel. 
+
+
+## Estructura del libro
+
+El libro se divide en xx capítulos. Estos capítulos están organizados para que el lector pueda seguir el proceso de recolección de datos, análisis y interpretación de los resultados. Incluyendo nuevos acercamientos en el análisis de datos de dinámica poblacional.
+
+1. **Ciclo de vida de una especie**:
+
+El primer capitulo presenta un concepto fundamental en la dinámica poblacional, el ciclo de vida. Cada especie tiene un ciclo de vida **REAL**, donde el investigador siempre debería tratar de replicar en la recolección de datos incluyendo información para cada etapa de la vida de la especie. El ciclo de vida **REAL** es la base para entender los procesos de la dinámica poblacional. Noto aquí que entre el ciclo de vida **REAL** de una especie y la capacidad de recolección de datos sobre el mismo hay una brecha que el investigador debería tratar de cerrar. Un ejemplo extremo, recientemente acaban de descubrir un cadáver de una especies de ballena en Nueva Zelanda, que se llama "Spade tooth whale" donde se ha encontrado desde su descripción (1874) solamente 6 individuos. Sin duda hacer un estudio considerando el ciclo de vida de esta especie es un reto.  
+
+En las orquídeas, las etapas de semillas, germinación (colonización de semillas por un hongo apropiado para su germinación en el campo) y plántulas son etapas críticas en el ciclo de vida de la especie, pero son etapas que son difíciles de recolectar datos. Estas etapas son primordial para entender la dinámica poblacional de las orquídeas, pero desafortunado estamos todavía muy ignorante de estas etapas en el campo. Enfatizo el el hecho que son procesos en el hábitat natural, mucho de lo que conocemos es de estudios en laboratorio, que pudiese ser procesos y patrones sesgados. 
+
+Lo importante de este capitulo es reconocer varios aspectos del ciclo de vida de una especie y como se puede recolectar y categorizar de forma practica para la recolección de datos para entender los procesos de la dinámica poblacional. 
+
+2. **Recolección de datos**:
+El segundo capitulo se enfoca en la recolección de datos en el campo, métodos de muestreo, marcar, identificar. Enfatizamos tres tipos de recolección de datos basado en su ciclo de vida, epifitas, terrestres, y terrestres con latencia. Para ayudar en la compresión de los métodos de muestreo se presentará ejemplos de la literatura o experiencia de los autores. En el proceso de marca y recaptura se sugiere múltiples métodos para reducir los errores de confusión en identificar individuos entre poblaciones y periodo de muestreo.
+
+3. **Transiciones de etapa/edad**:
+El tercer capitulo se enfoca en como calcular las transiciones de una etapa/edad de un muestreo a otro. Se comienza con análisis que se puede hacer a mano, y después se presentará como hacerlo en R.  En este capitulo se presenta los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.
+
+4. **Calcular la fecundidad**:
+
+Este capitulo se enfoca en como calcular la fecundidad de una especie. El capitulo se enfoca en tratar de que los investigadores reconozcan que los indices de fecundidad tienen que estar relacionados con las etapas de vida de la especie. En otra palabra si la primera etapa del ciclo de vida son plántulas, la fecundidad debería ser relacionada con la producción de semillas que se convierte en plántulas. En este capitulo se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones. 
+
+
+5. **Relación entre las matriz de transiciones, fecundidad y clonaje**:
+
+Este capitulo se enfoca en como relacionar las diferentes matrices de transiciones, fecundidad y clonaje. Que la sima de las tres tipo de matriz refleje el ciclo de vida de la especie estudiado. 
+
+
+6. **Métodos Bayesiano de calcular las transiciones y fecundidad**:
+
+Este nuevo procedimiento incluido en un paquete de R, llamado **raretrans** tiene como objetivo resolver múltiples asuntos en la estimación de los parámetros de transiciones y fecundidad. Específicamente en la falta de datos de transiciones raras y datos sin sentido biológicos. Aunque este paquete es nuevo y no ha sido probado en múltiples especies, se espera que este paquete sea una herramienta útil para los investigadores que trabajan con datos de dinámica poblacional especialmente cuando se trata de especies raras donde la recolección de datos es limitada.
+
+
+7. **Crecimiento poblacional**:
+
+El crecimiento poblacional se refiere a si la población es estable, creciendo o reduciendo. Se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.
+
+8. **Análisis de sensibilidad y elasticidad**:
+
+9. **Indices de historia de vida**:
+
+10. **Dinámica de transiciones**:
+
+11. **Funciones de transferencias**:
+
+12. **Experimento de Respuesta de Tabla de Vida**:
+
+13. **Variación espacial y Temporal: simulaciones**:
+
+14. **Impactos de datos sin sentidos**:
+
+15. **Un protocolo para informar sobre modelos discreto de estructura de población**:
+
+16. **Estudios evolutivos de la dinámica poblacional: Ejemplos con Orquídeas**:
+
+17. **Sinopsis de Estudios de Dinámica Poblacional en Orquidea**:
+
+18. **COMPADRE: Una base de datos de matrices de vida de plantas**:
+
+19. **Conclusiones**:
 
 
 
@@ -50,10 +112,11 @@ Los paquetes principales para el análisis de dinámica poblacional al incluye
 
 Otros paquetes que se usan para analizar datos, mayormente para manipular datos, hacer modelos estadísticos y visualización incluye:
 
- - *ggplot2*
- - *dplyr*
- - *tidyr*
- - *lubridate*
+ - *ggplot2*: # para hacer gráficos 
+ - *dplyr*: # para manipular datos
+ - *tidyr* # para manipular datos
+ - *lubridate* # para trabajar con fechas
+
  
 
 

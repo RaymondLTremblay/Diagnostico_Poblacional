@@ -56,20 +56,26 @@ Este capítulo es una introducción a COMPADRE y algunas de la funciones en los 
 
 ### Acceso a los datos de COMPADRE.
 
-Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica poblacional de plantas) y COMADRE (datos de dinamica poblacional de animales). Los datos se pueden acesar directamente en la pagina de web o bajar el archivo de datos al siguiente enlace \<<https://compadre-db.org/Data/Compadre>\> seleccionando la pestaña de **Download COMPADRE**.
+Hay dos métodos de tener acceso a los datos de COMPADRE (datos de dinamica poblacional de plantas) y COMADRE (datos de dinamica poblacional de animales). Los datos se pueden acessar directamente en la pagina de web o bajar el archivo de datos al siguiente enlace \<<https://compadre-db.org/Data/Compadre>\> seleccionando la pestaña de **Download COMPADRE** o **Download COMADRE**.
 
-## Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión meas reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace \<<https://compadre-db.org/Data/Compadre/COMPADRE_v. 
+## Para tener acceso a los datos cuando no esta conectado al internet es necesario bajar el archivo y instalar en su proyecto de RStudio. Al momento de construir el libro la versión más reciente de COMPADRE es la versión 6.23.5.5.0 (May_06_2023) y se puede bajar al siguiente enlace \<<https://compadre-db.org/Data/Compadre/COMPADRE_v. 
 
   - Usando la función *cdb_fetch()* se puede bajar los datos directamente de la pagina de web de COMPADRE.
 
 ```{r chap16_3}
-compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. 
+compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. Tiene que haber activado la librería de Rcompadre.
 
-# USAR el código siguiente si tiene los datos bajado a su computadora. 
-# load(dirección al archivo a su proyecto de RStudio) si tiene el repositorio en su computadora
+
 ```
 
 
+## Acesso a los datos de su computadora
+
+
+
+ - USAR el código siguiente si tiene los datos bajado a su computadora. 
+ 
+ load(dirección al archivo a su proyecto de RStudio) si tiene el repositorio en su computadora
 
 ```{r, echo=FALSE}
 #load("~/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
@@ -79,9 +85,9 @@ compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del r
 
 ***
 
-#### Renombrar la base datos algo sencillo
+#### Renombrar la base datos a algo sencillo
 
-  - En este script se renombrar la base de datos de COMPADRE a algo más sencillo **TodasSp**, como **compadre**.
+  - En este script se renombrar la base de datos de COMPADRE a algo más sencillo **TodasSp**, reemplazando **compadre**.
   - Se visualiza el nombre de cada columna en la base de datos.
     - Hay 59 variables en la base de datos de COMPADRE.
 
@@ -89,22 +95,25 @@ compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del r
 #TodasSp=as_cdb(compadre)  # Un paso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB (COMPADRE Database)
 
 TodasSp=compadre
-names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE
+names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE, Nota que 59 variables en la base de datos de COMPADRE.
 
 ```
 
 ***
 
-#### Evaluate if a genus/species are present in the data base
+#### Evaluar si un genero o especie este en la base de datos de COMPADRE
 
  - Para filtrar para un genero específico se puede usar el siguiente código.
     - Aquí seleccionamos todas las matrices del genero **Epipactis**. 
     - Nota que hay 59 filas, que corresponde típicamente a 59 matrices de diferentes poblaciones, tiempo o un análisis teóricos.
+    
+  
+  **This shows that the species added *Epidendrum xanthinum* is not yet included in the data base**
 
 ```{r chap16_5}
 Epi = TodasSp %>% 
-  filter(Genus %in% c("Epipactis")) # Extraer las matrices de Epipactis en la base de datos.
-Epi # This shows that the species added Epidendrum xanthinum is not yet included in the data base
+  filter(Genus %in% c("Epipactis")) # Filtrar la información de *Epipactis* en la base de datos.
+Epi # Nota que en el genero *Epipactis*, tenemos 51 fila, pero todas son de la misma especie  
 ```
 
 ***
@@ -117,8 +126,7 @@ Epi # This shows that the species added Epidendrum xanthinum is not yet included
 index_O=TodasSp %>% 
  filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
 
-
-head(index_O, n=3)
+head(index_O, n=3) # para visualizar las primera 3 filas de la base de datos de COMPADRE para las orquídeas.
 
 ```
 
@@ -127,7 +135,7 @@ head(index_O, n=3)
 ### Los géneros de la familia Orchidaceae
 
 
- - Cual son los géneros de la familia Orquidaceae incluidos en la base de datos de COMPADRE?
+ - Cual son los géneros de la familia **Orchidaceae** incluidos en la base de datos de COMPADRE?
   - se usa la función **unique()** para seleccionar los géneros únicos en la base de datos.
   - se crea un data frame con los géneros únicos.
 
@@ -144,10 +152,10 @@ gt(Genera)
 
 ### Lista de especies únicas de orquídeas en la base de datos de COMPADRE.
 
- - Cual son las especies únicas de la familia Orquidaceae incluidos en la base de datos de COMPADRE?
+ - Cual son las especies únicas de la familia Orchidaceae incluidos en la base de datos de COMPADRE?
   - se usa la función **unique()** para seleccionar las especies únicas en la base de datos con la variable *SpeciesAccepted*.
   - se crea un data frame con las especies únicas.
-  -
+  - Se arregla el data frame por orden alfabético.
 
 Note que al momento hay 46 especies con nombres únicos en la base de datos
 
@@ -174,24 +182,33 @@ dim(index_O)
 
 ### La fuente de la información
 
-Para saber de cuantos manuscritos distintos provienen esos datos uno puede evaluar la cantidad de DOI_ISBN distintos. En este caso los de esas 647 matrices provienen de 34 fuentes de información publicada, revisada por pares, tesis o informes técnicos.
+Para saber cuantos especies distintas y los manuscritos asociado a los estudios. En este caso los de esas 53 fuentes de información publicada, revisada por pares, tesis o informes técnicos. Algunas especies fueron estudiada y publicada en más de un manuscrito.
 
 ```{r chap16_9}
-unique(index_O$DOI_ISBN)
+index_O |> select(mat, SpeciesAccepted, DOI_ISBN) |>
+  filter(!duplicated(paste0(pmax(SpeciesAccepted, DOI_ISBN), pmin(SpeciesAccepted, DOI_ISBN))))
+
 ```
+
+
+## Frecuencia de autores unicos en la base de datos
 
 Igualmente podemos evaluar cuantos distintos autores son responsable de esas publicaciones. Un total de 37 autores únicos o en grupo son la fuente de esos artículos.
 
 ## *ROBERTO*:
 
-HAY una manera de contabilizar los nombres específicos, no por grupo? Para saber quien más publica sobre orquídeas.
+HAY una manera de contabilizar los nombres específicos (unicos), no por grupo? Para saber quien más publica sobre orquídeas.
 
 ```{r chap16_10}
 unique(index_O$Authors)
 ```
 
 
-En el siguiente script se enseña como estraer la información de una especie específica. En este caso se selecciona la especie **Telipogon helleri**.
+
+
+## Extraer información de una especie específica
+
+En el siguiente script se enseña como extraer la información de una especie específica. En este caso se selecciona la especie **Telipogon helleri**.
 
 ```{r}
 Th=index_O %>% select(SpeciesAccepted, mat, Authors, DOI_ISBN, MatrixDimension) %>% 
@@ -201,7 +218,7 @@ Th
 
 ```
 
-En el siguiente script se enseña la matrices de **Telipogon helleri**.  Nota que la matriz es una lista de matrices de transición (matU) de estados de una población, la matrices de fecundidad (matF), la matrices de clonaje (matC) y la suma de las tres matrices (matU+MatF+matC).
+En el siguiente script se enseña la matrices de **Telipogon helleri** y las etapas de esta matrices.  Nota que el objeto **mat** es una lista de matrices que incluye la matriz de transición (matU) de estados de una población, la matriz de fecundidad (matF), la matriz de clonaje (matC) y la suma de las tres matrices (matA=matU+MatF+matC).
 La información incluye la clases/etapas que los autores usaron. El ciclo de vida incluyo 3 etapas, 1 inmaduras (S1-2) y 2 maduras (S3 y S4). 
 
 
@@ -238,9 +255,9 @@ SPECIES_O
 
 ****
 
-### Determinar cuantas poblaciones se uso para la investigaciones
+### Determinar cual es la frecuancia de poblaciones se uso para la investigaciones
 
- - La cantidad de poblaciones por especies en la base de datos de COMPADRE. La mayoría de los estudios usaron una sola población, pero hay estudios que usaron hasta 18 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. 
+ - Cual es la frecuencia de poblaciones por especies en la base de datos. La mayoría de los estudios usaron una sola población, pero hay estudios que usaron hasta 18 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. 
 
 ```{r chap16_12}
 as.data.frame(table(SPECIES_O$n_populations))
@@ -280,9 +297,9 @@ ggsave("Lenght_survey.png")
 ***
 
 
-### El tiempo de duración de las investigaciones en la base de datos de COMPADRE.
+### Frequencias en el tiempo de duración de las investigaciones en la base de datos de COMPADRE.
 
- - Figura de las duración de las investigaciones en la base de datos de COMPADRE. La mayoría de los estudios de orquideas epifitas duraron pocos años al comparar con especies rterrestres.
+ - Figura de las duración de las investigaciones en la base de datos de COMPADRE. La mayoría de los estudios de orquídeas epifitas duraron pocos años al comparar con especies rterrestres.
 
 
 ```{r chap16_14}
@@ -290,8 +307,8 @@ ggsave("Lenght_survey.png")
 index_O=index_O %>% 
   mutate(StudyDuration=as.numeric(StudyDuration))
 
-table(index_O$StudyDuration)
-table(index_O$OrganismType)
+#table(index_O$StudyDuration)
+#table(index_O$OrganismType)
 
 ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
          geom_histogram(colour="white")+
@@ -312,68 +329,117 @@ ggsave("Duración_Epi_Ter.png")
 
 
 
-### Amalgamando todas las matrices y su información
+### Evaluación de la ergodicidad e irreducibilidad y el valor propio de las matrices
 
-```{r chap16_16}
-
-index <- which(compadre$metadata$Family=="Orchidaceae") 
-names(Compadre)
-
-subset(index_O, Family =="Orchidaceae"  &
-             MatrixDimension >2)
+  - Para la definición de ergodicidad y irreducibilidad vea Capitulo xx
 
 
-subset(index_O,DicotMonoc == "Eudicot" & 
-              Country %in% c("USA", "CAN") & 
-              MatrixDimension > 2)
+Nota que crea una columna con **TRUE** o **FALSE** para cada matriz en la base de datos.
 
-#cdb_compare(index_O,x)
+Las pruebas incluyen
 
 
-x <- subset(index_O,Family == "Orchidaceae")
+ - check_NA_A: Determinar si hay valores faltantes en 'matA' Los valores faltantes ("NA") en las matrices impiden que la mayoría de los cálculos utilicen esas matrices.
 
-x_OT=x %>% 
-  group_by(OrganismType)
-```
+ - check_NA_U: Determinar si hay valores faltantes en 'matU' Los valores faltantes ("NA") en las matrices impiden que la mayoría de los cálculos utilicen esas matrices.
+
+ - check_NA_F: Determinar si hay valores faltantes en 'matF' Los valores faltantes ("NA") en las matrices impiden que la mayoría de los cálculos utilicen esas matrices.
+
+ - check_NA_C: Determinar si hay valores faltantes en 'matC'. Los valores faltantes ("NA") en las matrices impiden que la mayoría de los cálculos utilicen esas matrices.
+
+ - check_zero_U: Determinar si la 'matU' tiene todos ceros (incluido 'NA'). Las submatrices compuestas enteramente de valores cero pueden resultar problemáticas. Puede haber buenas razones biológicas para este fenómeno. Por ejemplo, en la población focal particular en el año focal particular, realmente no se registró una supervivencia. Sin embargo, las submatrices de valor cero pueden provocar que algunos cálculos fallen y puede ser necesario excluirlas.
+
+ - check_zero_F: Determinar si la 'matF' tiene todos ceros (incluido 'NA'). Las submatrices compuestas enteramente de valores cero pueden resultar problemáticas. Puede haber buenas razones biológicas para este fenómeno o de preguntas científicas. Por ejemplo, en la población particular en el año particular, realmente no se registró reproducción. Sin embargo, las submatrices con valores de cero pueden provocar que algunos cálculos fallen y puede ser necesario excluirlas.
+
+- check_zero_U_colsum: Determinar si las columnas de 'matU' suman a cero, esto implica que no hay supervivencia de esa etapa en particular. Esta puede ser una parametrización perfectamente válida para un año/lugar en particular, pero es biológicamente irrazonable a largo plazo y los usuarios pueden desear excluir matrices problemáticas de su análisis.
+
+ - check_singular_U: Determinar si 'matU' es singular. Se dice que las matrices son singulares si no se pueden invertir. Se requiere inversión para muchos cálculos matriciales y, por lo tanto, la singularidad puede hacer que algunos cálculos fallen.
+ 
+ - check_component_sum: Determinar si las submatrices 'matU'/'matF'/'matC' suman a 'matA'. Un MPM completo ("matA") se puede dividir en las submatrices que lo componen (es decir, "matU", "matF" y "matC"). La suma de estas submatrices debe ser igual al MPM completo (es decir, 'matA' = 'matU' + 'matF' + 'matC'). A veces, sin embargo, se producen errores de modo que las submatrices NO suman 'matA'. Normalmente, esto se debe a errores de redondeo, pero es posible que se produzcan errores más importantes.
+
+ - check_ergodic: Determinar si 'matA' es ergódico (ver isErgodic). Algunos cálculos matriciales requieren que el MPM ("matA") sea ergódico. Los MPM ergódicos son aquellos en los que existe un único estado estable asintótico que no depende de la estructura de la etapa inicial. Por el contrario, los MPM no ergódicos son aquellos en los que existen múltiples estados estables asintóticos, que dependen de la estructura de la etapa inicial. Los MPM que no son ergódicos suelen ser biológicamente irrazonables, tanto en términos de la descripción de su ciclo de vida como de su dinámica proyectada. Hacen que algunos cálculos fallen.
+
+ - check_irreducible: Detemrinar si 'matA' es irreducible (ver isIrreducible). Algunos cálculos matriciales requieren que el MPM ("matA") sea irreducible. Los MPM irreducibles son aquellos en los que las tasas de transición parametrizadas facilitan el paso de todas las etapas a todas las demás etapas. Por el contrario, los MPM reducibles representan ciclos de vida incompletos donde no son posibles caminos desde todas las etapas a todas las demás etapas. Los MPM que son reducibles suelen ser biológicamente irrazonables (pero no siempre), tanto en términos de la descripción de su ciclo de vida como de su dinámica proyectada. Hacen que algunos cálculos fallen. La irreductibilidad es necesaria pero no suficiente para la ergodicidad. 
+
+ - check_primitive: Detemrinar si 'matA' es primitivo (ver isPrimitive). Una matriz primitiva es una matriz no negativa que es irreducible y tiene un solo valor propio de módulo máximo. Por lo tanto, esta verificación es redundante debido a la superposición con 'check_irreducible' y 'checkErdogic'.
+
+ - check_surv_gte_1: Determinar si 'matU' contiene valores iguales o mayores que 1. La supervivencia está limitada entre 0 y 1. Los valores superiores a 1 no son biológicamente razonables (vea capitulo Impacto de Datos sin sentidos).
 
 
+Usando la función cdb_flag se puede evaluar todas las opciones en la base de datos de COMPADRE. 
 
+Usando la función **cdb_flag** se indetifica problemas potenciales en las matrices de transición de estados de las poblaciones. Esa función añade una fila por opciones en la matriz. 
 
 ```{r chap16_17}
 #Orchids_New=as_cdb(index)
 #compadre$mat[index]
 
-Compadre_flagged <- cdb_flag(index_O)
+Compadre_flagged <- cdb_flag(index_O) # Evaluación de todas las opciones en la base de datos de COMPADRE
 
-x <- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
-x
-y <- subset(Compadre_flagged, check_NA_A == FALSE & check_irreducible == TRUE)
+```
 
-y
-xy <- subset(Compadre_flagged, check_NA_A == FALSE & check_irreducible == TRUE & check_ergodic == TRUE)
-xy
 
-lambdaVals <- sapply(matA(xy), popdemo::eigs, what="lambda")
-summary(lambdaVals)
+#### ergodicidad e irreducibilidad
+
+
+En los siguientes scripts se filtra para las matrices con ciertas condiciones para evaluar si las matrices son ergódicas e irreducibles.  Notas las matrices que son ergodica son irreducibles, pero no todas las matrices irreducibles son ergódicas. Evalué la cantidad de filas en cada caso.
+
+
+
+
+```{r chap16_16}
+
+Mat_ergodic <- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE) # para evaluar si las matrices son ergódicas
+Mat_ergodic 
+
+Mat_irred <- subset(Compadre_flagged, check_NA_A == FALSE & check_irreducible == TRUE) # para evaluar si las matrices son irreducibles
+Mat_irred
+
+
+Mat_erg_irred <- subset(Compadre_flagged, check_NA_A == FALSE & check_irreducible == TRUE & check_ergodic == TRUE) # para evaluar si las matrices son ergódicas e irreducibles al mismo tiempo
+Mat_erg_irred 
+
+
+```
+
+
+### Ahora usando las matrices que cumple con las condiciones de ergodicidad y irreducbilidad se puede calcular el valor propio de lambda.
+
+ - La función **eigs** calcula los valores propios de una matriz, la función proviene de la library(popdemo). En este caso se calcula el valor propio de lambda para las matrices que son ergódicas e irreducibles previamente seleccionado. Usando la función **sapply** se aplica la función **eigs** a todas las matrices en la base de datos y crea una lista de los cálculos. Si mira la lista de valores propios de lambda en el objeto **lambdaVals** se un valor por cada **matA** incluido en el archivo.
+ - Se usa la función **summary** para resumir los valores propios de lambda.
+ - Se usa la función **hist** para visualizar la distribución de los valores propios de lambda.
+
+
+```{r}
+
+lambdaVals <- sapply(matA(Mat_erg_irred), popdemo::eigs, what="lambda")
+summary(lambdaVals) # la distribuciones de los lambdas
 hist(lambdaVals, main = "Lambda values")
 ```
+
+
+Una segunda alternativa es usar la función **map_dbl** de la librería **purrr** para calcular cada uno los valores propios de lambda. 
+ 
+ - Las función de **map_dbl** transforman su entrada aplicando una función a cada elemento de una lista y devolviendo un objeto de la misma longitud que la entrada. En este caso por cada **matA**, habrá un lambda. 
 
 ```{r chap16_18}
 
 library(purrr)
-lambdaVals1 <- map_dbl(matA(xy), ~popdemo::eigs(.x, what="lambda"))
+## con el paquete popdemo
+lambdaVals1 <- map_dbl(matA(Mat_erg_irred), ~popdemo::eigs(.x, what="lambda"))
  
  
-#Or with popbio, which avoids some warning messages…
-lambdaVals2 <- map_dbl(matA(xy), ~popbio::lambda(.x))
+##O con el paquete popbio, que evita algunos mensajes de advertencia
+
+lambdaVals2 <- map_dbl(matA(Mat_erg_irred), ~popbio::lambda(.x))
 ```
 
 
 ### Need to move this before as the Caladenia's are terrerstrial and not epiphytes
-
+## Resolve the name of this data frame... Give it a more reasonable name
 
 ```{r chap16_19}
-x2=xy %>% 
+x2=Mat_erg_irred %>% 
   mutate(OrganismType = case_when(
     Genus ==  "Caladenia" & OrganismType == "Epiphyte" ~ "Herbaceous perennial",
     TRUE ~ OrganismType
@@ -410,6 +476,10 @@ lambda_epi <- map_dbl(matA(x_epi), ~popdemo::eigs(.x, what="lambda"))
 lambda_terr <- map_dbl(matA(terr), ~popbio::lambda(.x))
 ```
 
+
+Con la función evaluando las especies terrestres y epifitas uno observa que las especies terrestres tienen valores propios de lambda más dispersos que las especies epifitas, y aunque los promedios son distintos la mediana es similar. 
+
+
 ```{r chap16_21}
 summary(lambda_epi)
 hist(lambda_epi, main = "Lambda values")
@@ -417,6 +487,8 @@ hist(lambda_epi, main = "Lambda values")
 summary(lambda_terr)
 hist(lambda_terr, main = "Lambda values")
 ```
+Para visualizar loa datos en una figura de **ggplot2**, hay que convertir estas filas en un data.frame y añadir una columna con el tipo de habitad, renombrar la columna lambda y unir los dos data.frames en uno solo.
+
 
 ```{r chap16_22}
 df_Lamb_epi=as.data.frame(lambda_epi)
@@ -434,6 +506,8 @@ df_Lamb_terr=df_Lamb_terr %>%
 ALL_Lambdas=rbind(df_Lamb_epi, df_Lamb_terr)
 ```
 
+
+
 ```{r chap16_23}
 
 ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
@@ -444,6 +518,9 @@ ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
 ggsave("Terr_Epi_lambda.png")
 ```
 
+Para calcular los coeficientes usando un modelo lineal se puede usar la función **lm**. En este caso se usa la variable **Habit_Type** para predecir el valor propio de lambda. Añadiendo un **-1** al modelo hace que los coeficientes para cada grupo este en la tabla de salida y no hay que hacer un calculo suplementario. Note que lo más interesante de este análisis es que las especies terrestres tienen menos dispersión cuando evaluado con el error estandard que las especies epifitas, y aunque los cuartiles son más amplios (análisis anterior).
+
+
 
 ```{r}
 model_lambda=lm(lambda ~ Habit_Type-1, data=ALL_Lambdas)
@@ -453,6 +530,8 @@ library(broom)
 tidy(model_lambda)
 
 ```
+
+Uno puedo visualizar estas distrbuciones usando la librería **ggdist** y **distributional**, con la función **stat_halfeye**. Es importante notar que la función **stat_halfeye** requiere que se especifique la distribución de los datos y que la información proviene del modelo anterior (model_lambda). 
 
 
 ```{r}
@@ -468,7 +547,7 @@ model_lambda %>%
 ```
 
 
-
+La gráfica anterior puede esconder la dispersión de los datos, específicamente los datos sesgados, por lo que se puede añadir los datos originales a la figura. En el siguiente caso se añade un **|** por cada lambda en la posición inferior de la figura. Nota ahora que la dispersión de los datos es varia si uno mira la distribución con el promedio y el error estandard versus los datos originales, los **|**.
 
 
 ```{r}
@@ -480,8 +559,6 @@ ALL_Lambdas %>%
     aes(xdist = dist_student_t(df = df.residual(model_lambda), mu = .fitted, sigma = .se.fit)),
     scale = .5
   ) +
-  # we'll add the data back in too (scale = .5 above adjusts the halfeye height so
-  # that the data fit in as well)
   geom_point(aes(x = lambda), data = ALL_Lambdas, pch = "|", size = 2, position = position_nudge(y = -.15))
 
 ```
@@ -489,7 +566,10 @@ ALL_Lambdas %>%
 
 
 
-### The number of populations
+### La cantidad de poblaciones por especies en la base de datos de COMPADRE.
+
+ - La cantidad de poblaciones por especies en la base de datos de COMPADRE. La mayoría de las especies tienen una sola población, pero hay especies que tienen hasta 20 poblaciones distintas. Estas poblaciones pudiese ser de diferentes publicaciones. Por ejemplo los datos de *Lepanthes rupestris* provienen de dos publicaciones distintas [@tremblay2001gene; @tremblay2014bayesian], hasta pudiese en parte ser matrices recolectado de la misma población en los años, pero con objetivos distintos. En la primera publicación [@tremblay2001gene] se uso para evaluar el tamaño efectivo de la poblaciones, Ne. En la segunda publicación [@tremblay2014bayesian] se uso para lo datos de las misma poblaciones y periodo de tiempo evaluar un nuevo método para calcular los elementos de la matriz cuando hay pocos datos en cada población o tiempo y se aprovecha del conocimiento de la información para tener estimados de los parámetros más biologícamente realista.  
+
 
 ```{r chap16_24}
 x2 %>% 
@@ -520,49 +600,50 @@ plot(index_O$Lon,index_O$Lat,main = "Location")
 
 
 ```{r chap16_26}
-ggplot2::ggplot(x2, aes(Lon, Lat)) +
+ggplot2::ggplot(x2, aes(Lon, Lat,colour=OrganismType)) +
   borders(database = "world", fill = "grey80", col = NA) +
-  geom_point(col = "steelblue", size = 1.8, alpha = 0.8)
+  geom_point(size = 1.8, alpha = 0.8)+
+  theme(legend.position = c(.55, 0.2))
 
-ggsave("orchid_map.jpg")
+#ggsave("orchid_map.jpg")
 ```
 
 
 
 ## Como Calcular la esperanza de vida en R con la base de datos de COMPADRE
 
-## Important to include only matrices that are annual.
+Cada especies tiene un promedio de largo de vida y una distribución de supervivencia. En los humanos el largo de vida promedio es de ±72 años (y varia por país y otros factores), pero hay personas que viven hasta 100 años o más. En las orquídeas el largo de vida promedio es de 10 años, pero hay orquídeas que viven hasta 100 años o más. Para calcular el largo de vida de una especies se usa la matriz de transición **matU** y la etapa de inicio de la vida **start_life**. La función **lifeExpectancy** calcula el largo de vida de una especies. Nota que este caso no se usa la matriz de fecindidad **matF** o la matriz de clonaje **matC**. 
 
-Unless we data wrangle the life span so it represent a year worth instead of life span.
+Para calcular y comparar los datos es importante que la matriz sea del mismo largo de tiempo, por ejemplo no se debería comparar una matriz de 1 año con una matriz de 1 mes o de 10 años. Los valores de tiempo es la unidad de los datos de la matriz. 
+
+Aquí el script crear un data frame de los valores del largo de vida para cada especies con matrices de transiciones de un año.
 
 ```{r chap16_27}
-library(Rage
-)# function to calculate life expectancy
+library(Rage) # función para calcular el largo de vida esperada
 lifeExpectancy <- function(matU, startLife) {
   N <- solve(diag(nrow(matU)) - matU)
   return(colSums(N)[startLife])
 }
 
 compadre_life_expect <- x2 %>% 
-  filter(ProjectionInterval >0.7) |> 
-  filter(MatrixComposite == "Mean", # filter is the dplyr version of subset
-         MatrixTreatment == "Unmanipulated",
-         MatrixCaptivity == "W",
-         #ProjectionInterval == "1"
+  filter(ProjectionInterval == 1.0) |> # filtrar para matriz de un año
+  filter(MatrixComposite == "Mean", # filtrar para la matriz promedia
+         MatrixTreatment == "Unmanipulated", # filtrar para la matriz sin manipulación
+         MatrixCaptivity == "W", # filtrar para poblaciones naturales (no en cautiverio)
+         ProjectionInterval == "1"
          ) %>% 
-  mutate(StageID = cdb_id_stages(.)) %>%
-  cdb_collapse(columns = "StageID") %>%
-  cdb_flag() %>% 
-  filter(check_NA_U == FALSE,
-         check_zero_U == FALSE,
-         check_singular_U == FALSE) %>% 
-  mutate(matU = matU(.), start_life = mpm_first_active(.)) %>% 
-  mutate(life_expectancy = mapply(lifeExpectancy, matU, start_life)) %>% 
-  mutate(var_life_expectancy = mapply(life_expect_var, matU, start= 1)) %>%
-  mutate(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy)) %>% 
-  mutate(high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy)) %>% 
- # filter(life_expectancy >= 1) %>% 
-  mutate(OrganismType = reorder(OrganismType, life_expectancy, median)) 
+  mutate(StageID = cdb_id_stages(.)) %>% # crear un ID para las etapas
+  cdb_collapse(columns = "StageID") %>% # colapsar las etapas
+  cdb_flag() %>% # evaluar las matrices
+  filter(check_NA_U == FALSE, # filtrar para matrices sin valores faltantes
+         check_zero_U == FALSE, # filtrar para matrices sin valores cero
+         check_singular_U == FALSE) %>% # filtrar para matrices no singulares
+  mutate(matU = matU(.), start_life = mpm_first_active(.)) %>% # extraer la matriz de transición y la etapa de inicio de la vida
+  mutate(life_expectancy = mapply(lifeExpectancy, matU, start_life)) %>% # calcular el largo de vida
+  mutate(var_life_expectancy = mapply(life_expect_var, matU, start= 1)) %>% # calcular la varianza del largo de vida
+  mutate(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy)) %>% # calcular el intervalo de confianza inferior
+  mutate(high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy)) %>%  # calcular el intervalo de confianza superior
+  mutate(OrganismType = reorder(OrganismType, life_expectancy, median)) # ordenar las especies por el largo de vida
 
 
 
@@ -572,6 +653,10 @@ compadre_life_expect
 
 ```
 
+
+
+
+Visualizar el largo de vida por plantas epifitas versus terrestres. Nota aquí que algunas especies están representada múltiple veces. Por consecuencia la distribución de los datos no es una buena representación de la diferencia entre las especies epifitas y terrestres, debido a lo que se llama pseudoreplicación. Este figura representa la distribución los datos del data frame anterior. 
 
 
 
@@ -600,13 +685,16 @@ ggsave("Life_Span.png")
 
 https://jonesor.github.io/Rage/reference/life_expect.html
 
-How to calculate CI of life span
+En el siguiente script y grafico vemos la visualización por genero de los estimados de la esperanza de vida. Nota que la esperanza de vida es un estimado y no un valor exacto. En este caso se usa la función **life_expect_var** para calcular la varianza de la esperanza de vida. La escala de x (el largo de vida fue cambiado a log10 de la esperanza de vida). 
 
+**How to calculate CI of life span, it is in the table above, use gamma, not normal**
 
+low_CI_var_LS
+high_CI_var_LS
 
 ```{r chap16_28}
 
-SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
+#SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE) # Ordenar por fecha de inicio del estudio 
 
 #compadre_life_expect |> select(mat, Genus, SpeciesAccepted, life_expectancy) |> 
 #  group_by(SpeciesAccepted) |> 
@@ -717,7 +805,7 @@ Compadre$matA <- matA(Compadre)
 # create empty vector to store output
 Compadre$dim <- numeric(nrow(Compadre))
 
-index$dim <- numeric(nrow(index_O))
+#index$dim <- numeric(nrow(index_O))
 
 # loop through all rows of Compadre
 for (i in seq_len(nrow(Compadre))) {
