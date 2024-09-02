@@ -1,13 +1,36 @@
 ---
-title: "Dinamica_Poblacional"
+title: "Dinamica Poblacional"
 #output:
 #  bookdown::gitbook:
 #    highlight: tango
     #code_folding: hide
-
-
-    
-author: ""
+author: 
+ - name: Raymond L. Tremblay 
+   affiliation: Universidad de Puerto Rico, Recinto de Río Piedras y Humacao, Departamento de Biología, San Juan, Puerto Rico
+ - name: Aucencia Emeterio Lara
+   affiliation: Colegio de la Frontera Sur, ECOSUR, México
+ - name: Elaine González
+   affiliation: Orquídeario Soroa, Universidad de Pinar del Río, Apdo. postal No. 5 Candelaria, Pinar del Río, Cuba
+ - name: Mariana Hernández-Apolinar
+   affiliation: Universidad Nacional Autónoma de México, Facultad de Ciencias, México
+ - name: Fabiola Hernández
+   affiliation: Colegio de la Frontera Sur, ECOSUR, México
+ - name: Diana C. Molina Ozuma
+   affiliation: Colegio de la Frontera Sur, ECOSUR, México
+ - name: Demetria Mondragón
+   affiliation: Centro Interdisciplinario para la Investigación Integral Regional, CIIDIR-Oaxaca, México
+   
+ - name: Ernesto Mujíca Benitez
+   affiliation: Orquídeario Soroa, Universidad de Pinar del Río, Apdo. postal No. 5 Candelaria, Pinar del Río, Cuba
+ - name: Paola Portillo Tzompa
+   affiliation: Universidad Nacional Autónoma de México, Facultad de Ciencias, México
+ - name: Roberto Salguero Gómez
+   affiliation: Laboratory of Evolutionary Biodemography Laboratory, Max Planck Institute for Demographic Research, Konrad-Zuse-Straße 1, Rostock DE-18057, Germany; ARC Centre of Excellence for Environmental Decisions, School of Biological Sciences, The University of Queensland, Goddard building 8, St. Lucia, Qld 4072, Australia;
+ - name: Adriana Ramírez Martínez
+   affiliation: Centro Interdisciplinario para la Investigación Integral Regional, CIIDIR-Oaxaca, México
+ - name: Tamara Ticktin
+   affiliation: Department of Botany, University of Hawaii at Manoa, 3190 Maile Way, Honolulu, HI 96822, USA.
+   
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -20,8 +43,20 @@ link-citations: yes
 
 editor_options: 
   markdown: 
-    wrap: 72    
+    wrap: 72 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Dinámica Poblacional
 
@@ -81,19 +116,25 @@ El crecimiento poblacional se refiere a si la población es estable, creciendo o
 
 13. **Variación espacial y Temporal: simulaciones**:
 
-14. **Impactos de datos sin sentidos**:
+14. **Impacto de datos sin sentidos**:
+
+Este capitulo es *PRIMORDIAL* para los investigadores que trabajan con datos de dinámica poblacional y debería ser capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. Hay un dicho en Ingles que dice, *Garbage in Garbage out*. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven, .  En este capitulo se presentará múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa. 
 
 15. **Un protocolo para informar sobre modelos discreto de estructura de población**:
 
+En este capitulo se presenta un protocolo para informar sobre modelos discreto de estructura de población. Este protocolo es una guía para los investigadores para asegurar que toda la información necesaria es presente para evaluar críticamente sus manuscritos. Este capitulo es una traducción de **A standard protocol to report discrete stage-structured demographic information** [@gascoigne2023standard]. Antes de publicar se debería asegurar que cumple con la mayoría de las recomendaciones presentadas en este protocolo.
+
 16. **Estudios evolutivos de la dinámica poblacional: Ejemplos con Orquídeas**:
 
-17. **Sinopsis de Estudios de Dinámica Poblacional en Orquidea**:
+17. **Sinopsis Históricos de Estudios de Dinámica Poblacional en Orquidea**:
 
 18. **COMPADRE: Una base de datos de matrices de vida de plantas**:
 
+Todos las publicaciones (revido por pares, tesis, informes técnicos) que tienen matrices de vida de plantas están incluido en COMPADRE (por lo menos es el objetivo). En este capitulo se presenta la base de datos con un sub-grupo de especies (las Orquídeas) y se evalúa como utilizar la base datos. La funciones (scripts) para extraer las matrices y analizar los datos están disponible en el paquete de R **RCompadre**. En adición se evalúa múltiples hipótesis sobre la dinámica poblacional de las orquídeas y determinar si hay patrones generales en la dinámica poblacional de las orquídeas entre grupos (por ejemplo terrestres vs. epífitas, distribución mundial, tiempo de estudios, etc). Este un capitulo para dar ideas a investigadores que trabajan con datos de dinámica poblacional y como se puede hacer análisis de datos a gran escala. 
+
 19. **Conclusiones**:
 
-
+En este capitulo se presentará las conclusiones generales del libro y se presentará las recomendaciones para futuras investigaciones en la dinámica poblacional. En adición se hace referencias a nuevos métodos y conceptos que no se han presentado en el libro.
 
 ## Funciones y paquetes de R
 
