@@ -5,24 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Dinamica Poblacional</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Dinamica Poblacional" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
 
 
-<meta name="date" content="2024-09-02" />
+<meta name="date" content="2024-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -624,51 +624,57 @@ Centro Interdisciplinario para la Investigación Integral Regional, CIIDIR-Oaxac
 <address class="author_afil">
 Department of Botany, University of Hawaii at Manoa, 3190 Maile Way, Honolulu, HI 96822, USA.<br>
 </address>
-<p class="date"><em>2024-09-02</em></p>
+<p class="date"><em>2024-09-09</em></p>
 </div>
 <div id="dinámica-poblacional" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Capítulo 1</span> Dinámica Poblacional<a href="index.html#dinámica-poblacional" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y variables inter-específicos que impacta el crecimiento de una especies en particular. Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocan en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda las áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos. Para entender los procesos dinámicos de cualquier especie al principio un debería comenzar por modelos simples y con el tiempo ir complicando los modelos para entender los procesos más complejos y evaluar si realmente complicando los modelos se puede explicar mejor los procesos. Este libro comienza por explicar las herramientas, conceptos y métodos más básicos en la dinámica poblacional enfatizando los supuestos y la limitaciones en el uso de cada indices y sus acercamientos. Al final del libro de enfatiza múltiples puntos que el investigador debería considerar al momento de hacer un análisis de dinámica poblacional, para reducir los sesgos y errores en el análisis.</p>
+<p>El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento sobre los patrones y procesos intra-específica y variables inter-específicos que impacta el crecimiento de una especies en particular. Tradicionalmente muchos de los trabajos de dinámica poblacional se enfocan en los estudios intra-específica, fomentando una perspectiva que las especies no inter-actúan con su ambiente abiótico. Como toda las áreas de la ecología el desarrollo de los conceptos tienden a ser simplista al principio y con el tiempo se van complicando de forma conceptual y metodológicos. Para entender los procesos dinámicos de cualquier especie cuando se comienza a estudiar uno debería comenzar por modelos simples y con el tiempo ir complicando los modelos para entender los procesos más complejos y evaluar si realmente complicando los modelos se puede explicar mejor los procesos y patrones. Este libro comienza por explicar las herramientas, conceptos y métodos más básicos en la dinámica poblacional enfatizando los supuestos y la limitaciones en el uso de cada indices y sus acercamientos. Al final del libro se enfatiza múltiples puntos que el investigador debería considerar al momento de hacer un análisis de dinámica poblacional, para reducir los sesgos y errores en el análisis.</p>
 <div id="objetivo-del-libro" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Objetivo del libro:<a href="index.html#objetivo-del-libro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto tradicional, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando (cuando se puede) la matemática más básica para profundizar los métodos matemáticos y como se interpreta de forma biológica. En cada caso se ampliará con métodos y funciones disponible en varios paquetes de R para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en R, y algunos en Excel.</p>
+<p>Este libro es orientado a dos grupos de personas: Para los estudiantes de pre-grado y posgrado que están interesados en aprender sobre la dinámica poblacional y para los investigadores que desean tener una guía de los conceptos y métodos tradicionales y más recientes en la dinámica poblacional. Pero nota que este libro no es un libro de texto tradicional, es una guía práctica de los conceptos y métodos en la dinámica poblacional. En cada capítulo se presentará una introducción a los conceptos y métodos y ejemplos prácticos de como aplicar estos conceptos y métodos usando la matemática más básica y como se interpreta de forma biológica. En cada caso se ampliará con métodos y funciones disponible en varios paquetes de <strong>R</strong> para facilitar el análisis. La gran mayoría de los ejemplos matemáticos básicos se presentarán en <strong>R</strong>, y algunos en <strong>MS Excel</strong>. Al final se debería tener una apreciación de la diversidad de metodologías y conceptos en la dinámica poblacional y como se puede aplicar a su estudio para contestar varios tipos de preguntas ecología, de conservación y evolución.</p>
 </div>
 <div id="estructura-del-libro" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Estructura del libro<a href="index.html#estructura-del-libro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El libro se divide en xx capítulos. Estos capítulos están organizados para que el lector pueda seguir el proceso de recolección de datos, análisis y interpretación de los resultados. Incluyendo nuevos acercamientos en el análisis de datos de dinámica poblacional.</p>
+<p>El libro se divide en <strong>xx</strong> capítulos. Estos capítulos están organizados para que el lector pueda seguir el proceso de recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional.</p>
 <ol style="list-style-type: decimal">
 <li><strong>Ciclo de vida de una especie</strong>:</li>
 </ol>
-<p>El primer capitulo presenta un concepto fundamental en la dinámica poblacional, el ciclo de vida. Cada especie tiene un ciclo de vida <strong>REAL</strong>, donde el investigador siempre debería tratar de replicar en la recolección de datos incluyendo información para cada etapa de la vida de la especie. El ciclo de vida <strong>REAL</strong> es la base para entender los procesos de la dinámica poblacional. Noto aquí que entre el ciclo de vida <strong>REAL</strong> de una especie y la capacidad de recolección de datos sobre el mismo hay una brecha que el investigador debería tratar de cerrar. Un ejemplo extremo, recientemente acaban de descubrir un cadáver de una especies de ballena en Nueva Zelanda, que se llama “Spade tooth whale” donde se ha encontrado desde su descripción (1874) solamente 6 individuos. Sin duda hacer un estudio considerando el ciclo de vida de esta especie es un reto.</p>
-<p>En las orquídeas, las etapas de semillas, germinación (colonización de semillas por un hongo apropiado para su germinación en el campo) y plántulas son etapas críticas en el ciclo de vida de la especie, pero son etapas que son difíciles de recolectar datos. Estas etapas son primordial para entender la dinámica poblacional de las orquídeas, pero desafortunado estamos todavía muy ignorante de estas etapas en el campo. Enfatizo el el hecho que son procesos en el hábitat natural, mucho de lo que conocemos es de estudios en laboratorio, que pudiese ser procesos y patrones sesgados.</p>
-<p>Lo importante de este capitulo es reconocer varios aspectos del ciclo de vida de una especie y como se puede recolectar y categorizar de forma practica para la recolección de datos para entender los procesos de la dinámica poblacional.</p>
+<p>El primer capitulo presenta un concepto fundamental en la dinámica poblacional, el ciclo de vida. Cada especie tiene un ciclo de vida <strong>REAL</strong>, donde el investigador siempre debería tratar de replicar en la recolección de datos incluyendo información para cada etapa/edad de la vida de la especie. El ciclo de vida <strong>REAL</strong> es la base para entender los procesos de la dinámica poblacional. Noto aquí que entre el ciclo de vida <strong>REAL</strong> de una especie y la capacidad de recolección de datos sobre el mismo hay una brecha que el investigador debería tratar de cerrar. Un ejemplo extremo, recientemente acaban de descubrir un cadáver de una especies de ballena en Nueva Zelanda, que se llama “Spade tooth whale” donde se ha encontrado desde su descripción (1874) solamente 6 individuos. Sin duda hacer un estudio considerando el ciclo de vida de esta especie es un reto. Cualquier especie que se estudie con tan pocos datos es un reto, y múltiples supuestos del ciclo de vida de la especie tendrán que ser incluidos. Lo más importante es reconocer lo que es un supuesto (y por consecuencia una hipotesis) y lo que es un hecho.</p>
+<p>En las orquídeas, las etapas de semillas, germinación (colonización de semillas por un hongo apropiado para su germinación en el campo) y plántulas son etapas críticas en el ciclo de vida de la especie, pero son etapas que son difíciles de recolectar datos en el campo. Estas etapas son primordial para entender la dinámica poblacional de las orquídeas, pero desafortunado estamos todavía muy ignorante de estas etapas en el campo, y la variación en los procesos y patrones. Enfatizo el hecho que son procesos en el hábitat natural, mucho de lo que conocemos es de estudios en laboratorio, que pudiese ser procesos y patrones sesgados.</p>
+<p>Lo importante de este capitulo es reconocer varios aspectos del ciclo de vida de una especie y como se puede recolectar y categorizar de forma practica para la recolección de datos para entender los procesos de la dinámica poblacional y reconocer los supuestos y limitaciones de lo que es el ciclo de vida de las orquídeas.</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p><strong>Recolección de datos</strong>:
-El segundo capitulo se enfoca en la recolección de datos en el campo, métodos de muestreo, marcar, identificar. Enfatizamos tres tipos de recolección de datos basado en su ciclo de vida, epifitas, terrestres, y terrestres con latencia. Para ayudar en la compresión de los métodos de muestreo se presentará ejemplos de la literatura o experiencia de los autores. En el proceso de marca y recaptura se sugiere múltiples métodos para reducir los errores de confusión en identificar individuos entre poblaciones y periodo de muestreo.</p></li>
+Ese capitulo se enfoca en la recolección de datos en el campo, métodos de muestreo, marcar, identificar. Enfatizamos tres tipos de recolección de datos basado en su ciclo de vida, epifitas, terrestres, y terrestres con latencia. Para ayudar en la compresión de los métodos de muestreo se presentará ejemplos de la literatura o experiencia de los autores. En adición se presenta múltiples métodos para hacer estudios de marca y recaptura en orquídeas y se sugiere múltiples sistema de marca para reducir los errores de confusión en identificar individuos entre poblaciones y periodo de muestreo.</p></li>
 <li><p><strong>Transiciones de etapa/edad</strong>:
 El tercer capitulo se enfoca en como calcular las transiciones de una etapa/edad de un muestreo a otro. Se comienza con análisis que se puede hacer a mano, y después se presentará como hacerlo en R. En este capitulo se presenta los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.</p></li>
 <li><p><strong>Calcular la fecundidad</strong>:</p></li>
 </ol>
-<p>Este capitulo se enfoca en como calcular la fecundidad de una especie. El capitulo se enfoca en tratar de que los investigadores reconozcan que los indices de fecundidad tienen que estar relacionados con las etapas de vida de la especie. En otra palabra si la primera etapa del ciclo de vida son plántulas, la fecundidad debería ser relacionada con la producción de semillas que se convierte en plántulas. En este capitulo se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.</p>
+<p>Este capitulo se enfoca en como calcular la fecundidad de una especie. El capítulo se enfoca en tratar de que los investigadores reconozcan que los indices de fecundidad tienen que estar relacionados con las etapas de vida de la especie quie se esta modelando. En otra palabra si la primera etapa del ciclo de vida son plántulas, la fecundidad debería ser relacionada con la producción de semillas que se convierte en plántulas. En este capitulo se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.</p>
 <ol start="5" style="list-style-type: decimal">
 <li><strong>Relación entre las matriz de transiciones, fecundidad y clonaje</strong>:</li>
 </ol>
-<p>Este capitulo se enfoca en como relacionar las diferentes matrices de transiciones, fecundidad y clonaje. Que la sima de las tres tipo de matriz refleje el ciclo de vida de la especie estudiado.</p>
+<p>Este capítulo se enfoca en como relacionar las diferentes matrices de transiciones, fecundidad y clonaje. Que la suma de los tres tipo de matriz refleje el ciclo de vida de la especie estudiado. Separar las matriz en una de transición, fecundidad y clonaje ayuda a aclarar los procesos y patrones de la dinámica poblacional en adición que ciertos indices depende que la matriz sea separada. Por ejemplo para calcular el largo de vida de una especies (life span) se usa solamente la matriz de transición.</p>
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Métodos Bayesiano de calcular las transiciones y fecundidad</strong>:</li>
 </ol>
-<p>Este nuevo procedimiento incluido en un paquete de R, llamado <strong>raretrans</strong> tiene como objetivo resolver múltiples asuntos en la estimación de los parámetros de transiciones y fecundidad. Específicamente en la falta de datos de transiciones raras y datos sin sentido biológicos. Aunque este paquete es nuevo y no ha sido probado en múltiples especies, se espera que este paquete sea una herramienta útil para los investigadores que trabajan con datos de dinámica poblacional especialmente cuando se trata de especies raras donde la recolección de datos es limitada.</p>
+<p>Este nuevo procedimiento incluido en un paquete de R, llamado <strong>raretrans</strong> tiene como objetivo resolver múltiples asuntos en la estimación de los parámetros de transiciones y fecundidad. Específicamente en la falta de datos de transiciones raras y datos con parámetros sin sentido biológicos (ejemplo: supervivencia perfecta, ninguna mortandad). Aunque este paquete es nuevo y no ha sido implementado en múltiples especies, se espera que las funciones en este paquete sean herramientas útiles para los investigadores que trabajan con datos de dinámica poblacional especialmente cuando se trata de especies raras donde la recolección de datos es limitada.</p>
 <ol start="7" style="list-style-type: decimal">
 <li><strong>Crecimiento poblacional</strong>:</li>
 </ol>
-<p>El crecimiento poblacional se refiere a si la población es estable, creciendo o reduciendo. Se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones.</p>
+<p>El crecimiento poblacional se refiere a si la población es estable, creciendo o reduciendo. Se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones. Se discute los diferentes tipos de indices de crecimiento poblacional y como se puede interpreta.</p>
 <ol start="8" style="list-style-type: decimal">
-<li><p><strong>Análisis de sensibilidad y elasticidad</strong>:</p></li>
+<li><strong>Análisis de sensibilidad y elasticidad</strong>:</li>
+</ol>
+<p>Los análisis de sensibilidad y elasticidad son herramientas para evaluar la importancia relativa de los cambios en los parámetros de la matriz de transición sobre el crecimiento poblacional. En este capitulo se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones. Se discute cual es la diferencias entre matriz de sensibilidad y elasticidad y como se puede interpretar los resultados como herramienta para el manejo de las especies para su conservación. Un ejemplo de la importancia de estos análisis se encuentra en los trabajos sobre la tortuga boba, <em>Caretta caretta</em> <span class="citation">(<a href="#ref-crouse1987stage">Crouse, Crowder, and Caswell 1987</a>; <a href="#ref-crowder1994predicting">Crowder et al. 1994</a>)</span> donde se ha encontrado que la supervivencia de las hembras adultas es el parámetro más importante para el crecimiento poblacional de la especie, mucho más que la supervivencia de los huevos (eso no quiere decir que uno no debería proteger los huevos). Lo que identifica es que para cada adulto que se protege tiene un potencial de aumento poblacional muchos más grande que salvar un huevo.</p>
+<ol start="9" style="list-style-type: decimal">
 <li><p><strong>Indices de historia de vida</strong>:</p></li>
 <li><p><strong>Dinámica de transiciones</strong>:</p></li>
+</ol>
+<p>La dinámica de transciones evalúa los cambios en parámetros (tamaño poblacional, supervivencia, fecundidad) a lo largo del tiempo o a tiempo corto o largo. Ejemplos, incluye como la distribuciones de etapas al comienzo del estudio impacta el crecimiento poblacional, o como la supervivencia de una etapa impacta el crecimiento poblacional. En este capitulo se presentará los métodos de calcular de forma simple y se discute algunos los supuestos y limitaciones. Gran parte de estos acercamiento fuero desarollados por Stott y collegas <span class="citation">(<a href="#ref-stott2010boom">Stott, Franco, et al. 2010</a>; <a href="#ref-mcdonald2016transients">McDonald et al. 2016</a>)</span> y otros <span class="citation">(<a href="#ref-heggerud2023transient">Heggerud, Abbott, and Hastings 2023</a>)</span> han usado en múltiples estudios de dinámica poblacional evaluando como los cambios de transiciones son dinámicos. La ventaja de esta acercamiento es que se puede evaluar los cambios en los parámetros de la matriz de transición y como impacta el crecimiento poblacional y no asumir que los cambios necesariamente lleguen a una población de son estables.</p>
+<ol start="11" style="list-style-type: decimal">
 <li><p><strong>Funciones de transferencias</strong>:</p></li>
 <li><p><strong>Experimento de Respuesta de Tabla de Vida</strong>:</p></li>
-<li><p><strong>Variación espacial y Temporal: simulaciones</strong>:</p></li>
+<li><p><strong>Variación Espacial y Temporal: simulaciones</strong>:</p></li>
 <li><p><strong>Impacto de datos sin sentidos</strong>:</p></li>
 </ol>
 <p>Este capitulo es <em>PRIMORDIAL</em> para los investigadores que trabajan con datos de dinámica poblacional y debería ser capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. Hay un dicho en Ingles que dice, <em>Garbage in Garbage out</em>. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven, . En este capitulo se presentará múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa.</p>
@@ -716,8 +722,17 @@ El tercer capitulo se enfoca en como calcular las transiciones de una etapa/edad
 <div id="ref-caswell2001matrix" class="csl-entry">
 ———. 2001. <em>Matrix Population Models: Construction, Analysis, and Interpretation</em>. 2nd ed. Sinauer Sunderland, MA.
 </div>
+<div id="ref-crouse1987stage" class="csl-entry">
+Crouse, Deborah T, Larry B Crowder, and Hal Caswell. 1987. <span>“A Stage-Based Population Model for Loggerhead Sea Turtles and Implications for Conservation.”</span> <em>Ecology</em> 68 (5): 1412–23.
+</div>
+<div id="ref-crowder1994predicting" class="csl-entry">
+Crowder, Larry B, Deborah T Crouse, Selina S Heppell, and Thomas H Martin. 1994. <span>“Predicting the Impact of Turtle Excluder Devices on Loggerhead Sea Turtle Populations.”</span> <em>Ecological Applications</em> 4 (3): 437–45.
+</div>
 <div id="ref-gascoigne2023standard" class="csl-entry">
 Gascoigne, Samuel J. L., Simon Rolph, Daisy Sankey, Nagalakshmi Nidadavolu, Adrian S. Stell Pičman, Christina M. Hernández, Matthew E. R. Philpott, et al. 2023. <span>“A Standard Protocol to Report Discrete Stage-Structured Demographic Information.”</span> <em>Methods in Ecology and Evolution</em>.
+</div>
+<div id="ref-heggerud2023transient" class="csl-entry">
+Heggerud, Christopher, Karen Abbott, and Alan Hastings. 2023. <em>Transient Dynamics</em>. Oxford University Press.
 </div>
 <div id="ref-Rage2022" class="csl-entry">
 Jones, Owen R., Patrick Barks, Iain M. Stott, Tamora D. James, Sam C. Levin, William K. Petry, Pol Capdevila, et al. 2022a. <span>“Rcompadre and Rage - Two <span>R</span> Packages to Facilitate the Use of the <span>COMPADRE</span> and <span>COMADRE</span> Databases and Calculation of Life History Traits from Matrix Population Models.”</span> <em>Methods in Ecology and Evolution</em> 13: 770–81. <a href="https://doi.org/10.1111/2041-210X.13792">https://doi.org/10.1111/2041-210X.13792</a>.
@@ -725,8 +740,14 @@ Jones, Owen R., Patrick Barks, Iain M. Stott, Tamora D. James, Sam C. Levin, Wil
 <div id="ref-jones2022rcompadre" class="csl-entry">
 Jones, Owen R, Patrick Barks, Iain Stott, Tamora D James, Sam Levin, William K Petry, Pol Capdevila, et al. 2022b. <span>“Rcompadre and Rage—Two r Packages to Facilitate the Use of the COMPADRE and COMADRE Databases and Calculation of Life-History Traits from Matrix Population Models.”</span> <em>Methods in Ecology and Evolution</em> 13 (4): 770–81.
 </div>
+<div id="ref-mcdonald2016transients" class="csl-entry">
+McDonald, Jenni L, Iain Stott, Stuart Townley, and Dave J Hodgson. 2016. <span>“Transients Drive the Demographic Dynamics of Plant Populations in Variable Environments.”</span> <em>Journal of Ecology</em> 104 (2): 306–14.
+</div>
 <div id="ref-morris2002quantitative" class="csl-entry">
 Morris, William F, Daniel F Doak, et al. 2002. <span>“Quantitative Conservation Biology.”</span>
+</div>
+<div id="ref-stott2010boom" class="csl-entry">
+Stott, Iain, Miguel Franco, David Carslake, Stuart Townley, and Dave Hodgson. 2010. <span>“Boom or Bust? A Comparative Analysis of Transient Population Dynamics in Plants.”</span> <em>Journal of Ecology</em> 98 (2): 302–11.
 </div>
 <div id="ref-popdemo2021" class="csl-entry">
 Stott, Iain, Dave Hodgson, and Stuart Townley. 2021. <em>Popdemo: Demographic Modelling Using Projection Matrices</em>. <a href="https://CRAN.R-project.org/package=popdemo">https://CRAN.R-project.org/package=popdemo</a>.

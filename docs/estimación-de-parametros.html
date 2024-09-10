@@ -5,24 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 10 Estimación de Parametros | Dinamica Poblacional</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 10 Estimación de Parametros | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 10 Estimación de Parametros | Dinamica Poblacional" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
 
 
-<meta name="date" content="2024-09-02" />
+<meta name="date" content="2024-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -612,7 +612,7 @@ div.csl-indent {
 ## NR 0.0000 0.0034 0.7954 0.230
 ## AR 0.0000 0.0890 0.1841 0.751</code></pre>
 <p><em>Paso 2: Comprobar que se cumplan los supuestos de la matriz de estudio</em>.</p>
-<p>Previo al análisis de dinámica transitoria se debe comprobar que la matriz de transición poblacional sea: a) <em>Cuadrada</em>, que tiene igual número de filas que de columnas, b) <em>No negativa</em>, que todos sus elementos son positivos, por lo que son iguales o mayores a 0.000; c) <em>Ergódica</em>, que el crecimiento asintótico es independiente de la estructura poblacional al inicio del estudio; d) <em>Irreducible</em>, que los elementos de la matriz de análisis y, por lo tanto, los nodos de la gráfica del ciclo de vida, estén fuertemente conectados, tengan una ruta y desde cualquiera de las etapas pueda llegar a todas las otras formando un ciclo; e) <em>Primitiva</em>, que el resultado de elevar a altas potencias una matriz irreducible positiva (i.e. sin elementos negativos) único y tenga un sólo valor positivo (i.e. tasa de crecimiento poblacional). Para más información sobre estas condiciones revisar: <span class="citation">(<a href="#ref-stott2010reducibility">Stott et al. 2010</a>)</span>.</p>
+<p>Previo al análisis de dinámica transitoria se debe comprobar que la matriz de transición poblacional sea: a) <em>Cuadrada</em>, que tiene igual número de filas que de columnas, b) <em>No negativa</em>, que todos sus elementos son positivos, por lo que son iguales o mayores a 0.000; c) <em>Ergódica</em>, que el crecimiento asintótico es independiente de la estructura poblacional al inicio del estudio; d) <em>Irreducible</em>, que los elementos de la matriz de análisis y, por lo tanto, los nodos de la gráfica del ciclo de vida, estén fuertemente conectados, tengan una ruta y desde cualquiera de las etapas pueda llegar a todas las otras formando un ciclo; e) <em>Primitiva</em>, que el resultado de elevar a altas potencias una matriz irreducible positiva (i.e. sin elementos negativos) único y tenga un sólo valor positivo (i.e. tasa de crecimiento poblacional). Para más información sobre estas condiciones revisar: <span class="citation">(<a href="#ref-stott2010reducibility">Stott, Townley, et al. 2010</a>)</span>.</p>
 <p>Para evaluar si la matriz es cuadrada, no negativa, ergódica, primitiva e irreducible se usan las siguientes funciones de <em>R</em>: <em>dim</em>, <em>isErgodic</em>, <em>isPrimitive</em> y <em>isIrreducible</em> respectivamente. A través del comando <em>positiv</em> se determinó si todos los elementos de la matriz son positivos, por lo tanto, iguales o mayores a 0.000. A continuación se comprueba si la matriz de <em>L. rubripetala</em> cumple con estas condiciones o supuestos.</p>
 </div>
 <div id="paso-2-condiciones-que-debe-cumplir-la-matriz-de-estudio" class="section level2 hasAnchor" number="10.4">
@@ -757,7 +757,7 @@ Stott, Iain, Stuart Townley, David Carslake, and David J Hodgson. 2010. <span>�
 Stott, Iain, Stuart Townley, and David James Hodgson. 2011. <span>“A Framework for Studying Transient Dynamics of Population Projection Matrix Models.”</span> <em>Ecology Letters</em> 14 (9): 959–70.
 </div>
 <div id="ref-tremblay2015stable" class="csl-entry">
-Tremblay, Raymond L, Josep Raventos, and James D Ackerman. 2015. <span>“When Stable-Stage Equilibrium Is Unlikely: Integrating Transient Population Dynamics Improves Asymptotic Methods.”</span> <em>Annals of Botany</em> 116 (3): 381–90.
+Tremblay, Raymond L, Josep Raventos, and James D Ackerman. 2015. <span>“When Stable-Stage Equilibrium Is Unlikely: Integrating Transient Population Dynamics Improves Asymptotic Methods.”</span> <em>Annals of Botany</em> 116 (3): 381–90. <a href="https://doi.org/10.1093/aob/mcv031">https://doi.org/10.1093/aob/mcv031</a>.
 </div>
 <div id="ref-williams2011distance" class="csl-entry">
 Williams, Jennifer L, Martha M Ellis, Mary C Bricker, Jedediah F Brodie, and Elliott W Parsons. 2011. <span>“Distance to Stable Stage Distribution in Plant Populations and Implications for Near-Term Population Projections.”</span> <em>Journal of Ecology</em> 99 (5): 1171–78.

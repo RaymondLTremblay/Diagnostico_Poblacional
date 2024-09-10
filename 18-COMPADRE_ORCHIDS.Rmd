@@ -600,9 +600,18 @@ plot(index_O$Lon,index_O$Lat,main = "Location")
 
 
 ```{r chap16_26}
+names(x2)
+x2_subset=index_O |> select(mat, Lon, Lat, OrganismType, SpeciesAccepted,Authors, Journal, DOI_ISBN )
+
+x2df=as.data.frame(x2_subset)
+write_csv(x2df, "Orchid_data_DOI.csv")
+```
+
+
+```{r chap16_26a}
 ggplot2::ggplot(x2, aes(Lon, Lat,colour=OrganismType)) +
   borders(database = "world", fill = "grey80", col = NA) +
-  geom_point(size = 1.8, alpha = 0.8)+
+  geom_point(size = 1.8, alpha = 0.5)+
   theme(legend.position = c(.55, 0.2))
 
 #ggsave("orchid_map.jpg")

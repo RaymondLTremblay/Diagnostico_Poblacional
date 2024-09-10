@@ -5,24 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 21 Compadre_Orchid PPM y su uso | Dinamica Poblacional</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 21 Compadre_Orchid PPM y su uso | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 21 Compadre_Orchid PPM y su uso | Dinamica Poblacional" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
 
 
-<meta name="date" content="2024-09-02" />
+<meta name="date" content="2024-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1867,8 +1867,7 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb429-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb429-9" tabindex="-1"></a></span>
 <span id="cb429-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb429-10" tabindex="-1"></a>SPECIES_O</span></code></pre></div>
 <pre><code>## # A tibble: 54 × 6
-## # Groups:   SpeciesAccepted, YearPublication, OrganismType,
-## #   StudyStart [54]
+## # Groups:   SpeciesAccepted, YearPublication, OrganismType, StudyStart [54]
 ##    SpeciesAccepted       YearPublication OrganismType StudyStart StudyEnd
 ##    &lt;chr&gt;                 &lt;chr&gt;           &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 Aspasia principissa   2006            Epiphyte           1997     2004
@@ -1920,13 +1919,10 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb434-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb434-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb434-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in
-## ggplot2 3.5.0.
-## ℹ Please use the `legend.position.inside` argument of `theme()`
-##   instead.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2 3.5.0.
+## ℹ Please use the `legend.position.inside` argument of `theme()` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning
-## was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
 <div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb436-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
@@ -2269,14 +2265,44 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <h3><span class="header-section-number">21.8.2</span> Crear un mapa de las distribuciones de las orquídeas en la base de datos de COMPADRE.<a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas-en-la-base-de-datos-de-compadre." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb481-1" tabindex="-1"></a><span class="fu">plot</span>(index_O<span class="sc">$</span>Lon,index_O<span class="sc">$</span>Lat,<span class="at">main =</span> <span class="st">&quot;Location&quot;</span>)</span></code></pre></div>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_15-1.png" width="672" /></p>
-<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb482-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(x2, <span class="fu">aes</span>(Lon, Lat,<span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
-<span id="cb482-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb482-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb482-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb482-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span></span>
-<span id="cb482-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb482-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">55</span>, <span class="fl">0.2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb482-1" tabindex="-1"></a><span class="fu">names</span>(x2)</span></code></pre></div>
+<pre><code>##  [1] &quot;mat&quot;                    &quot;MatrixID&quot;               &quot;SpeciesAuthor&quot;         
+##  [4] &quot;SpeciesAccepted&quot;        &quot;CommonName&quot;             &quot;Kingdom&quot;               
+##  [7] &quot;Phylum&quot;                 &quot;Class&quot;                  &quot;Order&quot;                 
+## [10] &quot;Family&quot;                 &quot;Genus&quot;                  &quot;Species&quot;               
+## [13] &quot;Infraspecies&quot;           &quot;InfraspeciesType&quot;       &quot;OrganismType&quot;          
+## [16] &quot;DicotMonoc&quot;             &quot;AngioGymno&quot;             &quot;Authors&quot;               
+## [19] &quot;Journal&quot;                &quot;SourceType&quot;             &quot;OtherType&quot;             
+## [22] &quot;YearPublication&quot;        &quot;DOI_ISBN&quot;               &quot;AdditionalSource&quot;      
+## [25] &quot;StudyDuration&quot;          &quot;StudyStart&quot;             &quot;StudyEnd&quot;              
+## [28] &quot;ProjectionInterval&quot;     &quot;MatrixCriteriaSize&quot;     &quot;MatrixCriteriaOntogeny&quot;
+## [31] &quot;MatrixCriteriaAge&quot;      &quot;MatrixPopulation&quot;       &quot;NumberPopulations&quot;     
+## [34] &quot;Lat&quot;                    &quot;Lon&quot;                    &quot;Altitude&quot;              
+## [37] &quot;Country&quot;                &quot;Continent&quot;              &quot;Ecoregion&quot;             
+## [40] &quot;StudiedSex&quot;             &quot;MatrixComposite&quot;        &quot;MatrixSeasonal&quot;        
+## [43] &quot;MatrixTreatment&quot;        &quot;MatrixCaptivity&quot;        &quot;MatrixStartYear&quot;       
+## [46] &quot;MatrixStartSeason&quot;      &quot;MatrixStartMonth&quot;       &quot;MatrixEndYear&quot;         
+## [49] &quot;MatrixEndSeason&quot;        &quot;MatrixEndMonth&quot;         &quot;CensusType&quot;            
+## [52] &quot;MatrixSplit&quot;            &quot;MatrixFec&quot;              &quot;Observations&quot;          
+## [55] &quot;MatrixDimension&quot;        &quot;SurvivalIssue&quot;          &quot;_Database&quot;             
+## [58] &quot;_PopulationStatus&quot;      &quot;_PublicationStatus&quot;     &quot;check_NA_A&quot;            
+## [61] &quot;check_NA_U&quot;             &quot;check_NA_F&quot;             &quot;check_NA_C&quot;            
+## [64] &quot;check_zero_U&quot;           &quot;check_zero_F&quot;           &quot;check_zero_C&quot;          
+## [67] &quot;check_zero_U_colsum&quot;    &quot;check_singular_U&quot;       &quot;check_component_sum&quot;   
+## [70] &quot;check_ergodic&quot;          &quot;check_irreducible&quot;      &quot;check_primitive&quot;       
+## [73] &quot;check_surv_gte_1&quot;</code></pre>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb484-1" tabindex="-1"></a>x2_subset<span class="ot">=</span>index_O <span class="sc">|&gt;</span> <span class="fu">select</span>(mat, Lon, Lat, OrganismType, SpeciesAccepted,Authors, Journal, DOI_ISBN )</span>
+<span id="cb484-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb484-2" tabindex="-1"></a></span>
+<span id="cb484-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb484-3" tabindex="-1"></a>x2df<span class="ot">=</span><span class="fu">as.data.frame</span>(x2_subset)</span>
+<span id="cb484-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb484-4" tabindex="-1"></a><span class="fu">write_csv</span>(x2df, <span class="st">&quot;Orchid_data_DOI.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(x2, <span class="fu">aes</span>(Lon, Lat,<span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
+<span id="cb485-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb485-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb485-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">55</span>, <span class="fl">0.2</span>))</span></code></pre></div>
 <pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
 ## range (`geom_point()`).</code></pre>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26-1.png" width="672" /></p>
-<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb484-1" tabindex="-1"></a><span class="co">#ggsave(&quot;orchid_map.jpg&quot;)</span></span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26a-1.png" width="672" /></p>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb487-1" tabindex="-1"></a><span class="co">#ggsave(&quot;orchid_map.jpg&quot;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="como-calcular-la-esperanza-de-vida-en-r-con-la-base-de-datos-de-compadre" class="section level2 hasAnchor" number="21.9">
@@ -2284,40 +2310,39 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <p>Cada especies tiene un promedio de largo de vida y una distribución de supervivencia. En los humanos el largo de vida promedio es de ±72 años (y varia por país y otros factores), pero hay personas que viven hasta 100 años o más. En las orquídeas el largo de vida promedio es de 10 años, pero hay orquídeas que viven hasta 100 años o más. Para calcular el largo de vida de una especies se usa la matriz de transición <strong>matU</strong> y la etapa de inicio de la vida <strong>start_life</strong>. La función <strong>lifeExpectancy</strong> calcula el largo de vida de una especies. Nota que este caso no se usa la matriz de fecindidad <strong>matF</strong> o la matriz de clonaje <strong>matC</strong>.</p>
 <p>Para calcular y comparar los datos es importante que la matriz sea del mismo largo de tiempo, por ejemplo no se debería comparar una matriz de 1 año con una matriz de 1 mes o de 10 años. Los valores de tiempo es la unidad de los datos de la matriz.</p>
 <p>Aquí el script crear un data frame de los valores del largo de vida para cada especies con matrices de transiciones de un año.</p>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-1" tabindex="-1"></a><span class="fu">library</span>(Rage) <span class="co"># función para calcular el largo de vida esperada</span></span>
-<span id="cb485-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-2" tabindex="-1"></a>lifeExpectancy <span class="ot">&lt;-</span> <span class="cf">function</span>(matU, startLife) {</span>
-<span id="cb485-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-3" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">diag</span>(<span class="fu">nrow</span>(matU)) <span class="sc">-</span> matU)</span>
-<span id="cb485-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">colSums</span>(N)[startLife])</span>
-<span id="cb485-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-5" tabindex="-1"></a>}</span>
-<span id="cb485-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-6" tabindex="-1"></a></span>
-<span id="cb485-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-7" tabindex="-1"></a>compadre_life_expect <span class="ot">&lt;-</span> x2 <span class="sc">%&gt;%</span> </span>
-<span id="cb485-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-8" tabindex="-1"></a>  <span class="fu">filter</span>(ProjectionInterval <span class="sc">==</span> <span class="fl">1.0</span>) <span class="sc">|&gt;</span> <span class="co"># filtrar para matriz de un año</span></span>
-<span id="cb485-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-9" tabindex="-1"></a>  <span class="fu">filter</span>(MatrixComposite <span class="sc">==</span> <span class="st">&quot;Mean&quot;</span>, <span class="co"># filtrar para la matriz promedia</span></span>
-<span id="cb485-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-10" tabindex="-1"></a>         MatrixTreatment <span class="sc">==</span> <span class="st">&quot;Unmanipulated&quot;</span>, <span class="co"># filtrar para la matriz sin manipulación</span></span>
-<span id="cb485-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-11" tabindex="-1"></a>         MatrixCaptivity <span class="sc">==</span> <span class="st">&quot;W&quot;</span>, <span class="co"># filtrar para poblaciones naturales (no en cautiverio)</span></span>
-<span id="cb485-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-12" tabindex="-1"></a>         ProjectionInterval <span class="sc">==</span> <span class="st">&quot;1&quot;</span></span>
-<span id="cb485-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-13" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
-<span id="cb485-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-14" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">StageID =</span> <span class="fu">cdb_id_stages</span>(.)) <span class="sc">%&gt;%</span> <span class="co"># crear un ID para las etapas</span></span>
-<span id="cb485-15"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-15" tabindex="-1"></a>  <span class="fu">cdb_collapse</span>(<span class="at">columns =</span> <span class="st">&quot;StageID&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># colapsar las etapas</span></span>
-<span id="cb485-16"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-16" tabindex="-1"></a>  <span class="fu">cdb_flag</span>() <span class="sc">%&gt;%</span> <span class="co"># evaluar las matrices</span></span>
-<span id="cb485-17"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-17" tabindex="-1"></a>  <span class="fu">filter</span>(check_NA_U <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="co"># filtrar para matrices sin valores faltantes</span></span>
-<span id="cb485-18"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-18" tabindex="-1"></a>         check_zero_U <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="co"># filtrar para matrices sin valores cero</span></span>
-<span id="cb485-19"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-19" tabindex="-1"></a>         check_singular_U <span class="sc">==</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="co"># filtrar para matrices no singulares</span></span>
-<span id="cb485-20"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">matU =</span> <span class="fu">matU</span>(.), <span class="at">start_life =</span> <span class="fu">mpm_first_active</span>(.)) <span class="sc">%&gt;%</span> <span class="co"># extraer la matriz de transición y la etapa de inicio de la vida</span></span>
-<span id="cb485-21"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">life_expectancy =</span> <span class="fu">mapply</span>(lifeExpectancy, matU, start_life)) <span class="sc">%&gt;%</span> <span class="co"># calcular el largo de vida</span></span>
-<span id="cb485-22"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_life_expectancy =</span> <span class="fu">mapply</span>(life_expect_var, matU, <span class="at">start=</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="co"># calcular la varianza del largo de vida</span></span>
-<span id="cb485-23"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-23" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">low_CI_var_LS=</span> life_expectancy<span class="fl">-1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(var_life_expectancy)) <span class="sc">%&gt;%</span> <span class="co"># calcular el intervalo de confianza inferior</span></span>
-<span id="cb485-24"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">high_CI_var_LS=</span> life_expectancy<span class="fl">+1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(var_life_expectancy)) <span class="sc">%&gt;%</span>  <span class="co"># calcular el intervalo de confianza superior</span></span>
-<span id="cb485-25"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) <span class="co"># ordenar las especies por el largo de vida</span></span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-1" tabindex="-1"></a><span class="fu">library</span>(Rage) <span class="co"># función para calcular el largo de vida esperada</span></span>
+<span id="cb488-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-2" tabindex="-1"></a>lifeExpectancy <span class="ot">&lt;-</span> <span class="cf">function</span>(matU, startLife) {</span>
+<span id="cb488-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-3" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">diag</span>(<span class="fu">nrow</span>(matU)) <span class="sc">-</span> matU)</span>
+<span id="cb488-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">colSums</span>(N)[startLife])</span>
+<span id="cb488-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-5" tabindex="-1"></a>}</span>
+<span id="cb488-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-6" tabindex="-1"></a></span>
+<span id="cb488-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-7" tabindex="-1"></a>compadre_life_expect <span class="ot">&lt;-</span> x2 <span class="sc">%&gt;%</span> </span>
+<span id="cb488-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-8" tabindex="-1"></a>  <span class="fu">filter</span>(ProjectionInterval <span class="sc">==</span> <span class="fl">1.0</span>) <span class="sc">|&gt;</span> <span class="co"># filtrar para matriz de un año</span></span>
+<span id="cb488-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-9" tabindex="-1"></a>  <span class="fu">filter</span>(MatrixComposite <span class="sc">==</span> <span class="st">&quot;Mean&quot;</span>, <span class="co"># filtrar para la matriz promedia</span></span>
+<span id="cb488-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-10" tabindex="-1"></a>         MatrixTreatment <span class="sc">==</span> <span class="st">&quot;Unmanipulated&quot;</span>, <span class="co"># filtrar para la matriz sin manipulación</span></span>
+<span id="cb488-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-11" tabindex="-1"></a>         MatrixCaptivity <span class="sc">==</span> <span class="st">&quot;W&quot;</span>, <span class="co"># filtrar para poblaciones naturales (no en cautiverio)</span></span>
+<span id="cb488-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-12" tabindex="-1"></a>         ProjectionInterval <span class="sc">==</span> <span class="st">&quot;1&quot;</span></span>
+<span id="cb488-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-13" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb488-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-14" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">StageID =</span> <span class="fu">cdb_id_stages</span>(.)) <span class="sc">%&gt;%</span> <span class="co"># crear un ID para las etapas</span></span>
+<span id="cb488-15"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-15" tabindex="-1"></a>  <span class="fu">cdb_collapse</span>(<span class="at">columns =</span> <span class="st">&quot;StageID&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># colapsar las etapas</span></span>
+<span id="cb488-16"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-16" tabindex="-1"></a>  <span class="fu">cdb_flag</span>() <span class="sc">%&gt;%</span> <span class="co"># evaluar las matrices</span></span>
+<span id="cb488-17"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-17" tabindex="-1"></a>  <span class="fu">filter</span>(check_NA_U <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="co"># filtrar para matrices sin valores faltantes</span></span>
+<span id="cb488-18"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-18" tabindex="-1"></a>         check_zero_U <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="co"># filtrar para matrices sin valores cero</span></span>
+<span id="cb488-19"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-19" tabindex="-1"></a>         check_singular_U <span class="sc">==</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="co"># filtrar para matrices no singulares</span></span>
+<span id="cb488-20"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">matU =</span> <span class="fu">matU</span>(.), <span class="at">start_life =</span> <span class="fu">mpm_first_active</span>(.)) <span class="sc">%&gt;%</span> <span class="co"># extraer la matriz de transición y la etapa de inicio de la vida</span></span>
+<span id="cb488-21"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">life_expectancy =</span> <span class="fu">mapply</span>(lifeExpectancy, matU, start_life)) <span class="sc">%&gt;%</span> <span class="co"># calcular el largo de vida</span></span>
+<span id="cb488-22"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var_life_expectancy =</span> <span class="fu">mapply</span>(life_expect_var, matU, <span class="at">start=</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="co"># calcular la varianza del largo de vida</span></span>
+<span id="cb488-23"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-23" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">low_CI_var_LS=</span> life_expectancy<span class="fl">-1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(var_life_expectancy)) <span class="sc">%&gt;%</span> <span class="co"># calcular el intervalo de confianza inferior</span></span>
+<span id="cb488-24"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">high_CI_var_LS=</span> life_expectancy<span class="fl">+1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(var_life_expectancy)) <span class="sc">%&gt;%</span>  <span class="co"># calcular el intervalo de confianza superior</span></span>
+<span id="cb488-25"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) <span class="co"># ordenar las especies por el largo de vida</span></span></code></pre></div>
 <pre><code>## Warning: There were 4 warnings in `mutate()`.
 ## The first warning was:
-## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU,
-##   start = 1)`.
+## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU, start = 1)`.
 ## Caused by warning:
 ## ! Argument matU has at least one stage-specific survival.
 ##  probability &gt; 1
 ## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
-<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb487-1" tabindex="-1"></a>compadre_life_expect</span></code></pre></div>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb490-1" tabindex="-1"></a>compadre_life_expect</span></code></pre></div>
 <pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 28 SPECIES and 32 MATRICES.
 ## 
 ## # A tibble: 32 × 80
@@ -2341,79 +2366,79 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 ## #   DOI_ISBN &lt;chr&gt;, AdditionalSource &lt;chr&gt;, StudyDuration &lt;chr&gt;,
 ## #   StudyStart &lt;chr&gt;, StudyEnd &lt;chr&gt;, ProjectionInterval &lt;chr&gt;, …</code></pre>
 <p>Visualizar el largo de vida por plantas epifitas versus terrestres. Nota aquí que algunas especies están representada múltiple veces. Por consecuencia la distribución de los datos no es una buena representación de la diferencia entre las especies epifitas y terrestres, debido a lo que se llama pseudoreplicación. Este figura representa la distribución los datos del data frame anterior.</p>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb489-1" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
-<span id="cb489-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb489-2" tabindex="-1"></a>  <span class="fu">group_by</span>(OrganismType) <span class="sc">|&gt;</span> </span>
-<span id="cb489-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb489-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_LS=</span> <span class="fu">mean</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb489-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb489-4" tabindex="-1"></a>            <span class="at">sd_LS =</span> <span class="fu">sd</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-1" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
+<span id="cb492-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-2" tabindex="-1"></a>  <span class="fu">group_by</span>(OrganismType) <span class="sc">|&gt;</span> </span>
+<span id="cb492-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_LS=</span> <span class="fu">mean</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb492-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-4" tabindex="-1"></a>            <span class="at">sd_LS =</span> <span class="fu">sd</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   OrganismType         mean_LS sd_LS
 ##   &lt;fct&gt;                  &lt;dbl&gt; &lt;dbl&gt;
 ## 1 Herbaceous perennial    8.26  9.27
 ## 2 Epiphyte               11.6  14.9</code></pre>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(compadre_life_expect, <span class="fu">aes</span>(OrganismType, life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
-<span id="cb491-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb491-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-3" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
-<span id="cb491-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-4" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb491-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)<span class="sc">+</span></span>
-<span id="cb491-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-6" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb491-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-1" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(compadre_life_expect, <span class="fu">aes</span>(OrganismType, life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
+<span id="cb494-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb494-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-3" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb494-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-4" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb494-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)<span class="sc">+</span></span>
+<span id="cb494-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-6" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb494-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p><a href="https://jonesor.github.io/Rage/reference/life_expect.html" class="uri">https://jonesor.github.io/Rage/reference/life_expect.html</a></p>
 <p>En el siguiente script y grafico vemos la visualización por genero de los estimados de la esperanza de vida. Nota que la esperanza de vida es un estimado y no un valor exacto. En este caso se usa la función <strong>life_expect_var</strong> para calcular la varianza de la esperanza de vida. La escala de x (el largo de vida fue cambiado a log10 de la esperanza de vida).</p>
 <p><strong>How to calculate CI of life span, it is in the table above, use gamma, not normal</strong></p>
 <p>low_CI_var_LS
 high_CI_var_LS</p>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE) # Ordenar por fecha de inicio del estudio </span></span>
-<span id="cb494-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-2" tabindex="-1"></a></span>
-<span id="cb494-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-3" tabindex="-1"></a><span class="co">#compadre_life_expect |&gt; select(mat, Genus, SpeciesAccepted, life_expectancy) |&gt; </span></span>
-<span id="cb494-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-4" tabindex="-1"></a><span class="co">#  group_by(SpeciesAccepted) |&gt; </span></span>
-<span id="cb494-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-5" tabindex="-1"></a> <span class="co"># summarize(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy),</span></span>
-<span id="cb494-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-6" tabindex="-1"></a><span class="co">#            high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy))</span></span>
-<span id="cb494-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-7" tabindex="-1"></a></span>
-<span id="cb494-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-8" tabindex="-1"></a></span>
-<span id="cb494-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-9" tabindex="-1"></a><span class="fu">ggplot</span>(compadre_life_expect, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(SpeciesAccepted, life_expectancy), life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
-<span id="cb494-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-10" tabindex="-1"></a> <span class="co"># geom_boxplot() +</span></span>
-<span id="cb494-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-11" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb494-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-12" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
-<span id="cb494-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-13" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb494-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb494-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)</span></code></pre></div>
-<p><img src="Diagnostico_Poblacional_files/figure-html/chap16_28-1.png" width="672" /></p>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-1" tabindex="-1"></a><span class="co">#  rlt_theme+</span></span>
-<span id="cb495-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-2" tabindex="-1"></a>  <span class="co">#theme(legend.position = &quot;none&quot;)</span></span>
-<span id="cb495-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-3" tabindex="-1"></a></span>
-<span id="cb495-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-4" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Genus_Life_Span.png&quot;</span>)</span></code></pre></div>
-<pre><code>## Saving 7 x 5 in image</code></pre>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)</span></span>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE) # Ordenar por fecha de inicio del estudio </span></span>
 <span id="cb497-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-2" tabindex="-1"></a></span>
-<span id="cb497-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-3" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
-<span id="cb497-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Genus) <span class="sc">|&gt;</span> </span>
-<span id="cb497-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_LS=</span> <span class="fu">mean</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb497-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-6" tabindex="-1"></a>            <span class="at">sd_LS =</span> <span class="fu">sd</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb497-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-7" tabindex="-1"></a>  <span class="fu">filter</span>(Genus <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Caladenia&quot;</span>))</span></code></pre></div>
+<span id="cb497-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-3" tabindex="-1"></a><span class="co">#compadre_life_expect |&gt; select(mat, Genus, SpeciesAccepted, life_expectancy) |&gt; </span></span>
+<span id="cb497-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-4" tabindex="-1"></a><span class="co">#  group_by(SpeciesAccepted) |&gt; </span></span>
+<span id="cb497-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-5" tabindex="-1"></a> <span class="co"># summarize(low_CI_var_LS= life_expectancy-1.96*sqrt(var_life_expectancy),</span></span>
+<span id="cb497-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-6" tabindex="-1"></a><span class="co">#            high_CI_var_LS= life_expectancy+1.96*sqrt(var_life_expectancy))</span></span>
+<span id="cb497-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-7" tabindex="-1"></a></span>
+<span id="cb497-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-8" tabindex="-1"></a></span>
+<span id="cb497-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-9" tabindex="-1"></a><span class="fu">ggplot</span>(compadre_life_expect, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(SpeciesAccepted, life_expectancy), life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
+<span id="cb497-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-10" tabindex="-1"></a> <span class="co"># geom_boxplot() +</span></span>
+<span id="cb497-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-11" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb497-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-12" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb497-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-13" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb497-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb497-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (log(years))&quot;</span>)</span></code></pre></div>
+<p><img src="Diagnostico_Poblacional_files/figure-html/chap16_28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-1" tabindex="-1"></a><span class="co">#  rlt_theme+</span></span>
+<span id="cb498-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-2" tabindex="-1"></a>  <span class="co">#theme(legend.position = &quot;none&quot;)</span></span>
+<span id="cb498-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-3" tabindex="-1"></a></span>
+<span id="cb498-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-4" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Genus_Life_Span.png&quot;</span>)</span></code></pre></div>
+<pre><code>## Saving 7 x 5 in image</code></pre>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)</span></span>
+<span id="cb500-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-2" tabindex="-1"></a></span>
+<span id="cb500-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-3" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
+<span id="cb500-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Genus) <span class="sc">|&gt;</span> </span>
+<span id="cb500-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_LS=</span> <span class="fu">mean</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb500-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-6" tabindex="-1"></a>            <span class="at">sd_LS =</span> <span class="fu">sd</span>(life_expectancy, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb500-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-7" tabindex="-1"></a>  <span class="fu">filter</span>(Genus <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Caladenia&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 3
 ##   Genus     mean_LS sd_LS
 ##   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
 ## 1 Caladenia    3.90  1.64</code></pre>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-1" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
-<span id="cb499-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-2" tabindex="-1"></a>  <span class="fu">filter</span>(Genus <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Caladenia&quot;</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb499-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(SpeciesAccepted, life_expectancy), life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
-<span id="cb499-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb499-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-5" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
-<span id="cb499-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb499-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)<span class="sc">+</span></span>
-<span id="cb499-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-8" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb499-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-1" tabindex="-1"></a>compadre_life_expect <span class="sc">|&gt;</span> </span>
+<span id="cb502-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-2" tabindex="-1"></a>  <span class="fu">filter</span>(Genus <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Caladenia&quot;</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb502-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(SpeciesAccepted, life_expectancy), life_expectancy, <span class="at">colour=</span>OrganismType)) <span class="sc">+</span></span>
+<span id="cb502-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb502-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-5" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb502-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb502-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb502-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-8" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb502-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_29-1.png" width="672" /></p>
-<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb500-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Caladenia_Life_Span.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb503-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Caladenia_Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p>Caladenia_amonea</p>
 <p>Test difference in life span.</p>
-<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb502-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb505-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
 <pre><code>## [1] Herbaceous perennial Epiphyte            
 ## Levels: Herbaceous perennial Epiphyte</code></pre>
-<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb504-1" tabindex="-1"></a><span class="fu">t.test</span>(life_expectancy<span class="sc">~</span>OrganismType, <span class="at">data=</span>compadre_life_expect)</span></code></pre></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb507-1" tabindex="-1"></a><span class="fu">t.test</span>(life_expectancy<span class="sc">~</span>OrganismType, <span class="at">data=</span>compadre_life_expect)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -2425,13 +2450,13 @@ high_CI_var_LS</p>
 ## sample estimates:
 ## mean in group Herbaceous perennial             mean in group Epiphyte 
 ##                           8.255534                          11.556907</code></pre>
-<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb506-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(compadre_life_expect<span class="sc">$</span>life_expectancy) <span class="co"># Not normaly distributed</span></span></code></pre></div>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb509-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(compadre_life_expect<span class="sc">$</span>life_expectancy) <span class="co"># Not normaly distributed</span></span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  compadre_life_expect$life_expectancy
 ## W = 0.63295, p-value = 9.944e-08</code></pre>
-<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb508-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb511-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
 <pre><code>## Loading required package: carData</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;car&#39;</code></pre>
@@ -2444,7 +2469,7 @@ high_CI_var_LS</p>
 <pre><code>## The following object is masked from &#39;package:purrr&#39;:
 ## 
 ##     some</code></pre>
-<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb514-1" tabindex="-1"></a><span class="fu">leveneTest</span>(life_expectancy<span class="sc">~</span>OrganismType, <span class="at">data=</span>compadre_life_expect) <span class="co"># equal variance but not notmaly distributed</span></span></code></pre></div>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb517-1" tabindex="-1"></a><span class="fu">leveneTest</span>(life_expectancy<span class="sc">~</span>OrganismType, <span class="at">data=</span>compadre_life_expect) <span class="co"># equal variance but not notmaly distributed</span></span></code></pre></div>
 <pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
 ##       Df F value Pr(&gt;F)
 ## group  1  0.1166 0.7352
@@ -2452,7 +2477,7 @@ high_CI_var_LS</p>
 <p>Use robust Approach</p>
 <p>Para el siguiente análisis se necesita instalar el paquete <strong>WRS2</strong>.</p>
 <p>Y se necesita cargar el archivo de funciones de <strong>Rallfun-v38.txt</strong> que se encuentra en el siguiente enlace &lt;<a href="https://github.com/rrwilcox/Rallfun" class="uri">https://github.com/rrwilcox/Rallfun</a>&gt; y guardarlo en su directorio de trabajo. Pudiese ser que haya versiones más recientes de este archivo. Nota que la dirección abajo funciona para mi computadora, uds tienen que ajustar la dirección del archivo a su directorio de trabajo.</p>
-<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb516-1" tabindex="-1"></a><span class="fu">library</span>(WRS2)</span></code></pre></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb519-1" tabindex="-1"></a><span class="fu">library</span>(WRS2)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;WRS2&#39;</code></pre>
 <pre><code>## The following objects are masked _by_ &#39;.GlobalEnv&#39;:
@@ -2465,21 +2490,21 @@ high_CI_var_LS</p>
 ##     t1way, t1waybt, t2way, t3way, trimcibt, trimse, tsplit, twocor,
 ##     twopcor, winall, wincor, winmean, winse, winvar, wmcpAKP, yuen,
 ##     yuen.effect.ci, yuenbt, yuend, ZYmediate</code></pre>
-<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb519-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt&quot;</span>, <span class="at">chdir =</span> T) <span class="co"># Home computer</span></span>
-<span id="cb519-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb519-2" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T)</span></span>
-<span id="cb519-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb519-3" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt&quot;, chdir = T) ## Work laptop Computer</span></span>
-<span id="cb519-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb519-4" tabindex="-1"></a><span class="co">#source(&quot;/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T) #When used on Monique</span></span></code></pre></div>
-<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb520-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt&quot;</span>, <span class="at">chdir =</span> T) <span class="co"># Home computer</span></span>
+<span id="cb522-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-2" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T)</span></span>
+<span id="cb522-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-3" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt&quot;, chdir = T) ## Work laptop Computer</span></span>
+<span id="cb522-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-4" tabindex="-1"></a><span class="co">#source(&quot;/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T) #When used on Monique</span></span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb523-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
 <pre><code>## [1] Herbaceous perennial Epiphyte            
 ## Levels: Herbaceous perennial Epiphyte</code></pre>
-<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-1" tabindex="-1"></a>Cf<span class="ot">=</span><span class="fu">cdb_flatten</span>(compadre_life_expect)</span>
-<span id="cb522-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-2" tabindex="-1"></a></span>
-<span id="cb522-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-3" tabindex="-1"></a></span>
-<span id="cb522-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-4" tabindex="-1"></a>YSEC_T<span class="ot">=</span>Cf <span class="sc">%&gt;%</span> </span>
-<span id="cb522-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">&quot;life_expectancy&quot;</span>, <span class="st">&quot;OrganismType&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb522-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-6" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismType<span class="sc">==</span> <span class="st">&quot;Herbaceous perennial&quot;</span>)</span>
-<span id="cb522-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-7" tabindex="-1"></a></span>
-<span id="cb522-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-8" tabindex="-1"></a>YSEC_T</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-1" tabindex="-1"></a>Cf<span class="ot">=</span><span class="fu">cdb_flatten</span>(compadre_life_expect)</span>
+<span id="cb525-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-2" tabindex="-1"></a></span>
+<span id="cb525-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-3" tabindex="-1"></a></span>
+<span id="cb525-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-4" tabindex="-1"></a>YSEC_T<span class="ot">=</span>Cf <span class="sc">%&gt;%</span> </span>
+<span id="cb525-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">&quot;life_expectancy&quot;</span>, <span class="st">&quot;OrganismType&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb525-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-6" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismType<span class="sc">==</span> <span class="st">&quot;Herbaceous perennial&quot;</span>)</span>
+<span id="cb525-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-7" tabindex="-1"></a></span>
+<span id="cb525-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb525-8" tabindex="-1"></a>YSEC_T</span></code></pre></div>
 <pre><code>## # A tibble: 20 × 2
 ##    life_expectancy OrganismType        
 ##              &lt;dbl&gt; &lt;fct&gt;               
@@ -2503,11 +2528,11 @@ high_CI_var_LS</p>
 ## 18            8.52 Herbaceous perennial
 ## 19            1.71 Herbaceous perennial
 ## 20           39.7  Herbaceous perennial</code></pre>
-<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb524-1" tabindex="-1"></a>YSEC_E<span class="ot">=</span>Cf <span class="sc">%&gt;%</span> </span>
-<span id="cb524-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb524-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">&quot;life_expectancy&quot;</span>, <span class="st">&quot;OrganismType&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb524-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb524-3" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismType<span class="sc">==</span> <span class="st">&quot;Epiphyte&quot;</span>)</span>
-<span id="cb524-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb524-4" tabindex="-1"></a></span>
-<span id="cb524-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb524-5" tabindex="-1"></a><span class="fu">yuenbt</span>(YSEC_T<span class="sc">$</span>life_expectancy, YSEC_E<span class="sc">$</span>life_expectancy, <span class="at">alpha=</span>.<span class="dv">05</span>, <span class="at">nboot=</span><span class="dv">10000</span>, <span class="at">side=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb527-1" tabindex="-1"></a>YSEC_E<span class="ot">=</span>Cf <span class="sc">%&gt;%</span> </span>
+<span id="cb527-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb527-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">&quot;life_expectancy&quot;</span>, <span class="st">&quot;OrganismType&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb527-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb527-3" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismType<span class="sc">==</span> <span class="st">&quot;Epiphyte&quot;</span>)</span>
+<span id="cb527-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb527-4" tabindex="-1"></a></span>
+<span id="cb527-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb527-5" tabindex="-1"></a><span class="fu">yuenbt</span>(YSEC_T<span class="sc">$</span>life_expectancy, YSEC_E<span class="sc">$</span>life_expectancy, <span class="at">alpha=</span>.<span class="dv">05</span>, <span class="at">nboot=</span><span class="dv">10000</span>, <span class="at">side=</span>T)</span></code></pre></div>
 <pre><code>## $ci
 ## [1] -6.792134  3.155724
 ## 
@@ -2531,48 +2556,48 @@ high_CI_var_LS</p>
 ## 
 ## $n2
 ## [1] 12</code></pre>
-<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-1" tabindex="-1"></a><span class="fu">library</span>(Rcompadre)</span>
-<span id="cb526-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-2" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span>
-<span id="cb526-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-3" tabindex="-1"></a><span class="fu">data</span>(Compadre)</span>
-<span id="cb526-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-4" tabindex="-1"></a></span>
-<span id="cb526-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-5" tabindex="-1"></a></span>
-<span id="cb526-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-6" tabindex="-1"></a>Compadre<span class="sc">$</span>matA <span class="ot">&lt;-</span> <span class="fu">matA</span>(Compadre)</span>
-<span id="cb526-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-7" tabindex="-1"></a></span>
-<span id="cb526-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-8" tabindex="-1"></a><span class="co"># create empty vector to store output</span></span>
-<span id="cb526-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-9" tabindex="-1"></a>Compadre<span class="sc">$</span>dim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">nrow</span>(Compadre))</span>
-<span id="cb526-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-10" tabindex="-1"></a></span>
-<span id="cb526-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-11" tabindex="-1"></a><span class="co">#index$dim &lt;- numeric(nrow(index_O))</span></span>
-<span id="cb526-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-12" tabindex="-1"></a></span>
-<span id="cb526-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-13" tabindex="-1"></a><span class="co"># loop through all rows of Compadre</span></span>
-<span id="cb526-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-14" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(Compadre))) {</span>
-<span id="cb526-15"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-15" tabindex="-1"></a>  Compadre<span class="sc">$</span>dim[i] <span class="ot">&lt;-</span> <span class="fu">nrow</span>(Compadre<span class="sc">$</span>matA[[i]])</span>
-<span id="cb526-16"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-16" tabindex="-1"></a>}</span>
-<span id="cb526-17"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-17" tabindex="-1"></a></span>
-<span id="cb526-18"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-18" tabindex="-1"></a><span class="co"># function to determine whether matrix &#39;mat&#39; has any stages with no transitions</span></span>
-<span id="cb526-19"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-19" tabindex="-1"></a>NullStages <span class="ot">&lt;-</span> <span class="cf">function</span>(mat) <span class="fu">any</span>(<span class="fu">colSums</span>(mat) <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb526-20"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-20" tabindex="-1"></a></span>
-<span id="cb526-21"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-21" tabindex="-1"></a><span class="co"># apply function to every element of A</span></span>
-<span id="cb526-22"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-22" tabindex="-1"></a>Compadre<span class="sc">$</span>null_stages <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Compadre<span class="sc">$</span>matA, NullStages)</span>
-<span id="cb526-23"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-23" tabindex="-1"></a></span>
-<span id="cb526-24"><a href="compadre_orchid-ppm-y-su-uso.html#cb526-24" tabindex="-1"></a><span class="fu">NullStages</span>(Compadre<span class="sc">$</span>matA[[<span class="dv">1</span>]]) <span class="co"># apply function to single element</span></span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-1" tabindex="-1"></a><span class="fu">library</span>(Rcompadre)</span>
+<span id="cb529-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-2" tabindex="-1"></a><span class="fu">library</span>(popdemo)</span>
+<span id="cb529-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-3" tabindex="-1"></a><span class="fu">data</span>(Compadre)</span>
+<span id="cb529-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-4" tabindex="-1"></a></span>
+<span id="cb529-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-5" tabindex="-1"></a></span>
+<span id="cb529-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-6" tabindex="-1"></a>Compadre<span class="sc">$</span>matA <span class="ot">&lt;-</span> <span class="fu">matA</span>(Compadre)</span>
+<span id="cb529-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-7" tabindex="-1"></a></span>
+<span id="cb529-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-8" tabindex="-1"></a><span class="co"># create empty vector to store output</span></span>
+<span id="cb529-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-9" tabindex="-1"></a>Compadre<span class="sc">$</span>dim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">nrow</span>(Compadre))</span>
+<span id="cb529-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-10" tabindex="-1"></a></span>
+<span id="cb529-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-11" tabindex="-1"></a><span class="co">#index$dim &lt;- numeric(nrow(index_O))</span></span>
+<span id="cb529-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-12" tabindex="-1"></a></span>
+<span id="cb529-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-13" tabindex="-1"></a><span class="co"># loop through all rows of Compadre</span></span>
+<span id="cb529-14"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-14" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(Compadre))) {</span>
+<span id="cb529-15"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-15" tabindex="-1"></a>  Compadre<span class="sc">$</span>dim[i] <span class="ot">&lt;-</span> <span class="fu">nrow</span>(Compadre<span class="sc">$</span>matA[[i]])</span>
+<span id="cb529-16"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-16" tabindex="-1"></a>}</span>
+<span id="cb529-17"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-17" tabindex="-1"></a></span>
+<span id="cb529-18"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-18" tabindex="-1"></a><span class="co"># function to determine whether matrix &#39;mat&#39; has any stages with no transitions</span></span>
+<span id="cb529-19"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-19" tabindex="-1"></a>NullStages <span class="ot">&lt;-</span> <span class="cf">function</span>(mat) <span class="fu">any</span>(<span class="fu">colSums</span>(mat) <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb529-20"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-20" tabindex="-1"></a></span>
+<span id="cb529-21"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-21" tabindex="-1"></a><span class="co"># apply function to every element of A</span></span>
+<span id="cb529-22"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-22" tabindex="-1"></a>Compadre<span class="sc">$</span>null_stages <span class="ot">&lt;-</span> <span class="fu">sapply</span>(Compadre<span class="sc">$</span>matA, NullStages)</span>
+<span id="cb529-23"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-23" tabindex="-1"></a></span>
+<span id="cb529-24"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-24" tabindex="-1"></a><span class="fu">NullStages</span>(Compadre<span class="sc">$</span>matA[[<span class="dv">1</span>]]) <span class="co"># apply function to single element</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb528-1" tabindex="-1"></a>Compadre<span class="sc">$</span>null_stages <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">matA</span>(Compadre), NullStages)</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb531-1" tabindex="-1"></a>Compadre<span class="sc">$</span>null_stages <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">matA</span>(Compadre), NullStages)</span></code></pre></div>
 <div id="calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional" class="section level3 hasAnchor" number="21.9.1">
 <h3><span class="header-section-number">21.9.1</span> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional<a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-1" tabindex="-1"></a><span class="co"># función para calcular la esperanza de vida</span></span>
-<span id="cb529-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-2" tabindex="-1"></a></span>
-<span id="cb529-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-3" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
-<span id="cb529-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-4" tabindex="-1"></a><span class="fu">data</span>(mpm1)</span>
-<span id="cb529-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-5" tabindex="-1"></a></span>
-<span id="cb529-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb529-6" tabindex="-1"></a><span class="fu">life_expect_mean</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-1" tabindex="-1"></a><span class="co"># función para calcular la esperanza de vida</span></span>
+<span id="cb532-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-2" tabindex="-1"></a></span>
+<span id="cb532-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-3" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb532-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-4" tabindex="-1"></a><span class="fu">data</span>(mpm1)</span>
+<span id="cb532-5"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-5" tabindex="-1"></a></span>
+<span id="cb532-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb532-6" tabindex="-1"></a><span class="fu">life_expect_mean</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 1.250506</code></pre>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb531-1" tabindex="-1"></a>rep_stages <span class="ot">&lt;-</span> <span class="fu">repro_stages</span>(mpm1<span class="sc">$</span>matF)</span>
-<span id="cb531-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb531-2" tabindex="-1"></a>(n1 <span class="ot">&lt;-</span> <span class="fu">mature_distrib</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">2</span>, <span class="at">repro_stages =</span> rep_stages))</span></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb534-1" tabindex="-1"></a>rep_stages <span class="ot">&lt;-</span> <span class="fu">repro_stages</span>(mpm1<span class="sc">$</span>matF)</span>
+<span id="cb534-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb534-2" tabindex="-1"></a>(n1 <span class="ot">&lt;-</span> <span class="fu">mature_distrib</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">2</span>, <span class="at">repro_stages =</span> rep_stages))</span></code></pre></div>
 <pre><code>##       seed      small     medium      large    dormant 
 ## 0.00000000 0.00000000 0.92105263 0.07894737 0.00000000</code></pre>
-<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb533-1" tabindex="-1"></a><span class="fu">life_expect_mean</span>(mpm1<span class="sc">$</span>matU, <span class="at">mixdist =</span> n1, <span class="at">start =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb536-1" tabindex="-1"></a><span class="fu">life_expect_mean</span>(mpm1<span class="sc">$</span>matU, <span class="at">mixdist =</span> n1, <span class="at">start =</span> <span class="cn">NULL</span>)</span></code></pre></div>
 <pre><code>## [1] 3.179005</code></pre>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb535-1" tabindex="-1"></a><span class="fu">life_expect_var</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb538-1" tabindex="-1"></a><span class="fu">life_expect_var</span>(mpm1<span class="sc">$</span>matU, <span class="at">start =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7816213</code></pre>
 <p><a href="http://127.0.0.1:29465/rmd_output/1/compadre_orchid-ppm-y-su-uso.html" class="uri">http://127.0.0.1:29465/rmd_output/1/compadre_orchid-ppm-y-su-uso.html</a></p>
 
@@ -2582,7 +2607,7 @@ high_CI_var_LS</p>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-tremblay2001gene" class="csl-entry">
-Tremblay, Raymond L, and James D Ackerman. 2001. <span>“Gene Flow and Effective Population Size in Lepanthes (Orchidaceae): A Case for Genetic Drift.”</span> <em>Biological Journal of the Linnean Society</em> 72 (1): 47–62.
+Tremblay, Raymond L, and James D Ackerman. 2001. <span>“Gene Flow and Effective Population Size in Lepanthes (Orchidaceae): A Case for Genetic Drift.”</span> <em>Biological Journal of the Linnean Society</em> 72 (1): 47–62. <a href="https://doi.org/10.1006/bijl.2000.0485">https://doi.org/10.1006/bijl.2000.0485</a>.
 </div>
 <div id="ref-tremblay2014bayesian" class="csl-entry">
 Tremblay, Raymond L, and Michael A McCarthy. 2014. <span>“Bayesian Estimates of Transition Probabilities in Seven Small Lithophytic Orchid Populations: Maximizing Data Availability from Many Small Samples.”</span> <em>PLoS One</em> 9 (7): e102859.

@@ -5,24 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 26 Hojas de datos en el campo | Dinamica Poblacional</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 26 Hojas de datos en el campo | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 26 Hojas de datos en el campo | Dinamica Poblacional" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
 
 
-<meta name="date" content="2024-09-02" />
+<meta name="date" content="2024-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -580,7 +580,7 @@ div.csl-indent {
 <p>La hoja de recolección de datos debería estar preparada antes de ir al campo y estar imprimido sobre papel que es impermeable y escribir con lápiz. Ese ultimo punto es bien importante ya que la gran mayoría de los bolígrafos son soluble en agua y si el papel se moja se puede perder sus datos. Considerando que estas hojas de datos pudiese ser usado como fuente de averiguar los datos por decadas en el futuro. <strong>RECUERDA que no se puede regresar en el tiempo para recoger los datos</strong>. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con bolígrafo se puede perder los datos. No se arriesga!!</p>
 <p>Antes de ir al campo es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningún individuo. Datos olvidado no se puede recuperar.</p>
 <p>Hoja en blanco para llevarse</p>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="hojas-de-datos-en-el-campo.html#cb594-1" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="hojas-de-datos-en-el-campo.html#cb597-1" tabindex="-1"></a>Hoja_de_campo <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
 <div id="sxpoadezzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#sxpoadezzw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1126,21 +1126,21 @@ div.csl-indent {
 <li>M = <strong>muerto</strong></li>
 </ul>
 <p>Hoja llena al final del muestreo</p>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="hojas-de-datos-en-el-campo.html#cb595-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb595-2"><a href="hojas-de-datos-en-el-campo.html#cb595-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb595-3"><a href="hojas-de-datos-en-el-campo.html#cb595-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb595-4"><a href="hojas-de-datos-en-el-campo.html#cb595-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
-<span id="cb595-5"><a href="hojas-de-datos-en-el-campo.html#cb595-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-6"><a href="hojas-de-datos-en-el-campo.html#cb595-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-7"><a href="hojas-de-datos-en-el-campo.html#cb595-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-8"><a href="hojas-de-datos-en-el-campo.html#cb595-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-9"><a href="hojas-de-datos-en-el-campo.html#cb595-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-10"><a href="hojas-de-datos-en-el-campo.html#cb595-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-11"><a href="hojas-de-datos-en-el-campo.html#cb595-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-12"><a href="hojas-de-datos-en-el-campo.html#cb595-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
-<span id="cb595-13"><a href="hojas-de-datos-en-el-campo.html#cb595-13" tabindex="-1"></a>  </span>
-<span id="cb595-14"><a href="hojas-de-datos-en-el-campo.html#cb595-14" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="hojas-de-datos-en-el-campo.html#cb596-1" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="hojas-de-datos-en-el-campo.html#cb598-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb598-2"><a href="hojas-de-datos-en-el-campo.html#cb598-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb598-3"><a href="hojas-de-datos-en-el-campo.html#cb598-3" tabindex="-1"></a>Hoja_llena <span class="ot">=</span> <span class="fu">tribble</span>(</span>
+<span id="cb598-4"><a href="hojas-de-datos-en-el-campo.html#cb598-4" tabindex="-1"></a>  <span class="sc">~</span>Número_de_Ind, <span class="sc">~</span>Etapa, <span class="sc">~</span>Cantidad_flores_abierta, <span class="sc">~</span>Cantidad_capullo, <span class="sc">~</span> Cantidad_Frutos, <span class="sc">~</span>Numero_Hojas, <span class="sc">~</span>Ancho_hoja_mm, <span class="sc">~</span>etc,</span>
+<span id="cb598-5"><a href="hojas-de-datos-en-el-campo.html#cb598-5" tabindex="-1"></a>  <span class="dv">23001</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-6"><a href="hojas-de-datos-en-el-campo.html#cb598-6" tabindex="-1"></a>  <span class="dv">23002</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-7"><a href="hojas-de-datos-en-el-campo.html#cb598-7" tabindex="-1"></a>  <span class="dv">23003</span>,<span class="st">&quot;A1&quot;</span>,<span class="dv">5</span>, <span class="dv">10</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">32</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-8"><a href="hojas-de-datos-en-el-campo.html#cb598-8" tabindex="-1"></a>  <span class="dv">23004</span>,<span class="st">&quot;Ao&quot;</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">14</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-9"><a href="hojas-de-datos-en-el-campo.html#cb598-9" tabindex="-1"></a>  <span class="dv">23005</span>,<span class="st">&quot;m&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-10"><a href="hojas-de-datos-en-el-campo.html#cb598-10" tabindex="-1"></a>  <span class="dv">24006</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-11"><a href="hojas-de-datos-en-el-campo.html#cb598-11" tabindex="-1"></a>  <span class="dv">24007</span>,<span class="st">&quot;j&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-12"><a href="hojas-de-datos-en-el-campo.html#cb598-12" tabindex="-1"></a>  <span class="dv">24008</span>,<span class="st">&quot;p&quot;</span>,<span class="cn">NA</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,</span>
+<span id="cb598-13"><a href="hojas-de-datos-en-el-campo.html#cb598-13" tabindex="-1"></a>  </span>
+<span id="cb598-14"><a href="hojas-de-datos-en-el-campo.html#cb598-14" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="hojas-de-datos-en-el-campo.html#cb599-1" tabindex="-1"></a>Hoja_llena <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code></pre></div>
 <div id="tklhqamuka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#tklhqamuka table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
