@@ -107,9 +107,9 @@ Determinar el tamaño poblacional en el futuro tiene muchos usos. Se puede divid
 
 NOTA IMPORTANTE: *Evaluar las referencias y añadir referencias tradicionales y recientes*
 
-| Categoría de Uso               | Uso especifico                                                                                                   | Referencias generales                          | Referencias con Orquídeas |
+| Categoría de Uso  | Uso especifico | Referencias generales  | Referencias con Orquídeas |
 |:----------------|:-------------------|:----------------|-------------------:|
-| Manejo                         | Identificar las etapas o procesos demográficos claves                                                                 | [@crouse1987stage]                   |                       [@shefferson2003life; @kery2004demographic; @zotz2006population; @zhongjian2008correlation; @tremblay2009dormancy; @tremblay2009population] |
+| Manejo          | Identificar las etapas o procesos demográficos claves   | [@crouse1987stage] |  [@shefferson2003life; @kery2004demographic; @zotz2006population; @zhongjian2008correlation; @tremblay2009dormancy; @tremblay2009population] |
 |                                | Determinar cuantos individuos en una población es necesario para reducir la extinción                            | [@shaffer1981minimum; @armbruster1993population] |                      ?   |
 |                                | Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable           | [@bustamante1996population]                      |                        ? |
 |                                | Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población | [@nantel1996population]                  |                        [@emeterio2021does] |

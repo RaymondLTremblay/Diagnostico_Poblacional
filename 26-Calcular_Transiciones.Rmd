@@ -1,4 +1,4 @@
-# 26-Calcular_Transiciones
+# Calcular_Transiciones
 
 
 ```{r}

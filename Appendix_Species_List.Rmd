@@ -1,20 +1,14 @@
-# Historia breve de la dinámica poblacional en orquídeas.
+# (PART\*) Act two {-}
+
+# Lista completa de todos los trabajos dinamica poblacional en orquidea que han usado matriz {-}
 
 
 
 
 
-
-
-
-### Los primeros estudios
+### Los primeros estudios {.unnumbered}
 
 En esta sección se hará una revisión breve de los estudios de dinámica poblacional en orquídeas que usarón PPM.  
-
-
-
-
-
 
 En la siguiente tabla se presentan los estudios de dinámica poblacional en orquídeas que usaron PPM y la(s) preguntas principales que los autores intentaron responder. En la gran mayoría de los trabajos se evalúa múltiples hipótesis/ideas sobre la dinámica poblacional de las orquídeas. Para información especifica sobre la metodología usada en cada estudio| se recomienda revisar los trabajos originales. 
 
@@ -33,8 +27,8 @@ En la siguiente tabla se presentan los estudios de dinámica poblacional en orqu
 
 | Genero  | Especies    | Riesgo | Var. esp. | Var. temp | Lat. | Est. param. | Hist. vida |   Ref |
 |---------|----------   |:------:|-----------|-----------|------|-------------|:-----------:|------|
-|Aspasia  |principissa  |    X   |           |           |     |             |   X          |  @zotz2006population |
-|Brasavolla| cucullata. | ? | ? | ?| ?| ?| ?| @ackerman2020small|
+|*Aspasia*  |*principissa*  |    X   |           |           |     |             |   X          |  @zotz2006population |
+|*Brasavolla*| *cucullata* | ? | ? | ?| ?| ?| ?| @ackerman2020small|
 |Broughtonia| cubensis | ?| ? | ?| ?| ?| ?| @raventos2021effects|
 |Caladenia| amoena      | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
 |Caladenia| argocalla   | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
@@ -99,35 +93,3 @@ En la siguiente tabla se presentan los estudios de dinámica poblacional en orqu
 | Telipogon| helleri| -| - | -| -| -| -| @raventos2018comparison|
 | Tolumnia| variegata| -| - | -| -| -| -| @calvo1993evolutionary|
 | Trichocentrum| undulatum| -| - | -| -| -| -| @borrero2023populations|
-
-
-
-
-```{r, eval=FALSE, echo=FALSE}
-library(tidyverse)
-library(gt)
-Historia_breve <- tribble(~Genero, ~especie, ~Riesgo, ~"Var. esp", ~"Var.temp", ~Latencia, ~"Est. param", ~"Hist. Vida", ~Referencia,
-                          "Aspasia", "principissa", "?", "?" , "?", "?", "?", "?", "[@zotz2006population]",
-                          "Brasavolla", "cucullata", "?", "?" , "?", "?", "?", "?", "?",
-                          "Broughonia", "cubensis", "?", "?" , "?", "?", "?", "?", "?",
-                          "Caladenia", "amoena", "Si", "?" , "?", "Si", "Si", "Si", "?",
-                          "Caladenia", "argocalla", "Si", "?" , "?", "Si", "Si", "Si", "?",
-                          "Caladenia", "clavigera", "Si", "?" , "?", "Si", "Si", "Si", "?",
-)
-
-#Historia_breve
-
-gt(Historia_breve)
-```     
-
-
-
-
-
-```{r, eval=FALSE, echo=FALSE}
-library(readxl)
-Species_list <- read_excel("Species_list.xlsx")
-
-gt(Species_list)
-```
-
