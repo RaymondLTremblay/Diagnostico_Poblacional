@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-09-12" />
+<meta name="date" content="2024-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,7 +171,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.2</b> Estructura del libro</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#funciones-y-paquetes-de-r"><i class="fa fa-check"></i><b>1.3</b> Funciones y paquetes de R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#paquetes-de-r-principales-usado-en-el-libro"><i class="fa fa-check"></i><b>1.3</b> Paquetes de R principales usado en el libro</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.4</b> Libro digital y archivos de datos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
@@ -224,8 +224,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-características-de-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.5</b> Identificar la características de la especie de estudio</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#semillas"><i class="fa fa-check"></i><b>4.5.1</b> Semillas</a></li>
-<li class="chapter" data-level="4.5.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.2</b> Identificación y etiquetado de individuos.</a></li>
+<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.1</b> Identificación y etiquetado de individuos.</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#variables-a-registrar-en-campo"><i class="fa fa-check"></i><b>4.6</b> Variables a registrar en campo</a>
 <ul>
@@ -426,10 +425,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="18.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>18.2</b> Ventaja de usar simulaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>19</b> El uso de matrices para estudios evolutivos</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html#section-1"><i class="fa fa-check"></i><b>19.1</b> </a></li>
-</ul></li>
+<li class="chapter" data-level="19" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>19</b> El uso de matrices para estudios evolutivos</a></li>
 <li class="chapter" data-level="20" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html"><i class="fa fa-check"></i><b>20</b> PPM_Orquidea sinopsis historico</a>
 <ul>
 <li class="chapter" data-level="20.1" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html#por-raymond-y-todos"><i class="fa fa-check"></i><b>20.1</b> Por: Raymond y todos</a></li>
@@ -1869,8 +1865,7 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb429-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb429-9" tabindex="-1"></a></span>
 <span id="cb429-10"><a href="compadre_orchid-ppm-y-su-uso.html#cb429-10" tabindex="-1"></a>SPECIES_O</span></code></pre></div>
 <pre><code>## # A tibble: 54 × 6
-## # Groups:   SpeciesAccepted, YearPublication, OrganismType,
-## #   StudyStart [54]
+## # Groups:   SpeciesAccepted, YearPublication, OrganismType, StudyStart [54]
 ##    SpeciesAccepted       YearPublication OrganismType StudyStart StudyEnd
 ##    &lt;chr&gt;                 &lt;chr&gt;           &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 Aspasia principissa   2006            Epiphyte           1997     2004
@@ -1922,13 +1917,11 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb434-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb434-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb434-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was
-## deprecated in ggplot2 3.5.0.
-## ℹ Please use the `legend.position.inside` argument of `theme()`
-##   instead.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2 3.5.0.
+## ℹ Please use the `legend.position.inside` argument of `theme()` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this
-## warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
 <div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb436-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
@@ -1952,8 +1945,7 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb438-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb438-11" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Study duration&quot;</span>)<span class="sc">+</span></span>
 <span id="cb438-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb438-12" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frequency&quot;</span>)<span class="sc">+</span></span>
 <span id="cb438-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb438-13" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
 ## (`stat_bin()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_14-1.png" width="672" /></p>
@@ -1961,8 +1953,7 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb441-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-2" tabindex="-1"></a></span>
 <span id="cb441-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-3" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Duración_Epi_Ter.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
 ## (`stat_bin()`).</code></pre>
 </div>
@@ -2157,13 +2148,11 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb464-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb464-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb464-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb464-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span>Habit_Type)<span class="sc">+</span></span>
 <span id="cb464-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb464-4" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_23-1.png" width="672" /></p>
 <div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb466-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Terr_Epi_lambda.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
-## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.</code></pre>
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p>Para calcular los coeficientes usando un modelo lineal se puede usar la función <strong>lm</strong>. En este caso se usa la variable <strong>Habit_Type</strong> para predecir el valor propio de lambda. Añadiendo un <strong>-1</strong> al modelo hace que los coeficientes para cada grupo este en la tabla de salida y no hay que hacer un calculo suplementario. Note que lo más interesante de este análisis es que las especies terrestres tienen menos dispersión cuando evaluado con el error estandard que las especies epifitas, y aunque los cuartiles son más amplios (análisis anterior).</p>
 <div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb468-1" tabindex="-1"></a>model_lambda<span class="ot">=</span><span class="fu">lm</span>(lambda <span class="sc">~</span> Habit_Type<span class="dv">-1</span>, <span class="at">data=</span>ALL_Lambdas)</span>
 <span id="cb468-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb468-2" tabindex="-1"></a><span class="fu">summary</span>(model_lambda)</span></code></pre></div>
@@ -2309,8 +2298,8 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb485-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb485-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
 <span id="cb485-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb485-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">55</span>, <span class="fl">0.2</span>))</span></code></pre></div>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the
-## scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26a-1.png" width="672" /></p>
 <div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb487-1" tabindex="-1"></a><span class="co">#ggsave(&quot;orchid_map.jpg&quot;)</span></span></code></pre></div>
 </div>
@@ -2347,13 +2336,11 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb488-25"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) <span class="co"># ordenar las especies por el largo de vida</span></span></code></pre></div>
 <pre><code>## Warning: There were 4 warnings in `mutate()`.
 ## The first warning was:
-## ℹ In argument: `var_life_expectancy = mapply(life_expect_var,
-##   matU, start = 1)`.
+## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU, start = 1)`.
 ## Caused by warning:
 ## ! Argument matU has at least one stage-specific survival.
 ##  probability &gt; 1
-## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining
-##   warnings.</code></pre>
+## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
 <div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb490-1" tabindex="-1"></a>compadre_life_expect</span></code></pre></div>
 <pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 28 SPECIES and 32 MATRICES.
 ## 
@@ -2502,10 +2489,10 @@ high_CI_var_LS</p>
 ##     t1way, t1waybt, t2way, t3way, trimcibt, trimse, tsplit, twocor,
 ##     twopcor, winall, wincor, winmean, winse, winvar, wmcpAKP, yuen,
 ##     yuen.effect.ci, yuenbt, yuend, ZYmediate</code></pre>
-<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-1" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt&quot;, chdir = T) # Home computer</span></span>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;/Users/rlt/Library/CloudStorage/Dropbox/GitHub_Dropbox_Drive/GitHub/Diagnostico_Poblacional/Diagnostico_Poblacional/Rallfun-v38.txt&quot;</span>, <span class="at">chdir =</span> T) <span class="co"># Home computer</span></span>
 <span id="cb522-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-2" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T)</span></span>
 <span id="cb522-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-3" tabindex="-1"></a><span class="co">#source(&quot;/Users/rlt/Dropbox/Ackermanstuff/Pollinator_Interaction/Specificity_Index_pollinators/Rallfun-v38.txt&quot;, chdir = T) ## Work laptop Computer</span></span>
-<span id="cb522-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-4" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;</span>, <span class="at">chdir =</span> T) <span class="co">#When used on Monique</span></span></code></pre></div>
+<span id="cb522-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb522-4" tabindex="-1"></a><span class="co">#source(&quot;/Users/raymondtremblay/Dropbox/METAS+COHORT_D/Rallfun-v38.txt&quot;, chdir = T) #When used on Monique</span></span></code></pre></div>
 <div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb523-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
 <pre><code>## [1] Herbaceous perennial Epiphyte            
 ## Levels: Herbaceous perennial Epiphyte</code></pre>

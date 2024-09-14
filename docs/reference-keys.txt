@@ -6,7 +6,7 @@ thm:promedio
 dinámica-poblacional
 objetivo-del-libro
 estructura-del-libro
-funciones-y-paquetes-de-r
+paquetes-de-r-principales-usado-en-el-libro
 libro-digital-y-archivos-de-datos
 qué-es-el-analisis-de-dinamica-poblacional
 un-recuento-histórico-breve-de-la-ecología-de-poblaciones
@@ -52,7 +52,6 @@ etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo
 semillas.
 plántulas.
 identificar-la-características-de-la-especie-de-estudio
-semillas
 identificación-y-etiquetado-de-individuos.
 variables-a-registrar-en-campo
 crecimiento-o-reiteración-vegetativa.
@@ -215,7 +214,6 @@ estocasticidad-demografica
 obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales-1
 ventaja-de-usar-simulaciones
 el-uso-de-matrices-para-estudios-evolutivos
-section-1
 ppm_orquidea-sinopsis-historico
 por-raymond-y-todos
 compadre_orchid-ppm-y-su-uso
@@ -275,8 +273,8 @@ los-primeros-estudios
 intro
 a-section
 otra-seccion
+section-1
 section-2
-section-3
 note-the-size-of-font-changes-with-the-number
 note-the-size-of-font-changes-with-the-number-1
 note-the-size-of-font-changes-with-the-number-2
