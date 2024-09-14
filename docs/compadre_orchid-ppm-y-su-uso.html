@@ -1917,7 +1917,8 @@ La información incluye la clases/etapas que los autores usaron. El ciclo de vid
 <span id="cb434-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb434-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb434-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb434-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2 3.5.0.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
+## 3.5.0.
 ## ℹ Please use the `legend.position.inside` argument of `theme()` instead.
 ## This warning is displayed once every 8 hours.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
@@ -2336,7 +2337,8 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb488-25"><a href="compadre_orchid-ppm-y-su-uso.html#cb488-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">OrganismType =</span> <span class="fu">reorder</span>(OrganismType, life_expectancy, median)) <span class="co"># ordenar las especies por el largo de vida</span></span></code></pre></div>
 <pre><code>## Warning: There were 4 warnings in `mutate()`.
 ## The first warning was:
-## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU, start = 1)`.
+## ℹ In argument: `var_life_expectancy = mapply(life_expect_var, matU, start =
+##   1)`.
 ## Caused by warning:
 ## ! Argument matU has at least one stage-specific survival.
 ##  probability &gt; 1
@@ -2606,7 +2608,7 @@ high_CI_var_LS</p>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-tremblay2001gene" class="csl-entry">
-Tremblay, Raymond L, and James D Ackerman. 2001. <span>“Gene Flow and Effective Population Size in Lepanthes (Orchidaceae): A Case for Genetic Drift.”</span> <em>Biological Journal of the Linnean Society</em> 72 (1): 47–62. <a href="https://doi.org/10.1006/bijl.2000.0485">https://doi.org/10.1006/bijl.2000.0485</a>.
+Tremblay, Raymond L, and James D Ackerman. 2001. <span>“Gene Flow and Effective Population Size in <em>Lepanthes</em> (Orchidaceae): A Case for Genetic Drift.”</span> <em>Biological Journal of the Linnean Society</em> 72 (1): 47–62. <a href="https://doi.org/10.1006/bijl.2000.0485">https://doi.org/10.1006/bijl.2000.0485</a>.
 </div>
 <div id="ref-tremblay2014bayesian" class="csl-entry">
 Tremblay, Raymond L, and Michael A McCarthy. 2014. <span>“Bayesian Estimates of Transition Probabilities in Seven Small Lithophytic Orchid Populations: Maximizing Data Availability from Many Small Samples.”</span> <em>PLoS One</em> 9 (7): e102859.
