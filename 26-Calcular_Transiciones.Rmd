@@ -3,7 +3,7 @@
 
 ```{r}
 library(readr)
-Especie_desconocida <- read_csv("Especie_desconocida.csv")
+Especie_desconocida <- read_csv("data/Especie_desconocida.csv")
 
 Especie_desconocida
 ```
@@ -64,7 +64,7 @@ lambda(matA)
 ```{r}
 
 library(readr)
-ejercicio_de_orquideas_Hoja_1 <- read_csv("ejercicio_de_orquideas_Hoja_1.csv")
+ejercicio_de_orquideas_Hoja_1 <- read_csv("data/ejercicio_de_orquideas_Hoja_1.csv")
 
 ejercicio_de_orquideas_Hoja_1
 

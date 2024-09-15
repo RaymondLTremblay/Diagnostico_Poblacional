@@ -126,7 +126,7 @@ gt(Historia_breve)
 
 ```{r, eval=FALSE, echo=FALSE}
 library(readxl)
-Species_list <- read_excel("Species_list.xlsx")
+Species_list <- read_excel("data/Species_list.xlsx")
 
 gt(Species_list)
 ```

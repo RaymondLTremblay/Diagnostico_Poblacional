@@ -256,7 +256,7 @@ SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublicat
 SPECIES_O
 
 
-#write_csv(SPECIES_O, "Species_O.csv")
+#write_csv(SPECIES_O, "DATA/Species_O.csv")
 ```
 
 
@@ -297,7 +297,7 @@ ggplot(SPECIES_O, aes(SpeciesAccepted, color=OrganismType))+
         axis.title.y = element_text(color = "grey20", size = 12, angle = 90, hjust = .5, vjust = .5, face = "plain"))
 
 
-ggsave("Lenght_survey.png")
+ggsave("Figures_MS/Lenght_survey.png")
 
 ```
 
@@ -327,7 +327,7 @@ ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
 
 #ggsave("Duración_Epi_Ter.pdf")
 
-ggsave("Duración_Epi_Ter.png")
+ggsave("Figures_MS/Duración_Epi_Ter.png")
 ```
 
 
@@ -519,7 +519,7 @@ ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
   facet_wrap( ~Habit_Type)+
   rlt_theme
 
-ggsave("Terr_Epi_lambda.png")
+ggsave("Figures_MS/Terr_Epi_lambda.png")
 ```
 
 Para calcular los coeficientes (el promedio) es significativamente diferentes entre los grupos se puede usar un modelo lineal y la función **lm**. En este caso se usa la variable **Habit_Type** para predecir el valor propio de lambda. Añadiendo un **-1** al modelo hace que los coeficientes para cada grupo este en la tabla de salida y no hay que hacer un calculo suplementario. Note que lo más interesante de este análisis es que las especies terrestres tienen menos dispersión cuando evaluado con el error estandar que las especies epifitas, y aunque los cuartiles son más amplios (análisis anterior).
@@ -699,7 +699,7 @@ ggplot2::ggplot(OrchidLS, aes(OrganismType, life_expectancy, colour=OrganismType
   rlt_theme+
   theme(legend.position = "none")
 
-ggsave("Life_Span.png")
+ggsave("Figures_MS/Life_Span.png")
 ```
 
 
@@ -731,7 +731,7 @@ ggplot(compadre_life_expect, aes(x=reorder(SpeciesAccepted, life_expectancy), li
 #  rlt_theme+
   #theme(legend.position = "none")
 
-#ggsave("Genus_Life_Span.png")
+#ggsave("Figures_MS/Genus_Life_Span.png")
 ```
 
 
@@ -757,7 +757,7 @@ ggplot( aes(x=reorder(SpeciesAccepted, life_expectancy), life_expectancy, colour
   rlt_theme+
   theme(legend.position = "none")
 
-ggsave("Caladenia_Life_Span.png")
+ggsave("Figures_MS/Caladenia_Life_Span.png")
 ```
 
 

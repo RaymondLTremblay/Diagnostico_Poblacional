@@ -1251,7 +1251,7 @@ Tolumnia variegata
 ## 10 Caladenia oenochila   2009            Epiphyte           1996     2007
 ## # ℹ 44 more rows
 ## # ℹ 1 more variable: n_populations &lt;int&gt;</code></pre>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb431-1" tabindex="-1"></a><span class="co">#write_csv(SPECIES_O, &quot;Species_O.csv&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb431-1" tabindex="-1"></a><span class="co">#write_csv(SPECIES_O, &quot;DATA/Species_O.csv&quot;)</span></span></code></pre></div>
 <hr />
 <div id="determinar-cuantas-poblaciones-fueron-muestreadas-por-especies" class="section level3 hasAnchor" number="21.6.1">
 <h3><span class="header-section-number">21.6.1</span> Determinar cuantas poblaciones fueron muestreadas por especies<a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-fueron-muestreadas-por-especies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1293,7 +1293,7 @@ Tolumnia variegata
 ## This warning is displayed once every 8 hours.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb436-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Lenght_survey.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb436-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <hr />
 </div>
@@ -1321,7 +1321,7 @@ Tolumnia variegata
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_14-1.png" width="672" /></p>
 <div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-1" tabindex="-1"></a><span class="co">#ggsave(&quot;Duración_Epi_Ter.pdf&quot;)</span></span>
 <span id="cb441-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-2" tabindex="-1"></a></span>
-<span id="cb441-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-3" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Duración_Epi_Ter.png&quot;</span>)</span></code></pre></div>
+<span id="cb441-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb441-3" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Duración_Epi_Ter.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 row containing non-finite outside the scale range
@@ -1540,7 +1540,7 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb465-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb465-4" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_23-1.png" width="672" /></p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb467-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Terr_Epi_lambda.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb467-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Terr_Epi_lambda.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p>Para calcular los coeficientes (el promedio) es significativamente diferentes entre los grupos se puede usar un modelo lineal y la función <strong>lm</strong>. En este caso se usa la variable <strong>Habit_Type</strong> para predecir el valor propio de lambda. Añadiendo un <strong>-1</strong> al modelo hace que los coeficientes para cada grupo este en la tabla de salida y no hay que hacer un calculo suplementario. Note que lo más interesante de este análisis es que las especies terrestres tienen menos dispersión cuando evaluado con el error estandar que las especies epifitas, y aunque los cuartiles son más amplios (análisis anterior).</p>
@@ -1731,7 +1731,7 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb491-6"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-6" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
 <span id="cb491-7"><a href="compadre_orchid-ppm-y-su-uso.html#cb491-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="Diagnostico_Poblacional_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Life_Span.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb492-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p><a href="https://jonesor.github.io/Rage/reference/life_expect.html" class="uri">https://jonesor.github.io/Rage/reference/life_expect.html</a></p>
 <p>En el siguiente script y grafico vemos la visualización por genero de los estimados de la esperanza de vida. Nota que la esperanza de vida es un estimado y no un valor exacto. En este caso se usa la función <strong>life_expect_var</strong> para calcular la varianza de la esperanza de vida. La escala de x (el largo de vida fue cambiado a log10 de la esperanza de vida).</p>
@@ -1756,7 +1756,7 @@ high_CI_var_LS</p>
 <div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-1" tabindex="-1"></a><span class="co">#  rlt_theme+</span></span>
 <span id="cb495-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-2" tabindex="-1"></a>  <span class="co">#theme(legend.position = &quot;none&quot;)</span></span>
 <span id="cb495-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-3" tabindex="-1"></a></span>
-<span id="cb495-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-4" tabindex="-1"></a><span class="co">#ggsave(&quot;Genus_Life_Span.png&quot;)</span></span></code></pre></div>
+<span id="cb495-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb495-4" tabindex="-1"></a><span class="co">#ggsave(&quot;Figures_MS/Genus_Life_Span.png&quot;)</span></span></code></pre></div>
 <p>Evaluando el largo de vida de las especies de <em>Caladenia</em> solamente</p>
 <div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb496-1" tabindex="-1"></a><span class="co">#SPECIES_O$SpeciesAccepted &lt;- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)</span></span>
 <span id="cb496-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb496-2" tabindex="-1"></a></span>
@@ -1779,7 +1779,7 @@ high_CI_var_LS</p>
 <span id="cb498-8"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-8" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
 <span id="cb498-9"><a href="compadre_orchid-ppm-y-su-uso.html#cb498-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_29-1.png" width="672" /></p>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Caladenia_Life_Span.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb499-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Caladenia_Life_Span.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <p>Test difference in life span.</p>
 <div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb501-1" tabindex="-1"></a><span class="fu">unique</span>(compadre_life_expect<span class="sc">$</span>OrganismType)</span></code></pre></div>
