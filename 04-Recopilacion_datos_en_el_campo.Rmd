@@ -362,3 +362,6 @@ Otras variables que pudiese recoger incluye
 -   indicadores de herbivoria sobre la planta
 
 -   indicadores de la cantidad plagas sobre la planta como "rust"
+
+
+Revision: Sept 14, 2024

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>(Appendix) | Dinamica Poblacional</title>
+  <title>Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="(Appendix) | Dinamica Poblacional" />
+  <meta property="og:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="(Appendix) | Dinamica Poblacional" />
+  <meta name="twitter:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="cross.html"/>
-<link rel="next" href="footnotes-and-citations.html"/>
+<link rel="prev" href="como-calcular-fecundidad.html"/>
+<link rel="next" href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -575,21 +575,81 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix" class="section level1 unnumbered hasAnchor">
-<h1>(Appendix)<a href="appendix.html#appendix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.</p>
-<p>Add a numbered part: <code># (PART) Act one {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an unnumbered part: <code># (PART\*) Act two {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an appendix as a special kind of un-numbered part: <code># (APPENDIX) Other stuff {-}</code> (followed by <code># A chapter</code>). Chapters in an appendix are prepended with letters instead of numbers.</p>
+<div id="MatricesTFC" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Capítulo 7</span> Matrices de transicion, fecundidad y clonal<a href="MatricesTFC.html#MatricesTFC" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="por-raymond" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Por: Raymond<a href="MatricesTFC.html#por-raymond" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="tres-tipos-de-matrices" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Tres tipos de matrices<a href="MatricesTFC.html#tres-tipos-de-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para facilitar los análisis y interpretaciones es necesario tener claro la diferencias en los parámetros que provienen de transiciones, fecundidades y clonaje, cada sub-matriz se suma para tener un modelo de una matriz poblacional. La suma de cada una de esas sub-matrices resulta en la matriz de transiciones para evaluar algunos de los parametros del crecimiento poblacional.</p>
+<p>Definiciones de las matrices</p>
+<ul>
+<li>MatU = Matriz de transiciones</li>
+<li>MatF = Matriz de Fecundidad</li>
+<li>MatC = Matriz de clonaje</li>
+<li>MatA = MatU + MatF + MatC</li>
+</ul>
+<div class="float">
+<img src="Figures/Matrices_A_U_F_C.jpg" style="width:90.0%" alt="Relación entre matrices; Diseño: Samuel Gascoigne" />
+<div class="figcaption">Relación entre matrices; Diseño: Samuel Gascoigne</div>
+</div>
+</div>
+<div id="matu-matriz-de-transiciones" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> MatU: Matriz de transiciones<a href="MatricesTFC.html#matu-matriz-de-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la matriz de transiciones, <strong>MatU</strong> se encuentra solamente la información sobre de transiciones, estasis o retroceso entre las etapas de vida. Por consecuencia todo información sobre reproducción y clonaje es excluida. Si el diseño del modelo asume tres etapas de vida, plantulas, juvenil y adultos, se incluye solamente las siguientes transiciones.</p>
+<p>Nota que es este modelo los juveniles no pueden regresar a ser plantulas, pero los adultos pudiese regresar a ser juvenil. Seria probablemente más adecuado re-nombrar la etapa juvenil (que se entiende que no es reproductivo) a algo más claro como “Individuos pequeño”.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="MatricesTFC.html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb31-2"><a href="MatricesTFC.html#cb31-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb31-3"><a href="MatricesTFC.html#cb31-3" tabindex="-1"></a>matU <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb31-4"><a href="MatricesTFC.html#cb31-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb31-5"><a href="MatricesTFC.html#cb31-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.05</span>),</span>
+<span id="cb31-6"><a href="MatricesTFC.html#cb31-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>)</span>
+<span id="cb31-7"><a href="MatricesTFC.html#cb31-7" tabindex="-1"></a>)</span>
+<span id="cb31-8"><a href="MatricesTFC.html#cb31-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juvenil&quot;</span>, <span class="st">&quot;Adulto&quot;</span>)</span>
+<span id="cb31-9"><a href="MatricesTFC.html#cb31-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matU, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6eb2f7c5c09d929d6515" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6eb2f7c5c09d929d6515">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="matf-matriz-de-fecundidad" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> MatF: Matriz de fecundidad<a href="MatricesTFC.html#matf-matriz-de-fecundidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si uno sigue la figura anterior vemos que los individuos en la segunda etapa se reproducen sexualmente (producen plantulas). Por consequencia seria probablemente más adecuado cambiar de nombre para la segunda etapa de “juvenil” a “individuos pequeños”. Lo que se observa es el ciclo de vida de la oportaciones de plantulas es que los Individuos pequeños y Grande producen plantulas.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="MatricesTFC.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb32-2"><a href="MatricesTFC.html#cb32-2" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb32-3"><a href="MatricesTFC.html#cb32-3" tabindex="-1"></a>matF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb32-4"><a href="MatricesTFC.html#cb32-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">1.8</span>),</span>
+<span id="cb32-5"><a href="MatricesTFC.html#cb32-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb32-6"><a href="MatricesTFC.html#cb32-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb32-7"><a href="MatricesTFC.html#cb32-7" tabindex="-1"></a>)</span>
+<span id="cb32-8"><a href="MatricesTFC.html#cb32-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Ind Pequeños&quot;</span>, <span class="st">&quot;Ind Grande&quot;</span>)</span>
+<span id="cb32-9"><a href="MatricesTFC.html#cb32-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matF, <span class="at">stages=</span>stages)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-63c7fd7ed0ec1e3e6f9e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-63c7fd7ed0ec1e3e6f9e">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="matc-matriz-de-clonación" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> MatC = Matriz de clonación<a href="MatricesTFC.html#matc-matriz-de-clonación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Esa matriz representa la información para especies que se reproducen por clonaje. Nota que hay necesitar de definir lo que es crecimiento por clonaje. Por ejemplo un individuo de <em>Epidendrum</em> que crece y que tenga más tallos, no debería ser considerado clonaje, pero crecimiento del individuo. Al contrario un individuo que crece de forma que la planta madre se separa en dos o más partes donde no comparten conexión pudiese ser considerado clonaje. Otra alternativa es que hay muchas especies de orquídeas que producen <em>keiki</em>, el momento que estos se separan de la madre se pueden considerar como el mismo individuo (geneticamente igual) a parte (ecologicamente distincto).</p>
+<p>Necesitamos fotos de orquídeas con clonaje y keiki (quien puede ayudar)</p>
+<p>Se debería enfatizar que añadir el concepto de clonaje dentro de la matriz de transiones resulta en estimados de parámetros diferentes, tal como el tamaño efectivo de población, Ne, en adición de evaluar otros conceptos evolutivos. En estudios evolutivos no es el individuo como tal que es la unidad de interés pero el individuo como fuente de diversidad genética, por consecuencia individuos (clones) que son genéticamente igual son evolutivamente el mismo individuos aunque estén separado físicamente. Las poblaciones organizados en clones afecta la interpretación de datos tanto en los estudios ecológico y evolutivos <span class="citation">Cook (<a href="#ref-cook1983clonal">1983</a>)</span>. Cuando se estudia especies con clonación hay que diferenciar entre los que es el “ramet” y un “genet”. Los “genets” son la suma de todas las partes “los ramets” que tiene la misma genética. Los “ramet”, son las partes individuales del individuo. En orquídea se podría considerar cada seudobulbo como un ramet y la suma de todos los seudobulbo como el “genet”. Hay acercamiento para tomar en cuenta la adecuación de los “individuos” en la matriz y por consecuencia intergrar el concepto de clonación en los estimados. vea: <span class="citation">McGraw and Caswell (<a href="#ref-mcgraw1996estimation">1996</a>)</span>.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-cook1983clonal" class="csl-entry">
+Cook, Robert E. 1983. <span>“Clonal Plant Populations: A Knowledge of Clonal Structure Can Affect the Interpretation of Data in a Broad Range of Ecological and Evolutionary Studies.”</span> <em>American Scientist</em> 71 (3): 244–53.
+</div>
+<div id="ref-mcgraw1996estimation" class="csl-entry">
+McGraw, James B, and Hal Caswell. 1996. <span>“Estimation of Individual Fitness from Life-History Data.”</span> <em>The American Naturalist</em> 147 (1): 47–64.
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="cross.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="footnotes-and-citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="como-calcular-fecundidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -620,7 +680,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/93-parts.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-matriz_transicion_fecundidad_clonal.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -628,7 +688,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/93-parts.Rmd",
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/07-matriz_transicion_fecundidad_clonal.Rmd",
 "text": null
 },
 "download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],

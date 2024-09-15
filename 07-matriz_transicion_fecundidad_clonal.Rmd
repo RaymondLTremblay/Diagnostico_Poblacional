@@ -1,4 +1,4 @@
-# Matrices de transicion, fecundidad y clonal {#Fertilidad}
+# Matrices de transicion, fecundidad y clonal {#MatricesTFC}
 
 ## Por: Raymond 
 
