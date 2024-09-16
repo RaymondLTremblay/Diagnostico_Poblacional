@@ -1,0 +1,23 @@
+---
+title: "Test_bibtest"
+author: "Raymond_L_Tremblay"
+date: "2024-09-16"
+output: html_document
+bibliography: book.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library("gt")
+gt(dplyr::tibble("study_id" = c(1,2),
+               "lead_author" = c("Guan, Ni", "Guan, Liang"),
+               "sample_size" = c(1099, 1590),
+               "refs" = c("[@conde2019data]",
+                          "[@fenner2017ecology]")))
+
+```
+                          

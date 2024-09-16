@@ -8,88 +8,242 @@
 
 ### Los primeros estudios {.unnumbered}
 
-En esta sección se hará una revisión breve de los estudios de dinámica poblacional en orquídeas que usarón PPM.  
+En esta sección se hará una revi"Si"ón breve de los estudios de dinámica poblacional en orquídeas que usarón PPM.  
 
-En la siguiente tabla se presentan los estudios de dinámica poblacional en orquídeas que usaron PPM y la(s) preguntas principales que los autores intentaron responder. En la gran mayoría de los trabajos se evalúa múltiples hipótesis/ideas sobre la dinámica poblacional de las orquídeas. Para información especifica sobre la metodología usada en cada estudio| se recomienda revisar los trabajos originales. 
+En la "Si"guiente tabla se presentan los estudios de dinámica poblacional en orquídeas que usaron PPM y la(s) preguntas principales que los autores intentaron responder. En la gran mayoría de los trabajos se evalúa múltiples hipóte"Si"s/ideas sobre la dinámica poblacional de las orquídeas. Para información especifica sobre la metodología usada en cada estudio, se recomienda revisar los trabajos originales. 
 
 - Clave de las variables
 
-    - Riesgo: Si se evaluó el riesgo de extinción de la especie.
-    - Variación espacial: Si se evaluó la variación espacial de la especie.
-    - Variación temporal: Si se evaluó la variación temporal de la especie.
-    - Latencia: Si se evaluó la importancia de la latencia (Dormancy) de la especie.
-    - Métodos de estimación de parametros: Si se evaluó métodos alternos de estimación de parametros (no tradicional).
-    - Historia de Vida: Si se evaluó la historia de vida de la especie en un contexto evolutivo.
-    - Otro: Si se evaluó otra pregunta no incluida en las anteriores.
+    - Riesgo: "Si" se evaluó el riesgo de extinción de la especie.
+    - Variación espacial: "Si" se evaluó la variación espacial de la especie.
+    - Variación temporal: "Si" se evaluó la variación temporal de la especie.
+    - Latencia: "Si" se evaluó la importancia de la latencia (Dormancy) de la especie.
+    - Métodos de estimación de parametros: "Si" se evaluó métodos alternos de estimación de parametros (no tradicional).
+    - Historia de Vida: "Si" se evaluó la historia de vida de la especie en un contexto evolutivo.
+    - Otro: "Si" se evaluó otra pregunta no incluida en las anteriores.
     - Referencia: Referencia del estudio.
-                     
+  
+  
+```{r}
+library(readr)
+library(dplyr)
+library(gt)
+```
+                   
                       
+```{r, echo=FALSE}
+list <-'Genero  , Especies    , Riesgo , Var. esp. , Var. temp , Lat. , Est. param. , Hist. vida , Otro,  Ref 
+\n      ---------,----------   ,------,-----------,-----------,------,-------------,-----------,------,---
+\n*Aspa"Si"a*  ,*principissa*,  "Si" ,      -     ,  "Si"  ,   -   ,      -       ,    -     ,  , ["@zotz2006population] 
+\n*Brasavolla*, *cucullata*,"Si"     , "Si"         , "Si"         , -   , -           , -           , , ""@ackerman2020small"
+\n Broughtonia, cuben"Si"s , "-", "-" , "-", "-", "-", "-","Si", "@raventos2021effects,
+\n Caladenia, amoena      , "Si", - , -, "Si", "Si", "Si","Si", md("@tremblay2009population"; "@tremblay2009dormancy)
+\n Caladenia, argocalla   , "Si", - , -, "Si", "Si", "Si","Si", "@tremblay2009population"; "@tremblay2009dormancy
+\n Caladenia, clavigera   , "Si", - , -, "Si", "Si", "Si","Si", "@tremblay2009population"; "@tremblay2009dormancy
+\n Caladenia, elegans     , "Si", - , -, "Si", "Si", "Si","Si", "@tremblay2009population"; "@tremblay2009dormancy
+\n Caladenia, graniticola , "Si", - , -, "Si", "Si", "Si", ,"@tremblay2009population"; "@tremblay2009dormancy
+\n Caladenia, macroclavia , "Si", - , -, "Si", "Si", "Si","Si", "@tremblay2009population"; "@tremblay2009dormancy
+\n Caladenia, oenochila   , "Si", - , -, "Si", "Si", "Si","Si", "@tremblay2009population"; "@tremblay2009dormancy'
 
-| Genero  | Especies    | Riesgo | Var. esp. | Var. temp | Lat. | Est. param. | Hist. vida |   Ref |
-|---------|----------   |:------:|-----------|-----------|------|-------------|:-----------:|------|
-|*Aspasia*  |*principissa*  |    X   |           |           |     |             |   X          |  @zotz2006population |
-|*Brasavolla*| *cucullata* | ? | ? | ?| ?| ?| ?| @ackerman2020small|
-|Broughtonia| cubensis | ?| ? | ?| ?| ?| ?| @raventos2021effects|
-|Caladenia| amoena      | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| argocalla   | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| clavigera   | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| elegans     | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| graniticola | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| macroclavia | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| oenochila   | Si| - | -| Si| Si| Si| @tremblay2009population; @tremblay2009dormancy|
-|Caladenia| orientalis  | -| - | -| -| -| -| @coates2009demographic|
-|Cephalanthera| longifolia| -| - | -| -| -| -| @shefferson2012linking|
-|Cleistes| divaricata   | -| - | -| -| -| -| @gregg1991variation|
-|Cleistes| bifaria      | -| - | -| -| -| -| @gregg2006comparison|
-|Corallorhiza| trifida| -| - | -| -| -| -| @iriondo2009peligro|
-|Crepidium| acuminatum| -| - | -| -| -| -| @timsina2021six|
-|Cyclopogon| luteoalbus| -| - | -| -| -| -| @juarez2014viability|
-|Cypripedium| acaule| -| - | -| -| -| -| @cochran1992simple|
-|Cypripedium| calceolus| -| - | -| -| -| -| @nicole2005population; @garcia2010living; @shefferson2012linking; @davison2013contributions|
-|Cypripedium| candidum| -| - | -| -| -| -| @davison2013contributions|
-|Cypripedium| fasciculatum| -| - | -| -| -| -| @thorpe2011trends|
-|Cypripedium| parviflorum| -| - | -| -| -| -| @shefferson2014life|
-|Cypripedium| reginae| -| - | -| -| -| -| @kery2004demographic|
-|Cypripedium| lentiginosum| -| - | -| -| -| -| @zhongjian2008correlation|
-|Dactylorhiza| hatagirea| -| - | -| -| -| -| @chapagain2021illegal|
-|Dactylorhiza| lapponica| -| - | -| -| -| -| @sletvold2010long|
-|Dendrophylax| lindenii| -| - | -| -| -| -| @raventos2015population|
-|Epidendrum| xanthinum| -| - | -| -| -| -| @farfan2008estrategias|
-|Epipactis| atrorubens| -| - | -| -| -| -| @hens2017low|
-|Erycina| crista-galli| -| - | -| -| -| -| @mondragon2007life|
-|Guarianthe| aurantiaca| -| - | -| -| -| -| @mondragon2009population|
-|Gymnadenia| conopsea| -| - | -| -| -| -| @oien2002flowering|
-|Herminium| monorchis| -| - | -| -| -| -| @wells1998flowering|
-|Himantoglossum| hircinum| -| - | -| -| -| -| @carey1998modelling; @pfeifer2006influence|
-|Isotria| medeoloides| -| - | -| -| -| -| @alahuhta2017instant|
-|Jacquiniella| leucomelana| -| - | -| -| -| -| @winkler2009population|
-|Jacquiniella| teretifolia| -| - | -| -| -| -| @winkler2009population|
-|Laelia| autumnalis| -| - | -| -| -| -| @emeterio2021does|
-|Laelia| speciosa| -| - | -| -| -| -| @hernandez1992dinamica|
-|Lepanthes| caritensis| -| - | -| -| -| -| @tremblay1997lepanthes|
-|Lepanthes|eltoroensis| -| - | -| -| -| -| @tremblay2001gene; @tremblay2003population|
-|Lepanthes| rubripetala| -| - | -| -| -| -| @tremblay2001gene; @tremblay2015stable|
-|Lepanthes| rupestris| -| - | -| -| -| -| @tremblay2001gene|
-|Lepanthes| acuminata| -| - | -| -| -| -| @raventos2018comparison|
-|Lycaste | aromatica| -| - | -| -| -| -| @winkler2009population|
-|Neotinea| ustulata| -| - | -| -| -| -| @shefferson2007dormancy|
-| Oeceoclades| maculata| -| - | -| -| -| -| @riveron2019spatio|
-| Oncidium| crista-galli| -| - | -| -| -| -| @maldonado2005patron, @mondragon2007life|
-| Oncidium| poikilostalix| -| - | -| -| -| -| @raventos2018comparison|
-| Ophrys| sphegodes| -| - | -| -| -| -| @hutchings2010population|
-| Orchis| purpurea| -| - | -| -| -| -| @jacquemyn2010seed|
-| Phaius| australis| -| - | -| -| -| -| @simmons2016Viability|
-| Platanthera| hookeri| -| - | -| -| -| -| @reddoch2007population|
-| Platanthera| praeclara| -| - | -| -| -| -| @sieg1995influence|
-| Platanthera| macrophylla| -| - | -| -| -| -| @cleavitt2017life; @berry2021population|
-| Platanthera| orbiculata| -| - | -| -| -| -| @cleavitt2017life; @berry2021population|
-| Prasophyllum| correctum| -| - | -| -| -| -| @coates2006effects|
-| Pseudorchis| albida| -| - | -| -| -| -| @stipkova2013mowing|
-| Rodriguezia| granadensis| -| - | -| -| -| -| @ospina2023effect|
-| Serapias| cordigera| -| - | -| -| -| -| @pellegrino2014effects|
-| Spathoglottis| plicata| -| - | -| -| -| -| @falcon2017quantifying|
-| Spiranthes| parskii| -| - | -| -| -| -| @wonka2010herbivores|
-| Spiranthes| spiralis| -| - | -| -| -| -| @jacquemyn2007long|
-| Telipogon| helleri| -| - | -| -| -| -| @raventos2018comparison|
-| Tolumnia| variegata| -| - | -| -| -| -| @calvo1993evolutionary|
-| Trichocentrum| undulatum| -| - | -| -| -| -| @borrero2023populations|
+list
+
+data_frame <- read_delim(list, delim = ',')
+```
+
+
+
+```{r}
+
+library(flextable)
+library(ftExtra)
+
+list <-dplyr::tribble(
+  ~"Genero", ~Especies, ~Riesgo, ~"Var_esp.", ~"Var_temp", ~"Lat", ~"Est_param", ~"Hist_vida", ~Otro, ~Ref, 
+"*Aspasia*" , "*principissa*",  "Si" ,    "-"       ,  "Si"  ,  "-"     ,    "-"          ,   "-"       , "-"  , "@zotz2006population" ,
+"*Brasavolla*", "*cucullata*",  "Si"     , "Si"         , "Si"         ,  "-"   ,         "-"    ,    "-"         , "-" , "@ackerman2020small",
+ "Broughtonia", "cubensis" , "-", "-" , "-", "-", "-", "-","Si",  "@raventos2021effects",
+ "Caladenia", "amoena"      , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
+ "Caladenia", "argocalla"   , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
+ "Caladenia", "clavigera"  , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population  @tremblay2009dormancy",
+ "Caladenia", "elegans"     , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
+ "Caladenia", "graniticola" , "Si", "-" , "-", "Si", "Si", "Si", "Si","@tremblay2009population @tremblay2009dormancy",
+ "Caladenia", "macroclavia" , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
+ "Caladenia", "oenochila"   , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
+"Caladenia", "orientalis"  , "-", "-" , "-", "-", "-", "-","-" ,"@coates2009demographic",
+"Cephalanthera", "longifolia", "-", "-" , "-", "-", "-", "-", "-","@shefferson2012linking",
+"Cleistes", "divaricata"   , "-", "-" , "-", "-", "-", "-","-" ,"@gregg1991variation",
+"Cleistes", "bifaria"      , "-", "-" , "-", "-", "-", "-", "-","@gregg2006comparison",
+"Corallorhiza", "trifida", "-", "-" , "-", "-", "-", "-","-" ,"@iriondo2009peligro",
+"Crepidium", "acuminatum", "-", "-" , "-", "-", "-", "-","-" ,"@timsina2021six",
+"Cyclopogon", "luteoalbus", "-", "-" , "-", "-", "-", "-", "-","@juarez2014viability",
+"Cypripedium", "acaule", "-", "-" , "-", "-", "-", "-", "-","@cochran1992simple",
+"Cypripedium", "calceolus", "-", "-" , "-", "-", "-", "-","-" ,"@nicole2005population @garcia2010living @shefferson2012linking @davison2013contributions",
+"Cypripedium", "candidum", "-", "-" , "-", "-", "-", "-","-" ,"@davison2013contributions",
+"Cypripedium", "fasciculatum", "-", "-" , "-", "-", "-", "-","-" ,"@thorpe2011trends",
+"Cypripedium", "parviflorum", "-", "-" , "-", "-", "-", "-", "-","@shefferson2014life",
+"Cypripedium", "reginae", "-", "-" , "-", "-", "-", "-","-" ,"@kery2004demographic",
+"Cypripedium", "lentiginosum", "-", "-" , "-", "-", "-", "-","-" ,"@zhongjian2008correlation",
+"Dactylorhiza", "hatagirea", "-", "-" , "-", "-", "-", "-","-" ,"@chapagain2021illegal",
+"Dactylorhiza", "lapponica", "-", "-" , "-", "-", "-", "-", "-","@sletvold2010long",
+"Dendrophylax", "lindenii", "-", "-" , "-", "-", "-", "-","-" ,"@raventos2015population",
+"Epidendrum", "xanthinum", "-", "-" , "-", "-", "-", "-", "-","@farfan2008estrategias",
+"Epipactis", "atrorubens", "-", "-" , "-", "-", "-", "-","-" ,"@hens2017low",
+"Erycina", "crista-galli", "-", "-" , "-", "-", "-", "-","-","@mondragon2007life",
+"Guarianthe", "aurantiaca", "-", "-" , "-", "-", "-", "-","-","@mondragon2009population",
+"Gymnadenia", "conopsea", "-", "-" , "-", "-", "-", "-","-","@oien2002flowering",
+"Herminium", "monorchis", "-", "-" , "-", "-", "-", "-","-","@wells1998flowering",
+"Himantoglossum", "hircinum", "-", "-" , "-", "-", "-", "-","-","@carey1998modelling @pfeifer2006influence",
+"Isotria", "medeoloides", "-", "-" , "-", "-", "-", "-","-","@alahuhta2017instant",
+"Jacquiniella", "leucomelana", "-", "-" , "-", "-", "-", "-","-","@winkler2009population",
+ "Jacquiniella", "teretifolia", "-", "-" , "-", "-", "-", "-","-","@winkler2009population",
+ "Laelia", "autumnalis", "-", "-" , "-", "-", "-", "-","-","@emeterio2021does",
+"Laelia", "speciosa", "-", "-" , "-", "-", "-", "-","-","@hernandez1992dinamica",
+"Lepanthes", "caritensis", "-", "-" , "-", "-", "-", "-","-","@tremblay1997lepanthes",
+"Lepanthes","eltoroensis", "-", "-" , "-", "-", "-", "-","-","@tremblay2001gene @tremblay2003population",
+"Lepanthes", "rubripetala", "-", "-" , "-", "-", "-", "-","Si", "@tremblay2001gene @tremblay2015stable",
+"Lepanthes", "rupestris", "-", "-" , "-", "-", "-", "-","-","@tremblay2001gene",
+"Lepanthes", "acuminata", "-", "-" , "-", "-", "-", "-","-","@raventos2018comparison",
+"Lycaste" , "aromatica", "-", "-" , "-", "-", "-", "-","-","@winkler2009population",
+"Neotinea", "ustulata", "-", "-" , "-", "-", "-", "-","-","@shefferson2007dormancy",
+ "Oeceoclades", "maculata", "-", "-" , "-", "-", "-", "-","-","@riveron2019spatio",
+"Oncidium", "crista-galli", "-", "-" , "-", "-", "-", "-","-","@maldonado2005patron @mondragon2007life",
+ "Oncidium", "poikilostalix", "-", "-" , "-", "-", "-", "-","-","@raventos2018comparison",
+ "Ophrys", "sphegodes", "-", "-" , "-", "-", "-", "-","-","@hutchings2010population",
+ "Orchis", "purpurea", "-", "-" , "-", "-", "-", "-","Si", "@jacquemyn2010seed",
+ "Phaius", "australis", "-", "-" , "-", "-", "-", "-","Si", "@simmons2016Viability",
+ "Platanthera", "hookeri", "-", "-" , "-", "-", "-", "-","-","@reddoch2007population",
+ "Platanthera", "praeclara", "-", "-" , "-", "-", "-", "-","Si", "@sieg1995influence",
+ "Platanthera", "macrophylla", "-", "-" , "-", "-", "-", "-","Si", "@cleavitt2017life @berry2021population",
+ "Platanthera", "orbiculata", "-", "-" , "-", "-", "-", "-","-","@cleavitt2017life @berry2021population",
+ "Prasophyllum", "correctum", "-", "-" , "-", "-", "-", "-","-","@coates2006effects",
+ "Pseudorchis", "albida", "-", "-" , "-", "-", "-", "-","-","@stipkova2013mowing",
+ "Rodriguezia", "granadensis", "-", "-" , "-", "-", "-", "-","-","@ospina2023effect",
+ "Serapias", "cordigera", "-", "-" , "-", "-", "-", "-","-","@pellegrino2014effects",
+ "Spathoglottis", "plicata", "-", "-" , "-", "-", "-", "-","Si", "@falcon2017quantifying",
+ "Spiranthes", "parskii", "-", "-" , "-", "-", "-", "-","-","@wonka2010herbivores",
+ "Spiranthes", "spiralis", "-", "-" , "-", "-", "-", "-","Si", "@jacquemyn2007long",
+ "Telipogon", "helleri", "-", "-" , "-", "-", "-", "-","-","@raventos2018comparison",
+ "Tolumnia", "variegata", "-", "-" , "-", "-", "-", "-","-","@calvo1993evolutionary",
+ "Trichocentrum", "undulatum", "-", "-" , "-", "-", "-", "-","-","@borrero2023populations"
+
+)
+
+
+
+list %>%
+  flextable() %>%
+  colformat_md() %>%
+  autofit()
+
+```
+
+Data frame
+```{r, eval=FALSE}
+knitr::kable(data_frame)
+#gt(data_frame)
+```
+
+
+
+```{r, eval=FALSE}
+
+library(flextable)
+library(ftExtra)
+
+
+d=dplyr::tribble(
+  ~study_id, ~lead_author, ~sample_ze, ~refs,
+  1, "Guan, Ni", 1099, "[@conde2019data]",
+  2, "Guan, Liang", 1590, "[@fenner2017ecology]"
+)
+
+d %>%
+  flextable() %>%
+  colformat_md() %>%
+  autofit()
+```
+
+
+
+
+
+```{r}
+library(easypackages)
+packages(
+  "tidyverse",
+  "flextable",
+  "ftExtra"
+)
+library(flextable)
+library(ftExtra)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+
+```{r studies"-"table, eval=FALSE}
+studies.table <- tibble(
+  Authors = c(
+    ""@zotz2006population",
+    ""@tremblay2009population",
+  ),
+  Area = c(
+    "Area1",
+    "Area2"
+  )
+)
+
+flextable(studies.table) %>%
+  ftExtra::colformat_md()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+list
+df=read_delim(list, delim = ',')
+
+#data_frame <- read.table(textConnection(object), sep = ",", header = TRUE, stringsAsFactors = FALSE)
+
+
+
+
+
+```{r, eval=FALSE}
+object1 <-'Genero  , Especies    , Riesgo , Var. esp. , Var. temp , Lat. , Est. param. , Hist. vida , Otro,  Ref 
+          ---------,----------   ,------  ,-----------,-----------,------,------        ,-----------,------,---  
+\n          *Aspa"Si"a*,*principissa*,  "Si"    ,      -   ,  "Si"       ,   -  , -            ,    -      ,      , "@"-"'
+
+
+data_frame <- read_delim(object1, delim = ',')
+data_frame
+```
+
+
+
+```{r, eval=FALSE}
+
+library(readr)
+library(dplyr)
+
+object <- 'Species , Second Header 
+\n------------- , ------------- 
+\n*Aspa"Si"a* , Cell 2 
+\n Cell 3 , "@zotz2006population'
+
+
+
+data_frame <- read_delim(object, delim = ',')
+data_frame
+
+```
+
+
