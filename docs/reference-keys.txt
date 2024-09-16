@@ -269,4 +269,3 @@ almacenamiento-de-datos-de-forma-digital
 calcular_transiciones
 historia-breve-de-la-dinámica-poblacional-en-orquídeas.
 los-primeros-estudios
-bookdowngitbook

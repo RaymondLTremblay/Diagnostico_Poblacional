@@ -4,25 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional</title>
+  <title>Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional" />
+  <meta property="og:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional" />
+  <meta name="twitter:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
+<meta name="author" content="Raymond_L_Tremblay" />
 
 
-<meta name="date" content="2024-09-15" />
+<meta name="date" content="2024-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,6 +59,8 @@
 <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
+<script src="libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 <style type="text/css">
@@ -529,7 +532,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test_bibtest</a>
           </h1>
         </div>
 
@@ -543,7 +546,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="introducción-1" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introducción<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones que estén disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en <span class="citation">(<a href="#ref-caswell2000matrix">Hal Caswell 2000</a>)</span> y pueden ver también una aplicación de estos métodos aplicado a las orquídeas <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span>. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capítulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es tedioso y propenso a errores cuando se hacen a mano.</p>
+<p>En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones que estén disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en <span class="citation">(<a href="#ref-caswell2000matrix"><strong>caswell2000matrix?</strong></a>)</span> y pueden ver también una aplicación de estos métodos aplicado a las orquídeas <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span>. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capítulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es tedioso y propenso a errores cuando se hacen a mano.</p>
 </div>
 <div id="métodos-tradicional-de-calcular-las-transiciones" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Métodos tradicional de calcular las transiciones<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -576,23 +579,23 @@ div.csl-indent {
 <li>1/6 = 0.1666, transitaron de “adulto” a “adulto”</li>
 <li>2/6 = 0.3333, fallecieron de las “adulto” en el primer periodo de tiempo fallecieron antes del segundo periodo de tiempo</li>
 </ul>
-<div id="gvsavrwnlk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gvsavrwnlk table {
+<div id="wnmtfufqwp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wnmtfufqwp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gvsavrwnlk thead, #gvsavrwnlk tbody, #gvsavrwnlk tfoot, #gvsavrwnlk tr, #gvsavrwnlk td, #gvsavrwnlk th {
+#wnmtfufqwp thead, #wnmtfufqwp tbody, #wnmtfufqwp tfoot, #wnmtfufqwp tr, #wnmtfufqwp td, #wnmtfufqwp th {
   border-style: none;
 }
 
-#gvsavrwnlk p {
+#wnmtfufqwp p {
   margin: 0;
   padding: 0;
 }
 
-#gvsavrwnlk .gt_table {
+#wnmtfufqwp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -618,12 +621,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_caption {
+#wnmtfufqwp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gvsavrwnlk .gt_title {
+#wnmtfufqwp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -635,7 +638,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#gvsavrwnlk .gt_subtitle {
+#wnmtfufqwp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -647,7 +650,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#gvsavrwnlk .gt_heading {
+#wnmtfufqwp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -659,13 +662,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_bottom_border {
+#wnmtfufqwp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_col_headings {
+#wnmtfufqwp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -680,7 +683,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_col_heading {
+#wnmtfufqwp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -700,7 +703,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gvsavrwnlk .gt_column_spanner_outer {
+#wnmtfufqwp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,15 +715,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#gvsavrwnlk .gt_column_spanner_outer:first-child {
+#wnmtfufqwp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gvsavrwnlk .gt_column_spanner_outer:last-child {
+#wnmtfufqwp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gvsavrwnlk .gt_column_spanner {
+#wnmtfufqwp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -732,11 +735,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#gvsavrwnlk .gt_spanner_row {
+#wnmtfufqwp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gvsavrwnlk .gt_group_heading {
+#wnmtfufqwp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -762,7 +765,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#gvsavrwnlk .gt_empty_group_heading {
+#wnmtfufqwp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -777,15 +780,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#gvsavrwnlk .gt_from_md > :first-child {
+#wnmtfufqwp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gvsavrwnlk .gt_from_md > :last-child {
+#wnmtfufqwp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gvsavrwnlk .gt_row {
+#wnmtfufqwp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +807,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gvsavrwnlk .gt_stub {
+#wnmtfufqwp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -817,7 +820,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gvsavrwnlk .gt_stub_row_group {
+#wnmtfufqwp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -831,15 +834,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#gvsavrwnlk .gt_row_group_first td {
+#wnmtfufqwp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gvsavrwnlk .gt_row_group_first th {
+#wnmtfufqwp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gvsavrwnlk .gt_summary_row {
+#wnmtfufqwp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -849,16 +852,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gvsavrwnlk .gt_first_summary_row {
+#wnmtfufqwp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_first_summary_row.thick {
+#wnmtfufqwp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gvsavrwnlk .gt_last_summary_row {
+#wnmtfufqwp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -868,7 +871,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_grand_summary_row {
+#wnmtfufqwp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -878,7 +881,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gvsavrwnlk .gt_first_grand_summary_row {
+#wnmtfufqwp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,7 +891,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_last_grand_summary_row_top {
+#wnmtfufqwp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,11 +901,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_striped {
+#wnmtfufqwp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gvsavrwnlk .gt_table_body {
+#wnmtfufqwp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -911,7 +914,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_footnotes {
+#wnmtfufqwp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -925,7 +928,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_footnote {
+#wnmtfufqwp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -934,7 +937,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gvsavrwnlk .gt_sourcenotes {
+#wnmtfufqwp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -948,7 +951,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gvsavrwnlk .gt_sourcenote {
+#wnmtfufqwp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -956,72 +959,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gvsavrwnlk .gt_left {
+#wnmtfufqwp .gt_left {
   text-align: left;
 }
 
-#gvsavrwnlk .gt_center {
+#wnmtfufqwp .gt_center {
   text-align: center;
 }
 
-#gvsavrwnlk .gt_right {
+#wnmtfufqwp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gvsavrwnlk .gt_font_normal {
+#wnmtfufqwp .gt_font_normal {
   font-weight: normal;
 }
 
-#gvsavrwnlk .gt_font_bold {
+#wnmtfufqwp .gt_font_bold {
   font-weight: bold;
 }
 
-#gvsavrwnlk .gt_font_italic {
+#wnmtfufqwp .gt_font_italic {
   font-style: italic;
 }
 
-#gvsavrwnlk .gt_super {
+#wnmtfufqwp .gt_super {
   font-size: 65%;
 }
 
-#gvsavrwnlk .gt_footnote_marks {
+#wnmtfufqwp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gvsavrwnlk .gt_asterisk {
+#wnmtfufqwp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gvsavrwnlk .gt_indent_1 {
+#wnmtfufqwp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gvsavrwnlk .gt_indent_2 {
+#wnmtfufqwp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gvsavrwnlk .gt_indent_3 {
+#wnmtfufqwp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gvsavrwnlk .gt_indent_4 {
+#wnmtfufqwp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gvsavrwnlk .gt_indent_5 {
+#wnmtfufqwp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gvsavrwnlk .katex-display {
+#wnmtfufqwp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gvsavrwnlk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wnmtfufqwp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1181,9 +1184,6 @@ div.csl-indent {
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-caswell2000matrix" class="csl-entry">
-———. 2000. <em>Matrix Population Models</em>. Vol. 1. Sinauer Sunderland, MA.
-</div>
 <div id="ref-gascoigne2023standard" class="csl-entry">
 Gascoigne, Samuel J. L., Simon Rolph, Daisy Sankey, Nagalakshmi Nidadavolu, Adrian S. Stell Pičman, Christina M. Hernández, Matthew E. R. Philpott, et al. 2023. <span>“A Standard Protocol to Report Discrete Stage-Structured Demographic Information.”</span> <em>Methods in Ecology and Evolution</em>.
 </div>

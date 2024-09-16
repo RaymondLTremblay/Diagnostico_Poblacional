@@ -24,14 +24,16 @@ En la "Si"guiente tabla se presentan los estudios de dinámica poblacional en or
     - Referencia: Referencia del estudio.
   
   
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
 library(gt)
+library(flextable)
+library(ftExtra)
 ```
                    
                       
-```{r, echo=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 list <-'Genero  , Especies    , Riesgo , Var. esp. , Var. temp , Lat. , Est. param. , Hist. vida , Otro,  Ref 
 \n      ---------,----------   ,------,-----------,-----------,------,-------------,-----------,------,---
 \n*Aspa"Si"a*  ,*principissa*,  "Si" ,      -     ,  "Si"  ,   -   ,      -       ,    -     ,  , ["@zotz2006population] 
@@ -52,13 +54,12 @@ data_frame <- read_delim(list, delim = ',')
 
 
 
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-library(flextable)
-library(ftExtra)
+
 
 list <-dplyr::tribble(
-  ~"Genero", ~Especies, ~Riesgo, ~"Var_esp.", ~"Var_temp", ~"Lat", ~"Est_param", ~"Hist_vida", ~Otro, ~Ref, 
+  ~"Genero", ~Especies, ~Riesgo, ~"Var esp.", ~"Var temp", ~"Lat", ~"Est param", ~"Hist vida", ~Otro, ~Ref, 
 "*Aspasia*" , "*principissa*",  "Si" ,    "-"       ,  "Si"  ,  "-"     ,    "-"          ,   "-"       , "-"  , "@zotz2006population" ,
 "*Brasavolla*", "*cucullata*",  "Si"     , "Si"         , "Si"         ,  "-"   ,         "-"    ,    "-"         , "-" , "@ackerman2020small",
  "Broughtonia", "cubensis" , "-", "-" , "-", "-", "-", "-","Si",  "@raventos2021effects",
@@ -128,10 +129,15 @@ list <-dplyr::tribble(
 
 )
 
+```
 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 list %>%
   flextable() %>%
+  theme_zebra() %>%
+  theme_box() |> 
   colformat_md() %>%
   autofit()
 
@@ -180,21 +186,6 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 ```
 
-```{r studies"-"table, eval=FALSE}
-studies.table <- tibble(
-  Authors = c(
-    ""@zotz2006population",
-    ""@tremblay2009population",
-  ),
-  Area = c(
-    "Area1",
-    "Area2"
-  )
-)
-
-flextable(studies.table) %>%
-  ftExtra::colformat_md()
-```
 
 
 
@@ -208,42 +199,14 @@ flextable(studies.table) %>%
 
 
 
-list
-df=read_delim(list, delim = ',')
-
-#data_frame <- read.table(textConnection(object), sep = ",", header = TRUE, stringsAsFactors = FALSE)
 
 
 
 
 
-```{r, eval=FALSE}
-object1 <-'Genero  , Especies    , Riesgo , Var. esp. , Var. temp , Lat. , Est. param. , Hist. vida , Otro,  Ref 
-          ---------,----------   ,------  ,-----------,-----------,------,------        ,-----------,------,---  
-\n          *Aspa"Si"a*,*principissa*,  "Si"    ,      -   ,  "Si"       ,   -  , -            ,    -      ,      , "@"-"'
-
-
-data_frame <- read_delim(object1, delim = ',')
-data_frame
-```
 
 
 
-```{r, eval=FALSE}
 
-library(readr)
-library(dplyr)
-
-object <- 'Species , Second Header 
-\n------------- , ------------- 
-\n*Aspa"Si"a* , Cell 2 
-\n Cell 3 , "@zotz2006population'
-
-
-
-data_frame <- read_delim(object, delim = ',')
-data_frame
-
-```
 
 

@@ -4,25 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 17 LTRE | Dinamica Poblacional</title>
+  <title>Capítulo 17 LTRE | Test_bibtest</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 17 LTRE | Dinamica Poblacional" />
+  <meta property="og:title" content="Capítulo 17 LTRE | Test_bibtest" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 17 LTRE | Dinamica Poblacional" />
+  <meta name="twitter:title" content="Capítulo 17 LTRE | Test_bibtest" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
+<meta name="author" content="Raymond_L_Tremblay" />
 
 
-<meta name="date" content="2024-09-15" />
+<meta name="date" content="2024-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,6 +59,8 @@
 <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
+<script src="libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 <style type="text/css">
@@ -529,7 +532,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test_bibtest</a>
           </h1>
         </div>
 
@@ -544,13 +547,13 @@ div.csl-indent {
 <p>por : Adriana Ramírez-Martínez</p>
 <div id="introducción-a-ltre" class="section level2 hasAnchor" number="17.1">
 <h2><span class="header-section-number">17.1</span> Introducción a LTRE<a href="ltre.html#introducción-a-ltre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La variación en las parametros de la historia de vida de una especie y las causas de estas diferencias se puede evaluar a diferentes niveles: genético, demográfico, espacial o temporal. Esta variación en ecología es la norma. La variación se encuentra en todos aspectos desde la parte genética de los individuos que compone una población, la variación ambiental y las interacciones bióticas y abióticas; además de la plasticidad fenotípica que es la interacción entre la genética y el ambiente. ¿Cuál es esa variación? ¿en otra palabra qué es lo que varía? y ¿cómo los individuos responden a las variables bióticas y abióticas? son aspectos importantes para determinar la ecología, evolución y conservación de las especies. La causa de la variación en una población se puede resumir a tres componentes principales, la genética, el efecto del ambiente y la interacción entre ambiente y genética (plasticidad fenotípica) (<span class="citation">Hastings et al. (<a href="#ref-hastings2021effects">2021</a>)</span>; <span class="citation">Sun et al. (<a href="#ref-sun2019multivariate">2019</a>)</span>). Dentro de un contexto de dinámica poblacional las condiciones que los individuos en las poblaciones experimentan varían, ya sea durante tratamientos manipulados, localidades o periodos de tiempo, y por consecuencia los datos que colectamos con diferencias en espacio/tiempo también varían y pudieran tener efecto sobre la matriz de proyección poblacional <strong>A</strong>. Por tanto, las entradas (los parámetros) de esa matriz A variarán en tiempo/espacio o experimento y esto tendría un impacto sobre la tasa de crecimiento poblacional (λ) y su dispersión en los estimados (Intervalo de confianza o credibilidad; <span class="citation">Hal Caswell (<a href="#ref-caswell2000matrix">2000</a>)</span>, <span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>).</p>
-<p>Tomando en cuenta lo anterior un Experimento de Respuesta de Tabla de Vida (<strong>ERTV</strong>) conocido también como <em>Life Table Response Experiment</em> (LTRE por sus siglas en inglés) descompone la diferencia o varianza en <em>λ</em> entre múltiples poblaciones o tiempo dentro de las contribuciones de los elementos de la matriz y sus interacciones (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>). Entonces al realizar este análisis podemos tener una apreciación de cómo los cambios en la matriz de datos recolectados en diferentes tiempos y espacio impactan las tasas vitales y a su vez que causan cambios en el crecimiento intrínseco <em>λ</em> y otros parámetros poblacionales (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>, <span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>).</p>
-<p>Desde la aplicación del primer ERTV por Birch (1953) en su estudio sobre el efecto de la temperatura, humedad y el alimento sobre tres especies de escarabajos de harina, las aplicaciones de estos análisis han sido variadas con diversos fines en las últimas dos décadas (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>, <span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>). Tanto en diseños fijos en los que se manipulan uno o más factores, como en diseños aleatorios en los que se analizan parámetros demográficos en condiciones naturales no manipuladas a lo largo del tiempo o del espacio (<span class="citation">Horvitz, Schemske, and Caswell (<a href="#ref-horvitz1997relative">1997</a>)</span>; <span class="citation">Teitel, Klimowski, and Campbell (<a href="#ref-teitel2016assessing">2016</a>)</span>). Los diseños fijos se han utilizado en poblaciones de animales para investigar las consecuencias demográficas de la exposición a contaminantes, la manipulación del alimento o la manipulación de la densidad poblacional (<span class="citation">Hansen, Stenseth, and Henttonen (<a href="#ref-hansen1999multiannual">1999</a>)</span>, 1999; <span class="citation">L. Levin et al. (<a href="#ref-levin1996demographic">1996</a>)</span>; <span class="citation">Oli, Slade, and Dobson (<a href="#ref-oli2001effect">2001</a>)</span>). En plantas, los análisis ERTV se han utilizado para evaluar las consecuencias demográficas de la disponibilidad de polinizadores o de la herbívora, competencia, efectos en intensidades de cosecha y de fenómenos naturales e inducidos por el humano (<span class="citation">Davison et al. (<a href="#ref-davison2010demographic">2010</a>)</span>; <span class="citation">Gaoue and Ticktin (<a href="#ref-gaoue2010effects">2010</a>)</span>; <span class="citation">Garcı́a and Ehrlén (<a href="#ref-garcia2002reproductive">2002</a>)</span>; <span class="citation">Hart-Fredeluces, Ticktin, and Lake (<a href="#ref-hart2021simulated">2021</a>)</span>; <span class="citation">Jacquemyn et al. (<a href="#ref-jacquemyn2012stochastic">2012</a>)</span>; <span class="citation">Miriti, Joseph Wright, and Howe (<a href="#ref-miriti2001effects">2001</a>)</span>; <span class="citation">Mondragón (<a href="#ref-mondragon2009population">2009</a>)</span>; <span class="citation">Nordbakken, Rydgren, and Økland (<a href="#ref-nordbakken2004demography">2004</a>)</span>; <span class="citation">Schmidt et al. (<a href="#ref-schmidt2011matrix">2011</a>)</span>).</p>
-<p>Los métodos para calcular los ERTV están constantemente actualizándose y de acuerdo con (<span class="citation">Hernández et al. (<a href="#ref-hernandez2023exact">2023</a>)</span>) existen 186 análisis de ERTV para 75 especies de animales y 1487 para 200 especies de plantas. Aunque en este trabajo no utilizamos la metodología expuesta por dichos autores mostramos una forma práctica de la aplicación de este análisis.</p>
+<p>La variación en las parametros de la historia de vida de una especie y las causas de estas diferencias se puede evaluar a diferentes niveles: genético, demográfico, espacial o temporal. Esta variación en ecología es la norma. La variación se encuentra en todos aspectos desde la parte genética de los individuos que compone una población, la variación ambiental y las interacciones bióticas y abióticas; además de la plasticidad fenotípica que es la interacción entre la genética y el ambiente. ¿Cuál es esa variación? ¿en otra palabra qué es lo que varía? y ¿cómo los individuos responden a las variables bióticas y abióticas? son aspectos importantes para determinar la ecología, evolución y conservación de las especies. La causa de la variación en una población se puede resumir a tres componentes principales, la genética, el efecto del ambiente y la interacción entre ambiente y genética (plasticidad fenotípica) (<span class="citation">(<a href="#ref-hastings2021effects"><strong>hastings2021effects?</strong></a>)</span>; <span class="citation">(<a href="#ref-sun2019multivariate"><strong>sun2019multivariate?</strong></a>)</span>). Dentro de un contexto de dinámica poblacional las condiciones que los individuos en las poblaciones experimentan varían, ya sea durante tratamientos manipulados, localidades o periodos de tiempo, y por consecuencia los datos que colectamos con diferencias en espacio/tiempo también varían y pudieran tener efecto sobre la matriz de proyección poblacional <strong>A</strong>. Por tanto, las entradas (los parámetros) de esa matriz A variarán en tiempo/espacio o experimento y esto tendría un impacto sobre la tasa de crecimiento poblacional (λ) y su dispersión en los estimados (Intervalo de confianza o credibilidad; <span class="citation">(<a href="#ref-caswell2000matrix"><strong>caswell2000matrix?</strong></a>)</span>, <span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>).</p>
+<p>Tomando en cuenta lo anterior un Experimento de Respuesta de Tabla de Vida (<strong>ERTV</strong>) conocido también como <em>Life Table Response Experiment</em> (LTRE por sus siglas en inglés) descompone la diferencia o varianza en <em>λ</em> entre múltiples poblaciones o tiempo dentro de las contribuciones de los elementos de la matriz y sus interacciones (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>). Entonces al realizar este análisis podemos tener una apreciación de cómo los cambios en la matriz de datos recolectados en diferentes tiempos y espacio impactan las tasas vitales y a su vez que causan cambios en el crecimiento intrínseco <em>λ</em> y otros parámetros poblacionales (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>, <span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>).</p>
+<p>Desde la aplicación del primer ERTV por Birch (1953) en su estudio sobre el efecto de la temperatura, humedad y el alimento sobre tres especies de escarabajos de harina, las aplicaciones de estos análisis han sido variadas con diversos fines en las últimas dos décadas (<span class="citation">Hal Caswell (<a href="#ref-caswell1989analysis">1989</a>)</span>, <span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>). Tanto en diseños fijos en los que se manipulan uno o más factores, como en diseños aleatorios en los que se analizan parámetros demográficos en condiciones naturales no manipuladas a lo largo del tiempo o del espacio (<span class="citation">(<a href="#ref-horvitz1997relative"><strong>horvitz1997relative?</strong></a>)</span>; <span class="citation">(<a href="#ref-teitel2016assessing"><strong>teitel2016assessing?</strong></a>)</span>). Los diseños fijos se han utilizado en poblaciones de animales para investigar las consecuencias demográficas de la exposición a contaminantes, la manipulación del alimento o la manipulación de la densidad poblacional (<span class="citation">(<a href="#ref-hansen1999multiannual"><strong>hansen1999multiannual?</strong></a>)</span>, 1999; <span class="citation">(<a href="#ref-levin1996demographic"><strong>levin1996demographic?</strong></a>)</span>; <span class="citation">(<a href="#ref-oli2001effect"><strong>oli2001effect?</strong></a>)</span>). En plantas, los análisis ERTV se han utilizado para evaluar las consecuencias demográficas de la disponibilidad de polinizadores o de la herbívora, competencia, efectos en intensidades de cosecha y de fenómenos naturales e inducidos por el humano (<span class="citation">(<a href="#ref-davison2010demographic"><strong>davison2010demographic?</strong></a>)</span>; <span class="citation">(<a href="#ref-gaoue2010effects"><strong>gaoue2010effects?</strong></a>)</span>; <span class="citation">(<a href="#ref-garcia2002reproductive"><strong>garcia2002reproductive?</strong></a>)</span>; <span class="citation">(<a href="#ref-hart2021simulated"><strong>hart2021simulated?</strong></a>)</span>; <span class="citation">(<a href="#ref-jacquemyn2012stochastic"><strong>jacquemyn2012stochastic?</strong></a>)</span>; <span class="citation">(<a href="#ref-miriti2001effects"><strong>miriti2001effects?</strong></a>)</span>; <span class="citation">Mondragón (<a href="#ref-mondragon2009population">2009</a>)</span>; <span class="citation">(<a href="#ref-nordbakken2004demography"><strong>nordbakken2004demography?</strong></a>)</span>; <span class="citation">(<a href="#ref-schmidt2011matrix"><strong>schmidt2011matrix?</strong></a>)</span>).</p>
+<p>Los métodos para calcular los ERTV están constantemente actualizándose y de acuerdo con (<span class="citation">(<a href="#ref-hernandez2023exact"><strong>hernandez2023exact?</strong></a>)</span>) existen 186 análisis de ERTV para 75 especies de animales y 1487 para 200 especies de plantas. Aunque en este trabajo no utilizamos la metodología expuesta por dichos autores mostramos una forma práctica de la aplicación de este análisis.</p>
 <div id="cómo-se-diferencia-la-elasticidad-de-ertv" class="section level3 hasAnchor" number="17.1.1">
 <h3><span class="header-section-number">17.1.1</span> ¿Cómo se diferencia la elasticidad de ERTV?<a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A diferencia de la elasticidad, el cual es un tipo de análisis de perturbación que examina cuánto cambiaría el crecimiento de la población si se cambiaran una de las entradas de la matriz, el análisis ERTV examina cuánto cambió <em>λ</em> en función de la variación observada en las entradas de la matriz (<span class="citation">Hal Caswell (<a href="#ref-caswell2000matrix">2000</a>)</span>, <span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>; <span class="citation">Horvitz, Schemske, and Caswell (<a href="#ref-horvitz1997relative">1997</a>)</span>); y por consecuencia es un análisis que toma en cuenta el cambio de las variaciones individualmente registradas en matrices en diferentes poblaciones/ tiempo / experimentos, etc. (<span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>). Nota que ERTV es una herramineta suplementaria para evaluar el efecto de perturbaciones como los de elasticidad, dinámica de transiciones y funciones de transferencias y no un reemplazos. Cada una de estas herramientas tiene un propósito y una interpretación diferente con sus supuestos.</p>
+<p>A diferencia de la elasticidad, el cual es un tipo de análisis de perturbación que examina cuánto cambiaría el crecimiento de la población si se cambiaran una de las entradas de la matriz, el análisis ERTV examina cuánto cambió <em>λ</em> en función de la variación observada en las entradas de la matriz (<span class="citation">(<a href="#ref-caswell2000matrix"><strong>caswell2000matrix?</strong></a>)</span>, <span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>; <span class="citation">(<a href="#ref-horvitz1997relative"><strong>horvitz1997relative?</strong></a>)</span>); y por consecuencia es un análisis que toma en cuenta el cambio de las variaciones individualmente registradas en matrices en diferentes poblaciones/ tiempo / experimentos, etc. (<span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>). Nota que ERTV es una herramineta suplementaria para evaluar el efecto de perturbaciones como los de elasticidad, dinámica de transiciones y funciones de transferencias y no un reemplazos. Cada una de estas herramientas tiene un propósito y una interpretación diferente con sus supuestos.</p>
 <hr />
 </div>
 </div>
@@ -558,14 +561,14 @@ div.csl-indent {
 <h2><span class="header-section-number">17.2</span> Métodos<a href="ltre.html#métodos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="ejemplo-práctico-de-ertv" class="section level3 hasAnchor" number="17.2.1">
 <h3><span class="header-section-number">17.2.1</span> Ejemplo práctico de ERTV<a href="ltre.html#ejemplo-práctico-de-ertv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Para ejemplificar el cálculo de los ERTV utilizaremos los datos recabados por Ramírez-Martínez colectados de a 2017-2018 para la orquídea epífita <em>Oncidium brachyandrum</em> Lindl. en un bosque de encino estacional en Oaxaca, México (<span class="citation">Ramı́rez Martı́nez et al. (<a href="#ref-ramirez2021host">2021</a>)</span>). La pregunta principal del estudio era saber qué tasas vitales estaban ligadas a las variaciones en los valores de λ de poblaciones de <em>O. brachyandrum</em> creciendo sobre los hospederos <em>Quercus martinezii</em> C.H.Mull. y <em>Q. rugosa</em> Née. Usando el método ERTV se pudo evaluar el efecto que tiene la variación observada en los parámetros de las matrices en función de las especies de hospedero en los que se encontraban creciendo.</p>
-<p>Como el ERTV es una forma de análisis retrospectivo y es análogo al ANOVA (porque cuantifica los efectos observados de los elementos individuales de matriz sobre la variación observada en <em>λ</em>, en contraposición a los efectos esperados) se requiere de un valor de referencia para realizar las comparaciones, por lo que se toma la matriz con el valor más alto de <em>λ</em> como valor de referencia (<span class="citation">Hal Caswell (<a href="#ref-caswell2010life">2010</a>)</span>; <span class="citation">Timsina et al. (<a href="#ref-timsina2021six">2021</a>)</span>).</p>
+<p>Para ejemplificar el cálculo de los ERTV utilizaremos los datos recabados por Ramírez-Martínez colectados de a 2017-2018 para la orquídea epífita <em>Oncidium brachyandrum</em> Lindl. en un bosque de encino estacional en Oaxaca, México (<span class="citation">(<a href="#ref-ramirez2021host"><strong>ramirez2021host?</strong></a>)</span>). La pregunta principal del estudio era saber qué tasas vitales estaban ligadas a las variaciones en los valores de λ de poblaciones de <em>O. brachyandrum</em> creciendo sobre los hospederos <em>Quercus martinezii</em> C.H.Mull. y <em>Q. rugosa</em> Née. Usando el método ERTV se pudo evaluar el efecto que tiene la variación observada en los parámetros de las matrices en función de las especies de hospedero en los que se encontraban creciendo.</p>
+<p>Como el ERTV es una forma de análisis retrospectivo y es análogo al ANOVA (porque cuantifica los efectos observados de los elementos individuales de matriz sobre la variación observada en <em>λ</em>, en contraposición a los efectos esperados) se requiere de un valor de referencia para realizar las comparaciones, por lo que se toma la matriz con el valor más alto de <em>λ</em> como valor de referencia (<span class="citation">(<a href="#ref-caswell2010life"><strong>caswell2010life?</strong></a>)</span>; <span class="citation">Timsina et al. (<a href="#ref-timsina2021six">2021</a>)</span>).</p>
 <p>A continuación, se muestran dos matrices de tipo Lefkovitch (matrices contruidas a base de estadíos) para las poblaciones de <em>O. brachyandrum</em> y sus valores respectivos de λ en los dos hospederos, <em>Q. martinezii</em> (λ=1.3; I.C: 1.11-1.45) y <em>Q. rugosa</em> (λ=0.98; I.C: 0.87-0.99) (Cuadro 1). Notamos claramente que el valor de λ era mayor en <em>Q. martinezii</em> por lo que la matriz de esta especie fue la matriz de referencia para calcular los ERTV.</p>
 <hr />
 </div>
 <div id="matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero" class="section level3 hasAnchor" number="17.2.2">
 <h3><span class="header-section-number">17.2.2</span> Matrices de proyecciones y ciclo de vida por especie de hospedero<a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cuadro 1. Matrices de proyección poblaciones de dos poblaciones de <em>Oncidiun brachyandrum</em> creciendo sobre <em>Quercus martinezii</em> y <em>Q. rugosa</em>. Los valores de λ (intervalos de confianza ± 95%) son mostrados en la parte superior izquierda de cada matriz, <em>qx</em>, mortalidad por estadío; <em>w</em>, categorías estables de tamaño por estadío; valor reproductivo por estadío, <em>n</em> = el tamaño de muestra en el tiempo cero (el primer muestreo). p: plántula, i: infantil, j: juvenil, A; adulto (<span class="citation">Ramı́rez Martı́nez et al. (<a href="#ref-ramirez2021host">2021</a>)</span>). Los valores en negritas son los valores que representan la proporción de individuos que se queda en ese estadio.</p>
+<p>Cuadro 1. Matrices de proyección poblaciones de dos poblaciones de <em>Oncidiun brachyandrum</em> creciendo sobre <em>Quercus martinezii</em> y <em>Q. rugosa</em>. Los valores de λ (intervalos de confianza ± 95%) son mostrados en la parte superior izquierda de cada matriz, <em>qx</em>, mortalidad por estadío; <em>w</em>, categorías estables de tamaño por estadío; valor reproductivo por estadío, <em>n</em> = el tamaño de muestra en el tiempo cero (el primer muestreo). p: plántula, i: infantil, j: juvenil, A; adulto (<span class="citation">(<a href="#ref-ramirez2021host"><strong>ramirez2021host?</strong></a>)</span>). Los valores en negritas son los valores que representan la proporción de individuos que se queda en ese estadio.</p>
 <p><img src="Figures/Imagen1.jpg" /></p>
 <hr />
 </div>
@@ -592,8 +595,8 @@ div.csl-indent {
 <span id="cb311-15"><a href="ltre.html#cb311-15" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ] <span class="co"># seleccionar solo los valores mayores a 0</span></span>
 <span id="cb311-16"><a href="ltre.html#cb311-16" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, stages, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>) <span class="co"># crear los nodos</span></span>
 <span id="cb311-17"><a href="ltre.html#cb311-17" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">4</span> <span class="co"># calcular la longitud de las flechas</span></span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-3cc0989cdd7f0c539ad0" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3cc0989cdd7f0c539ad0">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.22\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.02\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.76\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.13\"]\n\"juvenil\" -> \"plántula\"[minlen=-8,fontsize=10,color=Goldenrod1,xlabel=\" 3.88\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.23\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.53\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.17\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 16.53\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.58\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.38\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a1305991b9480e4d8653" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a1305991b9480e4d8653">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.22\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.02\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.76\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.13\"]\n\"juvenil\" -> \"plántula\"[minlen=-8,fontsize=10,color=Goldenrod1,xlabel=\" 3.88\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.23\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.53\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.17\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 16.53\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.58\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.38\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Figura x: Ciclo de vida de <em>Oncidium brachyandrum</em> creciendo sobre <em>Quercus martinezii</em>. Las flechas representan las transiciones entre estadíos, estasis y fecundidades y los números son las tasas vitales de fecundidad, supervivencia y crecimiento. El color <span class="math inline">\(\color{#ffc125}{\text{amarillo}}\)</span> para fecundidad, <span class="math inline">\(\color{  #36648b}{\text{azul}}\)</span> para supervivencia y <span class="math inline">\(\color{#548b54}{\text{verde}}\)</span> para crecimiento, <span class="math inline">\(\color{#7a378b}{\text{violeta}}\)</span> para retroceso y azul oscuro para permanencia.</p>
 </div>
 <div id="diagrama-para-quercus-rugosa" class="section level3 hasAnchor" number="17.2.5">
@@ -642,8 +645,8 @@ div.csl-indent {
 <span id="cb312-42"><a href="ltre.html#cb312-42" tabindex="-1"></a><span class="st">}&quot;</span></span>
 <span id="cb312-43"><a href="ltre.html#cb312-43" tabindex="-1"></a>  )</span>
 <span id="cb312-44"><a href="ltre.html#cb312-44" tabindex="-1"></a>)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-bdb59e966a7e1c9fd9d6" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-bdb59e966a7e1c9fd9d6">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.64\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.06\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.75\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.08\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.27\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.47\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 0.0045\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.28\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-2976ee901f6b5040a3c0" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2976ee901f6b5040a3c0">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"infantil\"; \"juvenil\"; \"adulto\" } [style=invis] \"plántula\" -> \"plántula\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.64\"]\n\"plántula\" -> \"infantil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"infantil\" -> \"plántula\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.06\"]\n\"infantil\" -> \"infantil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.75\"]\n\"infantil\" -> \"juvenil\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.08\"]\n\"juvenil\" -> \"infantil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.27\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.47\"]\n\"juvenil\" -> \"adulto\"[minlen=4,fontsize=10,color=PaleGreen4,xlabel=\" 0.27\"]\n\"adulto\" -> \"plántula\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 0.0045\"]\n\"adulto\" -> \"juvenil\"[minlen=-4,fontsize=10,color=MediumOrchid4,xlabel=\" 0.28\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=steelblue4,xlabel=\" 0.68\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Figura x: Ciclo de vida de <em>Oncidium brachyandrum</em> creciendo sobre <em>Quercus rugosa</em>. Las flechas representan las transiciones entre estadíos, estasis y fecundidades y los números son las tasas vitales de fecundidad, supervivencia y crecimiento. El color <span class="math inline">\(\color{#ffc125}{\text{amarillo}}\)</span> para fecundidad, <span class="math inline">\(\color{#36648b}{\text{azul}}\)</span> para supervivencia y <span class="math inline">\(\color{#548b54}{\text{verde}}\)</span> para crecimiento, <span class="math inline">\(\color{#7a378b}{\text{violeta}}\)</span> para retroceso y azul oscuro para permanencia.</p>
 <hr />
 </div>
@@ -657,23 +660,23 @@ div.csl-indent {
 <p><img src="Figures/Imagen3.jpg" /></p>
 <p>Figura 3. Forma de calcular las ecuaciones para la base de ERTV.</p>
 <p>En un archivo nuevo de Excel se arma la base, con la columna de vital rate al principio, seguido por las especies de hospederos (tratamientos) poniendo primeramente el control y después la columna de matrix (Figura 4). Esta base contendrá las ecuaciones de la matriz de referencia. Como la matriz de <em>Q. martinezii</em> tuvo los valores más altos de lambda está ultima de colocará en nuestra base que utilizaremos para correr el análisis ERTV.</p>
-<div id="suxuckcveq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#suxuckcveq table {
+<div id="ldkfflpcpt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ldkfflpcpt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#suxuckcveq thead, #suxuckcveq tbody, #suxuckcveq tfoot, #suxuckcveq tr, #suxuckcveq td, #suxuckcveq th {
+#ldkfflpcpt thead, #ldkfflpcpt tbody, #ldkfflpcpt tfoot, #ldkfflpcpt tr, #ldkfflpcpt td, #ldkfflpcpt th {
   border-style: none;
 }
 
-#suxuckcveq p {
+#ldkfflpcpt p {
   margin: 0;
   padding: 0;
 }
 
-#suxuckcveq .gt_table {
+#ldkfflpcpt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -699,12 +702,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_caption {
+#ldkfflpcpt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#suxuckcveq .gt_title {
+#ldkfflpcpt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -716,7 +719,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#suxuckcveq .gt_subtitle {
+#ldkfflpcpt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -728,7 +731,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#suxuckcveq .gt_heading {
+#ldkfflpcpt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -740,13 +743,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_bottom_border {
+#ldkfflpcpt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_col_headings {
+#ldkfflpcpt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -761,7 +764,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_col_heading {
+#ldkfflpcpt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,7 +784,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#suxuckcveq .gt_column_spanner_outer {
+#ldkfflpcpt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -793,15 +796,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#suxuckcveq .gt_column_spanner_outer:first-child {
+#ldkfflpcpt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#suxuckcveq .gt_column_spanner_outer:last-child {
+#ldkfflpcpt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#suxuckcveq .gt_column_spanner {
+#ldkfflpcpt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -813,11 +816,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#suxuckcveq .gt_spanner_row {
+#ldkfflpcpt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#suxuckcveq .gt_group_heading {
+#ldkfflpcpt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -843,7 +846,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#suxuckcveq .gt_empty_group_heading {
+#ldkfflpcpt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -858,15 +861,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#suxuckcveq .gt_from_md > :first-child {
+#ldkfflpcpt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#suxuckcveq .gt_from_md > :last-child {
+#ldkfflpcpt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#suxuckcveq .gt_row {
+#ldkfflpcpt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -885,7 +888,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#suxuckcveq .gt_stub {
+#ldkfflpcpt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -898,7 +901,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#suxuckcveq .gt_stub_row_group {
+#ldkfflpcpt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -912,15 +915,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#suxuckcveq .gt_row_group_first td {
+#ldkfflpcpt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#suxuckcveq .gt_row_group_first th {
+#ldkfflpcpt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#suxuckcveq .gt_summary_row {
+#ldkfflpcpt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -930,16 +933,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#suxuckcveq .gt_first_summary_row {
+#ldkfflpcpt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_first_summary_row.thick {
+#ldkfflpcpt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#suxuckcveq .gt_last_summary_row {
+#ldkfflpcpt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -949,7 +952,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_grand_summary_row {
+#ldkfflpcpt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -959,7 +962,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#suxuckcveq .gt_first_grand_summary_row {
+#ldkfflpcpt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -969,7 +972,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_last_grand_summary_row_top {
+#ldkfflpcpt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -979,11 +982,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_striped {
+#ldkfflpcpt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#suxuckcveq .gt_table_body {
+#ldkfflpcpt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -992,7 +995,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_footnotes {
+#ldkfflpcpt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1006,7 +1009,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_footnote {
+#ldkfflpcpt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1015,7 +1018,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#suxuckcveq .gt_sourcenotes {
+#ldkfflpcpt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1029,7 +1032,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#suxuckcveq .gt_sourcenote {
+#ldkfflpcpt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1037,72 +1040,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#suxuckcveq .gt_left {
+#ldkfflpcpt .gt_left {
   text-align: left;
 }
 
-#suxuckcveq .gt_center {
+#ldkfflpcpt .gt_center {
   text-align: center;
 }
 
-#suxuckcveq .gt_right {
+#ldkfflpcpt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#suxuckcveq .gt_font_normal {
+#ldkfflpcpt .gt_font_normal {
   font-weight: normal;
 }
 
-#suxuckcveq .gt_font_bold {
+#ldkfflpcpt .gt_font_bold {
   font-weight: bold;
 }
 
-#suxuckcveq .gt_font_italic {
+#ldkfflpcpt .gt_font_italic {
   font-style: italic;
 }
 
-#suxuckcveq .gt_super {
+#ldkfflpcpt .gt_super {
   font-size: 65%;
 }
 
-#suxuckcveq .gt_footnote_marks {
+#ldkfflpcpt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#suxuckcveq .gt_asterisk {
+#ldkfflpcpt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#suxuckcveq .gt_indent_1 {
+#ldkfflpcpt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#suxuckcveq .gt_indent_2 {
+#ldkfflpcpt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#suxuckcveq .gt_indent_3 {
+#ldkfflpcpt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#suxuckcveq .gt_indent_4 {
+#ldkfflpcpt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#suxuckcveq .gt_indent_5 {
+#ldkfflpcpt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#suxuckcveq .katex-display {
+#ldkfflpcpt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#suxuckcveq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ldkfflpcpt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1363,23 +1366,23 @@ div.csl-indent {
 <span id="cb337-2"><a href="ltre.html#cb337-2" tabindex="-1"></a></span>
 <span id="cb337-3"><a href="ltre.html#cb337-3" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb337-4"><a href="ltre.html#cb337-4" tabindex="-1"></a><span class="fu">gt</span>(LTRE.results.Martinezzi.Rugosa)</span></code></pre></div>
-<div id="zemifrpgub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zemifrpgub table {
+<div id="ucsxfqtpbf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ucsxfqtpbf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zemifrpgub thead, #zemifrpgub tbody, #zemifrpgub tfoot, #zemifrpgub tr, #zemifrpgub td, #zemifrpgub th {
+#ucsxfqtpbf thead, #ucsxfqtpbf tbody, #ucsxfqtpbf tfoot, #ucsxfqtpbf tr, #ucsxfqtpbf td, #ucsxfqtpbf th {
   border-style: none;
 }
 
-#zemifrpgub p {
+#ucsxfqtpbf p {
   margin: 0;
   padding: 0;
 }
 
-#zemifrpgub .gt_table {
+#ucsxfqtpbf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1405,12 +1408,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_caption {
+#ucsxfqtpbf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zemifrpgub .gt_title {
+#ucsxfqtpbf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1422,7 +1425,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#zemifrpgub .gt_subtitle {
+#ucsxfqtpbf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1434,7 +1437,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#zemifrpgub .gt_heading {
+#ucsxfqtpbf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1446,13 +1449,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_bottom_border {
+#ucsxfqtpbf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_col_headings {
+#ucsxfqtpbf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1467,7 +1470,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_col_heading {
+#ucsxfqtpbf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1487,7 +1490,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zemifrpgub .gt_column_spanner_outer {
+#ucsxfqtpbf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1499,15 +1502,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#zemifrpgub .gt_column_spanner_outer:first-child {
+#ucsxfqtpbf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zemifrpgub .gt_column_spanner_outer:last-child {
+#ucsxfqtpbf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zemifrpgub .gt_column_spanner {
+#ucsxfqtpbf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1519,11 +1522,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#zemifrpgub .gt_spanner_row {
+#ucsxfqtpbf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zemifrpgub .gt_group_heading {
+#ucsxfqtpbf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1549,7 +1552,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#zemifrpgub .gt_empty_group_heading {
+#ucsxfqtpbf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1564,15 +1567,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#zemifrpgub .gt_from_md > :first-child {
+#ucsxfqtpbf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zemifrpgub .gt_from_md > :last-child {
+#ucsxfqtpbf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zemifrpgub .gt_row {
+#ucsxfqtpbf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1591,7 +1594,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#zemifrpgub .gt_stub {
+#ucsxfqtpbf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1604,7 +1607,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zemifrpgub .gt_stub_row_group {
+#ucsxfqtpbf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1618,15 +1621,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#zemifrpgub .gt_row_group_first td {
+#ucsxfqtpbf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zemifrpgub .gt_row_group_first th {
+#ucsxfqtpbf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zemifrpgub .gt_summary_row {
+#ucsxfqtpbf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1636,16 +1639,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zemifrpgub .gt_first_summary_row {
+#ucsxfqtpbf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_first_summary_row.thick {
+#ucsxfqtpbf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zemifrpgub .gt_last_summary_row {
+#ucsxfqtpbf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1655,7 +1658,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_grand_summary_row {
+#ucsxfqtpbf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1665,7 +1668,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zemifrpgub .gt_first_grand_summary_row {
+#ucsxfqtpbf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1675,7 +1678,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_last_grand_summary_row_top {
+#ucsxfqtpbf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1685,11 +1688,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_striped {
+#ucsxfqtpbf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zemifrpgub .gt_table_body {
+#ucsxfqtpbf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1698,7 +1701,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_footnotes {
+#ucsxfqtpbf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1712,7 +1715,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_footnote {
+#ucsxfqtpbf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1721,7 +1724,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zemifrpgub .gt_sourcenotes {
+#ucsxfqtpbf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1735,7 +1738,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#zemifrpgub .gt_sourcenote {
+#ucsxfqtpbf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1743,72 +1746,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#zemifrpgub .gt_left {
+#ucsxfqtpbf .gt_left {
   text-align: left;
 }
 
-#zemifrpgub .gt_center {
+#ucsxfqtpbf .gt_center {
   text-align: center;
 }
 
-#zemifrpgub .gt_right {
+#ucsxfqtpbf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zemifrpgub .gt_font_normal {
+#ucsxfqtpbf .gt_font_normal {
   font-weight: normal;
 }
 
-#zemifrpgub .gt_font_bold {
+#ucsxfqtpbf .gt_font_bold {
   font-weight: bold;
 }
 
-#zemifrpgub .gt_font_italic {
+#ucsxfqtpbf .gt_font_italic {
   font-style: italic;
 }
 
-#zemifrpgub .gt_super {
+#ucsxfqtpbf .gt_super {
   font-size: 65%;
 }
 
-#zemifrpgub .gt_footnote_marks {
+#ucsxfqtpbf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zemifrpgub .gt_asterisk {
+#ucsxfqtpbf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zemifrpgub .gt_indent_1 {
+#ucsxfqtpbf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zemifrpgub .gt_indent_2 {
+#ucsxfqtpbf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zemifrpgub .gt_indent_3 {
+#ucsxfqtpbf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zemifrpgub .gt_indent_4 {
+#ucsxfqtpbf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zemifrpgub .gt_indent_5 {
+#ucsxfqtpbf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zemifrpgub .katex-display {
+#ucsxfqtpbf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zemifrpgub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ucsxfqtpbf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1985,68 +1988,11 @@ div.csl-indent {
 <div id="ref-caswell1989analysis" class="csl-entry">
 Caswell, Hal. 1989. <span>“Analysis of Life Table Response Experiments i. Decomposition of Effects on Population Growth Rate.”</span> <em>Ecological Modelling</em> 46 (3-4): 221–37.
 </div>
-<div id="ref-caswell2000matrix" class="csl-entry">
-———. 2000. <em>Matrix Population Models</em>. Vol. 1. Sinauer Sunderland, MA.
-</div>
-<div id="ref-caswell2010life" class="csl-entry">
-———. 2010. <span>“Life Table Response Experiment Analysis of the Stochastic Growth Rate.”</span> <em>Journal of Ecology</em> 98 (2): 324–33.
-</div>
-<div id="ref-davison2010demographic" class="csl-entry">
-Davison, Raziel, Hans Jacquemyn, Dries Adriaens, Olivier Honnay, Hans De Kroon, and Shripad Tuljapurkar. 2010. <span>“Demographic Effects of Extreme Weather Events on a Short-Lived Calcareous Grassland Species: Stochastic Life Table Response Experiments.”</span> <em>Journal of Ecology</em> 98 (2): 255–67.
-</div>
-<div id="ref-gaoue2010effects" class="csl-entry">
-Gaoue, Orou G, and Tamara Ticktin. 2010. <span>“Effects of Harvest of Nontimber Forest Products and Ecological Differences Between Sites on the Demography of African Mahogany.”</span> <em>Conservation Biology</em> 24 (2): 605–14.
-</div>
-<div id="ref-garcia2002reproductive" class="csl-entry">
-Garcı́a, Marı́a B, and Johan Ehrlén. 2002. <span>“Reproductive Effort and Herbivory Timing in a Perennial Herb: Fitness Components at the Individual and Population Levels.”</span> <em>American Journal of Botany</em> 89 (8): 1295–1302.
-</div>
-<div id="ref-hansen1999multiannual" class="csl-entry">
-Hansen, Thomas F, Nils C Stenseth, and Heikki Henttonen. 1999. <span>“Multiannual Vole Cycles and Population Regulation During Long Winters: An Analysis of Seasonal Density Dependence.”</span> <em>The American Naturalist</em> 154 (2): 129–39.
-</div>
-<div id="ref-hart2021simulated" class="csl-entry">
-Hart-Fredeluces, GM, Tamara Ticktin, and Frank K Lake. 2021. <span>“Simulated Indigenous Fire Stewardship Increases the Population Growth Rate of an Understorey Herb.”</span> <em>Journal of Ecology</em> 109 (3): 1133–47.
-</div>
-<div id="ref-hastings2021effects" class="csl-entry">
-Hastings, Alan, Karen C Abbott, Kim Cuddington, Tessa B Francis, Ying-Cheng Lai, Andrew Morozov, Sergei Petrovskii, and Mary Lou Zeeman. 2021. <span>“Effects of Stochasticity on the Length and Behaviour of Ecological Transients.”</span> <em>Journal of the Royal Society Interface</em> 18 (180): 20210257.
-</div>
-<div id="ref-hernandez2023exact" class="csl-entry">
-Hernández, Christina M, Stephen P Ellner, Peter B Adler, Giles Hooker, and Robin E Snyder. 2023. <span>“An Exact Version of Life Table Response Experiment Analysis, and the r Package exactLTRE.”</span> <em>Methods in Ecology and Evolution</em> 14 (3): 939–51.
-</div>
-<div id="ref-horvitz1997relative" class="csl-entry">
-Horvitz, Carol, Douglas W Schemske, and Hal Caswell. 1997. <span>“The Relative <span>‘Importance’</span> of Life-History Stages to Population Growth: Prospective and Retrospective Analyses.”</span> In <em>Structured-Population Models in Marine, Terrestrial, and Freshwater Systems</em>, 247–71. Springer.
-</div>
-<div id="ref-jacquemyn2012stochastic" class="csl-entry">
-Jacquemyn, Hans, Rein Brys, Raziel Davison, Shripad Tuljapurkar, and Eelke Jongejans. 2012. <span>“Stochastic LTRE Analysis of the Effects of Herbivory on the Population Dynamics of a Perennial Grassland Herb.”</span> <em>Oikos</em> 121 (2): 211–18.
-</div>
-<div id="ref-levin1996demographic" class="csl-entry">
-Levin, Lisa, Hal Caswell, Todd Bridges, Claudio DiBacco, Debra Cabrera, and Gayle Plaia. 1996. <span>“Demographic Responses of Estuarine Polychaetes to Pollutants: Life Table Response Experiments.”</span> <em>Ecological Applications</em> 6 (4): 1295–1313.
-</div>
-<div id="ref-miriti2001effects" class="csl-entry">
-Miriti, Maria N, S Joseph Wright, and Henry F Howe. 2001. <span>“The Effects of Neighbors on the Demography of a Dominant Desert Shrub (Ambrosia Dumosa).”</span> <em>Ecological Monographs</em> 71 (4): 491–509.
-</div>
 <div id="ref-mondragon2009population" class="csl-entry">
-Mondragón, Demetria. 2009. <span>“Population Viability Analysis for Guarianthe Aurantiaca, an Ornamental Epiphytic Orchid Harvested in Southeast m<span>é</span>xico.”</span> <em>Plant Species Biology</em> 24 (1): 35–41.
-</div>
-<div id="ref-nordbakken2004demography" class="csl-entry">
-Nordbakken, J-F, K Rydgren, and RH Økland. 2004. <span>“Demography and Population Dynamics of Drosera Anglica and d. Rotundifolia.”</span> <em>Journal of Ecology</em> 92 (1): 110–21.
-</div>
-<div id="ref-oli2001effect" class="csl-entry">
-Oli, Madan K, Norman A Slade, and F Stephen Dobson. 2001. <span>“Effect of Density Reduction on Uinta Ground Squirrels: Analysis of Life Table Response Experiments.”</span> <em>Ecology</em> 82 (7): 1921–29.
-</div>
-<div id="ref-ramirez2021host" class="csl-entry">
-Ramı́rez Martı́nez, Adriana et al. 2021. <span>“Host Tree Effect on Demography and Phenology of Epiphytic Species.”</span>
-</div>
-<div id="ref-schmidt2011matrix" class="csl-entry">
-Schmidt, Isabel B, Lisa Mandle, Tamara Ticktin, and Orou G Gaoue. 2011. <span>“What Do Matrix Population Models Reveal about the Sustainability of Non-Timber Forest Product Harvest?”</span> <em>Journal of Applied Ecology</em> 48 (4): 815–26.
-</div>
-<div id="ref-sun2019multivariate" class="csl-entry">
-Sun, Weihong, Xueyan Yuan, Zhong-Jian Liu, Siren Lan, Wen-chieh Tsai, and Shuang-Quan Zou. 2019. <span>“Multivariate Analysis Reveals Phenotypic Diversity of Euscaphis Japonica Population.”</span> <em>PloS One</em> 14 (7): e0219046.
-</div>
-<div id="ref-teitel2016assessing" class="csl-entry">
-Teitel, Zachary, Agnieszka Klimowski, and Lesley G Campbell. 2016. <span>“Assessing the Effects of Hybridization and Precipitation on Invasive Weed Demography Using Strength of Selection on Vital Rates.”</span> <em>BMC Evolutionary Biology</em> 16: 1–13.
+Mondragón, Demetria. 2009. <span>“Population Viability Analysis for <em>Guarianthe <span class="nocase">a</span>urantiaca</em>, an Ornamental Epiphytic Orchid Harvested in Southeast m<span>é</span>xico.”</span> <em>Plant Species Biology</em> 24 (1): 35–41.
 </div>
 <div id="ref-timsina2021six" class="csl-entry">
-Timsina, Binu, Pavel Kindlmann, Zuzana Münzbergová, and Maan B Rokaya. 2021. <span>“Six-Year Demographic Study of the Terrestrial Orchid, Crepidium Acuminatum: Implications for Conservation.”</span> <em>Frontiers in Ecology and Evolution</em> 9: 676993.
+Timsina, Binu, Pavel Kindlmann, Zuzana Münzbergová, and Maan B Rokaya. 2021. <span>“Six-Year Demographic Study of the Terrestrial Orchid, <em>Crepidium <span class="nocase">a</span>cuminatum</em>: Implications for Conservation.”</span> <em>Frontiers in Ecology and Evolution</em> 9: 676993.
 </div>
 </div>
             </section>

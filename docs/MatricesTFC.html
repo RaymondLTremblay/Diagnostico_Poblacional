@@ -4,25 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional</title>
+  <title>Capítulo 7 Matrices de transicion, fecundidad y clonal | Test_bibtest</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional" />
+  <meta property="og:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Test_bibtest" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Dinamica Poblacional" />
+  <meta name="twitter:title" content="Capítulo 7 Matrices de transicion, fecundidad y clonal | Test_bibtest" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
+<meta name="author" content="Raymond_L_Tremblay" />
 
 
-<meta name="date" content="2024-09-15" />
+<meta name="date" content="2024-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,6 +59,8 @@
 <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
+<script src="libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 <style type="text/css">
@@ -529,7 +532,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test_bibtest</a>
           </h1>
         </div>
 
@@ -570,8 +573,8 @@ div.csl-indent {
 <span id="cb31-7"><a href="MatricesTFC.html#cb31-7" tabindex="-1"></a>)</span>
 <span id="cb31-8"><a href="MatricesTFC.html#cb31-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juvenil&quot;</span>, <span class="st">&quot;Adulto&quot;</span>)</span>
 <span id="cb31-9"><a href="MatricesTFC.html#cb31-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matU, <span class="at">stages=</span>stages)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6eb2f7c5c09d929d6515" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6eb2f7c5c09d929d6515">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-1f6051af4f798d650046" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1f6051af4f798d650046">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Juvenil\" -> \"Adulto\" [style=invis] } [style=invis] \"Plantulas\" -> \"Plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"Plantulas\" -> \"Juvenil\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.5\"]\n\"Plantulas\" -> \"Adulto\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"Juvenil\" -> \"Juvenil\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"Juvenil\" -> \"Adulto\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Adulto\" -> \"Juvenil\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.05\"]\n\"Adulto\" -> \"Adulto\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="matf-matriz-de-fecundidad" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> MatF: Matriz de fecundidad<a href="MatricesTFC.html#matf-matriz-de-fecundidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -585,8 +588,8 @@ div.csl-indent {
 <span id="cb32-7"><a href="MatricesTFC.html#cb32-7" tabindex="-1"></a>)</span>
 <span id="cb32-8"><a href="MatricesTFC.html#cb32-8" tabindex="-1"></a>stages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Ind Pequeños&quot;</span>, <span class="st">&quot;Ind Grande&quot;</span>)</span>
 <span id="cb32-9"><a href="MatricesTFC.html#cb32-9" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matF, <span class="at">stages=</span>stages)</span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-63c7fd7ed0ec1e3e6f9e" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-63c7fd7ed0ec1e3e6f9e">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-bbe6c00137ff22d0175f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bbe6c00137ff22d0175f">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Plantulas\" -> \"Ind Pequeños\" -> \"Ind Grande\" [style=invis] } [style=invis] \"Ind Pequeños\" -> \"Plantulas\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"Ind Grande\" -> \"Plantulas\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 1.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="matc-matriz-de-clonación" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> MatC = Matriz de clonación<a href="MatricesTFC.html#matc-matriz-de-clonación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
