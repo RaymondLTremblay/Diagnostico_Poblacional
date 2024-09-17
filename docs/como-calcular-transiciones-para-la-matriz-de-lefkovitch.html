@@ -4,23 +4,22 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest</title>
+  <title>Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest" />
+  <meta property="og:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Test_bibtest" />
+  <meta name="twitter:title" content="Capítulo 5 Como calcular transiciones para la matriz de Lefkovitch | Dinamica Poblacional" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas" />
   
 
-<meta name="author" content="Raymond_L_Tremblay" />
 
 
 <meta name="date" content="2024-09-16" />
@@ -532,7 +531,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test_bibtest</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
           </h1>
         </div>
 
@@ -546,7 +545,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="introducción-1" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introducción<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones que estén disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en <span class="citation">(<a href="#ref-caswell2000matrix"><strong>caswell2000matrix?</strong></a>)</span> y pueden ver también una aplicación de estos métodos aplicado a las orquídeas <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span>. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capítulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es tedioso y propenso a errores cuando se hacen a mano.</p>
+<p>En el siguiente capitulo estaremos viendo como calcular las transiciones para la matriz de Lefkovitch. En la primera parte veremos como calcular las transiciones de manera tradicional y a mano y en la segunda parte veremos como calcular las transiciones de manera más eficiente usando funciones que estén disponibles en algunos paquetes de R. Los métodos presentado aquí son una adaptación de los métodos presentados en <span class="citation">(<a href="#ref-caswell2000matrix">Hal Caswell 2000</a>)</span> y pueden ver también una aplicación de estos métodos aplicado a las orquídeas <span class="citation">(<a href="#ref-tremblay2003population">R. L. Tremblay and Hutchings 2003</a>)</span>. Si ha hecho análisis de matrices de transición antes, probablemente ha usado el método tradicional de calcular las transiciones y pueden obviar leer este capítulo. Este método consiste en calcular la proporciones de individuos que transitan de una clase de edad a otra. Este método es tedioso y propenso a errores cuando se hacen a mano.</p>
 </div>
 <div id="métodos-tradicional-de-calcular-las-transiciones" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Métodos tradicional de calcular las transiciones<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1184,6 +1183,9 @@ div.csl-indent {
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-caswell2000matrix" class="csl-entry">
+———. 2000. <em>Matrix Population Models</em>. Vol. 1. Sinauer Sunderland, MA.
+</div>
 <div id="ref-gascoigne2023standard" class="csl-entry">
 Gascoigne, Samuel J. L., Simon Rolph, Daisy Sankey, Nagalakshmi Nidadavolu, Adrian S. Stell Pičman, Christina M. Hernández, Matthew E. R. Philpott, et al. 2023. <span>“A Standard Protocol to Report Discrete Stage-Structured Demographic Information.”</span> <em>Methods in Ecology and Evolution</em>.
 </div>

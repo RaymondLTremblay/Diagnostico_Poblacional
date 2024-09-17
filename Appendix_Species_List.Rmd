@@ -134,12 +134,14 @@ list <-dplyr::tribble(
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-list %>%
+list_fl=list %>%
   flextable() %>%
   theme_zebra() %>%
   theme_box() |> 
-  colformat_md() %>%
-  autofit()
+  colformat_md() %>% 
+  set_table_properties(layout = "autofit")
+
+list_fl
 
 ```
 
