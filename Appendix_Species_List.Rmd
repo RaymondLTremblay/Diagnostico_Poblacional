@@ -54,6 +54,7 @@ data_frame <- read_delim(list, delim = ',')
 
 
 
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 
@@ -61,22 +62,25 @@ data_frame <- read_delim(list, delim = ',')
 list <-dplyr::tribble(
   ~"Genero", ~Especies, ~Riesgo, ~"Var esp.", ~"Var temp", ~"Lat", ~"Est param", ~"Hist vida", ~Otro, ~Ref, 
 "*Aspasia*" , "*principissa*",  "Si" ,    "-"       ,  "Si"  ,  "-"     ,    "-"          ,   "-"       , "-"  , "@zotz2006population" ,
-"*Brasavolla*", "*cucullata*",  "Si"     , "Si"         , "Si"         ,  "-"   ,         "-"    ,    "-"         , "-" , "@ackerman2020small",
- "Broughtonia", "cubensis" , "-", "-" , "-", "-", "-", "-","Si",  "@raventos2021effects",
- "Caladenia", "amoena"      , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
- "Caladenia", "argocalla"   , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
- "Caladenia", "clavigera"  , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population  @tremblay2009dormancy",
- "Caladenia", "elegans"     , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
- "Caladenia", "graniticola" , "Si", "-" , "-", "Si", "Si", "Si", "Si","@tremblay2009population @tremblay2009dormancy",
- "Caladenia", "macroclavia" , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
- "Caladenia", "oenochila"   , "Si", "-" , "-", "Si", "Si", "Si","Si", "@tremblay2009population @tremblay2009dormancy",
-"Caladenia", "orientalis"  , "-", "-" , "-", "-", "-", "-","-" ,"@coates2009demographic",
-"Cephalanthera", "longifolia", "-", "-" , "-", "-", "-", "-", "-","@shefferson2012linking",
-"Cleistes", "divaricata"   , "-", "-" , "-", "-", "-", "-","-" ,"@gregg1991variation",
-"Cleistes", "bifaria"      , "-", "-" , "-", "-", "-", "-", "-","@gregg2006comparison",
-"Corallorhiza", "trifida", "-", "-" , "-", "-", "-", "-","-" ,"@iriondo2009peligro",
-"Crepidium", "acuminatum", "-", "-" , "-", "-", "-", "-","-" ,"@timsina2021six",
-"Cyclopogon", "luteoalbus", "-", "-" , "-", "-", "-", "-", "-","@juarez2014viability",
+"*Brasavolla*", "*cucullata*",  "Si"     , "Si"         , "Si"         ,  "-"   ,         "-"    ,     "-"       , "IPM Transient Dynamics Transfer Function"  , "@ackerman2020small",
+ "*Broughtonia*", "*cubensis*" , "Si", "Si" , "Si", "-", "-", "-","Transient Dynamics",  "@raventos2021effects",
+ "*Caladenia*", "*amoena*"      , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*argocalla*"   , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*clavigera*"  , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population  @tremblay2009dormancy",
+ "*Caladenia*", "*elegans*"     , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*graniticola*" , "Si", "-" , "-", "Si", "Si", "Si", "-","@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*macroclavia*" , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*oenochila*"   , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*rosella*"   , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+ "*Caladenia*", "*valida*"   , "Si", "-" , "-", "Si", "Si", "Si","-", "@tremblay2009population @tremblay2009dormancy",
+"*Caladenia*", "*orientalis*"  , "Si", "Si" , "Si", "Si", "-", "-","Interacciones abiotica" ,"@coates2009demographic",
+"*Cephalanthera*", "*longifolia*", "-", "-" , "-", "Si", "Si", "Si", "Interacciones abiótica y biótica","@shefferson2012linking",
+"*Cleistes*", "*divaricata* var. *divaricata*"   , "Si", "Si" , "Si", "Si", "Si", "-","-" ,"@gregg1991variation",
+"*Cleistes*", "*divaricata* var. *bifaria*"   , "Si", "Si" , "Si", "Si", "Si", "-","-" ,"@gregg1991variation",
+"*Cleistes*", "*bifaria*", "-", "Si" , "-", "Si", "-", "-", "Estructura de tamaño y estado","@gregg2006comparison",
+"*Corallorhiza*", "*trifida*", "Si", "-" , "Si", "Si", "-", "-","-" ,"@iriondo2009peligro",
+"*Crepidium*", "*acuminatum*", "Si", "-" , "Si", "-", "-", "-","Efecto de cosecha" ,"@timsina2021six",
+"*Cyclopogon*", "*luteoalbus*", "-", "-" , "-", "-", "-", "-", "No Matrix data","@juarez2014viability",
 "Cypripedium", "acaule", "-", "-" , "-", "-", "-", "-", "-","@cochran1992simple",
 "Cypripedium", "calceolus", "-", "-" , "-", "-", "-", "-","-" ,"@nicole2005population @garcia2010living @shefferson2012linking @davison2013contributions",
 "Cypripedium", "candidum", "-", "-" , "-", "-", "-", "-","-" ,"@davison2013contributions",
@@ -132,6 +136,13 @@ list <-dplyr::tribble(
 ```
 
 
+
+Notas para añadir a la tabla
+ 
+ - IPM - Integrated Population Model
+ - Transient dynamics
+ - Transfer function
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 list_fl=list %>%
@@ -150,6 +161,71 @@ Data frame
 knitr::kable(data_frame)
 #gt(data_frame)
 ```
+
+
+```{r, eval=FALSE}
+library(knitr)
+library(kableExtra)
+
+tex2markdown <- function(texstring) {
+  writeLines(text = texstring,
+             con = myfile <- tempfile(fileext = ".tex"))
+  texfile <- pandoc(input = myfile, format = "html")
+  cat(readLines(texfile), sep = "\n")
+  unlink(c(myfile, texfile))
+}
+
+
+textable <- "
+\\begin{table}[]
+\\begin{tabular}{|l|l|c|l|l|l|l|c|r|}
+\\hline
+\\begin{table}[]
+\\centering
+\\caption{Food order}
+\\begin{tabular}{| l | l |}
+\\hline
+ Hamburgers & 3 \\\\ 
+ Hot dogs & 2 \\\\ \\hline
+\\end{tabular}
+\\end{table}
+"
+
+
+tex2markdown(textable)
+```
+
+Text format
+
+
+
+
++---------+----------+--------+--------------------+--------------------+---------------------------------------------+------------------+------+---------------------+
+| Genero  | Especies | Riesgo | Variacion espacial | Variacion temporal | ltencia Metodos de estimacion de paramatros | Historia de vida | Otro |                 Ref |
++---------+----------+--------+--------------------+--------------------+---------------------------------------------+------------------+------+---------------------+
+| Aspasia | p        |    X   |                    |                    |                                             |                  |   X  | @zotz2006population |
++---------+----------+--------+--------------------+--------------------+---------------------------------------------+------------------+------+---------------------+
+| A       | C        |    F   |                    |                    |                                             |                  |   X  |                     |
++---------+----------+--------+--------------------+--------------------+---------------------------------------------+------------------+------+---------------------+
+| A       | D        |    D   |                    |                    |                                             |                  |   X  |                   x |
++---------+----------+--------+--------------------+--------------------+---------------------------------------------+------------------+------+---------------------+
+
+
+
+
+
+
+Markdown Format
+
+
+
+
+| Genero  | Especies | Riesgo | Variacion espacial | Variacion temporal | ltencia Metodos de estimacion de paramatros | Historia de vida | Otro |                 Ref |
+|---------|----------|:------:|--------------------|--------------------|---------------------------------------------|------------------|:----:|--------------------:|
+| Aspasia | p        |    X   |                    |                    |                                             |                  |   X  | @zotz2006population |
+| A       | C        |    F   |                    |                    |                                             |                  |   X  |                     |
+| A       | D        |    D   |                    |                    |                                             |                  |   X  |                   x |
+
 
 
 

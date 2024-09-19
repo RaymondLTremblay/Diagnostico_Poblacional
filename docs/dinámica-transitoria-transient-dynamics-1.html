@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-09-16" />
+<meta name="date" content="2024-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -550,8 +550,8 @@ div.csl-indent {
 <p><br>
 ***</p>
 <p><em>Paso 1. Matriz de transición y estructura poblacional inicial</em>.</p>
-<p>En primer lugar se debe contar con una matriz de proyección poblacional y su correspondiente vector de la estructura poblacional observada al inicio del estudio. A lo largo del desarrollo del análisis en el presente Capítulo se usarán los datos obtenidos por Tremblay et al. <span class="citation">(<a href="#ref-tremblay2015stable">R. L. Tremblay, Raventos, and Ackerman 2015</a>)</span> y Schödelbauerová et al. <span class="citation">(<a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span> para la orquídea epífita <em>Lepanthes rubripetala</em>; en específico usaremos los datos de la población 1. En esta especie, los individuos se clasificaron en cuatro categorías de estado: plántula (PL), juvenil (J), adulto no reproductivo (NR) y adulto reproductivo (AR). Esta última catergoría florece a largo de todo el año, por lo que el seguimiento de la población fue mensual <span class="citation">(<a href="#ref-tremblay2015stable">R. L. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
-<p>En primer lugar se debe contar con una matriz de proyección poblacional y su vector correspondiente de la estructura poblacional observada al inicio del estudio. En en este caso se usarán los datos obtenidos para <em>Lepanthes rubripetala</em> por Tremblay y colaboradores <span class="citation">(<a href="#ref-tremblay2015stable">R. L. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
+<p>En primer lugar se debe contar con una matriz de proyección poblacional y su correspondiente vector de la estructura poblacional observada al inicio del estudio. A lo largo del desarrollo del análisis en el presente Capítulo se usarán los datos obtenidos por Tremblay et al. <span class="citation">(<a href="#ref-tremblay2015stable">R. Tremblay, Raventos, and Ackerman 2015</a>)</span> y Schödelbauerová et al. <span class="citation">(<a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span> para la orquídea epífita <em>Lepanthes rubripetala</em>; en específico usaremos los datos de la población 1. En esta especie, los individuos se clasificaron en cuatro categorías de estado: plántula (PL), juvenil (J), adulto no reproductivo (NR) y adulto reproductivo (AR). Esta última catergoría florece a largo de todo el año, por lo que el seguimiento de la población fue mensual <span class="citation">(<a href="#ref-tremblay2015stable">R. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
+<p>En primer lugar se debe contar con una matriz de proyección poblacional y su vector correspondiente de la estructura poblacional observada al inicio del estudio. En en este caso se usarán los datos obtenidos para <em>Lepanthes rubripetala</em> por Tremblay y colaboradores <span class="citation">(<a href="#ref-tremblay2015stable">R. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
 <p>A continuación incorporamos la información de nuestra matriz y la abundancia de individuos por categoría observada al inicio de nuestro estudio. Las función <em>matrix</em> de <em>R</em> fue usada para construir la matriz y <em>n0</em> se fue usado para nombrar el vector de la estructura inicial obsevada. Cabe señalar que se, a lo largo del análisis de dinámica transitoria se usan cinco paquetes de <em>R</em> (<em>popdemo</em>, <em>popbio</em>, <em>ggplot2</em>, <em>dplyr</em>, <em>scales</em>), por lo que se cargan desde un principio.</p>
 <hr />
 </div>
@@ -607,7 +607,7 @@ div.csl-indent {
 ***</p>
 <div id="capturar-y-obtener-el-vector-inicial-datos-de-campo-de-clases-de-estado-población-1-1" class="section level4 hasAnchor" number="15.3.1.1">
 <h4><span class="header-section-number">15.3.1.1</span> Capturar y obtener el vector inicial (datos de campo) de clases de estado población 1<a href="dinámica-transitoria-transient-dynamics-1.html#capturar-y-obtener-el-vector-inicial-datos-de-campo-de-clases-de-estado-población-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><em>Paso 1a. Matriz de transición y estructura poblacional inicial</em>. En el siguiente cuadro se comprueba que la matriz de la estructura poblacional inicial de <em>L. rubripetala</em> haya sido incorporada sin errores. La primera formada por 4 renglones y 4 columnas y la segunda por 4 elementos, que indican el número de individuos encontrados en el estado de plántula (0), juvenil (46), adulto no reproductivo (38) y adulto reproductivo (82) <span class="citation">(<a href="#ref-tremblay2015stable">R. L. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
+<p><em>Paso 1a. Matriz de transición y estructura poblacional inicial</em>. En el siguiente cuadro se comprueba que la matriz de la estructura poblacional inicial de <em>L. rubripetala</em> haya sido incorporada sin errores. La primera formada por 4 renglones y 4 columnas y la segunda por 4 elementos, que indican el número de individuos encontrados en el estado de plántula (0), juvenil (46), adulto no reproductivo (38) y adulto reproductivo (82) <span class="citation">(<a href="#ref-tremblay2015stable">R. Tremblay, Raventos, and Ackerman 2015</a>; <a href="#ref-schodelbauerova2010prediction">Schödelbauerová, Tremblay, and Kindlmann 2010</a>)</span>.</p>
 <pre><code>##        PL      J     NR    AR
 ## PL 0.4324 0.0000 0.0000 0.150
 ## J  0.3784 0.8459 0.0000 0.000
@@ -984,7 +984,7 @@ Bierzychudek, Paulette. 1999. <span>“Looking Backwards: Assessing the Projecti
 Raventós, José, Elaine González, Ernesto Mújica, and Andreu Bonet. 2015. <span>“Transient Population Dynamics of Two Epiphytic Orchid Species After Hurricane Ivan: Implications for Management.”</span> <em>Biotropica</em> 47 (4): 441–48. <a href="https://doi.org/10.1111/btp.12231">https://doi.org/10.1111/btp.12231</a>.
 </div>
 <div id="ref-schodelbauerova2010prediction" class="csl-entry">
-Schödelbauerová, Iva, Raymond L Tremblay, and Pavel Kindlmann. 2010. <span>“Prediction Vs. Reality: Can a PVA Model Predict Population Persistence 13 Years Later?”</span> <em>Biodiversity and Conservation</em> 19: 637–50. <a href="https://doi.org/10.1007/s10531-009-9724-1">https://doi.org/10.1007/s10531-009-9724-1</a>.
+Schödelbauerová, I, RL Tremblay, and P Kindlmann. 2010. <span>“Prediction Vs. Reality: Can a PVA Model Predict Population Persistence 13 Years Later?”</span> <em>Biodiversity and Conservation</em> 19: 637–50. <a href="https://doi.org/10.1007/s10531-009-9724-1">https://doi.org/10.1007/s10531-009-9724-1</a>.
 </div>
 <div id="ref-stott2012beyond" class="csl-entry">
 Stott, Iain, David James Hodgson, and Stuart Townley. 2012a. <span>“Beyond Sensitivity: Nonlinear Perturbation Analysis of Transient Dynamics.”</span> <em>Methods in Ecology and Evolution</em> 3 (4): 673–84.
@@ -995,11 +995,11 @@ Stott, Iain, David J Hodgson, and Stuart Townley. 2012b. <span>“Popdemo: An r 
 <div id="ref-stott2011framework" class="csl-entry">
 Stott, Iain, Stuart Townley, and David James Hodgson. 2011. <span>“A Framework for Studying Transient Dynamics of Population Projection Matrix Models.”</span> <em>Ecology Letters</em> 14 (9): 959–70.
 </div>
-<div id="ref-tremblay2015stable" class="csl-entry">
-Tremblay, Raymond L, Josep Raventos, and James D Ackerman. 2015. <span>“When Stable-Stage Equilibrium Is Unlikely: Integrating Transient Population Dynamics Improves Asymptotic Methods.”</span> <em>Annals of Botany</em> 116 (3): 381–90. <a href="https://doi.org/10.1093/aob/mcv031">https://doi.org/10.1093/aob/mcv031</a>.
-</div>
 <div id="ref-tremblay1997distribution" class="csl-entry">
 Tremblay, RL. 1997. <span>“Distribution and Dispersion Patterns of Individuals in Nine Species of <em>Lepanthes</em> (Orchidaceae).”</span> <em>Biotropica</em> 29 (1): 38–45.
+</div>
+<div id="ref-tremblay2015stable" class="csl-entry">
+Tremblay, RL, J Raventos, and JD Ackerman. 2015. <span>“When Stable-Stage Equilibrium Is Unlikely: Integrating Transient Population Dynamics Improves Asymptotic Methods.”</span> <em>Annals of Botany</em> 116 (3): 381–90. <a href="https://doi.org/10.1093/aob/mcv031">https://doi.org/10.1093/aob/mcv031</a>.
 </div>
 </div>
             </section>
