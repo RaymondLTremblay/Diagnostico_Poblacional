@@ -165,7 +165,7 @@ paquete-de-r-para-calcular-le-eslaticidad-no-lineal
 referencias-1
 funciones-de-transferencia
 ltre
-introducción-a-ltre
+introducción-a-experimento-de-respuesta-de-tabla-de-vida
 cómo-se-diferencia-la-elasticidad-de-ertv
 métodos-1
 ejemplo-práctico-de-ertv
