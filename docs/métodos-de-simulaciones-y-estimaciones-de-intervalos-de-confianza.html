@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-09-25" />
+<meta name="date" content="2024-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -715,13 +715,13 @@ div.csl-indent {
 <span id="cb343-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb343-3" tabindex="-1"></a>Serapia.eq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia, n, <span class="at">nreps=</span><span class="dv">1000</span>) <span class="co"># simulación con igual probabilidad de selección</span></span>
 <span id="cb343-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb343-4" tabindex="-1"></a></span>
 <span id="cb343-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb343-5" tabindex="-1"></a><span class="fu">head</span>(Serapia.eq) <span class="co"># vemos las primeras 6 simulaciones de los tamaños por etapa</span></span></code></pre></div>
-<pre><code>##        latente  plantula   rosetta  con flor
-## [1,] 2.0080332 0.1753423 0.9271737 0.9143667
-## [2,] 0.5100245 0.2115357 0.8071908 1.5446800
-## [3,] 2.5037821 0.2269937 1.2565987 1.1173725
-## [4,] 2.4461423 0.3733532 0.6774553 1.0325333
-## [5,] 0.6073317 0.2281186 1.0261283 1.9175784
-## [6,] 2.0632053 0.2276388 0.4678439 0.7191714</code></pre>
+<pre><code>##        latente   plantula   rosetta  con flor
+## [1,] 1.5566694 0.09223551 0.7519647 0.5551773
+## [2,] 1.5256222 0.50798672 1.8180327 4.2582895
+## [3,] 0.2238065 0.09624055 0.3007566 0.5630383
+## [4,] 0.4970577 0.17993391 0.8905687 1.8876920
+## [5,] 0.9739481 0.39382548 1.6575499 3.0861140
+## [6,] 0.7692779 0.26857601 1.3282363 2.4926902</code></pre>
 </div>
 </div>
 <div id="cual-es-la-distribución-de-numero-de-individuos-esperado." class="section level3 hasAnchor" number="18.1.2">
@@ -759,13 +759,13 @@ div.csl-indent {
 <span id="cb347-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb347-3" tabindex="-1"></a>Serapia.uneq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia, n, <span class="at">nreps=</span><span class="dv">1000</span>, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">3</span>, .<span class="dv">25</span>, .<span class="dv">05</span>, .<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="co"># simulación con igual probabilidad de selección</span></span>
 <span id="cb347-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb347-4" tabindex="-1"></a></span>
 <span id="cb347-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb347-5" tabindex="-1"></a><span class="fu">head</span>(Serapia.uneq) <span class="co"># vemos las primeras 6 simulaciones de tamaño de muestra</span></span></code></pre></div>
-<pre><code>##       latente plantula   rosetta  con flor
-## [1,] 43.85897 8.694474  9.366795 17.498232
-## [2,] 40.66381 4.789978  7.736859 13.472749
-## [3,] 42.32939 7.247848 10.555175 18.951777
-## [4,] 10.25362 1.831482  2.654254  4.162374
-## [5,] 10.66201 1.961217  2.261893  4.652996
-## [6,] 11.45930 1.196817  5.577795  5.273456</code></pre>
+<pre><code>##        latente  plantula   rosetta  con flor
+## [1,] 66.965606 11.221586 17.154189 29.818167
+## [2,] 19.970922  3.356048  5.057997  8.768704
+## [3,] 11.816731  2.142763  3.071002  4.805837
+## [4,] 10.694889  1.938578  2.738828  4.384672
+## [5,] 11.053410  2.000737  2.863159  4.493467
+## [6,]  2.094427  1.675119  0.996550  3.706288</code></pre>
 </div>
 <div id="comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones" class="section level3 hasAnchor" number="18.1.4">
 <h3><span class="header-section-number">18.1.4</span> Comparar la distribución de cantidad de individuos esperado por simulaciones<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -803,10 +803,10 @@ div.csl-indent {
 ## [1] -0.06760619
 ## 
 ## $sim
-## [1] -0.05544147
+## [1] -0.05613378
 ## 
 ## $sim.CI
-## [1] -0.09251507 -0.01836786</code></pre>
+## [1] -0.09023868 -0.02202889</code></pre>
 <div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb354-1" tabindex="-1"></a>SGR_uneq<span class="ot">=</span><span class="fu">stoch.growth.rate</span>(Serapia, <span class="at">maxt=</span><span class="dv">50</span>, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">3</span>, .<span class="dv">25</span>, .<span class="dv">05</span>, .<span class="dv">05</span>, .<span class="dv">05</span>), <span class="at">verbose=</span><span class="cn">FALSE</span>) <span class="co"># matrices seleccionado con diferente probabilidades</span></span>
 <span id="cb354-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb354-2" tabindex="-1"></a></span>
 <span id="cb354-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb354-3" tabindex="-1"></a>SGR_uneq</span></code></pre></div>
@@ -814,10 +814,10 @@ div.csl-indent {
 ## [1] -0.02988694
 ## 
 ## $sim
-## [1] -0.01904688
+## [1] -0.008328972
 ## 
 ## $sim.CI
-## [1] -0.05017653  0.01208276</code></pre>
+## [1] -0.03905346  0.02239552</code></pre>
 <p>Nota que los intervalos de confianza del crecimiento estocástico no solapa el zero para simulaciones con igual probabilidades, pero con probabilidades diferentes solapa el zero. Por consecuencia hay evidencia que en este caso, que las poblaciones si se comportará con igual frecuencia son afectada de forma antropogénicas o naturales, y la especies esta en declive. Al contrario, si la mayoría de las poblaciones son afectada de forma antropogénicas, la especies no esta en declive.</p>
 <p>Para convertir el log(crecimiento poblacional estocástica) a lambda se usa la siguiente formula <span class="math inline">\(e^r\)</span></p>
 </div>
@@ -825,18 +825,18 @@ div.csl-indent {
 <h4><span class="header-section-number">18.1.4.2</span> Conversión de <span class="math inline">\(r\)</span> a <span class="math inline">\(\lambda\)</span><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#conversión-de-r-a-lambda" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Lambda Igual de probabilidades</p>
 <div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb356-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
-<pre><code>## [1] 0.9460674</code></pre>
+<pre><code>## [1] 0.9454126</code></pre>
 <div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb358-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#El intervalo de confianza inferior</span></span></code></pre></div>
-<pre><code>## [1] 0.9116355</code></pre>
+<pre><code>## [1] 0.9137131</code></pre>
 <div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb360-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co">#El intervalo de confianza superior</span></span></code></pre></div>
-<pre><code>## [1] 0.9817998</code></pre>
+<pre><code>## [1] 0.978212</code></pre>
 <p>Lambda Diferente de probabilidades</p>
 <div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb362-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim) <span class="co"># matrices seleccionado con diferente probabilidades</span></span></code></pre></div>
-<pre><code>## [1] 0.9811334</code></pre>
+<pre><code>## [1] 0.9917056</code></pre>
 <div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb364-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#El intervalo de confianza inferior </span></span></code></pre></div>
-<pre><code>## [1] 0.9510615</code></pre>
+<pre><code>## [1] 0.9616993</code></pre>
 <div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb366-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_uneq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co">#El intervalo de confianza superior</span></span></code></pre></div>
-<pre><code>## [1] 1.012156</code></pre>
+<pre><code>## [1] 1.022648</code></pre>
 </div>
 </div>
 <div id="impacto-antropogénico-vs-poblaciones-naturales" class="section level3 hasAnchor" number="18.1.5">
@@ -1129,13 +1129,13 @@ div.csl-indent {
 <span id="cb373-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb373-3" tabindex="-1"></a>Serapia_tiempo_eq   <span class="ot">&lt;-</span> <span class="fu">stoch.projection</span>(Serapia_tiempo, n, <span class="at">nreps=</span><span class="dv">1000</span>) <span class="co"># simulación con igual probabilidad de selección</span></span>
 <span id="cb373-4"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb373-4" tabindex="-1"></a></span>
 <span id="cb373-5"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb373-5" tabindex="-1"></a><span class="fu">head</span>(Serapia_tiempo_eq) <span class="co"># vemos las primeras 6 simulaciones de tamaño de muestra</span></span></code></pre></div>
-<pre><code>##       latente plantula  rosetta con flor
-## [1,] 61.33982 13.49661 23.10649 28.21659
-## [2,] 93.44928 21.13153 24.65147 46.15672
-## [3,] 61.59082 14.17405 24.53929 22.04491
-## [4,] 40.72660 13.63389 12.68902 18.39107
-## [5,] 59.82642 12.88053 20.32103 24.16631
-## [6,] 72.94304 16.42384 29.55629 35.38821</code></pre>
+<pre><code>##        latente  plantula   rosetta con flor
+## [1,] 134.51269 37.088278 36.295275 62.97468
+## [2,]  49.01087 20.751425 18.794186 27.46789
+## [3,]  72.18237 21.661882 22.359585 29.57894
+## [4,]  49.48703 11.291347 14.557651 18.88178
+## [5,]  35.38580  9.961923  9.342589 16.62875
+## [6,]  62.05371 13.708741 24.732538 28.87103</code></pre>
 <p>Para evaluar el cambio de crecimiento poblacional en la especies de <em>Serapia cordigera</em> en 1999 a 2012 se usa la función <em>stoch.growth.rate</em>.</p>
 <p>Se observa que el crecimiento poblacional es cerca de cero en la mayoría de las simulaciones, sugiere que la especies no esta en declive ni creciendo. Los intervalos de confianza solapa el cero sugiriendo que no hay evidencia que el crecimiento temporal de la población es diferentes de estable.</p>
 <div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb375-1" tabindex="-1"></a>SGR_Temp_eq<span class="ot">=</span><span class="fu">stoch.growth.rate</span>(Serapia_tiempo, <span class="at">maxt=</span><span class="dv">50</span>) <span class="co"># matrices seleccionado con igual probabilidad</span></span></code></pre></div>
@@ -1145,18 +1145,18 @@ div.csl-indent {
 ## [1] 0.002712947
 ## 
 ## $sim
-## [1] 0.009790944
+## [1] 0.01116704
 ## 
 ## $sim.CI
-## [1] -0.01001616  0.02959805</code></pre>
+## [1] -0.01451007  0.03684416</code></pre>
 <div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb379-1" tabindex="-1"></a><span class="co"># Conversión a valores de Lambda</span></span>
 <span id="cb379-2"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb379-2" tabindex="-1"></a></span>
 <span id="cb379-3"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb379-3" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim) <span class="co"># Lambda de matrices seleccionado con igual probabilidad</span></span></code></pre></div>
-<pre><code>## [1] 1.009839</code></pre>
+<pre><code>## [1] 1.01123</code></pre>
 <div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb381-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">1</span>]) <span class="co">#Lambda del intervalo de confianza inferior</span></span></code></pre></div>
-<pre><code>## [1] 0.9900338</code></pre>
+<pre><code>## [1] 0.9855947</code></pre>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb383-1" tabindex="-1"></a><span class="fu">exp</span>(SGR_Temp_eq<span class="sc">$</span>sim.CI[<span class="dv">2</span>]) <span class="co"># Lambda del intervalo de confianza superior</span></span></code></pre></div>
-<pre><code>## [1] 1.03004</code></pre>
+<pre><code>## [1] 1.037531</code></pre>
 </div>
 <div id="comparación-entre-la-variación-espacial-vs-la-variación-temporal" class="section level4 hasAnchor" number="18.1.6.2">
 <h4><span class="header-section-number">18.1.6.2</span> Comparación entre la variación espacial vs la variación temporal<a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparación-entre-la-variación-espacial-vs-la-variación-temporal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1171,8 +1171,8 @@ div.csl-indent {
 <pre><code>## # A tibble: 2 × 5
 ##   tipo     valor CI_inf CI_sup diff_ci
 ##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-## 1 Espacial 0.946  0.912  0.982  0.0702
-## 2 Temporal 1.01   0.990  1.03   0.0400</code></pre>
+## 1 Espacial 0.945  0.914  0.978  0.0645
+## 2 Temporal 1.01   0.986  1.04   0.0519</code></pre>
 <p>Observación de la variación temporal y espacial en el crecimiento poblacional de la especies de <em>Serapia cordigera</em> en un gráfico.</p>
 <p>Se nota que el crecimiento poblacional intrínsico de la especies de <em>Serapia cordigera</em> es negativo en la mayoría de las simulaciones cuando se evalúa múltiple poblaciones, pero la población <strong>A1</strong> en general tiene un crecimiento positivo o es estable cuando se evalúa tomando en cuanta la variación temporal .</p>
 <div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cb387-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(Tabla_resultado, <span class="fu">aes</span>(<span class="at">x=</span>tipo, <span class="at">y=</span>valor))<span class="sc">+</span></span>

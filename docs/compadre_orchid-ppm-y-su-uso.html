@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-09-25" />
+<meta name="date" content="2024-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1290,12 +1290,10 @@ Tolumnia variegata
 <span id="cb428-11"><a href="compadre_orchid-ppm-y-su-uso.html#cb428-11" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">7</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),  </span>
 <span id="cb428-12"><a href="compadre_orchid-ppm-y-su-uso.html#cb428-12" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
 <span id="cb428-13"><a href="compadre_orchid-ppm-y-su-uso.html#cb428-13" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">vjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
-## 3.5.0.
+<pre><code>## Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2 3.5.0.
 ## ℹ Please use the `legend.position.inside` argument of `theme()` instead.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_13-1.png" width="672" /></p>
 <div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb430-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figures_MS/Lenght_survey.png&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
@@ -1667,8 +1665,8 @@ Para visualizar loa datos en una figura de <strong>ggplot2</strong>, hay que con
 <span id="cb474-2"><a href="compadre_orchid-ppm-y-su-uso.html#cb474-2" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="at">database =</span> <span class="st">&quot;world&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb474-3"><a href="compadre_orchid-ppm-y-su-uso.html#cb474-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.8</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
 <span id="cb474-4"><a href="compadre_orchid-ppm-y-su-uso.html#cb474-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">55</span>, <span class="fl">0.2</span>))</span></code></pre></div>
-<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale range
-## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 27 rows containing missing values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <p><img src="Diagnostico_Poblacional_files/figure-html/chap16_26a-1.png" width="672" /></p>
 <div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="compadre_orchid-ppm-y-su-uso.html#cb476-1" tabindex="-1"></a><span class="co">#ggsave(&quot;orchid_map.jpg&quot;)</span></span></code></pre></div>
 </div>
