@@ -132,8 +132,8 @@ library(popbio)
 
 Orchis_ficticia_df=as.data.frame(Orchis_ficticia) # Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. 
 stages=c("plantas_pequeñas", "juvenil", "adulto")
-Orchis_ficticia_df$fertility<-0
-projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, TF=TRUE)
+Orchis_ficticia_df$fertilidad<-0
+projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, TF=TRUE)
 
 
 ```
@@ -141,7 +141,7 @@ projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, TF=TRUE
 Si quiere la matriz con la unión de ambas matrices, puede usar el argumento **TF=FALSE**.
 
 ```{r}
-projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, TF=FALSE)
+projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, TF=FALSE)
 ```
 
 ### Fertilidad
@@ -150,4 +150,4 @@ Nota que no se añadió el calculo de la fertilidad en la tabla de datos, por lo
 
 ### Problema con el uso tradicional de calcular las transiciones
 
-El uso de estos métodos tradicionales aun que sean calculado a mano o usar la función **projection.matrix** del paquete **popbio** pudiese ser problemático. Los problemas ocurren por condiciones de muestreo, especialmente cuando trabajan con especies raras y los tamaños de muestra están pequeños o que las transiciones son raras de forma natural [@tremblay2021population; @gascoigne2023standard]. En el capitulo XX: **Impacto de datos sin sentidos** se discute los problemas posibles cuando hay datos sin sentidos y como construir matrices más confiable y cuando se debería usar el método Bayesiano para los análisis. En el capitulo XX se discute como resolver asuntos de matrices para que sean más compatible con la biología de la especies estudiada y por consecuencia .
+El uso de estos métodos tradicionales aun que sean calculado a mano o usar la función **projection.matrix** del paquete **popbio** pudiese ser problemático. Los problemas ocurren por condiciones de muestreo, especialmente cuando trabajan con especies raras y los tamaños de muestra están pequeños o que las transiciones son raras de forma natural [@tremblay2021population; @gascoigne2023standard]. En el capitulo XX: **Impacto de datos sin sentidos** se discute los problemas posibles cuando hay datos sin sentidos y como construir matrices más confiable y cuando se debería usar el método Bayesiano para los análisis. En el capitulo XX se discute como resolver asuntos de matrices para que sean más compatible con la biología de la especies estudiada y por consecuencia.

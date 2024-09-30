@@ -268,4 +268,8 @@ usando-ejemplo-de-tremblay-y-su-codificación
 almacenamiento-de-datos-de-forma-digital
 calcular_transiciones
 historia-breve-de-la-dinámica-poblacional-en-orquídeas.
-los-primeros-estudios
+familia-de-plantas-evaluadas
+los-primeros-estudios-con-orquídeas
+latencia-en-orquídeas
+métodos-alternos-para-estimar-la-latencia-incluye
+perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas

@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -512,12 +512,16 @@ div.csl-indent {
 <li class="chapter" data-level="27" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html"><i class="fa fa-check"></i><b>27</b> Calcular_Transiciones</a></li>
 <li class="chapter" data-level="28" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><i class="fa fa-check"></i><b>28</b> Historia breve de la dinámica poblacional en orquídeas.</a>
 <ul>
-<li class="chapter" data-level="28.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios"><i class="fa fa-check"></i><b>28.0.1</b> Los primeros estudios</a></li>
+<li class="chapter" data-level="28.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#familia-de-plantas-evaluadas"><i class="fa fa-check"></i><b>28.0.1</b> Familia de plantas evaluadas</a></li>
+<li class="chapter" data-level="28.0.2" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios-con-orquídeas"><i class="fa fa-check"></i><b>28.0.2</b> Los primeros estudios con Orquídeas</a></li>
+<li class="chapter" data-level="28.0.3" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#latencia-en-orquídeas"><i class="fa fa-check"></i><b>28.0.3</b> Latencia en Orquídeas</a></li>
+<li class="chapter" data-level="28.0.4" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#métodos-alternos-para-estimar-la-latencia-incluye"><i class="fa fa-check"></i><b>28.0.4</b> Métodos alternos para estimar la latencia incluye</a></li>
+<li class="chapter" data-level="28.0.5" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas"><i class="fa fa-check"></i><b>28.0.5</b> Perspectiva Histórica de la Dinámica Poblacional en Orquídeas</a></li>
 </ul></li>
 <li class="part"><span><b>Act two</b></span></li>
 <li class="chapter" data-level="" data-path="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html"><a href="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html"><i class="fa fa-check"></i>Lista completa de todos los trabajos dinamica poblacional en orquidea que han usado matriz</a>
 <ul>
-<li class="chapter" data-level="" data-path="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html"><a href="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html#los-primeros-estudios-1"><i class="fa fa-check"></i>Los primeros estudios</a></li>
+<li class="chapter" data-level="" data-path="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html"><a href="lista-completa-de-todos-los-trabajos-dinamica-poblacional-en-orquidea-que-han-usado-matriz.html#los-primeros-estudios"><i class="fa fa-check"></i>Los primeros estudios</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -1147,8 +1151,8 @@ div.csl-indent {
 <span id="cb27-2"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-2" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-3" tabindex="-1"></a>Orchis_ficticia_df<span class="ot">=</span><span class="fu">as.data.frame</span>(Orchis_ficticia) <span class="co"># Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. </span></span>
 <span id="cb27-4"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-4" tabindex="-1"></a>stages<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;plantas_pequeñas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adulto&quot;</span>)</span>
-<span id="cb27-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-5" tabindex="-1"></a>Orchis_ficticia_df<span class="sc">$</span>fertility<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb27-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-6" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb27-5"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-5" tabindex="-1"></a>Orchis_ficticia_df<span class="sc">$</span>fertilidad<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb27-6"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb27-6" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, <span class="at">TF=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## $T
 ##                   
 ##                    plantas_pequeñas   juvenil    adulto
@@ -1163,7 +1167,7 @@ div.csl-indent {
 ##   juvenil                         0       0      0
 ##   adulto                          0       0      0</code></pre>
 <p>Si quiere la matriz con la unión de ambas matrices, puede usar el argumento <strong>TF=FALSE</strong>.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb29-1" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertility, stages, <span class="at">TF=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#cb29-1" tabindex="-1"></a><span class="fu">projection.matrix</span>(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, <span class="at">TF=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>##                   
 ##                    plantas_pequeñas   juvenil    adulto
 ##   plantas_pequeñas        0.1428571 0.3333333 0.1666667
@@ -1176,7 +1180,7 @@ div.csl-indent {
 </div>
 <div id="problema-con-el-uso-tradicional-de-calcular-las-transiciones" class="section level3 hasAnchor" number="5.2.5">
 <h3><span class="header-section-number">5.2.5</span> Problema con el uso tradicional de calcular las transiciones<a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>El uso de estos métodos tradicionales aun que sean calculado a mano o usar la función <strong>projection.matrix</strong> del paquete <strong>popbio</strong> pudiese ser problemático. Los problemas ocurren por condiciones de muestreo, especialmente cuando trabajan con especies raras y los tamaños de muestra están pequeños o que las transiciones son raras de forma natural <span class="citation">(<a href="#ref-tremblay2021population">R. L. Tremblay et al. 2021</a>; <a href="#ref-gascoigne2023standard">Gascoigne et al. 2023</a>)</span>. En el capitulo XX: <strong>Impacto de datos sin sentidos</strong> se discute los problemas posibles cuando hay datos sin sentidos y como construir matrices más confiable y cuando se debería usar el método Bayesiano para los análisis. En el capitulo XX se discute como resolver asuntos de matrices para que sean más compatible con la biología de la especies estudiada y por consecuencia .</p>
+<p>El uso de estos métodos tradicionales aun que sean calculado a mano o usar la función <strong>projection.matrix</strong> del paquete <strong>popbio</strong> pudiese ser problemático. Los problemas ocurren por condiciones de muestreo, especialmente cuando trabajan con especies raras y los tamaños de muestra están pequeños o que las transiciones son raras de forma natural <span class="citation">(<a href="#ref-tremblay2021population">R. L. Tremblay et al. 2021</a>; <a href="#ref-gascoigne2023standard">Gascoigne et al. 2023</a>)</span>. En el capitulo XX: <strong>Impacto de datos sin sentidos</strong> se discute los problemas posibles cuando hay datos sin sentidos y como construir matrices más confiable y cuando se debería usar el método Bayesiano para los análisis. En el capitulo XX se discute como resolver asuntos de matrices para que sean más compatible con la biología de la especies estudiada y por consecuencia.</p>
 
 </div>
 </div>
