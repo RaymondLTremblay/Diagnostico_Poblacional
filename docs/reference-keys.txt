@@ -1,4 +1,5 @@
 fig:unnamed-chunk-2
+fig:unnamed-chunk-131
 dinámica-poblacional
 objetivo-del-libro
 estructura-del-libro
@@ -198,15 +199,16 @@ introducción-a-los-métodos-de-simulaciones
 estocasticidad-espacial
 entrada-de-datos
 simulaciones-con-igual-probabilidad-de-selección
-cual-es-la-distribución-de-numero-de-individuos-esperado.
+cual-es-la-distribución-de-número-de-individuos-esperado.
 simulaciones-con-diferente-probabilidad-de-selección
 comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones
-simlación-de-crecimiento-poblaciónal-de-serapia-cordigera
+simulación-de-crecimiento-poblaciónal-de-serapia-cordigera
 conversión-de-r-a-lambda
 impacto-antropogénico-vs-poblaciones-naturales
 estocasticidad-temporal
 simulaciones-con-igual-probabilidad-de-selección.
-comparación-entre-la-variación-espacial-vs-la-variación-temporal
+comparación-entre-la-variaciones-espacial-y-temporal
+comparación-de-la-variación-temporal-y-espacial-en-un-gráfico
 estocasticidad-demografica
 obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales
 ventaja-de-usar-simulaciones
@@ -273,3 +275,8 @@ los-primeros-estudios-con-orquídeas
 latencia-en-orquídeas
 métodos-alternos-para-estimar-la-latencia-incluye
 perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas
+carl-olaf-tamm
+quien-es-carl-olaf-tamm
+re-evaluación-de-los-datos-de-tamm
+instalación-de-raretrans-2-1
+lista-parcial-de-especies-de-orquídeas-que-han-sido-estudiadas-que-no-incluye-matrices

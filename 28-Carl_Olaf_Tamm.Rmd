@@ -1,0 +1,157 @@
+# Carl Olaf Tamm
+
+## Quien es Carl Olaf Tamm?
+
+Carl Olaf Tamm (1919-2007) fue un biólogo de Suecia y profesor de botánica y suelos de la escuela de "Soil Science at the Royal College of Forestry" (1957-1962) en Estocolmo y el primer profesor de **ecología de bosques** de dicha universidad (1962). Su carrera académica se desarrolló en la Universidad de Estocolmo, donde fue profesor de ecología de bosques desde 1957 hasta 1985. Los trabajos de Tamm son reconocidos por trabajos a largo plazo, de múltiples años y décadas, enfatizando la importancia de la variabilidad temporal en los ecosistemas. 
+
+Tamm es reconocido por haber desarrollado muestreos de plantas y suelos en bosques, donde la recolección de datos era anules y continuos. Algunos de estos trabajos son ahora coocidos como clásicos en ecología de poblaciones y comunidades. 
+
+ - Observation on reproduction and survival of some perrenial herbs [@tamm1948observations].
+ - Further observations on the survival and flowering of some perennial herbs, I [@tamm1956further].
+ - Survival and flowering of some perennial herbs. II. The behaviour of some orchids on permanent plots [@tamm1972survival].
+ 
+ En la descripción de la dinámica de los individuos muestreado a través del tiempo Tamm incluyo la variabilidad temporal en la reproducción y supervivencia de las plantas, basado en su presencia o ausencia, si eran reproductivo o no, reclutamiento y individuos que se clonan. El utilizo un sistema de presentación de la dinámica de los individuos usando una linea por individuo y identificando en que etapa estuviese en cada año.
+
+*** 
+
+En la figura cada linea vertical representa un individuo
+
+  - linea gruesa, individuo reproductivo
+  - linea fina, individuo vegetativo
+  - linea entrecortada: individuo no muestreado
+  - linea bifurcada: individuo que se clona
+  
+```{r, echo=FALSE, out.width="50%", fig.cap="Tamm: 1972, Orchis mascula"}
+knitr::include_graphics("Figures/Tamm_1972_Orchis_mascula.jpg")
+```
+ 
+
+
+En la publicación de 1972, Tamm describe la dinámica de múltiples especies, y alguna especies en multiples sitios.
+
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(gt)
+ Tamm=tribble(~Especies, ~"Núm de la Población", ~"Año del primer muestreo", ~"Año del último muestreo",
+              "Dactylorhiza incarnata", 46, 1944, 1971,
+              "Dactylorhiza sambucina", 17, 1942, 1971,
+              "Dactylorhiza sambucina", 18, 1943, 1964,
+              "Dactylorhiza sambucina", 19, 1943, 1957,
+              "Dactylorhiza sambucina", 20, 1943, 1957,
+              "Dactylorhiza sambucina", 21, 1943, 1957,
+              "Dactylorhiza sambucina", 22, 1943, 1957,
+              "Orchis mascula", 24, 1943, 1956,
+              "Listera ovata", 48, 1944, 1971)
+
+gt(Tamm)
+```
+
+***
+
+Tamm creo en el campo parcela de 0.5 x 0.5m o de 1.0 x 1.0m y muestreo todos los individuos en la parcela. Tamm estaba interesado en la dinámica de las orquídeas porque había notado que los individuos no florecen todo los años, y que la floración era un evento raro. Por ejemplo que en *Orchis sambucina* (ahora *Dactylorhiza sambucina*) nota que en 1942 solamente 7 plantas florecieron y que en 1945 había 40 con flores [@tamm1948observations]. Tamm sugiere que la poca cantidad de nuevos individuos pudiese ser correlacionado con la competencia para recursos (nutrientes, luz y agua) y que la capacidad de las plantas de sobrevivir eventos difíciles en parte esta correlacionado con la plantas de mayor edad [@tamm1948observations]. 
+
+En la publiacion de 1972, Tamm describe la dinámica de múltiples especies. En *Dactylorhiza incarnata* observa que la población múltiple individuos desaparece de un año a otro, que despues de 1951 la población es mayormente vegetativa (sin flores).  Usando las figuras Tamm trato de ver si había un patrón en la dinámica basado en el cambio de la comunidades, por ejemplo la presencia de un árbol de pino que se estableció cerca de la población de *D. sambucina*. La población de *D. sambucina* disminuyo un poco entre 1942 a 1963, pero fue balanceado por el reclutamiento de la misma cantidad de individuos en el mismo periodo. Después de revisar sus datos Tamm sugiere que lo que parece ser individuos nuevos por clonaje pudiese ser realmente nuevos individuos independiente solamente muy cerca de un individuo establecido anteriormente.  La dificultad de muestraer con confianza los individuos en su ambiente componente es un reto en la interpretación de los datos de plantas perreniales.
+ 
+En *Orchis mascula*, Tamm observa claramente que la plantas florecen de forma irregular, y que parace tener patrones entre años.  En *Listera ovata*, Tamm observa que la población crece, y que hay mucho reclutamiento entre 1944 y 1971, con un incremento de individuos de meas de 200% comparando al primer año de muestreo.
+
+En adición el demeustra que hay individuos que pueden vivir por muchos años. La edad de algunos individuos de los que muestreo es de 30 años para *D. sambucina*, 28 años para *L. ovata*, 25 años *D. incarnata* y 14 años para *O. mascula*.
+
+Tamm fue un pionero en la ecología de poblaciones y comunidades, y sus trabajos son reconocidos por su enfoque en la variabilidad temporal en los ecosistemas. 
+
+
+***
+
+## Re-evaluación de los datos de Tamm
+
+
+En la próxima sección se estará re-evaluando los datos de Tamm con métodos recientes.  
+
+Primero se estará digitalizando los datos, seguido de construcción de matriz siguiedo de analisis de viablidad de poblaciones y otras métricas de dinámica de poblaciones. 
+ 
+
+```{r OCTamm_1}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(janitor, tidyverse, devtools)
+
+library(tidyverse)
+library(janitor)
+
+```
+
+## Instalación de raretrans #2
+
+Para instalar **raretrans** remover el **#** antes de correr el script para tener aceco a los codigos de **raretrans** la PRIMERA vez. 
+
+```{r OCTamm_2}
+#library(devtools)
+
+#devtools::install_github("atyre2/raretrans", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+
+library(raretrans)
+
+
+```
+
+
+
+Subir los datos de Tamm
+
+```{r OCTamm_3}
+library(readxl)
+Tamm_1972 <- read_excel("data/Tamm_1972.xlsx")
+
+Tamm_1972 %>% head()
+```
+
+
+
+```{r, OCTamm_4, eval=FALSE}
+D_incarnata_1 <- Tamm_1972 %>%   
+ select("1944", "1948") |> 
+  rename("stage" = "1944", "fate" = "1948")
+
+
+
+head(D_incarnata_1) # ahora tenemos solamente los años 1944 y 1948. 
+# Crear TF = TRUE, añadir para formatear correctamente.
+TF <- popbio::projection.matrix(as.data.frame(D_incarnata_1), 
+                        stage = stage, fate = fate, 
+                         sort=c("V","F"), TF = TRUE)
+TF # Este es la estructura de etapas de vida para esa población en este tiempo.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
+
+
+
+
+
+```
+
+```{r OCTamm_5, eval=FALSE}
+D_incarnata_2 <- Tamm_1972 %>%   
+ select("1948", "1949") |> 
+  rename("stage" = "1948", "fate" = "1949")
+
+
+
+head(D_incarnata_2) # ahora tenemos solamente los años 1944 y 1948. 
+# Crear TF = TRUE, añadir para formatear correctamente.
+TF <- popbio::projection.matrix(as.data.frame(D_incarnata_2), 
+                        stage = stage, fate = fate, 
+                        sort=c("V","F"), TF = TRUE)
+TF # Este es la estructura de etapas de vida para esa población en este tiempo.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
+```
+
+
+```{r OCTamm_6, eval=FALSE}
+D_incarnata_3 <- Tamm_1972 %>%   
+ select("1949", "1950") |> 
+  rename("stage" = "1949", "fate" = "1950")
+
+
+
+head(D_incarnata_3) # ahora tenemos solamente los años 1949 y 1950. 
+# Crear TF = TRUE, añadir para formatear corectamente.
+TF <- popbio::projection.matrix(as.data.frame(D_incarnata_3), 
+                        stage = stage, fate = fate, 
+                        sort=c("V","F"), TF = TRUE)
+TF # Este es la estructura de etapas de vida para esa población en este tiempo.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
+```

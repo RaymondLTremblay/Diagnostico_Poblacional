@@ -127,22 +127,41 @@ projection.matrix(
 
 Nota que el "output" de la función **projection.matrix** es una lista con dos elementos, en dos matrices, una con las transiciones $T$ y otra con la fertilidad $F$. La primera tiene solamente los valores de transiciones y la segunda solamente los valores que corresponde a la fertilidad, o sea la cantidad de individuos que se añaden a cada clase de edad.
 
+
+Antes de comenzar hacer los análisis es importante que los nombres de las columnas se cambian a nombres que causan menos problemas para la función **projection.matrix**. En este caso, cambiamos los nombres de las columnas de la tabla de datos de "anio_1" a "stage" y de "anio_2" a "fate". Esos nombres corresponde a las etapas en el primer y segundo periodo de tiempo, *fate* se traduce como "destino" en español. 
+
+```{r}
+library(tidyverse)
+Orchis_ficticia=Orchis_ficticia %>% rename(stage=anio_1, fate=anio_2)
+head(Orchis_ficticia)
+```
+
+
+
+
 ```{r}
 library(popbio)
 
 Orchis_ficticia_df=as.data.frame(Orchis_ficticia) # Nota que es importante convertir la tabla de datos a un data frame si es en formato de tibble. 
 stages=c("plantas_pequeñas", "juvenil", "adulto")
-Orchis_ficticia_df$fertilidad<-0
-projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, TF=TRUE)
+Orchis_ficticia_df$fertilidad<-1/6
+projection.matrix(Orchis_ficticia_df, stage, fate, fertilidad, stages, TF=TRUE)
 
 
 ```
 
 Si quiere la matriz con la unión de ambas matrices, puede usar el argumento **TF=FALSE**.
 
+Nota que esta matriz se llama matA = matT + matF (la suma de las matrices de transiciones y de fertilidad)
+
 ```{r}
-projection.matrix(Orchis_ficticia_df, anio_1, anio_2, fertilidad, stages, TF=FALSE)
+projection.matrix(Orchis_ficticia_df, stage, fate, fertilidad, stages, TF=FALSE)
+
+
 ```
+
+
+
 
 ### Fertilidad
 
