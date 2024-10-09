@@ -1,5 +1,4 @@
 fig:unnamed-chunk-2
-fig:unnamed-chunk-131
 dinámica-poblacional
 objetivo-del-libro
 estructura-del-libro
@@ -98,6 +97,7 @@ intervalos-de-confianza-de-los-parámetros
 el-efecto-del-tamaño-de-muestra-sobre-los-intervalos-creíbles
 intervalos-creíbles-de-lambda
 determinar-si-el-lambda-es-significativamente-diferente-de-1
+tabla-de-resultado-de-lambda
 crecimiento-poblacional
 introducción-al-crecimiento-poblacional
 métodos
@@ -279,4 +279,8 @@ carl-olaf-tamm
 quien-es-carl-olaf-tamm
 re-evaluación-de-los-datos-de-tamm
 instalación-de-raretrans-2-1
+construcción-de-la-matriz-de-transición
+constucción-de-la-matriz-de-fertilidad
+simulando-el-crecimiento-poblacional
+visualización-de-las-distribuciones-de-los-lambda
 lista-parcial-de-especies-de-orquídeas-que-han-sido-estudiadas-que-no-incluye-matrices

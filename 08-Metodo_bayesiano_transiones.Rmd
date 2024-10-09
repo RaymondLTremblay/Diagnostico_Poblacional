@@ -35,6 +35,7 @@ Aquí un ciclo de vida que no es biologícamente realista
 # hidden code to produce figures
 library(DiagrammeR)
 library(Rage)
+library(gt)
 
 
 matA <- rbind(
@@ -144,8 +145,8 @@ onepop <- L_elto %>%
 
 # popbio::projection.matrix no funciona con el formato *tibbles*, por consecuencia se convierte en data.frame
 
-head(onepop) # AHora tenemos solamente datos de la población #250 del periodo 5
-# Crear TF = TRUE, añadir para formatear corectamente.
+head(onepop) # Ahora tenemos solamente datos de la población #250 del periodo 5
+# Crear TF = TRUE, añadir para formatear correctamente.
 TF <- popbio::projection.matrix(as.data.frame(onepop), 
                         stage = stage, fate = next_stage, 
                         fertility="fertility", sort=c("s","j","a"), TF = TRUE)
@@ -183,9 +184,9 @@ Tmat <- L_elto %>%
   as.data.frame() %>% 
   xtabs(~fate + stage, data = .) %>% 
   as.matrix()
-Tmat <- Tmat[,-4] # remover la columna para transiciones a la muerte
+Tmat <- Tmat[,-4] # remover la columna para transiciones de la muerte
 N2 <- colSums(Tmat) # obtener el número total. Averiguar: debe ser antes de 86 en este caso. 
-Tmat <- sweep(Tmat[-4,], 1, N2, "/") # normalizar a 1, descartando las transiciones *DESDE* la muerte
+Tmat <- sweep(Tmat[-4,], 2, N2, "/") # normalizar a 1, descartando las transiciones *hacia* la muerte, nota que el "2" es para decir que haga los calculos por columna
 # averiguar cuánta reproducción ocurrió en el año 2 mirando el año 3
 # L_elto %>% 
 #   mutate(stage = factor(stage, levels=c("p","j","a","m")),
@@ -194,7 +195,7 @@ Tmat <- sweep(Tmat[-4,], 1, N2, "/") # normalizar a 1, descartando las transicio
 #   count(stage) 
 # 2 offspring from N[3] == 16 adults
 Fmat <- matrix(0, nrow=3, ncol=3) # crear una matriz de ceros. 
-Fmat[1,3] <- 2/16 # contar 16 adultos reproductivos en el tiempo t y dos plantulas en el proximo tiempo t+1, 2/16. 
+Fmat[1,3] <- 2/16 # contar 16 adultos reproductivos en el tiempo t y dos plántulas en el próximo tiempo t+1, 2/16. 
 TF2 <- list(Tmat = Tmat, Fmat = Fmat)
 ```
 
@@ -251,8 +252,7 @@ Tobs <- Tobs + 0.25 # añadir los valores a priori
 sweep(Tobs, 2, colSums(Tobs), "/")[-4,] # dividir por la suma de la columna y descarta la fila de muerte 
 ```
 
-El *prior uniforme* rellena las transiciones que faltan, pero también crea problemas porque proporciona valores de transición que son
-biológicamente imposibles. Por ejemplo, proporciona una transición para adulto-\>plántula, cuando esta transición sólo es posible en la matriz de fecundidad $F$. Por esta razón, no recomendamos el uso de priores uniformes. En otra palabra usando un prior uniforme no toma en cuenta el ciclo de vida de una especie.
+El *prior uniforme* rellena las transiciones que faltan, pero también crea problemas porque proporciona valores de transición que son biológicamente imposibles. Por ejemplo, proporciona una transición para adulto-\>plántula, cuando esta transición sólo es posible en la matriz de fecundidad $F$. Por esta razón, no recomendamos el uso de priores uniformes. En otra palabra usando un prior uniforme no toma en cuenta el ciclo de vida de una especie.
 
 ### Matriz de fecundidad
 
@@ -359,8 +359,7 @@ Podemos especificar el peso de los valores **a priori** modificando el tamaño d
 fill_transitions(TF, N, P = RLT_Tprior, priorweight = 0.5)
 ```
 
-En este caso, la prioridad se pondera con la mitad del número observado de transiciones. En este caso, con sólo 2 transiciones, el tamaño
-efectivo de la muestra **a priori** sigue siendo 1. Si el número de transiciones observadas fuera mayor, una ponderación **a priori** de 0,5N sería mayor que 1, pero permitiría que los datos dominen.
+En este caso, la prioridad se pondera con la mitad del número observado de transiciones. En este caso, con sólo 2 transiciones, el tamaño efectivo de la muestra **a priori** sigue siendo 1. Si el número de transiciones observadas fuera mayor, una ponderación **a priori** de 0,5N sería mayor que 1, pero permitiría que los datos dominen.
 
 ## Intervalos de Confianza de los parámetros
 
@@ -460,8 +459,15 @@ RLT_0.5_summary <- summarize(RLT_0.5,
                              lcl = quantile(lposterior, probs = 0.025),
                              ucl = quantile(lposterior, probs = 0.975),
                              pincrease = sum(lposterior > 1.)/n())
-knitr::kable(RLT_0.5_summary, digits = 2)
+```
+
+### Tabla de resultado de lambda
+
+```{r chap7_28}
+
+gt(signif(RLT_0.5_summary, digits = 2))
 ```
 
 
 Revisión RLT: Sept 15, 2024
+Revisión RLT: Oct 8, 2024

@@ -178,8 +178,11 @@ Otros paquetes que se usan para analizar datos, mayormente para manipular datos,
 
 ## Libro digital y archivos de datos
  
- El libro se encuentra en el siguiente enlace, donde el acceso a todas las funciones y datos están disponibles para reproducir los ejemplos en el libro. https://raymondltremblay.github.io/Diagnostico_Poblacional/.
+El libro se encuentra en el siguiente enlace, donde el acceso a todas las funciones y datos están disponibles para reproducir los ejemplos utilizado en el libro. 
+
+https://raymondltremblay.github.io/Diagnostico_Poblacional/
+ 
  
  
 
-Revision: Sept 14, 2024
+Revisión: Sept 14, 2024
