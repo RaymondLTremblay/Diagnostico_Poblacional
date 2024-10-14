@@ -1,4 +1,4 @@
-# Métodos de Simulaciones y Estimaciones de intervalos de confianza
+# Variación temporal y Espacial por simulaciones
 
 
 Por: Raymond L. Tremblay
@@ -598,7 +598,7 @@ Se nota que el crecimiento poblacional intrínsico de la especies de *Serapia co
 
 
 
-## Estocasticidad demografica
+## Estocasticidad demográfica
 
 
 En esta sección vemos el efecto del tamaño de muestra sobre los parámetros de la matriz de transición.

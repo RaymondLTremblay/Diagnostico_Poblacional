@@ -1,8 +1,8 @@
 ---
 output:
-  pdf_document: default
   html_document:
     code_folding: show
+  pdf_document: default
   word_document: default
 ---
 
@@ -196,7 +196,8 @@ Un otro método de evaluar el riesgo de múltiples poblaciones es aplicar los an
 ### USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población 
 
 
-### USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento 
+### USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento o grupos taxonómicos
+
 
 
 

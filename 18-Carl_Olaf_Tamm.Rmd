@@ -8,7 +8,6 @@ pacman::p_load(janitor, tidyverse, devtools, popbio, knitr, gt)
 library(tidyverse)
 library(janitor)
 library(popbio)
-
 library(knitr)
 library(gt)
 
@@ -133,7 +132,7 @@ El primer paso es encontrar la matriz de valores *prior* para añadir al modelo 
 Dacty_apriori=matrix(c(0.637, 0.571, 0.740,
                        0.273, 0.271, 0.049,
                        0.090, 0.158, 0.059,
-                       0,     0,     0.152),  nrow = 4, ncol = 3, byrow=TRUE) # la ultima fila es la proporción de individuos en esta etapa que fallece. 
+                       0,     0,     0.152),  nrow = 4, ncol = 3, byrow=TRUE) # la última fila es la proporción de individuos en esta etapa que fallece. 
 
 Dacty_apriori
 
@@ -185,7 +184,7 @@ Para tomar en cuanta la fecundidad, se necesita una matriz de fertilidad. En est
 ```{r OCTamm_7}
 
 Fmat <- matrix(0, nrow=3, ncol=3) # crear una matriz de ceros. 
-Fmat[1,2] <- 15/9 # contar 9 adultos reproductivos en el tiempo t y 15 nuevos individuos a la población. 
+Fmat[1,2] <- 15/9 # contar 9 adultos reproductivos en el tiempo t y 15 nuevos individuos en el tiempo t+1 en la población. 
 TF2 <- list(Tmat = Tmat, Fmat = Fmat)
 TF2
 ```
@@ -257,7 +256,7 @@ El valor de 0.01, es que se usa 1% de los valores prior y 99% de los valores del
 
 TF2$Tmat
 
-TF3=fill_transitions(TF2, N2_D, P = Dacty_apriori, priorweight = .01)
+TF3=fill_transitions(TF2, N2_D, P = Dacty_apriori, priorweight = .1)
 
 TF3 # la matriz de transiciones posterior
 ```

@@ -1,8 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 # Elasticidad
 
 Autores: "Demetria Mondragón, Ernesto Mujica y Elaine González"

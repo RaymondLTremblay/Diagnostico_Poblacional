@@ -1,3 +1,5 @@
+# (PART\*) Appendices {-}
+
 # Hojas de datos en el campo
 
 Por: Raymond L. Tremblay
@@ -5,25 +7,27 @@ Por: Raymond L. Tremblay
 La hoja de recolección de datos debería estar preparada antes de ir al campo y estar imprimido sobre papel que es impermeable y escribir con lápiz.   Ese ultimo punto es bien importante ya que la gran mayoría de los bolígrafos son soluble en agua y si el papel se moja se puede perder sus datos.  Considerando que estas hojas de datos pudiese ser usado como fuente de averiguar los datos por decadas en el futuro.  **RECUERDA que no se puede regresar en el tiempo para recoger los datos**. Si Ud tiene su hoja de datos en el laboratorio y se le cae la taza cafe y fue escrito con bolígrafo se puede perder los datos.  No se arriesga!!
 
 
-Antes de ir al campo es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningún individuo.  Datos olvidado no se puede recuperar.
+Antes de ir al campo es importante tener la lista completa de todos los individuos en la hoja de datos, ya que esto le ayuda asegurarse durante el muestreo que no se le olvida ningún individuo.  *Datos olvidado no se puede recuperar*.
 
 
 Hoja en blanco para llevarse
+
+ 
 
 
 ```{r, message=FALSE, echo=FALSE}
 library(tidyverse)
 library(gt)
 Hoja_de_campo = tribble(
-  ~Número_de_Ind, ~Etapa, ~Cantidad_flores_abierta, ~Cantidad_capullo, ~ Cantidad_Frutos, ~Numero_Hojas, ~Ancho_hoja_mm, ~etc,
-  23001,"...","...","...","...","...","...","...",
-  23002,"...","...","...","...","...","...","...",
-  23003,"...","...","...","...","...","...","...",
-  23004,"...","...","...","...","...","...","...",
-  23005,"...","...","...","...","...","...","...",
-  24006,"...","...","...","...","...","...","...",
-  24007,"...","...","...","...","...","...","...",
-  24008,"...","...","...","...","...","...","...",
+ ~anio, ~Número_de_Ind, ~Etapa, ~Cantidad_flores_abierta, ~Cantidad_capullo, ~ Cantidad_Frutos, ~Numero_Hojas, ~Ancho_hoja_mm, ~etc,
+2023,  23001,"...","...","...","...","...","...","...",
+2023,  23002,"...","...","...","...","...","...","...",
+2023,  23003,"...","...","...","...","...","...","...",
+2024,  23001,"...","...","...","...","...","...","...",
+2024,  23002,"...","...","...","...","...","...","...",
+2024,  24003,"...","...","...","...","...","...","...",
+2024,  24004,"...","...","...","...","...","...","...",
+2024,  24005,"...","...","...","...","...","...","...",
   
 )
 ```
@@ -44,7 +48,7 @@ Hoja_de_campo %>% gt()
  - A1 == **adulto reproductivo**
  - M = **muerto** 
 
-Hoja llena al final del muestreo
+Hoja llena al final del muestreo 
 
 ```{r}
 library(tidyverse)
@@ -77,7 +81,7 @@ Nota que solamente los individuos 23003 y 23004 son adultos, uno tiene flores, c
 
 Esa misma estructura de recoger los dados puede ser utilizado para ponerlo en una hoja de MSExcel, Google Sheet o MacOS Numbers.  
 
- - Es muy importante que que haya dos hojas, una para los datos y otra para la metadata.
+ - Es muy importante que haya dos hojas, una para los datos y otra para la metadata.
  - La metadata es la descripción de los datos, como se recogieron, donde, cuando, por quien, las unidades, objetivo de la investigación, etc.
  - En la hoja de datos, cada columna tiene información de solamente UNA variable y cada fila tiene información de solamente UN individuo. No debería tener las unidades indicado en las celdas de la hoja de datos, sino en la metadata o en nombre de la columna. 
     - La primera fila tiene los nombres de las variables y la primera columna tiene los nombres de los individuos.
