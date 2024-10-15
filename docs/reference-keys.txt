@@ -59,6 +59,7 @@ métodos-tradicional-de-calcular-las-transiciones
 construyendo-la-matriz-de-transiciones
 añadiendo-los-nombres-de-las-etapas
 construcción-de-matriz-con-funciones-en-r
+matriz-con-clonaje
 fertilidad
 problema-con-el-uso-tradicional-de-calcular-las-transiciones
 como-calcular-fecundidad
@@ -275,8 +276,3 @@ análisis-de-elasticidad
 análisis-de-amortiguamientodamping-ratio-1
 análisis-de-convergencia-1
 dinámica-transitoria-1
-hojas-de-datos-en-el-campo
-ejemplos-de-tablas-de-datos
-usando-ejemplo-de-tremblay-y-su-codificación
-almacenamiento-de-datos-de-forma-digital
-lista-parcial-de-especies-de-orquídeas-que-han-sido-estudiadas-que-no-incluye-matrices

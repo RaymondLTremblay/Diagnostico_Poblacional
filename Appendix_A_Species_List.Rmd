@@ -1,6 +1,6 @@
-# (PART\*) Appenices {-}
+# Appendix A {.unnumbered}
 
-# Lista completa de todos los trabajos dinámica poblacional en orquídea que han usado matriz {-}
+## Lista completa de todos los trabajos dinámica poblacional en orquídea que han usado matriz {.unnumbered}
 
 
 
@@ -100,12 +100,12 @@ list <-dplyr::tribble(
 "*Oncidium*", "*poikilostalix*", "Si", "-" , "-", "-", "-", "-","Dinamica de transiciones","@raventos2018comparison",
 
  "*Orchis*", "*purpurea*", "Si", "-" , "Si", "-", "-", "-","LTRE", "@jacquemyn2010seed",
-"Orchis", "ustulata", "Si", "Si" , "-", "-", "-", "-","Needs to be digitized","@tali2002dynamics",
+"*Orchis*", "*ustulata*", "Si", "Si" , "-", "-", "-", "-","See **Neotinea ustulata**","@tali2002dynamics",
  "*Phaius*", "*australis*", "Si", "Si" , "-", "-", "-", "-","Efecto abiótico", "@simmons2016Viability",
  "*Platanthera*", "*hookeri*", "Si", "Si" , "-", "-", "-", "-","-","@reddoch2007population",
- "*Platanthera*", "*praeclara*", "Si", "Si" , "Si", "Si", "-", "-","Efecto abiótico y biótico", "@sieg1995influence",
- "*Platanthera*", "*macrophylla*", "Si", "Si" , "Si", "-", "-", "-","Incluye estado de protocormo, needs digitizing", "@cleavitt2017life @berry2021population",
- "*Platanthera*", "*orbiculata*", "Si", "Si" , "Si", "-", "-", "-","Incluye estado de protocormo, needs digitizing","@cleavitt2017life @berry2021population",
+ "*Platanthera*", "*praeclara*", "Si", "Si" , "Si", "Si", "-", "-","Variación temporal", "@sieg1995influence",
+ "*Platanthera*", "*macrophylla*", "Si", "Si" , "Si", "-", "-", "-","Incluye estado de protocormo, **needs digitizing**", "@cleavitt2017life @berry2021population",
+ "*Platanthera*", "*orbiculata*", "Si", "Si" , "Si", "-", "-", "-","Incluye estado de protocormo, **needs digitizing**","@cleavitt2017life @berry2021population",
  "*Prasophyllum*", "*correctum*", "Si", "" , "Si", "Si", "-", "-","Efecto de fuego, Nayliz","@coates2006effects",
  "Pseudorchis", "albida", "-", "-" , "-", "-", "-", "-","-","@stipkova2013mowing",
  "*Rodriguezia*", "*granadensis*", "Si", "Si" , "Si", "-", "-", "Javeilise","Efecto antropogénico","@ospina2023effect",
@@ -150,23 +150,23 @@ list_fl
 
 
 
-## Lista parcial de especies de orquídeas que han sido estudiadas que no incluye matrices
+## Lista parcial de especies de orquídeas que han sido estudiadas que no incluye matrices {.unnumbered}
 
 
 . 
 ```{r, table2, echo=FALSE, message=FALSE, warning=FALSE}
 NO_matrix <-dplyr::tribble(
   ~"Genero", ~Especies, ~Riesgo, ~"Var esp.", ~"Var temp", ~"Lat", ~"Est param", ~"Hist vida", ~Otro, ~Ref,
-  "*Isotria*", "*medeoloides*", "-", "-" , "-", "-", "-", "-","no matrix","@alahuhta2017instant",
-  "*Cyclopogon*", "*luteoalbus*", "-", "-" , "-", "-", "-", "-", "no matrix","@juarez2014viability",
-  "*Cypripedium*", "*calceolus*", "-", "-" , "-", "-", "-", "-","no matrix" ,"@davison2013contributions",
+"*Isotria*", "*medeoloides*", "-", "-" , "-", "-", "-", "-","no matrix","@alahuhta2017instant",
+"*Cyclopogon*", "*luteoalbus*", "-", "-" , "-", "-", "-", "-", "no matrix","@juarez2014viability",
+"*Cypripedium*", "*calceolus*", "-", "-" , "-", "-", "-", "-","no matrix" ,"@davison2013contributions",
 "*Cypripedium*", "*candidum*", "-", "-" , "-", "-", "-", "-","no matrix" ,"@shefferson2017predicting",
 "Gymnadenia", "conopsea", "-", "-" , "-", "-", "-", "-","no matrix","@oien2002flowering",
 
-  "*Ophrys*", "*sphegodes*", "-", "-" , "-", "-", "-", "-","no matrix","@hutchings2010population",
+"*Ophrys*", "*sphegodes*", "-", "-" , "-", "-", "-", "-","no matrix","@hutchings2010population",
 "*Ophrys*", "*sphegodes*", "-", "-" , "-", "-", "-", "-","no matrix" ,"@shefferson2017predicting",
 "*Orchis*", "*morio*", "-", "-" , "-", "-", "-", "-","no matrix", "@wells1998flowering",
-   "*Spiranthes*", "*spiralis*", "-", "-" , "-", "-", "-", "-","no matrix", "@jacquemyn2007long"
+"*Spiranthes*", "*spiralis*", "-", "-" , "-", "-", "-", "-","no matrix", "@jacquemyn2007long"
   
 )
 

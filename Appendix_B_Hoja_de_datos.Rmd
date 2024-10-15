@@ -1,6 +1,6 @@
-# (PART\*) Appendices {-}
+# Appendix B {.unnumbered}
 
-# Hojas de datos en el campo
+## Hojas de datos en el campo {.unnumbered}
 
 Por: Raymond L. Tremblay
 
@@ -38,9 +38,9 @@ Hoja_de_campo %>% gt()
 
 ***
 
-## Ejemplos de tablas de Datos
+## Ejemplos de tablas de Datos {.unnumbered}
 
-### Usando ejemplo de Tremblay [] y su codificación 
+### Usando ejemplo de Tremblay [] y su codificación  {.unnumbered}
 
  - p == **plantula**.
  - j == **juvenil**
@@ -76,7 +76,7 @@ Nota que solamente los individuos 23003 y 23004 son adultos, uno tiene flores, c
 
 
 
-### Almacenamiento de datos de forma digital
+### Almacenamiento de datos de forma digital {.unnumbered}
 
 
 Esa misma estructura de recoger los dados puede ser utilizado para ponerlo en una hoja de MSExcel, Google Sheet o MacOS Numbers.  

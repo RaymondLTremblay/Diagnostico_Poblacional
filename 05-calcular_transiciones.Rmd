@@ -162,6 +162,132 @@ projection.matrix(Orchis_ficticia_df, stage, fate, fertilidad, stages, TF=FALSE)
 
 
 
+## Matriz con Clonaje
+
+Muchas orquídeas se reproducen por clonaje, o sea que los individuos son genéticamente idénticos. En algunas ocasiones estos clones se pueden separar de la planta madre (por ejemplo por keiki) y otras especies es una manera de reproducción asexual o ponerse más grande. En este caso, la matriz de transiciones se puede modificar para incluir el clonaje. Hay pocos ejemplos en las orquideas de matriz que incluyen una sub-matriz de clonaje **matC**. 
+
+Vemos un ejemplo del trabajo de *Cypripedium calceolus* en Europa [@garcia2010living]. En este trabajo los autores querían explorar la dinámica de especies que viven a la periferia de su distribución geográfica. La poblaciones se encuentran en los Pirineos y en el norte de Europa. 
+
+```{r}
+library(Rcompadre)
+
+```
+
+
+```{r}
+compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. Tiene que haber activado la librería de Rcompadre.
+
+
+```
+
+Extraer de la base de datos de COMPADRE las matrices de transiciones de *Cypripedium calceolus* de del articulo mencionado arriba. 
+
+ Los pasos son los siguientes
+  - Filtrar la base de datos para *Cypripedium calceolus*
+  - Filtrar la base de datos para el DOI del articulo
+  - Filtrar la base de datos para la dimensión de la matriz de transiciones (6x6)
+  - Filtrar la base base de datos para una matriz en particular (242623)
+  
+  NOTA que se podría haber filtrado parta la MatrixID solamente. 
+
+```{r}
+
+
+Cyp_cal_matC=compadre %>% select(MatrixID, SpeciesAccepted, mat, Authors, DOI_ISBN, MatrixDimension) %>% 
+  filter(SpeciesAccepted %in% c("Cypripedium calceolus"),
+         DOI_ISBN %in% c("10.1111/j.1523-1739.2010.01466.x"),
+         MatrixDimension %in% c(6),
+         MatrixID %in% c(242623))
+  
+
+#Cyp_cal_matC$mat # para el año 2000 a 2001
+
+```
+
+
+Las matriz de transiciones de *Cypripedium calceolus* tiene una matriz de transiciones, de fecundidad y clonaje, matA=matU+matF+matC
+
+```{r}
+
+
+matA <- matA(Cyp_cal_matC) # extraer la matriz a partir de la base de datos de COMPADRE
+matcc=as.matrix(as.data.frame(matA)) # convertir la matriz a un data frame y luego a un objeto en forma de matriz 
+matcc
+```
+
+
+
+## Extraer la matriz de Clonaje
+
+
+NOTE que la matriz de clonaje es la siguiente.
+
+Lo que se observa es que hay NUEVOS individuos en el tiempo t+1, que provienen de los individuos en el tiempo t. En este caso, son individuos de las etapas 4, 5 y 6 que producen individuos nuevos en la etapa 3 y 4. 
+
+```{r}
+matC <- matC(Cyp_cal_matC) # extraer la matriz de clonaje a partir de la base de datos de COMPADRE
+matC
+```
+
+
+
+Ahora vemos el ciclo de vida de *Cypripedium calceolus* en este estudio donde las lineas azules son las transiciones de una etapa las transiciones por clonaje. 
+
+
+
+
+```{r}
+library(DiagrammeR)
+
+
+#etapas <- c("A1", "A2", "A3", "A4", "A5", "A6")
+etapas <- c("Dormant", "Smallest", "Small", "Intermediate", "Large", "Extra Large") # Etapas del articulo
+
+etapas <- factor(etapas, levels =  c("Dormant", "Smallest", "Small", "Intermediate", "Large", "Extra Large"))
+title <- NULL
+graph <- expand.grid(to = etapas, from = etapas)
+graph$trans <- round(c(matcc), 2)
+graph <- graph[graph$trans > 0, ]
+nodes <- paste(paste0("'", etapas, "'"), collapse = "; ")
+graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
+graph$col <- c(
+  "red", "black", "black", "black","black",
+  "black", "red", "black", "black",
+  "black",  "black", "red", "black", "black",
+  "black",  "black", "blue", "black", "black",
+  "black",  "black", "blue", "black", "black", 
+  "black",   "black", "blue", "blue","black", "black"
+)
+edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
+  "[minlen=", graph$min_len,
+  ",fontsize=", 10,
+  ",color=", graph$col,
+  ",xlabel=", paste("\"", graph$trans),
+  "\"]\n",
+  collapse = ""
+)
+grViz(
+  paste(
+    "
+digraph {
+  {
+    graph[overlap=false];
+    rank=etapas;
+    node [shape=", "egg", ", fontsize=", 12, "];",
+    nodes, "
+  }",
+    "ordering=out
+  x [style=invis]
+  x -> {", nodes, "} [style=invis]", edges,
+    "labelloc=\"t\";
+  label=\"", title, "\"
+}"
+  )
+) 
+```
+
+
+***
 
 ### Fertilidad
 

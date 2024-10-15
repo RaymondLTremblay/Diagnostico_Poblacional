@@ -103,6 +103,8 @@ compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del r
 TodasSp=compadre
 names(TodasSp) # La lista de los nombres de las variables en el archivo COMPADRE, Nota que 59 variables en la base de datos de COMPADRE.
 
+dim(TodasSp) # La base de datos de COMPADRE tiene 8994 filas y 59 columnas (variables)
+
 ```
 
 ***
@@ -670,6 +672,20 @@ OrchidLS=compadre_life_expect %>% select(mat, SpeciesAccepted, OrganismType, Spe
 ```
 
 
+```{r}
+x2 %>% 
+  filter(ProjectionInterval == 1.0) |> # filtrar para matriz de un año
+  filter(MatrixComposite == "Mean", # filtrar para la matriz promedia
+         MatrixTreatment == "Unmanipulated", # filtrar para la matriz sin manipulación
+         MatrixCaptivity == "W" # filtrar para poblaciones naturales (no en cautiverio)
+         ) %>% 
+  mutate(StageID = cdb_id_stages(.)) %>% # crear un ID para las etapas
+  cdb_collapse(columns = "StageID") %>% # colapsar las etapas
+  cdb_flag() %>% # evaluar las matrices y crear una columna para cada evaluación
+  filter(check_zero_C == FALSE) # filtrar para matrices sin valores faltantes
+          # filtrar para matrices sin valores cero
+         
+```
 
 
 Visualizar el largo de vida por plantas epifitas versus terrestres. Nota aquí que algunas especies están representada múltiple veces. Por consecuencia la distribución de los datos no es una buena representación de la diferencia entre las especies epifitas y terrestres, debido a lo que se llama pseudoreplicación. Este figura representa la distribución los datos del data frame anterior. 
