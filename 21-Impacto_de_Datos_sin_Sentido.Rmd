@@ -9,21 +9,21 @@ pacman::p_load("DiagrammeR", "Rage", "popdemo", "popbio", "interpretCI",
 
 ```
 
-El valor principal de los estudios científicos proviene en que los datos representa una visión suficiente cerca a la realidad y sirve para inferir información sobre la ecología de la especie de interés. En ningún estudio ecológico se podrá obtener **TODOS** los datos para evaluar la relación biótica y abiótica sobre un organismos y todas sus interacciones. Ese modelo es primero demasiado complejo y irreal dentro del concepto de los trabajos científicos. El objetivo es tener una apreciación de los parámetros más importante para definir patrones y interacciones. Por consecuencia la base de todo estudios esta fundado en las unidades de los muestreos y de la recolección de datos. Si los datos no representa la realidad del estudio la interpretaciones de los análisis pudiese ser errónea. La matemática y sus ecuaciones y modelos no harán que la biología sea más cerca a la realidad si desde el principio los datos y el método de recolección de datos es erróneo.
+El valor principal de los estudios científicos proviene en que los datos representa una visión suficiente cerca a la realidad y sirve para inferir información sobre la ecología de la especie de interés. Este supuesto de que los datos representa realmente la realidad es mito, es que esperamos que se acerca a la realidad suficiente para tener confianza en los resultados. En ningún estudio ecológico se podrá obtener **TODOS** los datos para evaluar la relación biótica y abiótica sobre un organismos y todas sus interacciones. Ese modelo es primero demasiado complejo y irreal dentro del concepto de lo que puede lograr un trabajos científicos. El objetivo es tener una apreciación de los parámetros más importante para definir patrones y interacciones suficiente cerca a la realidad para ser útil. Por consecuencia la base de todo estudios esta fundado en las unidades de los muestreos y de la recolección de datos. Si los datos no representa la realidad del estudio la interpretaciones de los análisis pudiese ser errónea. La matemática y sus ecuaciones y modelos no harán que la biología sea más cerca a la realidad si desde el principio los datos y el método de recolección de datos es erróneo.
 
-En esta sección evaluamos diferentes aspectos de los análisis matriciales poblacional de proyección y diferentes aspectos de la recolección de datos que pudiese ser problemáticos cuando uno considera la biología de una especie. La lista de *Impactos* no pretende incluir todos las posibles efecto de datos sin sentido, sino unos ejemplos si uno no considera estos problemas y cómo pueden distorsionar las interpretaciones. Por lo tanto, una advertencia a todos los biólogos de población para que estén consciente de estos temas y siempre evaluar criticamente si los datos desde la recolección a los análisis y interpretaciones considerando el anterior tiene sentidos dentro del contexto del estudio.
+En esta sección evaluamos diferentes aspectos de los análisis matriciales poblacional de proyección y diferentes aspectos de la recolección de datos que pudiese ser problemáticos cuando uno considera la biología de una especie. La lista de *Impactos* no pretende incluir todos las posibles efecto de datos sin sentido, sino unos ejemplos si uno no considera estos problemas y cómo pueden distorsionar las interpretaciones. Por lo tanto, una advertencia a todos los biólogos de población para que estén consciente de estos temas y siempre evaluar críticamente si los datos desde la recolección a los análisis y interpretaciones considerando que es solamente un modelo (una caricatura) de muchos posibles. 
 
 ***
 
-## Tamaño de muestra pequeño o eventos raros
+## Tamaño de muestra pequeñas o eventos raros
 
-Sin duda, el tema principal para el uso de PPM ha sido evaluar la proyección de población de especies raras o en peligro de extinción (otras cuestiones son ecológicas o evolutivas) [@caswell2000matrix; @gascoigne2023standard]. En consecuencia, las especies raras o en peligro de extinción son naturalmente pequeñas y reduce el tamaño de la muestra del estudio o de algunas de las etapas/edades de la vida. Estos tamaños de muestra reducidos provocan estimaciones de parámetros y, a menudo, resultados sin sentido biológicos. Algunos de los problemas incluye no haber observado eventos raros, como la muerte de un adulto o la germinación de una semilla. En estos casos, la probabilidad de supervivencia o transición pudiese ser de cero, lo que resulta en una matriz reducible o no irreducible.
+Sin duda, el tema principal para el uso de PPM ha sido evaluar la proyección de población de especies raras o en peligro de extinción (otras cuestiones son ecológicas o evolutivas) [@caswell2000matrix; @gascoigne2023standard]. En consecuencia, las especies raras o en peligro de extinción son naturalmente pequeñas y el tamaño de la muestra del estudio o de algunas de las etapas/edades de la vida son frecuentemente pequeñas. Estos tamaños de muestra reducidos provocan estimaciones de parámetros y, a menudo, resultados sin sentido biológicos. Algunos de los problemas incluye no haber observado eventos raros (transiciones pocos comunes), como la muerte de un adulto o la germinación de una semilla. En estos casos, la probabilidad de supervivencia o transición pudiese ser de cero, lo que pudiese resultar en una matriz reducible o no irreducible.
 
 ***
 
 ### Sin Mortalidad/Supervivencia Perfecta
 
-Muestreos donde uno no observa mortalidad o una supervivencia perfecta son problematicos. Considere una especie donde se recopilan datos de una especies **Sp1** y la matriz de transición **Sp1matU** y la matriz de fertilidad es **Sp1matF** es un ejemplo de este caso. Nota que ninguno de los individuos murió en la etapa adulta (supervivencia perfecta). En consecuencia, el tamaño de la población nunca disminuye o aumenta después de un período de tiempo. Bajo TODOS los modelos biologícamente realistas, esperaríamos que el tamaño de la población comenzaría a disminuir si una población no tiene reproducción y ninguna especie tiene una probabilidad de supervivencia de 100% (0% de probabilidad de mortandad). Pero en este caso como todos los individuos de la etapa sobreviven la población es *eterna* (algo irreal).
+Muestreos donde uno no observa mortalidad o una supervivencia perfecta son problemáticos. Considere una especie donde se recopilan datos de una especies **Sp1** y la matriz de transición **Sp1matU** y la matriz de fertilidad es **Sp1matF** siguientes son un ejemplo de este caso. Nota que ninguno de los individuos murió en la etapa adulta (supervivencia perfecta). En consecuencia, el tamaño de la población nunca disminuye o aumenta después de un período de tiempo. Bajo TODOS los modelos biologícamente realistas, esperaríamos que el tamaño de la población comenzaría a disminuir si una población no tiene reproducción, ademas que ninguna especie tiene una probabilidad de supervivencia de 100% (0% de probabilidad de mortandad). Pero en este caso como todos los individuos de la etapa sobreviven la población es *eterna* (algo irreal).
 
 ```{r, message=FALSE}
 library(DiagrammeR)
@@ -47,9 +47,9 @@ stages <- c("plantula", "juvenil", "adulto")
 plot_life_cycle(Sp1matA, stages=stages, fontsize = 0)
 ```
 
-Si analizamos esta matriz asumimos que ninguno de los individuos en etapa adulta muere, en ningún momento!!!. Claramente esto no es realista. Para cualquier especie, la probabilidad de muerte en cualquier etapa nunca es cero (aunque podría ser muy pequeña) y, por lo tanto, nuestra matriz no tiene sentido. Considere una especie de árbol, como los arboles de *Sequoia*, es probable que para los árboles grandes de esta especie la supervivencia sea muy alta entre un año y otro y nuestro observado es de 100%, pero ese 100% no es realista a largo plazo. Hay que diferenciar entre lo que se observa en periodo de muestreo y las probabilidades a largo plazo. Es posible que en el sitio de muestreo NO se observo mortalidad de los arboles grandes entre dos periodos de muestreo, que resultaría en una mortalidad de cero pero no es un valor real a largo plazo.
+Si analizamos esta matriz asumimos que ninguno de los individuos en etapa adulta muere, en ningún momento!!!. Claramente esto no es realista. Para cualquier especie, la probabilidad de muerte en cualquier etapa nunca es cero (aunque podría ser muy pequeña) y, por lo tanto, nuestra matriz no tiene sentido. Considere una especie de árbol, como los arboles de *Sequoia*, es probable que para los árboles grandes de esta especie la supervivencia sea muy alta entre un año y otro y nuestro muestreo observado es de 100%, pero ese 100% no es realista a largo plazo. Hay que diferenciar entre lo que se observa en un periodo de muestreo y las probabilidades a largo plazo. Es posible que en el sitio donde se muestreo NO se observo mortalidad de los arboles grandes entre dos periodos de muestreo, que resultaría en una mortalidad de cero pero no es un valor real a largo plazo. Ese estimado de campo puede ser un resultado de tamaño de muestra pequeña o que estos eventos son raros (aun con tamaño de muestra grandes). 
 
-En el siguiente *script* mostramos que la población no cambia después de 7-8 periodos/años y se mantiene cercana a uno y no cambia significativamente (usamos la matriz de transición sin fecundidad). Si no hay reclutas (matriz de fertilidad), el tamaño de la población debería reducirse con el tiempo. Todo modelos de transiciones que no incluye la matriz de fertilidad debería resultar en reducción de tamaño poblacional.
+En el siguiente *script* mostramos que la población no cambia después de 7-8 periodos/años y se mantiene cercana a uno y no cambia (usamos la matriz de transición sin fecundidad). Si no hay reclutas (matriz de fertilidad), el tamaño de la población debería reducirse con el tiempo. Todo modelos de transiciones que no incluye la matriz de fertilidad (solamente la matU) debería resultar en reducción de tamaño poblacional en tiempo.
 
 ```{r}
 n=c(50,50,50)
@@ -64,9 +64,10 @@ pop.projection(Sp1matU, n=n)$pop.changes # lista del cambio poblacional en 16 a�
 
 #### Un cambio pequeño en la mortalidad.
 
-Tenga en cuenta que en este nuevo modelo de la especie *SP1*, aunque la tasa de supervivencia es muy cercana a 100% (0,995) es posible una disminución de la población en cada período de tiempo (aunque solo sea en una pequeña fracción). Siempre hay que considerar si esta taza de mortalidad es biologícamente real o es un resultado del tamaño de la muestra. Este valor sugiere que se muestreo 1000 individuos y que 995 sobrevivieron. Si el tamaño fue de 1000, uno pudiese tener confianza en el parámetro.
+El efecto de aumentar el tamaño de muestra impacta directamente los posibles valores en la matriz.  Considera la siguiente situación.  ¿Si tenemos solamente 5 individuos en la etapa uno, cual son la valores posible de mortalidad? Ningun individuo muere, o 1, 2,...o todos los individuos mueren. Entonces las probabilidades que entraría en la matriz son 0, 0.2, 0.4, 0.6, 0.8, 1.0.   NOTA que los valores intermedios NO existen en la matriz.  Por lo tanto, si uno tiene un tamaño de muestra pequeño, es probable que los valores en la matriz no representan la realidad biológica. 
 
-La probabilidad de observar una tasa de mortalidad de 0,995 en una muestra de 1000 individuos es de 5%. Pero si habia tenido solamente 20 individuos en el muestreo, la probabilidad de observar una tasa de mortalidad de de 0.995 es imposible, por que si se mueren un individual la taza de superviuvencia es de 0.95, bastante lejos de 0.995. Lo importante aqui es que realmente si el tamaño de muestra es pequeño tenemos poca comfianza en los parametros al comparar con tamaño de muestra grande. 
+Ahora si aumentamos el tamaño de muestra con los resultados visto en la siguiente matriz, el tamaño de muestra tiene que haber sido mucho mayor. Este valor sugiere que se muestreo 1000 individuos y que 995 sobrevivieron. Si el tamaño fue de 1000, uno pudiese tener mayor confianza en el parámetro. Tenga en cuenta que en este nuevo modelo de la especie *SP1*, aunque la tasa de supervivencia es muy cercana a 100% (0,995) es posible una disminución de la población en cada período de tiempo (aunque solo sea en una pequeña fracción). Siempre hay que considerar si esta taza de mortalidad es biologícamente real o es un resultado del tamaño de la muestra. 
+
 
 
 ```{r}
@@ -90,7 +91,7 @@ pop.projection(Sp1matU_2, n=n)$pop.changes
 ```
 
 
-En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo tanto, es importante considerar si la tasa de mortalidad es realista y si el tamaño de la muestra es suficiente para estimar la tasa de mortalidad. Si la tasa de mortalidad es muy baja cerca de cero o 100%, es probable que el tamaño de la muestra sea demasiado pequeño para estimar la tasa de mortalidad con precisión. En consecuencia, la tasa de mortalidad estimada puede ser lejos de la realidad si pudiese haber tenido un esptimado basado en una *N* más grande. 
+En la mayoría de las investigaciones el tamaño de muestra es limitado. Por lo tanto, es importante considerar si la tasa de mortalidad/transición es realista y si el tamaño de la muestra es suficiente para estimar la tasa de mortalidad/transición con confianza. Si la tasa de mortalidad es muy baja cerca de cero o 100%, es probable que el tamaño de la muestra sea demasiado pequeño para estimar la tasa de mortalidad con precisión. En consecuencia, la tasa de mortalidad estimada puede ser lejos de la realidad si hubiese tenido un estimado basado en una *N* más grande. 
 
 
 Cual son los tamaños de muestra típica en los estudios de orquídeas?
@@ -151,11 +152,11 @@ isIrreducible(Sp1matA_2)
 
 ### Ninguna supervivencia
 
-La mortalidad es uno de los estadios del ciclo de vida de una especies, pero raramente se añade al ciclo de vida porque es implícito en los cálculos. A menudo se observa que la supervivencia de los individuos más pequeños o la primera etapa del ciclo de vida de una especie es muy arriesgada, donde la probabilidad de supervivencia es muy baja. Por ejemplo, la mayoría de las semillas no sobreviven para germinar. Esta es probablemente la norma en las orquídeas donde la producción de semillas es muy alta, a veces millones de semillas en una cápsula [@arditti2000numerical], pero pocas germinan (ref). Sin embargo, esto no se limita a las orquídeas, en los árboles se puede observar el mismo patrón, por ejemplo, en *Nothofagus pumilio* el reclutamiento de plántulas fue inferior al 1,5 % [@torres2015seed]. En general los patrones de germinación In situ varia por grupos taxonómicos y distribución ecológica [@iralu2019ecology] .
+La mortalidad es uno de los estadios del ciclo de vida de una especies, pero raramente se añade al diagrama del ciclo de vida porque es implícito en los cálculos, la 1-suma de la columna es la proporción de mortalidad de esta etapa. A menudo se observa que la supervivencia de los individuos más pequeños o la primera etapa del ciclo de vida de una especie es muy arriesgada, donde la probabilidad de supervivencia es muy baja. Por ejemplo, la mayoría de las semillas no sobreviven para germinar. Esta es probablemente la norma en las orquídeas donde la producción de semillas es muy alta, a veces millones de semillas en una cápsula [@arditti2000numerical], pero pocas germinan (ref). Sin embargo, esto no se limita a las orquídeas, en los árboles se puede observar el mismo patrón, por ejemplo, en *Nothofagus pumilio* el reclutamiento de plántulas fue inferior al 1,5 % [@torres2015seed]. En general los patrones de germinación *In Situ* varia por grupos taxonómicos y distribución ecológica [@iralu2019ecology] .
 
-Como es bien conocido en el campo, la germinación de semillas en las orquídeas no es sencilla ya que depende de la disponibilidad de mycorhizae [].  Hay evidencia que las micorhizae son especifica por las especies orquídeas y al contrario no son especificas [], pero sin duda la diversidad asociado a la germinación no limitado a ciertos grupos taxonómicos de hongos [@rasmussen2015germination]. Muchas variables pueden influir en la germinación de semillas incluyendo las condiciones abióticas y bióticas [@callaway2002epiphyte; @rasmussen2015germination; @gonzalez2024host] pero aun no hay mucha información sobre la germinación de semillas de orquídeas en la naturaleza.
+Como es bien conocido en el campo, la germinación de semillas en las orquídeas no es sencilla ya que depende de la disponibilidad de mycorhizae [@rasmussen1995terrestrial].  Hay evidencia que las micorhizae son especifica por las especies orquídeas [@balducci2024narrow] y al contrario no son especificas [@petrolli2022spatial], pero sin duda la diversidad asociado a la germinación no limitado a ciertos grupos taxonómicos de hongos [@rasmussen2015germination]. Muchas variables pueden influir en la germinación de semillas incluyendo las condiciones abióticas y bióticas [@callaway2002epiphyte; @rasmussen2015germination; @gonzalez2024host] pero aun no hay mucha información sobre la germinación de semillas de orquídeas en la naturaleza al comparar con los trabajos en el laboratorio.
 
-En el gráfico del ciclo de vida actual, ninguna de las plántulas sobrevive o crece a la siguiente etapa. Tenga en cuenta que en la primera columna de la matriz de transición todos los valores son cero. La población puede haber comenzado con muchas (incluso miles) de plántulas, pero ninguna creció hasta convertirse en un juvenil o permaneció como plántula antes del siguiente muestreo. Esto da como resultado una matriz que es reducible *isIrreducible* = *FALSO* y por consecuencia no cumple con los requisitos necesarios para muchos de los análisis de matrices poblacionales.
+En el gráfico del ciclo de vida actual, ninguna de las plántulas sobrevive o crece a la siguiente etapa. Tenga en cuenta que en la primera columna de la matriz de transición todos los valores son cero. La población puede haber comenzado con muchas (incluso miles) de plántulas, pero ninguna creció hasta convertirse en un juvenil o permaneció como plántula antes del siguiente muestreo. Esto da como resultado una matriz que es reducible *isIrreducible* = *FALSE* y por consecuencia no cumple con los requisitos necesarios para muchos de los análisis de matrices poblacionales.
 
 
 ```{r}
@@ -186,10 +187,10 @@ isIrreducible(Sp1matU_NS)
 
 ## Redondeo excesivo de valores
 
-Uno de los errores más comunes en la construcción de los elementos de la matriz es el error de redondeo excesivo u otras estimaciones que dan como resultado valores de supervivencia superiores a 100%. Una estimación de supervivencia de mayor de 1 es que de la nada aumenta (por milagro matematico) la cantidad de individuos sin reproducción o clonaje. El estimado de supervivencia de una etapa siempre tiene que ser menor de 100%, aunque puede ser muy cercano a 100%. En el siguiente ejemplo, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error en la recolección de datos o en el cálculo de la supervivencia de la etapa.
+Uno de los errores más comunes en la construcción de los elementos de la matriz es el error de redondeo excesivo u otras estimaciones que dan como resultado valores de supervivencia superiores a 100%. Una estimación de supervivencia de mayor de 1.00 es que de la nada aumenta (por milagro matemático) la cantidad de individuos sin reproducción o clonaje. El estimado de supervivencia de una etapa siempre tiene que ser menor o igual a 100%. En el siguiente ejemplo, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo (pero no por reproducción o clonaje). Esto es un error en la recolección de datos o en el cálculo de la supervivencia de la etapa.
 
 
-Por ejemplo en un análisis de *Serapia cordigera* [@pellegrino2014effects]. Aquí los autores evaluaron las transiciones entre latencia, plántulas, roseta vegetativa y floración, en este orden aparece en la matriz. Aquí mostramos una de estas matrices que esta incluida en el material suplementario del articulo. Período de tiempo 2001-2002, A1. En la primera columna de la matriz de transición, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error que es probablemente en los redondeos de los parametros de la supervivencia y transiciones de esta etapa. 
+Por ejemplo en un análisis de *Serapia cordigera* [@pellegrino2014effects]. Aquí los autores evaluaron las transiciones entre latencia, plántulas, roseta vegetativa y floración, en este orden aparece en la matriz. Aquí mostramos una de estas matrices que esta incluida en el material suplementario del articulo. Período de tiempo 2001-2002, A1. En la primera columna de la matriz de transición, la supervivencia de las plántulas es 1.01, lo que significa que la población de plántulas aumenta en un 1% en cada período de tiempo. Esto es un error que es probablemente debido al redondeo de los parámetros de la supervivencia y transiciones de esta etapa. 
 
 ```{r}
 library(DiagrammeR)
@@ -201,7 +202,7 @@ SerapiaU <- rbind(
   c(0.214, 0.364, 0.185, 0.207)
 ) # transition matrix
 
-colSums(SerapiaU) # la suma de la primera columna es mayor de 100%. 
+colSums(SerapiaU) # la suma de las columnas, nota que la primera columna es mayor de 100%. 
 
 SerapiaF <- rbind(
   c(0.0, 0.0, 0.0, 0.0),
@@ -226,9 +227,11 @@ plot_life_cycle(SerapiaA, stages=stages)
 
 La importancia de considerar cómo se incluye la fertilidad en el ciclo de vida es extremadamente influyente en los resultados de los modelos, y si se considera erróneamente puede dar lugar a interpretaciones sin sentido. Mostramos algunos ejemplos de cómo estos pueden incluirse en el ciclo de vida y la matriz y dar como resultado problemas de causa. Vea el capitulo \@ref(Fertilidad) para más detalle.
 
+### **QUIERO OTRO EJEMPLO DE ESTO**
+
 ### Ciclo de vida y etapa de fertilidad incorrectos
 
-Suponga que tiene una especie en la que modela el ciclo de vida como plántula, juvenil y adulto. La fertilidad se mide como el número de semillas producidas por un adulto (número medio de semillas por adulto). Después de recopilar los cálculos de datos, se determina que el número medio de semillas por adulto es 1100. Si agregamos a la matriz de transición y fertilidad a continuación y evaluamos el lambda y graficamos el crecimiento de la población con la función *proyecto*, tenemos un lambda de 4.93 y después de solo 5 períodos de tiempo, el número de adultos supera los 250,000. Por consecuencia, la estimación de la tasa de crecimiento de la población sería incorrecta y engañosa, donde 30% de 11,000 semillas crecen a ser plántulas, un total de 3,300 plantulas!!!
+Suponga que tiene una especie en la que modela el ciclo de vida como plántula, juvenil y adulto. La fertilidad se mide como el número de semillas producidas por un adulto (número medio de semillas por adulto). Después de recopilar los cálculos de datos, se determina que el número medio de semillas por adulto es 1100. Si agregamos a la matriz de transición y fertilidad a continuación y evaluamos el lambda y graficamos el crecimiento de la población con la función *proyect*, tenemos un lambda de 4.93 y después de solo 5 períodos de tiempo, el número de adultos supera los 250,000. Por consecuencia, la estimación de la tasa de crecimiento de la población sería incorrecta y engañosa, donde 30% de 11,000 semillas crecen a ser plántulas, un total de 3,300 plántulas!!!
 
 El error es que el valor en la matriz de fertilidad debería corresponder a la primera etapa de la matriz, en este caso la etapa de plántula. Por lo tanto, la esquina superior derecha de la matriz de fertilidad NO debe ser la **cantidad media de semillas** por planta, sino la **cantidad media de semillas que transitan a plántulas** producidas por una planta adulta.
 
@@ -239,27 +242,27 @@ Sp1matU_Fert <- rbind(
   c(0.0, 0.0, 0.0),
   c(0.3, 0.7, 0.0),
   c(0.0, 0.25, 0.995)
-) # transition matrix
+) # matriz de transición
 
 Sp1matF <- rbind(
   c(0.0, 0.0, 1100.0),
   c(0.0, 0.0, 0.0),
   c(0.0, 0.0, 0.0)
-) # fertility matrix
+) # matriz de fertilidad
 
-Sp1matA_Fert = Sp1matU_Fert+Sp1matF # TF matrix
+Sp1matA_Fert = Sp1matU_Fert+Sp1matF # TF matriz combinada: matA = matU + matF
 library(Rage)
 stages <- c("plantula", "juvenil", "adulto")
 
 lambda(Sp1matA_Fert)
-
-# show change in population size
+  
+# El cambio de tamaño de la población en 5 periodos de tiempo
 n
 pr <- project(Sp1matA_Fert, vector="n", time=5)
-plot(pr) # Note that even after just 5 time periods, the number of adults is larger than 250,000 individuals
+plot(pr) # Nota que después de solamente 5 años ya la población aumentó a 250,000 individuos
 ```
 
-Si deseamos agregar una etapa de semilla, debemos incluir la etapa en nuestro modelo y matriz con una nueva etapa *la etapa de semilla*, y tener una estimación del número de semillas que germinan y se convierten en plántulas. En el caso de las orquídeas, es probable que sea una estimación difícil de lograr porque las semillas de las orquídeas son difíciles de seguir en la naturaleza a menos que se haya usado el método del paquete de semillas [@rasmussen1993seed; @batty2006situ; @shao2024improved] o se utilizó algún método de huella genética para determinar la procedencia de las semillas. Por lo tanto, la estimación de la fertilidad en las orquídeas es un desafío y requiere un muestreo y análisis cuidadoso.
+Si deseamos agregar una etapa de semilla, debemos incluir la etapa en nuestro modelo y matriz con una nueva etapa *la etapa de semilla*, y tener una estimación del número de semillas que germinan y se convierten en plántulas. En el caso de las orquídeas, es probable que sea una estimación difícil de lograr porque las semillas de las orquídeas son difíciles de seguir en la naturaleza a menos que se haya usado el método del paquete de semillas [@rasmussen1993seed; @batty2006situ; @shao2024improved] o se utilizó algún método de huella genética para determinar la procedencia de las semillas. Por lo tanto, la estimación de la fertilidad en las orquídeas es un desafío y requiere un muestreo y análisis cuidadoso. A continuación una matriz modificada con la etapa de semillas y la cantidad de semillas promedio por adulto. 
 
 
 ```{r}
@@ -292,7 +295,9 @@ pr <- project(Sp1matA_Fert2, vector="n", time=5)
 plot(pr) # Note that now the number of adults did not increase to the level of the previous model
 ```
 
-En el ejemplo anterior no hemos incluido una etapa de latencia de semillas. En muchas especies de plantas, las semillas pueden permanecer latentes durante uno o más años. No se sabe si las semillas de las orquídeas están inactivas durante mucho tiempo [gale2010constraints], excepto para algunas especies que han demostrado que las semillas aún están vivas después de varios años en el suelo usando la prueba de tinción de tetrazolio [@rasmussen1993seed y @whigham2006seed]. MAS REFERENCIAS!!
+
+
+En el ejemplo anterior no hemos incluido una etapa de latencia de semillas. En muchas especies de plantas, las semillas pueden permanecer latentes durante uno o más años. No se sabe si las semillas de las orquídeas están inactivas durante mucho tiempo [gale2010constraints], excepto para algunas especies que han demostrado que las semillas aún están vivas después de varios años en el suelo usando la prueba de tinción de tetrazolio [@rasmussen1993seed y @whigham2006seed]. **MAS REFERENCIAS!!**
 
 ***
 
@@ -300,11 +305,11 @@ En el ejemplo anterior no hemos incluido una etapa de latencia de semillas. En m
 
 ### Estimaciones de intervalos de confianza incorrectas
 
-Las estimaciones de dispersión en los parámetros de la matriz de supervivencia, transición, muerte y fertilidad son útiles de múltiples maneras. El enfoque más básico es comprender la incertidumbre en el parámetro como una función del tamaño de la muestra, los parámetros con gran dispersión deben verse con precaución. Los parámetros de dispersión pueden ser útiles para simulaciones y comprender la incertidumbre en los parámetros de población como lambda y la probabilidad de persistencia y extinción.
+Las estimaciones de dispersión en los parámetros de la matriz de supervivencia, transición, muerte y fertilidad son útiles por múltiples razones. El enfoque más básico es comprender la incertidumbre en el parámetro como una función del tamaño de la muestra, los parámetros con gran dispersión deben verse con precaución. Los parámetros de dispersión pueden ser útiles para simulaciones y comprender la incertidumbre en los parámetros de población como lambda y la probabilidad de persistencia y extinción.
 
-Los parámetros de supervivencia, muerte, estasis y transiciones NO se distribuyen normalmente ya que los valores van de cero a 1. Ningún valor puede ser menor que cero o mayor que uno, incluidos los intervalos de confianza del 95 % (limitados por 0 y 1). Si se usa la distribución gaussiana (normal) es probable que el Interval de confianza del 95 % esté fuera de los límites. Supongamos que deseamos calcular la probabilidad de supervivencia de una etapa y sus intervalos de confianza del 95%.
+Los parámetros de supervivencia, muerte, estasis y transiciones NO se distribuyen normalmente ya que los valores van de cero a 1. Ningún valor puede ser menor que cero o mayor que uno, incluidos los intervalos de confianza del 95 % (limitados por 0 y 1). Si se usa la distribución gaussiana (normal) es probable que el intervalo de confianza del 95 % esté fuera de los límites. Supongamos que deseamos calcular la probabilidad de supervivencia de una etapa y sus intervalos de confianza del 95%.
 
-Se deterimna que de 20 individuos 2 fallecen y 19 sobrevivieron entre el primer muestreo y el segundo.
+Se determina que de 20 individuos 1 fallecen y 19 sobrevivieron entre el primer muestreo y al segundo muestreo.
 
 -   Construya un intervalo de confianza del 95% de la proporción de individuos que murieron
 
@@ -317,7 +322,7 @@ p=1/20
 p
 ```
 
-El IC del 95% de una proporción se calcula usando la sigiente formula
+El IC del 95% de una proporción se calcula usando la siguiente formula si se asume una distribución normal
 
 $$\hat{p}\pm Z_{0.05}*\sqrt{}(\frac{\hat{p}(1-\hat{p})}{n})$$ 
   - Z\_{0.05} es el valor crítico de Z para un IC del 95% = 1.955. Nota que ese calculo, uno de los intervalos de confianza es negativo lo que es ilógico.
@@ -328,10 +333,10 @@ HCI=p+(1.96*sqrt((p*(1-p))/n)) # IC alto
 HCI
 
 LCI=p-(1.96*sqrt((p*(1-p))/n)) # IC bajo
-LCI # Nota que el valor es sin sentido, ya que es negativo
+LCI # Nota que el valor es sin sentido, ya que es negativo (que es una proporción negativa?)
 ```
 
-Un método más fácil es usar la función R *propCI* de la **biblioteca(interceptCI)**. La función *propCI* calcula el intervalo de confianza del 95% de una proporción binomial. La función requiere el tamaño de la muestra, el número de eventos (2 individuos fallecieron) y el nivel de significancia. En este caso, el tamaño de la muestra es 20, el número de eventos es 2 y el nivel de significancia es 0.05. Nota que el intervalo de confianza incluye valores negativos. Para resolver esto hay que usar funciones estadisticas alternativas como la distribución de Dirichlet donde no asume distribuciones normales.
+Un método más fácil es usar la función R *propCI* de la **library(interceptCI)**. La función *propCI* calcula el intervalo de confianza del 95% de una proporción binomial. La función requiere el tamaño de la muestra, el número de eventos (1 individuos fallecieron) y el nivel de significancia. En este caso, el tamaño de la muestra es 20, el número de eventos es 1 y el nivel de significancia es 0.05. Nota que el intervalo de confianza incluye valores negativos. Para resolver esto hay que usar funciones estadísticas alternativas como la distribución de Dirichlet donde no se distribuye de forma normal.
 
 ```{r}
 library(interpretCI)
@@ -341,11 +346,13 @@ resultado=propCI(n=20, p=0.05, alpha=0.05)
 resultado
 ```
 
+***
+
 ## Distribución Dirichlet de intervalo de confianza
 
 Sin embargo, ¿cómo se calcula el IC del 95% cuando hay más de 2 proporciones? Debido a que la proporción de todas las etapas depende de la proporción de las otras etapas, el análisis debe considerar la proporción y el IC del 95% debe incluir todas las etapas simultáneamente. La función requerida es la función de Dirichlet multinomial (multigrupo).
 
-La distribución de Dirichlet es una distribución de probabilidad continua multivariante que se utiliza para modelar la distribución de proporciones en un espacio de probabilidad. La distribución de Dirichlet es una generalización de la distribución beta a más de dos categorías. La distribución de Dirichlet se utiliza comúnmente en el análisis de datos de proporciones, como en el análisis de datos de composición, donde las proporciones de las categorías deben sumar uno.
+La distribución de Dirichlet es una distribución de probabilidad continua multivariables que se utiliza para modelar la distribución de proporciones en un espacio de probabilidad. La distribución de Dirichlet es una generalización de la distribución beta a más de dos categorías. La distribución beta esta limitado a valores de zero a uno inclusivo. La distribución de Dirichlet se utiliza comúnmente en el análisis de datos de proporciones, donde las proporciones de las categorías deben sumar a uno.
 
 En el análisis estimamos los intervalos de confianza del 95% de la transición y estasis de plántulas a plántulas (50%), juveniles (20%), adultos (0%) y muerte (30%). Tenga en cuenta el gráfico del ciclo de vida que, como de costumbre, excluye la probabilidad de que mueran las plántulas.
 
@@ -363,9 +370,17 @@ stages <- c("plantula", "juvenil", "adulto")
 plot_life_cycle(Dirichlet, stages=stages)
 ```
 
-Para evaluar el intervalo IC del 95% simultáneamente de las cuatro transiciones simultáneamente, usamos la **library(MCMCpack)**, que es un paquete dedicado a realizar simulaciones de *Markov Chain Monte Carlo*. Usaremos la función *MCmultinomdirichlet*. Tenga en cuenta que la primera lista son las proporciones que se muestran en la matriz para la etapa de plántula c(.50*n,.02*n,.0*n,.3*n) multiplicadas por el tamaño de la muestra n= 25. La segunda lista son los priores bayesianos c(0.5,0.2,0.0001,0.2999), en este caso asumí que la suma de los previos es igual a 1. Esto da como resultado una confianza muy baja en la percepción previa de lo que es la transiciones, Estamos dando muy poco peso a la percepción previa en los análisis. Otro tipo de previa para la transición es que sean iguales, sin embargo, podríamos haber usado c(1,1,0,.000001, 1), donde este previo sugiere una transición igual para todos menos las plántulas que hay muy poca probabilidad que crezcan hasta convertirse en adultos. IMPORTANTE: las previas deberian ser biologicamente realistas, usando lo conocido de la biología de los organismos que se estudian. Por experiencia y literatura se puede hacer un estimado de las transiciones y usarlo como previo. El concepto de lo anterior no se puede explicar completamente aquí, consulte las siguientes referencia [@tremblay2021population; @van2021bayesian]
+Para evaluar el intervalo IC del 95% simultáneamente de las cuatro transiciones simultáneamente (plántulas a plántulas, plántulas a juvenil, plántulas a adultos y plántulas a muerto), usamos la **library(MCMCpack)**, que es un paquete dedicado a realizar simulaciones de *Markov Chain Monte Carlo*. Usaremos la función *MCmultinomdirichlet*. Tenga en cuenta que la primera lista son las proporciones que se muestran en la matriz para la etapa de plántula c(.50*n,.02*n,.0*n,.3*n) multiplicadas por el tamaño de la muestra n= 25. La segunda lista son los priores bayesianos c(0.5,0.2,0.0001,0.2999), en este caso asumí que la suma de los previas es igual a 1. Esto da como resultado una confianza muy baja en la percepción previa de lo que es la transiciones. Estamos dando muy poco peso a la percepción previa en los análisis. Otro tipo de previa para la transición es que sean iguales, sin embargo, podríamos haber usado c(1,1,.0001, 1), donde este previa sugiere una transición igual para todos menos las plántulas que hay muy poca probabilidad que crezcan hasta convertirse en adultos. IMPORTANTE: las previas deberían ser biologicamente realistas, usando lo conocido de la biología de los organismos que se estudian. Por experiencia y literatura se puede hacer un estimado de las transiciones y usarlo como previa. El concepto de lo anterior no se puede explicar completamente aquí, consulte las siguientes referencia [@tremblay2021population; @van2021bayesian]. 
 
-Los resultados en la figura muestran que hay mucha dispersión alrededor de la proporción media de las estadísticas y la transición como se esperaba debido al pequeño tamaño de la muestra.
+Los resultados en la figura muestran que hay mucha dispersión alrededor de la proporción media de las estadísticas y la transición como se esperaba debido al pequeño tamaño de la muestra. 
+
+ - Hacemos una simulación de 10000. 
+ - recolectamos los resultados en la variable **L**.
+ - Convertimos esta lista en un data frame.
+ - Re-organizamos el data frame para que sea más fácil de gráficar con la función *stack*.
+ - Añadimos una columna con el tamaño de muestra, n=25. 
+ - Cambiamos los nombres de las etapas de la vida para que sean más fáciles de leer en la gráfica.
+ 
 
 ```{r, message=FALSE}
 
@@ -389,17 +404,21 @@ levels(All_Data3$ind)[levels(All_Data3$ind)=="pi.2"]="Juvenil"
 levels(All_Data3$ind)[levels(All_Data3$ind)=="pi.3"]="Adulto"
 levels(All_Data3$ind)[levels(All_Data3$ind)=="pi.4"]="Muerto"
 
+```
 
 
+- Graficamos los resultados
 
+```{r}
 library(ggplot2)
-ggplot(data=All_Data3, aes(x=values, fill=ind, colour=ind))+
-  geom_density(aes(alpha=.5)) +
+ggplot(data=All_Data3, aes(x=values, fill=ind))+
+  geom_density(alpha=.5) +
   scale_y_continuous(limit=c(0, 5.5))+
   scale_colour_hue(l=60)+
   facet_grid(~ind)+
   ylab("La distribución de las proporciones \n de plantulas que crecen a la siguiente etapas")+
-  xlab("Proporciones")
+  xlab("Proporciones")+
+  labs(fill="Etapa de vida")
 
 
 
@@ -412,8 +431,7 @@ Ahora calculemos el IC del 95% de las transiciones
 Aspectos importantes a tener en cuenta.
 
 -   los IC del 95% están acotados entre 0 y 1. Los valores por debajo de cero o por encima de uno en los parámetros no tendrían sentido.
--   la suma de la media es igual a 1.
--   la suma de la mediana es igual a 1.
+-   la suma de los promedios es igual a 1.
 -   la forma de la distribución NO se distribuye normalmente, ver figura anterior. La forma de la distribución se llama distribución beta.
 
 ```{r}
@@ -442,7 +460,7 @@ Transitions
 
 Para comparar con el ejemplo anterior asumimos que en lado de tener solamente 25 plantas teníamos 250 plantas para los estimados.
 
-Nota que la mediana sigue en el mismo lugar (casi) pero los IC cambian mucho y es más reducido, ya que con más datos en el muestreo resulta en más confianza y reducción en el IC. Este análisis es primordial para entender la confianza que uno debería tener sobre los estimados de los parámetros de la matriz. Un ejemplo si se observa un IC muy grande eso pudiese ser utilizado para modificar la recolección de datos en el campo para aumentar el tamaño de muestra de esa etapa de vida.
+Nota que la mediana sigue en el mismo lugar (casi) pero los IC cambian mucho y son más reducido el ancho de la dipersión, ya que con más datos en el muestreo resulta en más confianza y reducción en el IC. Este análisis es primordial para entender la confianza que uno debería tener sobre los estimados de los parámetros de la matriz. Si se observa un IC muy grande eso pudiese ser utilizado para modificar la recolección de datos en el campo para aumentar el tamaño de muestra de esa etapa especifica.
 
 ```{r}
 b=250
@@ -461,18 +479,19 @@ levels(All_Data4$ind)[levels(All_Data3$ind)=="pi.3"]="Adulto"
 levels(All_Data4$ind)[levels(All_Data3$ind)=="pi.4"]="Muerto"
 
 library(ggplot2)
-ggplot(data=All_Data4, aes(x=values, fill=ind, colour=ind))+
+ggplot(data=All_Data4, aes(x=values, fill=ind))+
   geom_density(aes(alpha=.5)) +
   scale_y_continuous(limit=c(0, 18))+
   scale_colour_hue(l=60)+
-  facet_grid(~ind)
+  facet_grid(~ind)+
+  labs(fill="Etapa de vida")
 
 
 
 ```
 
 
-### Los estimados de Intervalo de camfianza
+### Los estimados de Intervalo de camfianza con una n=250
 
 ```{r}
 

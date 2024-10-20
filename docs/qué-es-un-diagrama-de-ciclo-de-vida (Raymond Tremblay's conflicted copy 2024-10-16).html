@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica Poblacional</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica Poblacional" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Qué es un diagrama de Ciclo de Vida | Dinamica Poblacional" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  
+
+
+
+<meta name="date" content="2024-10-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="qué-es-el-analisis-de-dinamica-poblacional.html"/>
+<link rel="next" href="como-recopilar-datos-en-el-campo.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diagnostico_Poblacional</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> bookdown::gitbook:</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.2</b> Estructura del libro</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#paquetes-de-r-principales-usado-en-el-libro"><i class="fa fa-check"></i><b>1.3</b> Paquetes de R principales usado en el libro</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.4</b> Libro digital y archivos de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#un-recuento-histórico-breve-de-la-ecología-de-poblaciones"><i class="fa fa-check"></i><b>2.1</b> Un recuento histórico breve de la ecología de poblaciones</a></li>
+<li class="chapter" data-level="2.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#qué-es-el-estudio-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es el estudio de la dinámica poblacional?</a></li>
+<li class="chapter" data-level="2.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#definición"><i class="fa fa-check"></i><b>2.3</b> Definición</a></li>
+<li class="chapter" data-level="2.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#el-analisis-de-dinámica-poblacional-y-su-uso"><i class="fa fa-check"></i><b>2.4</b> El analisis de Dinámica Poblacional y su uso</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#USO"><i class="fa fa-check"></i><b>2.4.1</b> Tabla: El uso potencial de la diferentes acercamiento de PPM.</a></li>
+<li class="chapter" data-level="2.4.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-1-identificar-las-etapas-or-procesos-demográficos-claves"><i class="fa fa-check"></i><b>2.4.2</b> USO 1: Identificar las etapas or procesos demográficos claves</a></li>
+<li class="chapter" data-level="2.4.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-2-determinar-cuantos-individuos-en-una-población-es-necesario-para-reducir-la-extinción"><i class="fa fa-check"></i><b>2.4.3</b> USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción</a></li>
+<li class="chapter" data-level="2.4.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-3-determinar-cuantos-individuos-se-necesita-introducir-en-una-sitio-para-establecer-una-población-viable"><i class="fa fa-check"></i><b>2.4.4</b> USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable</a></li>
+<li class="chapter" data-level="2.4.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-4-determinar-cuantos-individuos-se-puede-extraer-sin-tener-un-impacto-negativo-sobre-la-viabilidad-de-una-población"><i class="fa fa-check"></i><b>2.4.5</b> USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población</a></li>
+<li class="chapter" data-level="2.4.6" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población."><i class="fa fa-check"></i><b>2.4.6</b> USO 5: En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.</a></li>
+<li class="chapter" data-level="2.4.7" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-6-evaluar-el-riesgo-de-una-población"><i class="fa fa-check"></i><b>2.4.7</b> USO 6: Evaluar el riesgo de una población</a></li>
+<li class="chapter" data-level="2.4.8" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-7-determinar-cuantas-poblaciones-se-necesita-para-la-viabilidad-de-una-especie-al-nivel-local-o-global"><i class="fa fa-check"></i><b>2.4.8</b> USO 7: Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global</a></li>
+<li class="chapter" data-level="2.4.9" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones"><i class="fa fa-check"></i><b>2.4.9</b> USO 8: Comparando el riesgo relativo de dos o más poblaciones</a></li>
+<li class="chapter" data-level="2.4.10" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-9-evaluar-interacciones-ecológicas-para-entender-las-variables-importantes-para-la-supervivencia-de-una-población"><i class="fa fa-check"></i><b>2.4.10</b> USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población</a></li>
+<li class="chapter" data-level="2.4.11" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-10-cual-de-los-procesos-y-patrones-evolutivos-del-ciclo-de-vida-de-especies-impacta-su-crecimiento-o-grupos-taxonómicos"><i class="fa fa-check"></i><b>2.4.11</b> USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento o grupos taxonómicos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#visualización-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.5</b> Visualización de la dinámica poblacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html"><i class="fa fa-check"></i><b>3</b> Qué es un diagrama de Ciclo de Vida</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#introducción"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-ciclos-de-vida-sencillo"><i class="fa fa-check"></i><b>3.2</b> Ejemplo de ciclos de vida sencillo</a></li>
+<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea-hipotética"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de una orquídea hipotética</a></li>
+<li class="chapter" data-level="3.4" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ciclo-de-vida-de-orquídea-en-publicaciones"><i class="fa fa-check"></i><b>3.4</b> Ciclo de vida de orquídea en publicaciones</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-epífitas"><i class="fa fa-check"></i><b>3.4.1</b> Especies Epífitas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-terrestres"><i class="fa fa-check"></i><b>3.4.2</b> Especies Terrestres</a></li>
+<li class="chapter" data-level="3.4.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-ciclo-de-vida-incompleto-y-biologicamente-erroneos"><i class="fa fa-check"></i><b>3.4.3</b> Ejemplo de un ciclo de vida incompleto (y biologicamente erroneos)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot"><i class="fa fa-check"></i><b>3.5</b> Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot</a></li>
+<li class="chapter" data-level="3.6" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure"><i class="fa fa-check"></i><b>3.6</b> Code for color coding figure</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#consideraciones-en-la-colecta-de-datos-en-el-campo"><i class="fa fa-check"></i><b>4.1</b> Consideraciones en la colecta de datos en el campo</a></li>
+<li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#tipo-de-crecimiento-en-las-orquídeas"><i class="fa fa-check"></i><b>4.2</b> Tipo de crecimiento en las orquídeas</a></li>
+<li class="chapter" data-level="4.3" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-y-técnicas-de-muestreo"><i class="fa fa-check"></i><b>4.3</b> Métodos y técnicas de muestreo</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-epífitas-y-rupícolas."><i class="fa fa-check"></i><b>4.3.1</b> <em>Orquídeas epífitas y rupícolas</em>.</a></li>
+<li class="chapter" data-level="4.3.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-terrestres."><i class="fa fa-check"></i><b>4.3.2</b> <em>Orquídeas terrestres</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcaje-y-monitoreo-de-los-individuos-en-el-tiempo"><i class="fa fa-check"></i><b>4.4</b> Marcaje y monitoreo de los individuos en el tiempo</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo"><i class="fa fa-check"></i><b>4.4.1</b> Etapas de las orquídeas de estudio a identificar en campo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-características-de-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.5</b> Identificar la características de la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.1</b> Identificación y etiquetado de individuos.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#variables-a-registrar-en-campo"><i class="fa fa-check"></i><b>4.6</b> Variables a registrar en campo</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#crecimiento-o-reiteración-vegetativa."><i class="fa fa-check"></i><b>4.6.1</b> <em>Crecimiento o reiteración vegetativa</em>.</a></li>
+<li class="chapter" data-level="4.6.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#ejemplos-de-categorización-en-especies-de-estudio"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos de categorización en especies de estudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><i class="fa fa-check"></i><b>5</b> Como calcular transiciones para la matriz de Lefkovitch</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.2.4</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.2.5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2.5</b> Problema con el uso tradicional de calcular las transiciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#por-demetria-y-aucencia-equipo-ecosur"><i class="fa fa-check"></i><b>6.1</b> Por: Demetria y Aucencia: equipo ECOSUR</a></li>
+<li class="chapter" data-level="6.2" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#métodos-tradicional-de-calcular-las-transiciones-1"><i class="fa fa-check"></i><b>6.2</b> Métodos tradicional de calcular las transiciones</a></li>
+<li class="chapter" data-level="6.3" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#problema-con-el-uso-tradicional"><i class="fa fa-check"></i><b>6.3</b> Problema con el uso tradicional</a></li>
+<li class="chapter" data-level="6.4" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#referencias"><i class="fa fa-check"></i><b>6.4</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="MatricesTFC.html"><a href="MatricesTFC.html"><i class="fa fa-check"></i><b>7</b> Matrices de transicion, fecundidad y clonal</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="MatricesTFC.html"><a href="MatricesTFC.html#por-raymond"><i class="fa fa-check"></i><b>7.1</b> Por: Raymond</a></li>
+<li class="chapter" data-level="7.2" data-path="MatricesTFC.html"><a href="MatricesTFC.html#tres-tipos-de-matrices"><i class="fa fa-check"></i><b>7.2</b> Tres tipos de matrices</a></li>
+<li class="chapter" data-level="7.3" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matu-matriz-de-transiciones"><i class="fa fa-check"></i><b>7.3</b> MatU: Matriz de transiciones</a></li>
+<li class="chapter" data-level="7.4" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matf-matriz-de-fecundidad"><i class="fa fa-check"></i><b>7.4</b> MatF: Matriz de fecundidad</a></li>
+<li class="chapter" data-level="7.5" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matc-matriz-de-clonación"><i class="fa fa-check"></i><b>7.5</b> MatC = Matriz de clonación</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><i class="fa fa-check"></i><b>8</b> Método bayesiano de calcular las transciones y fecundidades</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-paquete-raretrans"><i class="fa fa-check"></i><b>8.1</b> El paquete “raretrans”</a></li>
+<li class="chapter" data-level="8.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-los-paquetes-1"><i class="fa fa-check"></i><b>8.2</b> Instalación de los paquetes #1</a></li>
+<li class="chapter" data-level="8.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-raretrans-2"><i class="fa fa-check"></i><b>8.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="8.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#obtención-de-la-matriz-de-proyección"><i class="fa fa-check"></i><b>8.4</b> Obtención de la matriz de proyección</a></li>
+<li class="chapter" data-level="8.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto"><i class="fa fa-check"></i><b>8.5</b> Paso 1: Cargar y fusionar los datos de población única para <em>L. elto</em></a></li>
+<li class="chapter" data-level="8.6" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#organización-de-los-datos-en-el-data.frame"><i class="fa fa-check"></i><b>8.6</b> Organización de los datos en el “data.frame”</a></li>
+<li class="chapter" data-level="8.7" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#nota"><i class="fa fa-check"></i><b>8.7</b> Nota:</a></li>
+<li class="chapter" data-level="8.8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-2-obtener-el-número-inicial-de-individuos-por-etapa"><i class="fa fa-check"></i><b>8.8</b> Paso 2: Obtener el número inicial de individuos por etapa</a></li>
+<li class="chapter" data-level="8.9" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#metodo-alterno-de-calcular-las-transiciones-fecundidades-y-el-número-de-individuos-por-etapas"><i class="fa fa-check"></i><b>8.9</b> Metodo alterno de calcular las transiciones, fecundidades y el número de individuos por etapas</a></li>
+<li class="chapter" data-level="8.10" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#uso-de-priors-para-incorporar-transiciones-raras"><i class="fa fa-check"></i><b>8.10</b> Uso de priors para incorporar transiciones raras</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#use-priors-no-informativos"><i class="fa fa-check"></i><b>8.10.1</b> Use priors no informativos</a></li>
+<li class="chapter" data-level="8.10.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-transición"><i class="fa fa-check"></i><b>8.10.2</b> Matriz de transición</a></li>
+<li class="chapter" data-level="8.10.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#como-calcular-a-mano"><i class="fa fa-check"></i><b>8.10.3</b> Como calcular a mano!</a></li>
+<li class="chapter" data-level="8.10.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-fecundidad"><i class="fa fa-check"></i><b>8.10.4</b> Matriz de fecundidad</a></li>
+<li class="chapter" data-level="8.10.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#calculando-los-valores-a-priori-de-fertilidad-a-mano"><i class="fa fa-check"></i><b>8.10.5</b> Calculando los valores a priori de fertilidad a mano</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-crecimiento-poblacional"><i class="fa fa-check"></i><b>8.11</b> El crecimiento poblacional</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#otras-opciones-para-el-argumento-returntype"><i class="fa fa-check"></i><b>8.11.1</b> Otras opciones para el argumento `returnType</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#añadiendo-realidad-a-los-análisis"><i class="fa fa-check"></i><b>8.12</b> Añadiendo realidad a los análisis</a>
+<ul>
+<li class="chapter" data-level="8.12.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#incorporar-priores-informativos"><i class="fa fa-check"></i><b>8.12.1</b> Incorporar priores informativos</a></li>
+<li class="chapter" data-level="8.12.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#modificar-el-peso-de-los-valores-a-priori"><i class="fa fa-check"></i><b>8.12.2</b> MOdificar el peso de los valores a priori</a></li>
+</ul></li>
+<li class="chapter" data-level="8.13" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-de-confianza-de-los-parámetros"><i class="fa fa-check"></i><b>8.13</b> Intervalos de Confianza de los parámetros</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-efecto-del-tamaño-de-muestra-sobre-los-intervalos-creíbles"><i class="fa fa-check"></i><b>8.13.1</b> El efecto del tamaño de muestra sobre los intervalos creíbles</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-creíbles-de-lambda"><i class="fa fa-check"></i><b>8.14</b> Intervalos creíbles de <span class="math inline">\(\lambda\)</span></a></li>
+<li class="chapter" data-level="8.15" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#determinar-si-el-lambda-es-significativamente-diferente-de-1"><i class="fa fa-check"></i><b>8.15</b> Determinar si el <span class="math inline">\(\lambda\)</span> es significativamente diferente de 1</a>
+<ul>
+<li class="chapter" data-level="8.15.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#tabla-de-resultado-de-lambda"><i class="fa fa-check"></i><b>8.15.1</b> Tabla de resultado de lambda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html"><i class="fa fa-check"></i><b>9</b> Crecimiento Poblacional</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#introducción-al-crecimiento-poblacional"><i class="fa fa-check"></i><b>9.1</b> Introducción al crecimiento poblacional</a></li>
+<li class="chapter" data-level="9.2" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#métodos"><i class="fa fa-check"></i><b>9.2</b> Métodos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html"><i class="fa fa-check"></i><b>10</b> Estimación de Parametros</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#por-mariana-y-paola"><i class="fa fa-check"></i><b>10.1</b> Por: Mariana y Paola</a></li>
+<li class="chapter" data-level="10.2" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#en-este-capitulo-se-cubrirá-varios-estimación-de-parametros."><i class="fa fa-check"></i><b>10.2</b> En este capitulo se cubrirá varios estimación de parametros.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#condición-basica-de-las-matrices-de-transición"><i class="fa fa-check"></i><b>10.2.1</b> Condición basica de las matrices de transición</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#librerías-de-r-requeridas-para-el-análisis"><i class="fa fa-check"></i><b>10.3</b> Librerías de R requeridas para el análisis</a></li>
+<li class="chapter" data-level="10.4" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#paso-2-condiciones-que-debe-cumplir-la-matriz-de-estudio"><i class="fa fa-check"></i><b>10.4</b> PASO 2: CONDICIONES QUE DEBE CUMPLIR LA MATRIZ DE ESTUDIO</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#analisis-de-convergencia-y-damping-ratio"><i class="fa fa-check"></i><b>10.4.1</b> Analisis de convergencia y “Damping Ratio”</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-asintótico-i.e.-largo-plazo-del-crecimiento-poblacional-de-l.-rubripetala."><i class="fa fa-check"></i><b>10.5</b> Análisis asintótico (i.e. largo plazo) del crecimiento poblacional de L. rubripetala.</a></li>
+<li class="chapter" data-level="10.6" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#estructura-estable"><i class="fa fa-check"></i><b>10.6</b> Estructura estable</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#damping-ratio"><i class="fa fa-check"></i><b>10.6.1</b> Damping Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-amortiguamientodamping-ratio"><i class="fa fa-check"></i><b>10.7</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="10.8" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-convergencia"><i class="fa fa-check"></i><b>10.8</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="10.9" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#valores-reproductivos"><i class="fa fa-check"></i><b>10.9</b> Valores reproductivos</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>11</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>11.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="11.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>11.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>11.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+<li class="chapter" data-level="11.2.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>11.2.2</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="11.2.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>11.2.3</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#estructura-estable-1"><i class="fa fa-check"></i><b>11.3</b> Estructura estable</a></li>
+<li class="chapter" data-level="11.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#valores-reproductivos-1"><i class="fa fa-check"></i><b>11.4</b> Valores reproductivos</a></li>
+<li class="chapter" data-level="11.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-elasticidad"><i class="fa fa-check"></i><b>11.5</b> Análisis de elasticidad</a></li>
+<li class="chapter" data-level="11.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-amortiguamientodamping-ratio-1"><i class="fa fa-check"></i><b>11.6</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="11.7" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#análisis-de-convergencia-1"><i class="fa fa-check"></i><b>11.7</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="11.8" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>11.8</b> Dinámica transitoria</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>12</b> Elasticidad</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="elasticidad.html"><a href="elasticidad.html#librerías-de-r-requeridas-para-el-siguiente-modulo"><i class="fa fa-check"></i><b>12.1</b> Librerías de R requeridas para el siguiente modulo</a></li>
+<li class="chapter" data-level="12.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>12.2</b> Qué es la Elasticidad</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="elasticidad.html"><a href="elasticidad.html#sensibilidad-y-elasticidad"><i class="fa fa-check"></i><b>12.2.1</b> Sensibilidad y Elasticidad</a></li>
+<li class="chapter" data-level="12.2.2" data-path="elasticidad.html"><a href="elasticidad.html#el-impacto-de-cambio-en-las-etapas"><i class="fa fa-check"></i><b>12.2.2</b> El impacto de cambio en las etapas</a></li>
+<li class="chapter" data-level="12.2.3" data-path="elasticidad.html"><a href="elasticidad.html#efecto-de-cambio-en-las-tansiciones-de-crecimiento-permanencia-y-fecundidad"><i class="fa fa-check"></i><b>12.2.3</b> Efecto de cambio en las tansiciones, de crecimiento, permanencia y fecundidad</a></li>
+<li class="chapter" data-level="12.2.4" data-path="elasticidad.html"><a href="elasticidad.html#como-se-usa-los-análisis-de-elasticidad-en-un-plan-de-conservación"><i class="fa fa-check"></i><b>12.2.4</b> Como se usa los análisis de elasticidad en un plan de conservación</a></li>
+<li class="chapter" data-level="12.2.5" data-path="elasticidad.html"><a href="elasticidad.html#comparación-entre-especies"><i class="fa fa-check"></i><b>12.2.5</b> Comparación entre especies</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>12.3</b> Limitaciones</a></li>
+<li class="chapter" data-level="12.4" data-path="elasticidad.html"><a href="elasticidad.html#para-calcular-los-autovalores-y-autovectores-de-la-matriz"><i class="fa fa-check"></i><b>12.4</b> Para calcular los autovalores y autovectores de la matriz</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html"><i class="fa fa-check"></i><b>13</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-poblacional-de-largo-y-corto-plazo-1"><i class="fa fa-check"></i><b>13.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="13.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo-1"><i class="fa fa-check"></i><b>13.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#part-i-dinámica-poblacional-de-largo-plazo-1"><i class="fa fa-check"></i><b>13.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#librerías-de-r-requeridas-para-el-análisis-1"><i class="fa fa-check"></i><b>13.3</b> Librerías de R requeridas para el análisis</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0-1"><i class="fa fa-check"></i><b>13.3.1</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="13.3.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#crecimiento-asintótico-1"><i class="fa fa-check"></i><b>13.3.2</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-1"><i class="fa fa-check"></i><b>13.4</b> Dinámica transitoria</a></li>
+<li class="chapter" data-level="13.5" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-estandarizada-límites"><i class="fa fa-check"></i><b>13.5</b> Dinámica transitoria estandarizada: límites</a></li>
+<li class="chapter" data-level="13.6" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-específica-de-la-población."><i class="fa fa-check"></i><b>13.6</b> Dinámica transitoria específica de la población.</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html"><i class="fa fa-check"></i><b>14</b> Funciones de Transferencias</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#la-elasticidad-no-lineal"><i class="fa fa-check"></i><b>14.1</b> La elasticidad no lineal</a></li>
+<li class="chapter" data-level="14.2" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#metodología"><i class="fa fa-check"></i><b>14.2</b> Metodología</a></li>
+<li class="chapter" data-level="14.3" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#ejemplo-tradicional"><i class="fa fa-check"></i><b>14.3</b> Ejemplo tradicional</a></li>
+<li class="chapter" data-level="14.4" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#valor-biológico"><i class="fa fa-check"></i><b>14.4</b> Valor biológico</a></li>
+<li class="chapter" data-level="14.5" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#métodos-de-calculo"><i class="fa fa-check"></i><b>14.5</b> Métodos de calculo</a></li>
+<li class="chapter" data-level="14.6" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>14.6</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
+<li class="chapter" data-level="14.7" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#referencias-1"><i class="fa fa-check"></i><b>14.7</b> Referencias</a></li>
+<li class="chapter" data-level="14.8" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#funciones-de-transferencia"><i class="fa fa-check"></i><b>14.8</b> Funciones de transferencia</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>15</b> LTRE</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ltre.html"><a href="ltre.html#introducción-a-experimento-de-respuesta-de-tabla-de-vida"><i class="fa fa-check"></i><b>15.1</b> Introducción a <strong>Experimento de Respuesta de Tabla de Vida</strong></a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>15.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>15.2</b> Métodos</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>15.2.1</b> Ejemplo práctico de ERTV</a></li>
+<li class="chapter" data-level="15.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>15.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
+<li class="chapter" data-level="15.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>15.2.3</b> Diagrama para <em>Quercus martinezii</em></a></li>
+<li class="chapter" data-level="15.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>15.2.4</b> Diagrama para Quercus rugosa</a></li>
+<li class="chapter" data-level="15.2.5" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>15.2.5</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="15.2.6" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>15.2.6</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
+<li class="chapter" data-level="15.2.7" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>15.2.7</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="15.2.8" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>15.2.8</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ltre.html"><a href="ltre.html#hay-algo-extraño-en-la-matriz-de-sensibilidades-y-elasticidades-no-se-ve-bien.-hay-elasticidad-negativas-y-esto-no-es-posible.-hay-que-revisar-el-código."><i class="fa fa-check"></i><b>15.3</b> HAY algo extraño en la matriz de sensibilidades y elasticidades, no se ve bien., hay elasticidad negativas, y esto no es posible. Hay que revisar el código.</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>15.3.1</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>15.3.2</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>15.3.3</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>15.3.4</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>15.3.5</b> Resultados de ERTV</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><i class="fa fa-check"></i><b>16</b> Métodos de Simulaciones y Estimaciones de intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="16.0.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#componentes-de-variación"><i class="fa fa-check"></i><b>16.0.1</b> Componentes de Variación</a></li>
+<li class="chapter" data-level="16.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#introducción-a-los-métodos-de-simulaciones"><i class="fa fa-check"></i><b>16.1</b> Introducción a los métodos de simulaciones</a></li>
+<li class="chapter" data-level="16.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>16.2</b> Estocasticidad espacial</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#entrada-de-datos"><i class="fa fa-check"></i><b>16.2.1</b> Entrada de datos</a></li>
+<li class="chapter" data-level="16.2.2" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#cual-es-la-distribución-de-número-de-individuos-esperado."><i class="fa fa-check"></i><b>16.2.2</b> Cual es la distribución de número de individuos esperado.</a></li>
+<li class="chapter" data-level="16.2.3" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#simulaciones-con-diferente-probabilidad-de-selección"><i class="fa fa-check"></i><b>16.2.3</b> Simulaciones con diferente probabilidad de selección</a></li>
+<li class="chapter" data-level="16.2.4" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones"><i class="fa fa-check"></i><b>16.2.4</b> Comparar la distribución de cantidad de individuos esperado por simulaciones</a></li>
+<li class="chapter" data-level="16.2.5" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#impacto-antropogénico-vs-poblaciones-naturales"><i class="fa fa-check"></i><b>16.2.5</b> Impacto antropogénico vs poblaciones naturales</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>16.3</b> Estocasticidad temporal</a>
+<ul>
+<li class="chapter" data-level="16.3.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#comparación-de-la-variación-temporal-y-espacial-en-un-gráfico"><i class="fa fa-check"></i><b>16.3.1</b> Comparación de la variación temporal y espacial en un gráfico</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#estocasticidad-demografica"><i class="fa fa-check"></i><b>16.4</b> Estocasticidad demografica</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>16.4.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html"><a href="métodos-de-simulaciones-y-estimaciones-de-intervalos-de-confianza.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>16.5</b> Ventaja de usar simulaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>17</b> El uso de matrices para estudios evolutivos</a></li>
+<li class="chapter" data-level="18" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html"><i class="fa fa-check"></i><b>18</b> PPM_Orquidea sinopsis historico</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="ppm_orquidea-sinopsis-historico.html"><a href="ppm_orquidea-sinopsis-historico.html#por-raymond-y-todos"><i class="fa fa-check"></i><b>18.1</b> Por: Raymond y todos</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>19</b> Compadre_Orchid PPM y su uso</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#activar-los-siguiente-paquetes"><i class="fa fa-check"></i><b>19.1</b> Activar los siguiente paquetes</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.1</b> Acceso a los datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>19.1.2</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="19.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cual-son-los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>19.1.3</b> Cual son los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="19.1.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.4</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>19.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>19.2.1</b> La fuente de la información</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#frecuencia-de-autores-unicos-en-la-base-de-datos"><i class="fa fa-check"></i><b>19.3</b> Frecuencia de autores unicos en la base de datos</a></li>
+<li class="chapter" data-level="19.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>19.4</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="19.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#extraer-información-de-una-especie-específica"><i class="fa fa-check"></i><b>19.5</b> Extraer información de una especie específica</a></li>
+<li class="chapter" data-level="19.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>19.6</b> Cuantos estudios unicos?</a>
+<ul>
+<li class="chapter" data-level="19.6.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-fueron-muestreadas-por-especies"><i class="fa fa-check"></i><b>19.6.1</b> Determinar cuantas poblaciones fueron muestreadas por especies</a></li>
+<li class="chapter" data-level="19.6.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuan-largo-fueron-los-estudios"><i class="fa fa-check"></i><b>19.6.2</b> ¿Cuan largo fueron los estudios?</a></li>
+<li class="chapter" data-level="19.6.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#tiempo-de-duración-de-las-investigaciones."><i class="fa fa-check"></i><b>19.6.3</b> Tiempo de duración de las investigaciones.</a></li>
+<li class="chapter" data-level="19.6.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-la-ergodicidad-e-irreducibilidad-y-el-valor-propio-de-las-matrices"><i class="fa fa-check"></i><b>19.6.4</b> Evaluación de la ergodicidad e irreducibilidad y el valor propio de las matrices</a></li>
+<li class="chapter" data-level="19.6.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#ahora-usando-las-matrices-que-cumple-con-las-condiciones-de-ergodicidad-y-irreducbilidad-se-puede-calcular-el-valor-propio-de-lambda."><i class="fa fa-check"></i><b>19.6.5</b> Ahora usando las matrices que cumple con las condiciones de ergodicidad y irreducbilidad se puede calcular el valor propio de lambda.</a></li>
+<li class="chapter" data-level="19.6.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#need-to-move-this-before-as-the-caladenias-are-terrerstrial-and-not-epiphytes"><i class="fa fa-check"></i><b>19.6.6</b> Need to move this before as the Caladenia’s are terrerstrial and not epiphytes</a></li>
+</ul></li>
+<li class="chapter" data-level="19.7" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#resolve-the-name-of-this-data-frame-give-it-a-more-reasonable-name"><i class="fa fa-check"></i><b>19.7</b> Resolve the name of this data frame… Give it a more reasonable name</a>
+<ul>
+<li class="chapter" data-level="19.7.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-cantidad-de-poblaciones-por-especies-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.7.1</b> La cantidad de poblaciones por especies en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.7.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-las-especies-con-más-de-10-poblaciones-distintas"><i class="fa fa-check"></i><b>19.7.2</b> Filtrar para las especies con más de 10 poblaciones distintas</a></li>
+</ul></li>
+<li class="chapter" data-level="19.8" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas."><i class="fa fa-check"></i><b>19.8</b> Crear un mapa de las distribuciones de las orquídeas.</a></li>
+<li class="chapter" data-level="19.9" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-esperanza-de-vida-de-las-orquídeas"><i class="fa fa-check"></i><b>19.9</b> La esperanza de vida de las orquídeas</a>
+<ul>
+<li class="chapter" data-level="19.9.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>19.9.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>20</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>20.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido biológicos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeño o eventos raros</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>21.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="21.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza"><i class="fa fa-check"></i><b>21.5.2</b> Los estimados de Intervalo de camfianza</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><a href="dinámica-espacial-y-temporal-de-encyclia-bocourtii-después-de-15-años-en-la-península-de-guanahacabibes-cuba.html"><i class="fa fa-check"></i><b>22</b> Dinámica espacial y temporal de Encyclia bocourtii después de 15 años en la Península de Guanahacabibes, Cuba</a></li>
+<li class="chapter" data-level="23" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>23</b> Nhora</a></li>
+<li class="chapter" data-level="24" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html"><i class="fa fa-check"></i><b>24</b> Hojas de datos en el campo</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#ejemplos-de-tablas-de-datos"><i class="fa fa-check"></i><b>24.1</b> Ejemplos de tablas de Datos</a>
+<ul>
+<li class="chapter" data-level="24.1.1" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#usando-ejemplo-de-tremblay-y-su-codificación"><i class="fa fa-check"></i><b>24.1.1</b> Usando ejemplo de Tremblay [] y su codificación</a></li>
+<li class="chapter" data-level="24.1.2" data-path="hojas-de-datos-en-el-campo.html"><a href="hojas-de-datos-en-el-campo.html#almacenamiento-de-datos-de-forma-digital"><i class="fa fa-check"></i><b>24.1.2</b> Almacenamiento de datos de forma digital</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="calcular_transiciones.html"><a href="calcular_transiciones.html"><i class="fa fa-check"></i><b>25</b> Calcular_Transiciones</a></li>
+<li class="chapter" data-level="26" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><i class="fa fa-check"></i><b>26</b> Historia breve de la dinámica poblacional en orquídeas.</a>
+<ul>
+<li class="chapter" data-level="26.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#familia-de-plantas-evaluadas"><i class="fa fa-check"></i><b>26.0.1</b> Familia de plantas evaluadas</a></li>
+<li class="chapter" data-level="26.0.2" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios-con-orquídeas"><i class="fa fa-check"></i><b>26.0.2</b> Los primeros estudios con Orquídeas</a></li>
+<li class="chapter" data-level="26.0.3" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#latencia-en-orquídeas"><i class="fa fa-check"></i><b>26.0.3</b> Latencia en Orquídeas</a></li>
+<li class="chapter" data-level="26.0.4" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#métodos-alternos-para-estimar-la-latencia-incluye"><i class="fa fa-check"></i><b>26.0.4</b> Métodos alternos para estimar la latencia incluye</a></li>
+<li class="chapter" data-level="26.0.5" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas"><i class="fa fa-check"></i><b>26.0.5</b> Perspectiva Histórica de la Dinámica Poblacional en Orquídeas</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html"><i class="fa fa-check"></i><b>27</b> Carl Olaf Tamm</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#quien-es-carl-olaf-tamm"><i class="fa fa-check"></i><b>27.1</b> Quien es Carl Olaf Tamm?</a></li>
+<li class="chapter" data-level="27.2" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#re-evaluación-de-los-datos-de-tamm"><i class="fa fa-check"></i><b>27.2</b> Re-evaluación de los datos de Tamm</a></li>
+<li class="chapter" data-level="27.3" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#instalación-de-raretrans-2-1"><i class="fa fa-check"></i><b>27.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="27.4" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#construcción-de-la-matriz-de-transición"><i class="fa fa-check"></i><b>27.4</b> Construcción de la matriz de transición</a></li>
+<li class="chapter" data-level="27.5" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#constucción-de-la-matriz-de-fertilidad"><i class="fa fa-check"></i><b>27.5</b> Constucción de la matriz de fertilidad</a></li>
+<li class="chapter" data-level="27.6" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#simulando-el-crecimiento-poblacional"><i class="fa fa-check"></i><b>27.6</b> Simulando el crecimiento poblacional</a></li>
+<li class="chapter" data-level="27.7" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#visualización-de-las-distribuciones-de-los-lambda"><i class="fa fa-check"></i><b>27.7</b> Visualización de las distribuciones de los lambda</a></li>
+</ul></li>
+<li class="part"><span><b>Act two</b></span></li>
+<li class="chapter" data-level="" data-path="lista-completa-de-todos-los-trabajos-dinámica-poblacional-en-orquídea-que-han-usado-matriz.html"><a href="lista-completa-de-todos-los-trabajos-dinámica-poblacional-en-orquídea-que-han-usado-matriz.html"><i class="fa fa-check"></i>Lista completa de todos los trabajos dinámica poblacional en orquídea que han usado matriz</a>
+<ul>
+<li class="chapter" data-level="27.8" data-path="lista-completa-de-todos-los-trabajos-dinámica-poblacional-en-orquídea-que-han-usado-matriz.html"><a href="lista-completa-de-todos-los-trabajos-dinámica-poblacional-en-orquídea-que-han-usado-matriz.html#lista-parcial-de-especies-de-orquídeas-que-han-sido-estudiadas-que-no-incluye-matrices"><i class="fa fa-check"></i><b>27.8</b> Lista parcial de especies de orquídeas que han sido estudiadas que no incluye matrices</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="qué-es-un-diagrama-de-ciclo-de-vida" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Qué es un diagrama de Ciclo de Vida<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#qué-es-un-diagrama-de-ciclo-de-vida" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Por:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb1-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span></code></pre></div>
+<div id="introducción" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introducción<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Todas las especies biológicas tienen una historia de vida, del comienzo de la vida hasta su fallecimiento. La supervivencia de la mayoría de las especies de plantas en su hábitat natural requiere que todas las etapas de vida, desde la semilla, las plántulas, los juveniles, los adultos y el esfuerzo reproductivo, sean continuas dentro de la vida natural del organismo de interés. Aunque esos son las etapas más común incluidos en análisis algunas especies pudiese que ya no tenga por ejemplo semillas y se reproduce por clonaje (e.i. guineo <strong>Otros ejemplos</strong>). Nuestra perspectiva para análisis de conservación y ecológica es evaluar toda la información del ciclo de vida de una especies, comprender las características del ciclo de vida que limitan la supervivencia y la reproducción de una especie en su hábitat natural y identificar cual son las etapas más relevante para impactar el crecimiento poblacional.</p>
+<p>La supervivencia de las especies depende de los procesos viables del ciclo de vida que resultan en una población estable o en un aumento en el tamaño de la población. El proceso más apropiado para determinar la persistencia de una población es evaluar todas las etapas críticas de la historia de vida de una especie y utilizar matrices de proyección de población para determinar el potencial del cambio poblacional, si aumenta, disminuya o es estable.</p>
+<p>Siempre uno debería comenzar por crear modelos de diagramas de ciclo de vida antes de cualquier estudio. Esto se debería hacer antes de la recolección de datos para visualizar el ciclo de vida hipotético de la especie de interés. La visualización del ciclo de vida es una herramienta muy útil para identificar las etapas críticas de la historia de vida de una especie y para determinar qué factores pudiese influir en el crecimiento y la supervivencia de la población y determinar cual son los datos a recolectar en el campo. Estos diagramas son muy útiles para entender la biología de un organismo y para identificar los posibles factores que influyen en su desarrollo.</p>
+<p>Enfatizando lo hipotético versus lo que se puede recolectar en el campo. Un diagrama de ciclo de vida es una representación gráfica de los diferentes estadios que atraviesa un organismo a lo largo de su vida. En este capítulo, veremos cómo se pueden crear diagramas de ciclo de vida en R utilizando la librería <code>Rage</code>.</p>
+</div>
+<div id="ejemplo-de-ciclos-de-vida-sencillo" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Ejemplo de ciclos de vida sencillo<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-ciclos-de-vida-sencillo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El primer ejemplo comenzamos con un ejemplo de un ciclo de vida sencillo con tres estadios: semillas, plántulas y adultos. Vamos a sumir que es una planta que se reproduce sexualmente, y que las semillas no tienen banco de semilla (latencia de germinación entre periodos). En este caso, las semillas germinan y se convierten en plántulas o se mueren. Las plántulas crecen y se convierten en adultos o se mueren. Los adultos se reproducen y mueren. Por consecuencia el ciclo de vida dura 3 años. El primer año es el año de la semilla, el segundo año es el año de la plántula y el tercer año es el año del adulto y reproducción. Nota que este es un ciclo de vida hipotético y que no todos los organismos tienen un ciclo de vida de 3 años y raramente tan sencillo.</p>
+<p>El la matriz de transición de este ciclo de vida es la siguiente: 50% de la semillas germinan y se convierten en plántulas, 40% de las plántulas se convierten en adultos y cada adultos en promedio deja 3.2 semillas. Las lineas verde representan crecimiento y la linea amarilla representan reproducción.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
+<span id="cb2-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-2" tabindex="-1"></a>matA <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb2-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">3.2</span>),</span>
+<span id="cb2-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb2-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">0.0</span>)</span>
+<span id="cb2-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-6" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-9" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
+<span id="cb2-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-10" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-11" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb2-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-12" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA), <span class="dv">3</span>)</span>
+<span id="cb2-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb2-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-14" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb2-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-15" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb2-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-16" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-17" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;Goldenrod1&quot;</span></span>
+<span id="cb2-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-18" tabindex="-1"></a>)</span>
+<span id="cb2-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-19" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb2-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-20" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb2-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-21" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb2-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-22" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb2-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-23" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb2-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-24" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb2-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-25" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb2-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-26" tabindex="-1"></a>)</span>
+<span id="cb2-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-27" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb2-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-28" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb2-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-29" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb2-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-30" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb2-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-31" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb2-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-32" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb2-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-33" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb2-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-34" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb2-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-35" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb2-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-36" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb2-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-37" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb2-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-38" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb2-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-39" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb2-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-40" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb2-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-41" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb2-42"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-42" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb2-43"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-43" tabindex="-1"></a>  )</span>
+<span id="cb2-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb2-44" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-08d4d55d83362490f94c" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-08d4d55d83362490f94c">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="ejemplo-de-una-orquídea-hipotética" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Ejemplo de una orquídea hipotética<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea-hipotética" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el siguiente gráfico se muestra un ciclo de vida hipotética de una orquídea epifita. La orquídea comienza como una semilla que germina sobre un árbol. La plántula crece y se convierte en un juvenil y subsiguientemente en un adulto que florece y produce semillas. En cada uno de las etapas menos de la semilla se puede quedar en la misma etapa de un año a otro (nota la flecha roja). En este caso, la orquídea tiene un ciclo de vida de múltiples años. El primer año es el año de la semilla, el segundo año es el año de la plántula pero esta etapa los individuos pueden quedarse en esta etapa de un año al otro, igual como las etapas de juveniles y adulto. Cuando los individuos se pueden quedar en la misma etapa hay valores mayor de cero en la diagonal. Solamente los adultos pueden reproducir semillas.</p>
+<p>Las lineas en verde representa crecimiento, las lineas en rojas representan quedarse en la misma etapa y las lineas en amarillo representan reproducción.</p>
+<p>Nota aquí es que si este diagrama representa la recolección de datos en el campo uno debería de recolectar datos de la etapa de semilla, plántula, juvenil y adulto. En nuestra búsqueda de literatura no encontramos ni una publicación que recolectara datos de todas las etapas de vida de una orquídea. En parte por la dificultad de encontrar semillas y plántulas en el campo. Especialmente por la dificultad de encontrar semillas en un árbol por ser tan diminutas y seguir su desarrollo de un año a otro.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
+<span id="cb3-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb3-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-3" tabindex="-1"></a>matA <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb3-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">3.2</span>),</span>
+<span id="cb3-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>),</span>
+<span id="cb3-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.4</span>, <span class="fl">0.20</span>, <span class="fl">0.0</span>),</span>
+<span id="cb3-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.40</span>, <span class="fl">0.80</span>)</span>
+<span id="cb3-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-8" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-11" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plantulas&quot;</span>, <span class="st">&quot;juvenil&quot;</span>, <span class="st">&quot;adultos&quot;</span>)</span>
+<span id="cb3-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-12" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb3-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-14" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA), <span class="dv">3</span>)</span>
+<span id="cb3-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-15" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb3-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-16" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb3-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-17" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb3-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-18" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-19" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb3-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-20" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb3-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-21" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb3-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-22" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;red&quot;</span></span>
+<span id="cb3-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-23" tabindex="-1"></a>)</span>
+<span id="cb3-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-24" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb3-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-25" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb3-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-26" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb3-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-27" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb3-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-28" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb3-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-29" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb3-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-30" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-31" tabindex="-1"></a>)</span>
+<span id="cb3-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-32" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb3-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-33" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb3-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-34" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb3-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-35" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb3-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-36" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb3-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-37" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb3-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-38" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb3-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-39" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb3-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-40" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb3-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-41" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb3-42"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-42" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb3-43"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-43" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb3-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-44" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb3-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-45" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb3-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-46" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb3-47"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-47" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb3-48"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-48" tabindex="-1"></a>  )</span>
+<span id="cb3-49"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb3-49" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-c9ebcfed7d8924fa293a" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c9ebcfed7d8924fa293a">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plantulas\"; \"juvenil\"; \"adultos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plantulas\"; \"juvenil\"; \"adultos\" } [style=invis] \"semillas\" -> \"plantulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.5\"]\n\"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.3\"]\n\"plantulas\" -> \"juvenil\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.2\"]\n\"juvenil\" -> \"adultos\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.4\"]\n\"adultos\" -> \"semillas\"[minlen=-9,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adultos\" -> \"adultos\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.8\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="ciclo-de-vida-de-orquídea-en-publicaciones" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Ciclo de vida de orquídea en publicaciones<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ciclo-de-vida-de-orquídea-en-publicaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la siguiente veremos diferentes ciclos de vida utilizados en varias publicaciones. Demostramos que no hay un ciclo de vida estándar y que cada investigador seleccionó ciclo de vida es único basado en su entendimiento del ciclo de vida de la especies, la capacidad de seguir los individuos de un año a otro y la pregunta de investigación. Los ejemplos representan tanto especies terrestre como epifitas, y la complejidad entre los ciclos de vida hipotéticas y lo que se puede recolectar el el campo.</p>
+<div id="especies-epífitas" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Especies Epífitas<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-epífitas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="laelia-speciosa" class="section level4 hasAnchor" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> <em>Laelia speciosa</em><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#laelia-speciosa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La siguiente información proviene de la tesina de Mariana Hernández-Apolinar <span class="citation">(<a href="#ref-hernandez1992dinamica">Hernández-Apolinar 1992</a>)</span>, yuno de los primeros trabajos de dinamica poblacional en orquídeas epifitas. El tema principal de la tesis fue evaluar el impacto de la recolección de orquídeas en la dinámica poblacional de <em>Laelia speciosa</em>.</p>
+<p>El ciclo de vida es representada por 5 etapas. Los datos provienen de la figura 25a de la tesina.</p>
+<ul>
+<li>Semillas</li>
+<li>Plántulas</li>
+<li>3 etapas de tamaño de planta donde 2 de las etapas son adultos y pueden producir semillas</li>
+</ul>
+<p>Nota aquí que se hizo un estimado de la cantidad de semillas producidas y la proporciones de semillas que germinan y se convierten en plántulas el siguiente año.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
+<span id="cb4-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb4-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-3" tabindex="-1"></a>matA <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb4-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>,     <span class="fl">0.0</span>,  <span class="fl">0.00</span>, <span class="dv">52686</span>, <span class="dv">127324</span>),</span>
+<span id="cb4-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.00022</span>, <span class="fl">0.0</span>,  <span class="fl">0.00</span>, <span class="fl">0.0</span>,   <span class="fl">0.0</span>),</span>
+<span id="cb4-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>,     <span class="fl">0.71</span>, <span class="fl">0.93</span>, <span class="fl">0.0</span>,   <span class="fl">0.0</span>),</span>
+<span id="cb4-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>,     <span class="fl">0.0</span>,  <span class="fl">0.07</span>, <span class="fl">0.76</span>,   <span class="fl">0.0</span>),</span>
+<span id="cb4-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-8" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>,     <span class="fl">0.0</span>,  <span class="fl">0.00</span>, <span class="fl">0.24</span>,   <span class="fl">0.75</span>)</span>
+<span id="cb4-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-9" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-12" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;semillas&quot;</span>, <span class="st">&quot;plántulas&quot;</span>, <span class="st">&quot;adulto 1&quot;</span>, <span class="st">&quot;adulto 2&quot;</span>, <span class="st">&quot;adulto 3&quot;</span>)</span>
+<span id="cb4-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-13" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb4-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-14" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb4-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-15" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA), <span class="dv">5</span>)</span>
+<span id="cb4-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-16" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb4-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-17" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb4-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-18" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb4-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-19" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-20" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb4-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-21" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb4-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-22" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb4-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-23" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>,</span>
+<span id="cb4-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-24" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;red&quot;</span></span>
+<span id="cb4-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-25" tabindex="-1"></a>)</span>
+<span id="cb4-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-26" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb4-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-27" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb4-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-28" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb4-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-29" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb4-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-30" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb4-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-31" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb4-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-32" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb4-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-33" tabindex="-1"></a>)</span>
+<span id="cb4-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-34" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb4-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-35" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb4-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-36" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb4-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-37" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb4-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-38" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb4-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-39" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb4-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-40" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb4-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-41" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb4-42"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-42" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb4-43"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-43" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb4-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-44" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb4-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-45" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb4-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-46" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb4-47"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-47" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb4-48"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-48" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb4-49"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-49" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb4-50"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-50" tabindex="-1"></a>  )</span>
+<span id="cb4-51"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb4-51" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-d104d73d45b42af15c45" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d104d73d45b42af15c45">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"semillas\"; \"plántulas\"; \"adulto 1\"; \"adulto 2\"; \"adulto 3\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"semillas\"; \"plántulas\"; \"adulto 1\"; \"adulto 2\"; \"adulto 3\" } [style=invis] \"semillas\" -> \"plántulas\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.00022\"]\n\"plántulas\" -> \"adulto 1\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.71\"]\n\"adulto 1\" -> \"adulto 1\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.93\"]\n\"adulto 1\" -> \"adulto 2\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.07\"]\n\"adulto 2\" -> \"semillas\"[minlen=-9,fontsize=10,color=Goldenrod1,xlabel=\" 52686\"]\n\"adulto 2\" -> \"adulto 2\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.76\"]\n\"adulto 2\" -> \"adulto 3\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.24\"]\n\"adulto 3\" -> \"semillas\"[minlen=-12,fontsize=10,color=Goldenrod1,xlabel=\" 127324\"]\n\"adulto 3\" -> \"adulto 3\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.75\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="telipogon-helleri" class="section level4 hasAnchor" number="3.4.1.2">
+<h4><span class="header-section-number">3.4.1.2</span> <em>Telipogon helleri</em><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#telipogon-helleri" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En el trabajo de <span class="citation">(<a href="#ref-raventos2018comparison">Raventós et al. 2018</a>)</span> se recolectaron datos de la etapa de inmaduros, reproductivo pequeños y reproductivo grandes. El ciclo de vida es representada por 3 etapas. Los datos provienen de la figura 1 de la publicación de <span class="citation">(<a href="#ref-raventos2018comparison">Raventós et al. 2018</a>)</span>. En este caso, los autores le interesa el efecto de perturbaciones sobre el crecimiento poblacional evaluando el efecto de perturbaciones con análisis de dinámica transitoria.</p>
+<p>Los autores observaron tres tipos de transiciones en la historia de vida de la orquídea <em>Telipogon helleri</em>. Las etapas que pasen una tamaño/etapa pequeña a más grande el próximo año son de color verde, los que se quedan en la misma etapa son de color roja, los individuos que se ponen más pequeños son de color violeta y amarillo es la reproducción de las etapas adultas. Nota que los individuos grandes tienen una mayor contribución (0.5359) a la producción que los individuos adultos pequeños (0.1573).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-1" tabindex="-1"></a>matA_Th<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(                  </span>
+<span id="cb5-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-2" tabindex="-1"></a> <span class="fl">0.1548</span>, <span class="fl">0.1573</span>, <span class="fl">0.5309</span>,</span>
+<span id="cb5-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-3" tabindex="-1"></a> <span class="fl">0.2738</span>, <span class="fl">0.4425</span>, <span class="fl">0.1606</span>,</span>
+<span id="cb5-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-4" tabindex="-1"></a> <span class="fl">0.0238</span>, <span class="fl">0.4060</span>, <span class="fl">0.7368</span>), <span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb5-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb5-6" tabindex="-1"></a>matA_Th</span></code></pre></div>
+<pre><code>##        [,1]   [,2]   [,3]
+## [1,] 0.1548 0.1573 0.5309
+## [2,] 0.2738 0.4425 0.1606
+## [3,] 0.0238 0.4060 0.7368</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-1" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;inmaduros&quot;</span>, <span class="st">&quot;reproductivo_pequeños&quot;</span>, <span class="st">&quot;reproductivo_grandes&quot;</span>)</span>
+<span id="cb7-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-2" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb7-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-3" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb7-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-4" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA_Th), <span class="dv">3</span>)</span>
+<span id="cb7-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-5" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb7-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-6" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb7-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-7" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb7-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-8" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb7-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-9" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb7-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-10" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb7-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-11" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;red&quot;</span> </span>
+<span id="cb7-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-12" tabindex="-1"></a>)</span>
+<span id="cb7-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-13" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb7-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-14" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb7-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-15" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb7-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-16" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb7-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-17" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb7-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-18" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb7-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-19" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb7-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-20" tabindex="-1"></a>)</span>
+<span id="cb7-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-21" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb7-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-22" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb7-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-23" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb7-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-24" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb7-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-25" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb7-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-26" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb7-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-27" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb7-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-28" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb7-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-29" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb7-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-30" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb7-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-31" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb7-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-32" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb7-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-33" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb7-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-34" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb7-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-35" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb7-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-36" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb7-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-37" tabindex="-1"></a>  )</span>
+<span id="cb7-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb7-38" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-24394596d5b7cb8a3652" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-24394596d5b7cb8a3652">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"inmaduros\"; \"reproductivo_pequeños\"; \"reproductivo_grandes\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"inmaduros\"; \"reproductivo_pequeños\"; \"reproductivo_grandes\" } [style=invis] \"inmaduros\" -> \"inmaduros\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.155\"]\n\"inmaduros\" -> \"reproductivo_pequeños\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.274\"]\n\"inmaduros\" -> \"reproductivo_grandes\"[minlen=6,fontsize=10,color=PaleGreen4,xlabel=\" 0.024\"]\n\"reproductivo_pequeños\" -> \"inmaduros\"[minlen=-3,fontsize=10,color=Goldenrod1,xlabel=\" 0.157\"]\n\"reproductivo_pequeños\" -> \"reproductivo_pequeños\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.442\"]\n\"reproductivo_pequeños\" -> \"reproductivo_grandes\"[minlen=3,fontsize=10,color=PaleGreen4,xlabel=\" 0.406\"]\n\"reproductivo_grandes\" -> \"inmaduros\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 0.531\"]\n\"reproductivo_grandes\" -> \"reproductivo_pequeños\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.161\"]\n\"reproductivo_grandes\" -> \"reproductivo_grandes\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.737\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="especies-terrestres" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Especies Terrestres<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-terrestres" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="prasophyllum-correctum" class="section level4 hasAnchor" number="3.4.2.1">
+<h4><span class="header-section-number">3.4.2.1</span> <em>Prasophyllum correctum</em><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#prasophyllum-correctum" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Es este trabajo se recolectaron datos de la etapa de plántula, juvenil, adulto y latencia de los individuos. La historia de vida es representada por 4 etapas. Los datos provienen de la figura 4 de la publicación de <span class="citation">(<a href="#ref-coates2006effects">Coates, Lunt, and Tremblay 2006</a>)</span>, donde hay un periodo de 3 o más años entre los periodos de régimen de fuegos. Una de la etapas distintivas de esta especie es la latencia, en otra palabra plantas que no emergen de un año a otro. Muchas especies de orquídeas terrestres tienen latencia en las etapas de plántulas, juvenil y adultos . En estas especies la única etapa que podemos estimar la mortandad es después de la latencia. Esto típicamente es un problema de muestreo y no la biología de la especie, ya que frecuentemente las especies muestreadas son en peligro de extinción y no se pueden recolectar datos de todas las etapas de vida para determinar cuando no se ven la planta es viva (debajo el suelo) o muerta. Como son en peligro de extinción no permite y realmente no es ético modificar el hábitat para determinar si la planta esta viva o muerta. En este caso, se hace unos análisis para determinar cual es la probabilidad que un individuo con latencia de múltiples años este vivo.</p>
+<p>Las etapas que pasen a latente el próximo año son de color azul, los que se quedan en la misma etapa son de color roja (incluyendo de latente a latente), verde es crecimiento y amarillo es reproducción.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
+<span id="cb8-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb8-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-3" tabindex="-1"></a>matA <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb8-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-4" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0</span>,     <span class="fl">0.0125</span>, <span class="fl">0.0</span>),</span>
+<span id="cb8-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-5" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.2874</span>,  <span class="fl">0.375</span>,  <span class="fl">0.1364</span>),</span>
+<span id="cb8-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.0230</span>,  <span class="fl">0.15</span>,   <span class="fl">0.0303</span>),</span>
+<span id="cb8-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-7" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">1.000</span>, <span class="fl">0.6897</span>,  <span class="fl">0.475</span>,  <span class="fl">0.7475</span>)</span>
+<span id="cb8-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-8" tabindex="-1"></a>)</span>
+<span id="cb8-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-9" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-11" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;plántulas&quot;</span>, <span class="st">&quot;adultos vegetativos&quot;</span>, <span class="st">&quot;adultos reproductivos&quot;</span>, <span class="st">&quot;latencia&quot;</span>)</span>
+<span id="cb8-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-12" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb8-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb8-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-14" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA), <span class="dv">4</span>)</span>
+<span id="cb8-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-15" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb8-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-16" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb8-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-17" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb8-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-18" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb8-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-19" tabindex="-1"></a>  <span class="st">&quot;blue&quot;</span>, </span>
+<span id="cb8-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-20" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb8-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-21" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb8-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-22" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;red&quot;</span></span>
+<span id="cb8-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-23" tabindex="-1"></a>)</span>
+<span id="cb8-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-24" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb8-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-25" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb8-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-26" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb8-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-27" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb8-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-28" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb8-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-29" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb8-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-30" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-31" tabindex="-1"></a>)</span>
+<span id="cb8-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-32" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb8-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-33" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb8-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-34" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb8-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-35" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb8-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-36" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb8-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-37" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb8-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-38" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb8-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-39" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb8-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-40" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb8-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-41" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb8-42"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-42" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb8-43"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-43" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb8-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-44" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb8-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-45" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb8-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-46" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb8-47"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-47" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb8-48"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-48" tabindex="-1"></a>  )</span>
+<span id="cb8-49"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb8-49" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-103b617655df6112c0da" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-103b617655df6112c0da">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántulas\"; \"adultos vegetativos\"; \"adultos reproductivos\"; \"latencia\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántulas\"; \"adultos vegetativos\"; \"adultos reproductivos\"; \"latencia\" } [style=invis] \"plántulas\" -> \"latencia\"[minlen=6,fontsize=10,color=blue,xlabel=\" 1\"]\n\"adultos vegetativos\" -> \"adultos vegetativos\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.2874\"]\n\"adultos vegetativos\" -> \"adultos reproductivos\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.023\"]\n\"adultos vegetativos\" -> \"latencia\"[minlen=4,fontsize=10,color=blue,xlabel=\" 0.6897\"]\n\"adultos reproductivos\" -> \"plántulas\"[minlen=-4,fontsize=10,color=Goldenrod1,xlabel=\" 0.0125\"]\n\"adultos reproductivos\" -> \"adultos vegetativos\"[minlen=-2,fontsize=10,color=PaleGreen4,xlabel=\" 0.375\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"latencia\"[minlen=2,fontsize=10,color=blue,xlabel=\" 0.475\"]\n\"latencia\" -> \"adultos vegetativos\"[minlen=-4,fontsize=10,color=PaleGreen4,xlabel=\" 0.1364\"]\n\"latencia\" -> \"adultos reproductivos\"[minlen=-2,fontsize=10,color=PaleGreen4,xlabel=\" 0.0303\"]\n\"latencia\" -> \"latencia\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.7475\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="ophrys-sphegodes" class="section level4 hasAnchor" number="3.4.2.2">
+<h4><span class="header-section-number">3.4.2.2</span> <em>Ophrys sphegodes</em><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ophrys-sphegodes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En el trabajo de Waite y Hutchings 1991, se recolectaron datos de la etapas vegetativa, plantas con flores y latencia de un año y dos años, por consecuencia la historia de vida es representada por 4 etapas. Los datos provienen de la figura 1 y la tabla 3b (periodo de herbivoría por oveja) de la publicación de <span class="citation">(<a href="#ref-waite1991effects">Waite and Hutchings 1991</a>)</span>. En este caso, se hace análisis para determinar cual es la probabilidad que un individuo con latencia de múltiples de un o dos años este vivo comparando periodos de herbivoría por ganados versus ovejas.</p>
+<p>El objetivo de la publicación era determinar la probabilidad de que un individuo con latencia de múltiples años (uno o dos) este vivo. Por consecuencia no incluye reproducción (nota que no hay linea amarilla). Las etapas que pasen a latente el próximo año son de color azul, los que se quedan en la misma etapa son de color roja, verde es de una etapa no latente.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-1" tabindex="-1"></a><span class="co"># hidden code to produce figures</span></span>
+<span id="cb9-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb9-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-3" tabindex="-1"></a>G1<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.0080</span>, <span class="fl">0.0184</span>,   <span class="fl">0.0149</span>, <span class="fl">0.0148</span>,</span>
+<span id="cb9-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-4" tabindex="-1"></a>            <span class="fl">0.0180</span>,  <span class="fl">0.4249</span>,  <span class="fl">0.1214</span>, <span class="fl">0.1214</span>,</span>
+<span id="cb9-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-5" tabindex="-1"></a>            <span class="fl">0.1853</span>,  <span class="fl">0.2770</span>,  <span class="dv">0</span>,      <span class="dv">0</span>,</span>
+<span id="cb9-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-6" tabindex="-1"></a>            <span class="dv">0</span>,       <span class="dv">0</span>,       <span class="fl">0.3050</span>, <span class="dv">0</span>), <span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">ncol=</span><span class="dv">4</span>)</span>
+<span id="cb9-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-9" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Vegetativa&quot;</span>, <span class="st">&quot;Ind. con Flores&quot;</span>, <span class="st">&quot;Latencia año 1&quot;</span>, <span class="st">&quot;Latencia año 2&quot;</span>)</span>
+<span id="cb9-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-10" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb9-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-11" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb9-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-12" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(G1), <span class="dv">4</span>)</span>
+<span id="cb9-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-13" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb9-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-14" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb9-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-15" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb9-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-16" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb9-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-17" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb9-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-18" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb9-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-19" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>,  <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb9-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-20" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span></span>
+<span id="cb9-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-21" tabindex="-1"></a>)</span>
+<span id="cb9-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-22" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb9-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-23" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb9-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-24" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb9-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-25" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb9-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-26" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb9-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-27" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb9-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-28" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb9-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-29" tabindex="-1"></a>)</span>
+<span id="cb9-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-30" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb9-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-31" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb9-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-32" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb9-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-33" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb9-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-34" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb9-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-35" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb9-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-36" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb9-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-37" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb9-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-38" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb9-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-39" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb9-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-40" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb9-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-41" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb9-42"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-42" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb9-43"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-43" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb9-44"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-44" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb9-45"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-45" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb9-46"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-46" tabindex="-1"></a>  )</span>
+<span id="cb9-47"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb9-47" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6e84af255f2da3b2f124" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6e84af255f2da3b2f124">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Vegetativa\"; \"Ind. con Flores\"; \"Latencia año 1\"; \"Latencia año 2\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"Vegetativa\"; \"Ind. con Flores\"; \"Latencia año 1\"; \"Latencia año 2\" } [style=invis] \"Vegetativa\" -> \"Vegetativa\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.008\"]\n\"Vegetativa\" -> \"Ind. con Flores\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.018\"]\n\"Vegetativa\" -> \"Latencia año 1\"[minlen=4,fontsize=10,color=blue,xlabel=\" 0.1853\"]\n\"Ind. con Flores\" -> \"Vegetativa\"[minlen=-2,fontsize=10,color=PaleGreen4,xlabel=\" 0.0184\"]\n\"Ind. con Flores\" -> \"Ind. con Flores\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.4249\"]\n\"Ind. con Flores\" -> \"Latencia año 1\"[minlen=2,fontsize=10,color=blue,xlabel=\" 0.277\"]\n\"Latencia año 1\" -> \"Vegetativa\"[minlen=-4,fontsize=10,color=PaleGreen4,xlabel=\" 0.0149\"]\n\"Latencia año 1\" -> \"Ind. con Flores\"[minlen=-2,fontsize=10,color=PaleGreen4,xlabel=\" 0.1214\"]\n\"Latencia año 1\" -> \"Latencia año 2\"[minlen=2,fontsize=10,color=blue,xlabel=\" 0.305\"]\n\"Latencia año 2\" -> \"Vegetativa\"[minlen=-6,fontsize=10,color=PaleGreen4,xlabel=\" 0.0148\"]\n\"Latencia año 2\" -> \"Ind. con Flores\"[minlen=-4,fontsize=10,color=PaleGreen4,xlabel=\" 0.1214\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="cypripedium-parviflorum-epipactus-atrorubens-y-orchis-purpurea" class="section level4 hasAnchor" number="3.4.2.3">
+<h4><span class="header-section-number">3.4.2.3</span> <em>Cypripedium parviflorum</em>, <em>Epipactus atrorubens</em> y <em>Orchis purpurea</em><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cypripedium-parviflorum-epipactus-atrorubens-y-orchis-purpurea" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La dimensiones de la matriz y la cantidad de etapas/años incluido en un análisis depende de múltiples factores. Sin duda si son datos del campo el acceso a individuos de las etapas de vida es un factor importante. Revisión de las publicaciones de orquídea se observa análisis con dimensiones de matrices que van de 29 a 3, con un promedio de 5.6 etapas (desv. estandard de 3.2). El trabajo que incluyo el máximo de etapas fue el trabajo de <span class="citation">(<a href="#ref-shefferson2014life">Shefferson, Warren, and Pulliam 2014</a>)</span> con 29 etapas en <em>Cypripedium parviflorum</em> var. <em>parviflorum</em>. En la especies <em>Epipactus atrorubens</em> se evaluó el costo de estar latente después de diferentes etapas. En este análisis usaron 11 etapas, donde hubiese una probabilidad de latencia después de todas las etapas emergente <span class="citation">(<a href="#ref-jakalaniemi2011orchids">Jäkäläniemi et al. 2011</a>)</span>. En <em>Orchis purpurea</em> los autores modelaron la especie usando 6 etapas de vida, protocormos, turberculos, plántulas, juveniles (más de un año y menos de 3 hojas), plantas sin flores (más de 3 hojas) y plantas con flores <span class="citation">(<a href="#ref-jacquemyn2010seed">Jacquemyn, Brys, and Jongejans 2010</a>)</span>.</p>
+<p>Aquí se visualiza la matriz de <em>Orchis purpurea</em> de la publicación de <span class="citation">(<a href="#ref-jacquemyn2010seed">Jacquemyn, Brys, and Jongejans 2010</a>)</span>. La transiciones a una etapa subsiguiente son en verde, las transiciones a una etapa más pequeña son en violeta y la reproducción en amarillo. En este ciclo de vida las etapas de protocormos, tuberculos, plántulas son de un año cada una. Si estos individuos no crecen a la próxima etapa se asume que fallecieron.</p>
+<div id="section" class="section level5" number="3.4.2.3.1">
+<h5><span class="header-section-number">3.4.2.3.1</span> </h5>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-1" tabindex="-1"></a>matA_Os<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb10-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-2" tabindex="-1"></a><span class="fl">0.000</span>, <span class="fl">0.000</span>, <span class="dv">0</span>, <span class="fl">0.00</span>, <span class="fl">0.000</span>, <span class="fl">84.88725</span>,</span>
+<span id="cb10-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-3" tabindex="-1"></a><span class="fl">0.012</span>, <span class="fl">0.000</span>, <span class="dv">0</span>, <span class="fl">0.00</span>, <span class="fl">0.000</span>,  <span class="fl">0.00000</span>,</span>
+<span id="cb10-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-4" tabindex="-1"></a><span class="fl">0.000</span>, <span class="fl">0.041</span>, <span class="dv">0</span>, <span class="fl">0.00</span>, <span class="fl">0.000</span>,  <span class="fl">0.00000</span>,</span>
+<span id="cb10-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-5" tabindex="-1"></a><span class="fl">0.000</span>, <span class="fl">0.000</span>, <span class="dv">1</span>, <span class="fl">0.75</span>, <span class="fl">0.000</span>,  <span class="fl">0.00000</span>,</span>
+<span id="cb10-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-6" tabindex="-1"></a><span class="fl">0.000</span>, <span class="fl">0.000</span>, <span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.615</span>,  <span class="fl">0.62500</span>,</span>
+<span id="cb10-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-7" tabindex="-1"></a><span class="fl">0.000</span>, <span class="fl">0.000</span>, <span class="dv">0</span>, <span class="fl">0.00</span>, <span class="fl">0.385</span>,  <span class="fl">0.37500</span>), <span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">ncol=</span><span class="dv">6</span>)</span>
+<span id="cb10-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb10-9" tabindex="-1"></a>matA_Os  </span></code></pre></div>
+<pre><code>##       [,1]  [,2] [,3] [,4]  [,5]     [,6]
+## [1,] 0.000 0.000    0 0.00 0.000 84.88725
+## [2,] 0.012 0.000    0 0.00 0.000  0.00000
+## [3,] 0.000 0.041    0 0.00 0.000  0.00000
+## [4,] 0.000 0.000    1 0.75 0.000  0.00000
+## [5,] 0.000 0.000    0 0.25 0.615  0.62500
+## [6,] 0.000 0.000    0 0.00 0.385  0.37500</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-1" tabindex="-1"></a>etapas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Protocormos&quot;</span>, <span class="st">&quot;tuberculos&quot;</span>, <span class="st">&quot;Plantulas&quot;</span>, <span class="st">&quot;Juveniles&quot;</span>, <span class="st">&quot;Sin Flores&quot;</span>, <span class="st">&quot;Con Flores&quot;</span>)</span>
+<span id="cb12-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-2" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb12-3"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-3" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">to =</span> etapas, <span class="at">from =</span> etapas)</span>
+<span id="cb12-4"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-4" tabindex="-1"></a>graph<span class="sc">$</span>trans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(matA_Os), <span class="dv">3</span>)</span>
+<span id="cb12-5"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-5" tabindex="-1"></a>graph <span class="ot">&lt;-</span> graph[graph<span class="sc">$</span>trans <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb12-6"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-6" tabindex="-1"></a>nodes <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, etapas, <span class="st">&quot;&#39;&quot;</span>), <span class="at">collapse =</span> <span class="st">&quot;; &quot;</span>)</span>
+<span id="cb12-7"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-7" tabindex="-1"></a>graph<span class="sc">$</span>min_len <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(graph<span class="sc">$</span>to) <span class="sc">-</span> <span class="fu">as.numeric</span>(graph<span class="sc">$</span>from)) <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb12-8"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-8" tabindex="-1"></a>graph<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb12-9"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-9" tabindex="-1"></a>   <span class="st">&quot;PaleGreen4&quot;</span>,</span>
+<span id="cb12-10"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-10" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>,</span>
+<span id="cb12-11"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-11" tabindex="-1"></a>  <span class="st">&quot;PaleGreen4&quot;</span>,</span>
+<span id="cb12-12"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-12" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>,  </span>
+<span id="cb12-13"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-13" tabindex="-1"></a>  <span class="st">&quot;red&quot;</span>, <span class="st">&quot;PaleGreen4&quot;</span>, </span>
+<span id="cb12-14"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-14" tabindex="-1"></a>  <span class="st">&quot;Goldenrod1&quot;</span>,<span class="st">&quot;MediumOrchid4&quot;</span>, <span class="st">&quot;red&quot;</span></span>
+<span id="cb12-15"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-15" tabindex="-1"></a>)</span>
+<span id="cb12-16"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-16" tabindex="-1"></a>edges <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>from, <span class="st">&quot;&#39;&quot;</span>, <span class="st">&quot; -&gt; &quot;</span>, <span class="st">&quot;&#39;&quot;</span>, graph<span class="sc">$</span>to, <span class="st">&quot;&#39;&quot;</span>,</span>
+<span id="cb12-17"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-17" tabindex="-1"></a>  <span class="st">&quot;[minlen=&quot;</span>, graph<span class="sc">$</span>min_len,</span>
+<span id="cb12-18"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-18" tabindex="-1"></a>  <span class="st">&quot;,fontsize=&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb12-19"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-19" tabindex="-1"></a>  <span class="st">&quot;,color=&quot;</span>, graph<span class="sc">$</span>col,</span>
+<span id="cb12-20"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-20" tabindex="-1"></a>  <span class="st">&quot;,xlabel=&quot;</span>, <span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, graph<span class="sc">$</span>trans),</span>
+<span id="cb12-21"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-21" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">]</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb12-22"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-22" tabindex="-1"></a>  <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb12-23"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-23" tabindex="-1"></a>)</span>
+<span id="cb12-24"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-24" tabindex="-1"></a><span class="fu">grViz</span>(</span>
+<span id="cb12-25"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-25" tabindex="-1"></a>  <span class="fu">paste</span>(</span>
+<span id="cb12-26"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-26" tabindex="-1"></a>    <span class="st">&quot;</span></span>
+<span id="cb12-27"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-27" tabindex="-1"></a><span class="st">digraph {</span></span>
+<span id="cb12-28"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-28" tabindex="-1"></a><span class="st">  {</span></span>
+<span id="cb12-29"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-29" tabindex="-1"></a><span class="st">    graph[overlap=false];</span></span>
+<span id="cb12-30"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-30" tabindex="-1"></a><span class="st">    rank=same;</span></span>
+<span id="cb12-31"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-31" tabindex="-1"></a><span class="st">    node [shape=&quot;</span>, <span class="st">&quot;egg&quot;</span>, <span class="st">&quot;, fontsize=&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;];&quot;</span>,</span>
+<span id="cb12-32"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-32" tabindex="-1"></a>    nodes, <span class="st">&quot;</span></span>
+<span id="cb12-33"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-33" tabindex="-1"></a><span class="st">  }&quot;</span>,</span>
+<span id="cb12-34"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-34" tabindex="-1"></a>    <span class="st">&quot;ordering=out</span></span>
+<span id="cb12-35"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-35" tabindex="-1"></a><span class="st">  x [style=invis]</span></span>
+<span id="cb12-36"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-36" tabindex="-1"></a><span class="st">  x -&gt; {&quot;</span>, nodes, <span class="st">&quot;} [style=invis]&quot;</span>, edges,</span>
+<span id="cb12-37"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-37" tabindex="-1"></a>    <span class="st">&quot;labelloc=</span><span class="sc">\&quot;</span><span class="st">t</span><span class="sc">\&quot;</span><span class="st">;</span></span>
+<span id="cb12-38"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-38" tabindex="-1"></a><span class="st">  label=</span><span class="sc">\&quot;</span><span class="st">&quot;</span>, title, <span class="st">&quot;</span><span class="sc">\&quot;</span></span>
+<span id="cb12-39"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-39" tabindex="-1"></a><span class="st">}&quot;</span></span>
+<span id="cb12-40"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-40" tabindex="-1"></a>  )</span>
+<span id="cb12-41"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb12-41" tabindex="-1"></a>) </span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f0bcce96d0f389b1d783" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f0bcce96d0f389b1d783">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Protocormos\"; \"tuberculos\"; \"Plantulas\"; \"Juveniles\"; \"Sin Flores\"; \"Con Flores\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"Protocormos\"; \"tuberculos\"; \"Plantulas\"; \"Juveniles\"; \"Sin Flores\"; \"Con Flores\" } [style=invis] \"Protocormos\" -> \"tuberculos\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.012\"]\n\"tuberculos\" -> \"Plantulas\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.041\"]\n\"Plantulas\" -> \"Juveniles\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 1\"]\n\"Juveniles\" -> \"Juveniles\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.75\"]\n\"Juveniles\" -> \"Sin Flores\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.25\"]\n\"Sin Flores\" -> \"Sin Flores\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.615\"]\n\"Sin Flores\" -> \"Con Flores\"[minlen=2,fontsize=10,color=PaleGreen4,xlabel=\" 0.385\"]\n\"Con Flores\" -> \"Protocormos\"[minlen=-10,fontsize=10,color=Goldenrod1,xlabel=\" 84.887\"]\n\"Con Flores\" -> \"Sin Flores\"[minlen=-2,fontsize=10,color=MediumOrchid4,xlabel=\" 0.625\"]\n\"Con Flores\" -> \"Con Flores\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.375\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="ejemplo-de-un-ciclo-de-vida-incompleto-y-biologicamente-erroneos" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Ejemplo de un ciclo de vida incompleto (y biologicamente erroneos)<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-ciclo-de-vida-incompleto-y-biologicamente-erroneos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La importancia de este capitulo es reconocer la diferencia entre la historia de vida real de un organismo biológico versus lo que uno puede recolectar en el campo. En las orquídeas en general, dos áreas de investigación y muestreo son un reto (entre otros), la capacidad de seguir las semillas en el campo, y la capacidad de determinar si un sitio es adecuado germina o no. En el segundo paso incluye la presencia de las micorrhizas para germinación. Estas etapas del ciclo de vida de la orquídea resulta ser un componente de mucha incertidumbre y por consecuencia limite los análisis y interpretaciones evolutivas y de conservaciones.</p>
+<p>Pero eso no son los únicos problemas. La recolección de datos en el campo puede ser irreal dentro de un contexto de historia de vida general y la matemática que le corresponde. Aquí vemos un ejemplo de lo siguiente. Para mucho más detalles ver el capitulo “Impacto de datos sin sentidos”.
+En la siguiente figura aparece tres errores comunes cuando se recolectan datos de la historia de vida de una especie. El primero es que no hay mortandad en una de las etapas (los juveniles), y el otro es que todos los individuos se mueren (las plántulas) o se quedan en la misma etapa (los adultos), resultando en un ciclo de vida donde no es posible pasar de una etapa a otra. Estos errores ocurren típicamente cuando el tamaño de muestra es pequeña o la probabilidad de transiciones es rara (por ejemplos los arboles grandes no fallecen). Nota que no hay flecha que va de plántulas a otros estados. Esos son tres errores típicos que se enfrenta cuando se usa análisis de dinámica poblacional en especies con transiciones poco comunes.</p>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a9a4d4e5370a2a2a9814" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a9a4d4e5370a2a2a9814">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\"; \"juvenil\"; \"adulto\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\"; \"juvenil\"; \"adulto\" } [style=invis] \"juvenil\" -> \"juvenil\"[minlen=0,fontsize=10,color=red,xlabel=\" 1\"]\n\"adulto\" -> \"plántula\"[minlen=-6,fontsize=10,color=Goldenrod1,xlabel=\" 3.2\"]\n\"adulto\" -> \"juvenil\"[minlen=-3,fontsize=10,color=MediumOrchid4,xlabel=\" 0.1\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=10,color=red,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nota aquí podemos usar otro paquete de R (Rage). La diferencia es que no se puede cambiar los colores de las lineas y los nodos. Es una opción más sencilla para crear diagramas de ciclo de vida. Y practico para publicaciones donde no se necesita cambiar los colores de las lineas y los nodos.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(Rage)</span>
+<span id="cb13-2"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#cb13-2" tabindex="-1"></a><span class="fu">plot_life_cycle</span>(matA, <span class="at">stages=</span>etapas, <span class="at">fontsize =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-e5080300b15c0f116b09" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e5080300b15c0f116b09">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plántula\" -> \"juvenil\" -> \"adulto\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plántula\" -> \"juvenil\" -> \"adulto\" [style=invis] } [style=invis] \"juvenil\" -> \"juvenil\"[minlen=0,fontsize=0,color=grey,xlabel=\" 1\"]\n\"adulto\" -> \"plántula\"[minlen=-6,fontsize=0,color=grey,xlabel=\" 3.2\"]\n\"adulto\" -> \"juvenil\"[minlen=-3,fontsize=0,color=grey,xlabel=\" 0.1\"]\n\"adulto\" -> \"adulto\"[minlen=0,fontsize=0,color=grey,xlabel=\" 0.9\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="code-for-color-coding-figure" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Code for color coding figure<a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="http://rich-iannone.github.io/DiagrammeR/" class="uri">http://rich-iannone.github.io/DiagrammeR/</a></p>
+<p>Revision: Sept 14, 2024</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-coates2006effects" class="csl-entry">
+Coates, Fiona, Ian D Lunt, and Raymond L Tremblay. 2006. <span>“Effects of Disturbance on Population Dynamics of the Threatened Orchid <em>Prasophyllum <span class="nocase">c</span>orrectum</em> DL Jones and Implications for Grassland Management in South-Eastern Australia.”</span> <em>Biological Conservation</em> 129 (1): 59–69.
+</div>
+<div id="ref-hernandez1992dinamica" class="csl-entry">
+Hernández-Apolinar, Mariana. 1992. <span>“Din<span>á</span>mica Poblacional de <em>Laelia <span class="nocase">s</span>peciosa</em> (HBK) Schltr. (Orchidaceae).”</span> <em>Bachelor Thesis. Faculdad de Ciencias, UNAM</em>. Master’s thesis, Mexico City, Mexico.
+</div>
+<div id="ref-jacquemyn2010seed" class="csl-entry">
+Jacquemyn, Hans, Rein Brys, and Eelke Jongejans. 2010. <span>“Seed Limitation Restricts Population Growth in Shaded Populations of a Perennial Woodland Orchid.”</span> <em>Ecology</em> 91 (1): 119–29.
+</div>
+<div id="ref-jakalaniemi2011orchids" class="csl-entry">
+Jäkäläniemi, Anne, Elizabeth E Crone, Paavo Närhi, and Juha Tuomi. 2011. <span>“Orchids Do Not Pay Costs at Emergence for Prolonged Dormancy.”</span> <em>Ecology</em> 92 (7): 1538–43.
+</div>
+<div id="ref-raventos2018comparison" class="csl-entry">
+Raventós, José, Alfredo Garcı́a-González, Frander B Riverón-Giró, and Anne Damon. 2018. <span>“Comparison of Transient and Asymptotic Perturbation Analyses of Three Epiphytic Orchid Species Growing in Coffee Plantations in Mexico: Effect on Conservation Decisions.”</span> <em>Plant Ecology &amp; Diversity</em> 11 (2): 133–45.
+</div>
+<div id="ref-shefferson2014life" class="csl-entry">
+Shefferson, Richard P, Robert J Warren, and H Ronald Pulliam. 2014. <span>“Life-History Costs Make Perfect Sprouting Maladaptive in Two Herbaceous Perennials.”</span> <em>Journal of Ecology</em> 102 (5): 1318–28.
+</div>
+<div id="ref-waite1991effects" class="csl-entry">
+Waite, S, and MJ Hutchings. 1991. <span>“The Effects of Different Management Regimes on the Population Dynamics of <em>Ophrys <span class="nocase">s</span>phegodes</em>: Analysis and Description Using Matrix Models.”</span> <em>Population Ecology of Terrestrial Orchids. SPB Acad. Publ. Bv, The Hague</em>, 161–75.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="qué-es-el-analisis-de-dinamica-poblacional.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="como-recopilar-datos-en-el-campo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Ciclos_de_Vida.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/03-Ciclos_de_Vida.Rmd",
+"text": null
+},
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

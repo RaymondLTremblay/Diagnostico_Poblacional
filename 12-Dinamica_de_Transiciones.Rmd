@@ -44,7 +44,7 @@ A continuación incorporamos la información de nuestra matriz y la abundancia d
 
 ## Librerías de R requeridas para el análisis
 
-```{r chap10_0, message=FALSE}
+```{r trans0, message=FALSE}
 library(popdemo)
 library(popbio)
 library(ggplot2)
@@ -56,7 +56,7 @@ library(scales)
 
 ### PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL $t_{0}$
 
-```{r, message=FALSE}
+```{r trans1, message=FALSE}
 
 #Capturar los datos de la matriz para L. rubripetala (Tremblay et al. 2015)
 Lr1 <- matrix(c(0.4324, 0,      0,     0.15,
@@ -74,7 +74,7 @@ Lr1
 
 ```
 
-```{r}
+```{r trans3}
 # Capturar y obtener el vector inicial (datos de campo) de clases de estado población 1 (Schödelbauerová et al. 2010)
 
 n0 <- c(0, 46, 38, 82) 
@@ -97,7 +97,7 @@ n0
 
 
 
-```{r echo=FALSE}
+```{r trans4, echo=FALSE}
 #Matriz de L. rubripetala
 Lr1
 
@@ -116,7 +116,7 @@ n0
 La definición del crecimiento asintótico de la población *lambda* se basa en la tasa de crecimiento poblacional cuando la población este a su nivel estable de estructura de edades/estados. Por consecuencia se asume que la población llegue o este a un nivel estructura de edades/estados estable. Para la población de *Lepanthes rubripetala* se obtiene una tasa de crecimiento poblacional de 1.007, lo que indica que la población crece a una tasa constante de 1.007 entre $t_{0}$ y $t_{1}$. Entonces si la población tuviese 1000 individuos en promedio hubiese 7 individuos más en $t_{1}$ o sea el siguiente mes. Nota que las poblaciones de *Lepanthes* nunca son tan grandes (@tremblay1997distribution), pero es un ejemplo para ilustrar el concepto. 
 
 
-```{r chap10_asimptotico}
+```{r trans5_asimptotico}
 
 #Análisis asintótico (i.e. largo plazo) del crecimiento poblacional de L. rubripetala
 #La orquídea florece todo el año, por lo que el seguimiento de la población fue mensual. 
@@ -154,7 +154,7 @@ Por ejemplo, la estructura inicial en la población 1 de *Lepanthes rubripetala*
 
 *Dinámica poblacional absoluta*. Como consecuencia de las perturbaciones o escenarios existen cambios en el crecimiento poblacional, los cuales son evidentes si se grafican. Un aspecto a considerar es que, la gráfica que se genera incluye la influencia de la dinámica trasitoria y asintótica, por lo que se le denomina dinámica poblacional absoluta (Fig. 2A de Tremblay y colaboradores, 2015).
 
-```{r chap10_4}
+```{r trans6}
 ##PASO 4. DINÁMICA POBLACIONAL ABSOLUTA.    
 #Se proyecta el crecimiento poblacional ante cambios en la estructura 
 #inicial debidos a la perturbación (5 escenarios). Esta gráfica incluye la 
@@ -279,7 +279,7 @@ b)  *Máxima amplificación/Máxima atenuación* (Maximum amplification/Maximum 
 
 c)  *Inercia alta e Inercia baja* (Upper inertia y Lower inertia) que evalúan el límite más alto o el más bajo en el crecimiento de la población antes de alcanzar la tasa constante de crecimiento poblacional, respectivamente.
 
-```{r chap10_5}
+```{r trans7}
 ### PARTE II: DINÁMICA POBLACIONAL TRANSITORIA ESTANDARIZADA.
 #Modelo de Dinámica transitoria específica de la población  
 ## La dinámica de corto plazo se projecta a partir de la matriz de transición y el vector inicial previamente definidos

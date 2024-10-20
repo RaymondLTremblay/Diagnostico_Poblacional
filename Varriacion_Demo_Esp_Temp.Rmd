@@ -1,0 +1,299 @@
+
+
+# Variación Demográfica, Espacial y Temporal
+
+La variación en los estimados de parámetros tienen impacto sobre la estimación de lambda. 
+
+Hay 3 tipos de variación que podemos tomar en cuenta y evaluar su impacto sobre la estimación de lambda:
+
+- Variación Demográfica
+- Variación Espacial
+- Variación Temporal
+ 
+
+ 
+## Variación Demográfica
+
+Uno de las preguntas principales que se hace sobre la confiabilidad de los trabajos de dinámica poblacional con especies raras, es cual es el impacto de tener pocos individuos para estimar los parámetros de la matriz poblacional sobre lambda.  
+Aqui se presente un método de calcular la varianza de lambda, tomando en cuenta los parámetros, la sensitividad y el tamaño de muestra que se uso para calcular los parámetros.  Con experiencia es lógico que con muchos individuos, la varianza es pequeña, pero con pocos individuos, la varianza debería ser ser grande. Pero en el caso del impacto de esa varianza sobre lambda se debería tomar en cuenta la sensitividad de lambda a los parámetros de la matriz. En otra palabra parámetros con alta sensitividad sobre lambda, deberían tener una varianza grande cuando los tamaños de muestra son pequenõs, pero que el efecto de confianza sea basado en el tamaño de muestra. El método presentado aquí es una modificación de la formula sugerido por Thomas A. Ebert en su libro **Plant and Animal Populations. Methods in Demography** [@ebert1999demography]. 
+
+La varianza de lambda deberia ser ajustado por el tamaño de muestra y la sensitividad de lambda a los parámetros de la matriz poblacional.
+
+$$Var(\lambda) = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial \lambda}{\partial a_{ij}}^2 V(a_{ij})$$
+
+ La sensitividad, $\frac{\partial \lambda}{\partial a_{ij}}$, de lambda a los parámetros de la matriz poblacional, $a_{ij}$, se puede calcular con la función **sens** del paquete popbio. 
+ 
+ y por consecuencia la varianza de cada parámetros es $$Var(a_{ij}) = \frac{a_{ij}(1-a_{ij})}{N_{ij}}$$, donde N es el tamaño de muestra. 
+ 
+En este primer ejemplo usamos la formula presentado por Ebert para calcular la varianza de lambda, tomando en cuenta la sensitividad de lambda a los parámetros de la matriz poblacional y el tamaño de muestra. Pero note que estamos asumiendo que 1) la sensitividad de lambda a los parámetros de la matriz poblacional es constante, 2) la razón son binomio (sobrevive o no), que los intervalos de confianza tienen una distribución normal. El ultimo, pudiese ser un problema cuando los parámetros se encuentra cerca de 0 o 1, resultando en varianza que so ilógicos (negativos o mayor de uno).  
+
+
+
+
+Los datos necesarios para calcular la estocasticidad demográfica son los siguientes
+
+ - La matriz de transición poblacional
+ - El tamaño de muestra de cada etapa
+ - La sensitividad de lambda a los parámetros de la matriz poblacional
+ 
+ 
+
+
+
+Para el ejercicio usamos datos de *Lepanthes eltoroensis* de una población y un periodo de tiempo. los datos se encuentran en el paquete raretrans. 
+
+
+
+```{r var1, message=FALSE, warning=FALSE}
+library(raretrans) # activar el paquete
+library(tidyverse) # activar el paquete
+library(popbio) # activar el paquete)
+```
+
+
+
+```{r var2}
+
+
+unique(L_elto$POPNUM) # Verificar cuantas poblaciones hay
+
+
+onepopt1 <- L_elto %>%   
+
+  filter(POPNUM== 209) # Usando todas las poblaciones de 209
+ 
+
+# popbio::projection.matrix no funciona con el formato *tibbles*, por consecuencia se convierte en data.frame
+
+head(onepopt1) # Ahora tenemos solamente datos de la población #209 
+# Crear TF = TRUE, añadir para formatear correctamente.
+TF <- popbio::projection.matrix(as.data.frame(onepopt1), 
+                        stage = stage, fate = next_stage, 
+                        fertility="fertility", sort=c("p","j","a"), TF = TRUE)
+TF # Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. 
+```
+
+Calcular la sensitividad de la matriz A
+
+
+```{r var3}
+
+
+matA=TF$T+TF$F
+matA
+matAsens=as.matrix(sensitivity(matA)) # matrix de sensitividad 
+matAsens
+```
+
+Calcular cuanto individuos habia en el primer periodo como un estimado tipico del tamaño poblacional
+
+```{r var4}
+
+N_t1=L_elto %>%   
+
+  filter(POPNUM== 209, year==1)
+
+Nt1 <- get_state_vector(N_t1, stage = stage, sort=c("p","j","a")) 
+Nt1
+```
+
+ 
+ Convertimos la matriz de transiciones y de sensitividad y la unimos en un solo data.frame
+ 
+```{r var5}
+DFmat=as.data.frame(matA)# Convertir matriz en un data frame
+#DFmat
+
+
+
+DFsens=as.data.frame(as.vector(matAsens)) # Método alternativo para convertir matriz en un data frame
+
+
+Contribucion_var=merge(DFmat, DFsens, by=0) # Unir los dos data frames
+Contribucion_var$N=c(1,1,1,5,5,5,6,6,6) # Añadir el tamaño de muestra
+Contribucion =Contribucion_var |> 
+  rename("Sensitividad" = "as.vector(matAsens)") |>   # Renombrar la columna e sensitividad
+  rename(p =Freq) # Renombrar la columna de la matriz de transición
+
+Contribucion
+```
+ 
+
+Calcular la vvarianza y la contribución de la varianza a lambda
+
+```{r var6}
+Contribucion=Contribucion |> 
+  mutate(V_aij = (p*(1-p)/N)) |>  # Calcular la varianza de los parámetros sin tomar en cuenta la sensitividad
+  mutate(Cont_deVar_lambda = (Sensitividad^2)*V_aij^2) # Calcular la contribución de la varianza de cada parámetro a lambda
+Contribucion_var
+```
+
+La suma de la contribución de la varianza de cada parámetro a lambda es la varianza de lambda
+
+
+```{r var7}
+Contribucion |> 
+  summarise(V_lambda = sum(Cont_deVar_lambda)) # Calcular la varianza de lambda
+
+
+```
+
+El intervalo de confianza de lambda se puede calcular con la formula de Ebert
+
+lambda +/- 1.96*sqrt(V_lambda)
+
+Por consecuencia el intervalo de confianza de lambda de esta población considerando la estocasticidad demogrófica rodea entre 0.89 y 1.16.   
+
+```{r var8}
+ICupper=lambda(matA)+ 1.96*sqrt(sum(Contribucion$Cont_deVar_lambda))
+LClower=lambda(matA)- 1.96*sqrt(sum(Contribucion$Cont_deVar_lambda))
+
+ICupper
+LClower
+```
+
+
+
+## Aumentando el tamaño de muestra
+
+
+En esta parte su usa la misma matriz pero con un tamaño de muestra mayor de 10, 50, 60.  lo que se observa es que tenemos más confianza en el rango de lambda, 0.99 a 1.06.   
+
+ 
+```{r var9}
+DFmat=as.data.frame(matA)# Convertir matriz en un data frame
+#DFmat
+
+
+
+DFsens=as.data.frame(as.vector(matAsens)) # Método alternativo para convertir matriz en un data frame
+
+
+Contribucion_var=merge(DFmat, DFsens) # Unir los dos data frames
+Contribucion_var$N=c(10,10,10,50,50,50,60,60,60) # Añadir el tamaño de muestra, se aumento el tamaño de muestra
+Contribucion_var =Contribucion_var |> 
+  rename("Sensitividad" = "as.vector(matAsens)") |>   # Renombrar la columna e sensitividad
+  rename(p =Freq) # Renombrar la columna de la matriz de transición
+
+Contribucion_var
+
+Contribucion_var=Contribucion_var |> 
+  mutate(V_aij = (p*(1-p)/N)) |>  # Calcular la varianza de los parámetros sin tomar en cuenta la sensitividad
+  mutate(Cont_deVar_lambda = (Sensitividad^2)*V_aij^2) # Calcular la contribución de la varianza de cada parámetro a lambda
+Contribucion_var
+
+ICupper=lambda(matA)+ 1.96*sqrt(sum(Contribucion_var$Cont_deVar_lambda))
+LClower=lambda(matA)- 1.96*sqrt(sum(Contribucion_var$Cont_deVar_lambda))
+
+ICupper
+LClower
+```
+
+Uno de los posible errores es aumis que la distribución de los parametros tienen una distribución normal.  En el caso de los parametros de la matriz de transición, estos son proporciones y por consecuencia tienen una distribución beta.  En el siguiente ejemplo se calcula la varianza de lambda tomando en cuenta la distribución beta de los parametros.
+
+El promedio de distribución beta es 
+
+$$\mu = \frac{\alpha}{\alpha+\beta}$$
+y la varianza es 
+
+$$ \sigma^2 = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$$
+Por consecuencia {\alpha} y {\beta} son los parámetros de la distribución beta. 
+
+ $$\alpha = \left(\frac{(1-\mu)}{\sigma^2}-\frac{1}{\mu}\right)\mu^2$$
+ y la beta es
+ 
+ $$\beta = \alpha\left(\frac{1}{\mu}-1\right)$$
+ 
+```{r var10}
+#install.packages("remotes") # Instalar el paquete remotes
+
+#remotes::install_github("pacific-hake/hake-assessment") # Instalar el paquete hake-assessment **Importante instalar este paquete ANTES de gfiscamutils**
+#remotes::install_github("pbs-assess/gfiscamutils") # Instalar el paquete gfiscamutils
+
+
+```
+ 
+ 
+```{r var11}
+
+
+library(gfiscamutils)
+
+calc_beta_params(Contribucion_var$p, Contribucion_var$V_aij)
+
+
+
+bp=calc_beta_params(0.5308370, sqrt(0.09))
+bp[1]
+bp[2]
+```
+ 
+ 
+ 
+```{r var12}
+library(tidyverse)
+Contribucion_var |> 
+  mutate(alpha = calc_beta_params(p, (sqrt(V_aij)))[1],
+         beta = calc_beta_params(p, (sqrt(V_aij)))[2]) |> 
+  mutate(mu = alpha/(alpha+beta)) |> 
+  mutate(var = alpha*beta/((alpha+beta)^2*(alpha+beta+1)))
+
+```
+
+
+
+```{r var13}
+
+calc_beta_params(0.9, sqrt(0.009))
+
+
+ss=Contribucion_var[1,]
+
+calc_beta_params(ss$p, sqrt(ss$V_aij))
+
+```
+
+```{r var14, eval=FALSE}
+  mutate(mu = alpha/(alpha+beta)) |> 
+  mutate(var = alpha*beta/((alpha+beta)^2*(alpha+beta+1))) |> 
+  mutate(V_aij = (mu*(1-mu)/N)) |> 
+  mutate(Cont_deVar_lambda = (Sensitividad^2)*V_aij^2) # Calcular la contribución de la varianza de cada parámetro a lambda
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+```{r var15}
+ estBetaParams <- function(mu, var) {
+  alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+  beta <- alpha * (1 / mu - 1)
+  return(params = list(alpha = alpha, beta = beta))
+}
+```
+
+
+
+
+
+
+
+ 
+Los paramétros de una beta son $\alpha$ y $\beta$, La varianza de una beta es $\alpha\beta/(\alpha+\beta)^2(\alpha+\beta+1)$.  En el siguiente ejemplo se calcula la varianza de lambda tomando en cuenta la distribución beta de los parametros. 
+
+
+
+
+# install.packages("bbmle")
+library("bbmle")
+
+x <- rep(1, length(my.probs))
+y <- rep(1, length(my.probs))
+my.model <- mle2(minuslogl = my.probs ~ dbeta(shape1, shape2), start = list(shape1 = 2, shape2 = 30), data = data.frame(x, y))
+# There were 12 warnings (use warnings() to see them)
+summary(my.model)
+
+

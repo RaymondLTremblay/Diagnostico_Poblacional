@@ -106,7 +106,7 @@ Haciendo una busqueda en Google Scholar para [Orchid "Population dynamics"]
 
 
            
-```{r chap27_1, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+```{r Hist_1, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
 library(Rcompadre) # Paquete para trabajar con la base de datos de COMPADRE y COMADRE
 library(tidyverse) # Paquete para activar multiples paquetes
 library(gt) # Paquete para formatear tablas
@@ -114,7 +114,7 @@ library(kableExtra) # Paquete para formatear tablas
 ```
 
 
-```{r chap27_2, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+```{r Hist_2, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
 compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del repositorio de COMPADRE. Tiene que haber activado la librería de Rcompadre.
 
 
@@ -126,7 +126,7 @@ compadre <- cdb_fetch("compadre") # Usar este código para bajar los datos del r
 Number of studies using PPM by family
 
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+```{r Hist3, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
 compadre %>% n_distinct("Family")
 
 Genera=(as.data.frame(sort(unique(compadre$Genus))))
@@ -143,7 +143,7 @@ as.data.frame(sort(unique(compadre$SpeciesAccepted)))
 ```
 
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+```{r Hist4, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
 SPECIES_Number=compadre%>% select(Family, StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation, mat) %>% 
   group_by(Family) %>% 
   summarize(n_species = length(unique(SpeciesAccepted))) %>% 

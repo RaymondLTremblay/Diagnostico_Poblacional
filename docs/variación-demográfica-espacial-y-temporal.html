@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 24 Variación Demográfica, Espacial y Temporal | Dinamica Poblacional</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 24 Variación Demográfica, Espacial y Temporal | Dinamica Poblacional" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 24 Variación Demográfica, Espacial y Temporal | Dinamica Poblacional" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
+  
+
+
+
+<meta name="date" content="2024-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="appendix-b.html"/>
+<link rel="next" href="install.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="Diagnostico_style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Diagnostico_Poblacional</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> bookdown::gitbook:</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.2</b> Estructura del libro</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#paquetes-de-r-principales-usado-en-el-libro"><i class="fa fa-check"></i><b>1.3</b> Paquetes de R principales usado en el libro</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#libro-digital-y-archivos-de-datos"><i class="fa fa-check"></i><b>1.4</b> Libro digital y archivos de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html"><i class="fa fa-check"></i><b>2</b> ¿Qué es el analisis de dinamica poblacional?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#un-recuento-histórico-breve-de-la-ecología-de-poblaciones"><i class="fa fa-check"></i><b>2.1</b> Un recuento histórico breve de la ecología de poblaciones</a></li>
+<li class="chapter" data-level="2.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#qué-es-el-estudio-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es el estudio de la dinámica poblacional?</a></li>
+<li class="chapter" data-level="2.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#definición"><i class="fa fa-check"></i><b>2.3</b> Definición</a></li>
+<li class="chapter" data-level="2.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#el-analisis-de-dinámica-poblacional-y-su-uso"><i class="fa fa-check"></i><b>2.4</b> El analisis de Dinámica Poblacional y su uso</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#USO"><i class="fa fa-check"></i><b>2.4.1</b> Tabla: El uso potencial de la diferentes acercamiento de PPM.</a></li>
+<li class="chapter" data-level="2.4.2" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-1-identificar-las-etapas-or-procesos-demográficos-claves"><i class="fa fa-check"></i><b>2.4.2</b> USO 1: Identificar las etapas or procesos demográficos claves</a></li>
+<li class="chapter" data-level="2.4.3" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-2-determinar-cuantos-individuos-en-una-población-es-necesario-para-reducir-la-extinción"><i class="fa fa-check"></i><b>2.4.3</b> USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción</a></li>
+<li class="chapter" data-level="2.4.4" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-3-determinar-cuantos-individuos-se-necesita-introducir-en-una-sitio-para-establecer-una-población-viable"><i class="fa fa-check"></i><b>2.4.4</b> USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable</a></li>
+<li class="chapter" data-level="2.4.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-4-determinar-cuantos-individuos-se-puede-extraer-sin-tener-un-impacto-negativo-sobre-la-viabilidad-de-una-población"><i class="fa fa-check"></i><b>2.4.5</b> USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población</a></li>
+<li class="chapter" data-level="2.4.6" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población."><i class="fa fa-check"></i><b>2.4.6</b> USO 5: En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.</a></li>
+<li class="chapter" data-level="2.4.7" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-6-evaluar-el-riesgo-de-una-población"><i class="fa fa-check"></i><b>2.4.7</b> USO 6: Evaluar el riesgo de una población</a></li>
+<li class="chapter" data-level="2.4.8" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-7-determinar-cuantas-poblaciones-se-necesita-para-la-viabilidad-de-una-especie-al-nivel-local-o-global"><i class="fa fa-check"></i><b>2.4.8</b> USO 7: Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global</a></li>
+<li class="chapter" data-level="2.4.9" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones"><i class="fa fa-check"></i><b>2.4.9</b> USO 8: Comparando el riesgo relativo de dos o más poblaciones</a></li>
+<li class="chapter" data-level="2.4.10" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-9-evaluar-interacciones-ecológicas-para-entender-las-variables-importantes-para-la-supervivencia-de-una-población"><i class="fa fa-check"></i><b>2.4.10</b> USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población</a></li>
+<li class="chapter" data-level="2.4.11" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-10-cual-de-los-procesos-y-patrones-evolutivos-del-ciclo-de-vida-de-especies-impacta-su-crecimiento-o-grupos-taxonómicos"><i class="fa fa-check"></i><b>2.4.11</b> USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento o grupos taxonómicos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="qué-es-el-analisis-de-dinamica-poblacional.html"><a href="qué-es-el-analisis-de-dinamica-poblacional.html#visualización-de-la-dinámica-poblacional"><i class="fa fa-check"></i><b>2.5</b> Visualización de la dinámica poblacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html"><i class="fa fa-check"></i><b>3</b> Qué es un diagrama de Ciclo de Vida</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#introducción"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-ciclos-de-vida-sencillo"><i class="fa fa-check"></i><b>3.2</b> Ejemplo de ciclos de vida sencillo</a></li>
+<li class="chapter" data-level="3.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-una-orquídea-hipotética"><i class="fa fa-check"></i><b>3.3</b> Ejemplo de una orquídea hipotética</a></li>
+<li class="chapter" data-level="3.4" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ciclo-de-vida-de-orquídea-en-publicaciones"><i class="fa fa-check"></i><b>3.4</b> Ciclo de vida de orquídea en publicaciones</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-epífitas"><i class="fa fa-check"></i><b>3.4.1</b> Especies Epífitas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#especies-terrestres"><i class="fa fa-check"></i><b>3.4.2</b> Especies Terrestres</a></li>
+<li class="chapter" data-level="3.4.3" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-ciclo-de-vida-incompleto-y-biologicamente-erroneos"><i class="fa fa-check"></i><b>3.4.3</b> Ejemplo de un ciclo de vida incompleto (y biologicamente erroneos)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#ejemplo-de-un-diagrama-de-un-ciclo-de-vida-usando-el-paquete-ggplot"><i class="fa fa-check"></i><b>3.5</b> Ejemplo de un diagrama de un ciclo de vida usando el paquete ggplot</a></li>
+<li class="chapter" data-level="3.6" data-path="qué-es-un-diagrama-de-ciclo-de-vida.html"><a href="qué-es-un-diagrama-de-ciclo-de-vida.html#code-for-color-coding-figure"><i class="fa fa-check"></i><b>3.6</b> Code for color coding figure</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html"><i class="fa fa-check"></i><b>4</b> Como recopilar datos en el campo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#consideraciones-en-la-colecta-de-datos-en-el-campo"><i class="fa fa-check"></i><b>4.1</b> Consideraciones en la colecta de datos en el campo</a></li>
+<li class="chapter" data-level="4.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#tipo-de-crecimiento-en-las-orquídeas"><i class="fa fa-check"></i><b>4.2</b> Tipo de crecimiento en las orquídeas</a></li>
+<li class="chapter" data-level="4.3" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#métodos-y-técnicas-de-muestreo"><i class="fa fa-check"></i><b>4.3</b> Métodos y técnicas de muestreo</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-epífitas-y-rupícolas."><i class="fa fa-check"></i><b>4.3.1</b> <em>Orquídeas epífitas y rupícolas</em>.</a></li>
+<li class="chapter" data-level="4.3.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#orquídeas-terrestres."><i class="fa fa-check"></i><b>4.3.2</b> <em>Orquídeas terrestres</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#marcaje-y-monitoreo-de-los-individuos-en-el-tiempo"><i class="fa fa-check"></i><b>4.4</b> Marcaje y monitoreo de los individuos en el tiempo</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#etapas-de-las-orquídeas-de-estudio-a-identificar-en-campo"><i class="fa fa-check"></i><b>4.4.1</b> Etapas de las orquídeas de estudio a identificar en campo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificar-la-características-de-la-especie-de-estudio"><i class="fa fa-check"></i><b>4.5</b> Identificar la características de la especie de estudio</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#identificación-y-etiquetado-de-individuos."><i class="fa fa-check"></i><b>4.5.1</b> Identificación y etiquetado de individuos.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#variables-a-registrar-en-campo"><i class="fa fa-check"></i><b>4.6</b> Variables a registrar en campo</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#crecimiento-o-reiteración-vegetativa."><i class="fa fa-check"></i><b>4.6.1</b> <em>Crecimiento o reiteración vegetativa</em>.</a></li>
+<li class="chapter" data-level="4.6.2" data-path="como-recopilar-datos-en-el-campo.html"><a href="como-recopilar-datos-en-el-campo.html#ejemplos-de-categorización-en-especies-de-estudio"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos de categorización en especies de estudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><i class="fa fa-check"></i><b>5</b> Como calcular transiciones para la matriz de Lefkovitch</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#métodos-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.2</b> Métodos tradicional de calcular las transiciones</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construyendo-la-matriz-de-transiciones"><i class="fa fa-check"></i><b>5.2.1</b> Construyendo la matriz de transiciones</a></li>
+<li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
+<li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#matriz-con-clonaje"><i class="fa fa-check"></i><b>5.3</b> Matriz con Clonaje</a></li>
+<li class="chapter" data-level="5.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#extraer-la-matriz-de-clonaje"><i class="fa fa-check"></i><b>5.4</b> Extraer la matriz de Clonaje</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.4.1</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.4.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.4.2</b> Problema con el uso tradicional de calcular las transiciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#por-demetria-y-aucencia-equipo-ecosur"><i class="fa fa-check"></i><b>6.1</b> Por: Demetria y Aucencia: equipo ECOSUR</a></li>
+<li class="chapter" data-level="6.2" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#métodos-tradicional-de-calcular-las-transiciones-1"><i class="fa fa-check"></i><b>6.2</b> Métodos tradicional de calcular las transiciones</a></li>
+<li class="chapter" data-level="6.3" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#problema-con-el-uso-tradicional"><i class="fa fa-check"></i><b>6.3</b> Problema con el uso tradicional</a></li>
+<li class="chapter" data-level="6.4" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html#referencias"><i class="fa fa-check"></i><b>6.4</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="MatricesTFC.html"><a href="MatricesTFC.html"><i class="fa fa-check"></i><b>7</b> Matrices de transicion, fecundidad y clonal</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="MatricesTFC.html"><a href="MatricesTFC.html#por-raymond"><i class="fa fa-check"></i><b>7.1</b> Por: Raymond</a></li>
+<li class="chapter" data-level="7.2" data-path="MatricesTFC.html"><a href="MatricesTFC.html#tres-tipos-de-matrices"><i class="fa fa-check"></i><b>7.2</b> Tres tipos de matrices</a></li>
+<li class="chapter" data-level="7.3" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matu-matriz-de-transiciones"><i class="fa fa-check"></i><b>7.3</b> MatU: Matriz de transiciones</a></li>
+<li class="chapter" data-level="7.4" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matf-matriz-de-fecundidad"><i class="fa fa-check"></i><b>7.4</b> MatF: Matriz de fecundidad</a></li>
+<li class="chapter" data-level="7.5" data-path="MatricesTFC.html"><a href="MatricesTFC.html#matc-matriz-de-clonación"><i class="fa fa-check"></i><b>7.5</b> MatC = Matriz de clonación</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><i class="fa fa-check"></i><b>8</b> Método bayesiano de calcular las transciones y fecundidades</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-paquete-raretrans"><i class="fa fa-check"></i><b>8.1</b> El paquete “raretrans”</a></li>
+<li class="chapter" data-level="8.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-los-paquetes-1"><i class="fa fa-check"></i><b>8.2</b> Instalación de los paquetes #1</a></li>
+<li class="chapter" data-level="8.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#instalación-de-raretrans-2"><i class="fa fa-check"></i><b>8.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="8.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#obtención-de-la-matriz-de-proyección"><i class="fa fa-check"></i><b>8.4</b> Obtención de la matriz de proyección</a></li>
+<li class="chapter" data-level="8.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-1-cargar-y-fusionar-los-datos-de-población-única-para-l.-elto"><i class="fa fa-check"></i><b>8.5</b> Paso 1: Cargar y fusionar los datos de población única para <em>L. elto</em></a></li>
+<li class="chapter" data-level="8.6" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#organización-de-los-datos-en-el-data.frame"><i class="fa fa-check"></i><b>8.6</b> Organización de los datos en el “data.frame”</a></li>
+<li class="chapter" data-level="8.7" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#nota"><i class="fa fa-check"></i><b>8.7</b> Nota:</a></li>
+<li class="chapter" data-level="8.8" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#paso-2-obtener-el-número-inicial-de-individuos-por-etapa"><i class="fa fa-check"></i><b>8.8</b> Paso 2: Obtener el número inicial de individuos por etapa</a></li>
+<li class="chapter" data-level="8.9" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#metodo-alterno-de-calcular-las-transiciones-fecundidades-y-el-número-de-individuos-por-etapas"><i class="fa fa-check"></i><b>8.9</b> Metodo alterno de calcular las transiciones, fecundidades y el número de individuos por etapas</a></li>
+<li class="chapter" data-level="8.10" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#uso-de-priors-para-incorporar-transiciones-raras"><i class="fa fa-check"></i><b>8.10</b> Uso de priors para incorporar transiciones raras</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#use-priors-no-informativos"><i class="fa fa-check"></i><b>8.10.1</b> Use priors no informativos</a></li>
+<li class="chapter" data-level="8.10.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-transición"><i class="fa fa-check"></i><b>8.10.2</b> Matriz de transición</a></li>
+<li class="chapter" data-level="8.10.3" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#como-calcular-a-mano"><i class="fa fa-check"></i><b>8.10.3</b> Como calcular a mano!</a></li>
+<li class="chapter" data-level="8.10.4" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#matriz-de-fecundidad"><i class="fa fa-check"></i><b>8.10.4</b> Matriz de fecundidad</a></li>
+<li class="chapter" data-level="8.10.5" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#calculando-los-valores-a-priori-de-fertilidad-a-mano"><i class="fa fa-check"></i><b>8.10.5</b> Calculando los valores a priori de fertilidad a mano</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-crecimiento-poblacional"><i class="fa fa-check"></i><b>8.11</b> El crecimiento poblacional</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#otras-opciones-para-el-argumento-returntype"><i class="fa fa-check"></i><b>8.11.1</b> Otras opciones para el argumento `returnType</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#añadiendo-realidad-a-los-análisis"><i class="fa fa-check"></i><b>8.12</b> Añadiendo realidad a los análisis</a>
+<ul>
+<li class="chapter" data-level="8.12.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#incorporar-priores-informativos"><i class="fa fa-check"></i><b>8.12.1</b> Incorporar priores informativos</a></li>
+<li class="chapter" data-level="8.12.2" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#modificar-el-peso-de-los-valores-a-priori"><i class="fa fa-check"></i><b>8.12.2</b> MOdificar el peso de los valores a priori</a></li>
+</ul></li>
+<li class="chapter" data-level="8.13" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-de-confianza-de-los-parámetros"><i class="fa fa-check"></i><b>8.13</b> Intervalos de Confianza de los parámetros</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#el-efecto-del-tamaño-de-muestra-sobre-los-intervalos-creíbles"><i class="fa fa-check"></i><b>8.13.1</b> El efecto del tamaño de muestra sobre los intervalos creíbles</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#intervalos-creíbles-de-lambda"><i class="fa fa-check"></i><b>8.14</b> Intervalos creíbles de <span class="math inline">\(\lambda\)</span></a></li>
+<li class="chapter" data-level="8.15" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#determinar-si-el-lambda-es-significativamente-diferente-de-1"><i class="fa fa-check"></i><b>8.15</b> Determinar si el <span class="math inline">\(\lambda\)</span> es significativamente diferente de 1</a>
+<ul>
+<li class="chapter" data-level="8.15.1" data-path="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html"><a href="método-bayesiano-de-calcular-las-transciones-y-fecundidades.html#tabla-de-resultado-de-lambda"><i class="fa fa-check"></i><b>8.15.1</b> Tabla de resultado de lambda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html"><i class="fa fa-check"></i><b>9</b> Crecimiento Poblacional</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#introducción-al-crecimiento-poblacional"><i class="fa fa-check"></i><b>9.1</b> Introducción al crecimiento poblacional</a></li>
+<li class="chapter" data-level="9.2" data-path="crecimiento-poblacional.html"><a href="crecimiento-poblacional.html#métodos"><i class="fa fa-check"></i><b>9.2</b> Métodos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html"><i class="fa fa-check"></i><b>10</b> Estimación de Parametros</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#por-mariana-y-paola"><i class="fa fa-check"></i><b>10.1</b> Por: Mariana y Paola</a></li>
+<li class="chapter" data-level="10.2" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#en-este-capitulo-se-cubrirá-varios-estimación-de-parametros."><i class="fa fa-check"></i><b>10.2</b> En este capitulo se cubrirá varios estimación de parametros.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#condición-basica-de-las-matrices-de-transición"><i class="fa fa-check"></i><b>10.2.1</b> Condición basica de las matrices de transición</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#librerías-de-r-requeridas-para-el-análisis"><i class="fa fa-check"></i><b>10.3</b> Librerías de R requeridas para el análisis</a></li>
+<li class="chapter" data-level="10.4" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#paso-2-condiciones-que-debe-cumplir-la-matriz-de-estudio"><i class="fa fa-check"></i><b>10.4</b> PASO 2: CONDICIONES QUE DEBE CUMPLIR LA MATRIZ DE ESTUDIO</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#analisis-de-convergencia-y-damping-ratio"><i class="fa fa-check"></i><b>10.4.1</b> Analisis de convergencia y “Damping Ratio”</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-asintótico-i.e.-largo-plazo-del-crecimiento-poblacional-de-l.-rubripetala."><i class="fa fa-check"></i><b>10.5</b> Análisis asintótico (i.e. largo plazo) del crecimiento poblacional de L. rubripetala.</a></li>
+<li class="chapter" data-level="10.6" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#estructura-estable"><i class="fa fa-check"></i><b>10.6</b> Estructura estable</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#damping-ratio"><i class="fa fa-check"></i><b>10.6.1</b> Damping Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-amortiguamientodamping-ratio"><i class="fa fa-check"></i><b>10.7</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="10.8" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#análisis-de-convergencia"><i class="fa fa-check"></i><b>10.8</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="10.9" data-path="estimación-de-parametros.html"><a href="estimación-de-parametros.html#valores-reproductivos"><i class="fa fa-check"></i><b>10.9</b> Valores reproductivos</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="elasticidad.html"><a href="elasticidad.html"><i class="fa fa-check"></i><b>11</b> Elasticidad</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="elasticidad.html"><a href="elasticidad.html#librerías-de-r-requeridas-para-el-siguiente-modulo"><i class="fa fa-check"></i><b>11.1</b> Librerías de R requeridas para el siguiente modulo</a></li>
+<li class="chapter" data-level="11.2" data-path="elasticidad.html"><a href="elasticidad.html#qué-es-la-elasticidad"><i class="fa fa-check"></i><b>11.2</b> Qué es la Elasticidad</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="elasticidad.html"><a href="elasticidad.html#sensibilidad-y-elasticidad"><i class="fa fa-check"></i><b>11.2.1</b> Sensibilidad y Elasticidad</a></li>
+<li class="chapter" data-level="11.2.2" data-path="elasticidad.html"><a href="elasticidad.html#el-impacto-de-cambio-en-las-etapas"><i class="fa fa-check"></i><b>11.2.2</b> El impacto de cambio en las etapas</a></li>
+<li class="chapter" data-level="11.2.3" data-path="elasticidad.html"><a href="elasticidad.html#efecto-de-cambio-en-las-tansiciones-de-crecimiento-permanencia-y-fecundidad"><i class="fa fa-check"></i><b>11.2.3</b> Efecto de cambio en las tansiciones, de crecimiento, permanencia y fecundidad</a></li>
+<li class="chapter" data-level="11.2.4" data-path="elasticidad.html"><a href="elasticidad.html#como-se-usa-los-análisis-de-elasticidad-en-un-plan-de-conservación"><i class="fa fa-check"></i><b>11.2.4</b> Como se usa los análisis de elasticidad en un plan de conservación</a></li>
+<li class="chapter" data-level="11.2.5" data-path="elasticidad.html"><a href="elasticidad.html#comparación-entre-especies"><i class="fa fa-check"></i><b>11.2.5</b> Comparación entre especies</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>11.3</b> Limitaciones</a></li>
+<li class="chapter" data-level="11.4" data-path="elasticidad.html"><a href="elasticidad.html#para-calcular-los-autovalores-y-autovectores-de-la-matriz"><i class="fa fa-check"></i><b>11.4</b> Para calcular los autovalores y autovectores de la matriz</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>12</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>12.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="12.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>12.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>12.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#librerías-de-r-requeridas-para-el-análisis-1"><i class="fa fa-check"></i><b>12.3</b> Librerías de R requeridas para el análisis</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>12.3.1</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="12.3.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>12.3.2</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>12.4</b> Dinámica transitoria</a></li>
+<li class="chapter" data-level="12.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-estandarizada-límites"><i class="fa fa-check"></i><b>12.5</b> Dinámica transitoria estandarizada: límites</a></li>
+<li class="chapter" data-level="12.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-específica-de-la-población."><i class="fa fa-check"></i><b>12.6</b> Dinámica transitoria específica de la población.</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html"><i class="fa fa-check"></i><b>13</b> Funciones de Transferencias</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#la-elasticidad-no-lineal"><i class="fa fa-check"></i><b>13.1</b> La elasticidad no lineal</a></li>
+<li class="chapter" data-level="13.2" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#metodología"><i class="fa fa-check"></i><b>13.2</b> Metodología</a></li>
+<li class="chapter" data-level="13.3" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#ejemplo-tradicional"><i class="fa fa-check"></i><b>13.3</b> Ejemplo tradicional</a></li>
+<li class="chapter" data-level="13.4" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#valor-biológico"><i class="fa fa-check"></i><b>13.4</b> Valor biológico</a></li>
+<li class="chapter" data-level="13.5" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#métodos-de-calculo"><i class="fa fa-check"></i><b>13.5</b> Métodos de calculo</a></li>
+<li class="chapter" data-level="13.6" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>13.6</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
+<li class="chapter" data-level="13.7" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#referencias-1"><i class="fa fa-check"></i><b>13.7</b> Referencias</a></li>
+<li class="chapter" data-level="13.8" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#funciones-de-transferencia"><i class="fa fa-check"></i><b>13.8</b> Funciones de transferencia</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>14</b> LTRE</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ltre.html"><a href="ltre.html#introducción-a-experimento-de-respuesta-de-tabla-de-vida"><i class="fa fa-check"></i><b>14.1</b> Introducción a <strong>Experimento de Respuesta de Tabla de Vida</strong></a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>14.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>14.2</b> Métodos</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>14.2.1</b> Ejemplo práctico de ERTV</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>14.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
+<li class="chapter" data-level="14.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.3</b> Diagrama para <em>Quercus martinezii</em></a></li>
+<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para Quercus rugosa</a></li>
+<li class="chapter" data-level="14.2.5" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>14.2.5</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="14.2.6" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>14.2.6</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
+<li class="chapter" data-level="14.2.7" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>14.2.7</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="14.2.8" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>14.2.8</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ltre.html"><a href="ltre.html#hay-algo-extraño-en-la-matriz-de-sensibilidades-y-elasticidades-no-se-ve-bien.-hay-elasticidad-negativas-y-esto-no-es-posible.-hay-que-revisar-el-código."><i class="fa fa-check"></i><b>14.3</b> HAY algo extraño en la matriz de sensibilidades y elasticidades, no se ve bien., hay elasticidad negativas, y esto no es posible. Hay que revisar el código.</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>14.3.1</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.3.2</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="14.3.3" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.3.3</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="14.3.4" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>14.3.4</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="14.3.5" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>14.3.5</b> Resultados de ERTV</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html"><i class="fa fa-check"></i><b>15</b> Variación temporal y Espacial por simulaciones</a>
+<ul>
+<li class="chapter" data-level="15.0.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#componentes-de-variación"><i class="fa fa-check"></i><b>15.0.1</b> Componentes de Variación</a></li>
+<li class="chapter" data-level="15.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#introducción-a-los-métodos-de-simulaciones"><i class="fa fa-check"></i><b>15.1</b> Introducción a los métodos de simulaciones</a></li>
+<li class="chapter" data-level="15.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>15.2</b> Estocasticidad espacial</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#entrada-de-datos"><i class="fa fa-check"></i><b>15.2.1</b> Entrada de datos</a></li>
+<li class="chapter" data-level="15.2.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#cual-es-la-distribución-de-número-de-individuos-esperado."><i class="fa fa-check"></i><b>15.2.2</b> Cual es la distribución de número de individuos esperado.</a></li>
+<li class="chapter" data-level="15.2.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#simulaciones-con-diferente-probabilidad-de-selección"><i class="fa fa-check"></i><b>15.2.3</b> Simulaciones con diferente probabilidad de selección</a></li>
+<li class="chapter" data-level="15.2.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones"><i class="fa fa-check"></i><b>15.2.4</b> Comparar la distribución de cantidad de individuos esperado por simulaciones</a></li>
+<li class="chapter" data-level="15.2.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#impacto-antropogénico-vs-poblaciones-naturales"><i class="fa fa-check"></i><b>15.2.5</b> Impacto antropogénico vs poblaciones naturales</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>15.3</b> Estocasticidad temporal</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparación-de-la-variación-temporal-y-espacial-en-un-gráfico"><i class="fa fa-check"></i><b>15.3.1</b> Comparación de la variación temporal y espacial en un gráfico</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-demográfica"><i class="fa fa-check"></i><b>15.4</b> Estocasticidad demográfica</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>15.4.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>15.5</b> Ventaja de usar simulaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>16</b> El uso de matrices para estudios evolutivos</a></li>
+<li class="chapter" data-level="17" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><i class="fa fa-check"></i><b>17</b> Historia breve de la dinámica poblacional en orquídeas.</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#familia-de-plantas-evaluadas"><i class="fa fa-check"></i><b>17.0.1</b> Familia de plantas evaluadas</a></li>
+<li class="chapter" data-level="17.0.2" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios-con-orquídeas"><i class="fa fa-check"></i><b>17.0.2</b> Los primeros estudios con Orquídeas</a></li>
+<li class="chapter" data-level="17.0.3" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#latencia-en-orquídeas"><i class="fa fa-check"></i><b>17.0.3</b> Latencia en Orquídeas</a></li>
+<li class="chapter" data-level="17.0.4" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#métodos-alternos-para-estimar-la-latencia-incluye"><i class="fa fa-check"></i><b>17.0.4</b> Métodos alternos para estimar la latencia incluye</a></li>
+<li class="chapter" data-level="17.0.5" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas"><i class="fa fa-check"></i><b>17.0.5</b> Perspectiva Histórica de la Dinámica Poblacional en Orquídeas</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html"><i class="fa fa-check"></i><b>18</b> Carl Olaf Tamm</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#quien-es-carl-olaf-tamm"><i class="fa fa-check"></i><b>18.1</b> Quien es Carl Olaf Tamm?</a></li>
+<li class="chapter" data-level="18.2" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#re-evaluación-de-los-datos-de-tamm"><i class="fa fa-check"></i><b>18.2</b> Re-evaluación de los datos de Tamm</a></li>
+<li class="chapter" data-level="18.3" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#instalación-de-raretrans-2-1"><i class="fa fa-check"></i><b>18.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="18.4" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#construcción-de-la-matriz-de-transición"><i class="fa fa-check"></i><b>18.4</b> Construcción de la matriz de transición</a></li>
+<li class="chapter" data-level="18.5" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#constucción-de-la-matriz-de-fertilidad"><i class="fa fa-check"></i><b>18.5</b> Constucción de la matriz de fertilidad</a></li>
+<li class="chapter" data-level="18.6" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#simulando-el-crecimiento-poblacional"><i class="fa fa-check"></i><b>18.6</b> Simulando el crecimiento poblacional</a></li>
+<li class="chapter" data-level="18.7" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#visualización-de-las-distribuciones-de-los-lambda"><i class="fa fa-check"></i><b>18.7</b> Visualización de las distribuciones de los lambda</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>19</b> Compadre_Orchid PPM y su uso</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#activar-los-siguiente-paquetes"><i class="fa fa-check"></i><b>19.1</b> Activar los siguiente paquetes</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.1</b> Acceso a los datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>19.1.2</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="19.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cual-son-los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>19.1.3</b> Cual son los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="19.1.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.4</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>19.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>19.2.1</b> La fuente de la información</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#frecuencia-de-autores-unicos-en-la-base-de-datos"><i class="fa fa-check"></i><b>19.3</b> Frecuencia de autores unicos en la base de datos</a></li>
+<li class="chapter" data-level="19.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>19.4</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="19.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#extraer-información-de-una-especie-específica"><i class="fa fa-check"></i><b>19.5</b> Extraer información de una especie específica</a></li>
+<li class="chapter" data-level="19.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>19.6</b> Cuantos estudios unicos?</a>
+<ul>
+<li class="chapter" data-level="19.6.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-fueron-muestreadas-por-especies"><i class="fa fa-check"></i><b>19.6.1</b> Determinar cuantas poblaciones fueron muestreadas por especies</a></li>
+<li class="chapter" data-level="19.6.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuan-largo-fueron-los-estudios"><i class="fa fa-check"></i><b>19.6.2</b> ¿Cuan largo fueron los estudios?</a></li>
+<li class="chapter" data-level="19.6.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#tiempo-de-duración-de-las-investigaciones."><i class="fa fa-check"></i><b>19.6.3</b> Tiempo de duración de las investigaciones.</a></li>
+<li class="chapter" data-level="19.6.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-la-ergodicidad-e-irreducibilidad-y-el-valor-propio-de-las-matrices"><i class="fa fa-check"></i><b>19.6.4</b> Evaluación de la ergodicidad e irreducibilidad y el valor propio de las matrices</a></li>
+<li class="chapter" data-level="19.6.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#ahora-usando-las-matrices-que-cumple-con-las-condiciones-de-ergodicidad-y-irreducbilidad-se-puede-calcular-el-valor-propio-de-lambda."><i class="fa fa-check"></i><b>19.6.5</b> Ahora usando las matrices que cumple con las condiciones de ergodicidad y irreducbilidad se puede calcular el valor propio de lambda.</a></li>
+<li class="chapter" data-level="19.6.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#need-to-move-this-before-as-the-caladenias-are-terrerstrial-and-not-epiphytes"><i class="fa fa-check"></i><b>19.6.6</b> Need to move this before as the Caladenia’s are terrerstrial and not epiphytes</a></li>
+</ul></li>
+<li class="chapter" data-level="19.7" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#resolve-the-name-of-this-data-frame-give-it-a-more-reasonable-name"><i class="fa fa-check"></i><b>19.7</b> Resolve the name of this data frame… Give it a more reasonable name</a>
+<ul>
+<li class="chapter" data-level="19.7.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-cantidad-de-poblaciones-por-especies-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.7.1</b> La cantidad de poblaciones por especies en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.7.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-las-especies-con-más-de-10-poblaciones-distintas"><i class="fa fa-check"></i><b>19.7.2</b> Filtrar para las especies con más de 10 poblaciones distintas</a></li>
+</ul></li>
+<li class="chapter" data-level="19.8" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas."><i class="fa fa-check"></i><b>19.8</b> Crear un mapa de las distribuciones de las orquídeas.</a></li>
+<li class="chapter" data-level="19.9" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-esperanza-de-vida-de-las-orquídeas"><i class="fa fa-check"></i><b>19.9</b> La esperanza de vida de las orquídeas</a>
+<ul>
+<li class="chapter" data-level="19.9.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>19.9.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>20</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>20.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido biológicos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeñas-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeñas o eventos raros</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#quiero-otro-ejemplo-de-esto"><i class="fa fa-check"></i><b>21.3.1</b> <strong>QUIERO OTRO EJEMPLO DE ESTO</strong></a></li>
+<li class="chapter" data-level="21.3.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.2</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>21.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="21.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza-con-una-n250"><i class="fa fa-check"></i><b>21.5.2</b> Los estimados de Intervalo de camfianza con una n=250</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>22</b> Nhora</a></li>
+<li class="chapter" data-level="23" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html"><i class="fa fa-check"></i><b>23</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-poblacional-de-largo-y-corto-plazo-1"><i class="fa fa-check"></i><b>23.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="23.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo-1"><i class="fa fa-check"></i><b>23.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#part-i-dinámica-poblacional-de-largo-plazo-1"><i class="fa fa-check"></i><b>23.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+<li class="chapter" data-level="23.2.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0-1"><i class="fa fa-check"></i><b>23.2.2</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="23.2.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#crecimiento-asintótico-1"><i class="fa fa-check"></i><b>23.2.3</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#estructura-estable-1"><i class="fa fa-check"></i><b>23.3</b> Estructura estable</a></li>
+<li class="chapter" data-level="23.4" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#valores-reproductivos-1"><i class="fa fa-check"></i><b>23.4</b> Valores reproductivos</a></li>
+<li class="chapter" data-level="23.5" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-elasticidad"><i class="fa fa-check"></i><b>23.5</b> Análisis de elasticidad</a></li>
+<li class="chapter" data-level="23.6" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-amortiguamientodamping-ratio-1"><i class="fa fa-check"></i><b>23.6</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="23.7" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-convergencia-1"><i class="fa fa-check"></i><b>23.7</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="23.8" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-1"><i class="fa fa-check"></i><b>23.8</b> Dinámica transitoria</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i>Appendix A</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#lista-completa-de-todos-los-trabajos-dinámica-poblacional-en-orquídea-que-han-usado-matriz"><i class="fa fa-check"></i>Lista completa de todos los trabajos dinámica poblacional en orquídea que han usado matriz</a></li>
+<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html#lista-parcial-de-especies-de-orquídeas-que-han-sido-estudiadas-que-no-incluye-matrices"><i class="fa fa-check"></i>Lista parcial de especies de orquídeas que han sido estudiadas que no incluye matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i>Appendix B</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#hojas-de-datos-en-el-campo"><i class="fa fa-check"></i>Hojas de datos en el campo</a></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#ejemplos-de-tablas-de-datos"><i class="fa fa-check"></i>Ejemplos de tablas de Datos</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#usando-ejemplo-de-tremblay-y-su-codificación"><i class="fa fa-check"></i>Usando ejemplo de Tremblay [] y su codificación</a></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#almacenamiento-de-datos-de-forma-digital"><i class="fa fa-check"></i>Almacenamiento de datos de forma digital</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html"><i class="fa fa-check"></i><b>24</b> Variación Demográfica, Espacial y Temporal</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html#variación-demográfica"><i class="fa fa-check"></i><b>24.1</b> Variación Demográfica</a></li>
+<li class="chapter" data-level="24.2" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html#aumentando-el-tamaño-de-muestra"><i class="fa fa-check"></i><b>24.2</b> Aumentando el tamaño de muestra</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>25</b> install.packages(“bbmle”)</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dinamica Poblacional</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="variación-demográfica-espacial-y-temporal" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">Capítulo 24</span> Variación Demográfica, Espacial y Temporal<a href="variación-demográfica-espacial-y-temporal.html#variación-demográfica-espacial-y-temporal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La variación en los estimados de parámetros tienen impacto sobre la estimación de lambda.</p>
+<p>Hay 3 tipos de variación que podemos tomar en cuenta y evaluar su impacto sobre la estimación de lambda:</p>
+<ul>
+<li>Variación Demográfica</li>
+<li>Variación Espacial</li>
+<li>Variación Temporal</li>
+</ul>
+<div id="variación-demográfica" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">24.1</span> Variación Demográfica<a href="variación-demográfica-espacial-y-temporal.html#variación-demográfica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Uno de las preguntas principales que se hace sobre la confiabilidad de los trabajos de dinámica poblacional con especies raras, es cual es el impacto de tener pocos individuos para estimar los parámetros de la matriz poblacional sobre lambda.<br />
+Aqui se presente un método de calcular la varianza de lambda, tomando en cuenta los parámetros, la sensitividad y el tamaño de muestra que se uso para calcular los parámetros. Con experiencia es lógico que con muchos individuos, la varianza es pequeña, pero con pocos individuos, la varianza debería ser ser grande. Pero en el caso del impacto de esa varianza sobre lambda se debería tomar en cuenta la sensitividad de lambda a los parámetros de la matriz. En otra palabra parámetros con alta sensitividad sobre lambda, deberían tener una varianza grande cuando los tamaños de muestra son pequenõs, pero que el efecto de confianza sea basado en el tamaño de muestra. El método presentado aquí es una modificación de la formula sugerido por Thomas A. Ebert en su libro <strong>Plant and Animal Populations. Methods in Demography</strong> <span class="citation">(<a href="#ref-ebert1999demography">Ebert 1999</a>)</span>.</p>
+<p>La varianza de lambda deberia ser ajustado por el tamaño de muestra y la sensitividad de lambda a los parámetros de la matriz poblacional.</p>
+<p><span class="math display">\[Var(\lambda) = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial \lambda}{\partial a_{ij}}^2 V(a_{ij})\]</span></p>
+<p>La sensitividad, <span class="math inline">\(\frac{\partial \lambda}{\partial a_{ij}}\)</span>, de lambda a los parámetros de la matriz poblacional, <span class="math inline">\(a_{ij}\)</span>, se puede calcular con la función <strong>sens</strong> del paquete popbio.</p>
+<p>y por consecuencia la varianza de cada parámetros es <span class="math display">\[Var(a_{ij}) = \frac{a_{ij}(1-a_{ij})}{N_{ij}}\]</span>, donde N es el tamaño de muestra.</p>
+<p>En este primer ejemplo usamos la formula presentado por Ebert para calcular la varianza de lambda, tomando en cuenta la sensitividad de lambda a los parámetros de la matriz poblacional y el tamaño de muestra. Pero note que estamos asumiendo que 1) la sensitividad de lambda a los parámetros de la matriz poblacional es constante, 2) la razón son binomio (sobrevive o no), que los intervalos de confianza tienen una distribución normal. El ultimo, pudiese ser un problema cuando los parámetros se encuentra cerca de 0 o 1, resultando en varianza que so ilógicos (negativos o mayor de uno).</p>
+<p>Los datos necesarios para calcular la estocasticidad demográfica son los siguientes</p>
+<ul>
+<li>La matriz de transición poblacional</li>
+<li>El tamaño de muestra de cada etapa</li>
+<li>La sensitividad de lambda a los parámetros de la matriz poblacional</li>
+</ul>
+<p>Para el ejercicio usamos datos de <em>Lepanthes eltoroensis</em> de una población y un periodo de tiempo. los datos se encuentran en el paquete raretrans.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="variación-demográfica-espacial-y-temporal.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(raretrans) <span class="co"># activar el paquete</span></span>
+<span id="cb1-2"><a href="variación-demográfica-espacial-y-temporal.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># activar el paquete</span></span>
+<span id="cb1-3"><a href="variación-demográfica-espacial-y-temporal.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(popbio) <span class="co"># activar el paquete)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="variación-demográfica-espacial-y-temporal.html#cb2-1" tabindex="-1"></a><span class="fu">unique</span>(L_elto<span class="sc">$</span>POPNUM) <span class="co"># Verificar cuantas poblaciones hay</span></span></code></pre></div>
+<pre><code>##  [1] 209 229 231 234 235 243 250 255 268 274 275 904 905 906 907 908 911 913 914
+## [20] 915 916 926 266  NA</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="variación-demográfica-espacial-y-temporal.html#cb4-1" tabindex="-1"></a>onepopt1 <span class="ot">&lt;-</span> L_elto <span class="sc">%&gt;%</span>   </span>
+<span id="cb4-2"><a href="variación-demográfica-espacial-y-temporal.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="variación-demográfica-espacial-y-temporal.html#cb4-3" tabindex="-1"></a>  <span class="fu">filter</span>(POPNUM<span class="sc">==</span> <span class="dv">209</span>) <span class="co"># Usando todas las poblaciones de 209</span></span>
+<span id="cb4-4"><a href="variación-demográfica-espacial-y-temporal.html#cb4-4" tabindex="-1"></a> </span>
+<span id="cb4-5"><a href="variación-demográfica-espacial-y-temporal.html#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="variación-demográfica-espacial-y-temporal.html#cb4-6" tabindex="-1"></a><span class="co"># popbio::projection.matrix no funciona con el formato *tibbles*, por consecuencia se convierte en data.frame</span></span>
+<span id="cb4-7"><a href="variación-demográfica-espacial-y-temporal.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="variación-demográfica-espacial-y-temporal.html#cb4-8" tabindex="-1"></a><span class="fu">head</span>(onepopt1) <span class="co"># Ahora tenemos solamente datos de la población #209 </span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 13
+##   POPNUM  year seedlings adults fertility IND_NUM stage next_stage first_year
+##    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1    209     1         1      6         0      67 j     j                   1
+## 2    209     1         1      6         0      68 a     a                   1
+## 3    209     1         1      6         0      69 a     a                   1
+## 4    209     1         1      6         0      70 a     a                   1
+## 5    209     1         1      6         0      71 j     a                   1
+## 6    209     1         1      6         0      72 a     a                   1
+## # ℹ 4 more variables: last_year &lt;dbl&gt;, recruited &lt;lgl&gt;, died &lt;dbl&gt;,
+## #   lifespan &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="variación-demográfica-espacial-y-temporal.html#cb6-1" tabindex="-1"></a><span class="co"># Crear TF = TRUE, añadir para formatear correctamente.</span></span>
+<span id="cb6-2"><a href="variación-demográfica-espacial-y-temporal.html#cb6-2" tabindex="-1"></a>TF <span class="ot">&lt;-</span> popbio<span class="sc">::</span><span class="fu">projection.matrix</span>(<span class="fu">as.data.frame</span>(onepopt1), </span>
+<span id="cb6-3"><a href="variación-demográfica-espacial-y-temporal.html#cb6-3" tabindex="-1"></a>                        <span class="at">stage =</span> stage, <span class="at">fate =</span> next_stage, </span>
+<span id="cb6-4"><a href="variación-demográfica-espacial-y-temporal.html#cb6-4" tabindex="-1"></a>                        <span class="at">fertility=</span><span class="st">&quot;fertility&quot;</span>, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>), <span class="at">TF =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning: Error sorting matrix.
+##   Make sure that levels in stage and fate columns
+##   match stages listed in sort option above.
+##  Printing unsorted matrix instead!</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="variación-demográfica-espacial-y-temporal.html#cb8-1" tabindex="-1"></a>TF <span class="co"># Este es la estructura de etapas de vida para esa población.  Nota que tenemos dos matrices, una de transiciones **T** y otra de fertilidad **F**. </span></span></code></pre></div>
+<pre><code>## $T
+##    
+##              a          j          p
+##   a 0.84444444 0.03030303 0.16666667
+##   j 0.06666667 0.56565657 0.16666667
+##   m 0.08888889 0.40404040 0.66666667
+## 
+## $F
+##    
+##              a          j          p
+##   a 0.05555556 0.00000000 0.00000000
+##   j 0.00000000 0.00000000 0.00000000
+##   m 0.00000000 0.00000000 0.00000000</code></pre>
+<p>Calcular la sensitividad de la matriz A</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="variación-demográfica-espacial-y-temporal.html#cb10-1" tabindex="-1"></a>matA<span class="ot">=</span>TF<span class="sc">$</span>T<span class="sc">+</span>TF<span class="sc">$</span>F</span>
+<span id="cb10-2"><a href="variación-demográfica-espacial-y-temporal.html#cb10-2" tabindex="-1"></a>matA</span></code></pre></div>
+<pre><code>##    
+##              a          j          p
+##   a 0.90000000 0.03030303 0.16666667
+##   j 0.06666667 0.56565657 0.16666667
+##   m 0.08888889 0.40404040 0.66666667</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="variación-demográfica-espacial-y-temporal.html#cb12-1" tabindex="-1"></a>matAsens<span class="ot">=</span><span class="fu">as.matrix</span>(<span class="fu">sensitivity</span>(matA)) <span class="co"># matrix de sensitividad </span></span>
+<span id="cb12-2"><a href="variación-demográfica-espacial-y-temporal.html#cb12-2" tabindex="-1"></a>matAsens</span></code></pre></div>
+<pre><code>##    
+##             a         j         p
+##   a 0.5308370 0.2088967 0.3655064
+##   j 0.4211186 0.1657199 0.2899601
+##   m 0.4407004 0.1734258 0.3034431</code></pre>
+<p>Calcular cuanto individuos habia en el primer periodo como un estimado tipico del tamaño poblacional</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="variación-demográfica-espacial-y-temporal.html#cb14-1" tabindex="-1"></a>N_t1<span class="ot">=</span>L_elto <span class="sc">%&gt;%</span>   </span>
+<span id="cb14-2"><a href="variación-demográfica-espacial-y-temporal.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="variación-demográfica-espacial-y-temporal.html#cb14-3" tabindex="-1"></a>  <span class="fu">filter</span>(POPNUM<span class="sc">==</span> <span class="dv">209</span>, year<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb14-4"><a href="variación-demográfica-espacial-y-temporal.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="variación-demográfica-espacial-y-temporal.html#cb14-5" tabindex="-1"></a>Nt1 <span class="ot">&lt;-</span> <span class="fu">get_state_vector</span>(N_t1, <span class="at">stage =</span> stage, <span class="at">sort=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;j&quot;</span>,<span class="st">&quot;a&quot;</span>)) </span>
+<span id="cb14-6"><a href="variación-demográfica-espacial-y-temporal.html#cb14-6" tabindex="-1"></a>Nt1</span></code></pre></div>
+<pre><code>## [1] 1 5 6</code></pre>
+<p>Convertimos la matriz de transiciones y de sensitividad y la unimos en un solo data.frame</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="variación-demográfica-espacial-y-temporal.html#cb16-1" tabindex="-1"></a>DFmat<span class="ot">=</span><span class="fu">as.data.frame</span>(matA)<span class="co"># Convertir matriz en un data frame</span></span>
+<span id="cb16-2"><a href="variación-demográfica-espacial-y-temporal.html#cb16-2" tabindex="-1"></a><span class="co">#DFmat</span></span>
+<span id="cb16-3"><a href="variación-demográfica-espacial-y-temporal.html#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="variación-demográfica-espacial-y-temporal.html#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="variación-demográfica-espacial-y-temporal.html#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="variación-demográfica-espacial-y-temporal.html#cb16-6" tabindex="-1"></a>DFsens<span class="ot">=</span><span class="fu">as.data.frame</span>(<span class="fu">as.vector</span>(matAsens)) <span class="co"># Método alternativo para convertir matriz en un data frame</span></span>
+<span id="cb16-7"><a href="variación-demográfica-espacial-y-temporal.html#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="variación-demográfica-espacial-y-temporal.html#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="variación-demográfica-espacial-y-temporal.html#cb16-9" tabindex="-1"></a>Contribucion_var<span class="ot">=</span><span class="fu">merge</span>(DFmat, DFsens, <span class="at">by=</span><span class="dv">0</span>) <span class="co"># Unir los dos data frames</span></span>
+<span id="cb16-10"><a href="variación-demográfica-espacial-y-temporal.html#cb16-10" tabindex="-1"></a>Contribucion_var<span class="sc">$</span>N<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>) <span class="co"># Añadir el tamaño de muestra</span></span>
+<span id="cb16-11"><a href="variación-demográfica-espacial-y-temporal.html#cb16-11" tabindex="-1"></a>Contribucion <span class="ot">=</span>Contribucion_var <span class="sc">|&gt;</span> </span>
+<span id="cb16-12"><a href="variación-demográfica-espacial-y-temporal.html#cb16-12" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;Sensitividad&quot;</span> <span class="ot">=</span> <span class="st">&quot;as.vector(matAsens)&quot;</span>) <span class="sc">|&gt;</span>   <span class="co"># Renombrar la columna e sensitividad</span></span>
+<span id="cb16-13"><a href="variación-demográfica-espacial-y-temporal.html#cb16-13" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">p =</span>Freq) <span class="co"># Renombrar la columna de la matriz de transición</span></span>
+<span id="cb16-14"><a href="variación-demográfica-espacial-y-temporal.html#cb16-14" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="variación-demográfica-espacial-y-temporal.html#cb16-15" tabindex="-1"></a>Contribucion</span></code></pre></div>
+<pre><code>##   Row.names Var1 Var2          p Sensitividad N
+## 1         1    a    a 0.90000000    0.5308370 1
+## 2         2    j    a 0.06666667    0.4211186 1
+## 3         3    m    a 0.08888889    0.4407004 1
+## 4         4    a    j 0.03030303    0.2088967 5
+## 5         5    j    j 0.56565657    0.1657199 5
+## 6         6    m    j 0.40404040    0.1734258 5
+## 7         7    a    p 0.16666667    0.3655064 6
+## 8         8    j    p 0.16666667    0.2899601 6
+## 9         9    m    p 0.66666667    0.3034431 6</code></pre>
+<p>Calcular la vvarianza y la contribución de la varianza a lambda</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="variación-demográfica-espacial-y-temporal.html#cb18-1" tabindex="-1"></a>Contribucion<span class="ot">=</span>Contribucion <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="variación-demográfica-espacial-y-temporal.html#cb18-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">V_aij =</span> (p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>N)) <span class="sc">|&gt;</span>  <span class="co"># Calcular la varianza de los parámetros sin tomar en cuenta la sensitividad</span></span>
+<span id="cb18-3"><a href="variación-demográfica-espacial-y-temporal.html#cb18-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Cont_deVar_lambda =</span> (Sensitividad<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>V_aij<span class="sc">^</span><span class="dv">2</span>) <span class="co"># Calcular la contribución de la varianza de cada parámetro a lambda</span></span>
+<span id="cb18-4"><a href="variación-demográfica-espacial-y-temporal.html#cb18-4" tabindex="-1"></a>Contribucion_var</span></code></pre></div>
+<pre><code>##   Row.names Var1 Var2       Freq as.vector(matAsens) N
+## 1         1    a    a 0.90000000           0.5308370 1
+## 2         2    j    a 0.06666667           0.4211186 1
+## 3         3    m    a 0.08888889           0.4407004 1
+## 4         4    a    j 0.03030303           0.2088967 5
+## 5         5    j    j 0.56565657           0.1657199 5
+## 6         6    m    j 0.40404040           0.1734258 5
+## 7         7    a    p 0.16666667           0.3655064 6
+## 8         8    j    p 0.16666667           0.2899601 6
+## 9         9    m    p 0.66666667           0.3034431 6</code></pre>
+<p>La suma de la contribución de la varianza de cada parámetro a lambda es la varianza de lambda</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="variación-demográfica-espacial-y-temporal.html#cb20-1" tabindex="-1"></a>Contribucion <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="variación-demográfica-espacial-y-temporal.html#cb20-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">V_lambda =</span> <span class="fu">sum</span>(Cont_deVar_lambda)) <span class="co"># Calcular la varianza de lambda</span></span></code></pre></div>
+<pre><code>##      V_lambda
+## 1 0.004623459</code></pre>
+<p>El intervalo de confianza de lambda se puede calcular con la formula de Ebert</p>
+<p>lambda +/- 1.96*sqrt(V_lambda)</p>
+<p>Por consecuencia el intervalo de confianza de lambda de esta población considerando la estocasticidad demogrófica rodea entre 0.89 y 1.16.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="variación-demográfica-espacial-y-temporal.html#cb22-1" tabindex="-1"></a>ICupper<span class="ot">=</span><span class="fu">lambda</span>(matA)<span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">sum</span>(Contribucion<span class="sc">$</span>Cont_deVar_lambda))</span>
+<span id="cb22-2"><a href="variación-demográfica-espacial-y-temporal.html#cb22-2" tabindex="-1"></a>LClower<span class="ot">=</span><span class="fu">lambda</span>(matA)<span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">sum</span>(Contribucion<span class="sc">$</span>Cont_deVar_lambda))</span>
+<span id="cb22-3"><a href="variación-demográfica-espacial-y-temporal.html#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="variación-demográfica-espacial-y-temporal.html#cb22-4" tabindex="-1"></a>ICupper</span></code></pre></div>
+<pre><code>## [1] 1.159955</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="variación-demográfica-espacial-y-temporal.html#cb24-1" tabindex="-1"></a>LClower</span></code></pre></div>
+<pre><code>## [1] 0.8934106</code></pre>
+</div>
+<div id="aumentando-el-tamaño-de-muestra" class="section level2 hasAnchor" number="24.2">
+<h2><span class="header-section-number">24.2</span> Aumentando el tamaño de muestra<a href="variación-demográfica-espacial-y-temporal.html#aumentando-el-tamaño-de-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En esta parte su usa la misma matriz pero con un tamaño de muestra mayor de 10, 50, 60. lo que se observa es que tenemos más confianza en el rango de lambda, 0.99 a 1.06.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="variación-demográfica-espacial-y-temporal.html#cb26-1" tabindex="-1"></a>DFmat<span class="ot">=</span><span class="fu">as.data.frame</span>(matA)<span class="co"># Convertir matriz en un data frame</span></span>
+<span id="cb26-2"><a href="variación-demográfica-espacial-y-temporal.html#cb26-2" tabindex="-1"></a><span class="co">#DFmat</span></span>
+<span id="cb26-3"><a href="variación-demográfica-espacial-y-temporal.html#cb26-3" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="variación-demográfica-espacial-y-temporal.html#cb26-4" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="variación-demográfica-espacial-y-temporal.html#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="variación-demográfica-espacial-y-temporal.html#cb26-6" tabindex="-1"></a>DFsens<span class="ot">=</span><span class="fu">as.data.frame</span>(<span class="fu">as.vector</span>(matAsens)) <span class="co"># Método alternativo para convertir matriz en un data frame</span></span>
+<span id="cb26-7"><a href="variación-demográfica-espacial-y-temporal.html#cb26-7" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="variación-demográfica-espacial-y-temporal.html#cb26-8" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="variación-demográfica-espacial-y-temporal.html#cb26-9" tabindex="-1"></a>Contribucion_var<span class="ot">=</span><span class="fu">merge</span>(DFmat, DFsens) <span class="co"># Unir los dos data frames</span></span>
+<span id="cb26-10"><a href="variación-demográfica-espacial-y-temporal.html#cb26-10" tabindex="-1"></a>Contribucion_var<span class="sc">$</span>N<span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">60</span>,<span class="dv">60</span>) <span class="co"># Añadir el tamaño de muestra, se aumento el tamaño de muestra</span></span>
+<span id="cb26-11"><a href="variación-demográfica-espacial-y-temporal.html#cb26-11" tabindex="-1"></a>Contribucion_var <span class="ot">=</span>Contribucion_var <span class="sc">|&gt;</span> </span>
+<span id="cb26-12"><a href="variación-demográfica-espacial-y-temporal.html#cb26-12" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;Sensitividad&quot;</span> <span class="ot">=</span> <span class="st">&quot;as.vector(matAsens)&quot;</span>) <span class="sc">|&gt;</span>   <span class="co"># Renombrar la columna e sensitividad</span></span>
+<span id="cb26-13"><a href="variación-demográfica-espacial-y-temporal.html#cb26-13" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">p =</span>Freq) <span class="co"># Renombrar la columna de la matriz de transición</span></span>
+<span id="cb26-14"><a href="variación-demográfica-espacial-y-temporal.html#cb26-14" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="variación-demográfica-espacial-y-temporal.html#cb26-15" tabindex="-1"></a>Contribucion_var</span></code></pre></div>
+<pre><code>##    Var1 Var2          p Sensitividad  N
+## 1     a    a 0.90000000    0.5308370 10
+## 2     j    a 0.06666667    0.5308370 10
+## 3     m    a 0.08888889    0.5308370 10
+## 4     a    j 0.03030303    0.5308370 50
+## 5     j    j 0.56565657    0.5308370 50
+## 6     m    j 0.40404040    0.5308370 50
+## 7     a    p 0.16666667    0.5308370 60
+## 8     j    p 0.16666667    0.5308370 60
+## 9     m    p 0.66666667    0.5308370 60
+## 10    a    a 0.90000000    0.4211186 10
+## 11    j    a 0.06666667    0.4211186 10
+## 12    m    a 0.08888889    0.4211186 10
+## 13    a    j 0.03030303    0.4211186 50
+## 14    j    j 0.56565657    0.4211186 50
+## 15    m    j 0.40404040    0.4211186 50
+## 16    a    p 0.16666667    0.4211186 60
+## 17    j    p 0.16666667    0.4211186 60
+## 18    m    p 0.66666667    0.4211186 60
+## 19    a    a 0.90000000    0.4407004 10
+## 20    j    a 0.06666667    0.4407004 10
+## 21    m    a 0.08888889    0.4407004 10
+## 22    a    j 0.03030303    0.4407004 50
+## 23    j    j 0.56565657    0.4407004 50
+## 24    m    j 0.40404040    0.4407004 50
+## 25    a    p 0.16666667    0.4407004 60
+## 26    j    p 0.16666667    0.4407004 60
+## 27    m    p 0.66666667    0.4407004 60
+## 28    a    a 0.90000000    0.2088967 10
+## 29    j    a 0.06666667    0.2088967 10
+## 30    m    a 0.08888889    0.2088967 10
+## 31    a    j 0.03030303    0.2088967 50
+## 32    j    j 0.56565657    0.2088967 50
+## 33    m    j 0.40404040    0.2088967 50
+## 34    a    p 0.16666667    0.2088967 60
+## 35    j    p 0.16666667    0.2088967 60
+## 36    m    p 0.66666667    0.2088967 60
+## 37    a    a 0.90000000    0.1657199 10
+## 38    j    a 0.06666667    0.1657199 10
+## 39    m    a 0.08888889    0.1657199 10
+## 40    a    j 0.03030303    0.1657199 50
+## 41    j    j 0.56565657    0.1657199 50
+## 42    m    j 0.40404040    0.1657199 50
+## 43    a    p 0.16666667    0.1657199 60
+## 44    j    p 0.16666667    0.1657199 60
+## 45    m    p 0.66666667    0.1657199 60
+## 46    a    a 0.90000000    0.1734258 10
+## 47    j    a 0.06666667    0.1734258 10
+## 48    m    a 0.08888889    0.1734258 10
+## 49    a    j 0.03030303    0.1734258 50
+## 50    j    j 0.56565657    0.1734258 50
+## 51    m    j 0.40404040    0.1734258 50
+## 52    a    p 0.16666667    0.1734258 60
+## 53    j    p 0.16666667    0.1734258 60
+## 54    m    p 0.66666667    0.1734258 60
+## 55    a    a 0.90000000    0.3655064 10
+## 56    j    a 0.06666667    0.3655064 10
+## 57    m    a 0.08888889    0.3655064 10
+## 58    a    j 0.03030303    0.3655064 50
+## 59    j    j 0.56565657    0.3655064 50
+## 60    m    j 0.40404040    0.3655064 50
+## 61    a    p 0.16666667    0.3655064 60
+## 62    j    p 0.16666667    0.3655064 60
+## 63    m    p 0.66666667    0.3655064 60
+## 64    a    a 0.90000000    0.2899601 10
+## 65    j    a 0.06666667    0.2899601 10
+## 66    m    a 0.08888889    0.2899601 10
+## 67    a    j 0.03030303    0.2899601 50
+## 68    j    j 0.56565657    0.2899601 50
+## 69    m    j 0.40404040    0.2899601 50
+## 70    a    p 0.16666667    0.2899601 60
+## 71    j    p 0.16666667    0.2899601 60
+## 72    m    p 0.66666667    0.2899601 60
+## 73    a    a 0.90000000    0.3034431 10
+## 74    j    a 0.06666667    0.3034431 10
+## 75    m    a 0.08888889    0.3034431 10
+## 76    a    j 0.03030303    0.3034431 50
+## 77    j    j 0.56565657    0.3034431 50
+## 78    m    j 0.40404040    0.3034431 50
+## 79    a    p 0.16666667    0.3034431 60
+## 80    j    p 0.16666667    0.3034431 60
+## 81    m    p 0.66666667    0.3034431 60</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="variación-demográfica-espacial-y-temporal.html#cb28-1" tabindex="-1"></a>Contribucion_var<span class="ot">=</span>Contribucion_var <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="variación-demográfica-espacial-y-temporal.html#cb28-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">V_aij =</span> (p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>N)) <span class="sc">|&gt;</span>  <span class="co"># Calcular la varianza de los parámetros sin tomar en cuenta la sensitividad</span></span>
+<span id="cb28-3"><a href="variación-demográfica-espacial-y-temporal.html#cb28-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Cont_deVar_lambda =</span> (Sensitividad<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>V_aij<span class="sc">^</span><span class="dv">2</span>) <span class="co"># Calcular la contribución de la varianza de cada parámetro a lambda</span></span>
+<span id="cb28-4"><a href="variación-demográfica-espacial-y-temporal.html#cb28-4" tabindex="-1"></a>Contribucion_var</span></code></pre></div>
+<pre><code>##    Var1 Var2          p Sensitividad  N        V_aij Cont_deVar_lambda
+## 1     a    a 0.90000000    0.5308370 10 0.0090000000      2.282482e-05
+## 2     j    a 0.06666667    0.5308370 10 0.0062222222      1.090971e-05
+## 3     m    a 0.08888889    0.5308370 10 0.0080987654      1.848247e-05
+## 4     a    j 0.03030303    0.5308370 50 0.0005876951      9.732548e-08
+## 5     j    j 0.56565657    0.5308370 50 0.0049137843      6.803847e-06
+## 6     m    j 0.40404040    0.5308370 50 0.0048158351      6.535301e-06
+## 7     a    p 0.16666667    0.5308370 60 0.0023148148      1.509923e-06
+## 8     j    p 0.16666667    0.5308370 60 0.0023148148      1.509923e-06
+## 9     m    p 0.66666667    0.5308370 60 0.0037037037      3.865403e-06
+## 10    a    a 0.90000000    0.4211186 10 0.0090000000      1.436461e-05
+## 11    j    a 0.06666667    0.4211186 10 0.0062222222      6.865937e-06
+## 12    m    a 0.08888889    0.4211186 10 0.0080987654      1.163179e-05
+## 13    a    j 0.03030303    0.4211186 50 0.0005876951      6.125097e-08
+## 14    j    j 0.56565657    0.4211186 50 0.0049137843      4.281944e-06
+## 15    m    j 0.40404040    0.4211186 50 0.0048158351      4.112936e-06
+## 16    a    p 0.16666667    0.4211186 60 0.0023148148      9.502574e-07
+## 17    j    p 0.16666667    0.4211186 60 0.0023148148      9.502574e-07
+## 18    m    p 0.66666667    0.4211186 60 0.0037037037      2.432659e-06
+## 19    a    a 0.90000000    0.4407004 10 0.0090000000      1.573156e-05
+## 20    j    a 0.06666667    0.4407004 10 0.0062222222      7.519308e-06
+## 21    m    a 0.08888889    0.4407004 10 0.0080987654      1.273868e-05
+## 22    a    j 0.03030303    0.4407004 50 0.0005876951      6.707968e-08
+## 23    j    j 0.56565657    0.4407004 50 0.0049137843      4.689419e-06
+## 24    m    j 0.40404040    0.4407004 50 0.0048158351      4.504328e-06
+## 25    a    p 0.16666667    0.4407004 60 0.0023148148      1.040685e-06
+## 26    j    p 0.16666667    0.4407004 60 0.0023148148      1.040685e-06
+## 27    m    p 0.66666667    0.4407004 60 0.0037037037      2.664154e-06
+## 28    a    a 0.90000000    0.2088967 10 0.0090000000      3.534664e-06
+## 29    j    a 0.06666667    0.2088967 10 0.0062222222      1.689484e-06
+## 30    m    a 0.08888889    0.2088967 10 0.0080987654      2.862205e-06
+## 31    a    j 0.03030303    0.2088967 50 0.0005876951      1.507188e-08
+## 32    j    j 0.56565657    0.2088967 50 0.0049137843      1.053647e-06
+## 33    m    j 0.40404040    0.2088967 50 0.0048158351      1.012060e-06
+## 34    a    p 0.16666667    0.2088967 60 0.0023148148      2.338275e-07
+## 35    j    p 0.16666667    0.2088967 60 0.0023148148      2.338275e-07
+## 36    m    p 0.66666667    0.2088967 60 0.0037037037      5.985985e-07
+## 37    a    a 0.90000000    0.1657199 10 0.0090000000      2.224511e-06
+## 38    j    a 0.06666667    0.1657199 10 0.0062222222      1.063263e-06
+## 39    m    a 0.08888889    0.1657199 10 0.0080987654      1.801305e-06
+## 40    a    j 0.03030303    0.1657199 50 0.0005876951      9.485359e-09
+## 41    j    j 0.56565657    0.1657199 50 0.0049137843      6.631042e-07
+## 42    m    j 0.40404040    0.1657199 50 0.0048158351      6.369316e-07
+## 43    a    p 0.16666667    0.1657199 60 0.0023148148      1.471574e-07
+## 44    j    p 0.16666667    0.1657199 60 0.0023148148      1.471574e-07
+## 45    m    p 0.66666667    0.1657199 60 0.0037037037      3.767229e-07
+## 46    a    a 0.90000000    0.1734258 10 0.0090000000      2.436198e-06
+## 47    j    a 0.06666667    0.1734258 10 0.0062222222      1.164444e-06
+## 48    m    a 0.08888889    0.1734258 10 0.0080987654      1.972719e-06
+## 49    a    j 0.03030303    0.1734258 50 0.0005876951      1.038800e-08
+## 50    j    j 0.56565657    0.1734258 50 0.0049137843      7.262059e-07
+## 51    m    j 0.40404040    0.1734258 50 0.0048158351      6.975428e-07
+## 52    a    p 0.16666667    0.1734258 60 0.0023148148      1.611611e-07
+## 53    j    p 0.16666667    0.1734258 60 0.0023148148      1.611611e-07
+## 54    m    p 0.66666667    0.1734258 60 0.0037037037      4.125723e-07
+## 55    a    a 0.90000000    0.3655064 10 0.0090000000      1.082119e-05
+## 56    j    a 0.06666667    0.3655064 10 0.0062222222      5.172268e-06
+## 57    m    a 0.08888889    0.3655064 10 0.0080987654      8.762492e-06
+## 58    a    j 0.03030303    0.3655064 50 0.0005876951      4.614176e-08
+## 59    j    j 0.56565657    0.3655064 50 0.0049137843      3.225686e-06
+## 60    m    j 0.40404040    0.3655064 50 0.0048158351      3.098369e-06
+## 61    a    p 0.16666667    0.3655064 60 0.0023148148      7.158507e-07
+## 62    j    p 0.16666667    0.3655064 60 0.0023148148      7.158507e-07
+## 63    m    p 0.66666667    0.3655064 60 0.0037037037      1.832578e-06
+## 64    a    a 0.90000000    0.2899601 10 0.0090000000      6.810224e-06
+## 65    j    a 0.06666667    0.2899601 10 0.0062222222      3.255123e-06
+## 66    m    a 0.08888889    0.2899601 10 0.0080987654      5.514600e-06
+## 67    a    j 0.03030303    0.2899601 50 0.0005876951      2.903893e-08
+## 68    j    j 0.56565657    0.2899601 50 0.0049137843      2.030059e-06
+## 69    m    j 0.40404040    0.2899601 50 0.0048158351      1.949933e-06
+## 70    a    p 0.16666667    0.2899601 60 0.0023148148      4.505146e-07
+## 71    j    p 0.16666667    0.2899601 60 0.0023148148      4.505146e-07
+## 72    m    p 0.66666667    0.2899601 60 0.0037037037      1.153317e-06
+## 73    a    a 0.90000000    0.3034431 10 0.0090000000      7.458293e-06
+## 74    j    a 0.06666667    0.3034431 10 0.0062222222      3.564885e-06
+## 75    m    a 0.08888889    0.3034431 10 0.0080987654      6.039376e-06
+## 76    a    j 0.03030303    0.3034431 50 0.0005876951      3.180231e-08
+## 77    j    j 0.56565657    0.3034431 50 0.0049137843      2.223241e-06
+## 78    m    j 0.40404040    0.3034431 50 0.0048158351      2.135491e-06
+## 79    a    p 0.16666667    0.3034431 60 0.0023148148      4.933861e-07
+## 80    j    p 0.16666667    0.3034431 60 0.0023148148      4.933861e-07
+## 81    m    p 0.66666667    0.3034431 60 0.0037037037      1.263069e-06</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="variación-demográfica-espacial-y-temporal.html#cb30-1" tabindex="-1"></a>ICupper<span class="ot">=</span><span class="fu">lambda</span>(matA)<span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">sum</span>(Contribucion_var<span class="sc">$</span>Cont_deVar_lambda))</span>
+<span id="cb30-2"><a href="variación-demográfica-espacial-y-temporal.html#cb30-2" tabindex="-1"></a>LClower<span class="ot">=</span><span class="fu">lambda</span>(matA)<span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">sum</span>(Contribucion_var<span class="sc">$</span>Cont_deVar_lambda))</span>
+<span id="cb30-3"><a href="variación-demográfica-espacial-y-temporal.html#cb30-3" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="variación-demográfica-espacial-y-temporal.html#cb30-4" tabindex="-1"></a>ICupper</span></code></pre></div>
+<pre><code>## [1] 1.059125</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="variación-demográfica-espacial-y-temporal.html#cb32-1" tabindex="-1"></a>LClower</span></code></pre></div>
+<pre><code>## [1] 0.9942409</code></pre>
+<p>Uno de los posible errores es aumis que la distribución de los parametros tienen una distribución normal. En el caso de los parametros de la matriz de transición, estos son proporciones y por consecuencia tienen una distribución beta. En el siguiente ejemplo se calcula la varianza de lambda tomando en cuenta la distribución beta de los parametros.</p>
+<p>El promedio de distribución beta es</p>
+<p><span class="math display">\[\mu = \frac{\alpha}{\alpha+\beta}\]</span>
+y la varianza es</p>
+<p><span class="math display">\[ \sigma^2 = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\]</span>
+Por consecuencia {} y {} son los parámetros de la distribución beta.</p>
+<p><span class="math display">\[\alpha = \left(\frac{(1-\mu)}{\sigma^2}-\frac{1}{\mu}\right)\mu^2\]</span>
+y la beta es</p>
+<p><span class="math display">\[\beta = \alpha\left(\frac{1}{\mu}-1\right)\]</span></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="variación-demográfica-espacial-y-temporal.html#cb34-1" tabindex="-1"></a><span class="co">#install.packages(&quot;remotes&quot;) # Instalar el paquete remotes</span></span>
+<span id="cb34-2"><a href="variación-demográfica-espacial-y-temporal.html#cb34-2" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="variación-demográfica-espacial-y-temporal.html#cb34-3" tabindex="-1"></a><span class="co">#remotes::install_github(&quot;pacific-hake/hake-assessment&quot;) # Instalar el paquete hake-assessment **Importante instalar este paquete ANTES de gfiscamutils**</span></span>
+<span id="cb34-4"><a href="variación-demográfica-espacial-y-temporal.html#cb34-4" tabindex="-1"></a><span class="co">#remotes::install_github(&quot;pbs-assess/gfiscamutils&quot;) # Instalar el paquete gfiscamutils</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="variación-demográfica-espacial-y-temporal.html#cb35-1" tabindex="-1"></a><span class="fu">library</span>(gfiscamutils)</span></code></pre></div>
+<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
+##   method            from
+##   as.zoo.data.frame zoo</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;GGally&#39;:
+##   method from   
+##   +.gg   ggplot2</code></pre>
+<pre><code>## Warning: replacing previous import &#39;ggh4x::guide_axis_logticks&#39; by
+## &#39;ggplot2::guide_axis_logticks&#39; when loading &#39;hake&#39;</code></pre>
+<pre><code>## Registered S3 methods overwritten by &#39;adehabitatMA&#39;:
+##   method                       from
+##   print.SpatialPixelsDataFrame sp  
+##   print.SpatialPixels          sp</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="variación-demográfica-espacial-y-temporal.html#cb40-1" tabindex="-1"></a><span class="fu">calc_beta_params</span>(Contribucion_var<span class="sc">$</span>p, Contribucion_var<span class="sc">$</span>V_aij)</span></code></pre></div>
+<pre><code>##       alpha1       alpha2       alpha3       alpha4       alpha5       alpha6 
+## 1.233668e+03 2.410708e+04 1.389092e+04 2.807578e+06 1.798819e+04 2.569607e+04 
+##       alpha7       alpha8       alpha9      alpha10      alpha11      alpha12 
+## 1.555198e+05 1.555198e+05 2.429933e+04 1.233668e+03 2.410708e+04 1.389092e+04 
+##      alpha13      alpha14      alpha15      alpha16      alpha17      alpha18 
+## 2.807578e+06 1.798819e+04 2.569607e+04 1.555198e+05 1.555198e+05 2.429933e+04 
+##      alpha19      alpha20      alpha21      alpha22      alpha23      alpha24 
+## 1.233668e+03 2.410708e+04 1.389092e+04 2.807578e+06 1.798819e+04 2.569607e+04 
+##      alpha25      alpha26      alpha27      alpha28      alpha29      alpha30 
+## 1.555198e+05 1.555198e+05 2.429933e+04 1.233668e+03 2.410708e+04 1.389092e+04 
+##      alpha31      alpha32      alpha33      alpha34      alpha35      alpha36 
+## 2.807578e+06 1.798819e+04 2.569607e+04 1.555198e+05 1.555198e+05 2.429933e+04 
+##      alpha37      alpha38      alpha39      alpha40      alpha41      alpha42 
+## 1.233668e+03 2.410708e+04 1.389092e+04 2.807578e+06 1.798819e+04 2.569607e+04 
+##      alpha43      alpha44      alpha45      alpha46      alpha47      alpha48 
+## 1.555198e+05 1.555198e+05 2.429933e+04 1.233668e+03 2.410708e+04 1.389092e+04 
+##      alpha49      alpha50      alpha51      alpha52      alpha53      alpha54 
+## 2.807578e+06 1.798819e+04 2.569607e+04 1.555198e+05 1.555198e+05 2.429933e+04 
+##      alpha55      alpha56      alpha57      alpha58      alpha59      alpha60 
+## 1.233668e+03 2.410708e+04 1.389092e+04 2.807578e+06 1.798819e+04 2.569607e+04 
+##      alpha61      alpha62      alpha63      alpha64      alpha65      alpha66 
+## 1.555198e+05 1.555198e+05 2.429933e+04 1.233668e+03 2.410708e+04 1.389092e+04 
+##      alpha67      alpha68      alpha69      alpha70      alpha71      alpha72 
+## 2.807578e+06 1.798819e+04 2.569607e+04 1.555198e+05 1.555198e+05 2.429933e+04 
+##      alpha73      alpha74      alpha75      alpha76      alpha77      alpha78 
+## 1.233668e+03 2.410708e+04 1.389092e+04 2.807578e+06 1.798819e+04 2.569607e+04 
+##      alpha79      alpha80      alpha81        beta1        beta2        beta3 
+## 1.555198e+05 1.555198e+05 2.429933e+04 1.370742e+02 3.374991e+05 1.423819e+05 
+##        beta4        beta5        beta6        beta7        beta8        beta9 
+## 8.984250e+07 1.381236e+04 3.790171e+04 7.775992e+05 7.775992e+05 1.214967e+04 
+##       beta10       beta11       beta12       beta13       beta14       beta15 
+## 1.370742e+02 3.374991e+05 1.423819e+05 8.984250e+07 1.381236e+04 3.790171e+04 
+##       beta16       beta17       beta18       beta19       beta20       beta21 
+## 7.775992e+05 7.775992e+05 1.214967e+04 1.370742e+02 3.374991e+05 1.423819e+05 
+##       beta22       beta23       beta24       beta25       beta26       beta27 
+## 8.984250e+07 1.381236e+04 3.790171e+04 7.775992e+05 7.775992e+05 1.214967e+04 
+##       beta28       beta29       beta30       beta31       beta32       beta33 
+## 1.370742e+02 3.374991e+05 1.423819e+05 8.984250e+07 1.381236e+04 3.790171e+04 
+##       beta34       beta35       beta36       beta37       beta38       beta39 
+## 7.775992e+05 7.775992e+05 1.214967e+04 1.370742e+02 3.374991e+05 1.423819e+05 
+##       beta40       beta41       beta42       beta43       beta44       beta45 
+## 8.984250e+07 1.381236e+04 3.790171e+04 7.775992e+05 7.775992e+05 1.214967e+04 
+##       beta46       beta47       beta48       beta49       beta50       beta51 
+## 1.370742e+02 3.374991e+05 1.423819e+05 8.984250e+07 1.381236e+04 3.790171e+04 
+##       beta52       beta53       beta54       beta55       beta56       beta57 
+## 7.775992e+05 7.775992e+05 1.214967e+04 1.370742e+02 3.374991e+05 1.423819e+05 
+##       beta58       beta59       beta60       beta61       beta62       beta63 
+## 8.984250e+07 1.381236e+04 3.790171e+04 7.775992e+05 7.775992e+05 1.214967e+04 
+##       beta64       beta65       beta66       beta67       beta68       beta69 
+## 1.370742e+02 3.374991e+05 1.423819e+05 8.984250e+07 1.381236e+04 3.790171e+04 
+##       beta70       beta71       beta72       beta73       beta74       beta75 
+## 7.775992e+05 7.775992e+05 1.214967e+04 1.370742e+02 3.374991e+05 1.423819e+05 
+##       beta76       beta77       beta78       beta79       beta80       beta81 
+## 8.984250e+07 1.381236e+04 3.790171e+04 7.775992e+05 7.775992e+05 1.214967e+04</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="variación-demográfica-espacial-y-temporal.html#cb42-1" tabindex="-1"></a>bp<span class="ot">=</span><span class="fu">calc_beta_params</span>(<span class="fl">0.5308370</span>, <span class="fu">sqrt</span>(<span class="fl">0.09</span>))</span>
+<span id="cb42-2"><a href="variación-demográfica-espacial-y-temporal.html#cb42-2" tabindex="-1"></a>bp[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>##    alpha 
+## 4.682085</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="variación-demográfica-espacial-y-temporal.html#cb44-1" tabindex="-1"></a>bp[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>##     beta 
+## 4.138109</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="variación-demográfica-espacial-y-temporal.html#cb46-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb46-2"><a href="variación-demográfica-espacial-y-temporal.html#cb46-2" tabindex="-1"></a>Contribucion_var <span class="sc">|&gt;</span> </span>
+<span id="cb46-3"><a href="variación-demográfica-espacial-y-temporal.html#cb46-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">alpha =</span> <span class="fu">calc_beta_params</span>(p, (<span class="fu">sqrt</span>(V_aij)))[<span class="dv">1</span>],</span>
+<span id="cb46-4"><a href="variación-demográfica-espacial-y-temporal.html#cb46-4" tabindex="-1"></a>         <span class="at">beta =</span> <span class="fu">calc_beta_params</span>(p, (<span class="fu">sqrt</span>(V_aij)))[<span class="dv">2</span>]) <span class="sc">|&gt;</span> </span>
+<span id="cb46-5"><a href="variación-demográfica-espacial-y-temporal.html#cb46-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mu =</span> alpha<span class="sc">/</span>(alpha<span class="sc">+</span>beta)) <span class="sc">|&gt;</span> </span>
+<span id="cb46-6"><a href="variación-demográfica-espacial-y-temporal.html#cb46-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var =</span> alpha<span class="sc">*</span>beta<span class="sc">/</span>((alpha<span class="sc">+</span>beta)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(alpha<span class="sc">+</span>beta<span class="sc">+</span><span class="dv">1</span>)))</span></code></pre></div>
+<pre><code>##    Var1 Var2          p Sensitividad  N        V_aij Cont_deVar_lambda    alpha
+## 1     a    a 0.90000000    0.5308370 10 0.0090000000      2.282482e-05 10.21111
+## 2     j    a 0.06666667    0.5308370 10 0.0062222222      1.090971e-05 10.21111
+## 3     m    a 0.08888889    0.5308370 10 0.0080987654      1.848247e-05 10.21111
+## 4     a    j 0.03030303    0.5308370 50 0.0005876951      9.732548e-08 10.21111
+## 5     j    j 0.56565657    0.5308370 50 0.0049137843      6.803847e-06 10.21111
+## 6     m    j 0.40404040    0.5308370 50 0.0048158351      6.535301e-06 10.21111
+## 7     a    p 0.16666667    0.5308370 60 0.0023148148      1.509923e-06 10.21111
+## 8     j    p 0.16666667    0.5308370 60 0.0023148148      1.509923e-06 10.21111
+## 9     m    p 0.66666667    0.5308370 60 0.0037037037      3.865403e-06 10.21111
+## 10    a    a 0.90000000    0.4211186 10 0.0090000000      1.436461e-05 10.21111
+## 11    j    a 0.06666667    0.4211186 10 0.0062222222      6.865937e-06 10.21111
+## 12    m    a 0.08888889    0.4211186 10 0.0080987654      1.163179e-05 10.21111
+## 13    a    j 0.03030303    0.4211186 50 0.0005876951      6.125097e-08 10.21111
+## 14    j    j 0.56565657    0.4211186 50 0.0049137843      4.281944e-06 10.21111
+## 15    m    j 0.40404040    0.4211186 50 0.0048158351      4.112936e-06 10.21111
+## 16    a    p 0.16666667    0.4211186 60 0.0023148148      9.502574e-07 10.21111
+## 17    j    p 0.16666667    0.4211186 60 0.0023148148      9.502574e-07 10.21111
+## 18    m    p 0.66666667    0.4211186 60 0.0037037037      2.432659e-06 10.21111
+## 19    a    a 0.90000000    0.4407004 10 0.0090000000      1.573156e-05 10.21111
+## 20    j    a 0.06666667    0.4407004 10 0.0062222222      7.519308e-06 10.21111
+## 21    m    a 0.08888889    0.4407004 10 0.0080987654      1.273868e-05 10.21111
+## 22    a    j 0.03030303    0.4407004 50 0.0005876951      6.707968e-08 10.21111
+## 23    j    j 0.56565657    0.4407004 50 0.0049137843      4.689419e-06 10.21111
+## 24    m    j 0.40404040    0.4407004 50 0.0048158351      4.504328e-06 10.21111
+## 25    a    p 0.16666667    0.4407004 60 0.0023148148      1.040685e-06 10.21111
+## 26    j    p 0.16666667    0.4407004 60 0.0023148148      1.040685e-06 10.21111
+## 27    m    p 0.66666667    0.4407004 60 0.0037037037      2.664154e-06 10.21111
+## 28    a    a 0.90000000    0.2088967 10 0.0090000000      3.534664e-06 10.21111
+## 29    j    a 0.06666667    0.2088967 10 0.0062222222      1.689484e-06 10.21111
+## 30    m    a 0.08888889    0.2088967 10 0.0080987654      2.862205e-06 10.21111
+## 31    a    j 0.03030303    0.2088967 50 0.0005876951      1.507188e-08 10.21111
+## 32    j    j 0.56565657    0.2088967 50 0.0049137843      1.053647e-06 10.21111
+## 33    m    j 0.40404040    0.2088967 50 0.0048158351      1.012060e-06 10.21111
+## 34    a    p 0.16666667    0.2088967 60 0.0023148148      2.338275e-07 10.21111
+## 35    j    p 0.16666667    0.2088967 60 0.0023148148      2.338275e-07 10.21111
+## 36    m    p 0.66666667    0.2088967 60 0.0037037037      5.985985e-07 10.21111
+## 37    a    a 0.90000000    0.1657199 10 0.0090000000      2.224511e-06 10.21111
+## 38    j    a 0.06666667    0.1657199 10 0.0062222222      1.063263e-06 10.21111
+## 39    m    a 0.08888889    0.1657199 10 0.0080987654      1.801305e-06 10.21111
+## 40    a    j 0.03030303    0.1657199 50 0.0005876951      9.485359e-09 10.21111
+## 41    j    j 0.56565657    0.1657199 50 0.0049137843      6.631042e-07 10.21111
+## 42    m    j 0.40404040    0.1657199 50 0.0048158351      6.369316e-07 10.21111
+## 43    a    p 0.16666667    0.1657199 60 0.0023148148      1.471574e-07 10.21111
+## 44    j    p 0.16666667    0.1657199 60 0.0023148148      1.471574e-07 10.21111
+## 45    m    p 0.66666667    0.1657199 60 0.0037037037      3.767229e-07 10.21111
+## 46    a    a 0.90000000    0.1734258 10 0.0090000000      2.436198e-06 10.21111
+## 47    j    a 0.06666667    0.1734258 10 0.0062222222      1.164444e-06 10.21111
+## 48    m    a 0.08888889    0.1734258 10 0.0080987654      1.972719e-06 10.21111
+## 49    a    j 0.03030303    0.1734258 50 0.0005876951      1.038800e-08 10.21111
+## 50    j    j 0.56565657    0.1734258 50 0.0049137843      7.262059e-07 10.21111
+## 51    m    j 0.40404040    0.1734258 50 0.0048158351      6.975428e-07 10.21111
+## 52    a    p 0.16666667    0.1734258 60 0.0023148148      1.611611e-07 10.21111
+## 53    j    p 0.16666667    0.1734258 60 0.0023148148      1.611611e-07 10.21111
+## 54    m    p 0.66666667    0.1734258 60 0.0037037037      4.125723e-07 10.21111
+## 55    a    a 0.90000000    0.3655064 10 0.0090000000      1.082119e-05 10.21111
+## 56    j    a 0.06666667    0.3655064 10 0.0062222222      5.172268e-06 10.21111
+## 57    m    a 0.08888889    0.3655064 10 0.0080987654      8.762492e-06 10.21111
+## 58    a    j 0.03030303    0.3655064 50 0.0005876951      4.614176e-08 10.21111
+## 59    j    j 0.56565657    0.3655064 50 0.0049137843      3.225686e-06 10.21111
+## 60    m    j 0.40404040    0.3655064 50 0.0048158351      3.098369e-06 10.21111
+## 61    a    p 0.16666667    0.3655064 60 0.0023148148      7.158507e-07 10.21111
+## 62    j    p 0.16666667    0.3655064 60 0.0023148148      7.158507e-07 10.21111
+## 63    m    p 0.66666667    0.3655064 60 0.0037037037      1.832578e-06 10.21111
+## 64    a    a 0.90000000    0.2899601 10 0.0090000000      6.810224e-06 10.21111
+## 65    j    a 0.06666667    0.2899601 10 0.0062222222      3.255123e-06 10.21111
+## 66    m    a 0.08888889    0.2899601 10 0.0080987654      5.514600e-06 10.21111
+## 67    a    j 0.03030303    0.2899601 50 0.0005876951      2.903893e-08 10.21111
+## 68    j    j 0.56565657    0.2899601 50 0.0049137843      2.030059e-06 10.21111
+## 69    m    j 0.40404040    0.2899601 50 0.0048158351      1.949933e-06 10.21111
+## 70    a    p 0.16666667    0.2899601 60 0.0023148148      4.505146e-07 10.21111
+## 71    j    p 0.16666667    0.2899601 60 0.0023148148      4.505146e-07 10.21111
+## 72    m    p 0.66666667    0.2899601 60 0.0037037037      1.153317e-06 10.21111
+## 73    a    a 0.90000000    0.3034431 10 0.0090000000      7.458293e-06 10.21111
+## 74    j    a 0.06666667    0.3034431 10 0.0062222222      3.564885e-06 10.21111
+## 75    m    a 0.08888889    0.3034431 10 0.0080987654      6.039376e-06 10.21111
+## 76    a    j 0.03030303    0.3034431 50 0.0005876951      3.180231e-08 10.21111
+## 77    j    j 0.56565657    0.3034431 50 0.0049137843      2.223241e-06 10.21111
+## 78    m    j 0.40404040    0.3034431 50 0.0048158351      2.135491e-06 10.21111
+## 79    a    p 0.16666667    0.3034431 60 0.0023148148      4.933861e-07 10.21111
+## 80    j    p 0.16666667    0.3034431 60 0.0023148148      4.933861e-07 10.21111
+## 81    m    p 0.66666667    0.3034431 60 0.0037037037      1.263069e-06 10.21111
+##        beta         mu          var
+## 1  149.9333 0.06376188 0.0003704521
+## 2  149.9333 0.06376188 0.0003704521
+## 3  149.9333 0.06376188 0.0003704521
+## 4  149.9333 0.06376188 0.0003704521
+## 5  149.9333 0.06376188 0.0003704521
+## 6  149.9333 0.06376188 0.0003704521
+## 7  149.9333 0.06376188 0.0003704521
+## 8  149.9333 0.06376188 0.0003704521
+## 9  149.9333 0.06376188 0.0003704521
+## 10 149.9333 0.06376188 0.0003704521
+## 11 149.9333 0.06376188 0.0003704521
+## 12 149.9333 0.06376188 0.0003704521
+## 13 149.9333 0.06376188 0.0003704521
+## 14 149.9333 0.06376188 0.0003704521
+## 15 149.9333 0.06376188 0.0003704521
+## 16 149.9333 0.06376188 0.0003704521
+## 17 149.9333 0.06376188 0.0003704521
+## 18 149.9333 0.06376188 0.0003704521
+## 19 149.9333 0.06376188 0.0003704521
+## 20 149.9333 0.06376188 0.0003704521
+## 21 149.9333 0.06376188 0.0003704521
+## 22 149.9333 0.06376188 0.0003704521
+## 23 149.9333 0.06376188 0.0003704521
+## 24 149.9333 0.06376188 0.0003704521
+## 25 149.9333 0.06376188 0.0003704521
+## 26 149.9333 0.06376188 0.0003704521
+## 27 149.9333 0.06376188 0.0003704521
+## 28 149.9333 0.06376188 0.0003704521
+## 29 149.9333 0.06376188 0.0003704521
+## 30 149.9333 0.06376188 0.0003704521
+## 31 149.9333 0.06376188 0.0003704521
+## 32 149.9333 0.06376188 0.0003704521
+## 33 149.9333 0.06376188 0.0003704521
+## 34 149.9333 0.06376188 0.0003704521
+## 35 149.9333 0.06376188 0.0003704521
+## 36 149.9333 0.06376188 0.0003704521
+## 37 149.9333 0.06376188 0.0003704521
+## 38 149.9333 0.06376188 0.0003704521
+## 39 149.9333 0.06376188 0.0003704521
+## 40 149.9333 0.06376188 0.0003704521
+## 41 149.9333 0.06376188 0.0003704521
+## 42 149.9333 0.06376188 0.0003704521
+## 43 149.9333 0.06376188 0.0003704521
+## 44 149.9333 0.06376188 0.0003704521
+## 45 149.9333 0.06376188 0.0003704521
+## 46 149.9333 0.06376188 0.0003704521
+## 47 149.9333 0.06376188 0.0003704521
+## 48 149.9333 0.06376188 0.0003704521
+## 49 149.9333 0.06376188 0.0003704521
+## 50 149.9333 0.06376188 0.0003704521
+## 51 149.9333 0.06376188 0.0003704521
+## 52 149.9333 0.06376188 0.0003704521
+## 53 149.9333 0.06376188 0.0003704521
+## 54 149.9333 0.06376188 0.0003704521
+## 55 149.9333 0.06376188 0.0003704521
+## 56 149.9333 0.06376188 0.0003704521
+## 57 149.9333 0.06376188 0.0003704521
+## 58 149.9333 0.06376188 0.0003704521
+## 59 149.9333 0.06376188 0.0003704521
+## 60 149.9333 0.06376188 0.0003704521
+## 61 149.9333 0.06376188 0.0003704521
+## 62 149.9333 0.06376188 0.0003704521
+## 63 149.9333 0.06376188 0.0003704521
+## 64 149.9333 0.06376188 0.0003704521
+## 65 149.9333 0.06376188 0.0003704521
+## 66 149.9333 0.06376188 0.0003704521
+## 67 149.9333 0.06376188 0.0003704521
+## 68 149.9333 0.06376188 0.0003704521
+## 69 149.9333 0.06376188 0.0003704521
+## 70 149.9333 0.06376188 0.0003704521
+## 71 149.9333 0.06376188 0.0003704521
+## 72 149.9333 0.06376188 0.0003704521
+## 73 149.9333 0.06376188 0.0003704521
+## 74 149.9333 0.06376188 0.0003704521
+## 75 149.9333 0.06376188 0.0003704521
+## 76 149.9333 0.06376188 0.0003704521
+## 77 149.9333 0.06376188 0.0003704521
+## 78 149.9333 0.06376188 0.0003704521
+## 79 149.9333 0.06376188 0.0003704521
+## 80 149.9333 0.06376188 0.0003704521
+## 81 149.9333 0.06376188 0.0003704521</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="variación-demográfica-espacial-y-temporal.html#cb48-1" tabindex="-1"></a><span class="fu">calc_beta_params</span>(<span class="fl">0.9</span>, <span class="fu">sqrt</span>(<span class="fl">0.009</span>))</span></code></pre></div>
+<pre><code>##     alpha      beta 
+## 10.211111  1.134568</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="variación-demográfica-espacial-y-temporal.html#cb50-1" tabindex="-1"></a>ss<span class="ot">=</span>Contribucion_var[<span class="dv">1</span>,]</span>
+<span id="cb50-2"><a href="variación-demográfica-espacial-y-temporal.html#cb50-2" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="variación-demográfica-espacial-y-temporal.html#cb50-3" tabindex="-1"></a><span class="fu">calc_beta_params</span>(ss<span class="sc">$</span>p, <span class="fu">sqrt</span>(ss<span class="sc">$</span>V_aij))</span></code></pre></div>
+<pre><code>##     alpha      beta 
+## 10.211111  1.134568</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="variación-demográfica-espacial-y-temporal.html#cb52-1" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mu =</span> alpha<span class="sc">/</span>(alpha<span class="sc">+</span>beta)) <span class="sc">|&gt;</span> </span>
+<span id="cb52-2"><a href="variación-demográfica-espacial-y-temporal.html#cb52-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var =</span> alpha<span class="sc">*</span>beta<span class="sc">/</span>((alpha<span class="sc">+</span>beta)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(alpha<span class="sc">+</span>beta<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb52-3"><a href="variación-demográfica-espacial-y-temporal.html#cb52-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">V_aij =</span> (mu<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>mu)<span class="sc">/</span>N)) <span class="sc">|&gt;</span> </span>
+<span id="cb52-4"><a href="variación-demográfica-espacial-y-temporal.html#cb52-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Cont_deVar_lambda =</span> (Sensitividad<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>V_aij<span class="sc">^</span><span class="dv">2</span>) <span class="co"># Calcular la contribución de la varianza de cada parámetro a lambda</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="variación-demográfica-espacial-y-temporal.html#cb53-1" tabindex="-1"></a> estBetaParams <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, var) {</span>
+<span id="cb53-2"><a href="variación-demográfica-espacial-y-temporal.html#cb53-2" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> mu) <span class="sc">/</span> var <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> mu) <span class="sc">*</span> mu <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb53-3"><a href="variación-demográfica-espacial-y-temporal.html#cb53-3" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> mu <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb53-4"><a href="variación-demográfica-espacial-y-temporal.html#cb53-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta))</span>
+<span id="cb53-5"><a href="variación-demográfica-espacial-y-temporal.html#cb53-5" tabindex="-1"></a>}</span></code></pre></div>
+<p>Los paramétros de una beta son <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>, La varianza de una beta es <span class="math inline">\(\alpha\beta/(\alpha+\beta)^2(\alpha+\beta+1)\)</span>. En el siguiente ejemplo se calcula la varianza de lambda tomando en cuenta la distribución beta de los parametros.</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-ebert1999demography" class="csl-entry">
+Ebert, thomas A. 1999. <em>Plant and Animal Populations. Methods in Demography</em>. Academic Press.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix-b.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="install.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/Varriacion_Demo_Esp_Temp.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/Varriacion_Demo_Esp_Temp.Rmd",
+"text": null
+},
+"download": ["Diagnostico_Poblacional.pdf", "Diagnostico_Poblacional.epub", "Diagnostico_Poblacional.word"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

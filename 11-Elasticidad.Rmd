@@ -6,7 +6,7 @@ Autores: "Demetria Mondragón, Ernesto Mujica y Elaine González"
 
 ## Librerías de R requeridas para el siguiente modulo
 
-```{r message=FALSE, warning=FALSE, comment=FALSE}
+```{r Elas1, message=FALSE, warning=FALSE, comment=FALSE}
 library(popdemo)
 library(popbio)
 library(ggplot2)
@@ -58,7 +58,7 @@ La diferencia entre sensibilidad y elasticidad es que la sensibilidad mide el im
 Tomando como ejemplo la matriz de elasticidad de *Erycina crista-galli* una orquídea de ramilla [@mondragon2007life], podremos recapitular todo lo previamente dicho (Tabla 1), así, lo **primero** que hay que recalcar es que el valor más alto de elasticidad para esta orquídea corresponde a la permanencia de los individuos adultos 2, es decir que cualquier pequeño cambio en el valor de dicha entrada (en la matriz de transición), tendrá el mayor impacto en el valor de *\lambda* al comparar con otras estados de vida; **segundo**, es importante observar que al sumar todas las entradas de la matriz se obtiene un valor de uno. Lo mismo se mantiene cuando se suman todos los valores de elasticidad por estadio o por proceso. Es decir, si sumamos todos los valores de cada columna, tendremos el valor de elasticidad de cada estadio, para este caso el valor más alto lo ostenta el estadio de adultos 2 (0.818), lo que implica que el destino de la población de *E. crista-galli* depende mayormente de lo que les pase a los individuos adultos.
 
 
-```{r, message=FALSE, warning=FALSE}
+```{r Elas2, message=FALSE, warning=FALSE}
 
 etapas <- c ("plántula", "juvenil", "adulto1", "adulto2")
 
@@ -75,7 +75,7 @@ ec
 
 
 
-```{r}
+```{r Elas3}
 elas(ec)
 
 # Convertir la matriz de elasticidad en un data frame
@@ -83,6 +83,7 @@ ec_df=as.data.frame(elas(ec)) |> round(3)
 
 # Sumar las elasticidades por etapas y añadir una fila con las sumas
 ec_df=ec_df %>% bind_rows(summarise_all(., ~if(is.numeric(.)) sum(.) else "Total"))
+
 
 
 
@@ -117,7 +118,7 @@ En la tabla se ve los diferentes valores de elasticidad por procesos en *Erycina
  - Fecundidad: 0.058
  
 
-```{r}
+```{r Elas4}
 
 elas(ec)
 
@@ -228,7 +229,7 @@ en la figura 1a, la suma por la historia de vida, F: fecundidad, P: permenancia 
 Se observa que en los valores de elasticidad estan más altos en los procesos de permanencia seguido por el crecimiento. En la figura 1b se observa que los valores de elasticidad son más altos en los estadios de no reproductivo y reproductivos (adultos activos) al comparar que individuos en la etapa de plántulas. 
 
 
-```{r}
+```{r Elas5}
 
 Elasticidad_estadios =tribble(~Especie, ~Fecundidad, ~Estasis, ~Crecimiento, ~Plántulas, ~No_reproductivos, ~Reproductivos,
                               "Erycina crista-galli",  0.035, 0.718, 0.247, 0.0345, 0.0456, 0.9197,
@@ -238,7 +239,7 @@ Elasticidad_estadios =tribble(~Especie, ~Fecundidad, ~Estasis, ~Crecimiento, ~Pl
                               "Lepanthes caritensis",  0.002, 0.885, 0.114, 0.018, 0.648, 0.335)
 ```
 
-```{r}
+```{r Elas6}
 Elasticidad_estadios
 ```
 
@@ -267,7 +268,7 @@ EE$Estadios=factor(EE$Estadios, levels = c("Fecundidad", "Estasis", "Crecimiento
 ```
 
 
-```{r}
+```{r Elas7}
 
 
 EE1=Elasticidad_estadios %>% 
@@ -308,7 +309,7 @@ Una de las limitaciones principales de los análisis de elasticidad tradicional 
 
 # Capturar los datos de la matriz para Erycina crita-galli [@mondragon2007life] (tabla 4 del artículo)
 
-```{r, message=FALSE, warning=FALSE}
+```{r Elas8, message=FALSE, warning=FALSE}
 
 etapas <- c ("plántula", "juvenil", "adulto1", "adulto2")
 
@@ -332,7 +333,7 @@ N0_ec
 ## Para calcular los autovalores y autovectores de la matriz
 
 
-```{r}
+```{r Elas9}
 eigen.analysis(ec, zero=FALSE) # la función es del paquete popbio
 ```
 

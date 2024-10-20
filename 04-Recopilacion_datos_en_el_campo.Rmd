@@ -172,7 +172,7 @@ Sin importar las variables que usemos en la clasificación de las plantas, es ne
 Dos aspectos que facilitarán establecer las categorías y los cambios en los individuos en el tiempo son, por un lado, capturar información relevante que es común para todas las especies (Tabla X), y, por otro, entender cómo crecen o reiteran las plantas.
 Las primeras se refieren a las características básicas más simples que permiten diferenciar un estadio de otro.
 
-```{r, echo=FALSE, message=FALSE}
+```{r DC1, echo=FALSE, message=FALSE}
 library(tidyverse)
 library(gt)
 Variable_Censo=tribble(
@@ -186,7 +186,7 @@ Variable_Censo=tribble(
 )
 ```
 
-```{r, echo=FALSE, message=FALSE}
+```{r DC2, echo=FALSE, message=FALSE}
 gt(Variable_Censo)|>
   tab_header(
     title = md("**Variables esenciales en un censo demográfico**"),

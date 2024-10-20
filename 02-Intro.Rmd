@@ -221,7 +221,7 @@ Los efectos denso-dependientes pueden influenciar la cantidad de individuos en e
 
 
 
-```{r, out.width="500px", include=TRUE, fig.align="center", fig.cap=c("Factores que influencia la dinamica de una población"), echo=FALSE}
+```{r intro1, out.width="500px", include=TRUE, fig.align="center", fig.cap=c("Factores que influencia la dinamica de una población"), echo=FALSE}
 
 knitr::include_graphics("Figures/Demografia_de_una_poblacion.pdf")
 ```

@@ -31,7 +31,7 @@ Aquí un ciclo de vida que no es biologícamente realista
  NOTA que es posible que los datos que recolectan del campo sean estos, pero muchas veces esas observaciones son un resultado de la falta de tamaño de muestra.   
 
  
-```{r chap7_1}
+```{r bayes1}
 # hidden code to produce figures
 library(DiagrammeR)
 library(Rage)
@@ -49,7 +49,7 @@ title <- NULL
 
 ```
 
-```{r chap7_2}
+```{r bayes2}
 plot_life_cycle(matA, stages=stages)
 
 ```
@@ -71,7 +71,7 @@ Las matrices de proyección de población son un medio común para predecir la p
 
 ## Instalación de los paquetes #1
 
-```{r chap7_3}
+```{r bayes3}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(janitor, tidyverse, devtools)
 
@@ -84,7 +84,7 @@ library(janitor)
 
 Para instalar **raretrans** remover el **#** antes de correr el script para tener aceco a los codigos de **raretrans**. 
 
-```{r chap7_4}
+```{r bayes4}
 #library(devtools)
 
 devtools::install_github("atyre2/raretrans", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
@@ -98,7 +98,7 @@ Vea el siguiente enlace para más información en ingles, la información que si
 
 <https://atyre2.github.io/raretrans/articles/onepopperiod.html>
 
-```{r chap7_5, message = FALSE}
+```{r bayes5, message = FALSE}
 
 library(tidyverse)
 library(ggplot2)
@@ -121,7 +121,7 @@ Podemos utilizar `popbio::projection.matrix` para obtener los datos necesarios. 
 
 ## Paso 1: Cargar y fusionar los datos de población única para *L. elto*
 
-```{r chap7_6}
+```{r bayes6}
 data("L_elto") # carga el conjunto de datos `L_elto` en la memoria de la computadora (los datos están incluido en el paquete `raretrans`)
 head(L_elto) 
 ```
@@ -133,7 +133,7 @@ head(L_elto)
 
 Cada fila de este data.frame de datos tiene columnas para la fase actual (*stage*, periodo **t**), la fase siguiente (*next_stage*, periodo **t+1**) y la fertilidad por individuo. Tenga en cuenta que "p" significa "plántula" en español. El primer conjunto de líneas de abajo cambia el nombre de la etapa del ciclo vital de "p" a "s" después de seleccionar la población y el periodo de tiempo.
 
-```{r chap7_7_mungeData}
+```{r bayes7_mungeData}
 onepop <- L_elto %>%   
 
   filter(POPNUM == 250, year == 5) %>% # Filtrar la población # 250, el periodo (año=year) 5
@@ -164,7 +164,7 @@ Dado que nuestras recuentos (número de individuos, *N*) y el tamaño de *muestr
 
 Utilizamos la función `raretrans::get_state_vector()` para obtener el recuento inicial de individuos, *N*. Se observa que la cantidad de individuos inciales por etapa es el número de individuos en el primer muestreo es muy limitada, con 11 plántulas, 47 juveniles y 34 adultos. 
 
-```{r chap7_8}
+```{r bayes8}
 N <- get_state_vector(onepop, stage = stage, sort=c("s","j","a")) 
 N # Un vector # de individuos iniciales para cada etapa, nota que la cantidad por etapa, "stage", son los individuos en el primer muestreo
 ```
@@ -176,7 +176,7 @@ La lista de matrices y el vector de cuento de individuales no tienen por qué pr
 
 
 
-```{r chap7_9, echo=FALSE}
+```{r bayes9, echo=FALSE}
 Tmat <- L_elto %>% 
   mutate(stage = factor(stage, levels=c("p","j","a","m")),
          fate = factor(next_stage, levels=c("p","j","a","m"))) %>%
@@ -199,7 +199,7 @@ Fmat[1,3] <- 2/16 # contar 16 adultos reproductivos en el tiempo t y dos plántu
 TF2 <- list(Tmat = Tmat, Fmat = Fmat)
 ```
 
-```{r chap7_10}
+```{r bayes10}
 TF2
 N2
 ```
@@ -209,7 +209,7 @@ N2
 
 En esta matriz falta la transición de plántula a juvenil, y ninguno de los 6 juveniles murió, lo que lleva a una sobre estimación de la supervivencia. La tasa de crecimiento asimtótico de la población observada es $\lambda =$ `r format(lambda(TF2$T + TF2$F),digits = 2)`. La matriz no es ergódica (no se puede llegar a cualquier otro estado desde uno o más estados), y es reducible, lo que significa que una o más columnas y filas se pueden descartar y tienen las mismas propiedades eigen.
 
-```{r chap7_11}
+```{r bayes11}
 stages2 <- c("plantulas", "juveniles", "adultos")
 title <- NULL
 plot_life_cycle(Tmat, stages=stages2)
@@ -232,7 +232,7 @@ Por lo tanto, vamos a añadir un dirichlet uniforme con prior con un peso = $1$ 
 
 NOta que el prior uniforme no es recomendado, pero se usa aquí para demostrar el concepto. Un prior uniforme probablemente no toma en cuenta el ciclo de vida correcta de la especie.  Por ejemplo que las plántulas pueden pasar adulto un ese periodo de tiempo?, Es posible que un adulto puede regresar a ser plántula? 
 
-```{r chap7_12_posterior1}
+```{r bayes12_posterior1}
 Tprior <- matrix(0.25, byrow = TRUE, ncol = 3, nrow=4)
 fill_transitions(TF, N, P = Tprior) # resultado de la matriz de transición básica
 
@@ -245,7 +245,7 @@ TF
 
 Podemos obtener el mismo resultado 'a mano' - necesitamos el vector de observaciones porque la posterior se calcula a partir de las observaciones de transiciones, no la matriz de transiciones.
 
-```{r chap7_13_manualTransitionPost}
+```{r bayes13_manualTransitionPost}
 Tobs <- sweep(TF$T, 2, N, "*") # obtener las observaciones de transiciones 
 Tobs <- rbind(Tobs, N - colSums(Tobs)) # añadir la fila de muerte 
 Tobs <- Tobs + 0.25 # añadir los valores a priori
@@ -258,7 +258,7 @@ El *prior uniforme* rellena las transiciones que faltan, pero también crea prob
 
 Debemos especificar los parámetros para la fertilidad *a priori* como una matriz. Las etapas que no hay reproducción o sea que no se producen por reproducción deben ser `NA`, usando *NA_real\_*. El concepto de *NA_real\_* es que es un valor que no esta presente pero con puntos decimales. Nota que el valor *a priori* de la fertilidad es 0.0001.
 
-```{r chap7_14}
+```{r bayes14}
 alpha <- matrix(c(NA_real_, NA_real_, 1e-5,
                   NA_real_, NA_real_, NA_real_,
                   NA_real_, NA_real_, NA_real_), nrow=3, ncol = 3, byrow = TRUE)
@@ -274,7 +274,7 @@ El cambio en la fertilidad es \< 0,0001 en comparación con el valor observado.
 
 Métodos a mano, *alfa a priori* es el número de crías observadas y *beta a priori* es el número de adultos observados.
 
-```{r chap7_15}
+```{r bayes15}
 obs_offspring <- N[3]*TF$F[1,3] 
 prior_alpha <- 1e-05
 prior_beta <- 1e-05
@@ -287,7 +287,7 @@ Esto demuestra por qué la estimación puntual posterior de la fecundidad no cam
 
 Ahora podemos juntar todos los valores a priori. NOTA que todavía no se recomienda usar un prior uniforme.
 
-```{r chap7_16_uninformativePrior}
+```{r bayes16_uninformativePrior}
 unif <- list(T = fill_transitions(TF, N), 
              F = fill_fertility(TF, N, 
                                 alpha = alpha,
@@ -305,13 +305,13 @@ Por defecto, `fill_transitions()` devuelve la matriz de transición $T$, y `fill
 
 1.  `fill_transitions(... returnType = "TN")` puede devolver una matriz aumentada de destinos, que es útil para la simulación. La cuarta fila de este resultado (véase más adelante) es el estado de mortalidad.
 
-```{r chap7_17}
+```{r bayes17}
 fill_transitions(TF, N, returnType = "TN")
 ```
 
 2.  `fill_fertility(... returnType = "ab")` devuelve los vectores alfa y beta de los vectores posteriores.\
 
-```{r chap7_18}
+```{r bayes18}
 fill_fertility(TF, N, 
                alpha = alpha,
                beta = beta,
@@ -320,7 +320,7 @@ fill_fertility(TF, N,
 
 3.  Ambas funciones también pueden devolver la matriz completa, la suma de $T$ y $F$.
 
-```{r chap7_19}
+```{r bayes19}
 fill_transitions(TF, N, returnType = "A")
 ```
 
@@ -333,7 +333,7 @@ Hasta este punto, el objetivo era de entender las funciones y su aplicaciones. A
 Para solucionar el problema de la creación de transiciones imposibles, especificamos una prioridad más informativa obtenida de un experto en
 orquídeas epifitas de *Lepanthes* (RLT). La información tiene que tener la misma forma que la matriz de transiciones con una fila más que columnas. Esa ultima fila representa los individuos que se mueren de la etapa correspondiente. Estos valores deberían ser recolectado ANTES de recolectar los datos de campo, para no sesgar los resultados. 
 
-```{r chap7_20}
+```{r bayes20}
 RLT_Tprior <- matrix(c(0.25, 0.025, 0.0,
                        0.05, 0.9,   0.025,
                        0.01, 0.025, 0.95,
@@ -345,7 +345,7 @@ Nota la matriz tiene la 1ª fila, 3ª columna es 0,0, porque esta transición es
 
 A hora usando la función de **fill_transitions** donde uno añade los valores del campo **TF**, el tamaño de muestra en el tiempo 1 **N**, el la matriz de valores *a priori** informativa, se calcula la matriz de transición *posteriori*.  Compara **TF** con esta matriz para ver los cambios. 
 
-```{r chap7_21}
+```{r bayes21}
 fill_transitions(TF, N, P = RLT_Tprior)
 ```
 
@@ -355,7 +355,7 @@ fill_transitions(TF, N, P = RLT_Tprior)
 
 Podemos especificar el peso de los valores **a priori** modificando el tamaño de muestra de cada etapa.  Nota que si uno tiene poca confianza en los valores **a priori** se le da un valor pequeño para que los datos del campo dominan los resultados.  
 
-```{r chap7_22}
+```{r bayes22}
 fill_transitions(TF, N, P = RLT_Tprior, priorweight = 0.5)
 ```
 
@@ -369,7 +369,7 @@ La distribución posterior marginal de un elemento en un multinomio es una distr
 
 Esas son las estimaciones puntuales (comparar con la primera columna anterior), inferior y superior $95\%$ de los intervalos creíbles simétricos para transiciones de la etapa de plántula. Existe un alto grado de incertidumbre debido a la tamaño de muestra pequeño ($2$) y bajo peso en el anterior ($1$), lo que lleva a un tamaño de muestra efectivo de 3. 
 
-```{r chap7_23}
+```{r bayes23}
 TN <- fill_transitions(TF, N, P = RLT_Tprior, priorweight = 0.1, returnType = "TN")
 a <- TN[,1] # cambie 1 a 2, 3 etc para obtener la distribución beta marginal de cada columna. 
 b <- sum(TN[,1]) - TN[,1]# cambie 1 a 2, 3 etc para obtener la distribución beta marginal de cada columna. 
@@ -387,7 +387,7 @@ Que pasa si uno aumenta el tamaño de muestra efectivo? Si aumentamos el tamaño
 
 La tasa de transición de plántula a juvenil se reduce cuando el tamaño de la muestra es demasiado grande. IMPORTANTE: En general, el tamaño de la muestra **a priori** debe ser menos que el tamaño de muestra observado. Este solamente un ejmplo para demostrar el concepto. 
 
-```{r chap7_24, echo=FALSE}
+```{r bayes24, echo=FALSE}
 TN <- fill_transitions(TF, N, P = RLT_Tprior, priorweight = 9, returnType = "TN")
 a <- TN[,1]
 b <- sum(TN[,1]) - TN[,1] # El parámetro beta es la suma de todos los demás parámetros de Dirichlet.
@@ -418,7 +418,7 @@ En esta demostración, simulamos 5000 matrices y calculamos el valor $\lambda$ d
 
 Corren el script múltiples veces, y verán que los valores cambian a cada simulación
 
-```{r chap7_25}
+```{r bayes25}
 sim_transitions(TF, N, P = RLT_Tprior, alpha = alpha, beta = beta,
                 priorweight = 0.5)
 ```
@@ -427,7 +427,7 @@ Ahora simulamos 5000 veces, calculamos el valor $\lambda$ de cada matriz y cream
 
 
 
-```{r chap7_26}
+```{r bayes26}
 #set.seed(8390278) # make this part reproducible
 alpha2 <- matrix(c(NA_real_, NA_real_, 0.025,
                   NA_real_, NA_real_, NA_real_,
@@ -452,7 +452,7 @@ ggplot(data = RLT_0.5,
 Esa prueba es basada en la simulación de la distribución posterior.  Se calcula la distribución de los $\lambda$ y se determina si el $\lambda$ observado es significativamente más grande que 1. También podemos calcular algunas estadísticas de resumen. `pincrease` es el probabilidad de que $\lambda > 1$. En este caso el valor de $\lambda$ no es significativamente más grande que 1, con un valor de 0.13. 
 
 
-```{r chap7_27}
+```{r bayes27}
 RLT_0.5_summary <- summarize(RLT_0.5,
                              medianL = median(lposterior),
                              meanL = mean(lposterior),
@@ -463,7 +463,7 @@ RLT_0.5_summary <- summarize(RLT_0.5,
 
 ### Tabla de resultado de lambda
 
-```{r chap7_28}
+```{r bayes28}
 
 gt(signif(RLT_0.5_summary, digits = 2))
 ```

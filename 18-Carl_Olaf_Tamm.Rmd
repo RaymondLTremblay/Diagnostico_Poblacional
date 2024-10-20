@@ -1,7 +1,7 @@
 # Carl Olaf Tamm
 
 
-```{r, OCTamm_A, eval= T, echo=FALSE, message=F}
+```{r, OCTamm_1, eval= T, echo=FALSE, message=F}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(janitor, tidyverse, devtools, popbio, knitr, gt)
 
@@ -44,7 +44,7 @@ Los datos de Tamm fueron compartido de forma visual usando gráficos. En la figu
   
   
   WRONG FIGURE; use Fig. 1 D. incarnata from Tamm 1972 
-```{r, OCTamm_B, echo=FALSE, out.width="50%", fig.cap="Tamm: 1972, Orchis mascula"}
+```{r, OCTamm_2, echo=FALSE, out.width="50%", fig.cap="Tamm: 1972, Orchis mascula"}
 knitr::include_graphics("Figures/Tamm_1972_Orchis_mascula.jpg")
 ```
  
@@ -52,7 +52,7 @@ knitr::include_graphics("Figures/Tamm_1972_Orchis_mascula.jpg")
 
 En la publicación de 1972, Tamm describe la dinámica de múltiples especies de orquideas, y alguna especies en múltiples sitios.
 
-```{r, OCTamm_C, echo=FALSE, message=FALSE}
+```{r, OCTamm_3, echo=FALSE, message=FALSE}
 library(tidyverse)
 library(gt)
  Tamm=tribble(~Especies, ~"Núm de la Población", ~"Año del primer muestreo", ~"Año del último muestreo",
@@ -96,7 +96,7 @@ Primero se estará digitalizando los datos, seguido de construcción de matriz s
 
 Para instalar **raretrans** remover el **#** antes de correr el script para tener acceso a los códigos de **raretrans**. 
 
-```{r OCTamm_2}
+```{r OCTamm_4}
 #library(devtools)
 
 #devtools::install_github("atyre2/raretrans", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
@@ -114,7 +114,7 @@ Se puede tener acceso a los datos de Tamm en el archivo "Tamm_1972.xlsx" en la c
 
 Estos datos estan limitado a la especie de *Dactylorhiza incarnata* y se tiene información de los 35 individuos monitoreado en los años 1944 hasta 1971.
 
-```{r OCTamm_3}
+```{r OCTamm_5}
 library(readxl)
 Tamm_1972_column <- read_excel("data/Tamm_1972.xlsx", 
     sheet = "D_incarnata_by_column")
@@ -128,7 +128,7 @@ El primer paso es encontrar la matriz de valores *prior* para añadir al modelo 
 
 
 
-```{r OCTamm_4}
+```{r OCTamm_6}
 Dacty_apriori=matrix(c(0.637, 0.571, 0.740,
                        0.273, 0.271, 0.049,
                        0.090, 0.158, 0.059,
@@ -150,7 +150,7 @@ Dacty_apriori
    - un individuo fallecido no puede regresar en un estado en el futuro.
 
 
-```{r OCTamm_6}
+```{r OCTamm_7}
 
 Tmat_D <- Tamm_1972_column %>% 
   dplyr::select(Year, stage, next_stage, Fertility) %>% 
@@ -181,7 +181,7 @@ Para tomar en cuanta la fecundidad, se necesita una matriz de fertilidad. En est
 
 
 
-```{r OCTamm_7}
+```{r OCTamm_8}
 
 Fmat <- matrix(0, nrow=3, ncol=3) # crear una matriz de ceros. 
 Fmat[1,2] <- 15/9 # contar 9 adultos reproductivos en el tiempo t y 15 nuevos individuos en el tiempo t+1 en la población. 
@@ -195,7 +195,7 @@ TF2
 
 
 
-```{r OCTamm_8, echo=FALSE, message=FALSE, warning=FALSE}
+```{r OCTamm_9, echo=FALSE, message=FALSE, warning=FALSE}
 library(Rage)
 library(DiagrammeR)
 
@@ -252,7 +252,7 @@ Comparan la matriz original con los valores de la matriz posterior, usando la fu
 El valor de 0.01, es que se usa 1% de los valores prior y 99% de los valores del campo. Por consecuencia domina los valores del campo. 
 
 . 
-```{r OCTamm_9}
+```{r OCTamm_10}
 
 TF2$Tmat
 
@@ -264,7 +264,7 @@ TF3 # la matriz de transiciones posterior
 Como esperado la población de *Dactylorhiza incarnata* disminuye en el tiempo y el indice de crecimiento es menor que 1.0. 
 
 
-```{r OCTamm_10}
+```{r OCTamm_11}
 popbio::lambda(TF3)
 
 
@@ -280,7 +280,7 @@ las matrices alpha2 y beta2, representan los parámetros de la distribución gam
 
 
 
-```{r OCTamm_11a, eval=TRUE, echo=TRUE}
+```{r OCTamm_12, eval=TRUE, echo=TRUE}
 library(popbio)
 
 alpha2 <- matrix(c(NA_real_, 1e-5, NA_real_,
@@ -304,7 +304,7 @@ Dacty_0.1 <- sim_transitions(TF2, N2_D, P = Dacty_apriori, alpha = alpha2, beta 
 
 
 
-```{r OCTamm_11c, eval=TRUE, echo=TRUE}
+```{r OCTamm_13, eval=TRUE, echo=TRUE}
 Dacty_0.1b <- tibble(lposterior = map_dbl(Dacty_0.1, lambda))
 
 ```
@@ -312,7 +312,7 @@ Dacty_0.1b <- tibble(lposterior = map_dbl(Dacty_0.1, lambda))
 
 ## Visualización de las distribuciones de los lambda
 
-```{r OCTamm_11d}
+```{r OCTamm_14}
 ggplot(data = Dacty_0.1b,
      mapping = aes(x = lposterior)) + 
   geom_histogram(binwidth = 0.01, colour="white") + 
@@ -328,7 +328,7 @@ Para concluir, la población de *Dactylorhiza incarnata* muestreado por Tamm des
 
 
 
-```{r OCTamm_12m, eval=T}
+```{r OCTamm_15, eval=T}
 Dacty_0.1bdf=as.data.frame(Dacty_0.1b)
 Dacty_0.1_summary <- dplyr::summarize(Dacty_0.1bdf,
                             medianL = median(lposterior),
@@ -343,7 +343,7 @@ Dacty_0.1_summary <- dplyr::summarize(Dacty_0.1bdf,
 
 
 
-```{r OCTamm_12b, eval=T}
+```{r OCTamm_16, eval=T}
 gt(signif(Dacty_0.1_summary, digits = 3))
 
 
@@ -356,7 +356,7 @@ Revisión RLT: Oct 8, 2024
 
 
 
-```{r OCTamm_13, echo=FALSE, eval=FALSE}
+```{r OCTamm_17, echo=FALSE, eval=FALSE}
 
 D_incarnata_1 <- Tamm_1972 %>%   
  select("1944", "1948", "F_1944") |> 
@@ -378,7 +378,7 @@ N = N %>%
 
 
 
-```{r, OCTamm_14, echo=F, eval=FALSE}
+```{r, OCTamm_18, echo=F, eval=FALSE}
 
 
 D_incarnata_1 <- Tamm_1972 %>%   
@@ -400,7 +400,7 @@ TF # Este es la estructura de etapas de vida para esa población en este tiempo.
 
 ```
 
-```{r OCTamm_15, eval=FALSE, echo=FALSE}
+```{r OCTamm_19, eval=FALSE, echo=FALSE}
 D_incarnata_2 <- Tamm_1972 %>%   
  select("1948", "1949") |> 
   rename("stage" = "1948", "fate" = "1949")
@@ -416,7 +416,7 @@ TF # Este es la estructura de etapas de vida para esa población en este tiempo.
 ```
 
 
-```{r OCTamm_16, echo=F, eval=FALSE}
+```{r OCTamm_20, echo=F, eval=FALSE}
 D_incarnata_3 <- Tamm_1972 %>%   
  select("1949", "1950") |> 
   rename("stage" = "1949", "fate" = "1950")

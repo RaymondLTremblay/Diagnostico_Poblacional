@@ -25,7 +25,7 @@ library(popdemo)
 
 Aqui la matriz de lefkovitch para la planta *Lepanthes rubripetala* (Tremblay et al. 2015) es presentada.
 
-```{r chap10_1, message=FALSE}
+```{r transF1, message=FALSE}
 
 #Capturar los datos de la matriz para L. rubripetala (Tremblay et al. 2015)
 Lr1 <- matrix(c(0.4324, 0,      0,     0.15,
@@ -48,7 +48,7 @@ Aqui la matriz de elasticad calculado anteriormente.
 Nota que la suma de todos los elementos de la matriz de elasticidad. Proporcionalmente el cambio de la supervivencia de el estado de Adulto Reproductivo (AR) tiene el mayor impacto sobre la tasa de crecimiento poblacional.  Un pequeño cambio resultaria en un cambio de 0.311 en la tasa de crecimiento poblacional. Al contrario una plantula que se queda plantula (estasis) tuviese muy poco impacto en el crecimiento de la población (0.018). Esos cambios son lineales y son validos si las perturbaciones son pequeñas. Recordar que los indices de sensitividad para tansiciones y estasis son en unidades diferentes que los fecundidades. 
 
 
-```{r chap10_2, message=FALSE}
+```{r transF2, message=FALSE}
  # Matriz de elasticidad
 elasticidad<- round(elas(Lr1), digit = 3)
 
@@ -73,7 +73,7 @@ De las 10 transiciones , estasis o fecundidad, 9 tienen un efecto no lineal sobr
 La transición de juvenil a no reproductivo tiene un efecto no lineal sobre lambda.  La transición de juvenil a adulto reproductivo tiene un efecto no lineal sobre lambda.  La transición de no reproductivo a adulto reproductivo tiene un efecto no lineal
 
 
-```{r}
+```{r transF3}
 n0 <- c(0, 46, 38, 82)
 
 tfmat_lamb=tfam_lambda(Lr1)
@@ -99,7 +99,7 @@ Usamos la misma temrinalogía de Stott (@stott2012beyond) para calcular el efect
 
 Para evaluar el efecto de no lineal de 
 
-```{r}
+```{r transF4}
 
 
 n0 <- c(0, 46, 38, 82)
@@ -113,7 +113,7 @@ abline(inertia, sens2, lty=2, col="red")
 
 
 
-```{r}
+```{r transF5}
 n0 <- c(0, 46, 38, 82)
 
 tfmatU=tfam_inertia(Lr1, bound = "upper")
@@ -148,7 +148,7 @@ Finalmente, el cálculo de las funciones de transferencia representa el último 
 
 La perturbación de la estructura está determinada ppor dos vectores *d* y *e*
 
-```{r chap10_6}
+```{r transF6}
 ##PASO 6: ANALISIS DE LAS FUNCIONES DE TRANSFERENCIA 
 #Establecer márgenes:
 #Vector original

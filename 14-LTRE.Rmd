@@ -53,7 +53,7 @@ Cuadro 1. Matrices de proyección poblaciones de dos poblaciones de *Oncidiun br
 
 Primeramente se creó el ciclo de vida por especie de hospedero utilizando el siguiente código:
 
-```{r chap12_1_Q_martinezii, echo=TRUE}
+```{r LTRE1_Q_martinezii, echo=TRUE}
 library(Rage)
 library(DiagrammeR)
 
@@ -73,7 +73,7 @@ nodes <- paste(paste0("'", stages, "'"), collapse = "; ") # crear los nodos
 graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 4 # calcular la longitud de las flechas
 ```
 
-```{r, echo=FALSE}
+```{r LTRE2, echo=FALSE}
 graph$col <- c(
   "steelblue4", "PaleGreen4", "MediumOrchid4", "steelblue4", "PaleGreen4", "Goldenrod1",
   "MediumOrchid4", "steelblue4", "PaleGreen4", "Goldenrod1", "MediumOrchid4", "steelblue4"
@@ -114,7 +114,7 @@ Figura x: Ciclo de vida de *Oncidium brachyandrum* creciendo sobre *Quercus mart
 
 ### Diagrama para Quercus rugosa
 
-```{r chap12_2_Quercus_rugosa, echo=TRUE}
+```{r LTRE3_Quercus_rugosa, echo=TRUE}
 
 
 library(Rage)
@@ -187,7 +187,7 @@ En un archivo nuevo de Excel se arma la base, con la columna de vital rate al pr
 
 
  
-```{r, echo=FALSE}
+```{r LTRE4, echo=FALSE}
 library(tidyverse)
 library(gt)
 Oncidium=tribble(~"names.vitalrate", ~"Martinezzi", ~"Rugosa", ~"matrix",
@@ -232,7 +232,7 @@ Subir la base de datos de la carpeta de trabajo y cargarla en R.
 
 
 
-```{r chap12_3, echo=TRUE}
+```{r LTRE5, echo=TRUE}
 # Asegurarse de tener instalado y cargado el paquete 'popbio' package 
 
 
@@ -250,7 +250,7 @@ Debido a que la columna de matrix contiene más filas con datos nos aparecerá l
 
 Para extraer los nombres de las tasas vitales (de la fila 2 a la 13), sin incluir el valor de *λ* el cual está en la primera
 
-```{r chap12_4}
+```{r LTRE6}
 razonvital<-Oncidium$names.vitalrate[2:13] 
 
 razonvital # mostrar los nombres del objeto razonvital
@@ -261,7 +261,7 @@ razonvital # mostrar los nombres del objeto razonvital
 
 Extraer tasas vitales de de la orquídea *Oncidium brachyandrum* que crecen sobre *Q. martinezzi* y dejar a lambda a un lado
 
-```{r chap12_5}
+```{r LTRE7}
  
 
 Martinezzi<-Oncidium$Martinezzi [2:13] # [2:13] se refiere a la fila 2 hasta la 13. 
@@ -273,7 +273,7 @@ Martinezzi
 
 Extraer tasas vitales de de la orquidea *Oncidium brachyandrum* que crecen sobre *Q. rugosa* y dejar a lambda a un lado
 
-```{r chap12_6}
+```{r LTRE8}
 Rugosa<-Oncidium$Rugosa [2:13]
 names(Rugosa)<-razonvital # asignar los nombres de las tasas vitales
 Rugosa
@@ -284,7 +284,7 @@ Rugosa
 
 ### Extraer los elementos de matriz utilizando los nombres de las tasas vitales
 
-```{r chap12_7}
+```{r LTRE9}
 matrix.el<-as.expression(parse(text=Oncidium$matrix)) 
 matrix.el
 expression(s1*(1-g12), s1*g12, 0, 0, s2*g21, s2*(1-g23-g21), 
@@ -301,7 +301,7 @@ Nota que usando la función vitalsens se pueden calcular las sensibilidades y el
 
 ## HAY algo extraño en la matriz de sensibilidades y elasticidades, no se ve bien., hay elasticidad negativas, y esto no es posible.  Hay que revisar el código.
 
-```{r chap12_8}
+```{r LTRE10}
 Martinezzi.se<-vitalsens(matrix.el, Martinezzi)
 Martinezzi.se
 ```
@@ -317,7 +317,7 @@ Rugosa.se
 
 En esta parte se calculará la diferencia entre las tasas vitales de *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*.  ¿Como se interpreta estos resultados? 
 
-```{r chap12_10}
+```{r LTRE11}
 vr.dif.Martinezzi.Rugosa<-Rugosa-Martinezzi 
 vr.dif.Martinezzi.Rugosa
 ```
@@ -326,7 +326,7 @@ vr.dif.Martinezzi.Rugosa
 
 En este paso se calculará la tasa vital media para *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*. La tasa vital media se calcula sumando las tasas vitales de las dos matrices y dividiendo entre 2.
 
-```{r chap12_11}
+```{r LTRE12}
 vr.promedia.Martinezzi.Rugosa<-((Rugosa+Martinezzi)/2) #calcular la tazas vitales parta la matrix promedia
 
 # Nota: si se tuvieran 3 matrices se sumarían las tasas vitales de las tres dividido por 3. 
@@ -338,7 +338,7 @@ vr.promedia.Martinezzi.Rugosa
 
 En este paso se calculará las sensibilidades y elasticidades para la matriz promedia de *Oncidium brachyandrum* creciendo sobre *Q. martinezii* y *Q. rugosa*.
 
-```{r chap12_12}
+```{r LTRE13}
 media.sens.Martinezzi.Rugosa<-vitalsens(matrix.el, vr.promedia.Martinezzi.Rugosa) 
 media.sens.Martinezzi.Rugosa
 ```
@@ -356,7 +356,7 @@ LTRE.contrib.Martinezzi.Rugosa
 
 
 
-```{r chap12_14}
+```{r LTRE14}
 LTRE.resultados.Martinezzi.Rugosa<- data.frame(razonvital=razonvital,
                                                rug.vr=Rugosa, 
                                             mart.vr=Martinezzi, 
@@ -376,7 +376,7 @@ gt(LTRE.resultados.Martinezzi.Rugosa)
 Se puede crear un gráfico de la contribucioón de cada tasa vitales sobre la historia de vida de la especies comparando las dos matrix
 
 
-```{r}
+```{r LTRE15}
 ggplot(LTRE.resultados.Martinezzi.Rugosa, aes(y=contribucion, x=razonvital, fill=razonvital))+
   geom_bar(stat="identity")+
   theme_minimal()+
@@ -396,7 +396,7 @@ De acuerdo con el análisis de elasticidad para cada una de las poblaciones de *
 Figure 6. Resultados de los análisis de elasticidad, para dos poblaciones de *Oncidium brachyandrum* creciendo sobre *Quercus martinezii* y *Q. rugosa*. Por proceso demográfico (a) y por estadío (b).
 
 
-```{r}
+```{r LTRE16}
 ggplot(LTRE.resultados.Martinezzi.Rugosa, aes(y=media.sens, x=razonvital, fill=razonvital))+
   geom_bar(stat="identity")+
   theme_minimal()+

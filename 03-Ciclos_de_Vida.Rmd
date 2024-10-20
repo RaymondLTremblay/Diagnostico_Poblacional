@@ -3,7 +3,7 @@
 Por: 
 
 
-```{r chap2_1}
+```{r CV_1}
 library(Rage)
 library(DiagrammeR)
 ```
@@ -28,7 +28,7 @@ El la matriz de transición de este ciclo de vida es la siguiente: 50% de la sem
 
 
 
-```{r chap2_2}
+```{r CV_2}
 # hidden code to produce figures
 matA <- rbind(
   c(0.0, 0.0, 3.2),
@@ -85,7 +85,7 @@ Las lineas en verde representa crecimiento, las lineas en rojas representan qued
 Nota aquí es que si este diagrama representa la recolección de datos en el campo uno debería de recolectar datos de la etapa de semilla, plántula, juvenil y adulto. En nuestra búsqueda de literatura no encontramos ni una publicación que recolectara datos de todas las etapas de vida de una orquídea. En parte por la dificultad de encontrar semillas y plántulas en el campo. Especialmente por la dificultad de encontrar semillas en un árbol por ser tan diminutas y seguir su desarrollo de un año a otro.
 
 
-```{r chap2_3}
+```{r CV_3}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -162,7 +162,7 @@ El ciclo de vida es representada por 5 etapas. Los datos provienen de la figura 
 Nota aquí que se hizo un estimado de la cantidad de semillas producidas y la proporciones de semillas que germinan y se convierten en plántulas el siguiente año. 
 
 
-```{r chap2_5}
+```{r CV_5}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -229,7 +229,7 @@ Los autores observaron tres tipos de transiciones en la historia de vida de la o
 
 
 
-```{r Telipogon_helleri}
+```{r CV_3Telipogon_helleri}
 
 
 matA_Th=matrix(c(                  
@@ -294,7 +294,7 @@ Las etapas que pasen a latente el próximo año son de color azul, los que se qu
 
 
 
-```{r Prasophyllum_correctum}
+```{r CV4Prasophyllum_correctum}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -359,7 +359,7 @@ El objetivo de la publicación era determinar la probabilidad de que un individu
 
             
             
-```{r Ophrys}
+```{r CV5Ophrys}
 # hidden code to produce figures
 library(DiagrammeR)
 G1=matrix(c(0.0080, 0.0184,   0.0149, 0.0148,
@@ -422,7 +422,7 @@ Aquí se visualiza la matriz de *Orchis purpurea* de la publicación de [@jacque
 
 ##### 
 
-```{r}
+```{r CV6}
 matA_Os=matrix(c(
 0.000, 0.000, 0, 0.00, 0.000, 84.88725,
 0.012, 0.000, 0, 0.00, 0.000,  0.00000,
@@ -490,7 +490,7 @@ En la siguiente figura aparece tres errores comunes cuando se recolectan datos d
  
  
 
-```{r Basic, echo=FALSE}
+```{r CV7, echo=FALSE}
 # hidden code to produce figures
 library(DiagrammeR)
 matA <- rbind(
@@ -550,7 +550,7 @@ Nota aquí podemos usar otro paquete de R (Rage). La diferencia es que no se pue
 
  
 
-```{r chap2_4}
+```{r CV8}
 library(Rage)
 plot_life_cycle(matA, stages=etapas, fontsize = 0)
 
