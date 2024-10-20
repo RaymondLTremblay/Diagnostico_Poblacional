@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 ¿Qué es el analisis de dinamica poblacional? | Dinamica Poblacional</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de la Dinámica Poblacional con ejemplos de orquídeas. Los capítulos estan organizado de lo más básico a más complejo en la recolección de datos, análisis y interpretación de los resultados. Incluyendo acercamientos que fueron desarrollados más reciente para el análisis de datos de dinámica poblacional. Los capitulos de Métodos Bayesiano de calcular las transiciones y fecundidad y Un protocolo para informar sobre modelos discreto de estructura de población son especialmente importante para reducir los errores de cálculos de los parámetros y divulgación de los trabajos. El capitulo de Impacto de datos sin sentidos es PRIMORDIAL para los investigadores que trabajan con datos de dinámica poblacional y debería ser un capitulo donde uno regrese continuamente para evaluar sus análisis y interpretaciones. En otra palabra si los datos no tiene sentido biológico y matemático los resultados no sirven. En adición se presenta múltiples ejemplos de datos sin sentido y como estos datos pueden impactar los resultados de los análisis de forma negativa." />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 ¿Qué es el analisis de dinamica poblacional? | Dinamica Poblacional" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-10-14" />
+<meta name="date" content="2024-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,15 +51,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
-<script src="libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 <style type="text/css">
@@ -171,7 +162,7 @@ div.csl-indent {
 <li><a href="./">Diagnostico_Poblacional</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Dinámica Poblacional</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> bookdown::gitbook:</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>1.1</b> Objetivo del libro:</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.2</b> Estructura del libro</a></li>
@@ -245,10 +236,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.2.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#añadiendo-los-nombres-de-las-etapas"><i class="fa fa-check"></i><b>5.2.2</b> Añadiendo los nombres de las etapas</a></li>
 <li class="chapter" data-level="5.2.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#construcción-de-matriz-con-funciones-en-r"><i class="fa fa-check"></i><b>5.2.3</b> Construcción de matriz con funciones en R</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#matriz-con-clonaje"><i class="fa fa-check"></i><b>5.3</b> Matriz con Clonaje</a>
+<li class="chapter" data-level="5.3" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#matriz-con-clonaje"><i class="fa fa-check"></i><b>5.3</b> Matriz con Clonaje</a></li>
+<li class="chapter" data-level="5.4" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#extraer-la-matriz-de-clonaje"><i class="fa fa-check"></i><b>5.4</b> Extraer la matriz de Clonaje</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.3.1</b> Fertilidad</a></li>
-<li class="chapter" data-level="5.3.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.3.2</b> Problema con el uso tradicional de calcular las transiciones</a></li>
+<li class="chapter" data-level="5.4.1" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#fertilidad"><i class="fa fa-check"></i><b>5.4.1</b> Fertilidad</a></li>
+<li class="chapter" data-level="5.4.2" data-path="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html"><a href="como-calcular-transiciones-para-la-matriz-de-lefkovitch.html#problema-con-el-uso-tradicional-de-calcular-las-transiciones"><i class="fa fa-check"></i><b>5.4.2</b> Problema con el uso tradicional de calcular las transiciones</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="como-calcular-fecundidad.html"><a href="como-calcular-fecundidad.html"><i class="fa fa-check"></i><b>6</b> Como calcular fecundidad</a>
@@ -342,190 +334,182 @@ div.csl-indent {
 <li class="chapter" data-level="11.2.5" data-path="elasticidad.html"><a href="elasticidad.html#comparación-entre-especies"><i class="fa fa-check"></i><b>11.2.5</b> Comparación entre especies</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="elasticidad.html"><a href="elasticidad.html#limitaciones"><i class="fa fa-check"></i><b>11.3</b> Limitaciones</a></li>
+<li class="chapter" data-level="11.4" data-path="elasticidad.html"><a href="elasticidad.html#para-calcular-los-autovalores-y-autovectores-de-la-matriz"><i class="fa fa-check"></i><b>11.4</b> Para calcular los autovalores y autovectores de la matriz</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="introducir-los-nombres-de-los-estadíos-o-categorías-de-tamaño-según-sea-su-caso.html"><a href="introducir-los-nombres-de-los-estadíos-o-categorías-de-tamaño-según-sea-su-caso.html"><i class="fa fa-check"></i><b>12</b> Introducir los nombres de los estadíos o categorías de tamaño, según sea su caso</a></li>
-<li class="chapter" data-level="13" data-path="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><a href="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><i class="fa fa-check"></i><b>13</b> Capturar los datos de la matriz para Erycina crita-galli <span class="citation">(Mondragón, Maldonado, and Aguilar-Santelises 2007)</span> (tabla 4 del artículo)</a>
+<li class="chapter" data-level="12" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>12</b> Dinámica transitoria (Transient dynamics)</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html"><a href="capturar-los-datos-de-la-matriz-para-erycina-crita-galli-mondragon2007life-tabla-4-del-artículo.html#para-calcular-los-autovalores-y-autovectores-de-la-matriz"><i class="fa fa-check"></i><b>13.1</b> Para calcular los autovalores y autovectores de la matriz</a></li>
+<li class="chapter" data-level="12.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>12.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="12.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>12.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>12.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html"><i class="fa fa-check"></i><b>14</b> Dinámica transitoria (Transient dynamics)</a>
+<li class="chapter" data-level="12.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#librerías-de-r-requeridas-para-el-análisis-1"><i class="fa fa-check"></i><b>12.3</b> Librerías de R requeridas para el análisis</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-poblacional-de-largo-y-corto-plazo"><i class="fa fa-check"></i><b>14.1</b> Dinámica poblacional de largo y corto plazo</a></li>
-<li class="chapter" data-level="14.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo"><i class="fa fa-check"></i><b>14.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#part-i-dinámica-poblacional-de-largo-plazo"><i class="fa fa-check"></i><b>14.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+<li class="chapter" data-level="12.3.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>12.3.1</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="12.3.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>12.3.2</b> Crecimiento asintótico</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#librerías-de-r-requeridas-para-el-análisis-1"><i class="fa fa-check"></i><b>14.3</b> Librerías de R requeridas para el análisis</a>
-<ul>
-<li class="chapter" data-level="14.3.1" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0"><i class="fa fa-check"></i><b>14.3.1</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
-<li class="chapter" data-level="14.3.2" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#crecimiento-asintótico"><i class="fa fa-check"></i><b>14.3.2</b> Crecimiento asintótico</a></li>
+<li class="chapter" data-level="12.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>12.4</b> Dinámica transitoria</a></li>
+<li class="chapter" data-level="12.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-estandarizada-límites"><i class="fa fa-check"></i><b>12.5</b> Dinámica transitoria estandarizada: límites</a></li>
+<li class="chapter" data-level="12.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-específica-de-la-población."><i class="fa fa-check"></i><b>12.6</b> Dinámica transitoria específica de la población.</a></li>
 </ul></li>
-<li class="chapter" data-level="14.4" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria"><i class="fa fa-check"></i><b>14.4</b> Dinámica transitoria</a></li>
-<li class="chapter" data-level="14.5" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-estandarizada-límites"><i class="fa fa-check"></i><b>14.5</b> Dinámica transitoria estandarizada: límites</a></li>
-<li class="chapter" data-level="14.6" data-path="dinámica-transitoria-transient-dynamics.html"><a href="dinámica-transitoria-transient-dynamics.html#dinámica-transitoria-específica-de-la-población."><i class="fa fa-check"></i><b>14.6</b> Dinámica transitoria específica de la población.</a></li>
+<li class="chapter" data-level="13" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html"><i class="fa fa-check"></i><b>13</b> Funciones de Transferencias</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#la-elasticidad-no-lineal"><i class="fa fa-check"></i><b>13.1</b> La elasticidad no lineal</a></li>
+<li class="chapter" data-level="13.2" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#metodología"><i class="fa fa-check"></i><b>13.2</b> Metodología</a></li>
+<li class="chapter" data-level="13.3" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#ejemplo-tradicional"><i class="fa fa-check"></i><b>13.3</b> Ejemplo tradicional</a></li>
+<li class="chapter" data-level="13.4" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#valor-biológico"><i class="fa fa-check"></i><b>13.4</b> Valor biológico</a></li>
+<li class="chapter" data-level="13.5" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#métodos-de-calculo"><i class="fa fa-check"></i><b>13.5</b> Métodos de calculo</a></li>
+<li class="chapter" data-level="13.6" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>13.6</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
+<li class="chapter" data-level="13.7" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#referencias-1"><i class="fa fa-check"></i><b>13.7</b> Referencias</a></li>
+<li class="chapter" data-level="13.8" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#funciones-de-transferencia"><i class="fa fa-check"></i><b>13.8</b> Funciones de transferencia</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html"><i class="fa fa-check"></i><b>15</b> Funciones de Transferencias</a>
+<li class="chapter" data-level="14" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>14</b> LTRE</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#la-elasticidad-no-lineal"><i class="fa fa-check"></i><b>15.1</b> La elasticidad no lineal</a></li>
-<li class="chapter" data-level="15.2" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#metodología"><i class="fa fa-check"></i><b>15.2</b> Metodología</a></li>
-<li class="chapter" data-level="15.3" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#ejemplo-tradicional"><i class="fa fa-check"></i><b>15.3</b> Ejemplo tradicional</a></li>
-<li class="chapter" data-level="15.4" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#valor-biológico"><i class="fa fa-check"></i><b>15.4</b> Valor biológico</a></li>
-<li class="chapter" data-level="15.5" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#métodos-de-calculo"><i class="fa fa-check"></i><b>15.5</b> Métodos de calculo</a></li>
-<li class="chapter" data-level="15.6" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#paquete-de-r-para-calcular-le-eslaticidad-no-lineal"><i class="fa fa-check"></i><b>15.6</b> Paquete de R para calcular le eslaticidad no lineal</a></li>
-<li class="chapter" data-level="15.7" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#referencias-1"><i class="fa fa-check"></i><b>15.7</b> Referencias</a></li>
-<li class="chapter" data-level="15.8" data-path="funciones-de-transferencias.html"><a href="funciones-de-transferencias.html#funciones-de-transferencia"><i class="fa fa-check"></i><b>15.8</b> Funciones de transferencia</a></li>
+<li class="chapter" data-level="14.1" data-path="ltre.html"><a href="ltre.html#introducción-a-experimento-de-respuesta-de-tabla-de-vida"><i class="fa fa-check"></i><b>14.1</b> Introducción a <strong>Experimento de Respuesta de Tabla de Vida</strong></a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>14.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="ltre.html"><a href="ltre.html"><i class="fa fa-check"></i><b>16</b> LTRE</a>
+<li class="chapter" data-level="14.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>14.2</b> Métodos</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="ltre.html"><a href="ltre.html#introducción-a-experimento-de-respuesta-de-tabla-de-vida"><i class="fa fa-check"></i><b>16.1</b> Introducción a <strong>Experimento de Respuesta de Tabla de Vida</strong></a>
-<ul>
-<li class="chapter" data-level="16.1.1" data-path="ltre.html"><a href="ltre.html#cómo-se-diferencia-la-elasticidad-de-ertv"><i class="fa fa-check"></i><b>16.1.1</b> ¿Cómo se diferencia la elasticidad de ERTV?</a></li>
+<li class="chapter" data-level="14.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>14.2.1</b> Ejemplo práctico de ERTV</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>14.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
+<li class="chapter" data-level="14.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>14.2.3</b> Diagrama para <em>Quercus martinezii</em></a></li>
+<li class="chapter" data-level="14.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>14.2.4</b> Diagrama para Quercus rugosa</a></li>
+<li class="chapter" data-level="14.2.5" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>14.2.5</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
+<li class="chapter" data-level="14.2.6" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>14.2.6</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
+<li class="chapter" data-level="14.2.7" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>14.2.7</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
+<li class="chapter" data-level="14.2.8" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>14.2.8</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="ltre.html"><a href="ltre.html#métodos-1"><i class="fa fa-check"></i><b>16.2</b> Métodos</a>
+<li class="chapter" data-level="14.3" data-path="ltre.html"><a href="ltre.html#hay-algo-extraño-en-la-matriz-de-sensibilidades-y-elasticidades-no-se-ve-bien.-hay-elasticidad-negativas-y-esto-no-es-posible.-hay-que-revisar-el-código."><i class="fa fa-check"></i><b>14.3</b> HAY algo extraño en la matriz de sensibilidades y elasticidades, no se ve bien., hay elasticidad negativas, y esto no es posible. Hay que revisar el código.</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="ltre.html"><a href="ltre.html#ejemplo-práctico-de-ertv"><i class="fa fa-check"></i><b>16.2.1</b> Ejemplo práctico de ERTV</a></li>
-<li class="chapter" data-level="16.2.2" data-path="ltre.html"><a href="ltre.html#matrices-de-proyecciones-y-ciclo-de-vida-por-especie-de-hospedero"><i class="fa fa-check"></i><b>16.2.2</b> Matrices de proyecciones y ciclo de vida por especie de hospedero</a></li>
-<li class="chapter" data-level="16.2.3" data-path="ltre.html"><a href="ltre.html#diagrama-del-ciclo-de-vida"><i class="fa fa-check"></i><b>16.2.3</b> Diagrama del ciclo de vida</a></li>
-<li class="chapter" data-level="16.2.4" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-martinezii"><i class="fa fa-check"></i><b>16.2.4</b> Diagrama para <em>Quercus martinezii</em></a></li>
-<li class="chapter" data-level="16.2.5" data-path="ltre.html"><a href="ltre.html#diagrama-para-quercus-rugosa"><i class="fa fa-check"></i><b>16.2.5</b> Diagrama para Quercus rugosa</a></li>
-</ul></li>
-<li class="chapter" data-level="16.3" data-path="ltre.html"><a href="ltre.html#procedimiento-para-ertv-en-excel"><i class="fa fa-check"></i><b>16.3</b> Procedimiento para ERTV en Excel</a></li>
-<li class="chapter" data-level="16.4" data-path="ltre.html"><a href="ltre.html#procedimiento-en-r"><i class="fa fa-check"></i><b>16.4</b> Procedimiento en R</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-martinezzi"><i class="fa fa-check"></i><b>16.4.1</b> Tasa vital sobre <em>Q. martinezzi</em></a></li>
-<li class="chapter" data-level="16.4.2" data-path="ltre.html"><a href="ltre.html#tasa-vital-sobre-q.-rugosa"><i class="fa fa-check"></i><b>16.4.2</b> Tasa vital sobre <em>Q. rugosa</em></a></li>
-<li class="chapter" data-level="16.4.3" data-path="ltre.html"><a href="ltre.html#extraer-los-elementos-de-matriz-utilizando-los-nombres-de-las-tasas-vitales"><i class="fa fa-check"></i><b>16.4.3</b> Extraer los elementos de matriz utilizando los nombres de las tasas vitales</a></li>
-<li class="chapter" data-level="16.4.4" data-path="ltre.html"><a href="ltre.html#calcular-las-sensibilidades-y-elasticidades-de-onciudium-brachyandrum-de-ambas-matrices"><i class="fa fa-check"></i><b>16.4.4</b> Calcular las sensibilidades y elasticidades de <em>Onciudium brachyandrum</em> de ambas matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="16.5" data-path="ltre.html"><a href="ltre.html#hay-algo-extraño-en-la-matriz-de-sensibilidades-y-elasticidades-no-se-ve-bien.-hay-elasticidad-negativas-y-esto-no-es-posible.-hay-que-revisar-el-código."><i class="fa fa-check"></i><b>16.5</b> HAY algo extraño en la matriz de sensibilidades y elasticidades, no se ve bien., hay elasticidad negativas, y esto no es posible. Hay que revisar el código.</a>
-<ul>
-<li class="chapter" data-level="16.5.1" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>16.5.1</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
-<li class="chapter" data-level="16.5.2" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>16.5.2</b> Calcular las tasas vitales para la matriz media</a></li>
-<li class="chapter" data-level="16.5.3" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>16.5.3</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
-<li class="chapter" data-level="16.5.4" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>16.5.4</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
-<li class="chapter" data-level="16.5.5" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>16.5.5</b> Resultados de ERTV</a></li>
+<li class="chapter" data-level="14.3.1" data-path="ltre.html"><a href="ltre.html#calcular-las-diferencias-en-tasas-vitales-entre-las-especies"><i class="fa fa-check"></i><b>14.3.1</b> Calcular las diferencias en tasas vitales entre las especies</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-vitales-para-la-matriz-media"><i class="fa fa-check"></i><b>14.3.2</b> Calcular las tasas vitales para la matriz media</a></li>
+<li class="chapter" data-level="14.3.3" data-path="ltre.html"><a href="ltre.html#calcular-las-tasas-sensibilidades-y-elasticidades-para-la-matriz-media"><i class="fa fa-check"></i><b>14.3.3</b> Calcular las tasas sensibilidades y elasticidades para la matriz media</a></li>
+<li class="chapter" data-level="14.3.4" data-path="ltre.html"><a href="ltre.html#calcular-las-contribuciones-de-ertv-y-ver-los-resultados"><i class="fa fa-check"></i><b>14.3.4</b> Calcular las contribuciones de ERTV y ver los resultados</a></li>
+<li class="chapter" data-level="14.3.5" data-path="ltre.html"><a href="ltre.html#resultados-de-ertv"><i class="fa fa-check"></i><b>14.3.5</b> Resultados de ERTV</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html"><i class="fa fa-check"></i><b>17</b> Variación temporal y Espacial por simulaciones</a>
+<li class="chapter" data-level="15" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html"><i class="fa fa-check"></i><b>15</b> Variación temporal y Espacial por simulaciones</a>
 <ul>
-<li class="chapter" data-level="17.0.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#componentes-de-variación"><i class="fa fa-check"></i><b>17.0.1</b> Componentes de Variación</a></li>
-<li class="chapter" data-level="17.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#introducción-a-los-métodos-de-simulaciones"><i class="fa fa-check"></i><b>17.1</b> Introducción a los métodos de simulaciones</a></li>
-<li class="chapter" data-level="17.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>17.2</b> Estocasticidad espacial</a>
+<li class="chapter" data-level="15.0.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#componentes-de-variación"><i class="fa fa-check"></i><b>15.0.1</b> Componentes de Variación</a></li>
+<li class="chapter" data-level="15.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#introducción-a-los-métodos-de-simulaciones"><i class="fa fa-check"></i><b>15.1</b> Introducción a los métodos de simulaciones</a></li>
+<li class="chapter" data-level="15.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-espacial"><i class="fa fa-check"></i><b>15.2</b> Estocasticidad espacial</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#entrada-de-datos"><i class="fa fa-check"></i><b>17.2.1</b> Entrada de datos</a></li>
-<li class="chapter" data-level="17.2.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#cual-es-la-distribución-de-número-de-individuos-esperado."><i class="fa fa-check"></i><b>17.2.2</b> Cual es la distribución de número de individuos esperado.</a></li>
-<li class="chapter" data-level="17.2.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#simulaciones-con-diferente-probabilidad-de-selección"><i class="fa fa-check"></i><b>17.2.3</b> Simulaciones con diferente probabilidad de selección</a></li>
-<li class="chapter" data-level="17.2.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones"><i class="fa fa-check"></i><b>17.2.4</b> Comparar la distribución de cantidad de individuos esperado por simulaciones</a></li>
-<li class="chapter" data-level="17.2.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#impacto-antropogénico-vs-poblaciones-naturales"><i class="fa fa-check"></i><b>17.2.5</b> Impacto antropogénico vs poblaciones naturales</a></li>
+<li class="chapter" data-level="15.2.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#entrada-de-datos"><i class="fa fa-check"></i><b>15.2.1</b> Entrada de datos</a></li>
+<li class="chapter" data-level="15.2.2" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#cual-es-la-distribución-de-número-de-individuos-esperado."><i class="fa fa-check"></i><b>15.2.2</b> Cual es la distribución de número de individuos esperado.</a></li>
+<li class="chapter" data-level="15.2.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#simulaciones-con-diferente-probabilidad-de-selección"><i class="fa fa-check"></i><b>15.2.3</b> Simulaciones con diferente probabilidad de selección</a></li>
+<li class="chapter" data-level="15.2.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparar-la-distribución-de-cantidad-de-individuos-esperado-por-simulaciones"><i class="fa fa-check"></i><b>15.2.4</b> Comparar la distribución de cantidad de individuos esperado por simulaciones</a></li>
+<li class="chapter" data-level="15.2.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#impacto-antropogénico-vs-poblaciones-naturales"><i class="fa fa-check"></i><b>15.2.5</b> Impacto antropogénico vs poblaciones naturales</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>17.3</b> Estocasticidad temporal</a>
+<li class="chapter" data-level="15.3" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-temporal"><i class="fa fa-check"></i><b>15.3</b> Estocasticidad temporal</a>
 <ul>
-<li class="chapter" data-level="17.3.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparación-de-la-variación-temporal-y-espacial-en-un-gráfico"><i class="fa fa-check"></i><b>17.3.1</b> Comparación de la variación temporal y espacial en un gráfico</a></li>
+<li class="chapter" data-level="15.3.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#comparación-de-la-variación-temporal-y-espacial-en-un-gráfico"><i class="fa fa-check"></i><b>15.3.1</b> Comparación de la variación temporal y espacial en un gráfico</a></li>
 </ul></li>
-<li class="chapter" data-level="17.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-demográfica"><i class="fa fa-check"></i><b>17.4</b> Estocasticidad demográfica</a>
+<li class="chapter" data-level="15.4" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#estocasticidad-demográfica"><i class="fa fa-check"></i><b>15.4</b> Estocasticidad demográfica</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>17.4.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
+<li class="chapter" data-level="15.4.1" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#obtener-los-inertvalos-de-confianza-ic-para-entradas-de-matriz-individuales"><i class="fa fa-check"></i><b>15.4.1</b> Obtener los inertvalos de confianza (IC) para entradas de matriz individuales</a></li>
 </ul></li>
-<li class="chapter" data-level="17.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>17.5</b> Ventaja de usar simulaciones</a></li>
+<li class="chapter" data-level="15.5" data-path="variación-temporal-y-espacial-por-simulaciones.html"><a href="variación-temporal-y-espacial-por-simulaciones.html#ventaja-de-usar-simulaciones"><i class="fa fa-check"></i><b>15.5</b> Ventaja de usar simulaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>18</b> El uso de matrices para estudios evolutivos</a></li>
-<li class="chapter" data-level="19" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><i class="fa fa-check"></i><b>19</b> Historia breve de la dinámica poblacional en orquídeas.</a>
+<li class="chapter" data-level="16" data-path="el-uso-de-matrices-para-estudios-evolutivos.html"><a href="el-uso-de-matrices-para-estudios-evolutivos.html"><i class="fa fa-check"></i><b>16</b> El uso de matrices para estudios evolutivos</a></li>
+<li class="chapter" data-level="17" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><i class="fa fa-check"></i><b>17</b> Historia breve de la dinámica poblacional en orquídeas.</a>
 <ul>
-<li class="chapter" data-level="19.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#familia-de-plantas-evaluadas"><i class="fa fa-check"></i><b>19.0.1</b> Familia de plantas evaluadas</a></li>
-<li class="chapter" data-level="19.0.2" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios-con-orquídeas"><i class="fa fa-check"></i><b>19.0.2</b> Los primeros estudios con Orquídeas</a></li>
-<li class="chapter" data-level="19.0.3" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#latencia-en-orquídeas"><i class="fa fa-check"></i><b>19.0.3</b> Latencia en Orquídeas</a></li>
-<li class="chapter" data-level="19.0.4" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#métodos-alternos-para-estimar-la-latencia-incluye"><i class="fa fa-check"></i><b>19.0.4</b> Métodos alternos para estimar la latencia incluye</a></li>
-<li class="chapter" data-level="19.0.5" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas"><i class="fa fa-check"></i><b>19.0.5</b> Perspectiva Histórica de la Dinámica Poblacional en Orquídeas</a></li>
+<li class="chapter" data-level="17.0.1" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#familia-de-plantas-evaluadas"><i class="fa fa-check"></i><b>17.0.1</b> Familia de plantas evaluadas</a></li>
+<li class="chapter" data-level="17.0.2" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#los-primeros-estudios-con-orquídeas"><i class="fa fa-check"></i><b>17.0.2</b> Los primeros estudios con Orquídeas</a></li>
+<li class="chapter" data-level="17.0.3" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#latencia-en-orquídeas"><i class="fa fa-check"></i><b>17.0.3</b> Latencia en Orquídeas</a></li>
+<li class="chapter" data-level="17.0.4" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#métodos-alternos-para-estimar-la-latencia-incluye"><i class="fa fa-check"></i><b>17.0.4</b> Métodos alternos para estimar la latencia incluye</a></li>
+<li class="chapter" data-level="17.0.5" data-path="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html"><a href="historia-breve-de-la-dinámica-poblacional-en-orquídeas..html#perspectiva-histórica-de-la-dinámica-poblacional-en-orquídeas"><i class="fa fa-check"></i><b>17.0.5</b> Perspectiva Histórica de la Dinámica Poblacional en Orquídeas</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html"><i class="fa fa-check"></i><b>20</b> Carl Olaf Tamm</a>
+<li class="chapter" data-level="18" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html"><i class="fa fa-check"></i><b>18</b> Carl Olaf Tamm</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#quien-es-carl-olaf-tamm"><i class="fa fa-check"></i><b>20.1</b> Quien es Carl Olaf Tamm?</a></li>
-<li class="chapter" data-level="20.2" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#re-evaluación-de-los-datos-de-tamm"><i class="fa fa-check"></i><b>20.2</b> Re-evaluación de los datos de Tamm</a></li>
-<li class="chapter" data-level="20.3" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#instalación-de-raretrans-2-1"><i class="fa fa-check"></i><b>20.3</b> Instalación de raretrans #2</a></li>
-<li class="chapter" data-level="20.4" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#construcción-de-la-matriz-de-transición"><i class="fa fa-check"></i><b>20.4</b> Construcción de la matriz de transición</a></li>
-<li class="chapter" data-level="20.5" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#constucción-de-la-matriz-de-fertilidad"><i class="fa fa-check"></i><b>20.5</b> Constucción de la matriz de fertilidad</a></li>
-<li class="chapter" data-level="20.6" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#simulando-el-crecimiento-poblacional"><i class="fa fa-check"></i><b>20.6</b> Simulando el crecimiento poblacional</a></li>
-<li class="chapter" data-level="20.7" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#visualización-de-las-distribuciones-de-los-lambda"><i class="fa fa-check"></i><b>20.7</b> Visualización de las distribuciones de los lambda</a></li>
+<li class="chapter" data-level="18.1" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#quien-es-carl-olaf-tamm"><i class="fa fa-check"></i><b>18.1</b> Quien es Carl Olaf Tamm?</a></li>
+<li class="chapter" data-level="18.2" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#re-evaluación-de-los-datos-de-tamm"><i class="fa fa-check"></i><b>18.2</b> Re-evaluación de los datos de Tamm</a></li>
+<li class="chapter" data-level="18.3" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#instalación-de-raretrans-2-1"><i class="fa fa-check"></i><b>18.3</b> Instalación de raretrans #2</a></li>
+<li class="chapter" data-level="18.4" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#construcción-de-la-matriz-de-transición"><i class="fa fa-check"></i><b>18.4</b> Construcción de la matriz de transición</a></li>
+<li class="chapter" data-level="18.5" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#constucción-de-la-matriz-de-fertilidad"><i class="fa fa-check"></i><b>18.5</b> Constucción de la matriz de fertilidad</a></li>
+<li class="chapter" data-level="18.6" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#simulando-el-crecimiento-poblacional"><i class="fa fa-check"></i><b>18.6</b> Simulando el crecimiento poblacional</a></li>
+<li class="chapter" data-level="18.7" data-path="carl-olaf-tamm.html"><a href="carl-olaf-tamm.html#visualización-de-las-distribuciones-de-los-lambda"><i class="fa fa-check"></i><b>18.7</b> Visualización de las distribuciones de los lambda</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>21</b> Compadre_Orchid PPM y su uso</a>
+<li class="chapter" data-level="19" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html"><i class="fa fa-check"></i><b>19</b> Compadre_Orchid PPM y su uso</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#activar-los-siguiente-paquetes"><i class="fa fa-check"></i><b>21.1</b> Activar los siguiente paquetes</a>
+<li class="chapter" data-level="19.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#activar-los-siguiente-paquetes"><i class="fa fa-check"></i><b>19.1</b> Activar los siguiente paquetes</a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>21.1.1</b> Acceso a los datos de COMPADRE.</a></li>
-<li class="chapter" data-level="21.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>21.1.2</b> Filtrar para la familia de Orquidaceae</a></li>
-<li class="chapter" data-level="21.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cual-son-los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>21.1.3</b> Cual son los géneros de la familia Orchidaceae</a></li>
-<li class="chapter" data-level="21.1.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>21.1.4</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.1.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#acceso-a-los-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.1</b> Acceso a los datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.1.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-la-familia-de-orquidaceae"><i class="fa fa-check"></i><b>19.1.2</b> Filtrar para la familia de Orquidaceae</a></li>
+<li class="chapter" data-level="19.1.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cual-son-los-géneros-de-la-familia-orchidaceae"><i class="fa fa-check"></i><b>19.1.3</b> Cual son los géneros de la familia Orchidaceae</a></li>
+<li class="chapter" data-level="19.1.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#lista-de-especies-únicas-de-orquídeas-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.1.4</b> Lista de especies únicas de orquídeas en la base de datos de COMPADRE.</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>21.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
+<li class="chapter" data-level="19.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#contabilizar-cuantas-matrices-y-variables-estan-incluidas-en-el-archivo"><i class="fa fa-check"></i><b>19.2</b> Contabilizar cuantas matrices y variables estan incluidas en el archivo</a>
 <ul>
-<li class="chapter" data-level="21.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>21.2.1</b> La fuente de la información</a></li>
+<li class="chapter" data-level="19.2.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-fuente-de-la-información"><i class="fa fa-check"></i><b>19.2.1</b> La fuente de la información</a></li>
 </ul></li>
-<li class="chapter" data-level="21.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#frecuencia-de-autores-unicos-en-la-base-de-datos"><i class="fa fa-check"></i><b>21.3</b> Frecuencia de autores unicos en la base de datos</a></li>
-<li class="chapter" data-level="21.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>21.4</b> <em>ROBERTO</em>:</a></li>
-<li class="chapter" data-level="21.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#extraer-información-de-una-especie-específica"><i class="fa fa-check"></i><b>21.5</b> Extraer información de una especie específica</a></li>
-<li class="chapter" data-level="21.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>21.6</b> Cuantos estudios unicos?</a>
+<li class="chapter" data-level="19.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#frecuencia-de-autores-unicos-en-la-base-de-datos"><i class="fa fa-check"></i><b>19.3</b> Frecuencia de autores unicos en la base de datos</a></li>
+<li class="chapter" data-level="19.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#roberto"><i class="fa fa-check"></i><b>19.4</b> <em>ROBERTO</em>:</a></li>
+<li class="chapter" data-level="19.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#extraer-información-de-una-especie-específica"><i class="fa fa-check"></i><b>19.5</b> Extraer información de una especie específica</a></li>
+<li class="chapter" data-level="19.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuantos-estudios-unicos"><i class="fa fa-check"></i><b>19.6</b> Cuantos estudios unicos?</a>
 <ul>
-<li class="chapter" data-level="21.6.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-fueron-muestreadas-por-especies"><i class="fa fa-check"></i><b>21.6.1</b> Determinar cuantas poblaciones fueron muestreadas por especies</a></li>
-<li class="chapter" data-level="21.6.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuan-largo-fueron-los-estudios"><i class="fa fa-check"></i><b>21.6.2</b> ¿Cuan largo fueron los estudios?</a></li>
-<li class="chapter" data-level="21.6.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#tiempo-de-duración-de-las-investigaciones."><i class="fa fa-check"></i><b>21.6.3</b> Tiempo de duración de las investigaciones.</a></li>
-<li class="chapter" data-level="21.6.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-la-ergodicidad-e-irreducibilidad-y-el-valor-propio-de-las-matrices"><i class="fa fa-check"></i><b>21.6.4</b> Evaluación de la ergodicidad e irreducibilidad y el valor propio de las matrices</a></li>
-<li class="chapter" data-level="21.6.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#ahora-usando-las-matrices-que-cumple-con-las-condiciones-de-ergodicidad-y-irreducbilidad-se-puede-calcular-el-valor-propio-de-lambda."><i class="fa fa-check"></i><b>21.6.5</b> Ahora usando las matrices que cumple con las condiciones de ergodicidad y irreducbilidad se puede calcular el valor propio de lambda.</a></li>
-<li class="chapter" data-level="21.6.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#need-to-move-this-before-as-the-caladenias-are-terrerstrial-and-not-epiphytes"><i class="fa fa-check"></i><b>21.6.6</b> Need to move this before as the Caladenia’s are terrerstrial and not epiphytes</a></li>
+<li class="chapter" data-level="19.6.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#determinar-cuantas-poblaciones-fueron-muestreadas-por-especies"><i class="fa fa-check"></i><b>19.6.1</b> Determinar cuantas poblaciones fueron muestreadas por especies</a></li>
+<li class="chapter" data-level="19.6.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#cuan-largo-fueron-los-estudios"><i class="fa fa-check"></i><b>19.6.2</b> ¿Cuan largo fueron los estudios?</a></li>
+<li class="chapter" data-level="19.6.3" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#tiempo-de-duración-de-las-investigaciones."><i class="fa fa-check"></i><b>19.6.3</b> Tiempo de duración de las investigaciones.</a></li>
+<li class="chapter" data-level="19.6.4" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#evaluación-de-la-ergodicidad-e-irreducibilidad-y-el-valor-propio-de-las-matrices"><i class="fa fa-check"></i><b>19.6.4</b> Evaluación de la ergodicidad e irreducibilidad y el valor propio de las matrices</a></li>
+<li class="chapter" data-level="19.6.5" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#ahora-usando-las-matrices-que-cumple-con-las-condiciones-de-ergodicidad-y-irreducbilidad-se-puede-calcular-el-valor-propio-de-lambda."><i class="fa fa-check"></i><b>19.6.5</b> Ahora usando las matrices que cumple con las condiciones de ergodicidad y irreducbilidad se puede calcular el valor propio de lambda.</a></li>
+<li class="chapter" data-level="19.6.6" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#need-to-move-this-before-as-the-caladenias-are-terrerstrial-and-not-epiphytes"><i class="fa fa-check"></i><b>19.6.6</b> Need to move this before as the Caladenia’s are terrerstrial and not epiphytes</a></li>
 </ul></li>
-<li class="chapter" data-level="21.7" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#resolve-the-name-of-this-data-frame-give-it-a-more-reasonable-name"><i class="fa fa-check"></i><b>21.7</b> Resolve the name of this data frame… Give it a more reasonable name</a>
+<li class="chapter" data-level="19.7" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#resolve-the-name-of-this-data-frame-give-it-a-more-reasonable-name"><i class="fa fa-check"></i><b>19.7</b> Resolve the name of this data frame… Give it a more reasonable name</a>
 <ul>
-<li class="chapter" data-level="21.7.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-cantidad-de-poblaciones-por-especies-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>21.7.1</b> La cantidad de poblaciones por especies en la base de datos de COMPADRE.</a></li>
-<li class="chapter" data-level="21.7.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-las-especies-con-más-de-10-poblaciones-distintas"><i class="fa fa-check"></i><b>21.7.2</b> Filtrar para las especies con más de 10 poblaciones distintas</a></li>
+<li class="chapter" data-level="19.7.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-cantidad-de-poblaciones-por-especies-en-la-base-de-datos-de-compadre."><i class="fa fa-check"></i><b>19.7.1</b> La cantidad de poblaciones por especies en la base de datos de COMPADRE.</a></li>
+<li class="chapter" data-level="19.7.2" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#filtrar-para-las-especies-con-más-de-10-poblaciones-distintas"><i class="fa fa-check"></i><b>19.7.2</b> Filtrar para las especies con más de 10 poblaciones distintas</a></li>
 </ul></li>
-<li class="chapter" data-level="21.8" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas."><i class="fa fa-check"></i><b>21.8</b> Crear un mapa de las distribuciones de las orquídeas.</a></li>
-<li class="chapter" data-level="21.9" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-esperanza-de-vida-de-las-orquídeas"><i class="fa fa-check"></i><b>21.9</b> La esperanza de vida de las orquídeas</a>
+<li class="chapter" data-level="19.8" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#crear-un-mapa-de-las-distribuciones-de-las-orquídeas."><i class="fa fa-check"></i><b>19.8</b> Crear un mapa de las distribuciones de las orquídeas.</a></li>
+<li class="chapter" data-level="19.9" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#la-esperanza-de-vida-de-las-orquídeas"><i class="fa fa-check"></i><b>19.9</b> La esperanza de vida de las orquídeas</a>
 <ul>
-<li class="chapter" data-level="21.9.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>21.9.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>22</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>22.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
-</ul></li>
-<li class="chapter" data-level="23" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>23</b> Impactos de datos sin sentido biológicos</a>
-<ul>
-<li class="chapter" data-level="23.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeño-o-eventos-raros"><i class="fa fa-check"></i><b>23.1</b> Tamaño de muestra pequeño o eventos raros</a>
-<ul>
-<li class="chapter" data-level="23.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>23.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
-<li class="chapter" data-level="23.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>23.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
-<li class="chapter" data-level="23.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>23.1.3</b> Ninguna supervivencia</a></li>
-</ul></li>
-<li class="chapter" data-level="23.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>23.2</b> Redondeo excesivo de valores</a></li>
-<li class="chapter" data-level="23.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>23.3</b> Estimaciones de fertilidad y ciclo de vida</a>
-<ul>
-<li class="chapter" data-level="23.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>23.3.1</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
-</ul></li>
-<li class="chapter" data-level="23.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>23.4</b> Problemas de análisis de datos</a>
-<ul>
-<li class="chapter" data-level="23.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>23.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
-</ul></li>
-<li class="chapter" data-level="23.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>23.5</b> Distribución Dirichlet de intervalo de confianza</a>
-<ul>
-<li class="chapter" data-level="23.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>23.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
-<li class="chapter" data-level="23.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza"><i class="fa fa-check"></i><b>23.5.2</b> Los estimados de Intervalo de camfianza</a></li>
+<li class="chapter" data-level="19.9.1" data-path="compadre_orchid-ppm-y-su-uso.html"><a href="compadre_orchid-ppm-y-su-uso.html#calcular-el-promedio-y-la-varianza-en-la-expectativa-de-vida-de-un-modelo-de-matriz-poblacional"><i class="fa fa-check"></i><b>19.9.1</b> Calcular el promedio y la varianza en la expectativa de vida de un modelo de matriz poblacional</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>24</b> Nhora</a></li>
-<li class="chapter" data-level="25" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html"><i class="fa fa-check"></i><b>25</b> Dinámica transitoria (Transient dynamics)</a>
+<li class="chapter" data-level="20" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><i class="fa fa-check"></i><b>20</b> Un protocolo para informar sobre modelos discreto de estructura de población</a>
 <ul>
-<li class="chapter" data-level="25.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-poblacional-de-largo-y-corto-plazo-1"><i class="fa fa-check"></i><b>25.1</b> Dinámica poblacional de largo y corto plazo</a></li>
-<li class="chapter" data-level="25.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo-1"><i class="fa fa-check"></i><b>25.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
-<ul>
-<li class="chapter" data-level="25.2.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#part-i-dinámica-poblacional-de-largo-plazo-1"><i class="fa fa-check"></i><b>25.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
-<li class="chapter" data-level="25.2.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0-1"><i class="fa fa-check"></i><b>25.2.2</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
-<li class="chapter" data-level="25.2.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#crecimiento-asintótico-1"><i class="fa fa-check"></i><b>25.2.3</b> Crecimiento asintótico</a></li>
+<li class="chapter" data-level="20.1" data-path="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html"><a href="un-protocolo-para-informar-sobre-modelos-discreto-de-estructura-de-población.html#a-standard-protocol-to-report-discrete-stage-structured-demographic-information"><i class="fa fa-check"></i><b>20.1</b> “A standard protocol to report discrete stage-structured demographic information”</a></li>
 </ul></li>
-<li class="chapter" data-level="25.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#estructura-estable-1"><i class="fa fa-check"></i><b>25.3</b> Estructura estable</a></li>
-<li class="chapter" data-level="25.4" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#valores-reproductivos-1"><i class="fa fa-check"></i><b>25.4</b> Valores reproductivos</a></li>
-<li class="chapter" data-level="25.5" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-elasticidad"><i class="fa fa-check"></i><b>25.5</b> Análisis de elasticidad</a></li>
-<li class="chapter" data-level="25.6" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-amortiguamientodamping-ratio-1"><i class="fa fa-check"></i><b>25.6</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
-<li class="chapter" data-level="25.7" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-convergencia-1"><i class="fa fa-check"></i><b>25.7</b> Análisis de Convergencia</a></li>
-<li class="chapter" data-level="25.8" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-1"><i class="fa fa-check"></i><b>25.8</b> Dinámica transitoria</a></li>
+<li class="chapter" data-level="21" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html"><i class="fa fa-check"></i><b>21</b> Impactos de datos sin sentido biológicos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-pequeñas-o-eventos-raros"><i class="fa fa-check"></i><b>21.1</b> Tamaño de muestra pequeñas o eventos raros</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#sin-mortalidadsupervivencia-perfecta"><i class="fa fa-check"></i><b>21.1.1</b> Sin Mortalidad/Supervivencia Perfecta</a></li>
+<li class="chapter" data-level="21.1.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#irreductibilidad-no-hay-transiciones-entre-etapas"><i class="fa fa-check"></i><b>21.1.2</b> Irreductibilidad: No hay transiciones entre etapas</a></li>
+<li class="chapter" data-level="21.1.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ninguna-supervivencia"><i class="fa fa-check"></i><b>21.1.3</b> Ninguna supervivencia</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#redondeo-excesivo-de-valores"><i class="fa fa-check"></i><b>21.2</b> Redondeo excesivo de valores</a></li>
+<li class="chapter" data-level="21.3" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-fertilidad-y-ciclo-de-vida"><i class="fa fa-check"></i><b>21.3</b> Estimaciones de fertilidad y ciclo de vida</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#quiero-otro-ejemplo-de-esto"><i class="fa fa-check"></i><b>21.3.1</b> <strong>QUIERO OTRO EJEMPLO DE ESTO</strong></a></li>
+<li class="chapter" data-level="21.3.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#ciclo-de-vida-y-etapa-de-fertilidad-incorrectos"><i class="fa fa-check"></i><b>21.3.2</b> Ciclo de vida y etapa de fertilidad incorrectos</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#problemas-de-análisis-de-datos"><i class="fa fa-check"></i><b>21.4</b> Problemas de análisis de datos</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#estimaciones-de-intervalos-de-confianza-incorrectas"><i class="fa fa-check"></i><b>21.4.1</b> Estimaciones de intervalos de confianza incorrectas</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#distribución-dirichlet-de-intervalo-de-confianza"><i class="fa fa-check"></i><b>21.5</b> Distribución Dirichlet de intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#tamaño-de-muestra-y-estimaciones-de-intervalos-de-confianza-con-n250"><i class="fa fa-check"></i><b>21.5.1</b> Tamaño de muestra y estimaciones de intervalos de confianza con n=250</a></li>
+<li class="chapter" data-level="21.5.2" data-path="impactos-de-datos-sin-sentido-biológicos.html"><a href="impactos-de-datos-sin-sentido-biológicos.html#los-estimados-de-intervalo-de-camfianza-con-una-n250"><i class="fa fa-check"></i><b>21.5.2</b> Los estimados de Intervalo de camfianza con una n=250</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="nhora.html"><a href="nhora.html"><i class="fa fa-check"></i><b>22</b> Nhora</a></li>
+<li class="chapter" data-level="23" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html"><i class="fa fa-check"></i><b>23</b> Dinámica transitoria (Transient dynamics)</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-poblacional-de-largo-y-corto-plazo-1"><i class="fa fa-check"></i><b>23.1</b> Dinámica poblacional de largo y corto plazo</a></li>
+<li class="chapter" data-level="23.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#proyecto-de-dinamica-transitoria-o-de-corto-plazo-1"><i class="fa fa-check"></i><b>23.2</b> PROYECTO DE DINAMICA TRANSITORIA O DE CORTO PLAZO</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#part-i-dinámica-poblacional-de-largo-plazo-1"><i class="fa fa-check"></i><b>23.2.1</b> PART I: DINÁMICA POBLACIONAL DE LARGO PLAZO</a></li>
+<li class="chapter" data-level="23.2.2" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#paso-1.-matriz-de-proyección-poblacional-y-estructura-poblacional-inicial-t_0-1"><i class="fa fa-check"></i><b>23.2.2</b> PASO 1. MATRIZ DE PROYECCIÓN POBLACIONAL y ESTRUCTURA POBLACIONAL INICIAL <span class="math inline">\(t_{0}\)</span></a></li>
+<li class="chapter" data-level="23.2.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#crecimiento-asintótico-1"><i class="fa fa-check"></i><b>23.2.3</b> Crecimiento asintótico</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#estructura-estable-1"><i class="fa fa-check"></i><b>23.3</b> Estructura estable</a></li>
+<li class="chapter" data-level="23.4" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#valores-reproductivos-1"><i class="fa fa-check"></i><b>23.4</b> Valores reproductivos</a></li>
+<li class="chapter" data-level="23.5" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-elasticidad"><i class="fa fa-check"></i><b>23.5</b> Análisis de elasticidad</a></li>
+<li class="chapter" data-level="23.6" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-amortiguamientodamping-ratio-1"><i class="fa fa-check"></i><b>23.6</b> Análisis de Amortiguamiento/Damping Ratio</a></li>
+<li class="chapter" data-level="23.7" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#análisis-de-convergencia-1"><i class="fa fa-check"></i><b>23.7</b> Análisis de Convergencia</a></li>
+<li class="chapter" data-level="23.8" data-path="dinámica-transitoria-transient-dynamics-1.html"><a href="dinámica-transitoria-transient-dynamics-1.html#dinámica-transitoria-1"><i class="fa fa-check"></i><b>23.8</b> Dinámica transitoria</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i>Appendix A</a>
 <ul>
@@ -540,6 +524,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#usando-ejemplo-de-tremblay-y-su-codificación"><i class="fa fa-check"></i>Usando ejemplo de Tremblay [] y su codificación</a></li>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#almacenamiento-de-datos-de-forma-digital"><i class="fa fa-check"></i>Almacenamiento de datos de forma digital</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html"><i class="fa fa-check"></i><b>24</b> Variación Demográfica, Espacial y Temporal</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html#variación-demográfica"><i class="fa fa-check"></i><b>24.1</b> Variación Demográfica</a></li>
+<li class="chapter" data-level="24.2" data-path="variación-demográfica-espacial-y-temporal.html"><a href="variación-demográfica-espacial-y-temporal.html#aumentando-el-tamaño-de-muestra"><i class="fa fa-check"></i><b>24.2</b> Aumentando el tamaño de muestra</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -660,13 +649,13 @@ div.csl-indent {
 <td align="left"></td>
 <td align="left">Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global</td>
 <td align="left"><span class="citation">(<a href="#ref-lindenmayer1996ranking">Lindenmayer and Possingham 1996</a>)</span></td>
-<td align="right"><span class="citation">(<a href="#ref-tremblay2006epiphytic">R. L. Tremblay, Meléndez-Ackerman, and Kapan 2006</a>; <a href="#ref-lind2007metapopulation">Lind et al. 2007</a>; <a href="#ref-winkler2009population">Winkler, Hülber, and Hietz 2009</a>; <a href="#ref-garcia2010living">Garcı́a, Goni, and Guzmán 2010</a>; <a href="#ref-kindlmann2014disobedient">P. Kindlmann, Meléndez-Ackerman, and Tremblay 2014</a>)</span></td>
+<td align="right"><span class="citation">(<a href="#ref-tremblay2006epiphytic">R. L. Tremblay, Meléndez-Ackerman, and Kapan 2006</a>; <a href="#ref-lind2007metapopulation">Lind et al. 2007</a>; <a href="#ref-winkler2009population">Winkler, Hülber, and Hietz 2009</a>; <a href="#ref-garcia2010living">Garcı́a, Goni, and Guzmán 2010</a>; <a href="#ref-kindlmann2014disobedient">Kindlmann, Meléndez-Ackerman, and Tremblay 2014</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Evaluación de riesgos</td>
 <td align="left">Evaluar el riesgo de una población</td>
 <td align="left"><span class="citation">(<a href="#ref-gotelli2006forecasting">Gotelli and Ellison 2006</a>)</span></td>
-<td align="right"><span class="citation">(<a href="#ref-nicole2005population">Nicolè, Brzosko, and TILL-BOTTRAUD 2005</a>; <a href="#ref-iriondo2009peligro">Iriondo Alegria et al. 2009</a>; <a href="#ref-hutchings2010population">M. Hutchings 2010</a>; <a href="#ref-thorpe2011trends">Thorpe et al. 2011</a>; <a href="#ref-raventos2015transient">Raventós, González, Mújica, and Bonet 2015</a>; <a href="#ref-hens2017low">Hens et al. 2017</a>; <a href="#ref-ackerman2020small">J. Ackerman et al. 2020</a>; <a href="#ref-berry2021population">Berry and Cleavitt 2021</a>; <a href="#ref-timsina2021six">Timsina et al. 2021</a>)</span></td>
+<td align="right"><span class="citation">(<a href="#ref-nicole2005population">Nicolè, Brzosko, and TILL-BOTTRAUD 2005</a>; <a href="#ref-iriondo2009peligro">Iriondo Alegria et al. 2009</a>; <a href="#ref-hutchings2010population">Hutchings 2010</a>; <a href="#ref-thorpe2011trends">Thorpe et al. 2011</a>; <a href="#ref-raventos2015transient">Raventós et al. 2015</a>; <a href="#ref-hens2017low">Hens et al. 2017</a>; <a href="#ref-ackerman2020small">Ackerman et al. 2020</a>; <a href="#ref-berry2021population">Berry and Cleavitt 2021</a>; <a href="#ref-timsina2021six">Timsina et al. 2021</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -678,7 +667,7 @@ div.csl-indent {
 <td align="left">Interacciones ecológicas</td>
 <td align="left">Evaluar interacciones ecológicas abiótica y biótica para entender las variables importantes para la supervivencia de una población</td>
 <td align="left"><span class="citation">(<a href="#ref-halpern2006approaches">Halpern and Underwood 2006</a>)</span></td>
-<td align="right"><span class="citation">(<a href="#ref-coates2006effects">Fiona Coates, Lunt, and Tremblay 2006</a>; <a href="#ref-sletvold2010long">Sletvold, Øien, and Moen 2010</a>; <a href="#ref-sletvold2013climate">Sletvold et al. 2013</a>; <a href="#ref-ospina2023effect">Ospina-Calderón et al. 2023</a>)</span></td>
+<td align="right"><span class="citation">(<a href="#ref-coates2006effects">Coates, Lunt, and Tremblay 2006</a>; <a href="#ref-sletvold2010long">Sletvold, Øien, and Moen 2010</a>; <a href="#ref-sletvold2013climate">Sletvold et al. 2013</a>; <a href="#ref-ospina2023effect">Ospina-Calderón et al. 2023</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Procesos y patrones evolutivos</td>
@@ -732,7 +721,7 @@ div.csl-indent {
 <div id="uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población." class="section level3 hasAnchor" number="2.4.6">
 <h3><span class="header-section-number">2.4.6</span> USO 5: En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.<a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-5-en-especies-invasivas-determinar-cuantos-y-cual-etapas-se-necesita-remover-para-controlar-la-población." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ahora es común reconocer el impacto negativo que puede tener organismos invasivos sobre la flora y la fauna local. Cual son las características que hace que una especie puede ser invasiva y cual características si fuese manejada pudiese reducir su impacto. En general, las especies invasivas tienen una tasa de crecimiento alta, una tasa de reproducción alta, una tasa de supervivencia alta y una tasa de dispersión alta. Por consecuencia, una estrategia de manejo debería considerar cual de estas etapas es más susceptible a ser manejado. En general, la etapa de semilla es la más susceptible a ser manejado. Algunos de los impacto de especies invasivas son de Australia y son bien conocidos y discutidos en clases de ecología, tal como la introducción del conejo, <em>Oryctolagus cuniculus</em> <span class="citation">(<a href="#ref-alves2022single">Alves et al. 2022</a>)</span>, del cactus <em>Opuntia</em> <span class="citation">(<a href="#ref-novoa2015introduced">Novoa et al. 2015</a>)</span> entre muchos otros. En general, la introducción de especies invasivas es un tema que necesita más investigaciones y evaluaciones.</p>
-<p>Algunos ejemplos de estudios usando PPM para evaluar la demografía de especies invasivas incluye <span class="citation">(<a href="#ref-koop2005projection">Koop and Horvitz 2005</a>; <a href="#ref-mcmahon2008transient">McMahon and Metcalf 2008</a>; <a href="#ref-li2015demographic">S.-L. Li and Ramula 2015</a>)</span>.</p>
+<p>Algunos ejemplos de estudios usando PPM para evaluar la demografía de especies invasivas incluye <span class="citation">(<a href="#ref-koop2005projection">Koop and Horvitz 2005</a>; <a href="#ref-mcmahon2008transient">McMahon and Metcalf 2008</a>; <a href="#ref-li2015demographic">Li and Ramula 2015</a>)</span>.</p>
 <p>Falta ejemplos de orquídeas FALCON et al. </p>
 </div>
 <div id="uso-6-evaluar-el-riesgo-de-una-población" class="section level3 hasAnchor" number="2.4.7">
@@ -744,7 +733,7 @@ div.csl-indent {
 <h3><span class="header-section-number">2.4.8</span> USO 7: Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global<a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-7-determinar-cuantas-poblaciones-se-necesita-para-la-viabilidad-de-una-especie-al-nivel-local-o-global" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La gran mayoría de las especies son dividido en múltiples poblaciones, donde el concepto de poblaciones puede tener muchas definiciones. Típicamente los científicos ni mencionan la definición del termino y lo usan para identificar una agrupación de individuos. El uso frecuentemente es usado de forma practica en que son individuos suficiente cercano uno del otro donde se puede recolectar la información fácilmente. Ese acercamiento puede que no tengo ninguna validez ecológica o evolutiva. En ecología una población debería ser un grupo de individuos que tenga una interacciones entre los individuos por lo menos con una cierta probabilidades. Por consecuencia si hablamos de una población de <em>Catasetum</em> los individuos de una misma población debería considerar la posibilidad que las abejas que la polinizan (i.e. <em>Euglossina</em> sp.) pueden mover el polen y dependiendo de la especies de abeja el área de movimiento de ellas puede ser bastante grande. Otra definición de población una evolutiva, donde los individuos tienen movimiento de genes considerando el largo de vida de los individuos o sea en una generación. El largo de vida de especies de orquídea pueden variar mucho, por ejemplo en las especies de ramitas (twig epiphytes) el periodo de generación pudiese ser 3-4 años, al contrario especies como <em>Cypripedium calceolus</em> pudiese ser de meas de 50 años.</p>
 <p>Irrelevante de las dos definiciones de una población, tipicamente en el área de conservación es de interés hacer predicción sobre la probabilidad de extinción/supervivencia de las poblaciones y determinar cuantas poblaciones son necesaria para que la especie en una área determinada es necesario para su persistencia.</p>
-<p>Un otro método de evaluar el riesgo de múltiples poblaciones es aplicar los análisis de supervivencia usando el concepto <em>la dinámica de metapoblaciones</em> (se define como poblaciones de poblaciones) y es un acercamiento más sencillo para evaluar la dinámica de poblaciones, pero en la mayoría de los casos no se recolecta información sobre la estructura de edades o etapas de los individuos, pero el cambio en número de individuos, la colonización y extinción de sitios previamente ocupado para evaluar la persistencia del conjunto de las poblaciones. Ese acercamiento es muy útil para evaluar la viabilidad de una especie en un conjunto de sitios. Pero la lista de estudios de metapoblaciones es limitada a unos pocos artículos <span class="citation">(<a href="#ref-tremblay2006epiphytic">R. L. Tremblay, Meléndez-Ackerman, and Kapan 2006</a>; <a href="#ref-lind2007metapopulation">Lind et al. 2007</a>; <a href="#ref-winkler2009population">Winkler, Hülber, and Hietz 2009</a>; <a href="#ref-kindlmann2014disobedient">P. Kindlmann, Meléndez-Ackerman, and Tremblay 2014</a>; <a href="#ref-acevedo2015spatial">M. Acevedo et al. 2015</a>; <a href="#ref-acevedo2020local">M. A. Acevedo et al. 2020</a>; <a href="#ref-vsvecova2023difficulties">Švecová et al. 2023</a>)</span>. Para una introducción a los conceptos y métodos de análisis vea el libro de Hanski <span class="citation">(<a href="#ref-hanski1999metapopulation">Hanski 1999</a>)</span>.</p>
+<p>Un otro método de evaluar el riesgo de múltiples poblaciones es aplicar los análisis de supervivencia usando el concepto <em>la dinámica de metapoblaciones</em> (se define como poblaciones de poblaciones) y es un acercamiento más sencillo para evaluar la dinámica de poblaciones, pero en la mayoría de los casos no se recolecta información sobre la estructura de edades o etapas de los individuos, pero el cambio en número de individuos, la colonización y extinción de sitios previamente ocupado para evaluar la persistencia del conjunto de las poblaciones. Ese acercamiento es muy útil para evaluar la viabilidad de una especie en un conjunto de sitios. Pero la lista de estudios de metapoblaciones es limitada a unos pocos artículos <span class="citation">(<a href="#ref-tremblay2006epiphytic">R. L. Tremblay, Meléndez-Ackerman, and Kapan 2006</a>; <a href="#ref-lind2007metapopulation">Lind et al. 2007</a>; <a href="#ref-winkler2009population">Winkler, Hülber, and Hietz 2009</a>; <a href="#ref-kindlmann2014disobedient">Kindlmann, Meléndez-Ackerman, and Tremblay 2014</a>; <a href="#ref-acevedo2015spatial">M. Acevedo et al. 2015</a>; <a href="#ref-acevedo2020local">M. A. Acevedo et al. 2020</a>; <a href="#ref-vsvecova2023difficulties">Švecová et al. 2023</a>)</span>. Para una introducción a los conceptos y métodos de análisis vea el libro de Hanski <span class="citation">(<a href="#ref-hanski1999metapopulation">Hanski 1999</a>)</span>.</p>
 </div>
 <div id="uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones" class="section level3 hasAnchor" number="2.4.9">
 <h3><span class="header-section-number">2.4.9</span> USO 8: Comparando el riesgo relativo de dos o más poblaciones<a href="qué-es-el-analisis-de-dinamica-poblacional.html#uso-8-comparando-el-riesgo-relativo-de-dos-o-más-poblaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -761,7 +750,7 @@ div.csl-indent {
 <p>Visualizar el proceso de cambio poblacional en un diagrama y las posibles causes puede ayudar a englobar los diferentes componentes abióticos y bióticos que están presente y que influencia la dinámica de una especies. Hay que aclarar que un modelo es una caricatura y no incluye TODOS los componentes que pueden influenciar la dinámica de una especies. El objetivo de un modelo es de tratar de simplificar la biología a los procesos más importante. Al complicar de forma exagerada los modelos resulta en que los patrones y dinamica no se pueden asignar a efectos proporcionalmente más relevante. En la siguiente figura @ref(fig:Pop-fig_2) se muestra los factores principales sobre el crecimiento de la poblacional con respecto a las variables más relevante para evaluar el riesgo de extinción de <strong>UNA</strong> población.</p>
 <p>Todos los trabajos de dinámica poblacional comienzan con el tamaño de la población, <strong>N</strong>. El tamaño poblacional y su densidad impacta directamente los otros factores de los parámetros de la población. En la figura notará, que hay linea entrecortada, y signo de interrogación y lineas rellana con grosor diferentes. Las lineas entrecortada con signo de interrogación representa factores donde no hay (o muy poca) evidencia de que estos factores influencia la dinámica poblacional de orquídea. Las lineas rellenada son factores donde hay más evidencia basado en los estudios de dinámica poblacional en orquídea</p>
 <p>Los efectos denso-dependientes pueden influenciar la cantidad de individuos en el próximo tiempo ademas que la diferencias genéticas entre individuos, hay evidencia de esto en otros organismos, pero en orquídea todavía no hay estudios o muy pocos estudios, o estos asumen que por la diferencias genéticas tienen más impacto en la dinámica de la población. Al contrario los efectos de estocásticos en demográfica y ambiental son bien conocidos en orquídea. Esto lleva a influenciar los parámetros de crecimiento y la variación en estos parámetros. Por ultimo la variación en tiempo es el parámetro que más impacta el riesgo de extinción. El tamaño de la variación en tiempo es un factor importante para evaluar el riesgo de extinción de una población. Cuando la variación en tiempo es muy grande en pequeñas poblaciones, la probabilidad de extinción es más alta. En general, la variación en tiempo es un factor que se debería considerar en todos los estudios de dinámica poblacional.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:intro1"></span>
 <embed src="Figures/Demografia_de_una_poblacion.pdf" title="Factores que influencia la dinamica de una población" width="500px" type="application/pdf" />
 <p class="caption">
 Figure 2.1: Factores que influencia la dinamica de una población
@@ -816,7 +805,7 @@ Bustamante, Javier. 1996. <span>“Population Viability Analysis of Captive and 
 Calvo, Ricardo N. 1993. <span>“Evolutionary Demography of Orchids: Intensity and Frequency of Pollination and the Cost of Fruiting.”</span> <em>Ecology</em> 74 (4): 1033–42. <a href="https://doi.org/10.2307/1940473">https://doi.org/10.2307/1940473</a>.
 </div>
 <div id="ref-caswell2001matrix" class="csl-entry">
-———. 2001. <em>Matrix Population Models: Construction, Analysis, and Interpretation</em>. 2nd ed. Sunderland, Massachusetts, USA: Sinauer Associates.
+Caswell, Hal. 2001. <em>Matrix Population Models: Construction, Analysis, and Interpretation</em>. 2nd ed. Sunderland, Massachusetts, USA: Sinauer Associates.
 </div>
 <div id="ref-coates2006effects" class="csl-entry">
 Coates, Fiona, Ian D Lunt, and Raymond L Tremblay. 2006. <span>“Effects of Disturbance on Population Dynamics of the Threatened Orchid <em>Prasophyllum <span class="nocase">c</span>orrectum</em> DL Jones and Implications for Grassland Management in South-Eastern Australia.”</span> <em>Biological Conservation</em> 129 (1): 59–69.
